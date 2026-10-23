@@ -79,6 +79,7 @@ icon, and complete scholar review of the teaching draft.
 - Completed practice with one wrong and two correct answers; the result was
   correctly 2/3. Restart cleared the answers and disabled Check answer until a
   new choice. Explanations appeared after both correct and incorrect choices.
+- Verified cancelling a staged Juz selection keeps the reader in Surah mode.
 - Checked English/Urdu controls and counts; saved Urdu persisted across reload.
   Restored English afterward. Learning text stayed unchanged.
 - Checked that hiding word meanings preserves the full ayah translation and
@@ -90,9 +91,9 @@ icon, and complete scholar review of the teaching draft.
   interaction flows still need a manual pass because the desktop automation
   interface cannot attach to the emulator window.
 - Installed the rebuilt `build/quran-grammar.apk` on that emulator and launched
-  the standalone app. Its bundled JavaScript rendered the new selectors, floating
-  dock and complete first ayah with the saved Urdu interface preference. The
-  earlier standalone build was also tested with all Metro servers stopped.
+  the standalone app with Metro stopped. Its bundled JavaScript rendered the new
+  selectors, floating dock and complete first ayah with the saved Urdu interface
+  preference.
   App-specific runtime logs had no JavaScript or Android fatal errors. This APK
   is signed for local testing.
 - Regression checks cover Quran and English control row direction under both
