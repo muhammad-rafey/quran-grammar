@@ -179,6 +179,9 @@ for (const width of [320, 390, 768]) {
     await loadStudy(page);
     await expectNoOverflow(page);
     await expect(page.locator('dialog')).not.toBeVisible();
+    await openFilters(page);
+    await expectNoOverflow(page);
+    await page.getByRole('button', { name: 'Filters', exact: true }).click();
     const trigger = word(page, '1:5:2');
     await trigger.scrollIntoViewIfNeeded();
     const readingY = await page.evaluate(() => scrollY);

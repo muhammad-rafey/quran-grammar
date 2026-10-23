@@ -30,4 +30,6 @@ No general redistribution license for those hosted editions is asserted. No thir
 
 ## Fonts and software
 
+`apps/mobile/LICENSE` records the Expo template's MIT license. It does not assign a general license to this project's original application code or study content.
+
 Bundled Amiri Quran, Noto Naskh Arabic, and Noto Nastaliq Urdu fonts are distributed under the SIL Open Font License 1.1; their font copyright and license files accompany the app assets. Dependency licenses remain with their respective packages and are recorded through the package lockfile. Keep the font license files when redistributing builds or source assets.
