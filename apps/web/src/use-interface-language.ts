@@ -17,7 +17,6 @@ export function useInterfaceLanguage() {
   useEffect(() => {
     document.documentElement.lang = language;
     document.documentElement.dir = language === 'ur' ? 'rtl' : 'ltr';
-    document.title = language === 'en' ? 'Quran Grammar · Al-Fatihah' : 'قرآن گرامر — سورۃ الفاتحہ';
   }, [language]);
 
   const changeLanguage = (next: UiLanguage) => {

@@ -1,30 +1,44 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Stack } from 'expo-router/stack';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { type Rule } from '@quran-grammar/core';
+import { getStudy, type Rule } from '@quran-grammar/core';
 import { Action, InitialDataState, Label, Paragraph, Section } from '@/components/study-ui';
 import { useInterface } from '@/state/preferences-provider';
 import { useStudy } from '@/state/study-provider';
+import { parseWordLocation } from '@/state/word-location';
 import { card, colors, row, type } from '@/theme/tokens';
 
 export default function WordScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const { study } = useStudy();
+  const { study, selectSurah } = useStudy();
   const { ui, count, labelStyle, controlRow } = useInterface();
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const scroll = useRef<ScrollView>(null);
-  const [segment, setSegment] = useState(0);
+  const [segmentSelection, setSegmentSelection] = useState({ wordId: id, index: 0 });
+  const segment = segmentSelection.wordId === id ? segmentSelection.index : 0;
+  const location = parseWordLocation(id);
+  const routeSurah =
+    location && getStudy(location.surah)?.words.some((word) => word.id === id)
+      ? location.surah
+      : null;
   useEffect(() => {
-    setSegment(0);
-    scroll.current?.scrollTo({ y: 0, animated: false });
-  }, [id]);
-  if (!study) return <InitialDataState />;
+    if (routeSurah !== null) selectSurah(routeSurah);
+  }, [routeSurah, selectSurah]);
+  const close = () => (router.canGoBack() ? router.back() : router.replace('/'));
+  if (routeSurah === null)
+    return (
+      <View style={{ padding: 24, gap: 20 }}>
+        <Label>{ui.notFound}</Label>
+        <Action onPress={close}>{ui.backToStudy}</Action>
+      </View>
+    );
+  if (!study || study.surah.number !== routeSurah) {
+    return <InitialDataState pending={Boolean(study && study.surah.number !== routeSurah)} />;
+  }
   const index = study.words.findIndex((entry) => entry.id === id);
   const word = study.words[index];
-  const close = () => (router.canGoBack() ? router.back() : router.replace('/'));
   if (!word)
     return (
       <View style={{ padding: 24, gap: 20 }}>
@@ -68,7 +82,6 @@ export default function WordScreen() {
       />
       <ScrollView
         key={word.id}
-        ref={scroll}
         testID="word-detail"
         contentInsetAdjustmentBehavior="automatic"
         contentContainerStyle={{
@@ -174,7 +187,7 @@ export default function WordScreen() {
                 accessibilityRole="button"
                 accessibilityState={{ selected: segment === itemIndex }}
                 accessibilityLabel={`${item.arabic}، ${item.roleUrdu}`}
-                onPress={() => setSegment(itemIndex)}
+                onPress={() => setSegmentSelection({ wordId: id, index: itemIndex })}
                 style={{
                   minWidth: 58,
                   paddingHorizontal: 13,

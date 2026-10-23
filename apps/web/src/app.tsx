@@ -2,6 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { BookOpen, ChevronDown, Settings, SlidersHorizontal, Sparkles, X } from 'lucide-react';
 import {
   matchesWord,
+  availableSurahNumbers,
+  getSurahTitle,
   formatCount,
   getUiStrings,
   type PartOfSpeechFilter,
@@ -13,10 +15,17 @@ import { WordDetail } from './components/word-detail';
 import { useMobileLayout, useStudy } from './use-study';
 import { useInterfaceLanguage } from './use-interface-language';
 
-const hashWord = () => new URLSearchParams(location.hash.slice(1)).get('word');
+function readLocation() {
+  const params = new URLSearchParams(location.hash.slice(1));
+  const word = params.get('word');
+  const requested = Number(word?.split(':')[0] || params.get('surah') || 1);
+  return { surah: availableSurahNumbers.includes(requested) ? requested : 1, word };
+}
 
 export function App() {
-  const { data: study, error, retry } = useStudy();
+  const [locationRequest, setLocationRequest] = useState(readLocation);
+  const { data: study, error, retry } = useStudy(locationRequest.surah);
+  const appliedRequest = useRef<typeof locationRequest | null>(null);
   const mobile = useMobileLayout();
   const { language, changeLanguage, saveError } = useInterfaceLanguage();
   const ui = getUiStrings(language);
@@ -49,19 +58,28 @@ export function App() {
   const filtering = pos !== 'all';
 
   useEffect(() => {
-    if (!study) return;
     const update = () => {
-      const id = hashWord();
-      const valid = study.words.some((word) => word.id === id);
-      setSelectedId(valid ? id! : study.words[0].id);
-      setActiveAyah(valid ? study.words.find((word) => word.id === id)!.ayah : 1);
+      setSheetOpen(false);
+      setPos('all');
       setView('words');
-      setSheetOpen(valid && matchMedia('(max-width: 1023px)').matches);
+      setLocationRequest(readLocation());
     };
-    update();
     window.addEventListener('hashchange', update);
     return () => window.removeEventListener('hashchange', update);
-  }, [study]);
+  }, []);
+
+  useEffect(() => {
+    if (!study || appliedRequest.current === locationRequest) return;
+    appliedRequest.current = locationRequest;
+    const target = study.words.find((word) => word.id === locationRequest.word);
+    setSelectedId(target?.id || study.words[0].id);
+    setActiveAyah(target?.ayah || 1);
+    setSheetOpen(!!target && matchMedia('(max-width: 1023px)').matches);
+  }, [study, locationRequest]);
+
+  useEffect(() => {
+    document.title = `${getSurahTitle(locationRequest.surah, language)} · Quran Grammar`;
+  }, [locationRequest.surah, language]);
 
   useEffect(() => {
     if (!mobile) setSheetOpen(false);
@@ -109,7 +127,16 @@ export function App() {
 
   return (
     <>
-      <a className="skip-link ui" lang={language} dir={direction} href="#main">
+      <a
+        className="skip-link ui"
+        lang={language}
+        dir={direction}
+        href="#main"
+        onClick={(event) => {
+          event.preventDefault();
+          document.getElementById('main')?.focus();
+        }}
+      >
         {ui.backToStudy}
       </a>
       <header className="site-header ui" lang={language} dir={direction}>
@@ -120,9 +147,9 @@ export function App() {
           <span>{language === 'en' ? 'Quran Grammar' : 'قرآن گرامر'}</span>
         </a>
       </header>
-      <main className="page-shell" id="main">
-        <h1 className="sr-only">{ui.surahTitle}</h1>
-        {study && view !== 'settings' && (
+      <main className="page-shell" id="main" tabIndex={-1}>
+        <h1 className="sr-only">{getSurahTitle(locationRequest.surah, language)}</h1>
+        {view !== 'settings' && (
           <section
             className="lesson-toolbar ui"
             lang={language}
@@ -132,22 +159,28 @@ export function App() {
             <CollectionPicker
               language={language}
               mode={collectionMode}
-              onSelect={(mode) => {
+              surahNumber={locationRequest.surah}
+              onSelect={(mode, surahNumber) => {
                 setCollectionMode(mode);
                 setPos('all');
-                goToAyah(1, view === 'grammar' ? 'grammar' : 'words');
+                setActiveAyah(1);
+                setSheetOpen(false);
+                history.replaceState(null, '', `#surah=${surahNumber}`);
+                setLocationRequest({ surah: surahNumber, word: null });
+                window.scrollTo({ top: 0, behavior: 'instant' });
               }}
             />
             <label className="ayah-selector selector-chip">
               <small>{ui.ayah}</small>
               <select
                 aria-label={ui.selectAyah}
+                disabled={!study}
                 value={activeAyah}
                 onChange={(event) =>
                   goToAyah(Number(event.target.value), view === 'grammar' ? 'grammar' : 'words')
                 }
               >
-                {study.ayahs.map((ayah) => (
+                {study?.ayahs.map((ayah) => (
                   <option key={ayah.number} value={ayah.number}>
                     {formatCount(ayah.number, language)}
                   </option>
@@ -155,7 +188,7 @@ export function App() {
               </select>
               <ChevronDown size={17} aria-hidden="true" />
             </label>
-            {view === 'words' && (
+            {study && view === 'words' && (
               <button
                 type="button"
                 aria-label={ui.filters}
@@ -320,7 +353,12 @@ export function App() {
             </div>
           </>
         ) : (
-          <Grammar study={study} language={language} onRead={(ayah) => goToAyah(ayah, 'words')} />
+          <Grammar
+            key={study.surah.number}
+            study={study}
+            language={language}
+            onRead={(ayah) => goToAyah(ayah, 'words')}
+          />
         )}
         {study && mobile && (
           <dialog

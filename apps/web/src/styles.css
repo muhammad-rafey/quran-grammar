@@ -1733,3 +1733,21 @@ p {
     transition: none !important;
   }
 }
+
+.catalog-subheading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  font-size: 0.85rem;
+}
+.catalog-entry[aria-current='true'] {
+  border-color: var(--accent, #00755c);
+}
+
+.catalog-subheading h3 {
+  font: inherit;
+  font-weight: 600;
+  margin: 0;
+}

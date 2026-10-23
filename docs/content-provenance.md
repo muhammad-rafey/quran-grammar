@@ -2,7 +2,7 @@
 
 The initial dataset covers Al-Fatihah, counting the basmalah as 1:1: seven ayahs, 29 word occurrences, 18 roots, four verb paradigms, 14 phrase constructions, and 18 reusable grammar explanations. Stable IDs use surah:ayah:word, and repeated spellings retain their occurrence-specific syntax.
 
-Urdu glosses, translations, dictionary summaries, grammar explanations, and short tafsir summaries were newly authored for the prototype and are teaching drafts awaiting scholarly review. No complete Urdu dictionary, commercial book, or third-party Urdu translation was imported. Root letters identify lexical families; individual glyphs do not have independent lexical meanings. Learner headwords are not a verbatim lemma export.
+Urdu glosses, translations, dictionary summaries, grammar explanations, and short tafsir summaries were newly authored with AI assistance for the prototype and are teaching drafts awaiting scholarly review. No complete Urdu dictionary, commercial book, or third-party Urdu translation was imported. Root letters identify lexical families; individual glyphs do not have independent lexical meanings. Learner headwords are not a verbatim lemma export.
 
 Arabic inventory, root assignments, and grammatical facts were checked against the Quranic Arabic Corpus (Kais Dukes, University of Leeds). Its morphology and Arabic i‘rab pages were consulted; the latter credit the Quran Printing Complex. No unmodified bulk corpus download is bundled. The Corpus download page identifies GPL licensing together with additional text-preservation and source-link conditions. See [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md); public accessibility is not a claim of unrestricted reuse. The interface keeps a concise Corpus attribution; per-record links and the former references tab are excluded from the learning flow.
 
@@ -10,9 +10,22 @@ Additional consultation: Al-‘Ukbari’s _Al-Tibyan fi i‘rab al-Qur’an_ via
 
 References below record the original prototype’s audit trail (researched 2026-10-22; migrated 2026-10-23). The study API deliberately omits these URLs. Source alternatives and uncertainty, including the derivations of اسم and اللہ and the syntax of غیر, remain in the teaching notes.
 
+## Expansion: Surahs 105–114
+
+The expansion adds 48 ayahs and 201 word occurrences, bringing the edition to 11 Surahs, 55 ayahs and 230 words. Every chapter uses the same `StudyData` shape and word-detail fields as Al-Fatihah. Unnumbered opening basmalahs are not inserted as extra numbered occurrences in these chapters.
+
+**AI involvement is explicit:** the Arabic text is transcribed from the observed source text, not generated. The QAC morphology/grammar references and selected dictionary entries inform the grammatical facts, root assignments and paradigms. Urdu word meanings, verse translations, root/dictionary summaries, morphology/syntax explanations, phrase notes, rules and short tafsir summaries are AI-assisted original teaching drafts. They are not a verbatim source edition and have not received human scholarly approval. Automated schema checks and source comparisons do not constitute scholarly review.
+
+- [Surahs 105–109: source audit](source-audits/surahs-105-109.md) and [Arabic inventory](source-audits/inventory-105-109.json).
+- [Surahs 110–114: source audit](source-audits/surahs-110-114.md) and [Arabic inventory](source-audits/inventory-110-114.json).
+
+These audits distinguish Quran.com Uthmani Arabic text (API fields or observed verse pages) from QAC occurrence boundaries, root/morphology annotations and Arabic i‘rab pages. Do not describe the Arabic fixtures as a byte-for-byte QAC morphology export. The fixtures preserve the observed word strings separately from the editable teaching modules; automated tests compare all 201 occurrences and their IDs. Selected source disagreements and alternate readings are retained in the editorial notes instead of being presented as undisputed facts.
+
+The same AI-assisted/pending-review label appears in Settings → About on web, Android and iOS. Per-record source URLs remain in this repository rather than the learning payload.
+
 ## Navigation metadata and practice
 
-The 114 surah numbers, Arabic names and conventional English transliterations in `packages/core/src/catalog.ts` were checked against [Quran.com’s chapter metadata API](https://api.quran.com/api/v4/chapters?language=en) on 2026-10-23; the endpoint is described in the [Quran Foundation chapter documentation](https://api-docs.quran.com/docs/content_apis_versioned/4.0.0/list-chapters/). These are factual navigation labels, not verse text or a translated work. The [juz metadata endpoint](https://api.quran.com/api/v4/juzs) confirms 30 distinct juz numbers and places Al-Fatihah within Juz 1. The app includes no new lessons for the other surahs or juz. Only Al-Fatihah is available; Juz 1 is explicitly a partial preview containing Al-Fatihah alone.
+The 114 surah numbers, Arabic names and conventional English transliterations in `packages/core/src/catalog.ts` were checked against [Quran.com’s chapter metadata API](https://api.quran.com/api/v4/chapters?language=en) on 2026-10-23; the endpoint is described in the [Quran Foundation chapter documentation](https://api-docs.quran.com/docs/content_apis_versioned/4.0.0/list-chapters/). These are factual navigation labels, not verse text or a translated work. The [juz metadata endpoint](https://api.quran.com/api/v4/juzs) confirms 30 distinct juz numbers and places Al-Fatihah within Juz 1. This edition enables Surah 1 and Surahs 105–114. Juz 1 is a partial preview of Al-Fatihah; Juz 30 is a partial preview of its final ten Surahs. Other chapters remain unavailable.
 
 The three practice questions are original Urdu teaching drafts based on the existing Al-Fatihah entries: identifying نَعْبُدُ as a verb, the imperative form in ٱهْدِنَا, and the root ع ب د. Arabic word choices reuse the exact stored lesson occurrences; distractors are existing words, grammatical labels or roots, without invented Quranic text. The existing scholar-review status applies to these questions too.
 

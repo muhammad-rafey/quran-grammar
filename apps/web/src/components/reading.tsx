@@ -1,6 +1,7 @@
 import {
   formatCount,
   getUiStrings,
+  getSurahTitle,
   type StudyData,
   type UiLanguage,
   type Word,
@@ -28,11 +29,13 @@ export function Reading({
   const strings = getUiStrings(language);
   const label = (word: Word) =>
     word.pos === 'verb'
-      ? word.posUrdu.includes('امر')
-        ? 'فعلِ امر'
-        : word.posUrdu.includes('ماضی')
-          ? 'فعلِ ماضی'
-          : 'فعلِ مضارع'
+      ? word.posUrdu.includes('مضارع')
+        ? 'فعلِ مضارع'
+        : word.posUrdu.includes('امر')
+          ? 'فعلِ امر'
+          : word.posUrdu.includes('ماضی')
+            ? 'فعلِ ماضی'
+            : 'فعل'
       : word.posUrdu === 'اسمِ موصول'
         ? 'اسمِ موصول'
         : { noun: 'اسم', adjective: 'صفت', particle: 'حرف', pronoun: 'ضمیر' }[word.pos];
@@ -41,7 +44,7 @@ export function Reading({
       className="reading-card"
       id="reading"
       tabIndex={-1}
-      aria-label={`${strings.surahTitle} · ${strings.words}`}
+      aria-label={`${getSurahTitle(study.surah.number, language)} · ${strings.words}`}
       dir="rtl"
       lang="ur"
     >

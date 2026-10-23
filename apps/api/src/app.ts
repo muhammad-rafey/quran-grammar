@@ -2,7 +2,7 @@ import express, { type ErrorRequestHandler } from 'express';
 import cors from 'cors';
 import { existsSync } from 'node:fs';
 import { extname, resolve } from 'node:path';
-import { fatihahStudy, matchesWord, type PartOfSpeechFilter } from '@quran-grammar/core';
+import { studies, getStudy, matchesWord, type PartOfSpeechFilter } from '@quran-grammar/core';
 
 export interface AppOptions {
   allowedOrigins?: string[];
@@ -55,7 +55,9 @@ export function createApp(options: AppOptions = {}) {
   });
 
   app.get('/api/v1/surahs', (_req, res) => {
-    res.set('Cache-Control', 'public, max-age=300').json({ surahs: [fatihahStudy.surah] });
+    res
+      .set('Cache-Control', 'public, max-age=300')
+      .json({ surahs: studies.map((study) => study.surah) });
   });
 
   app.get('/api/v1/surahs/:surahId', (req, res) => {
@@ -65,13 +67,19 @@ export function createApp(options: AppOptions = {}) {
         .json(failure('INVALID_SURAH', 'Surah must be a positive numeric identifier.'));
       return;
     }
-    if (req.params.surahId !== '1') {
+    const study = getStudy(Number(req.params.surahId));
+    if (!study) {
       res
         .status(404)
-        .json(failure('SURAH_NOT_FOUND', 'Only Al-Fatihah is available in this edition.'));
+        .json(
+          failure(
+            'SURAH_NOT_FOUND',
+            'Study content for this Surah is not available in this edition.',
+          ),
+        );
       return;
     }
-    res.set('Cache-Control', 'public, max-age=300').json(fatihahStudy);
+    res.set('Cache-Control', 'public, max-age=300').json(study);
   });
 
   app.get('/api/v1/surahs/:surahId/words/:id', (req, res) => {
@@ -82,31 +90,40 @@ export function createApp(options: AppOptions = {}) {
       res.status(400).json(failure('INVALID_WORD', 'Word identifiers use surah:ayah:position.'));
       return;
     }
-    if (req.params.surahId !== '1') {
+    const study = getStudy(Number(req.params.surahId));
+    if (!study) {
       res
         .status(404)
-        .json(failure('SURAH_NOT_FOUND', 'Only Al-Fatihah is available in this edition.'));
+        .json(
+          failure(
+            'SURAH_NOT_FOUND',
+            'Study content for this Surah is not available in this edition.',
+          ),
+        );
       return;
     }
-    const word = fatihahStudy.words.find((entry) => entry.id === req.params.id);
+    const word = study.words.find((entry) => entry.id === req.params.id);
     if (!word) {
       res.status(404).json(failure('WORD_NOT_FOUND', 'This word occurrence is not available.'));
       return;
     }
     res.set('Cache-Control', 'public, max-age=300').json({
       word,
-      root: word.root ? fatihahStudy.roots[word.root] : null,
-      verbForm: fatihahStudy.verbForms[word.id] ?? null,
-      rules: fatihahStudy.rules.filter((rule) => word.ruleIds.includes(rule.id)),
+      root: word.root ? study.roots[word.root] : null,
+      verbForm: study.verbForms[word.id] ?? null,
+      rules: study.rules.filter((rule) => word.ruleIds.includes(rule.id)),
     });
   });
 
   app.get('/api/v1/search', (req, res) => {
     const query = req.query.q ?? '';
     const pos = req.query.pos ?? 'all';
+    const surahId = req.query.surah ?? '1';
     if (
       typeof query !== 'string' ||
       query.length > 120 ||
+      typeof surahId !== 'string' ||
+      !/^[1-9][0-9]{0,2}$/.test(surahId) ||
       typeof pos !== 'string' ||
       !filters.has(pos as PartOfSpeechFilter)
     ) {
@@ -115,15 +132,22 @@ export function createApp(options: AppOptions = {}) {
         .json(
           failure(
             'INVALID_SEARCH',
-            'Use one q string of at most 120 characters and a valid pos filter.',
+            'Use one q string of at most 120 characters, a valid pos filter, and one numeric surah identifier.',
           ),
         );
       return;
     }
-    const words = fatihahStudy.words.filter((word) =>
-      matchesWord(word, fatihahStudy, query, pos as PartOfSpeechFilter),
+    const study = getStudy(Number(surahId));
+    if (!study) {
+      res
+        .status(404)
+        .json(failure('SURAH_NOT_FOUND', 'Study content for this Surah is not available.'));
+      return;
+    }
+    const words = study.words.filter((word) =>
+      matchesWord(word, study, query, pos as PartOfSpeechFilter),
     );
-    res.json({ query: query.trim(), pos, total: words.length, words });
+    res.json({ query: query.trim(), pos, surah: study.surah.number, total: words.length, words });
   });
 
   // This precedes the SPA fallback so an unknown API route can never return HTML.

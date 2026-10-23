@@ -1,10 +1,12 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Host, Switch } from '@expo/ui';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   matchesWord,
+  getSurahTitle,
+  juzCatalog,
   type Ayah,
   type PartOfSpeechFilter,
   type StudyData,
@@ -21,8 +23,8 @@ import { QuickPractice } from './quick-practice';
 import { Settings } from './study-settings';
 
 export default function StudyScreen() {
-  const { study } = useStudy();
-  const { ui, count, labelStyle, controlRow, isUrdu } = useInterface();
+  const { study, selectedSurah, selectSurah } = useStudy();
+  const { ui, count, language, labelStyle, controlRow, isUrdu } = useInterface();
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const scroll = useRef<ScrollView>(null);
@@ -31,12 +33,19 @@ export default function StudyScreen() {
   const [mode, setMode] = useState<BrowseMode>('surah');
   const [browseMode, setBrowseMode] = useState<BrowseMode>('surah');
   const [picker, setPicker] = useState<PickerKind>(null);
-  const [ayah, setAyah] = useState(1);
+  const [ayahSelection, setAyahSelection] = useState({ surah: selectedSurah, number: 1 });
+  const ayah = ayahSelection.surah === selectedSurah ? ayahSelection.number : 1;
+  const setAyah = (number: number) => setAyahSelection({ surah: selectedSurah, number });
   const [selectedWord, setSelectedWord] = useState<string | null>(null);
   const [pos, setPos] = useState<PartOfSpeechFilter>('all');
   const [showMeanings, setShowMeanings] = useState(true);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  useEffect(() => {
+    ayahPositions.current = {};
+    scroll.current?.scrollTo({ y: 0, animated: false });
+  }, [selectedSurah]);
   if (!study) return <InitialDataState />;
+  const currentJuz = juzCatalog.find((item) => item.surahNumbers.includes(selectedSurah));
   const filters: { value: PartOfSpeechFilter; label: string }[] = [
     { value: 'all', label: ui.allWords },
     { value: 'noun', label: ui.noun },
@@ -105,9 +114,13 @@ export default function StudyScreen() {
             >
               <View style={{ flex: 1 }}>
                 <Label muted style={{ fontSize: 11, lineHeight: 18 }}>
-                  {mode === 'surah' ? ui.surah : `${ui.juz} ${count(1)} · ${ui.partialPreview}`}
+                  {mode === 'surah' || !currentJuz
+                    ? ui.surah
+                    : `${ui.juz} ${count(currentJuz.number)} · ${ui.partialPreview}`}
                 </Label>
-                <Label style={{ fontSize: 18, fontWeight: '700' }}>{ui.surahTitle}</Label>
+                <Label style={{ fontSize: 18, fontWeight: '700' }}>
+                  {getSurahTitle(selectedSurah, language)}
+                </Label>
               </View>
               <AppIcon name="down" size={17} />
             </Pressable>
@@ -197,9 +210,11 @@ export default function StudyScreen() {
         }}
       >
         {view !== 'settings' && <DataStatus />}
-        <View style={{ display: view === 'grammar' ? 'flex' : 'none' }}>
-          <QuickPractice onWord={openWord} />
-        </View>
+        {study.surah.number === 1 && (
+          <View style={{ display: view === 'grammar' ? 'flex' : 'none' }}>
+            <QuickPractice onWord={openWord} />
+          </View>
+        )}
         {view === 'words' ? (
           <>
             {filtersOpen && (
@@ -263,7 +278,7 @@ export default function StudyScreen() {
             )}
             {study.ayahs.map((item) => (
               <View
-                key={item.number}
+                key={`${study.surah.number}:${item.number}`}
                 onLayout={(event) => {
                   ayahPositions.current[item.number] = event.nativeEvent.layout.y;
                 }}
@@ -297,7 +312,7 @@ export default function StudyScreen() {
           <>
             {study.ayahs.map((item) => (
               <View
-                key={item.number}
+                key={`${study.surah.number}:${item.number}`}
                 onLayout={(event) => {
                   ayahPositions.current[item.number] = event.nativeEvent.layout.y;
                 }}
@@ -315,11 +330,16 @@ export default function StudyScreen() {
         kind={picker}
         mode={browseMode}
         ayah={ayah}
+        ayahCount={study.surah.ayahCount}
+        surah={selectedSurah}
         onMode={setBrowseMode}
         onClose={() => setPicker(null)}
-        onChoose={(number) => {
-          if (picker === 'chapter') setMode(browseMode);
-          chooseAyah(number);
+        onChooseAyah={chooseAyah}
+        onChooseSurah={(number) => {
+          setMode(browseMode);
+          setPicker(null);
+          selectSurah(number);
+          chooseAyah(1);
         }}
       />
     </View>

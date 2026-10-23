@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { formatCount, getUiStrings, isUiLanguage } from './interface';
 import {
@@ -12,7 +13,13 @@ import {
   fatihahPractice,
   gradePracticeAnswer,
   getPracticeProgress,
+  studies,
+  getStudy,
+  availableSurahNumbers,
+  getSurahTitle,
 } from './index';
+
+const expectedChapters = [1, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
 
 test('navigation catalogs distinguish the available lesson from future content and partial juz', () => {
   assert.deepEqual(
@@ -21,7 +28,7 @@ test('navigation catalogs distinguish the available lesson from future content a
   );
   assert.deepEqual(
     surahCatalog.filter((surah) => surah.available).map((surah) => surah.number),
-    [1],
+    expectedChapters,
   );
   assert.deepEqual(surahCatalog[0], {
     number: 1,
@@ -43,11 +50,148 @@ test('navigation catalogs distinguish the available lesson from future content a
   );
   assert.deepEqual(
     juzCatalog.filter((juz) => juz.available),
-    [{ number: 1, available: true, partial: true, previewSurahNumber: 1 }],
+    [
+      { number: 1, available: true, partial: true, previewSurahNumber: 1, surahNumbers: [1] },
+      {
+        number: 30,
+        available: true,
+        partial: true,
+        previewSurahNumber: 105,
+        surahNumbers: expectedChapters.slice(1),
+      },
+    ],
   );
   assert.ok(
-    juzCatalog.slice(1).every((juz) => !juz.partial && juz.previewSurahNumber === undefined),
+    juzCatalog
+      .filter((juz) => !juz.available)
+      .every(
+        (juz) =>
+          !juz.partial && juz.previewSurahNumber === undefined && juz.surahNumbers.length === 0,
+      ),
   );
+  assert.equal(getSurahTitle(114, 'en'), 'An-Nas');
+  assert.equal(getSurahTitle(114, 'ur'), 'الناس');
+});
+
+test('all eleven available lessons have complete occurrence, rule and phrase coverage', () => {
+  const counts = new Map([
+    [1, [7, 29]],
+    [105, [5, 23]],
+    [106, [4, 17]],
+    [107, [7, 25]],
+    [108, [3, 10]],
+    [109, [6, 26]],
+    [110, [3, 19]],
+    [111, [5, 23]],
+    [112, [4, 15]],
+    [113, [5, 23]],
+    [114, [6, 20]],
+  ]);
+  assert.deepEqual([...availableSurahNumbers], expectedChapters);
+  assert.deepEqual(
+    studies.map((study) => study.surah.number),
+    expectedChapters,
+  );
+  assert.equal(
+    studies.reduce((total, study) => total + study.ayahs.length, 0),
+    55,
+  );
+  assert.equal(
+    studies.reduce((total, study) => total + study.words.length, 0),
+    230,
+  );
+  const occurrences = studies.flatMap((study) => study.words.map((word) => word.id));
+  assert.equal(new Set(occurrences).size, 230);
+  for (const study of studies) {
+    const chapter = study.surah.number;
+    assert.equal(getStudy(chapter), study);
+    assert.equal(isStudyData(study), true, `Surah ${chapter}: complete schema and relationships`);
+    assert.deepEqual([study.ayahs.length, study.words.length], counts.get(chapter));
+    const covered = new Set(
+      study.ayahs.flatMap((ayah) => ayah.phrases.flatMap((phrase) => phrase.wordIds)),
+    );
+    for (const word of study.words) {
+      assert.ok(word.ruleIds.length > 0, `${word.id}: grammar rules`);
+      assert.ok(covered.has(word.id), `${word.id}: phrase context`);
+    }
+    assert.ok(
+      study.ayahs.every((ayah) => ayah.phrases.length > 0),
+      `Surah ${chapter}: phrase analysis`,
+    );
+    assert.ok(
+      !/https?:\/\//.test(JSON.stringify(study)),
+      'Source links stay in the repository audit',
+    );
+  }
+  for (const number of [0, 2, 104, 115, 105.5, NaN]) assert.equal(getStudy(number), undefined);
+});
+
+test('last ten surahs preserve every audited Uthmani word and occurrence boundary verbatim', () => {
+  const first = JSON.parse(
+    readFileSync(
+      new URL('../../../docs/source-audits/inventory-105-109.json', import.meta.url),
+      'utf8',
+    ),
+  ) as {
+    words: Array<{ id: string; arabic: string }>;
+  };
+  const last = JSON.parse(
+    readFileSync(
+      new URL('../../../docs/source-audits/inventory-110-114.json', import.meta.url),
+      'utf8',
+    ),
+  ) as Record<string, Array<[string, string]>>;
+  const inventory = [
+    ...first.words.map(({ id, arabic }) => [id, arabic]),
+    ...Object.values(last).flat(),
+  ];
+  assert.equal(inventory.length, 201);
+  assert.deepEqual(
+    studies
+      .filter((study) => study.surah.number >= 105)
+      .flatMap((study) => study.words.map((word) => [word.id, word.arabic])),
+    inventory,
+  );
+});
+
+test('new lessons preserve command particles, elided pronouns and non-triliteral roots', () => {
+  const word = (id: string) => {
+    const study = getStudy(Number(id.split(':')[0]));
+    const value = study?.words.find((entry) => entry.id === id);
+    assert.ok(value, id);
+    return value;
+  };
+  const command = word('106:3:1');
+  assert.equal(command.pos, 'verb');
+  assert.equal(command.root, 'ع ب د');
+  assert.match(command.morphologyUrdu, /مضارع/);
+  assert.match(command.morphologyUrdu, /مجزوم/);
+  assert.ok(
+    command.segments.some(
+      (segment) => /لام/.test(segment.roleUrdu) && /امر/.test(normalizeText(segment.roleUrdu)),
+    ),
+  );
+  assert.equal(word('106:1:2').root, null, 'Quraysh has no assigned QAC root');
+  assert.equal(word('107:2:3').root, 'د ع ع', 'repulse is not the root for supplicate');
+  assert.equal(word('107:4:1').root, null, 'wayl has no assigned QAC root');
+  const religion = word('109:6:4');
+  assert.equal(religion.root, 'د ي ن');
+  assert.match(`${religion.morphologyUrdu} ${religion.syntaxUrdu}`, /مرفوع|رفع/);
+  assert.match(`${religion.morphologyUrdu} ${religion.syntaxUrdu}`, /محذوف/);
+  const carrier = word('111:4:2');
+  assert.equal(carrier.pos, 'noun');
+  assert.match(carrier.morphologyUrdu, /منصوب/);
+  assert.equal(getStudy(111)!.verbForms[carrier.id], undefined);
+  assert.match(normalizeText(getStudy(111)!.verbForms['111:2:2'].baabUrdu), /افعال/);
+  const born = word('112:3:4');
+  assert.equal(born.root, 'و ل د');
+  assert.match(born.morphologyUrdu, /مضارع/);
+  assert.match(born.morphologyUrdu, /مجزوم/);
+  assert.match(born.morphologyUrdu, /مج[هہ]ول/);
+  const whisper = word('114:5:2');
+  assert.equal(whisper.root, 'و س و س');
+  assert.match(normalizeText(getStudy(114)!.verbForms[whisper.id].baabUrdu), /رباعي|فعللة/);
+  assert.equal(normalizeText(getStudy(114)!.verbForms[whisper.id].past), 'وسوس');
 });
 
 test('practice uses existing lesson words, verified grammar and real roots', () => {
@@ -206,6 +350,21 @@ test('downloaded data validation rejects malformed nested fields and broken rela
   const mutations: Array<(value: any) => void> = [
     (value) => {
       value.schemaVersion = 2;
+    },
+    (value) => {
+      value.surah.number = '1';
+    },
+    (value) => {
+      value.surah.number = 0;
+    },
+    (value) => {
+      value.surah.number = 115;
+    },
+    (value) => {
+      value.surah.number = 1.5;
+    },
+    (value) => {
+      value.surah.number = 112;
     },
     (value) => {
       value.surah.wordCount = 28;

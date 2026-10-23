@@ -22,7 +22,7 @@ docker compose -f compose.yaml -f compose.homeserver.yaml up -d --build --wait
 
 The override attaches the `quran-grammar` container to the existing external `apps` network. Add a dedicated hostname in the shared Caddyfile, forwarding to `quran-grammar:8080`, validate it, and reload Caddy. Preserve all existing routes. A Compose project created by CLI is visible in Portainer; Portainer may label it as externally created.
 
-The actual deployment includes untracked `.deployment/` files with the public hostname, its proxy configuration backup, and a targeted removal script. These operational files are excluded from the public repository. The previous static demo remains available as a rollback artifact until explicitly removed.
+The actual deployment includes untracked `.deployment/` files with the public hostname, its proxy configuration backup, and a targeted removal script. These operational files are excluded from the public repository. The previous static demo is retained separately as `~/quran-grammar-prototype`, with its Compose project, container and image using that same name. It has no public proxy route. Its removal script is scoped to that prototype. Previously shared lesson-specific hostnames redirect to the Quran Grammar hostname.
 
 ## Remove
 

@@ -1,25 +1,26 @@
 import { useEffect, useState } from 'react';
 import { isStudyData, type StudyData } from '@quran-grammar/core';
 
-export function useStudy() {
+export function useStudy(surahNumber: number) {
   const [data, setData] = useState<StudyData | null>(null);
-  const [error, setError] = useState(false);
+  const [failedSurah, setFailedSurah] = useState<number | null>(null);
   const [attempt, setAttempt] = useState(0);
   useEffect(() => {
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 15000);
     let active = true;
-    setError(false);
+    setFailedSurah(null);
     const base = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
-    fetch(`${base}/api/v1/surahs/1`, { signal: controller.signal })
+    fetch(`${base}/api/v1/surahs/${surahNumber}`, { signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) throw new Error('Study unavailable');
         const payload: unknown = await response.json();
-        if (!isStudyData(payload)) throw new Error('Invalid study');
+        if (!isStudyData(payload) || payload.surah.number !== surahNumber)
+          throw new Error('Invalid study');
         if (active) setData(payload);
       })
       .catch(() => {
-        if (active) setError(true);
+        if (active) setFailedSurah(surahNumber);
       })
       .finally(() => window.clearTimeout(timeout));
     return () => {
@@ -27,8 +28,12 @@ export function useStudy() {
       controller.abort();
       window.clearTimeout(timeout);
     };
-  }, [attempt]);
-  return { data, error, retry: () => setAttempt((value) => value + 1) };
+  }, [attempt, surahNumber]);
+  return {
+    data: data?.surah.number === surahNumber ? data : null,
+    error: failedSurah === surahNumber,
+    retry: () => setAttempt((value) => value + 1),
+  };
 }
 
 export function useMobileLayout() {

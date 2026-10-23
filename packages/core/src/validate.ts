@@ -19,7 +19,8 @@ export function isStudyData(value: unknown): value is StudyData {
   if (!record(value) || value.schemaVersion !== 1 || !record(value.surah)) return false;
   const surah = value.surah;
   if (
-    surah.number !== 1 ||
+    !integer(surah.number) ||
+    surah.number > 114 ||
     !fields(surah, ['nameUrdu', 'nameArabic']) ||
     !integer(surah.ayahCount) ||
     !integer(surah.wordCount)
@@ -71,7 +72,7 @@ export function isStudyData(value: unknown): value is StudyData {
       !integer(word.ayah) ||
       word.ayah > surah.ayahCount ||
       !integer(word.position) ||
-      word.id !== `1:${word.ayah}:${word.position}` ||
+      word.id !== `${surah.number}:${word.ayah}:${word.position}` ||
       !positions.has(word.pos as string) ||
       !(word.root === null || text(word.root)) ||
       !(word.lemma === null || text(word.lemma)) ||

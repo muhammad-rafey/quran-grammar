@@ -16,7 +16,7 @@ export { isStudyData } from './validate';
 export type { UiLanguage, UiStrings } from './interface';
 export { getUiStrings, formatCount, isUiLanguage } from './interface';
 export type { SurahCatalogEntry, JuzCatalogEntry } from './catalog';
-export { surahCatalog, juzCatalog } from './catalog';
+export { surahCatalog, juzCatalog, getSurahTitle } from './catalog';
 export type {
   PracticeOption,
   PracticeQuestion,
@@ -24,3 +24,6 @@ export type {
   PracticeProgress,
 } from './practice';
 export { fatihahPractice, gradePracticeAnswer, getPracticeProgress } from './practice';
+
+export { studies, getStudy } from './registry';
+export { availableSurahNumbers } from './availability';

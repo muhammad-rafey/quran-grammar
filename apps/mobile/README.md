@@ -23,21 +23,27 @@ local development.
 ## One backend
 
 Copy `.env.example` to `.env` and set `EXPO_PUBLIC_API_URL` to the Node API origin.
-The app requests `/api/v1/surahs/1`. Use your computer's LAN address when testing
+The app requests `/api/v1/surahs/:number` for the selected available chapter.
+It validates the response and chapter number before displaying it. Use your computer's LAN address when testing
 on a physical phone; `localhost` means the phone itself. Use HTTPS for a deployed
 API. The value is bundled into the client and must not contain credentials.
 
-Without an API URL, the app opens the clearly labelled bundled Al-Fatihah demo.
+Without an API URL, the app uses the bundled study registry, starting at Al-Fatihah.
+Offline status is shown in Settings; choosing another available surah loads its own lesson.
 When a configured API fails, the app shows retry and an explicit action to use the
-bundled lesson. A refresh failure keeps already loaded content visible.
+bundled lesson for the selected surah. A refresh failure keeps already loaded
+content visible. A chapter change clears the previous chapter while loading;
+cancelled requests cannot replace the newly selected lesson.
 
 ## Study flow
 
-- Tap any of the 29 words to see its meaning, segments, root meaning, morphology,
-  syntax, rules and related words. The four verbs also show باب، ماضی، مضارع، وزن.
-- Choose Surah or Juz in the native catalog sheet, then jump to ayahs 1–7 with
-  the ayah picker. The catalog lists all 114 surahs and 30 juz; unavailable entries
-  are disabled and labelled Coming soon. Juz 1 is explicitly an Al-Fatihah preview.
+- Tap a word to see its meaning, segments, root meaning, morphology,
+  syntax, rules and related words. Verbs also show باب، ماضی، مضارع، وزن.
+- Choose Surah or Juz in the native catalog sheet, then use the chapter's own
+  ayah picker. The catalog lists all 114 surahs and 30 juz; unavailable entries
+  are disabled and labelled Coming soon. Available chapters come from the shared
+  registry: Al-Fatihah and surahs 105–114. Juz 1 and Juz 30 are partial previews;
+  expand a Juz to choose one of its available surahs.
 - The compact Filter button reveals part-of-speech filters and the word-meaning
   toggle; full ayah context and translation stay visible. There is no search bar.
 - Study, Grammar and Settings use English controls by default. Settings switches
@@ -45,11 +51,14 @@ bundled lesson. A refresh failure keeps already loaded content visible.
   and leaves all Quranic Arabic and Urdu learning explanations unchanged.
 - Content connection status, the teaching draft notice and required attribution
   are grouped in Settings to keep the reader focused.
-- A floating bottom dock switches Study, Grammar and Settings. Grammar includes
-  three interactive practice questions with explanations, first-attempt scoring,
-  and restart, followed by phrase relationships and concise tafsir notes.
+- A floating bottom dock switches Study, Grammar and Settings. Al-Fatihah's
+  Grammar view includes three interactive practice questions with explanations,
+  first-attempt scoring and restart. Every available chapter has its own phrase
+  relationships and concise tafsir notes; other chapters do not show Al-Fatihah's quiz.
 - Native back, dismissal gestures and the close/return controls leave the detail
   screen. Previous/next stay within the current surah.
+- A word route selects the chapter encoded in its occurrence ID. Malformed,
+  unavailable and nonexistent occurrence links show a return-to-study action.
 
 Amiri Quran, Noto Naskh Arabic and Noto Nastaliq Urdu are bundled locally, with
 their SIL Open Font License notices under `assets/fonts/`.
@@ -67,7 +76,7 @@ an installable APK/IPA. Device testing and store signing are separate steps.
 Before store publication, confirm the app identifiers, replace the scaffold app
 icon, and complete scholar review of the teaching draft.
 
-### Verification on 2026-10-23
+### Previous redesign verification on 2026-10-23
 
 - SDK compatibility check and TypeScript check passed with React Native 0.86.3.
 - iOS and Android production JavaScript/asset exports passed after the final UI
@@ -100,3 +109,30 @@ icon, and complete scholar review of the teaching draft.
   LTR and RTL native layouts. No global RTL setting is changed. The native switch
   and Android app theme explicitly use the app's light color scheme.
 - No store publication was performed.
+
+### Multi-surah verification on 2026-10-23
+
+- TypeScript, all four native regression tests, and the installed Expo 57 ESLint
+  configuration passed (16 source files, zero errors and warnings).
+- Shared-core tests cover all 11 lessons, all 230 word occurrences, the exact
+  Arabic inventory for the 201 added words, complete rule/phrase references,
+  availability, and the identified grammar edge cases. These are technical
+  checks, not a scholarly review of the AI-assisted Urdu draft.
+- On iPhone 17 Pro / iOS 26.5 with Expo Go 57.0.9, selected Juz 30, expanded its
+  partial preview, and loaded An-Nas. Its selector offered exactly six ayahs;
+  jumping to ayah 5 opened the quadriliteral verb analysis with the correct root,
+  form, and 14/20 occurrence counter. Closing returned to An-Nas. Grammar view
+  showed the selected chapter's syntax without Fatihah-only practice.
+- Fixed a native sheet height issue that left the last catalog row beyond the
+  visible scroll area. Verified Juz 30 expansion after the fix. Available lessons
+  appear first in both catalogs; canonical catalog numbering is unchanged.
+- Stopped the local API, opened the Al-Ikhlas occurrence deep link, and verified
+  the error screen required choosing the saved lesson. The saved lesson displayed
+  the passive verb analysis and correct 10/15 counter. Settings showed Offline
+  content and the AI-assisted/scholar-review-pending notice. After restoring the
+  API, Try again changed the status to Connected.
+- Installed the final testing APK on Pixel 7 / Android 16 and cold-launched it
+  with Metro stopped. The reader rendered Arabic and Urdu correctly, retaining
+  the saved Urdu interface preference. App-specific logs showed no JavaScript or
+  Android fatal errors. Android tap-through flows remain unverified because the
+  desktop automation interface cannot attach to the emulator window.

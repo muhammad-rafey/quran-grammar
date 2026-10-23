@@ -115,7 +115,7 @@ export function DataStatus() {
   );
 }
 
-export function InitialDataState() {
+export function InitialDataState({ pending = false }: { pending?: boolean }) {
   const { loading, retry, useBundled } = useStudy();
   const { ui, labelStyle } = useInterface();
   return (
@@ -128,7 +128,7 @@ export function InitialDataState() {
         backgroundColor: colors.background,
       }}
     >
-      {loading ? (
+      {loading || pending ? (
         <>
           <ActivityIndicator size="large" color={colors.primary} />
           <Label style={{ textAlign: 'center' }}>{ui.loading}</Label>

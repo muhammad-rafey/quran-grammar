@@ -24,7 +24,7 @@ Expo SDK 57 requires Reanimated 4.5.1 with Worklets 0.10.1. The root override ke
 
 ## API configuration
 
-The build reads Expo's production `.env` files in `apps/mobile/`; an existing shell `EXPO_PUBLIC_API_URL` takes precedence. Use an HTTPS API origin for an APK that connects to a deployed backend. Public client environment values are bundled into the APK and must not contain credentials. If the API origin is unset, the app uses its bundled Al-Fatihah lesson. If a configured backend is unavailable, the app offers retry and the saved lesson.
+The build reads Expo's production `.env` files in `apps/mobile/`; an existing shell `EXPO_PUBLIC_API_URL` takes precedence. Use an HTTPS API origin for an APK that connects to a deployed backend. Public client environment values are bundled into the APK and must not contain credentials. If the API origin is unset, the app uses its bundled eleven-Surah edition. If a configured backend is unavailable, the app offers retry and the matching saved lesson.
 
 To explicitly build the offline edition regardless of dotenv configuration, on macOS/Linux:
 

@@ -135,3 +135,66 @@ test('production SPA fallback excludes API paths and missing static files', asyn
   });
   assert.equal(configured.headers.get('access-control-allow-origin'), 'https://grammar.example');
 });
+
+test('every published chapter and word detail stays within its own lesson', async () => {
+  const expected = [
+    [1, 7, 29],
+    [105, 5, 23],
+    [106, 4, 17],
+    [107, 7, 25],
+    [108, 3, 10],
+    [109, 6, 26],
+    [110, 3, 19],
+    [111, 5, 23],
+    [112, 4, 15],
+    [113, 5, 23],
+    [114, 6, 20],
+  ];
+  const list = await (await fetch(`${base}/api/v1/surahs`)).json();
+  assert.deepEqual(
+    list.surahs.map((surah: { number: number }) => surah.number),
+    expected.map(([number]) => number),
+  );
+  for (const [number, ayahs, words] of expected) {
+    const response = await fetch(`${base}/api/v1/surahs/${number}`);
+    assert.equal(response.status, 200);
+    const data = await response.json();
+    assert.equal(isStudyData(data), true, `Surah ${number}`);
+    assert.equal(data.surah.number, number);
+    assert.equal(data.ayahs.length, ayahs);
+    assert.equal(data.words.length, words);
+    for (const word of data.words) {
+      const detail = await (
+        await fetch(`${base}/api/v1/surahs/${number}/words/${encodeURIComponent(word.id)}`)
+      ).json();
+      assert.deepEqual(detail.word, word);
+      assert.deepEqual(detail.root, word.root ? data.roots[word.root] : null);
+      assert.deepEqual(detail.verbForm, data.verbForms[word.id] ?? null);
+      assert.deepEqual(
+        detail.rules.map((rule: { id: string }) => rule.id).sort(),
+        [...word.ruleIds].sort(),
+      );
+    }
+  }
+});
+
+test('chapter-scoped search never returns another chapter and rejects invalid scope', async () => {
+  const data = await (await fetch(`${base}/api/v1/search?surah=114&pos=verb`)).json();
+  assert.equal(data.surah, 114);
+  assert.ok(data.words.length > 0);
+  assert.ok(
+    data.words.every(
+      (word: { id: string; pos: string }) => word.id.startsWith('114:') && word.pos === 'verb',
+    ),
+  );
+  for (const [path, status] of [
+    ['/api/v1/surahs/105/words/1%3A1%3A1', 404],
+    ['/api/v1/surahs/1/words/105%3A1%3A1', 404],
+    ['/api/v1/surahs/115', 404],
+    ['/api/v1/surahs/0', 400],
+    ['/api/v1/search?surah=2', 404],
+    ['/api/v1/search?surah=105&surah=106', 400],
+    ['/api/v1/search?surah=nope', 400],
+  ] as const)
+    assert.equal((await fetch(`${base}${path}`)).status, status, path);
+});

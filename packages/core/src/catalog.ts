@@ -1,3 +1,5 @@
+import { availableSurahNumbers } from './availability';
+import type { UiLanguage } from './interface';
 /** Factual chapter names checked against Quran.com API v4 on 2026-10-23.
  * Source and scope are recorded in docs/content-provenance.md.
  */
@@ -15,6 +17,7 @@ export interface JuzCatalogEntry {
   /** A partial preview must never be presented as the entire juz. */
   readonly partial: boolean;
   readonly previewSurahNumber?: number;
+  readonly surahNumbers: readonly number[];
 }
 
 const chapterNames: ReadonlyArray<readonly [number, string, string]> = [
@@ -134,19 +137,32 @@ const chapterNames: ReadonlyArray<readonly [number, string, string]> = [
   [114, 'الناس', 'An-Nas'],
 ];
 
-/** This is navigation metadata; lesson content is available only for Al-Fatihah. */
+/** Available chapters are backed by complete bundled lessons. */
 export const surahCatalog: readonly SurahCatalogEntry[] = chapterNames.map(
   ([number, nameArabic, nameEnglish]) => ({
     number,
     nameArabic,
     nameEnglish,
-    available: number === 1,
+    available: availableSurahNumbers.includes(number),
   }),
 );
 
-/** Juz 1 opens only the Al-Fatihah preview; the remainder is not bundled. */
-export const juzCatalog: readonly JuzCatalogEntry[] = Array.from({ length: 30 }, (_, index) =>
-  index === 0
-    ? { number: 1, available: true, partial: true, previewSurahNumber: 1 }
-    : { number: index + 1, available: false, partial: false },
-);
+/** Juz previews list only the chapters for which study content is available. */
+export const juzCatalog: readonly JuzCatalogEntry[] = Array.from({ length: 30 }, (_, index) => {
+  const number = index + 1;
+  const surahNumbers = availableSurahNumbers.filter((surah) =>
+    number === 1 ? surah === 1 : number === 30 && surah >= 78,
+  );
+  return {
+    number,
+    available: surahNumbers.length > 0,
+    partial: surahNumbers.length > 0,
+    previewSurahNumber: surahNumbers[0],
+    surahNumbers,
+  };
+});
+
+export function getSurahTitle(number: number, language: UiLanguage): string {
+  const chapter = surahCatalog.find((surah) => surah.number === number);
+  return chapter ? (language === 'ur' ? chapter.nameArabic : chapter.nameEnglish) : String(number);
+}

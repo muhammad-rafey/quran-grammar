@@ -15,7 +15,7 @@ export function Grammar({
   const uiDirection = language === 'ur' ? 'rtl' : 'ltr';
   return (
     <section className="grammar-view" aria-label={strings.grammar} dir="rtl" lang="ur">
-      <Practice language={language} />
+      {study.surah.number === 1 && <Practice language={language} />}
       {study.ayahs.map((ayah) => (
         <article className="grammar-card" key={ayah.number} id={`grammar-ayah-${ayah.number}`}>
           <header>

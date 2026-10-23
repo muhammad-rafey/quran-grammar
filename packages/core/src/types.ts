@@ -63,7 +63,7 @@ export interface VerbForm {
 export interface StudyData {
   schemaVersion: 1;
   surah: {
-    number: 1;
+    number: number;
     nameUrdu: string;
     nameArabic: string;
     ayahCount: number;

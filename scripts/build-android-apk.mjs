@@ -122,7 +122,7 @@ async function main() {
   console.log(
     apiUrl
       ? 'Bundling with the configured API origin.'
-      : 'Bundling the offline Al-Fatihah lesson; no API origin is configured.',
+      : 'Bundling the offline Quran Grammar lessons; no API origin is configured.',
   );
   const abis = process.env.APK_ABIS || 'arm64-v8a,x86_64';
   if (!abis.split(',').every((abi) => ['arm64-v8a', 'armeabi-v7a', 'x86_64', 'x86'].includes(abi)))

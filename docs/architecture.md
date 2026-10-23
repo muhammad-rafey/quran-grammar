@@ -4,7 +4,7 @@
 
 Use npm workspaces with React/Vite for web, Expo React Native for Android/iOS, and one Express service on Node.js 24. Share typed study content, normalization, searching, schema validation, interface strings and numeral formatting in `@quran-grammar/core`. Keep DOM UI and native UI separate so each uses appropriate layout and accessibility primitives.
 
-The Node service returns the complete small Al-Fatihah study dataset. Search and word inspection run locally after loading, keeping interactions immediate. Stable `surah:ayah:word` IDs preserve contextual differences even when a word is repeated. The native app bundles a clearly labelled copy for offline study; the server remains the source for connected operation.
+The Node service returns a complete chapter from a shared eleven-Surah registry (1 and 105–114). Clients request the selected chapter, validate the chapter number and data relationships, and cancel obsolete requests so content from another chapter cannot appear under the selected title. Search and word inspection run locally after loading, keeping interactions immediate. Stable `surah:ayah:word` IDs preserve contextual differences even when a word is repeated. The native app bundles a clearly labelled copy for offline study; the server remains the source for connected operation.
 
 ## Why React/Vite for web
 
@@ -14,13 +14,13 @@ References for the framework decision: [Vite guide](https://vite.dev/guide/), [N
 
 ## API boundary
 
-The initial service is read-only. It offers health, surah inventory, a complete surah, a word detail, and bounded search endpoints under `/api`. Unknown API routes return JSON 404s and never fall through to the web app. CORS allows configured origins and requests without an Origin header, as used by native clients. No cookies or credentials are needed.
+The initial service is read-only. It offers health, surah inventory, a complete surah, a word detail, and bounded chapter-scoped search endpoints under `/api`. Unknown API routes return JSON 404s and never fall through to the web app. CORS allows configured origins and requests without an Origin header, as used by native clients. No cookies or credentials are needed. Search accepts `surah=105`, for example, and defaults to Surah 1 for compatibility. Unpublished chapters return JSON 404 responses.
 
 No database is necessary for this versioned, read-only seed dataset. Its Urdu teaching explanations await scholarly review. A future content database should preserve occurrence IDs, distinguish root entries from contextual word meanings, and record scholarly review/version history. Authoring and review need their own authorization model before exposing writes.
 
 ## UI behavior
 
-Mobile web retains full verse context and opens word analysis in a dismissible native HTML dialog. The selected word header and next/previous controls remain visible while the details scroll. Desktop uses a side inspector. Search highlights matches without deleting words from Quranic verses. Filters are collapsed initially; their button reveals word-type selection, the word-meaning toggle and verse shortcuts. Color is supplemented by text labels; mobile touch targets, keyboard focus, RTL text and reduced motion are supported.
+Mobile web retains full verse context and opens word analysis in a dismissible native HTML dialog. The selected word header and next/previous controls remain visible while the details scroll. Desktop uses a side inspector. Part-of-speech filters highlight matches without deleting words from Quranic verses. Filters are collapsed initially; their button reveals word-type selection and the word-meaning toggle. Search remains available through the API but is hidden in both interfaces. Surah/Juz and ayah selectors sit above the reader. Juz selections expose only the included chapters. Color is supplemented by text labels; mobile touch targets, keyboard focus, RTL text and reduced motion are supported.
 
 Study, Grammar and Settings use English interface text and ASCII digits by default. Settings allows Urdu interface text and Urdu digits. The shared `getUiStrings`, `formatCount` and `isUiLanguage` helpers keep the two clients consistent. The web client stores its preference in localStorage; the native client uses AsyncStorage. Preferences are local to that browser or app installation, with no account synchronization. Only supported saved values are accepted; a missing or invalid value falls back to English, and storage failures are reported.
 

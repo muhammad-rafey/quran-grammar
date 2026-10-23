@@ -12,6 +12,9 @@ COPY packages/core packages/core
 RUN npm run build -w @quran-grammar/web && npm run build -w @quran-grammar/api
 
 FROM node:24-alpine AS runtime
+LABEL org.opencontainers.image.title="Quran Grammar" \
+      org.opencontainers.image.description="Quran grammar study with Urdu explanations" \
+      org.opencontainers.image.source="https://github.com/muhammad-rafey/quran-grammar"
 WORKDIR /app
 ENV NODE_ENV=production PORT=8080 HOST=0.0.0.0 WEB_DIST=/app/apps/web/dist
 COPY package.json package-lock.json ./
