@@ -1,8 +1,9 @@
 import { createContext, use, useEffect, useRef, useState, type ReactNode } from 'react';
-import { ActivityIndicator, View, type TextStyle, type ViewStyle } from 'react-native';
+import { ActivityIndicator, I18nManager, View, type TextStyle, type ViewStyle } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { formatCount, getUiStrings, isUiLanguage, type UiLanguage } from '@quran-grammar/core';
 import { colors } from '@/theme/tokens';
+import { physicalRowDirection } from '@/theme/physical-row';
 
 const languageKey = 'quran-grammar:interface-language';
 type Preferences = {
@@ -78,7 +79,7 @@ export function useInterface() {
     writingDirection: isUrdu ? 'rtl' : 'ltr',
   };
   const controlRow: ViewStyle = {
-    flexDirection: isUrdu ? 'row-reverse' : 'row',
+    flexDirection: physicalRowDirection(isUrdu, I18nManager.isRTL),
     alignItems: 'center',
     gap: 10,
   };

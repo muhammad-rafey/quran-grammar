@@ -8,7 +8,7 @@
     "icon": "./assets/icon.png",
     "ios": { "supportsTablet": true, "bundleIdentifier": "org.qurangrammar.app" },
     "android": { "package": "org.qurangrammar.app" },
-    "plugins": ["expo-router", "expo-font"],
+    "plugins": ["expo-router", "expo-font", "expo-system-ui"],
     "experiments": { "typedRoutes": true }
   }
 }

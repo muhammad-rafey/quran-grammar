@@ -54,6 +54,7 @@ their SIL Open Font License notices under `assets/fonts/`.
 ```sh
 npm run typecheck --workspace=@quran-grammar/mobile
 npm run export --workspace=@quran-grammar/mobile
+npm test --workspace=@quran-grammar/mobile
 ```
 
 An export verifies native JavaScript and asset bundling, not device rendering or
@@ -72,7 +73,15 @@ icon, and complete scholar review of the teaching draft.
   the grammar view.
 - Checked English/Urdu controls and counts; saved Urdu persisted across reload.
   Restored English afterward. Learning text stayed unchanged.
+- Checked that hiding word meanings preserves the full ayah translation and
+  restored the default collapsed filter panel afterward.
 - Simulated an API 503 using a temporary local proxy, observed the error/retry
   screen, restored the real backend and verified that retry loaded the lesson.
-- No Android device/emulator was connected; Android has bundle validation only.
-  No store build or publication was performed.
+- Launched Expo Go on the existing Pixel 7 / Android 16 emulator and checked
+  the first reader screen, Arabic/Urdu rendering and application logs. Android
+  interaction flows still need a manual pass because the desktop automation
+  interface cannot attach to the emulator window.
+- Regression checks cover Quran and English control row direction under both
+  LTR and RTL native layouts. No global RTL setting is changed. The native switch
+  and Android app theme explicitly use the app's light color scheme.
+- No store publication was performed.

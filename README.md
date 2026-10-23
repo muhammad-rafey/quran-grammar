@@ -32,13 +32,24 @@ Use Node.js 24 and npm. From the repository root:
 
 ```sh
 npm ci
-npm run dev
+npm run dev:web
 ```
 
 Web: http://localhost:5173 · API: http://localhost:4000/api/health.
 Vite proxies `/api` to the Node server; no web environment file is needed locally.
 
-For Android/iOS:
+Every command below runs from the repository root:
+
+| Command                     | Opens or creates                                 |
+| --------------------------- | ------------------------------------------------ |
+| `npm run dev:web`           | Web app and Node API                             |
+| `npm run dev:android`       | Android emulator in Expo Go, with the Node API   |
+| `npm run dev:ios`           | iPhone simulator in Expo Go, with the Node API   |
+| `npm run build:android:apk` | Standalone test APK at `build/quran-grammar.apk` |
+
+The simulator commands reuse a healthy Quran Grammar API already running on port 4000, otherwise start one. They stop only the processes they started when you press Ctrl+C. Android requires an Android Studio emulator; iPhone requires macOS, Xcode and an available iOS simulator. Both use an SDK 57-compatible Expo Go client, which supports the native modules currently used by this project. A custom development client can be added when app-specific native modules or native configuration testing require it.
+
+For a physical phone or a different API origin:
 
 ```sh
 cp apps/mobile/.env.example apps/mobile/.env
@@ -47,6 +58,8 @@ npm run dev:mobile
 ```
 
 Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app explicitly offers its bundled Al-Fatihah edition. See [native setup](apps/mobile/README.md).
+
+The APK command builds locally with JDK 17+, Android SDK Platform 36 and Build-Tools 36. It bundles JavaScript and fonts, so the installed APK does not require Metro or Expo Go. It uses Expo's debug signing key for local testing, **not a Play Store release**. The first build generates the ignored Android project and downloads native build dependencies. Later builds reuse it without replacing native files. See [APK build setup and options](docs/android-build.md).
 
 ## Verify
 

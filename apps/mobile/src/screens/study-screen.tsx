@@ -204,6 +204,7 @@ export default function StudyScreen() {
                 <View style={{ ...controlRow, justifyContent: 'space-between', gap: 12 }}>
                   <Host
                     matchContents
+                    colorScheme="light"
                     layoutDirection={isUrdu ? 'rightToLeft' : 'leftToRight'}
                     seedColor={colors.primary}
                   >
@@ -272,11 +273,9 @@ export default function StudyScreen() {
                     />
                   ))}
               </View>
-              {showMeanings && (
-                <View style={{ borderTopWidth: 1, borderColor: colors.border, paddingTop: 10 }}>
-                  <Paragraph>{ayah.translationUrdu}</Paragraph>
-                </View>
-              )}
+              <View style={{ borderTopWidth: 1, borderColor: colors.border, paddingTop: 10 }}>
+                <Paragraph>{ayah.translationUrdu}</Paragraph>
+              </View>
             </View>
           ))}
         </>

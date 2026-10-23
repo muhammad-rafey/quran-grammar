@@ -1,3 +1,6 @@
+import { I18nManager } from 'react-native';
+import { physicalRowDirection } from './physical-row';
+
 export const colors = {
   background: '#f5f7f3',
   paper: '#ffffff',
@@ -47,7 +50,11 @@ export const type = {
   },
 } as const;
 
-export const row = { flexDirection: 'row-reverse', alignItems: 'center', gap: 10 } as const;
+export const row = {
+  flexDirection: physicalRowDirection(true, I18nManager.isRTL),
+  alignItems: 'center',
+  gap: 10,
+} as const;
 export const card = {
   backgroundColor: colors.paper,
   borderWidth: 1,
