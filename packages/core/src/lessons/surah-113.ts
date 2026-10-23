@@ -5,8 +5,8 @@ export const study113: StudyData = {
   schemaVersion: 1,
   surah: {
     number: 113,
-    nameUrdu: 'الفلق',
-    nameArabic: 'الفلق',
+    nameUrdu: 'سورۃ الفلق',
+    nameArabic: 'سُورَةُ الْفَلَقِ',
     ayahCount: 5,
     wordCount: 23,
   },

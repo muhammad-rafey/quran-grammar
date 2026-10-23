@@ -136,3 +136,7 @@ icon, and complete scholar review of the teaching draft.
   the saved Urdu interface preference. App-specific logs showed no JavaScript or
   Android fatal errors. Android tap-through flows remain unverified because the
   desktop automation interface cannot attach to the emulator window.
+- With Metro still stopped, opened the installed Android app through the An-Nas
+  word deep link against the public API. It rendered يُوَسْوِسُ, the quadriliteral
+  root و س و س, root meaning, dictionary entry, and the correct 14/20 counter.
+  App-specific logs remained free of JavaScript and Android fatal errors.
