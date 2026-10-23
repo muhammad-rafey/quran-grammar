@@ -19,7 +19,9 @@ The web app uses React with Vite because the current product is an interactive s
 - 18 root meanings and four verb paradigms, including باب، ماضی، مضارع and patterns.
 - Morphology, syntax, dictionary explanations, 18 rules, and related-root navigation.
 - 14 phrase constructions and concise tafsir notes across seven ayahs.
-- Diacritic-insensitive Arabic/Urdu search, with part-of-speech filters, meaning toggle and verse shortcuts behind a collapsed Filters button.
+- Floating bottom navigation, a Surah/Juz catalog, and an ayah selector. Al-Fatihah is available; the remaining content is marked Coming soon. Juz 1 is a partial preview of Al-Fatihah only.
+- Part-of-speech filters and the meaning toggle stay behind a collapsed Filters button. Search is currently hidden in both apps; the shared API retains its search endpoint.
+- Three short grammar practice questions, explanations and an honest attempt score, with a restart option.
 - English interface and counts by default; Settings saves an English/Urdu preference on the current browser or device. Language changes affect interface text and numbers only.
 - Mobile web detail sheet with focus trapping, dismiss/back controls, and preserved reading position; desktop side inspector.
 - Native study and word-detail screens, bundled fonts, explicit offline content option, and API loading/error/retry states.
@@ -70,7 +72,7 @@ npx playwright install chromium
 npm run test:e2e        # desktop/mobile browser interactions and API failure recovery
 ```
 
-GitHub Actions runs these checks on pushes to main and pull requests. A successful native bundle is not a signed store build or a device test. Store signing, store accounts and submissions are not configured.
+GitHub Actions runs these checks on pushes to main and pull requests. You can also run the Verify workflow manually with a public `base_url` to check a deployed app from GitHub's cloud runner. A successful native bundle is not a signed store build or a device test. Store signing, store accounts and submissions are not configured.
 
 ## Docker
 

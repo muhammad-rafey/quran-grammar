@@ -58,7 +58,7 @@ function AppStack() {
         headerBackButtonDisplayMode: 'minimal',
       }}
     >
-      <Stack.Screen name="index" options={{ title: ui.surahTitle }} />
+      <Stack.Screen name="index" options={{ title: ui.surahTitle, headerShown: false }} />
       <Stack.Screen name="word/[id]" options={{ title: ui.wordStudy, presentation: 'modal' }} />
     </Stack>
   );

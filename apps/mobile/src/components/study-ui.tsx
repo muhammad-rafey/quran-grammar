@@ -29,9 +29,11 @@ export function Action({
         minHeight: 46,
         paddingHorizontal: 16,
         paddingVertical: 9,
-        borderRadius: 12,
+        borderRadius: 16,
+        borderBottomWidth: pressed ? 1 : 4,
+        borderColor: quiet ? colors.edge : colors.primaryEdge,
         backgroundColor: quiet ? colors.wash : colors.primary,
-        opacity: disabled ? 0.4 : pressed ? 0.75 : 1,
+        opacity: disabled ? 0.4 : pressed ? 0.85 : 1,
         justifyContent: 'center',
       })}
     >

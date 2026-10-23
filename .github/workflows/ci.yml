@@ -3,6 +3,12 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: 'Optional public deployment URL for browser checks; leave blank to test locally'
+        required: false
+        type: string
 permissions:
   contents: read
 jobs:
@@ -20,3 +26,5 @@ jobs:
       - run: npm run build:mobile
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
+        env:
+          BASE_URL: ${{ inputs.base_url }}

@@ -1,7 +1,122 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { formatCount, getUiStrings, isUiLanguage } from './interface';
-import { fatihahStudy, isStudyData, matchesWord, normalizeText, urduNumber } from './index';
+import {
+  fatihahStudy,
+  isStudyData,
+  matchesWord,
+  normalizeText,
+  urduNumber,
+  surahCatalog,
+  juzCatalog,
+  fatihahPractice,
+  gradePracticeAnswer,
+  getPracticeProgress,
+} from './index';
+
+test('navigation catalogs distinguish the available lesson from future content and partial juz', () => {
+  assert.deepEqual(
+    surahCatalog.map((surah) => surah.number),
+    Array.from({ length: 114 }, (_, i) => i + 1),
+  );
+  assert.deepEqual(
+    surahCatalog.filter((surah) => surah.available).map((surah) => surah.number),
+    [1],
+  );
+  assert.deepEqual(surahCatalog[0], {
+    number: 1,
+    nameArabic: 'الفاتحة',
+    nameEnglish: 'Al-Fatihah',
+    available: true,
+  });
+  assert.equal(surahCatalog[113].nameArabic, 'الناس');
+  assert.equal(surahCatalog[113].nameEnglish, 'An-Nas');
+  assert.ok(
+    surahCatalog.every(
+      (surah) => /[\u0600-\u06ff]/.test(surah.nameArabic) && surah.nameEnglish.trim(),
+    ),
+  );
+  assert.equal(new Set(surahCatalog.map((surah) => surah.nameArabic)).size, 114);
+  assert.deepEqual(
+    juzCatalog.map((juz) => juz.number),
+    Array.from({ length: 30 }, (_, i) => i + 1),
+  );
+  assert.deepEqual(
+    juzCatalog.filter((juz) => juz.available),
+    [{ number: 1, available: true, partial: true, previewSurahNumber: 1 }],
+  );
+  assert.ok(
+    juzCatalog.slice(1).every((juz) => !juz.partial && juz.previewSurahNumber === undefined),
+  );
+});
+
+test('practice uses existing lesson words, verified grammar and real roots', () => {
+  assert.equal(fatihahPractice.length, 3);
+  assert.equal(new Set(fatihahPractice.map((question) => question.id)).size, 3);
+  for (const question of fatihahPractice) {
+    assert.ok(fatihahStudy.words.some((word) => word.id === question.wordId));
+    assert.equal(new Set(question.options.map((option) => option.id)).size, 3);
+    assert.equal(
+      question.options.filter((option) => gradePracticeAnswer(question, option.id)).length,
+      1,
+    );
+    assert.equal(gradePracticeAnswer(question, ''), null);
+    assert.equal(gradePracticeAnswer(question, 'not-an-option'), null);
+  }
+  const verbQuestion = fatihahPractice[0];
+  for (const option of verbQuestion.options) {
+    const word = fatihahStudy.words.find((entry) => entry.id === option.id)!;
+    assert.equal(option.text, word.arabic);
+    assert.equal(gradePracticeAnswer(verbQuestion, option.id), word.pos === 'verb');
+  }
+  assert.ok(
+    fatihahStudy.words
+      .find((word) => word.id === fatihahPractice[1].wordId)!
+      .ruleIds.includes('imperative'),
+  );
+  const rootQuestion = fatihahPractice[2];
+  const targetRoot = fatihahStudy.words.find((word) => word.id === rootQuestion.wordId)!.root;
+  for (const option of rootQuestion.options) {
+    assert.ok(Object.hasOwn(fatihahStudy.roots, option.text));
+    assert.equal(gradePracticeAnswer(rootQuestion, option.id), option.text === targetRoot);
+  }
+});
+
+test('practice progress counts valid attempts, corrections and completion without changing answers', () => {
+  assert.deepEqual(getPracticeProgress(fatihahPractice, {}), {
+    answered: 0,
+    total: 3,
+    correct: 0,
+    complete: false,
+  });
+  const answers = Object.freeze({
+    'identify-verb': '1:2:1',
+    'identify-imperative': 'invalid',
+    unknown: 'value',
+  });
+  assert.deepEqual(getPracticeProgress(fatihahPractice, answers), {
+    answered: 1,
+    total: 3,
+    correct: 0,
+    complete: false,
+  });
+  const completed = Object.fromEntries(
+    fatihahPractice.map((question) => [question.id, question.correctOptionId]),
+  );
+  assert.deepEqual(getPracticeProgress(fatihahPractice, completed), {
+    answered: 3,
+    total: 3,
+    correct: 3,
+    complete: true,
+  });
+  assert.deepEqual(getPracticeProgress([], {}), {
+    answered: 0,
+    total: 0,
+    correct: 0,
+    complete: false,
+  });
+  assert.equal(answers['identify-verb'], '1:2:1');
+});
 
 test('interface preferences accept only supported persisted language values', () => {
   assert.equal(isUiLanguage('en'), true);

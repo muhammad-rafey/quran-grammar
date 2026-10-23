@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { BookOpen, Layers3, Search, Settings, SlidersHorizontal, X } from 'lucide-react';
+import { BookOpen, ChevronDown, Settings, SlidersHorizontal, Sparkles, X } from 'lucide-react';
 import {
   matchesWord,
   formatCount,
@@ -7,6 +7,7 @@ import {
   type PartOfSpeechFilter,
 } from '@quran-grammar/core';
 import { Grammar } from './components/grammar';
+import { CollectionPicker, type CollectionMode } from './components/collection-picker';
 import { Reading } from './components/reading';
 import { WordDetail } from './components/word-detail';
 import { useMobileLayout, useStudy } from './use-study';
@@ -30,22 +31,22 @@ export function App() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [selectedId, setSelectedId] = useState('1:1:1');
   const [view, setView] = useState<'words' | 'grammar' | 'settings'>('words');
-  const [query, setQuery] = useState('');
+  const [collectionMode, setCollectionMode] = useState<CollectionMode>('surah');
+  const [activeAyah, setActiveAyah] = useState(1);
   const [pos, setPos] = useState<PartOfSpeechFilter>('all');
   const [meanings, setMeanings] = useState(true);
   const [sheetOpen, setSheetOpen] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
-  const search = useRef<HTMLInputElement>(null);
   const trigger = useRef<HTMLElement | null>(null);
   const selected = study?.words.find((word) => word.id === selectedId) || study?.words[0];
   const matches = useMemo(
     () =>
       new Set(
-        study?.words.filter((word) => matchesWord(word, study, query, pos)).map((word) => word.id),
+        study?.words.filter((word) => matchesWord(word, study, '', pos)).map((word) => word.id),
       ),
-    [study, query, pos],
+    [study, pos],
   );
-  const filtering = !!query.trim() || pos !== 'all';
+  const filtering = pos !== 'all';
 
   useEffect(() => {
     if (!study) return;
@@ -53,6 +54,7 @@ export function App() {
       const id = hashWord();
       const valid = study.words.some((word) => word.id === id);
       setSelectedId(valid ? id! : study.words[0].id);
+      setActiveAyah(valid ? study.words.find((word) => word.id === id)!.ayah : 1);
       setView('words');
       setSheetOpen(valid && matchMedia('(max-width: 1023px)').matches);
     };
@@ -60,22 +62,6 @@ export function App() {
     window.addEventListener('hashchange', update);
     return () => window.removeEventListener('hashchange', update);
   }, [study]);
-
-  useEffect(() => {
-    const keydown = (event: KeyboardEvent) => {
-      if (
-        event.key === '/' &&
-        !sheetOpen &&
-        !['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName || '')
-      ) {
-        event.preventDefault();
-        setView('words');
-        requestAnimationFrame(() => search.current?.focus());
-      }
-    };
-    window.addEventListener('keydown', keydown);
-    return () => window.removeEventListener('keydown', keydown);
-  }, [sheetOpen]);
 
   useEffect(() => {
     if (!mobile) setSheetOpen(false);
@@ -98,11 +84,18 @@ export function App() {
     if (!study?.words.some((word) => word.id === id)) return;
     if (button) trigger.current = button;
     setSelectedId(id);
+    setActiveAyah(study.words.find((word) => word.id === id)!.ayah);
     history.replaceState(null, '', `#word=${encodeURIComponent(id)}`);
     if (mobile) setSheetOpen(true);
   };
   const goToAyah = (number: number, target: 'words' | 'grammar') => {
     setSheetOpen(false);
+    setActiveAyah(number);
+    const firstWord = study?.words.find((word) => word.ayah === number);
+    if (firstWord) {
+      setSelectedId(firstWord.id);
+      history.replaceState(null, '', `#word=${encodeURIComponent(firstWord.id)}`);
+    }
     setView(target);
     requestAnimationFrame(() =>
       document
@@ -112,11 +105,6 @@ export function App() {
           block: 'start',
         }),
     );
-  };
-  const resetSearch = () => {
-    setQuery('');
-    setPos('all');
-    search.current?.focus();
   };
 
   return (
@@ -133,29 +121,56 @@ export function App() {
         </a>
       </header>
       <main className="page-shell" id="main">
-        <section className="surah-heading" dir="rtl" lang="ar">
-          <h1>سورۃ الفاتحہ</h1>
-        </section>
-        <nav className="study-tabs ui" lang={language} dir={direction} aria-label={ui.study}>
-          {(
-            [
-              { id: 'words', label: ui.study, Icon: BookOpen },
-              { id: 'grammar', label: ui.grammar, Icon: Layers3 },
-              { id: 'settings', label: ui.settings, Icon: Settings },
-            ] as const
-          ).map(({ id, label, Icon }) => (
-            <button
-              type="button"
-              key={id}
-              className={view === id ? 'active' : ''}
-              aria-current={view === id ? 'page' : undefined}
-              onClick={() => setView(id)}
-            >
-              <Icon size={18} />
-              {label}
-            </button>
-          ))}
-        </nav>
+        <h1 className="sr-only">{ui.surahTitle}</h1>
+        {study && view !== 'settings' && (
+          <section
+            className="lesson-toolbar ui"
+            lang={language}
+            dir={direction}
+            aria-label={ui.study}
+          >
+            <CollectionPicker
+              language={language}
+              mode={collectionMode}
+              onSelect={(mode) => {
+                setCollectionMode(mode);
+                setPos('all');
+                goToAyah(1, view === 'grammar' ? 'grammar' : 'words');
+              }}
+            />
+            <label className="ayah-selector selector-chip">
+              <small>{ui.ayah}</small>
+              <select
+                aria-label={ui.selectAyah}
+                value={activeAyah}
+                onChange={(event) =>
+                  goToAyah(Number(event.target.value), view === 'grammar' ? 'grammar' : 'words')
+                }
+              >
+                {study.ayahs.map((ayah) => (
+                  <option key={ayah.number} value={ayah.number}>
+                    {formatCount(ayah.number, language)}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown size={17} aria-hidden="true" />
+            </label>
+            {view === 'words' && (
+              <button
+                type="button"
+                aria-label={ui.filters}
+                title={ui.filters}
+                className={`filter-trigger ${filtersOpen || pos !== 'all' ? 'active' : ''}`}
+                aria-expanded={filtersOpen}
+                aria-controls="filter-panel"
+                onClick={() => setFiltersOpen((value) => !value)}
+              >
+                <SlidersHorizontal size={20} />
+                {pos !== 'all' && <i className="active-filter-dot" />}
+              </button>
+            )}
+          </section>
+        )}
         {view === 'settings' ? (
           <section
             className="settings-view ui"
@@ -233,32 +248,6 @@ export function App() {
               dir={direction}
               aria-label={ui.filters}
             >
-              <div className="search-row">
-                <label className="search-field">
-                  <Search size={19} />
-                  <input
-                    ref={search}
-                    type="search"
-                    aria-label={ui.searchLabel}
-                    placeholder={ui.searchPlaceholder}
-                    value={query}
-                    onChange={(event) => setQuery(event.target.value)}
-                    autoComplete="off"
-                    dir="auto"
-                  />
-                </label>
-                <button
-                  type="button"
-                  className={`filter-trigger ${filtersOpen || pos !== 'all' ? 'active' : ''}`}
-                  aria-expanded={filtersOpen}
-                  aria-controls="filter-panel"
-                  onClick={() => setFiltersOpen((value) => !value)}
-                >
-                  <SlidersHorizontal size={18} />
-                  <span>{ui.filters}</span>
-                  {pos !== 'all' && <i className="active-filter-dot" />}
-                </button>
-              </div>
               {filtersOpen && (
                 <div className="filter-panel" id="filter-panel">
                   <div className="filters" role="group" aria-label={ui.wordType}>
@@ -284,25 +273,12 @@ export function App() {
                     <span className="toggle-track" aria-hidden="true" />
                     <span>{ui.wordMeanings}</span>
                   </label>
-                  <nav className="ayah-nav" aria-label={ui.goToAyah}>
-                    <span>{ui.ayah}</span>
-                    {study.ayahs.map((ayah) => (
-                      <button
-                        type="button"
-                        key={ayah.number}
-                        onClick={() => goToAyah(ayah.number, 'words')}
-                        aria-label={`${ui.goToAyah} ${formatCount(ayah.number, language)}`}
-                      >
-                        {formatCount(ayah.number, language)}
-                      </button>
-                    ))}
-                  </nav>
                 </div>
               )}
             </section>
             {filtering && (
               <div
-                className={`search-feedback ui ${matches.size === 0 ? 'empty' : ''}`}
+                className={`filter-feedback ui ${matches.size === 0 ? 'empty' : ''}`}
                 lang={language}
                 dir={direction}
                 role="status"
@@ -312,9 +288,9 @@ export function App() {
                     ? ui.noResults
                     : `${formatCount(matches.size, language)} ${ui.matches}`}
                 </span>
-                <button type="button" onClick={resetSearch}>
+                <button type="button" onClick={() => setPos('all')}>
                   <X size={15} />
-                  {ui.clearSearch}
+                  {ui.reset}
                 </button>
               </div>
             )}
@@ -373,6 +349,39 @@ export function App() {
           </dialog>
         )}
       </main>
+      <nav className="bottom-nav ui" lang={language} dir={direction} aria-label={ui.study}>
+        {(
+          [
+            { id: 'words', label: ui.study, Icon: BookOpen },
+            { id: 'grammar', label: ui.grammar, Icon: Sparkles },
+            { id: 'settings', label: ui.settings, Icon: Settings },
+          ] as const
+        ).map(({ id, label, Icon }) => (
+          <button
+            type="button"
+            key={id}
+            className={view === id ? 'active' : ''}
+            aria-label={label}
+            title={label}
+            aria-current={view === id ? 'page' : undefined}
+            onClick={() => {
+              setSheetOpen(false);
+              setView(id);
+              if (id !== 'settings') {
+                setActiveAyah(1);
+                if (study) {
+                  setSelectedId(study.words[0].id);
+                  history.replaceState(null, '', `#word=${encodeURIComponent(study.words[0].id)}`);
+                }
+              }
+              window.scrollTo({ top: 0, behavior: 'instant' });
+            }}
+          >
+            <Icon size={23} strokeWidth={2} aria-hidden="true" />
+            <span className="nav-label">{label}</span>
+          </button>
+        ))}
+      </nav>
     </>
   );
 }

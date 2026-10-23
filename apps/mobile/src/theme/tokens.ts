@@ -2,18 +2,29 @@ import { I18nManager } from 'react-native';
 import { physicalRowDirection } from './physical-row';
 
 export const colors = {
-  background: '#f5f7f3',
+  background: '#f7f8ef',
   paper: '#ffffff',
-  ink: '#1b332a',
+  ink: '#203b30',
   muted: '#65736b',
-  primary: '#1f6550',
-  wash: '#eaf3ed',
-  border: '#dce5dc',
+  primary: '#14654c',
+  primaryEdge: '#104e3b',
+  wash: '#eaf4df',
+  mint: '#eef6ee',
+  lime: '#d8ed9b',
+  border: '#dbe5d5',
+  edge: '#cbd9c4',
+  white: '#ffffff',
+  transparent: 'transparent',
+  gold: '#b57a22',
   amber: '#80601c',
   amberWash: '#fbf5e6',
   blue: '#42648b',
   blueWash: '#edf2f9',
 };
+
+export const spacing = { xs: 4, sm: 8, md: 12, lg: 16, xl: 24, xxl: 32 } as const;
+export const radius = { sm: 10, md: 16, lg: 24, pill: 999 } as const;
+export const shadows = { floating: '0 8px 28px rgba(32,59,48,0.13)' } as const;
 
 export const type = {
   body: {
@@ -59,8 +70,8 @@ export const card = {
   backgroundColor: colors.paper,
   borderWidth: 1,
   borderColor: colors.border,
-  borderRadius: 18,
+  borderRadius: radius.lg,
   borderCurve: 'continuous',
-  padding: 18,
+  padding: spacing.lg,
   gap: 10,
 } as const;

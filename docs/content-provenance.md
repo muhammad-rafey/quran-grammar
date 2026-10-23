@@ -10,6 +10,12 @@ Additional consultation: Al-‘Ukbari’s _Al-Tibyan fi i‘rab al-Qur’an_ via
 
 References below record the original prototype’s audit trail (researched 2026-10-22; migrated 2026-10-23). The study API deliberately omits these URLs. Source alternatives and uncertainty, including the derivations of اسم and اللہ and the syntax of غیر, remain in the teaching notes.
 
+## Navigation metadata and practice
+
+The 114 surah numbers, Arabic names and conventional English transliterations in `packages/core/src/catalog.ts` were checked against [Quran.com’s chapter metadata API](https://api.quran.com/api/v4/chapters?language=en) on 2026-10-23; the endpoint is described in the [Quran Foundation chapter documentation](https://api-docs.quran.com/docs/content_apis_versioned/4.0.0/list-chapters/). These are factual navigation labels, not verse text or a translated work. The [juz metadata endpoint](https://api.quran.com/api/v4/juzs) confirms 30 distinct juz numbers and places Al-Fatihah within Juz 1. The app includes no new lessons for the other surahs or juz. Only Al-Fatihah is available; Juz 1 is explicitly a partial preview containing Al-Fatihah alone.
+
+The three practice questions are original Urdu teaching drafts based on the existing Al-Fatihah entries: identifying نَعْبُدُ as a verb, the imperative form in ٱهْدِنَا, and the root ع ب د. Arabic word choices reuse the exact stored lesson occurrences; distractors are existing words, grammatical labels or roots, without invented Quranic text. The existing scholar-review status applies to these questions too.
+
 ## Record-level audit trail
 
 ### Word 1:1:1
