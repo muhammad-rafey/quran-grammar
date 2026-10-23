@@ -1,0 +1,157 @@
+export type UiLanguage = 'en' | 'ur';
+
+const english = {
+  study: 'Study',
+  grammar: 'Grammar',
+  settings: 'Settings',
+  interfaceLanguage: 'Interface language',
+  languageHelp:
+    'Changes buttons, navigation and numbers. Quranic Arabic and Urdu explanations stay the same.',
+  english: 'English',
+  urdu: 'اردو',
+  searchPlaceholder: 'Search a word, root or meaning…',
+  searchLabel: 'Search words, roots and meanings',
+  filters: 'Filters',
+  closeFilters: 'Hide filters',
+  wordType: 'Word type',
+  allWords: 'All words',
+  noun: 'Nouns',
+  verb: 'Verbs',
+  particle: 'Particles',
+  pronoun: 'Pronouns',
+  wordMeanings: 'Show word meanings',
+  clearSearch: 'Clear search',
+  noResults: 'No matching words',
+  matches: 'matches',
+  selectWord: 'Select a word to explore its grammar.',
+  ayah: 'Ayah',
+  word: 'Word',
+  ayahs: 'ayahs',
+  words: 'words',
+  roots: 'roots',
+  goToAyah: 'Go to ayah',
+  previous: 'Previous',
+  next: 'Next',
+  close: 'Close',
+  wordStudy: 'Word study',
+  viewGrammar: 'View grammar',
+  backToStudy: 'Back to study',
+  loading: 'Loading study content…',
+  loadError: 'Could not load the study content.',
+  retry: 'Try again',
+  connectionHint: 'Check your connection and try again.',
+  root: 'Root letters',
+  headword: 'Headword',
+  rootMeaning: 'Root meaning',
+  verbForm: 'Verb form',
+  past: 'Past',
+  present: 'Present',
+  pattern: 'Pattern',
+  segments: 'Word parts',
+  morphology: 'Word formation',
+  syntax: 'Sentence role',
+  dictionary: 'Dictionary meaning',
+  rules: 'Grammar rules',
+  relatedWords: 'Words with the same root',
+  offline: 'Offline content',
+  connected: 'Connected',
+  dataStatus: 'Content status',
+  reset: 'Reset',
+  about: 'About',
+  useOffline: 'Use saved lesson',
+  preferenceError: 'Language could not be saved. Try again.',
+  educationalDraft: 'Teaching draft · Scholar review pending',
+  surahTitle: 'Al-Fatihah',
+  noRoot: 'No root is assigned to this particle or pronoun.',
+  notFound: 'Word not found',
+  conciseMeaning: 'Meaning',
+} as const;
+
+export type UiStrings = { readonly [Key in keyof typeof english]: string };
+
+const urdu: UiStrings = {
+  study: 'مطالعہ',
+  grammar: 'قواعد',
+  settings: 'ترتیبات',
+  interfaceLanguage: 'انٹرفیس کی زبان',
+  languageHelp:
+    'صرف بٹن، رہنمائی اور اعداد کی زبان بدلے گی۔ قرآن کا عربی متن اور اردو وضاحتیں وہی رہیں گی۔',
+  english: 'English',
+  urdu: 'اردو',
+  searchPlaceholder: 'لفظ، مادہ یا معنی تلاش کریں…',
+  searchLabel: 'الفاظ، مادے اور معنی تلاش کریں',
+  filters: 'فلٹر',
+  closeFilters: 'فلٹر بند کریں',
+  wordType: 'لفظ کی قسم',
+  allWords: 'تمام الفاظ',
+  noun: 'اسم',
+  verb: 'فعل',
+  particle: 'حرف',
+  pronoun: 'ضمیر',
+  wordMeanings: 'الفاظ کے معنی دکھائیں',
+  clearSearch: 'تلاش صاف کریں',
+  noResults: 'کوئی لفظ نہیں ملا',
+  matches: 'نتائج',
+  selectWord: 'قواعد سمجھنے کے لیے کسی لفظ کو منتخب کریں۔',
+  ayah: 'آیت',
+  word: 'لفظ',
+  ayahs: 'آیات',
+  words: 'الفاظ',
+  roots: 'مادے',
+  goToAyah: 'آیت پر جائیں',
+  previous: 'پچھلا',
+  next: 'اگلا',
+  close: 'بند کریں',
+  wordStudy: 'لفظ کا مطالعہ',
+  viewGrammar: 'قواعد دیکھیں',
+  backToStudy: 'مطالعے پر واپس جائیں',
+  loading: 'مطالعے کا مواد حاصل کیا جا رہا ہے…',
+  loadError: 'مطالعے کا مواد حاصل نہیں ہو سکا۔',
+  retry: 'دوبارہ کوشش کریں',
+  connectionHint: 'انٹرنیٹ کنکشن چیک کریں اور دوبارہ کوشش کریں۔',
+  root: 'مادے کے حروف',
+  headword: 'بنیادی لفظ',
+  rootMeaning: 'مادے کا معنی',
+  verbForm: 'فعل کا باب',
+  past: 'ماضی',
+  present: 'مضارع',
+  pattern: 'وزن',
+  segments: 'لفظ کے اجزا',
+  morphology: 'صرف',
+  syntax: 'نحو',
+  dictionary: 'لغوی معنی',
+  rules: 'قواعد',
+  relatedWords: 'اسی مادے کے الفاظ',
+  offline: 'آف لائن مواد',
+  connected: 'منسلک',
+  dataStatus: 'مواد کی حالت',
+  reset: 'دوبارہ ترتیب دیں',
+  about: 'تعارف',
+  useOffline: 'محفوظ سبق استعمال کریں',
+  preferenceError: 'زبان کی ترتیب محفوظ نہیں ہو سکی۔ دوبارہ کوشش کریں۔',
+  educationalDraft: 'تعلیمی مسودہ · علمی نظرثانی باقی ہے',
+  surahTitle: 'سورۃ الفاتحہ',
+  noRoot: 'اس حرف یا ضمیر کے لیے کوئی مادہ درج نہیں ہے۔',
+  notFound: 'لفظ نہیں ملا',
+  conciseMeaning: 'معنی',
+};
+
+/** Validate a stored preference before passing it into the interface. */
+export function isUiLanguage(value: unknown): value is UiLanguage {
+  return value === 'en' || value === 'ur';
+}
+
+/** Interface strings only; Quranic text and Urdu teaching content are separate. */
+export function getUiStrings(language: UiLanguage): UiStrings {
+  return language === 'ur' ? urdu : english;
+}
+
+/** Use deterministic digits on web and native, independent of device locale. */
+export function formatCount(value: number | string, language: UiLanguage): string {
+  const ascii = String(value)
+    .replace(/[۰-۹]/g, (digit) => String(digit.charCodeAt(0) - 0x06f0))
+    .replace(/[٠-٩]/g, (digit) => String(digit.charCodeAt(0) - 0x0660));
+  return language === 'ur'
+    ? ascii.replace(/[0-9]/g, (digit) => '۰۱۲۳۴۵۶۷۸۹'[Number(digit)]!)
+    : ascii;
+}

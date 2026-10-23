@@ -1,0 +1,8 @@
+# Use with compose.yaml when an existing Caddy proxy shares the apps network.
+services:
+  app:
+    container_name: quran-grammar
+    networks: [apps]
+networks:
+  apps:
+    external: true

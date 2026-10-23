@@ -1,0 +1,12 @@
+.git
+**/node_modules
+**/dist
+**/.expo
+**/.env
+**/.env.*
+**/ios
+**/android
+.deployment
+test-results
+playwright-report
+**/*.log

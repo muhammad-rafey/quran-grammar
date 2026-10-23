@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "Quran Grammar",
+    "slug": "quran-grammar",
+    "scheme": "qurangrammar",
+    "version": "0.1.0",
+    "userInterfaceStyle": "light",
+    "icon": "./assets/icon.png",
+    "ios": { "supportsTablet": true, "bundleIdentifier": "org.qurangrammar.app" },
+    "android": { "package": "org.qurangrammar.app" },
+    "plugins": ["expo-router", "expo-font"],
+    "experiments": { "typedRoutes": true }
+  }
+}
