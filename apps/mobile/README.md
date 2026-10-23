@@ -35,14 +35,19 @@ bundled lesson. A refresh failure keeps already loaded content visible.
 
 - Tap any of the 29 words to see its meaning, segments, root meaning, morphology,
   syntax, rules and related words. The four verbs also show باب، ماضی، مضارع، وزن.
-- Search in Arabic or Urdu, by root or verb family. The Filter button reveals
-  part-of-speech filters and the translation toggle; full ayah context stays visible.
+- Choose Surah or Juz in the native catalog sheet, then jump to ayahs 1–7 with
+  the ayah picker. The catalog lists all 114 surahs and 30 juz; unavailable entries
+  are disabled and labelled Coming soon. Juz 1 is explicitly an Al-Fatihah preview.
+- The compact Filter button reveals part-of-speech filters and the word-meaning
+  toggle; full ayah context and translation stay visible. There is no search bar.
 - Study, Grammar and Settings use English controls by default. Settings switches
   the interface and counts between English and Urdu, persists the preference,
   and leaves all Quranic Arabic and Urdu learning explanations unchanged.
 - Content connection status, the teaching draft notice and required attribution
   are grouped in Settings to keep the reader focused.
-- Grammar shows phrase relationships and concise tafsir notes.
+- A floating bottom dock switches Study, Grammar and Settings. Grammar includes
+  three interactive practice questions with explanations, first-attempt scoring,
+  and restart, followed by phrase relationships and concise tafsir notes.
 - Native back, dismissal gestures and the close/return controls leave the detail
   screen. Previous/next stay within the current surah.
 
@@ -67,10 +72,13 @@ icon, and complete scholar review of the teaching draft.
 - SDK compatibility check and TypeScript check passed with React Native 0.86.3.
 - iOS and Android production JavaScript/asset exports passed after the final UI
   and language-setting changes.
-- Ran in Expo Go 57.0.9 on the iPhone 17 Pro simulator (iOS 26.5). Checked Arabic
-  and Urdu fonts, the compact reader, filters, root/باب search, word detail,
-  next-word navigation, segment selection, rule expansion, closing detail, and
-  the grammar view.
+- Ran the redesigned app in Expo Go 57.0.9 on iPhone 17 Pro (iOS 26.5). Checked
+  the reader and floating dock, catalog sheet, disabled availability, Juz 1
+  partial-preview label, ayah 5 jump, root/باب detail, next-word navigation,
+  segment selection, rule expansion, closing detail and grammar view.
+- Completed practice with one wrong and two correct answers; the result was
+  correctly 2/3. Restart cleared the answers and disabled Check answer until a
+  new choice. Explanations appeared after both correct and incorrect choices.
 - Checked English/Urdu controls and counts; saved Urdu persisted across reload.
   Restored English afterward. Learning text stayed unchanged.
 - Checked that hiding word meanings preserves the full ayah translation and
@@ -81,10 +89,12 @@ icon, and complete scholar review of the teaching draft.
   the first reader screen, Arabic/Urdu rendering and application logs. Android
   interaction flows still need a manual pass because the desktop automation
   interface cannot attach to the emulator window.
-- Installed `build/quran-grammar.apk` on that emulator and launched the standalone
-  app with all development Metro servers stopped. Its bundled JavaScript rendered
-  the compact reader and complete first ayah; app-specific runtime logs had no
-  JavaScript or Android fatal errors. This APK is signed for local testing.
+- Installed the rebuilt `build/quran-grammar.apk` on that emulator and launched
+  the standalone app. Its bundled JavaScript rendered the new selectors, floating
+  dock and complete first ayah with the saved Urdu interface preference. The
+  earlier standalone build was also tested with all Metro servers stopped.
+  App-specific runtime logs had no JavaScript or Android fatal errors. This APK
+  is signed for local testing.
 - Regression checks cover Quran and English control row direction under both
   LTR and RTL native layouts. No global RTL setting is changed. The native switch
   and Android app theme explicitly use the app's light color scheme.
