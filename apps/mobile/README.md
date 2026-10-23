@@ -81,6 +81,10 @@ icon, and complete scholar review of the teaching draft.
   the first reader screen, Arabic/Urdu rendering and application logs. Android
   interaction flows still need a manual pass because the desktop automation
   interface cannot attach to the emulator window.
+- Installed `build/quran-grammar.apk` on that emulator and launched the standalone
+  app with all development Metro servers stopped. Its bundled JavaScript rendered
+  the compact reader and complete first ayah; app-specific runtime logs had no
+  JavaScript or Android fatal errors. This APK is signed for local testing.
 - Regression checks cover Quran and English control row direction under both
   LTR and RTL native layouts. No global RTL setting is changed. The native switch
   and Android app theme explicitly use the app's light color scheme.
