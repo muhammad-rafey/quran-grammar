@@ -1,0 +1,267 @@
+{
+ "_about": "Occurrence-level corrections to QAC 0.4 tags, adjudicated from the vocalised Uthmani word, the governing particle, QAC's own ayah notes, the mustafa0x fork, standard i'rab and the verb-lexeme reviewers' evidence. Applied by build_packets.py (packet data and a note to authors) and assemble.py (paradigm card selection).",
+ "18:1:11": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags عِوَجَا nominative, but it ends in fatha + alif (tanwin al-fath, read ʿiwajā at Hafs' saktah) and is the object of jussive يَجْعَل: accusative."
+ },
+ "18:13:10": {
+  "passive": false,
+  "noteEnglish": "QAC tags وَزِدْنَـٰهُمْ PERF PASS with نَا as na'ib al-fa'il. It is active: نَا is the subject (We increased them), هُمْ the first object and هُدًى the second object (QAC's own 18:13 note: «هدى» مفعول ثانٍ; all translations active). The 1P perfect زِدْنَا is spelled the same in both voices."
+ },
+ "18:20:3": {
+  "mood": "JUS",
+  "noteEnglish": "QAC tags يَظْهَرُوا۟ subjunctive; it is the jussive verb of the conditional إِنْ (its nun dropped for jazm), answered by jussive يَرْجُمُوكُمْ."
+ },
+ "18:20:5": {
+  "mood": "JUS",
+  "noteEnglish": "QAC tags يَرْجُمُوكُمْ subjunctive, but no particle of nasb precedes it; it is the jussive answer (jawab al-shart) of the conditional إِن يَظْهَرُوا۟, and the dropped nun is the sign of jazm."
+ },
+ "18:20:7": {
+  "mood": "JUS",
+  "noteEnglish": "QAC tags يُعِيدُوكُمْ subjunctive; it is joined by أَوْ to the jussive answer يَرْجُمُوكُمْ of the conditional إِن يَظْهَرُوا۟, so it is jussive too (the dropped nun is the sign of jazm)."
+ },
+ "18:29:19": {
+  "mood": "JUS",
+  "noteEnglish": "QAC tags يَسْتَغِيثُوا۟ subjunctive; it is the jussive verb of the conditional وَإِن (nun dropped for jazm)."
+ },
+ "18:29:20": {
+  "passive": true,
+  "mood": "JUS",
+  "noteEnglish": "QAC omits PASS and tags subjunctive. يُغَاثُوا۟ is the Form IV passive (active would be يُغِيثُوا) and the jussive answer of the conditional; its waw is na'ib al-fa'il."
+ },
+ "18:82:33": {
+  "mood": "JUS",
+  "noteEnglish": "QAC gives تَسْطِع no mood; after لَمْ it is jussive (the sukun/absent final vowel is the sign of jazm)."
+ },
+ "18:110:6": {
+  "mood": "IND",
+  "noteEnglish": "QAC tags يُوحَىٰٓ subjunctive, but no particle of nasb precedes it; it is indicative with an implied damma (للتعذر) and passive Form IV."
+ },
+ "23:27:27": {
+  "png": "2MS",
+  "noteEnglish": "QAC tags تُخَاطِبْنِى 3rd person feminine singular; it follows prohibitive لَا and addresses Nuh: 2nd person masculine singular jussive."
+ },
+ "23:35:4": {
+  "passive": false,
+  "noteEnglish": "QAC tags مِتُّمْ passive. Hafs' kasra form is the active dialectal perfect of مَاتَ (as in خِفْتُ from خَافَ), intransitive with no personal passive; translations render it active ('you die')."
+ },
+ "23:37:7": {
+  "mood": "IND",
+  "noteEnglish": "QAC tags نَحْيَا subjunctive, but no particle of nasb precedes it (نَمُوتُ وَنَحْيَا); it is indicative with an implied damma."
+ },
+ "23:62:12": {
+  "mood": "IND",
+  "noteEnglish": "QAC tags يُظْلَمُونَ jussive; the retained nun after negative لا shows it is indicative (passive)."
+ },
+ "23:82:3": {
+  "passive": false,
+  "noteEnglish": "QAC tags مِتْنَا passive; as in 23:35, Hafs' kasra form is the active dialectal perfect of مَاتَ."
+ },
+ "23:91:17": {
+  "lexemeKey": "EalaA|I|ACT",
+  "verbForm": "I",
+  "noteEnglish": "QAC's lemma taEa`laY` merges two verbs. وَلَعَلَا here is Form I عَلَا يَعْلُو (would have overpowered), not Form VI تَعَالَى; it gets its own paradigm card."
+ },
+ "23:92:4": {
+  "verbForm": "VI",
+  "noteEnglish": "QAC gives فَتَعَـٰلَىٰ no form tag (Form I); it is Form VI تَعَالَى (tafāʿala, defective), as the mustafa0x fork tags it."
+ },
+ "23:116:1": {
+  "verbForm": "VI",
+  "noteEnglish": "QAC gives فَتَعَـٰلَى no form tag (Form I); it is Form VI تَعَالَى (tafāʿala, defective), as the mustafa0x fork tags it."
+ },
+ "32:11:2": {
+  "mood": "IND",
+  "noteEnglish": "QAC tags يَتَوَفَّىٰكُم subjunctive, but nothing governs nasb after قُلْ; it is indicative with an implied damma."
+ },
+ "36:10:6": {
+  "png": "2MS",
+  "noteEnglish": "QAC tags تُنذِرْهُمْ 3rd person feminine singular; in ءَأَنذَرْتَهُمْ أَمْ لَمْ تُنذِرْهُمْ it is 2nd person masculine singular, jussive after لَمْ, parallel to أَنذَرْتَ."
+ },
+ "36:20:6": {
+  "mood": "IND",
+  "noteEnglish": "QAC tags يَسْعَىٰ subjunctive; it is an indicative verbal sentence describing رَجُلٌ (QAC's own ayah note makes it a نعت), with an implied damma."
+ },
+ "36:54:3": {
+  "passive": true,
+  "mood": "IND",
+  "lexemeKey": "Zalama|I|PASS",
+  "noteEnglish": "QAC tags تُظْلَمُ active and jussive. The prefix vowel u with fatha on the lam makes it passive (no soul will be wronged), نَفْسٌ is its na'ib al-fa'il, and after negative لَا it is indicative (final damma)."
+ },
+ "36:78:8": {
+  "mood": "IND",
+  "noteEnglish": "QAC tags يُحْىِ jussive, but مَن here is interrogative and nothing governs jazm; it is indicative. Its second ya is not written before the hamzat al-wasl of ٱلْعِظَـٰمَ."
+ },
+ "55:27:1": {
+  "mood": "IND",
+  "noteEnglish": "QAC tags وَيَبْقَىٰ subjunctive, but no particle governs it; it is indicative with an implied damma, coordinated with the nominal sentence of 55:26."
+ },
+ "18:18:6": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ذَاتَ ٱلْيَمِينِ is an adverb of place (ظرفِ مکان) of نُقَلِّبُهُمْ, accusative with fatha."
+ },
+ "18:18:8": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. وَذَاتَ ٱلشِّمَالِ is coordinated with the adverb ذَاتَ ٱلْيَمِينِ: accusative with fatha."
+ },
+ "18:18:12": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ذِرَاعَيْهِ is the object of the active participle بَـٰسِطٌ; the dual ya ending marks the accusative."
+ },
+ "18:32:7": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. جَنَّتَيْنِ is the object of جَعَلْنَا; the dual ya ending marks the accusative."
+ },
+ "18:33:2": {
+  "case": "GEN",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ٱلْجَنَّتَيْنِ is the muḍāf ilayh of كِلْتَا; the dual ya ending marks the genitive."
+ },
+ "18:46:6": {
+  "case": "NOM",
+  "noteEnglish": "QAC tags this word GEN, contradicting the vocalised form and its role. وَٱلْبَـٰقِيَـٰتُ is the subject (مبتدا) of the new sentence, with خَيْرٌ as predicate: nominative with damma."
+ },
+ "18:46:7": {
+  "case": "NOM",
+  "noteEnglish": "QAC tags this word GEN, contradicting the vocalised form and its role. ٱلصَّـٰلِحَـٰتُ is the adjective of nominative ٱلْبَـٰقِيَـٰتُ: nominative with damma."
+ },
+ "18:49:9": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. يَـٰوَيْلَتَنَا: an annexed vocative (منادیٰ مضاف) is accusative, here with visible fatha."
+ },
+ "18:52:4": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. شُرَكَآءِىَ is the object of نَادُوا۟; accusative with an implied fatha (the kasra precedes the first-person ya)."
+ },
+ "18:56:15": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ءَايَـٰتِى is the first object of ٱتَّخَذُوٓا۟ (هُزُوًا the second); accusative, the sign implied before the first-person ya."
+ },
+ "18:82:5": {
+  "case": "GEN",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. يَتِيمَيْنِ is the adjective of genitive لِغُلَـٰمَيْنِ; the dual ya ending marks the genitive."
+ },
+ "18:93:5": {
+  "case": "GEN",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ٱلسَّدَّيْنِ is the muḍāf ilayh of the adverb بَيْنَ; the dual ya ending marks the genitive."
+ },
+ "18:96:8": {
+  "case": "GEN",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ٱلصَّدَفَيْنِ is the muḍāf ilayh of بَيْنَ; the dual ya ending marks the genitive."
+ },
+ "18:98:9": {
+  "case": "GEN",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَبِّى in وَعْدُ رَبِّى is muḍāf ilayh: genitive (sign implied before the first-person ya)."
+ },
+ "18:98:14": {
+  "case": "GEN",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَبِّى in وَعْدُ رَبِّى is muḍāf ilayh: genitive (sign implied before the first-person ya)."
+ },
+ "18:102:6": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. عِبَادِى is the first object of يَتَّخِذُوا۟: accusative (sign implied before the first-person ya)."
+ },
+ "18:106:7": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ءَايَـٰتِى is the first object of ٱتَّخَذُوٓا۟: accusative (sign implied before the first-person ya)."
+ },
+ "18:106:8": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. وَرُسُلِى is coordinated with the object ءَايَـٰتِى: accusative (sign implied before the first-person ya)."
+ },
+ "18:109:7": {
+  "case": "GEN",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَبِّى in لِّكَلِمَـٰتِ رَبِّى is muḍāf ilayh: genitive."
+ },
+ "18:109:14": {
+  "case": "GEN",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَبِّى in كَلِمَـٰتُ رَبِّى is muḍāf ilayh: genitive."
+ },
+ "23:23:7": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. يَـٰقَوْمِ: an annexed vocative (منادیٰ مضاف) is accusative; the visible kasra signals the first-person ya, so the nasb is implied."
+ },
+ "23:26:2": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَبِّ (يا محذوفة): an annexed vocative (منادیٰ مضاف) is accusative; the visible kasra signals the first-person ya, so the nasb is implied."
+ },
+ "23:39:2": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَبِّ (يا محذوفة): an annexed vocative (منادیٰ مضاف) is accusative; the visible kasra signals the first-person ya, so the nasb is implied."
+ },
+ "23:93:2": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَّبِّ (يا محذوفة): an annexed vocative (منادیٰ مضاف) is accusative; the visible kasra signals the first-person ya, so the nasb is implied."
+ },
+ "23:94:1": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَبِّ (يا محذوفة): an annexed vocative (منادیٰ مضاف) is accusative; the visible kasra signals the first-person ya, so the nasb is implied."
+ },
+ "23:97:2": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَّبِّ (يا محذوفة): an annexed vocative (منادیٰ مضاف) is accusative; the visible kasra signals the first-person ya, so the nasb is implied."
+ },
+ "23:98:3": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَبِّ (يا محذوفة): an annexed vocative (منادیٰ مضاف) is accusative; the visible kasra signals the first-person ya, so the nasb is implied."
+ },
+ "23:99:7": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَبِّ (يا محذوفة): an annexed vocative (منادیٰ مضاف) is accusative; the visible kasra signals the first-person ya, so the nasb is implied."
+ },
+ "23:118:2": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَّبِّ (يا محذوفة): an annexed vocative (منادیٰ مضاف) is accusative; the visible kasra signals the first-person ya, so the nasb is implied."
+ },
+ "23:27:17": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. زَوْجَيْنِ is the object of فَٱسْلُكْ (مِن كُلٍّ with tanwin in Hafs); the dual ya ending marks the accusative."
+ },
+ "23:27:18": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ٱثْنَيْنِ is the adjective of accusative زَوْجَيْنِ; accusative with the dual ya ending."
+ },
+ "23:50:9": {
+  "case": "GEN",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ذَاتِ is the adjective of genitive رَبْوَةٍ: genitive with kasra."
+ },
+ "23:110:5": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ذِكْرِى is the second object of أَنسَوْكُمْ: accusative (sign implied before the first-person ya)."
+ },
+ "36:14:4": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ٱثْنَيْنِ is the object of أَرْسَلْنَآ; the dual ya ending marks the accusative."
+ },
+ "36:26:6": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. قَوْمِى is the noun (اسم) of لَيْتَ: accusative (sign implied before the first-person ya)."
+ },
+ "36:52:2": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. يَـٰوَيْلَنَا: an annexed vocative (منادیٰ مضاف) is accusative, here with visible fatha."
+ },
+ "55:12:4": {
+  "case": "NOM",
+  "noteEnglish": "QAC tags this word GEN, contradicting the vocalised form and its role. In the Hafs reading وَٱلرَّيْحَانُ is nominative, coordinated with ٱلْحَبُّ (damma visible); the genitive tag reflects another reading."
+ },
+ "55:17:2": {
+  "case": "GEN",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ٱلْمَشْرِقَيْنِ is the muḍāf ilayh of رَبُّ; the dual ya ending marks the genitive."
+ },
+ "55:17:4": {
+  "case": "GEN",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ٱلْمَغْرِبَيْنِ is the muḍāf ilayh of رَبُّ; the dual ya ending marks the genitive."
+ },
+ "55:33:1": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. يَـٰمَعْشَرَ: an annexed vocative (منادیٰ مضاف) is accusative with fatha."
+ },
+ "23:45:4": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. وَأَخَاهُ is coordinated with the object مُوسَىٰ of أَرْسَلْنَا: accusative, marked by alif as one of the five nouns."
+ },
+ "23:64:4": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. مُتْرَفِيهِم is the object of أَخَذْنَا: accusative, marked by the sound-plural ya (nun dropped before the pronoun)."
+ }
+}

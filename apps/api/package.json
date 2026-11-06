@@ -11,7 +11,12 @@
     "build": "esbuild src/server.ts --bundle --platform=node --format=esm --target=node24 --external:express --external:cors --outfile=dist/server.js",
     "start": "node dist/server.js",
     "typecheck": "tsc --noEmit",
-    "test": "node --import tsx --test src/app.test.ts"
+    "test": "node --import tsx --test src/app.test.ts src/db/db.test.ts",
+    "db:sqlite": "node --disable-warning=ExperimentalWarning --import tsx src/db/cli.ts sqlite",
+    "db:verify-sqlite": "node --disable-warning=ExperimentalWarning --import tsx src/db/cli.ts verify-sqlite",
+    "db:postgres-sql": "node --disable-warning=ExperimentalWarning --import tsx src/db/cli.ts postgres-sql",
+    "db:sync-postgres": "node --disable-warning=ExperimentalWarning --import tsx src/db/cli.ts sync-postgres",
+    "db:verify-postgres": "node --disable-warning=ExperimentalWarning --import tsx src/db/cli.ts verify-postgres"
   },
   "dependencies": {
     "@quran-grammar/core": "*",

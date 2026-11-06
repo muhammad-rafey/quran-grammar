@@ -1,0 +1,189 @@
+{
+ "publication": "held-for-scholarly-review",
+ "seeds": [
+  {
+   "chunk": "18-c04",
+   "contentSha256": "87e830a8d912df27c27c48814cafa9d2fd4c50ec34b80353a69ba8ef946ebccc",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved completed authored text after adjudicating shared-library findings; all new-source author/reviewer stages remain required. No review checkpoint was upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "18-c04",
+    "errors": [],
+    "warnings": []
+   }
+  },
+  {
+   "chunk": "18-c12",
+   "contentSha256": "4b79696aa8d1a50caf04e4c2c35256e7a97af2650f8ddb4098603f2480418a22",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved completed authored text after adjudicating shared-library findings; all new-source author/reviewer stages remain required. No review checkpoint was upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "18-c12",
+    "errors": [],
+    "warnings": [
+     "word 18:22:19: posUrdu \"حرفِ نفی\" does not name the QAC-derived word type pronoun"
+    ]
+   }
+  },
+  {
+   "chunk": "18-c15",
+   "contentSha256": "a9097569731c1a6a15f459ed935e20c5fd142290f868855d104c64cdd9e2f65d",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved completed authored text after adjudicating shared-library findings; all new-source author/reviewer stages remain required. No review checkpoint was upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "18-c15",
+    "errors": [],
+    "warnings": []
+   }
+  },
+  {
+   "chunk": "18-c19",
+   "contentSha256": "0ed4e1fbd0abdbde1f4433aa87e873ddc72101a92c6c332bc497e0a310370841",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved completed authored text after adjudicating shared-library findings; all new-source author/reviewer stages remain required. No review checkpoint was upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "18-c19",
+    "errors": [],
+    "warnings": []
+   }
+  },
+  {
+   "chunk": "36-c05",
+   "contentSha256": "0f38224b56de5fb4921f8581f648c77a4780a335937eb35b5da2dbf942a0c65e",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Authored text preserved after clause-scope library adjudication; full fresh independent reviews and confirmation are still required.",
+   "validation": {
+    "ok": true,
+    "chunk": "36-c05",
+    "errors": [],
+    "warnings": []
+   }
+  },
+  {
+   "chunk": "18-c41",
+   "contentSha256": "d570a6baa6be4016b4d881f641c03bac8229a5ea4ab7f9029e9bef9cc2afb016",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved structurally valid authored text after usage interruption or library hold; all fresh independent reviews and clean confirmation remain required. No checkpoint was upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "18-c41",
+    "errors": [],
+    "warnings": []
+   }
+  },
+  {
+   "chunk": "18-c42",
+   "contentSha256": "760d6b36085e9b82d3ec936d9438cf4767661020d37aacdb06ba18a17cb104c5",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved structurally valid authored text after usage interruption or library hold; all fresh independent reviews and clean confirmation remain required. No checkpoint was upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "18-c42",
+    "errors": [],
+    "warnings": []
+   }
+  },
+  {
+   "chunk": "18-c43",
+   "contentSha256": "5fee5d32cecfb94f5bf13e0950374cd48f664d46fe83b6a9065d4983dc80806b",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved structurally valid authored text after usage interruption or library hold; all fresh independent reviews and clean confirmation remain required. No checkpoint was upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "18-c43",
+    "errors": [],
+    "warnings": []
+   }
+  },
+  {
+   "chunk": "18-c44",
+   "contentSha256": "8bb63c5eaa1c57810c9305f2b2e85f6f885f1362b32dbed5e1e9c221d045f411",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved structurally valid authored text after usage interruption or library hold; all fresh independent reviews and clean confirmation remain required. No checkpoint was upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "18-c44",
+    "errors": [],
+    "warnings": []
+   }
+  },
+  {
+   "chunk": "23-c18",
+   "contentSha256": "99ac5fb5b5cd7c3a6d1afd248bf33ced5fac3b020b2eb9a263814c1a6b44b753",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved structurally valid authored text after usage interruption or library hold; all fresh independent reviews and clean confirmation remain required. No checkpoint was upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "23-c18",
+    "errors": [],
+    "warnings": []
+   }
+  },
+  {
+   "chunk": "23-c20",
+   "contentSha256": "c590b62e848933d765f117e1de14c8616fae41b1b75a21ecf73b5f83622beb31",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved structurally valid authored text after usage interruption or library hold; all fresh independent reviews and clean confirmation remain required. No checkpoint was upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "23-c20",
+    "errors": [],
+    "warnings": []
+   }
+  },
+  {
+   "chunk": "23-c21",
+   "contentSha256": "ec190e7752cd7ef57e209b525b73d959b87121e9e382a74ef61fc043c982f849",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved structurally valid authored text after usage interruption or library hold; all fresh independent reviews and clean confirmation remain required. No checkpoint was upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "23-c21",
+    "errors": [],
+    "warnings": []
+   }
+  },
+  {
+   "chunk": "23-c23",
+   "contentSha256": "cbf78d0b9fa2b422a1596e6aae9f3f0eebb7704beacd9ce65807d54d8a302085",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved structurally valid authored text after usage interruption or library hold; all fresh independent reviews and clean confirmation remain required. No checkpoint was upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "23-c23",
+    "errors": [],
+    "warnings": []
+   }
+  },
+  {
+   "chunk": "36-c21",
+   "contentSha256": "89cdfc65fc46c2088b4906374234322e0554b827d9678ba8cacf21b9e1db5975",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved structurally valid authored text after usage interruption or library hold; all fresh independent reviews and clean confirmation remain required. No checkpoint was upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "36-c21",
+    "errors": [],
+    "warnings": []
+   }
+  }
+ ]
+}

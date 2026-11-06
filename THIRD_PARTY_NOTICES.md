@@ -14,7 +14,7 @@ The download header identifies:
 >
 > License: GNU General Public License
 
-This repository contains newly structured teaching datasets for Al-Fatihah and Surahs 105–114, with original AI-assisted Urdu explanations. It does not contain the bulk morphology download or claim to be an official Corpus release. The app retains a concise Corpus credit and link. Its Arabic i‘rab reference pages credit the Quran Printing Complex; the corpus describes its Arabic text as based on Tanzil. Preserve the original copyright and source notices when adding or redistributing source datasets, and retain the additional conditions published by the relevant source.
+This repository contains newly structured teaching datasets for Al-Fatihah and Surahs 105–114, plus five-Surah drafts (18, 23, 32, 36 and 55) held outside the published registry for scholarly review, with original AI-assisted Urdu explanations. It does not contain the bulk morphology download or claim to be an official Corpus release. The app retains a concise Corpus credit and link. Its Arabic i‘rab reference pages credit the Quran Printing Complex; the corpus describes its Arabic text as based on Tanzil. Preserve the original copyright and source notices when adding or redistributing source datasets, and retain the additional conditions published by the relevant source.
 
 ## Dictionaries and explanatory works
 

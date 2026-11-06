@@ -1,0 +1,470 @@
+{
+  "report": "codex-rules-confirmation",
+  "date": "2026-11-06",
+  "scope": "Fresh AI confirmation of all 112 rule cards and the 37 earlier rule-review findings; no library, lesson or source file changed.",
+  "reviewStatus": "ai_confirmation_completed; both minor findings resolved and independently rechecked",
+  "scholarlyReview": "not_performed; every expansion lesson remains an AI-assisted draft and must be held for scholarly review",
+  "mechanicalValidation": {
+    "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline rules",
+    "exitCode": 0,
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "checkedRules": 112
+  },
+  "inputs": [
+    {
+      "path": "content-pipeline/libs/rules.json",
+      "sha256": "31dd1c89ab73abc956799e10d24d2bb5a603ee4eb44bbe80ce01c38a734f8d3f"
+    },
+    {
+      "path": "content-pipeline/reports/library-rules-lexemes.json",
+      "sha256": "cdab4c68d2cae65f7962e36d3dcc036ba365fbca5190804e62a0340fe1570052"
+    },
+    {
+      "path": "content-pipeline/meta/words.json",
+      "sha256": "1a3f2381f565d82b39b5a181dfce5e4d53e8f46d4974dd174cb83b0acde3cd9f"
+    },
+    {
+      "path": "content-pipeline/meta/ayahs.json",
+      "sha256": "fd0da606c005948b916d8c3d4d6cea937cd39ffa08672ad9f2ffe7e84db3d69b"
+    },
+    {
+      "path": "content-pipeline/meta/overrides.json",
+      "sha256": "2cd47d46176975b911b53f017d840238ad2b3ede1cb02e3e056cdd9c9f5409b5"
+    }
+  ],
+  "checkedRuleIds": [
+    "nominative",
+    "accusative",
+    "genitive",
+    "implied-case",
+    "diptote",
+    "five-nouns",
+    "dual",
+    "sound-plural",
+    "feminine-plural",
+    "broken-plural",
+    "definite",
+    "indefinite",
+    "proper-noun",
+    "feminine-marker",
+    "number-words",
+    "perfect",
+    "imperfect",
+    "imperative",
+    "prohibition",
+    "passive",
+    "future",
+    "qad",
+    "emphatic-nun",
+    "jussive",
+    "subjunctive",
+    "five-verbs",
+    "weak-verb",
+    "hamzated",
+    "doubled",
+    "quadriliteral",
+    "derived-form",
+    "assimilation",
+    "kana",
+    "kada-asa",
+    "praise-blame",
+    "exclamation",
+    "nun-wiqaya",
+    "participle",
+    "verbal-noun",
+    "comparative",
+    "intensive",
+    "resembling-adjective",
+    "noun-of-place-time",
+    "verb-like-noun",
+    "subject-pronoun",
+    "object-pronoun",
+    "pronoun",
+    "independent-pronoun",
+    "separating-pronoun",
+    "pronoun-of-matter",
+    "relative",
+    "demonstrative",
+    "nominal",
+    "verbal-sentence",
+    "subject",
+    "object",
+    "two-objects",
+    "zanna",
+    "inna",
+    "inna-sisters",
+    "lightened-particle",
+    "haal",
+    "tamyiz",
+    "cognate-object",
+    "purpose-object",
+    "adverb",
+    "idh",
+    "quoted-speech",
+    "parenthetical",
+    "fronted-object",
+    "fronting",
+    "elision",
+    "ishtighal",
+    "tanazu",
+    "idafa",
+    "adjective",
+    "badal",
+    "tawkid",
+    "conjunction",
+    "resumption",
+    "preposition",
+    "extra-particle",
+    "vocative",
+    "condition",
+    "conditional-jazm",
+    "law-condition",
+    "lamma",
+    "condition-answer",
+    "oath",
+    "emphatic-lam",
+    "purpose-lam",
+    "imperative-lam",
+    "lam-jussive",
+    "lan-negation",
+    "negation",
+    "negative-in",
+    "la-generic",
+    "restriction",
+    "exception",
+    "interrogative",
+    "kam",
+    "equalization",
+    "masdar-particle",
+    "explanatory-an",
+    "answer-particle",
+    "surprise-idha",
+    "retraction",
+    "deterrence",
+    "detailing",
+    "exhortation",
+    "hatta",
+    "muqattaat"
+  ],
+  "previousFindings": [
+    {
+      "review": "rules:verify-2",
+      "ref": "oath",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-2",
+      "ref": "exception",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-2",
+      "ref": "law-condition",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-2",
+      "ref": "kam",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-2",
+      "ref": "tamyiz",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-2",
+      "ref": "five-verbs",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-2",
+      "ref": "participle, verbal-noun, noun-of-place-time",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-2",
+      "ref": "zanna",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-2",
+      "ref": "quadriliteral",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-2",
+      "ref": "doubled",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-2",
+      "ref": "cognate-object",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-2",
+      "ref": "object-pronoun",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-2",
+      "ref": "independent-pronoun",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-2",
+      "ref": "inna-sisters",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "nominative",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "subject-pronoun",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "vocative",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "inna-sisters",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "relative",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "jussive",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "assimilation (missing rule)",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "zanna",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "passive",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "object-pronoun",
+      "severity": "major",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "subjunctive",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "extra-particle",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "number-words",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "kam",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "dual",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "intensive",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "oath",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "emphatic-nun",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "verb-like-noun",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "implied-case",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "tanazu (missing rule)",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "conjunction",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    },
+    {
+      "review": "rules:verify-1",
+      "ref": "qad",
+      "severity": "minor",
+      "status": "confirmed_applied"
+    }
+  ],
+  "confirmationEnglish": "All 37 previous findings are represented in the current library: case-label cautions and occurrence-specific overrides; subject vs ism of kana/kada; يا before ليت; relative/conditional boundaries; indicative verbs mislabeled jussive/subjunctive; participial possessive pronouns; non-nominal passive substitutes; assimilation and tanazu; suspended knowing verbs; oath answers; discontinuous exception; concessive ولو; declarative كم; terminology and quoted examples. I compared the cards and application criteria with local QAC morphology and ayah syntax metadata, checking the specifically cited occurrences. No unresolved critical or major issue was established in that scope.",
+  "findings": [
+    {
+      "id": "rules-confirm-001",
+      "severity": "minor",
+      "ruleId": "la-generic",
+      "fields": [
+        "explanationUrdu",
+        "appliesWhenEnglish"
+      ],
+      "problemEnglish": "The word مفرد is used without defining its technical sense here, and the applicability criterion requires fatḥa. In this chapter مفرد means neither muḍāf nor shabīh bi-l-muḍāf, so duals and sound plurals can also be included and take the sign they would have in naṣb. The currently listed in-scope examples all take fatḥa; no specific existing chunk is thereby shown wrong. This is a generalization/coverage clarification, not a demonstrated content blocker.",
+      "evidence": [
+        {
+          "title": "التحفة السنية شرح المقدمة الآجرومية, chapter on لا النافية للجنس",
+          "url": "https://shamela.org/gen/d588aafa1f49c407e30acd9ea845c21a_gen.pdf",
+          "summaryEnglish": "The author defines the unannexed category and describes construction on the accusative sign, including yāʾ for dual/sound masculine plural and kasra for sound feminine plural."
+        },
+        {
+          "title": "شرح ابن عقيل على ألفية ابن مالك, باب لا النافية للجنس",
+          "url": "https://perpustakaanislamdigital.com/pdf/bhs_ns_31.pdf",
+          "summaryEnglish": "Ibn Aqil reports construction of a sound feminine plural with kasra, and also records permission for fatḥa. This supports the broader final wording."
+        }
+      ],
+      "suggestedExplanationUrdu": "لائے نفیِ جنس پوری جنس کی مکمل نفی کرتا ہے، جیسے لَا شَكَّ فِيهِ «اس میں کوئی بھی شک نہیں»۔ اس کا اسم نکرہ ہوتا ہے؛ مضاف یا شبیہ بالمضاف نہ ہو تو اپنی علامتِ نصب پر مبنی ہوتا ہے: واحد اور جمعِ تکسیر میں فتحہ، تثنیہ اور جمع مذکر سالم میں یاء، اور جمع مؤنث سالم میں کسرہ؛ اس کی خبر مرفوع یا جار و مجرور ہوتی ہے۔",
+      "suggestedApplicabilityChangeEnglish": "Replace the fatḥa-only condition with: an immediately following indefinite ism of لا, built on its accusative sign when not muḍāf or shabīh bi-l-muḍāf; current examples use fatḥa. Preserve the exclusions for ordinary negation and prohibition.",
+      "status": "resolved_confirmed",
+      "appliedExplanationUrdu": "لائے نفیِ جنس پوری جنس کی مکمل نفی کرتا ہے، جیسے لَا شَكَّ فِيهِ «اس میں کوئی بھی شک نہیں»۔ اس کا اسم نکرہ ہوتا ہے؛ مضاف یا شبیہ بالمضاف نہ ہو تو مفرد کہلاتا ہے اور اپنی علامتِ نصب پر مبنی ہوتا ہے۔ واحد اور جمعِ تکسیر میں فتحہ، تثنیہ اور جمع مذکر سالم میں یاء ہوتی ہے؛ جمع مؤنث سالم میں کسرہ یا فتحہ جائز ہے۔ مضاف اور شبیہ بالمضاف اسم منصوب ہوتا ہے، اور خبر مرفوع یا جار و مجرور ہوتی ہے۔",
+      "appliedApplicabilityEnglish": "Tag لَا that negates a whole class (لا النافية للجنس) and its immediately following indefinite ism. A non-muḍāf, non-shabīh bi-l-muḍāf ism (technically مفرد, including duals/plurals) is built on its accusative sign; the current examples use fatḥa without tanwīn (لَا مُبَدِّلَ، لَا قُوَّةَ، لَا بُرْهَٰنَ، فَلَآ أَنسَابَ، لَا رَيْبَ). A muḍāf or shabīh bi-l-muḍāf ism is accusative rather than built. Not for ordinary negating لَا (negation) or prohibition.",
+      "proposalQualificationEnglish": "The original suggested text listed kasra alone for sound feminine plurals. The final applied text is better: it expressly permits kasra or fatḥa, two recognized constructions, and defines technical مفرد. The original suggestion is retained as review history, not the final authoritative text."
+    },
+    {
+      "id": "rules-confirm-002",
+      "severity": "minor",
+      "ruleId": "idafa",
+      "fields": [
+        "explanationUrdu"
+      ],
+      "problemEnglish": "The explanation makes exclusion of ال from the muḍāf universal, while the rule is also assigned to participial iḍāfa. Classical grammar permits ال on the muḍāf in specified forms of iḍāfa lafẓiyya. Scope the sentence to ordinary/semantic iḍāfa. The local source expressly calls قَاصِرَاتُ الطَّرْفِ (55:56) a lafẓī construction, although that particular example has no ال and is not itself misanalysed.",
+      "evidence": [
+        {
+          "title": "أوضح المسالك إلى ألفية ابن مالك, section اختصاص الإضافة اللفظية بجواز دخول أل على المضاف",
+          "url": "https://shamela.org/gen/b069b8265fede4cb817368b07db94105_gen.pdf",
+          "summaryEnglish": "Ibn Hisham distinguishes semantic from formal iḍāfa and allows the definite article on the formal muḍāf under specified conditions."
+        },
+        {
+          "path": "content-pipeline/meta/ayahs.json",
+          "ref": "55:56.qacGrammarNotesArabic",
+          "summaryEnglish": "The primary syntax packet identifies the annexation of قاصرات as formal, explaining why the following clause can describe it."
+        }
+      ],
+      "suggestedExplanationUrdu": "دو اسموں کی نسبت میں پہلا مضاف اور دوسرا مضاف الیہ ہوتا ہے، جیسے كِتَابُ اللَّهِ «اللہ کی کتاب»۔ مضاف الیہ مجرور ہوتا ہے اور مضاف کا اپنا اعراب اس کے کردار سے طے ہوتا ہے۔ عام معنوی اضافت میں مضاف پر نہ ال آتا ہے نہ تنوین؛ لفظی اضافت میں بعض شرطوں کے ساتھ ال آ سکتا ہے۔ ضمیر یا پورا جملہ بھی مضاف الیہ بن سکتا ہے۔",
+      "status": "resolved_confirmed",
+      "appliedExplanationUrdu": "دو اسموں کی نسبت میں پہلا مضاف اور دوسرا مضاف الیہ ہوتا ہے، جیسے كِتَابُ اللَّهِ «اللہ کی کتاب»۔ مضاف الیہ مجرور ہوتا ہے اور مضاف کا اپنا اعراب اس کے کردار سے طے ہوتا ہے۔ عام معنوی اضافت میں مضاف پر نہ ال آتا ہے نہ تنوین؛ لفظی اضافت میں بعض شرطوں کے ساتھ ال آ سکتا ہے۔ ضمیر یا پورا جملہ بھی مضاف الیہ بن سکتا ہے۔",
+      "appliedApplicabilityEnglish": "Tag the muḍāf and/or the muḍāf ilayh of an iḍāfa (noun + noun, noun + pronoun, adverb + noun or clause). Pair with genitive for the case and with pronoun for a possessive suffix."
+    }
+  ],
+  "counts": {
+    "critical": 0,
+    "major": 0,
+    "minorFound": 2,
+    "minorResolved": 2,
+    "unresolved": 0
+  },
+  "scholarAuditNotes": [
+    {
+      "ruleId": "quoted-speech",
+      "ref": "36:26",
+      "noteEnglish": "Do not automatically force every clause after passive قيل into the active-قال object analysis. The chosen local QAC syntax source explicitly supplies a pronoun referring to the verbal source as نائب فاعل at 36:26; another widespread analysis treats the reported clause itself as نائب فاعل. Follow the selected source consistently and log the alternative in the chunk audit. I did not establish a new error in the selected-source analysis, so this is an audit caution, not a major finding.",
+      "source": "https://corpus.quran.com/grammar.jsp?chapter=36&verse=26"
+    }
+  ],
+  "limits": [
+    "Mechanical validation proves structure and script constraints, not grammatical truth.",
+    "This is one fresh AI confirmation pass, not a new claim of scholarly approval.",
+    "The full Quran and each future authored chunk still require their own occurrence-level checks; a correct general card cannot validate an unseen chunk.",
+    "Primary reference summaries were checked through web search; no third-party source text has been imported into lesson content."
+  ],
+  "postFixConfirmation": {
+    "date": "2026-11-06",
+    "reviewedRuleIds": [
+      "la-generic",
+      "idafa"
+    ],
+    "initialRulesSha256": "ef1ee002eeff7837ccf58f797cd370e6714786dd267150cd3176f1c0729fbc39",
+    "finalRulesSha256": "31dd1c89ab73abc956799e10d24d2bb5a603ee4eb44bbe80ce01c38a734f8d3f",
+    "mechanicalValidation": {
+      "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline rules",
+      "exitCode": 0,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "checkedRules": 112
+    },
+    "resultEnglish": "Both applied edits are confirmed. la-generic defines the technical unannexed category, distinguishes built from declinable annexed constructions, names yāʾ for dual/sound masculine plurals, and allows both kasra and fatḥa for sound feminine plurals. idafa correctly limits the no-ال statement to ordinary semantic iḍāfa and recognizes the conditional allowance in formal iḍāfa. No new critical or major issue was established. This remains AI review, not scholarly approval."
+  }
+}

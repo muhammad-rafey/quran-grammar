@@ -7,6 +7,7 @@ Read https://docs.expo.dev/versions/v57.0.0/ before changing native app code.
 - `apps/mobile`: Expo React Native for Android and iOS.
 - `apps/api`: the shared Node API; also serves the production web bundle.
 - `packages/core`: typed study data, search/validation, interface strings and numeral formatting.
+- `content-pipeline`: the five-Surah expansion held for scholarly review (Surahs 18, 23, 32, 36, 55). Read its README.md before any content work.
 
 Preserve Arabic text, word occurrence IDs, contextual grammar, root meanings and verb paradigms. Content changes need scholarly review. Preserve provenance in the repository and the required Corpus credit/link in Settings → About; the study interface has no References tab or per-word source links.
 

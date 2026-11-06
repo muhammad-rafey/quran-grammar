@@ -1,0 +1,376 @@
+{
+  "report": "Independent AI adjudication of first-wave shared-library findings",
+  "date": "2026-11-06",
+  "status": "applied changes freshly confirmed by independent AI review; scholarly review pending",
+  "scholarlyReview": "not_performed; all new lessons remain held for scholarly review",
+  "scope": [
+    "18-c04: zaAda|I|PASS lookup identifier",
+    "18-c12: restriction rule applicability",
+    "18-c15: ع د و weak-letter explanation",
+    "18-c19: ر د د geminate declension note"
+  ],
+  "inputs": [
+    {
+      "path": "libs/rules.json",
+      "sha256": "31dd1c89ab73abc956799e10d24d2bb5a603ee4eb44bbe80ce01c38a734f8d3f"
+    },
+    {
+      "path": "libs/roots/root-08.json",
+      "sha256": "e2daae3e479ddd252b0e126ffd24defc6b92ff564d948adcc0f79e7956ecd569"
+    },
+    {
+      "path": "libs/lexemes/lex-05.json",
+      "sha256": "7a4b9f6705517b016ae9c48734f3e8eeae8054e816739d1be81423cf6e55eb9f"
+    },
+    {
+      "path": "meta/overrides.json",
+      "sha256": "2cd47d46176975b911b53f017d840238ad2b3ede1cb02e3e056cdd9c9f5409b5"
+    },
+    {
+      "path": "scripts/assemble.py",
+      "sha256": "0c9f140e6dd8010c08e64a6f8e38382ad11625dd265224b52b49e093c91839e3"
+    },
+    {
+      "path": "scripts/build_packets.py",
+      "sha256": "037b5cbd41915388d46bfb036b7fb4eb39d89104402387c88e742b0e50cc3473"
+    },
+    {
+      "path": "guide/authoring-guide.md",
+      "sha256": "86a7b5815a48a9212d9a88b786a3dff73023b5319da0b822ad8d2b92e74930b8"
+    },
+    {
+      "path": "libs/roots/root-05.json",
+      "sha256": "86e3aaae08dc4064c0a730bcd721d1f18b8e9421ec3249ea7ba3324e6f6480ca"
+    }
+  ],
+  "findings": [
+    {
+      "kind": "rule",
+      "key": "restriction",
+      "decision": "accept",
+      "severity": "minor",
+      "classification": "applicability coverage clarification",
+      "reasonEnglish": "The current criterion explicitly lists only negation and interrogation. The incomplete prohibitive construction at 18:22:23–28 also uses restrictive illa, and the packet identifies the particle at 18:22:26 as أداة حصر. Extend the criterion; the authored restriction tag for this occurrence is justified. The existing Urdu explanation lists common methods without claiming exhaustiveness, so no unrelated explanation rewrite is needed.",
+      "recommendedField": "appliesWhenEnglish",
+      "recommendedReplacementEnglish": "Replace “when the clause before it is negated or interrogative and incomplete” with “when the clause before it is negative, prohibitive or interrogative and incomplete”. Preserve the rest of the criterion.",
+      "evidence": [
+        {
+          "path": "packets/18/18-c12.json",
+          "refs": [
+            "18:22:23",
+            "18:22:24",
+            "18:22:26",
+            "18:22:27"
+          ]
+        },
+        {
+          "url": "https://corpus.quran.com/wordbyword.jsp?chapter=18&verse=22",
+          "summaryEnglish": "The source distinguishes the prohibitive la, jussive verb, restrictive illa, and the following accusative verbal noun."
+        }
+      ],
+      "applicationStatus": "confirmed applied"
+    },
+    {
+      "kind": "root",
+      "key": "ع د و",
+      "decision": "accept-with-qualified-rationale",
+      "severity": "minor",
+      "classification": "clarify intermediate weak-letter changes; do not assert an unsupported number error",
+      "reasonEnglish": "The reviewer overstates the original Urdu: عَادٍ کی جمع means the plural OF عَادٍ; it does not itself claim that عَادٍ is plural. The in-scope ٱلْعَادُونَ at 23:7:7 is indeed its masculine plural. The original is nevertheless too compressed because it jumps directly from underlying radical waw to deletion. Clarify waw-to-ya conversion and distinguish the singular indefinite nominative/genitive deletion from deletion before the sound-masculine-plural waw. Preserve the correct jussive deletion in تَعْدُ.",
+      "recommendedField": "noteUrdu",
+      "recommendedReplacementUrdu": "تَعْدُ، عَدَا کا مضارع ہے: نگاہ کا کسی سے ہٹ کر آگے نکل جانا؛ عَادٍ حد سے گزرنے والا اور عَدُوّ دشمن ہے۔ تَعْدُ میں آخری واو جزم سے حذف ہے۔ واحد اسمِ فاعل عَادٍ میں واو یاء بنی؛ نکرہ رفع و جر میں یہ یاء حذف ہوتی ہے۔ جمع مذکر سالم عَادُونَ میں بھی یہی یاء جمع کی واو سے پہلے حذف ہے، اس لیے ظاہری حروف سے مادہ نہ بدلیں۔",
+      "replacementCharacters": 317,
+      "validatorMaximumCharacters": 360,
+      "evidence": [
+        {
+          "path": "packets/18/18-c15.json",
+          "ref": "18:28:12",
+          "summaryEnglish": "The stem تَعْدُ is a jussive Form I imperfect of root ع د و."
+        },
+        {
+          "path": "meta/words.json",
+          "ref": "23:7:7",
+          "summaryEnglish": "The stored source explicitly labels ٱلْعَادُونَ nominative masculine plural active participle with root ع د و."
+        },
+        {
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(2:173:18)",
+          "summaryEnglish": "The attested عادٍ is indefinite and genitive; compare the separate plural form."
+        },
+        {
+          "url": "https://corpus.quran.com/wordmorphology.jsp?location=(23:7:7)",
+          "summaryEnglish": "The primary source identifies the in-scope plural active participle."
+        },
+        {
+          "url": "https://corpus.quran.com/qurandictionary.jsp?q=Edw",
+          "summaryEnglish": "The root concordance separates the imperfect, nominal enemy, and active-participle forms."
+        }
+      ],
+      "applicationStatus": "confirmed applied"
+    },
+    {
+      "kind": "lexeme",
+      "key": "zaAda|I|PASS",
+      "decision": "reject-rename-only-finding",
+      "severity": "none; documentation clarification recommended",
+      "reasonEnglish": "The lookup identifier preserves the raw Corpus lemma/form/voice tags; it is not a semantic assertion or a user-visible field. The reviewed paradigm is correctly active زَادَ — يَزِيدُ. meta/overrides.json and the packet explicitly correct 18:13:10 to passive=false while retaining the raw fields as provenance. build_packets.py uses the key for dictionary lookup only. assemble.py selects the actual entry fields and never emits the key into StudyData; VerbForm has no source-key or inferred-voice field. Renaming is not required to correct teaching content and would disrupt raw batch references without adding a semantic fix.",
+      "recommendedGuideTextEnglish": "Lexeme keys are opaque lookup handles derived from raw Corpus identifiers. A handle can retain an incorrect raw voice or form tag, or an inflected/truncated lemma, after adjudication. Follow qacCorrection, the corrected occurrence fields and the reviewed paradigm entry. Do not parse the handle to infer teaching content or report a library defect solely because the handle differs from those corrected fields; report actual mismatches in the paradigm, notes or occurrence mapping instead.",
+      "recommendedEvidencePrefixEnglish": "ACTIVE PARADIGM CONFIRMED BY AI REVIEW; scholarly review pending. This raw-source lookup key intentionally retains QAC’s erroneous PASS tag for provenance; the corrected occurrence and emitted paradigm are active.",
+      "evidence": [
+        {
+          "path": "meta/overrides.json",
+          "ref": "18:13:10"
+        },
+        {
+          "path": "packets/18/18-c04.json",
+          "ref": "18:13:10",
+          "summaryEnglish": "Corrected verb.passive is false; raw segments and prose retain the documented source error."
+        },
+        {
+          "path": "scripts/assemble.py",
+          "lines": [
+            124,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135
+          ],
+          "summaryEnglish": "Lookup uses the stable key, then emits baab/form/past/present/pattern/note fields, not the key."
+        },
+        {
+          "path": "packages/core/src/types.ts",
+          "summaryEnglish": "VerbForm contains no lexemeKey, form encoded in a source ID, or voice derived from that ID."
+        },
+        {
+          "url": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=13",
+          "summaryEnglish": "Its ayah analysis calls huda a second object, supporting active causative syntax despite the bad morphology tag."
+        },
+        {
+          "url": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=14",
+          "summaryEnglish": "The following active coordinated clause is explicitly related to zidnahum."
+        }
+      ],
+      "applicationStatus": "rename rejected; source-ID guidance and evidence prefix confirmed applied"
+    },
+    {
+      "kind": "root",
+      "key": "ر د د",
+      "decision": "accept",
+      "severity": "major",
+      "classification": "overgeneralized morphology statement",
+      "reasonEnglish": "The statement that every form except rudidtu has a doubled dal is false. Geminate past stems also unfold before other vowel-bearing subject suffixes, including first-person plural rudidna and third-person feminine plural rudidna (different final vowel length). Restrict the claim to the actual suffix condition and give clear unfolded/assimilated examples. Preserve the correct active/passive distinction and the Form VIII return sense. The raa shadda in the exact 18:36:6 token belongs to assimilation of the preceding conditional particle’s nun, not to the root; this remains in the replacement.",
+      "recommendedField": "noteUrdu",
+      "recommendedReplacementUrdu": "رَدَّ، يَرُدُّ متعدی ہے: لوٹانا؛ رُدِدْتُ اور يُرَدُّ مجہول ہیں، جبکہ اِرْتَدَّ بابِ افتعال میں خود واپس پلٹنا ہے۔ مضاعف ماضی میں متحرک ضمیرِ رفع لگے تو دالوں کا ادغام کھلتا ہے: رُدِدْتُ، رُدِدْنَا، رُدِدْنَ؛ رُدَّ میں مدغم ہیں۔ مصحف کے رُّدِدتُّ میں راء کی تشدید پچھلے لفظ کے نون کے ادغام سے ہے، مادے کی نہیں۔",
+      "replacementCharacters": 310,
+      "validatorMaximumCharacters": 360,
+      "evidence": [
+        {
+          "path": "packets/18/18-c19.json",
+          "ref": "18:36:6",
+          "summaryEnglish": "The token is passive first-person singular perfect with two root-dal consonants unfolded and attached first-person subject taa."
+        },
+        {
+          "url": "https://corpus.quran.com/qurandictionary.jsp?q=rdd",
+          "refs": [
+            "17:6:2",
+            "18:36:6",
+            "18:87:8",
+            "28:13:1",
+            "18:64:6"
+          ],
+          "summaryEnglish": "The primary concordance distinguishes unfolded past stems before naa (including 17:6:2 and 28:13:1), the first-singular passive occurrence, assimilated passive imperfect, and Form VIII return."
+        },
+        {
+          "url": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=36",
+          "summaryEnglish": "The conditional construction precedes the passive return verb, matching the packet’s exact mushaf spelling."
+        }
+      ],
+      "applicationStatus": "confirmed applied"
+    }
+  ],
+  "baselineMechanicalValidation": [
+    {
+      "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline rules",
+      "report": {
+        "ok": true,
+        "kind": "rules",
+        "batch": null,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline roots root-08",
+      "report": {
+        "ok": true,
+        "kind": "roots",
+        "batch": "root-08",
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline lexemes lex-05",
+      "report": {
+        "ok": true,
+        "kind": "lexemes",
+        "batch": "lex-05",
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline roots root-05",
+      "report": {
+        "ok": true,
+        "kind": "roots",
+        "batch": "root-05",
+        "errors": [],
+        "warnings": []
+      }
+    }
+  ],
+  "applicationInstructions": [
+    "Do not edit active shared inputs while current CLI jobs retain input hashes.",
+    "After active jobs finish, apply the accepted clarifications and guide/evidence wording, rebuild packets, and revalidate relevant libraries.",
+    "The report confirms the recommended changes, not their application; updated chunk review checkpoints must match the new guide/library/packet hashes.",
+    "All final content still requires actual scholarly review before runtime publication."
+  ],
+  "counts": {
+    "acceptedClarifications": 3,
+    "rejectedRenameOnlyFindings": 1,
+    "scholarlyApprovalsGranted": 0
+  },
+  "appliedConfirmation": {
+    "date": "2026-11-06",
+    "result": "all requested shared-file changes match the adjudicated recommendations",
+    "finalInputs": [
+      {
+        "path": "libs/rules.json",
+        "sha256": "190c88abe3abcb9eb9ff5d622d98d3f8932f37bf373723356551831ce2318c29"
+      },
+      {
+        "path": "libs/roots/root-05.json",
+        "sha256": "cc9c4f0c0d3181e9188d5fa90c40ebeb00c1a1107e95174f5731b752ac7c0aa4"
+      },
+      {
+        "path": "libs/roots/root-08.json",
+        "sha256": "7ee51bca7e6f2ae36a9e8f4a0a15d2c8e67137c3174b98b34c3f55bc6331ae7d"
+      },
+      {
+        "path": "libs/lexemes/lex-05.json",
+        "sha256": "54d762f2d71f98c6e1aaf7020a4a74015fc6e4dbd74595efc521c8998c3f7436"
+      },
+      {
+        "path": "guide/authoring-guide.md",
+        "sha256": "8ead190b344b7679af969df1fa4b3172ee5fe29035ca49c5d7d1fdccfa9c85ff"
+      },
+      {
+        "path": "meta/overrides.json",
+        "sha256": "2cd47d46176975b911b53f017d840238ad2b3ede1cb02e3e056cdd9c9f5409b5"
+      }
+    ],
+    "semanticDiff": [
+      {
+        "path": "libs/rules.json",
+        "changes": [
+          {
+            "entry": "restriction",
+            "fields": [
+              "appliesWhenEnglish"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "libs/roots/root-05.json",
+        "changes": [
+          {
+            "entry": "ر د د",
+            "fields": [
+              "noteUrdu"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "libs/roots/root-08.json",
+        "changes": [
+          {
+            "entry": "ع د و",
+            "fields": [
+              "noteUrdu"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "libs/lexemes/lex-05.json",
+        "changes": [
+          {
+            "entry": "zaAda|I|PASS",
+            "fields": [
+              "evidenceEnglish"
+            ]
+          }
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline rules",
+        "report": {
+          "ok": true,
+          "kind": "rules",
+          "batch": null,
+          "errors": [],
+          "warnings": []
+        }
+      },
+      {
+        "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline roots root-05",
+        "report": {
+          "ok": true,
+          "kind": "roots",
+          "batch": "root-05",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      {
+        "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline roots root-08",
+        "report": {
+          "ok": true,
+          "kind": "roots",
+          "batch": "root-08",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      {
+        "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline lexemes lex-05",
+        "report": {
+          "ok": true,
+          "kind": "lexemes",
+          "batch": "lex-05",
+          "errors": [],
+          "warnings": []
+        }
+      }
+    ],
+    "packetRefresh": {
+      "packetsChecked": 127,
+      "allEmbeddedRootsMatchCurrentLibrary": true,
+      "allEmbeddedLexemesMatchCurrentLibrary": true,
+      "combinedPacketSha256": "63c8943cf568a20d77ad78dfabc1d24d4682ca3fc8e2403da8c3147d85d18600",
+      "18:13:10": "corrected passive=false with unchanged raw-source lookup key; raw QAC passive=true segment retained as provenance"
+    },
+    "limits": "AI confirmation only. No scholarly approval granted. Changes and packet refresh invalidate prior input hashes; the author/reviewer pipeline must refresh affected checkpoints."
+  },
+  "formattingNote": {
+    "file": "libs/roots/root-05.json",
+    "note": "Restored original two-space JSON indentation after confirmation; entry data unchanged.",
+    "finalFileSha256": "b2a1d9890f81e10ce4962e4011a4c4edbdca7c0bf3fc45a8729373cd3e42174f"
+  }
+}

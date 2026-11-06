@@ -1,0 +1,925 @@
+{
+  "report": "codex-consistency-32",
+  "date": "2026-11-06",
+  "reviewStatus": "independent_ai_lemma_consistency_review_complete; no corrections recommended",
+  "scholarlyReview": "not_performed; all content remains held for scholarly review",
+  "scope": {
+    "surah": 32,
+    "ayahs": 30,
+    "authoredLemmaFieldsReadIndividually": 372,
+    "chunks": 12,
+    "packets": 12,
+    "variantGroups": 22,
+    "wordClasses": {
+      "particle": 99,
+      "noun": 139,
+      "verb": 101,
+      "pronoun": 25,
+      "adjective": 8
+    }
+  },
+  "method": [
+    "Read all372 occurrence Arabic/lemma/source-lemma triples completely in two untruncated batches.",
+    "Compare repeated lexical identities, recognizing that source lemma keys can retain inflected or incorrectly voiced raw entries. Follow corrected occurrence morphology and reviewed paradigms/root notes rather than copying malformed raw source strings.",
+    "Cross-check all101 verb lemmas against active dictionary forms; NFC is used only for comparison. Do not compare active dictionary lemmas of passive occurrences to their passive paradigm pasts.",
+    "Review all22 repeated-lemma diagnostic groups; preserve legitimate citation endings, gendered forms and contextual fused-particle notation.",
+    "Check draft/chunk lemma equality and source/packet Arabic equality for every occurrence; no content is rewritten."
+  ],
+  "exactProposedChanges": [],
+  "definiteLemmaErrors": [],
+  "canonicalConsistencyCorrections": [],
+  "allVariantGroupDispositions": [
+    {
+      "diagnosticKey": "None|None|particle",
+      "variants": {
+        "الم": 1,
+        "لِ + كُمْ": 1,
+        "لِ": 4,
+        "بِ": 2,
+        "بِ + هَا": 1,
+        "لِ + هُمْ": 1,
+        "بِ + هُوَ": 1
+      },
+      "wordIdsByLemma": {
+        "الم": [
+          "32:1:1"
+        ],
+        "لِ + كُمْ": [
+          "32:4:16"
+        ],
+        "لِ": [
+          "32:9:8",
+          "32:19:6",
+          "32:20:14",
+          "32:26:3"
+        ],
+        "بِ": [
+          "32:11:7",
+          "32:20:20"
+        ],
+        "بِ + هَا": [
+          "32:15:7"
+        ],
+        "لِ + هُمْ": [
+          "32:17:6"
+        ],
+        "بِ + هُوَ": [
+          "32:27:10"
+        ]
+      },
+      "adjudication": "Accepted diagnostic grouping artifact: absent source lemma combines distinct pronouns or unrelated particles. No same-lexeme equivalence is asserted.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "kita`b|ك ت ب|noun",
+      "variants": {
+        "كِتَاب": 1,
+        "كِتَابٌ": 1
+      },
+      "wordIdsByLemma": {
+        "كِتَاب": [
+          "32:2:2"
+        ],
+        "كِتَابٌ": [
+          "32:23:4"
+        ]
+      },
+      "adjudication": "Accepted bare dictionary base versus inflected citation ending/tanwin (including دون/دونَ). Same lexical identity; not the actual contextual case of the verse word.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "laA|None|particle",
+      "variants": {
+        "لَا": 8,
+        "أَ + فَ + لَا": 1,
+        "فَ + لَا": 2
+      },
+      "wordIdsByLemma": {
+        "لَا": [
+          "32:2:3",
+          "32:4:21",
+          "32:15:14",
+          "32:18:7",
+          "32:26:17",
+          "32:27:16",
+          "32:29:4",
+          "32:29:9"
+        ],
+        "أَ + فَ + لَا": [
+          "32:4:23"
+        ],
+        "فَ + لَا": [
+          "32:17:1",
+          "32:23:5"
+        ]
+      },
+      "adjudication": "Accepted structural/contextual citation of fused prefixes, particles and pronouns; exact source segments carry the contextual forms. Do not force uniform combinations or independent versus attached pronoun citation here.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "fiY|None|particle",
+      "variants": {
+        "فِي": 10,
+        "لَ + فِي": 1,
+        "فِي + مَا": 1
+      },
+      "wordIdsByLemma": {
+        "فِي": [
+          "32:2:5",
+          "32:4:8",
+          "32:5:10",
+          "32:9:4",
+          "32:10:4",
+          "32:20:12",
+          "32:23:7",
+          "32:25:10",
+          "32:26:11",
+          "32:26:14"
+        ],
+        "لَ + فِي": [
+          "32:10:7"
+        ],
+        "فِي + مَا": [
+          "32:25:8"
+        ]
+      },
+      "adjudication": "Accepted structural/contextual citation of fused prefixes, particles and pronouns; exact source segments carry the contextual forms. Do not force uniform combinations or independent versus attached pronoun citation here.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "min|None|particle",
+      "variants": {
+        "مِنْ": 19,
+        "مِنْ + مَا": 2,
+        "مِنْ + ي": 1,
+        "مِنْ + مَنْ": 1,
+        "مِنْ + هُمْ": 1,
+        "مِنْ + هُوَ": 1
+      },
+      "wordIdsByLemma": {
+        "مِنْ": [
+          "32:2:6",
+          "32:3:7",
+          "32:3:13",
+          "32:3:15",
+          "32:4:17",
+          "32:4:19",
+          "32:5:3",
+          "32:7:9",
+          "32:8:4",
+          "32:8:6",
+          "32:9:5",
+          "32:13:13",
+          "32:17:7",
+          "32:20:10",
+          "32:21:2",
+          "32:22:11",
+          "32:23:9",
+          "32:26:6",
+          "32:26:8"
+        ],
+        "مِنْ + مَا": [
+          "32:5:16",
+          "32:16:9"
+        ],
+        "مِنْ + ي": [
+          "32:13:10"
+        ],
+        "مِنْ + مَنْ": [
+          "32:22:3"
+        ],
+        "مِنْ + هُمْ": [
+          "32:24:2"
+        ],
+        "مِنْ + هُوَ": [
+          "32:27:13"
+        ]
+      },
+      "adjudication": "Accepted structural/contextual citation of fused prefixes, particles and pronouns; exact source segments carry the contextual forms. Do not force uniform combinations or independent versus attached pronoun citation here.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "rab~|ر ب ب|noun",
+      "variants": {
+        "رَبّ": 9,
+        "رَبٌّ": 1
+      },
+      "wordIdsByLemma": {
+        "رَبّ": [
+          "32:2:7",
+          "32:3:8",
+          "32:10:13",
+          "32:11:10",
+          "32:12:8",
+          "32:12:9",
+          "32:15:12",
+          "32:16:6",
+          "32:25:2"
+        ],
+        "رَبٌّ": [
+          "32:22:6"
+        ]
+      },
+      "adjudication": "Accepted bare dictionary base versus inflected citation ending/tanwin (including دون/دونَ). Same lexical identity; not the actual contextual case of the verse word.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "None|None|pronoun",
+      "variants": {
+        "هُوَ": 2,
+        "هُمْ": 3
+      },
+      "wordIdsByLemma": {
+        "هُوَ": [
+          "32:3:5",
+          "32:25:3"
+        ],
+        "هُمْ": [
+          "32:10:11",
+          "32:15:13",
+          "32:29:10"
+        ]
+      },
+      "adjudication": "Accepted diagnostic grouping artifact: absent source lemma combines distinct pronouns or unrelated particles. No same-lexeme equivalence is asserted.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "samaA^'|س م و|noun",
+      "variants": {
+        "سَمَاء": 1,
+        "سَمَاءٌ": 1
+      },
+      "wordIdsByLemma": {
+        "سَمَاء": [
+          "32:4:4"
+        ],
+        "سَمَاءٌ": [
+          "32:5:4"
+        ]
+      },
+      "adjudication": "Accepted bare dictionary base versus inflected citation ending/tanwin (including دون/دونَ). Same lexical identity; not the actual contextual case of the verse word.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": ">aroD|أ ر ض|noun",
+      "variants": {
+        "أَرْض": 2,
+        "أَرْضٌ": 2
+      },
+      "wordIdsByLemma": {
+        "أَرْض": [
+          "32:4:5",
+          "32:10:5"
+        ],
+        "أَرْضٌ": [
+          "32:5:6",
+          "32:27:7"
+        ]
+      },
+      "adjudication": "Accepted bare dictionary base versus inflected citation ending/tanwin (including دون/دونَ). Same lexical identity; not the actual contextual case of the verse word.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "maA|None|pronoun",
+      "variants": {
+        "مَا": 5,
+        "بِ + مَا": 2
+      },
+      "wordIdsByLemma": {
+        "مَا": [
+          "32:4:6",
+          "32:9:13",
+          "32:17:4",
+          "32:17:11",
+          "32:19:10"
+        ],
+        "بِ + مَا": [
+          "32:14:2",
+          "32:14:12"
+        ]
+      },
+      "adjudication": "Accepted structural/contextual citation of fused prefixes, particles and pronouns; exact source segments carry the contextual forms. Do not force uniform combinations or independent versus attached pronoun citation here.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "yawom|ي و م|noun",
+      "variants": {
+        "يَوْم": 3,
+        "يَوْمٌ": 2
+      },
+      "wordIdsByLemma": {
+        "يَوْم": [
+          "32:4:10",
+          "32:14:5",
+          "32:25:6"
+        ],
+        "يَوْمٌ": [
+          "32:5:11",
+          "32:29:2"
+        ]
+      },
+      "adjudication": "Accepted bare dictionary base versus inflected citation ending/tanwin (including دون/دونَ). Same lexical identity; not the actual contextual case of the verse word.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "duwn|د و ن|noun",
+      "variants": {
+        "دُون": 1,
+        "دُونَ": 1
+      },
+      "wordIdsByLemma": {
+        "دُون": [
+          "32:4:18"
+        ],
+        "دُونَ": [
+          "32:21:5"
+        ]
+      },
+      "adjudication": "Accepted bare dictionary base versus inflected citation ending/tanwin (including دون/دونَ). Same lexical identity; not the actual contextual case of the verse word.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "<ilaY`|None|particle",
+      "variants": {
+        "إِلَى": 3,
+        "إِلَى + هُوَ": 1
+      },
+      "wordIdsByLemma": {
+        "إِلَى": [
+          "32:5:5",
+          "32:11:9",
+          "32:27:6"
+        ],
+        "إِلَى + هُوَ": [
+          "32:5:9"
+        ]
+      },
+      "adjudication": "Accepted structural/contextual citation of fused prefixes, particles and pronouns; exact source segments carry the contextual forms. Do not force uniform combinations or independent versus attached pronoun citation here.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "kul~|ك ل ل|noun",
+      "variants": {
+        "كُلٌّ": 1,
+        "كُلّ": 1
+      },
+      "wordIdsByLemma": {
+        "كُلٌّ": [
+          "32:7:3"
+        ],
+        "كُلّ": [
+          "32:13:4"
+        ]
+      },
+      "adjudication": "Accepted bare dictionary base versus inflected citation ending/tanwin (including دون/دونَ). Same lexical identity; not the actual contextual case of the verse word.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "xaloq|خ ل ق|noun",
+      "variants": {
+        "خَلْقٌ": 1,
+        "خَلْق": 1
+      },
+      "wordIdsByLemma": {
+        "خَلْقٌ": [
+          "32:7:7"
+        ],
+        "خَلْق": [
+          "32:10:8"
+        ]
+      },
+      "adjudication": "Accepted bare dictionary base versus inflected citation ending/tanwin (including دون/دونَ). Same lexical identity; not the actual contextual case of the verse word.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "maA^'|م و ه|noun",
+      "variants": {
+        "مَاء": 1,
+        "مَاءٌ": 1
+      },
+      "wordIdsByLemma": {
+        "مَاء": [
+          "32:8:7"
+        ],
+        "مَاءٌ": [
+          "32:27:5"
+        ]
+      },
+      "adjudication": "Accepted bare dictionary base versus inflected citation ending/tanwin (including دون/دونَ). Same lexical identity; not the actual contextual case of the verse word.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "<in~|None|particle",
+      "variants": {
+        "إِنَّ + نَا": 4,
+        "إِنَّ + مَا": 1,
+        "إِنَّ": 2,
+        "إِنَّ + هُمْ": 1
+      },
+      "wordIdsByLemma": {
+        "إِنَّ + نَا": [
+          "32:10:6",
+          "32:12:15",
+          "32:14:7",
+          "32:22:10"
+        ],
+        "إِنَّ + مَا": [
+          "32:15:1"
+        ],
+        "إِنَّ": [
+          "32:25:1",
+          "32:26:13"
+        ],
+        "إِنَّ + هُمْ": [
+          "32:30:4"
+        ]
+      },
+      "adjudication": "Accepted structural/contextual citation of fused prefixes, particles and pronouns; exact source segments carry the contextual forms. Do not force uniform combinations or independent versus attached pronoun citation here.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "liqaA^'|ل ق ي|noun",
+      "variants": {
+        "لِقَاء": 2,
+        "لِقَاءٌ": 1
+      },
+      "wordIdsByLemma": {
+        "لِقَاء": [
+          "32:10:12",
+          "32:14:4"
+        ],
+        "لِقَاءٌ": [
+          "32:23:10"
+        ]
+      },
+      "adjudication": "Accepted bare dictionary base versus inflected citation ending/tanwin (including دون/دونَ). Same lexical identity; not the actual contextual case of the verse word.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "mujorim|ج ر م|noun",
+      "variants": {
+        "مُجْرِم": 1,
+        "مُجْرِمٌ": 1
+      },
+      "wordIdsByLemma": {
+        "مُجْرِم": [
+          "32:12:4"
+        ],
+        "مُجْرِمٌ": [
+          "32:22:12"
+        ]
+      },
+      "adjudication": "Accepted bare dictionary base versus inflected citation ending/tanwin (including دون/دونَ). Same lexical identity; not the actual contextual case of the verse word.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "nafos|ن ف س|noun",
+      "variants": {
+        "نَفْس": 2,
+        "نَفْسٌ": 1
+      },
+      "wordIdsByLemma": {
+        "نَفْس": [
+          "32:13:5",
+          "32:17:3"
+        ],
+        "نَفْسٌ": [
+          "32:27:15"
+        ]
+      },
+      "adjudication": "Accepted bare dictionary base versus inflected citation ending/tanwin (including دون/دونَ). Same lexical identity; not the actual contextual case of the verse word.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "'aAyap|أ ي ي|noun",
+      "variants": {
+        "آيَة": 2,
+        "آيَةٌ": 2
+      },
+      "wordIdsByLemma": {
+        "آيَة": [
+          "32:15:3",
+          "32:26:16"
+        ],
+        "آيَةٌ": [
+          "32:22:5",
+          "32:24:9"
+        ]
+      },
+      "adjudication": "Accepted bare dictionary base versus inflected citation ending/tanwin (including دون/دونَ). Same lexical identity; not the actual contextual case of the verse word.",
+      "recommendedChange": null
+    },
+    {
+      "diagnosticKey": "Ean|None|particle",
+      "variants": {
+        "عَنْ": 1,
+        "عَنْ + هَا": 1,
+        "عَنْ + هُمْ": 1
+      },
+      "wordIdsByLemma": {
+        "عَنْ": [
+          "32:16:3"
+        ],
+        "عَنْ + هَا": [
+          "32:22:9"
+        ],
+        "عَنْ + هُمْ": [
+          "32:30:2"
+        ]
+      },
+      "adjudication": "Accepted structural/contextual citation of fused prefixes, particles and pronouns; exact source segments carry the contextual forms. Do not force uniform combinations or independent versus attached pronoun citation here.",
+      "recommendedChange": null
+    }
+  ],
+  "verbCrossCheck": {
+    "verbCount": 101,
+    "effectiveActiveOccurrencesComparedToActiveParadigms": 93,
+    "activeMismatches": [],
+    "nfcEquivalentMarkOrderDifferences": [
+      {
+        "wordId": "32:5:17",
+        "lemma": "عَدَّ",
+        "selectedParadigmPast": "عَدَّ",
+        "lexemeKey": "Ead~a|I|ACT"
+      },
+      {
+        "wordId": "32:9:2",
+        "lemma": "سَوَّى",
+        "selectedParadigmPast": "سَوَّى",
+        "lexemeKey": "saw~aY`|II|ACT"
+      },
+      {
+        "wordId": "32:10:3",
+        "lemma": "ضَلَّ",
+        "selectedParadigmPast": "ضَلَّ",
+        "lexemeKey": "Dal~a|I|ACT"
+      },
+      {
+        "wordId": "32:11:2",
+        "lemma": "تَوَفَّى",
+        "selectedParadigmPast": "تَوَفَّى",
+        "lexemeKey": "tawaf~aY`|V|ACT"
+      }
+    ],
+    "effectivePassiveOccurrencesWithValidActiveDictionaryLemmas": [
+      {
+        "wordId": "32:11:6",
+        "lemma": "وَكَّلَ",
+        "selectedParadigmPast": "وُكِّلَ",
+        "lexemeKey": "wuk~ila|II|PASS"
+      },
+      {
+        "wordId": "32:11:11",
+        "lemma": "رَجَعَ",
+        "selectedParadigmPast": "رُجِعَ",
+        "lexemeKey": "rajaEa|I|PASS"
+      },
+      {
+        "wordId": "32:15:6",
+        "lemma": "ذَكَّرَ",
+        "selectedParadigmPast": "ذُكِّرَ",
+        "lexemeKey": "*uk~ira|II|PASS"
+      },
+      {
+        "wordId": "32:17:5",
+        "lemma": "أَخْفَى",
+        "selectedParadigmPast": "أُخْفِيَ",
+        "lexemeKey": ">uxofiYa|IV|PASS"
+      },
+      {
+        "wordId": "32:20:11",
+        "lemma": "أَعَادَ",
+        "selectedParadigmPast": "أُعِيدَ",
+        "lexemeKey": ">uEiydu|IV|PASS"
+      },
+      {
+        "wordId": "32:20:13",
+        "lemma": "قَالَ",
+        "selectedParadigmPast": "قِيلَ",
+        "lexemeKey": "qaAla|I|PASS"
+      },
+      {
+        "wordId": "32:22:4",
+        "lemma": "ذَكَّرَ",
+        "selectedParadigmPast": "ذُكِّرَ",
+        "lexemeKey": "*uk~ira|II|PASS"
+      },
+      {
+        "wordId": "32:29:11",
+        "lemma": "أَنْظَرَ",
+        "selectedParadigmPast": "أُنْظِرَ",
+        "lexemeKey": "yunZaru|IV|PASS"
+      }
+    ],
+    "passiveConclusion": "All eight are correctly lemmatized with the corresponding active dictionary verb as the guide requires; differing passive paradigm pasts are not errors.",
+    "nfcConclusion": "All four raw-string differences are canonical combining-mark order only; no source, lemma or paradigm string should be rewritten."
+  },
+  "targetedSourceAdjudications": [
+    {
+      "wordId": "32:23:13",
+      "actualLemma": "اِبْنٌ",
+      "rawSourceLemma": "بُنَىّ",
+      "status": "correct_keep",
+      "evidence": [
+        "Current packet identifies the plural sons construction لِّبَنِىٓ إِسْرَٰٓءِيلَ.",
+        "Root ب ن ي in libs/roots/root-02.json explicitly gives ابن, plural بنون/بنين, construct بني."
+      ],
+      "reason": "Singularizing the actual sons plural to ابن is correct; the raw lemma string is not an authority to turn this into a diminutive."
+    },
+    {
+      "wordId": "32:12:12",
+      "actualLemma": "رَجَعَ",
+      "status": "correct_keep",
+      "evidence": [
+        "Source word فَٱرْجِعْنَا is form I.",
+        "Root ر ج ع note explicitly recognizes transitive رجع and cites فارجعنا."
+      ],
+      "reason": "Do not replace with form IV أرجع merely because this occurrence is transitive."
+    },
+    {
+      "wordId": "32:27:4",
+      "actualLemma": "سَاقَ",
+      "rawSourceLemma": "سِيقَ",
+      "status": "correct_keep",
+      "evidence": [
+        "Packet/source occurrence نَسُوقُ is active first-person plural.",
+        "Reviewed root س و ق note and selected active paradigm give ساق يسوق."
+      ],
+      "reason": "Raw source citation in passive form does not require a passive dictionary lemma."
+    },
+    {
+      "wordId": "32:13:11",
+      "actualLemma": "مَلَأَ",
+      "rawSourceLemma": "مُلِئَتْ",
+      "status": "correct_keep",
+      "evidence": [
+        "Source occurrence لَأَمْلَأَنَّ is active.",
+        "Root م ل أ note explicitly distinguishes ملأ and passive ملئ; selected active paradigm supports ملأ."
+      ],
+      "reason": "The active dictionary lemma is correct despite the inflected passive raw source handle."
+    },
+    {
+      "wordId": "32:27:14",
+      "actualLemma": "نَعَمٌ",
+      "status": "correct_keep",
+      "evidence": [
+        "Root ن ع م note explicitly identifies أنعام as plural of نعم (livestock)."
+      ],
+      "reason": "The singular lexical base is valid; it is not the form-IV verb أنعم."
+    },
+    {
+      "wordIds": [
+        "32:19:5",
+        "32:12:14"
+      ],
+      "actualLemmas": [
+        "صَالِحَة",
+        "صَالِح"
+      ],
+      "status": "correct_keep",
+      "evidence": [
+        "The former singularizes feminine plural substantivized deeds الصالحات; the latter describes an implied singular masculine deed in نعمل صالحا."
+      ],
+      "reason": "Gender/context distinction does not require blind unification."
+    }
+  ],
+  "mechanicalChecks": {
+    "all372DraftLemmasMatchCurrentChunks": true,
+    "all372DraftArabicMatchSourceAndPackets": true,
+    "all131ReferencedRootsPresent": true,
+    "noChunkOrLibraryEdits": true,
+    "nfcComparisonOnly": true,
+    "externalCliNotInvoked": true
+  },
+  "inputs": [
+    {
+      "path": "content-pipeline/drafts/surah-32.json",
+      "sha256": "f5813437ad39e65c6dd30acb8c2e7b26e692cb919cfa31c822e42be8d49ab492"
+    },
+    {
+      "path": "content-pipeline/meta/words.json",
+      "sha256": "1a3f2381f565d82b39b5a181dfce5e4d53e8f46d4974dd174cb83b0acde3cd9f"
+    },
+    {
+      "path": "content-pipeline/meta/overrides.json",
+      "sha256": "2cd47d46176975b911b53f017d840238ad2b3ede1cb02e3e056cdd9c9f5409b5"
+    },
+    {
+      "path": "content-pipeline/guide/authoring-guide.md",
+      "sha256": "8ead190b344b7679af969df1fa4b3172ee5fe29035ca49c5d7d1fdccfa9c85ff"
+    },
+    {
+      "path": "content-pipeline/scripts/assemble.py",
+      "sha256": "d80ff0a20476c89cb0952ff274953bb280e30f56339b4790024691a7157fff6e"
+    },
+    {
+      "path": "content-pipeline/chunks/32/32-c01.json",
+      "sha256": "a0d87fee6bc2a7b4c6a6b193a8246322576d5b629f75f6afd69cb3f953347893"
+    },
+    {
+      "path": "content-pipeline/chunks/32/32-c02.json",
+      "sha256": "1f67dd1f89f630a5ccdb4b723a3b2431f551278bf6407f78a5f135ee7ae2ef33"
+    },
+    {
+      "path": "content-pipeline/chunks/32/32-c03.json",
+      "sha256": "4ee05008f734ef102a9a1192a9f88164668c2bd38e89cdc57ca58de777e67d4b"
+    },
+    {
+      "path": "content-pipeline/chunks/32/32-c04.json",
+      "sha256": "2682ecaf7ab3bae6f17feb767d75855b2313d6bae9d056507b8e2258774ffedc"
+    },
+    {
+      "path": "content-pipeline/chunks/32/32-c05.json",
+      "sha256": "033c16917c477b2fddae7251c16cb9f796c43a367627bd2ceffc72024c34e6b0"
+    },
+    {
+      "path": "content-pipeline/chunks/32/32-c06.json",
+      "sha256": "70097f274c0971a6da87d43fcc19b751ba8c6c6d4936e249af5176c413c02258"
+    },
+    {
+      "path": "content-pipeline/chunks/32/32-c07.json",
+      "sha256": "5580c006f5885a645d89b32ddff75b5aebb7ab80ff8284627318ac7125a99fec"
+    },
+    {
+      "path": "content-pipeline/chunks/32/32-c08.json",
+      "sha256": "a3ba3a51600a9b9be497d24bdebe01906035f3a96590704714d2f7aee9fe4c73"
+    },
+    {
+      "path": "content-pipeline/chunks/32/32-c09.json",
+      "sha256": "0703cb9706131c3e79d932137bda7c2706e02a7497668db3f59451dfbfb3201d"
+    },
+    {
+      "path": "content-pipeline/chunks/32/32-c10.json",
+      "sha256": "b5f4a2a31fba598a289af30f5a5c03bb29c3bade000df3b8a9db00ab2151c676"
+    },
+    {
+      "path": "content-pipeline/chunks/32/32-c11.json",
+      "sha256": "a111492a6396ce50c6d636a651f1e2b4b424b40996a4df1d3a9c2056757effd3"
+    },
+    {
+      "path": "content-pipeline/chunks/32/32-c12.json",
+      "sha256": "77474730f56b6c9a841b0d40e588cd46f9f5969c2cf91b7bc322dfba0a0f6dca"
+    },
+    {
+      "path": "content-pipeline/packets/32/32-c01.json",
+      "sha256": "a3cf10b97864cb888f89cc7b4035e137e6b462acfd6ee9edfc3e4a13f63b839b"
+    },
+    {
+      "path": "content-pipeline/packets/32/32-c02.json",
+      "sha256": "3fb40ab36d55f96f76d3e41be2ad3da4cf0ef09dfbb62622a19011baba96f2d6"
+    },
+    {
+      "path": "content-pipeline/packets/32/32-c03.json",
+      "sha256": "922e184b362e9d34cfa0135d3f25aa7de7bebc92d39e802c4f9ae55e2879b8a4"
+    },
+    {
+      "path": "content-pipeline/packets/32/32-c04.json",
+      "sha256": "12a60917677d25301694cef7f49675ca7232057f3dea81f43c43d4a276f1dae0"
+    },
+    {
+      "path": "content-pipeline/packets/32/32-c05.json",
+      "sha256": "a2f62b67b3995ae486b904f58149638b7ad5c3f90965775814e43a5c1ce43794"
+    },
+    {
+      "path": "content-pipeline/packets/32/32-c06.json",
+      "sha256": "97ae8a8d904dcaf20d5a86038a4e52a71627bcc136057985b6f330ee297c2bd9"
+    },
+    {
+      "path": "content-pipeline/packets/32/32-c07.json",
+      "sha256": "a081e15cd95f6113b5a0aa143062b96a12fa695d6f8d25fab8ebbc02e931e071"
+    },
+    {
+      "path": "content-pipeline/packets/32/32-c08.json",
+      "sha256": "3bfafd809cf4d92a1df0ff0969c5a59654a200a12079ab7bc9ec30519dc210bd"
+    },
+    {
+      "path": "content-pipeline/packets/32/32-c09.json",
+      "sha256": "6d508d16692ad6998cd1de47722b79d1b3b3faa3c686287dd45787125a4aa2a8"
+    },
+    {
+      "path": "content-pipeline/packets/32/32-c10.json",
+      "sha256": "640ae8d265a4a21a9a95c851153b07a9c491902c55d078834cc61efd7d4d9519"
+    },
+    {
+      "path": "content-pipeline/packets/32/32-c11.json",
+      "sha256": "1a14de9391e1acd3f54812b663d138fb1695f7ab7985bacce21124a7c1152c68"
+    },
+    {
+      "path": "content-pipeline/packets/32/32-c12.json",
+      "sha256": "c5a387d9adf8d7f8837206f474db63d3c139c947b5737d996140081133dbd3aa"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "sha256": "9683fb836898be3b86187cbac4cdc04bb0dee60829306dda426da16f11c758ce"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-02.json",
+      "sha256": "374253c8523f8f335069e1b6217208d8646f31dfc5603c3e49acb88a656a4e8c"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-03.json",
+      "sha256": "a9e3f0fd083ec8da5f39ca511a9fbf300429eac28142cf31d15ea866c362a91a"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-04.json",
+      "sha256": "6053a14223bdfcfcb3cec134d3c5b064dd7d3c1b3f95f5bf145480da27ea3444"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-05.json",
+      "sha256": "54d762f2d71f98c6e1aaf7020a4a74015fc6e4dbd74595efc521c8998c3f7436"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-06.json",
+      "sha256": "5f4717863ed33f88235a5754c0fd344229c1b929c80b86e647953e2101cde079"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-07.json",
+      "sha256": "f2dd42c51b8593f973e6ec00d901005c62c8c98f7bcb107af3389f49dd216b55"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-08.json",
+      "sha256": "ac2d7a6475b92133421b7fa0cd411d582249f6626cf7db8378c71dcc7cc80e65"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-09.json",
+      "sha256": "933439e896f4bd54c1d9cc9eaa93a652f8bd57840c9959abbc19b2a7e596b32e"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-10.json",
+      "sha256": "926510fa3df8596d3f9c63431708eacd6347f8f0aead7d05e6dcaffacaa6dca2"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-11.json",
+      "sha256": "5ef211320057564483171c64945d0e709478cd3e13df40ca6a97ee5f8698a40f"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-12.json",
+      "sha256": "195d15d4ac56e2f36379cde7f247afcb223166de6f4978d5ea420fee7edaa89c"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-extra.json",
+      "sha256": "d070fb3dd018c564cd4ccbeb8396526ba00ec1b68b2d6ec1d3c72528c9a318b8"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-01.json",
+      "sha256": "b5e639a97d3df9c0d4f2a95b58926caac44502b09de184cd49d2c8edf74e4dc2"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-02.json",
+      "sha256": "bd6ec9121e565e518c8643560353f53902a91928f9816b7bae28c42869890b7e"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-03.json",
+      "sha256": "a805891404fe007f7befac26bfcf18e85fb0537117eedcab93d0ed2296018f63"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-04.json",
+      "sha256": "0a7ac089dafbf9f517bc93fa60e73333432a8c165cf3c231f2690243f81d4436"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-05.json",
+      "sha256": "b2a1d9890f81e10ce4962e4011a4c4edbdca7c0bf3fc45a8729373cd3e42174f"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-06.json",
+      "sha256": "431592d9ae9bf4e8b9154ffd93994532c42a1e51037af15e44447bbd368be760"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-07.json",
+      "sha256": "831147491defe85594fd14ff671e9e0069150a91ff737a3aacbe1ac3cd7002bb"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-08.json",
+      "sha256": "7ee51bca7e6f2ae36a9e8f4a0a15d2c8e67137c3174b98b34c3f55bc6331ae7d"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-09.json",
+      "sha256": "95b8712adb98dd72274c989d6c7f339a1cb3f10d080bb0cca2dee01087fcf67c"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-10.json",
+      "sha256": "dfdd28e3b816c8c50113b71771b1f0ebd87ae9fccf80030563e2cf32845f85ba"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-11.json",
+      "sha256": "981397511224eec3e729c197503c5af08584905797bcc743835396af0604a30c"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-12.json",
+      "sha256": "a954072fc2c5efb4a9fa9fdc1c9aa9f8c12be52a2ba76f5f8006fc8f74dfe667"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-13.json",
+      "sha256": "d8d3e9b0a3e021e8f2521389f2b4d0ebcf2846e5fff4a46fd9eb9251aaa13e6f"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-14.json",
+      "sha256": "1871f1dd278a37e2c396d2988a690f4d74dbc9d0af9d1f186ba7710ee5ce47ee"
+    }
+  ],
+  "nextStep": "No Surah32 lemma correction batch or shared-library change is needed from this audit. Preserve the publication hold and obtain human scholarly approval before runtime publication.",
+  "limitations": [
+    "AI consistency review is not scholarly approval or a new exhaustive review of every translation/syntax statement.",
+    "Accepted citation spelling differences remain visible in diagnostics by design; they do not justify automatic rewriting."
+  ]
+}

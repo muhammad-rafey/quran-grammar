@@ -1,0 +1,72 @@
+{
+  "status": "confirmed; proposed correction only, shared rules unchanged by this audit",
+  "reviewer": "Codex independent primary-evidence adjudication",
+  "rulesFileSha256": "187b01bede3ecb5bb642d8d24fffb91f5c82e83a4058b94785a7788c16750375",
+  "scope": {
+    "fullRulesInspected": 112,
+    "target": "condition-answer explanationUrdu and full appliesWhenEnglish",
+    "relatedCards": [
+      "condition",
+      "surprise-idha",
+      "detailing",
+      "conditional-jazm",
+      "subjunctive"
+    ],
+    "primaryPacket": "content-pipeline/packets/23-c18.json",
+    "sourceData": [
+      "content-pipeline/meta/ayahs.json",
+      "content-pipeline/meta/words.json"
+    ],
+    "limitations": "Counterexample-backed finding, not exhaustive Arabic grammar or scholarly certification."
+  },
+  "finding": {
+    "severity": "major",
+    "ruleId": "condition-answer",
+    "field": "explanationUrdu",
+    "problem": "The unqualified requirement for a linking fa on a nominal conditional answer omits the attested alternative of surprise idha. It rejects a correct primary-packet analysis.",
+    "current": "شرطیہ جملے کا دوسرا حصہ جوابِ شرط ہے، جو بتاتا ہے کہ شرط پوری ہونے پر کیا ہوگا۔ جواب جملۂ اسمیہ، امر، نہی، قَدْ، سَ، سَوْفَ یا لَنْ وغیرہ سے شروع ہو تو اس پر فاء ضروری ہے، جسے فاءِ رابطہ کہتے ہیں؛ کبھی جواب حذف ہوتا ہے اور سیاق اس پر دلالت کرتا ہے۔",
+    "proposedMinimalReplacement": "شرطیہ جملے کا دوسرا حصہ جوابِ شرط ہے، جو بتاتا ہے کہ شرط پوری ہونے پر کیا ہوگا۔ جواب جملۂ اسمیہ، امر، نہی، قَدْ، سَ، سَوْفَ یا لَنْ وغیرہ سے شروع ہو تو اس پر فاء ضروری ہے، جسے فاءِ رابطہ کہتے ہیں؛ بعض اسمی جوابوں میں إِذَا فجائیہ اس فاء کی جگہ آتا ہے؛ کبھی جواب حذف ہوتا ہے اور سیاق اس پر دلالت کرتا ہے۔",
+    "appliesWhenEnglishChangeRequired": false,
+    "whyEnglishCanStay": "The actual predicate explicitly covers the opening of ANY conditional answer; especially linking fa does not limit eligibility to fa. The final jussive sentence is conditional on a jussive answer and does not impose jussive on idha answers.",
+    "qualification": "Some nominal replies, not every nominal reply or every reply type, permit surprise idha in place of fa. Retain the other listed reply types."
+  },
+  "counterexamples": [
+    {
+      "ayah": "23:64",
+      "conditionalIdha": "23:64:2",
+      "answerIdha": "23:64:6",
+      "answer": "إِذَا هُمْ يَجْـَٔرُونَ",
+      "primaryNoteRelevant": "«إذا» الثانية فجائية ... وجملة «إذا هم يجأرون» جواب الشرط.",
+      "source": "https://corpus.quran.com/grammar.jsp?chapter=23&verse=64",
+      "verified": "Primary online note agrees with stored ayah note; nominal answer has surprise idha and no fa."
+    },
+    {
+      "ayah": "23:77",
+      "conditionalIdha": "23:77:2",
+      "answerIdha": "23:77:9",
+      "answer": "إِذَا هُمْ فِيهِ مُبْلِسُونَ",
+      "primaryNoteRelevant": "وجملة «إذا هم فيه مبلسون» جواب الشرط",
+      "source": "https://corpus.quran.com/grammar.jsp?chapter=23&verse=77",
+      "verified": "Primary online note agrees with stored ayah note; independent second nominal-answer counterexample without fa."
+    }
+  ],
+  "relatedOverclaimCheck": [
+    {
+      "rule": "condition",
+      "result": "No additional definite error: Urdu already qualifies fa by necessity. English parenthesis highlights fa/elided answers but does not exclude other answer heads; optional consistency wording is not a required correction."
+    },
+    {
+      "rule": "surprise-idha",
+      "result": "No additional definite error: no conditional answer refers to surprise idha itself not introducing a condition; the surrounding nominal clause can still answer an earlier conditional idha. Its English example already includes the 23:64 expression."
+    },
+    {
+      "rule": "detailing",
+      "result": "Do not transfer this exception to amma: its fa statement concerns a different governor; no counterexample supplied."
+    }
+  ],
+  "priorAuditGap": {
+    "report": "content-pipeline/reports/codex-rule-predicate-audit.json",
+    "acknowledgment": "The earlier full predicate audit missed this Urdu overclaim despite its Urdu crosscheck. This finding is a substantive new correction, not a new stylistic requirement. The earlier audit must not be represented as exhaustive rule correctness certification."
+  },
+  "publication": "All five-Surah drafts and shared library changes still require scholarly review; this finding does not authorize release."
+}

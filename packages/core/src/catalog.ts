@@ -11,6 +11,13 @@ export interface SurahCatalogEntry {
   readonly available: boolean;
 }
 
+/** The ayahs of one available chapter that fall inside a juz. */
+export interface JuzSurahRange {
+  readonly surah: number;
+  readonly firstAyah: number;
+  readonly lastAyah: number;
+}
+
 export interface JuzCatalogEntry {
   readonly number: number;
   readonly available: boolean;
@@ -18,6 +25,8 @@ export interface JuzCatalogEntry {
   readonly partial: boolean;
   readonly previewSurahNumber?: number;
   readonly surahNumbers: readonly number[];
+  /** Ayah ranges of the available chapters in this juz; a chapter may span two juz. */
+  readonly ranges: readonly JuzSurahRange[];
 }
 
 const chapterNames: ReadonlyArray<readonly [number, string, string]> = [
@@ -147,20 +156,183 @@ export const surahCatalog: readonly SurahCatalogEntry[] = chapterNames.map(
   }),
 );
 
+/** Juz boundaries as [juz, surah, first ayah, last ayah] for the standard 30-part division.
+ * Checked against Quran.com API v4 /juzs on 2026-11-06; every ayah of all 114 chapters is covered once.
+ */
+const juzBoundaries: ReadonlyArray<readonly [number, number, number, number]> = [
+  [1, 1, 1, 7],
+  [1, 2, 1, 141],
+  [2, 2, 142, 252],
+  [3, 2, 253, 286],
+  [3, 3, 1, 92],
+  [4, 3, 93, 200],
+  [4, 4, 1, 23],
+  [5, 4, 24, 147],
+  [6, 4, 148, 176],
+  [6, 5, 1, 81],
+  [7, 5, 82, 120],
+  [7, 6, 1, 110],
+  [8, 6, 111, 165],
+  [8, 7, 1, 87],
+  [9, 7, 88, 206],
+  [9, 8, 1, 40],
+  [10, 8, 41, 75],
+  [10, 9, 1, 92],
+  [11, 9, 93, 129],
+  [11, 10, 1, 109],
+  [11, 11, 1, 5],
+  [12, 11, 6, 123],
+  [12, 12, 1, 52],
+  [13, 12, 53, 111],
+  [13, 13, 1, 43],
+  [13, 14, 1, 52],
+  [14, 15, 1, 99],
+  [14, 16, 1, 128],
+  [15, 17, 1, 111],
+  [15, 18, 1, 74],
+  [16, 18, 75, 110],
+  [16, 19, 1, 98],
+  [16, 20, 1, 135],
+  [17, 21, 1, 112],
+  [17, 22, 1, 78],
+  [18, 23, 1, 118],
+  [18, 24, 1, 64],
+  [18, 25, 1, 20],
+  [19, 25, 21, 77],
+  [19, 26, 1, 227],
+  [19, 27, 1, 55],
+  [20, 27, 56, 93],
+  [20, 28, 1, 88],
+  [20, 29, 1, 45],
+  [21, 29, 46, 69],
+  [21, 30, 1, 60],
+  [21, 31, 1, 34],
+  [21, 32, 1, 30],
+  [21, 33, 1, 30],
+  [22, 33, 31, 73],
+  [22, 34, 1, 54],
+  [22, 35, 1, 45],
+  [22, 36, 1, 27],
+  [23, 36, 28, 83],
+  [23, 37, 1, 182],
+  [23, 38, 1, 88],
+  [23, 39, 1, 31],
+  [24, 39, 32, 75],
+  [24, 40, 1, 85],
+  [24, 41, 1, 46],
+  [25, 41, 47, 54],
+  [25, 42, 1, 53],
+  [25, 43, 1, 89],
+  [25, 44, 1, 59],
+  [25, 45, 1, 37],
+  [26, 46, 1, 35],
+  [26, 47, 1, 38],
+  [26, 48, 1, 29],
+  [26, 49, 1, 18],
+  [26, 50, 1, 45],
+  [26, 51, 1, 30],
+  [27, 51, 31, 60],
+  [27, 52, 1, 49],
+  [27, 53, 1, 62],
+  [27, 54, 1, 55],
+  [27, 55, 1, 78],
+  [27, 56, 1, 96],
+  [27, 57, 1, 29],
+  [28, 58, 1, 22],
+  [28, 59, 1, 24],
+  [28, 60, 1, 13],
+  [28, 61, 1, 14],
+  [28, 62, 1, 11],
+  [28, 63, 1, 11],
+  [28, 64, 1, 18],
+  [28, 65, 1, 12],
+  [28, 66, 1, 12],
+  [29, 67, 1, 30],
+  [29, 68, 1, 52],
+  [29, 69, 1, 52],
+  [29, 70, 1, 44],
+  [29, 71, 1, 28],
+  [29, 72, 1, 28],
+  [29, 73, 1, 20],
+  [29, 74, 1, 56],
+  [29, 75, 1, 40],
+  [29, 76, 1, 31],
+  [29, 77, 1, 50],
+  [30, 78, 1, 40],
+  [30, 79, 1, 46],
+  [30, 80, 1, 42],
+  [30, 81, 1, 29],
+  [30, 82, 1, 19],
+  [30, 83, 1, 36],
+  [30, 84, 1, 25],
+  [30, 85, 1, 22],
+  [30, 86, 1, 17],
+  [30, 87, 1, 19],
+  [30, 88, 1, 26],
+  [30, 89, 1, 30],
+  [30, 90, 1, 20],
+  [30, 91, 1, 15],
+  [30, 92, 1, 21],
+  [30, 93, 1, 11],
+  [30, 94, 1, 8],
+  [30, 95, 1, 8],
+  [30, 96, 1, 19],
+  [30, 97, 1, 5],
+  [30, 98, 1, 8],
+  [30, 99, 1, 8],
+  [30, 100, 1, 11],
+  [30, 101, 1, 11],
+  [30, 102, 1, 8],
+  [30, 103, 1, 3],
+  [30, 104, 1, 9],
+  [30, 105, 1, 5],
+  [30, 106, 1, 4],
+  [30, 107, 1, 7],
+  [30, 108, 1, 3],
+  [30, 109, 1, 6],
+  [30, 110, 1, 3],
+  [30, 111, 1, 5],
+  [30, 112, 1, 4],
+  [30, 113, 1, 5],
+  [30, 114, 1, 6],
+];
+
 /** Juz previews list only the chapters for which study content is available. */
 export const juzCatalog: readonly JuzCatalogEntry[] = Array.from({ length: 30 }, (_, index) => {
   const number = index + 1;
-  const surahNumbers = availableSurahNumbers.filter((surah) =>
-    number === 1 ? surah === 1 : number === 30 && surah >= 78,
-  );
+  const rows = juzBoundaries.filter(([juz]) => juz === number);
+  const ranges = rows
+    .filter(([, surah]) => availableSurahNumbers.includes(surah))
+    .map(([, surah, firstAyah, lastAyah]) => ({ surah, firstAyah, lastAyah }));
+  const surahNumbers = ranges.map((range) => range.surah);
   return {
     number,
     available: surahNumbers.length > 0,
-    partial: surahNumbers.length > 0,
+    partial:
+      surahNumbers.length > 0 && rows.some(([, surah]) => !availableSurahNumbers.includes(surah)),
     previewSurahNumber: surahNumbers[0],
     surahNumbers,
+    ranges,
   };
 });
+
+/** The available juz that contains a given ayah, so a chapter spanning two juz shows the right one. */
+export function getJuzForAyah(surah: number, ayah: number): JuzCatalogEntry | undefined {
+  return juzCatalog.find((juz) =>
+    juz.ranges.some(
+      (range) => range.surah === surah && ayah >= range.firstAyah && ayah <= range.lastAyah,
+    ),
+  );
+}
+
+/** The first ayah of a chapter inside a juz: Juz 16 opens Al-Kahf at ayah 75, not ayah 1. */
+export function getJuzStartAyah(juzNumber: number, surah: number): number {
+  return (
+    juzCatalog
+      .find((juz) => juz.number === juzNumber)
+      ?.ranges.find((range) => range.surah === surah)?.firstAyah ?? 1
+  );
+}
 
 export function getSurahTitle(number: number, language: UiLanguage): string {
   const chapter = surahCatalog.find((surah) => surah.number === number);

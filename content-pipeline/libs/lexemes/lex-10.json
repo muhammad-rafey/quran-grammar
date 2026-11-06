@@ -1,0 +1,294 @@
+{
+ "entries": [
+  {
+   "key": "kasaba|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "كَسَبَ",
+   "present": "يَكْسِبُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کمانا، یا اپنے عمل سے کچھ حاصل کرنا۔ مضارع میں عینِ کلمہ مکسور ہے (يَكْسِبُ)؛ بابِ افتعال کا اِكْتَسَبَ اسی مادے کا الگ فعل ہے۔",
+   "evidenceEnglish": "QAC tags both occurrences Form I active (LEM kasaba). The imperfect is attested in this batch as يَكْسِبُونَ (36:65) and Quran-wide as يَكْسِبُونَ / تَكْسِبُونَ (2:79, 6:3), giving a–i (ḍaraba class); the lexica give كَسَبَ يَكْسِبُ كَسْبًا. Matches the shipped Surah 111 entry (كَسَبَ / يَكْسِبُ)."
+  },
+  {
+   "key": "kasawo|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "كَسَا",
+   "present": "يَكْسُو",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "ناقص واوی فعل ہے: آخری واو ماضی كَسَا میں الف بنتی ہے، كَسَوْنَا اور مضارع يَكْسُو میں ظاہر رہتی ہے، اور جزم و امر میں حذف ہوتی ہے (اُكْسُ)۔ دو مفعولوں کی طرف متعدی ہے: کسی کو کوئی چیز پہنانا یا اس پر چڑھا دینا۔",
+   "evidenceEnglish": "QAC tags فَكَسَوْنَا (23:14) as Form I active perfect 1P, ROOT ksw, LEM kasawo (the lemma is the stem كَسَوْ; citation form كَسَا). Quran-wide imperfect نَكْسُوهَا (2:259) and imperative وَٱكْسُوهُمْ (4:5) give a–u (naṣara class), final-wāw defective; the lexica give كَسَاهُ ثَوْبًا يَكْسُوهُ كِسْوَةً, doubly transitive."
+  },
+  {
+   "key": "ka$afa|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "كَشَفَ",
+   "present": "يَكْشِفُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: پردہ ہٹانا، کھول دینا، یا تکلیف دور کرنا۔ مضارع اور امر میں عینِ کلمہ مکسور ہے (يَكْشِفُ، اِكْشِفْ)۔",
+   "evidenceEnglish": "QAC tags وَكَشَفْنَا (23:75) as Form I active perfect, LEM ka$afa. Quran-wide imperfect يَكْشِفُ (6:41, 27:62) and imperative ٱكْشِفْ (44:12) confirm a–i (ḍaraba class); the lexica give كَشَفَهُ يَكْشِفُهُ كَشْفًا."
+  },
+  {
+   "key": "kafara|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "كَفَرَ",
+   "present": "يَكْفُرُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح فعل ہے؛ اکثر بغیر مفعول آتا ہے اور جس چیز کا انکار ہو وہ بِ کے ساتھ آتی ہے (كَفَرَ بِـ)، جبکہ نعمت کے ساتھ ناشکری کا معنی دیتا ہے۔ بابِ تفعیل کا كَفَّرَ (گناہ مٹانا) الگ فعل ہے، اور كَافِر اسمِ فاعل ہے، فعل نہیں۔",
+   "evidenceEnglish": "QAC: Form I active, LEM kafara (11 occurrences in these surahs); the jussive فَلْيَكْفُرْ (18:29) in this batch shows the imperfect vowel u. Quran-wide يَكْفُرُونَ / تَكْفُرُونَ and the imperative ٱكْفُرْ (59:16) confirm a–u (naṣara class); the lexica give كَفَرَ يَكْفُرُ كُفْرًا. Form II كَفَّرَ is a separate QAC lexeme."
+  },
+  {
+   "key": "yukal~ifu|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "كَلَّفَ",
+   "present": "يُكَلِّفُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح فعل ہے؛ عینِ کلمہ لام کی تشدید اور مضارع میں حرفِ مضارع کا پیش بابِ تفعیل کی علامت ہیں۔ دو مفعولوں کی طرف متعدی ہے: کسی پر کوئی ذمہ داری یا بوجھ ڈالنا (كَلَّفَهُ أَمْرًا)۔",
+   "evidenceEnglish": "QAC tags نُكَلِّفُ (23:62) as Form II active imperfect 1P, ROOT klf, LEM yukal~ifu (QAC's lemma is the imperfect يُكَلِّفُ; the citation perfect is كَلَّفَ). Quran-wide: يُكَلِّفُ (2:286), نُكَلِّفُ (6:152), passive تُكَلَّفُ (2:233). Doubly transitive (كَلَّفَهُ أَمْرًا) in the lexica."
+  },
+  {
+   "key": "kal~ama|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "كَلَّمَ",
+   "present": "يُكَلِّمُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی سے بات کرنا (كَلَّمَهُ)۔ بابِ تَفَعُّل کا تَكَلَّمَ (بولنا) لازم اور الگ فعل ہے؛ مضارع میں حرفِ مضارع کا پیش اور عینِ کلمہ کی تشدید مل کر بابِ تفعیل کی پہچان ہیں (يُكَلِّمُ)، جبکہ يَتَكَلَّمُ کا حرفِ مضارع مفتوح ہے۔",
+   "evidenceEnglish": "QAC: Form II active, LEM kal~ama; this batch has the imperfects تُكَلِّمُونِ (23:108, jussive) and تُكَلِّمُنَا (36:65), with prefix vowel u and kasra on the doubled ʿayn. Quran-wide perfect كَلَّمَ (2:253) and passive كُلِّمَ (13:31); Form V تَكَلَّمَ is a separate QAC lexeme."
+  },
+  {
+   "key": "kaAda|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "كَادَ",
+   "present": "يَكَادُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "اجوف واوی فعل ہے (اصل كَوِدَ يَكْوَدُ)؛ واو ماضی اور مضارع دونوں میں الف بنتی ہے، اور آخری حرف ساکن ہونے پر گر جاتی ہے: ماضی میں متحرک ضمیر سے پہلے (كِدْتُ) اور جزم میں (لَمْ يَكَدْ)۔ افعالِ مقاربہ میں سے ہے: اسم کو رفع دیتا ہے اور خبر عموماً فعلِ مضارع ہوتی ہے؛ مثبت صورت میں کام قریب تھا مگر ہوا نہیں۔",
+   "evidenceEnglish": "QAC: Form I active, ROOT kwd, LEM kaAda, special group SP:kaAd (verbs of approximation); this batch attests the imperfect يَكَادُونَ (18:93). Quran-wide imperfect يَكَادُ / تَكَادُ with a, and the perfect 2MS كِدتَّ (17:74) with kasra on the kāf, i.e. underlying كَوِدَ يَكْوَدُ: i–a (samiʿa class), hollow-wāw, as in the lexica (كَادَ يَكَادُ كَوْدًا)."
+  },
+  {
+   "key": "kaAna|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "كَانَ",
+   "present": "يَكُونُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "اجوف واوی فعل ہے (اصل كَوَنَ)؛ واو ماضی میں الف بنتی ہے، مضارع يَكُونُ میں ظاہر رہتی ہے اور آخری حرف ساکن ہونے پر گر جاتی ہے (كُنْتُ، يَكُنْ، كُنْ)؛ جزم میں کبھی نون بھی حذف ہوتی ہے (يَكُ)۔ عموماً فعلِ ناقص ہے جو اسم کو رفع اور خبر کو نصب دیتا ہے، اور کبھی تامہ ہو کر «ہونا، واقع ہونا» کا معنی دیتا ہے۔",
+   "evidenceEnglish": "QAC: Form I active, ROOT kwn, LEM kaAna, SP:kaAn (kāna and its sisters). Batch forms include the jussive تَكُن (18:43) and the perfect كُنتُ (18:51) with damma on the kāf; Quran-wide imperfect يَكُونُ and imperative كُن / كُونُوا confirm a–u (naṣara class), hollow-wāw. Matches the shipped Surah 110 and 112 entries (كَانَ / يَكُونُ)."
+  },
+  {
+   "key": "{sotakaAnu|X|ACT",
+   "baabUrdu": "بابِ اِسْتِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — دہم (X)",
+   "past": "اِسْتَكَانَ",
+   "present": "يَسْتَكِينُ",
+   "pattern": "اِسْتَفْعَلَ — يَسْتَفْعِلُ",
+   "noteUrdu": "اجوف یائی فعل ہے؛ درمیانی اصلی یاء ماضی میں الف بنتی ہے (اِسْتَكَانَ) اور مضارع میں یاء ہی رہتی ہے (يَسْتَكِينُ)۔ لازم ہے: عاجزی سے جھک جانا؛ یہاں مادہ ك ي ن مانا گیا ہے، جبکہ بعض اہلِ لغت اسے ك و ن سے اسی بابِ استفعال کا، یا س ك ن سے بابِ افتعال کا (فتحہ کے اشباع سے) مانتے ہیں۔",
+   "evidenceEnglish": "QAC tags ٱسْتَكَانُوا (23:76; also 3:146) as Form X active perfect 3MP, ROOT kyn, LEM {sotakaAnu (lemma written from the 3MP stem). Citation perfect اِسْتَكَانَ, imperfect يَسْتَكِينُ (hollow; Form X hollow verbs show ā in the perfect and ī in the imperfect whatever the middle radical, cf. اِسْتَقَامَ / يَسْتَقِيمُ from q-w-m, so the surface form cannot decide between k-y-n and k-w-n; the root follows QAC); no imperfect occurs in the Quran. Classical lexicographers and commentators (e.g. al-Zamakhshari, Lisan al-Arab) also derive it from k-w-n as istafʿala, or from s-k-n as iftaʿala with a lengthened fatha; this entry follows QAC."
+  },
+  {
+   "key": "labiva|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "لَبِثَ",
+   "present": "يَلْبَثُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے: کسی جگہ ٹھہرنا یا رکے رہنا؛ مدت عموماً ظرف کے طور پر آتی ہے۔ ماضی میں عینِ کلمہ مکسور اور مضارع میں مفتوح ہے (لَبِثَ، يَلْبَثُ)؛ اسے لَبِسَ (پہننا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC: Form I active, LEM labiva; the batch has perfects only (لَبِثُوا، لَبِثْتُمْ، لَبِثْنَا), all with kasra on the bāʾ. Quran-wide imperfects يَلْبَثُوا (10:45, jussive) and يَلْبَثُونَ (17:76) have fatha, giving i–a (samiʿa class); the lexica give لَبِثَ يَلْبَثُ لُبْثًا."
+  },
+  {
+   "key": "labaso|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "لَبِسَ",
+   "present": "يَلْبَسُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: لباس پہننا (لَبِسَ يَلْبَسُ)۔ اسی مادے کا لَبَسَ يَلْبِسُ (بابِ ضَرَبَ) کسی بات کو مشتبہ کرنا یا حق و باطل کو گڈمڈ کرنا ہے؛ مضارع کی حرکت سے دونوں کو پہچانیں۔",
+   "evidenceEnglish": "QAC's LEM labaso (لَبَسَ) groups two Form I verbs: لَبَسَ يَلْبِسُ \"to confuse, obscure\" (6:9 وَلَلَبَسْنَا ... يَلْبِسُونَ; 2:42 تَلْبِسُوا) and لَبِسَ يَلْبَسُ \"to wear\". The only occurrence here, وَيَلْبَسُونَ (18:31, \"and they will wear\"), has fatha on the bāʾ and the \"wear\" sense, so this entry is لَبِسَ يَلْبَسُ, i–a (samiʿa class); cf. يَلْبَسُونَ (44:53), تَلْبَسُونَهَا (16:14, 35:12)."
+  },
+  {
+   "key": "l~aj~u|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "لَجَّ",
+   "present": "يَلَجُّ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "مضاعف اور لازم فعل ہے (اصل لَجِجَ)؛ دونوں اصلی جیموں کے ادغام سے تشدید آتی ہے، جو متحرک ضمیر سے پہلے کھل جاتی ہے (لَجِجْتُ)۔ معنی کسی بات پر ہٹ دھرمی سے اڑے رہنا ہے، اکثر فِي کے ساتھ؛ لغت میں لَجَجَ يَلِجُّ (بابِ ضَرَبَ) بھی منقول ہے۔",
+   "evidenceEnglish": "QAC: Form I active, ROOT ljj, LEM l~aj~u (the initial shadda reflects assimilation in بَل لَّجُّوا, 67:21). Only the perfect لَجُّوا occurs (23:75, 67:21), so the Quran does not fix the vowel class. Classical lexica (e.g. al-Sihah, al-Qamus) give لَجِجَ يَلَجُّ (i–a, samiʿa) first and لَجَجَ يَلِجُّ (a–i, ḍaraba) as a variant; samiʿa is used here. Vowel class uncertain."
+  },
+  {
+   "key": "yatalaT~afo|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَلَطَّفَ",
+   "present": "يَتَلَطَّفُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے؛ شروع کی تاء اور عینِ کلمہ کی تشدید بابِ تَفَعُّل کی علامت ہیں۔ معنی نرمی، باریک بینی اور احتیاط سے کام لینا ہے؛ اس باب کے مضارع میں حرفِ مضارع مفتوح ہے (يَتَلَطَّفُ)، بابِ تفعیل کی طرح مضموم نہیں۔",
+   "evidenceEnglish": "QAC tags وَلْيَتَلَطَّفْ (18:19) as Form V active imperfect 3MS, jussive after lām al-amr, ROOT lṭf, LEM yatalaT~afo (the lemma is this jussive imperfect); citation perfect تَلَطَّفَ, imperfect يَتَلَطَّفُ. It is the verb's only Quranic occurrence; the Form V pattern is regular (tafaʿʿala — yatafaʿʿalu)."
+  },
+  {
+   "key": "talofaHu|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "لَفَحَ",
+   "present": "يَلْفَحُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: آگ یا گرم ہوا کا چہرے وغیرہ کو جھلسا دینا۔ لامِ کلمہ (ح) حرفِ حلقی ہے اور ماضی و مضارع دونوں میں عینِ کلمہ مفتوح ہے (لَفَحَ، يَلْفَحُ)؛ تَلْفَحُ کی تاء حرفِ مضارع ہے، مادے کا حصہ نہیں۔",
+   "evidenceEnglish": "QAC tags تَلْفَحُ (23:104) as Form I active imperfect 3FS, ROOT lfḥ, LEM talofaHu (the lemma is this imperfect; citation perfect لَفَحَ). The attested imperfect has fatha (a), and the lexica give لَفَحَتْهُ النَّارُ تَلْفَحُهُ لَفْحًا (al-Qamus: like مَنَعَ), so a–a (fataḥa class), with guttural ḥāʾ as third radical. It is the verb's only Quranic occurrence."
+  },
+  {
+   "key": "laqu|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "لَقِيَ",
+   "present": "يَلْقَى",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "ناقص یائی اور متعدی فعل ہے: کسی سے ملنا یا کسی چیز سے دوچار ہونا۔ آخری یاء ماضی میں ظاہر رہتی ہے (لَقِيَ، لَقِينَا) مگر واوِ جمع سے پہلے گرتی ہے (لَقُوا)، مضارع میں الف مقصورہ بنتی ہے (يَلْقَى) اور جزم میں حذف ہوتی ہے (يَلْقَ)۔",
+   "evidenceEnglish": "QAC: Form I active, ROOT lqy, LEM laqu (lemma taken from the 3MP stem of لَقُوا; citation form لَقِيَ). Batch perfects لَقِينَا (18:62) and لَقِيَا (18:74) have kasra on the qāf; Quran-wide imperfects يَلْقَ (25:68, jussive) and يَلْقَىٰهُ (17:13) have a, giving i–a (samiʿa class), final-yāʾ defective; the lexica give لَقِيَهُ يَلْقَاهُ لِقَاءً."
+  },
+  {
+   "key": "{lotaqaY|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِلْتَقَى",
+   "present": "يَلْتَقِي",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "ناقص یائی فعل ہے؛ آخری یاء ماضی میں الف مقصورہ (اِلْتَقَى) اور مضارع میں یاء (يَلْتَقِي) بنتی ہے۔ فاءِ کلمہ لام کے بعد کی تاء بابِ افتعال کی زائد تاء ہے؛ معنی آپس میں ملنا ہے، اس لیے عموماً لازم اور تثنیہ یا جمع فاعل کے ساتھ آتا ہے۔",
+   "evidenceEnglish": "QAC tags يَلْتَقِيَانِ (55:19) as Form VIII active imperfect 3MD, ROOT lqy, LEM {lotaqaY. Quran-wide perfects ٱلْتَقَى (3:155) and ٱلْتَقَتَا (3:13). Regular Form VIII of a final-yāʾ root: اِلْتَقَى يَلْتَقِي, reciprocal \"met one another\"."
+  },
+  {
+   "key": "l~ayosa|I|ACT",
+   "baabUrdu": "فعلِ جامد (غیر متصرف)",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "لَيْسَ",
+   "present": "—",
+   "pattern": "فَعْلَ",
+   "noteUrdu": "فعلِ جامد ہے: صرف ماضی کی گردان آتی ہے (لَيْسَ، لَيْسُوا، لَسْتُ)، مضارع یا امر نہیں؛ اصل لَيِسَ کی یاء کا کسرہ تخفیف سے ساکن ہوا، اور متحرک ضمیر سے پہلے یاء گر جاتی ہے۔ كَانَ کی طرح اسم کو رفع اور خبر کو نصب دیتا ہے اور عموماً حال کی نفی کرتا ہے۔",
+   "evidenceEnglish": "QAC tags لَيْسَ (36:81, after interrogative أَ and wa) as Form I active perfect 3MS, ROOT lys, LEM l~ayosa (the lemma shadda comes from assimilation in Uthmani spelling), SP:kaAn (sister of kāna). The verb is jāmid: Arabic has no imperfect or imperative of it, so present is \"—\" and no Form I bāb pair applies (baabUrdu labels it فعلِ جامد). Grammarians take its base as لَيِسَ (faʿila) with the kasra dropped; the pattern gives the surface measure فَعْلَ."
+  },
+  {
+   "key": ">amad~a|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَمَدَّ",
+   "present": "يُمِدُّ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "مضاعف فعل ہے (اصل أَمْدَدَ)؛ دونوں اصلی دالوں کے ادغام سے تشدید آتی ہے، جو متحرک ضمیر سے پہلے کھل جاتی ہے (أَمْدَدْنَا)، جزم میں عموماً کھلتی ہے (يُمْدِدْ) مگر افعالِ خمسہ میں نہیں۔ متعدی ہے: بِ کے ساتھ کسی کو کچھ بہم پہنچانا یا مدد دینا؛ يُمِدُّ (حرفِ مضارع مضموم) کو مجرد يَمُدُّ (پھیلانا، ڈھیل دینا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC tags نُمِدُّهُم (23:55) as Form IV active imperfect 1P, ROOT mdd, LEM >amad~a; prefix vowel u with kasra before the geminate marks Form IV. Quran-wide: أَمَدَّكُم (26:132), وَأَمْدَدْنَاكُم (17:6), jussive يُمْدِدْكُمْ (3:125); contrast Form I وَيَمُدُّهُمْ (2:15). The lexica give أَمَدَّهُ بِكَذَا \"supplied, aided him with\"."
+  },
+  {
+   "key": "maraja|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "مَرَجَ",
+   "present": "يَمْرُجُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی چیز کو آزاد چھوڑ دینا، یا دو چیزوں کو ساتھ ساتھ رواں کر دینا۔ قرآن میں صرف ماضی آیا ہے اور لغت میں مضارع يَمْرُجُ (عینِ کلمہ مضموم) منقول ہے؛ مَرِجَ (عین مکسور) لازم ہے اور معاملے کے بگڑنے یا گڈمڈ ہونے کا معنی دیتا ہے، اسے الگ رکھیں۔",
+   "evidenceEnglish": "QAC tags مَرَجَ (55:19; also 25:53) as Form I active perfect 3MS, LEM maraja. No imperfect occurs in the Quran, so the class rests on the lexica: مَرَجَ الدَّابَّةَ يَمْرُجُهَا مَرْجًا \"let it loose to graze\" (al-Misbah: bāb qatala, i.e. a–u, naṣara), used of letting the two seas flow; intransitive مَرِجَ يَمْرَجُ \"became confused\" is a different verb class. Moderately certain."
+  },
+  {
+   "key": "tumaAri|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "مَارَى",
+   "present": "يُمَارِي",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "ناقص یائی اور متعدی فعل ہے (مَارَاهُ: کسی سے جھگڑنا یا بحث کرنا)؛ آخری یاء ماضی میں الف مقصورہ بنتی ہے (مَارَى)، مضارع میں یاء ہی رہتی ہے (يُمَارِي) اور جزم و امر میں حذف ہو کر کسرہ چھوڑتی ہے (لَا تُمَارِ)۔ فاءِ کلمہ کے بعد کا الف بابِ مفاعلہ کا زائد حرف ہے۔",
+   "evidenceEnglish": "QAC tags تُمَارِ (18:22) as Form III active imperfect 2MS, jussive after lā of prohibition, ROOT mry, LEM tumaAri (the lemma is this jussive form); citation perfect مَارَى, imperfect يُمَارِي, verbal noun مِرَاء (مِرَآءً in the same ayah). The lexica give مَارَاهُ مُمَارَاةً وَمِرَاءً \"disputed with him\"."
+  },
+  {
+   "key": "masaxo|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "مَسَخَ",
+   "present": "يَمْسَخُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی کی صورت بدل کر بدتر کر دینا، مسخ کرنا۔ لامِ کلمہ (خ) حرفِ حلقی ہے اور لغت میں مضارع يَمْسَخُ (عینِ کلمہ مفتوح) منقول ہے؛ قرآن میں یہ فعل صرف ماضی میں آیا ہے۔",
+   "evidenceEnglish": "QAC tags لَمَسَخْنَاهُمْ (36:67) as Form I active perfect 1P, LEM masaxo (the lemma is the stem before نَا); it is the verb's only Quranic occurrence, so no imperfect is attested. The lexica give مَسَخَهُ يَمْسَخُهُ مَسْخًا (al-Qamus: like مَنَعَهُ), i.e. a–a (fataḥa class), consistent with the guttural khāʾ as third radical."
+  },
+  {
+   "key": "mas~a|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "مَسَّ",
+   "present": "يَمَسُّ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "مضاعف اور متعدی فعل ہے (اصل مَسِسَ)؛ دونوں اصلی سینوں کے ادغام سے تشدید آتی ہے، جو متحرک ضمیر سے پہلے کھل جاتی ہے (مَسِسْتُ)، جزم میں عموماً کھلتی ہے (يَمْسَسْ) مگر افعالِ خمسہ میں باقی رہتی ہے (لَمْ تَمَسُّوا)۔ معنی چھونا، یا تکلیف و بھلائی کا آ پہنچنا ہے؛ مضارع میں عینِ کلمہ مفتوح ہے، اس لیے يَمَسُّ بنتا ہے۔",
+   "evidenceEnglish": "QAC: Form I active, LEM mas~a; this batch has وَلَيَمَسَّنَّكُم (36:18) and the Quran has the jussive يَمْسَسْنِي (3:47, 19:20), both with imperfect vowel a. Lisan al-Arab gives مَسِسْتُهُ (kasra) أَمَسُّهُ as the chaste form and مَسَسْتُهُ أَمُسُّهُ as a dialect variant: i–a (samiʿa class), geminate."
+  },
+  {
+   "key": "m~a$a|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "مَشَى",
+   "present": "يَمْشِي",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "ناقص یائی اور لازم فعل ہے: چلنا۔ آخری یاء ماضی میں الف مقصورہ (مَشَى) اور مضارع میں یاء (يَمْشِي) بنتی ہے، واوِ جمع سے پہلے گر جاتی ہے (مَشَوْا، يَمْشُونَ) اور جزم و امر میں بھی حذف ہوتی ہے (لَا تَمْشِ)۔",
+   "evidenceEnglish": "QAC: Form I active, ROOT m$y, LEM m~a$a (the lemma shadda reflects assimilation in لَهُم مَّشَوْا, 2:20; citation form مَشَى). Batch imperfect يَمْشُونَ (32:26); Quran-wide يَمْشِي (6:122), لَا تَمْشِ (17:37) and the imperative ٱمْشُوا (38:6) confirm a–i (ḍaraba class), final-yāʾ defective."
+  },
+  {
+   "key": "maDaY`|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "مَضَى",
+   "present": "يَمْضِي",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "ناقص یائی اور لازم فعل ہے: گزر جانا یا آگے چلتے جانا۔ آخری یاء ماضی میں الف مقصورہ (مَضَى) اور مضارع میں یاء (يَمْضِي) بنتی ہے؛ تاءِ تانیث اور واوِ جمع سے پہلے گرتی ہے (مَضَتْ، اِمْضُوا) اور نصب میں فتحہ کے ساتھ ظاہر ہوتی ہے (أَمْضِيَ)۔",
+   "evidenceEnglish": "QAC: Form I active, ROOT mDy, LEM maDaY`; the batch has the subjunctive أَمْضِيَ (18:60) with kasra before the yāʾ. Quran-wide imperative وَٱمْضُوا (15:65) and perfects مَضَىٰ (43:8), مَضَتْ (8:38): a–i (ḍaraba class), final-yāʾ defective; the lexica give مَضَى يَمْضِي مُضِيًّا."
+  },
+  {
+   "key": "mak~a|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "مَكَّنَ",
+   "present": "يُمَكِّنُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی کو قدرت، اقتدار یا جگہ دینا، براہِ راست یا لام کے ساتھ (مَكَّنَهُ، مَكَّنَ لَهُ)۔ آخری اصلی نون ضمیرِ فاعل نَا میں (مَكَّنَّا) اور مَكَّنِّي (اصل مَكَّنَنِي) میں نونِ وقایہ میں مدغم ہوتی ہے، مگر نونِ تاکید سے پہلے الگ رہتی ہے (لَيُمَكِّنَنَّ)؛ اسے مضاعف «مَكَّ» نہ سمجھیں، مادہ م ك ن ہے۔",
+   "evidenceEnglish": "QAC tags مَكَّنَّا (18:84) and مَكَّنِّى (18:95) as Form II active perfect, ROOT mkn, LEM mak~a; QAC's stem and lemma stop before the merged nūn (مَكَّنْ + نَا → مَكَّنَّا; مَكَّنَ + نِي → مَكَّنِّي in Ḥafṣ). Citation perfect مَكَّنَ; Quran-wide imperfects وَلَيُمَكِّنَنَّ (24:55), وَنُمَكِّنَ (28:6) and jussive نُمَكِّن (6:6)."
+  },
+  {
+   "key": "muli}ato|I|PASS",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "مُلِئَ",
+   "present": "يُمْلَأُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "مہموز اللام فعل کا مجہول ہے: معروف مَلَأَ يَمْلَأُ (بھرنا) سے مُلِئَ يُمْلَأُ (بھرا جانا) بنتا ہے اور مفعول نائبِ فاعل بن جاتا ہے۔ ہمزہ اصلی حرف ہے؛ آخر میں اس کی کرسی ماقبل حرکت سے بدلتی ہے (مُلِئَ میں یاء، يُمْلَأُ میں الف)۔",
+   "evidenceEnglish": "QAC tags وَلَمُلِئْتَ (18:18) as Form I passive perfect 2MS, ROOT mlA, LEM muli}ato (QAC uses the passive 3FS مُلِئَتْ of 72:8 as the lemma). Active مَلَأَ يَمْلَأُ is a–a (fataḥa class; attested لَأَمْلَأَنَّ in 7:18, 11:119, 32:13, 38:85); the passive perfect is مُلِئَ and the passive imperfect يُمْلَأُ by the regular فُعِلَ — يُفْعَلُ pattern (not attested in the Quran)."
+  },
+  {
+   "key": "muli}ato|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "مَلَأَ",
+   "present": "يَمْلَأُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "مہموز اللام اور متعدی فعل ہے: کسی چیز کو بھرنا؛ بھرنے والی چیز مِنْ کے ساتھ یا منصوب آتی ہے۔ لامِ کلمہ ہمزہ حرفِ حلقی ہے اور ماضی و مضارع دونوں میں عینِ کلمہ مفتوح ہے (مَلَأَ، يَمْلَأُ)؛ ہمزہ کی کرسی حرکات کے ساتھ بدلتی ہے (مُلِئَ)۔",
+   "evidenceEnglish": "QAC tags لَأَمْلَأَنَّ (32:13) as Form I active imperfect 1S with energetic nūn, ROOT mlA, under LEM muli}ato (QAC files both voices under the passive form مُلِئَتْ); citation active perfect مَلَأَ. The imperfect أَمْلَأَ with fatha on the lām (also 7:18, 11:119, 38:85) gives a–a (fataḥa class); the lexica give مَلَأَهُ يَمْلَؤُهُ مَلْئًا."
+  },
+  {
+   "key": "malakato|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "مَلَكَ",
+   "present": "يَمْلِكُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی چیز کا مالک ہونا یا اس پر اختیار رکھنا۔ مضارع میں عینِ کلمہ مکسور ہے (يَمْلِكُ)؛ فعل مَلَكَ کو اسم مَلِك (بادشاہ) سے الگ پہچانیں، اور مَلَكَتْ کی تاء صرف تانیث کی علامت ہے۔",
+   "evidenceEnglish": "QAC tags مَلَكَتْ (23:6) as Form I active perfect 3FS, LEM malakato (the lemma is the 3FS form of the recurring مَا مَلَكَتْ; citation form مَلَكَ). Quran-wide imperfects يَمْلِكُ (5:17), يَمْلِكُونَ (13:16) and أَمْلِكُ (5:25) give a–i (ḍaraba class); the lexica give مَلَكَهُ يَمْلِكُهُ مِلْكًا."
+  },
+  {
+   "key": "m~anaEa|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "مَنَعَ",
+   "present": "يَمْنَعُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: روکنا یا باز رکھنا؛ جس کام سے روکا جائے وہ مِنْ کے ساتھ یا أَنْ والے جملے کی صورت میں آتا ہے۔ لامِ کلمہ (ع) حرفِ حلقی ہے اور ماضی و مضارع دونوں میں عینِ کلمہ مفتوح ہے (مَنَعَ، يَمْنَعُ)۔",
+   "evidenceEnglish": "QAC tags مَنَعَ (18:55) as Form I active perfect 3MS, LEM m~anaEa (the lemma shadda reflects assimilation in مِمَّن مَّنَعَ, 2:114). Quran-wide imperfects يَمْنَعُونَ (107:7), تَمْنَعُهُم (21:43) and jussive نَمْنَعْكُم (4:141) give a–a (fataḥa class). Matches the shipped Surah 107 entry (مَنَعَ / يَمْنَعُ)."
+  }
+ ]
+}

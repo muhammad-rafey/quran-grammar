@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import { BottomSheet, RNHostView } from '@expo/ui';
 import { FlatList, Pressable, Text, View, useWindowDimensions } from 'react-native';
-import { getSurahTitle, juzCatalog, surahCatalog } from '@quran-grammar/core';
+import {
+  getJuzForAyah,
+  getJuzStartAyah,
+  getSurahTitle,
+  juzCatalog,
+  surahCatalog,
+} from '@quran-grammar/core';
 import { AppIcon } from '@/components/app-icon';
 import { Label } from '@/components/study-ui';
 import { useInterface } from '@/state/preferences-provider';
@@ -27,7 +33,8 @@ type StudyPickerProps = {
   onMode: (mode: BrowseMode) => void;
   onClose: () => void;
   onChooseAyah: (ayah: number) => void;
-  onChooseSurah: (surah: number) => void;
+  /** startAyah is the chapter's first ayah inside the chosen juz, or 1 from the surah list. */
+  onChooseSurah: (surah: number, startAyah: number) => void;
 };
 
 export function StudyPicker(props: StudyPickerProps) {
@@ -58,7 +65,9 @@ function PickerContent({
 }: StudyPickerProps) {
   const { ui, count, isUrdu, language, labelStyle, controlRow } = useInterface();
   const { height } = useWindowDimensions();
-  const selectedJuz = juzCatalog.find((item) => item.surahNumbers.includes(surah))?.number;
+  const selectedJuz = (
+    getJuzForAyah(surah, ayah) ?? juzCatalog.find((item) => item.surahNumbers.includes(surah))
+  )?.number;
   const [expandedJuz, setExpandedJuz] = useState<number | undefined>(selectedJuz);
   const surahEntry = (number: number, parentJuz?: number): PickerEntry => {
     const item = surahCatalog.find((entry) => entry.number === number)!;
@@ -204,7 +213,11 @@ function PickerContent({
                 disabled={!item.available}
                 onPress={() => {
                   if (item.kind === 'ayah') onChooseAyah(item.number);
-                  else if (item.kind === 'surah') onChooseSurah(item.number);
+                  else if (item.kind === 'surah')
+                    onChooseSurah(
+                      item.number,
+                      item.parentJuz ? getJuzStartAyah(item.parentJuz, item.number) : 1,
+                    );
                   else setExpandedJuz(groupExpanded ? undefined : item.number);
                 }}
                 style={({ pressed }) => ({

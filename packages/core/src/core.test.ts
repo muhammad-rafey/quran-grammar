@@ -17,6 +17,8 @@ import {
   getStudy,
   availableSurahNumbers,
   getSurahTitle,
+  getJuzForAyah,
+  getJuzStartAyah,
 } from './index';
 
 const expectedChapters = [1, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
@@ -51,13 +53,23 @@ test('navigation catalogs distinguish the available lesson from future content a
   assert.deepEqual(
     juzCatalog.filter((juz) => juz.available),
     [
-      { number: 1, available: true, partial: true, previewSurahNumber: 1, surahNumbers: [1] },
+      {
+        number: 1,
+        available: true,
+        partial: true,
+        previewSurahNumber: 1,
+        surahNumbers: [1],
+        ranges: [{ surah: 1, firstAyah: 1, lastAyah: 7 }],
+      },
       {
         number: 30,
         available: true,
         partial: true,
         previewSurahNumber: 105,
         surahNumbers: expectedChapters.slice(1),
+        ranges: expectedChapters
+          .slice(1)
+          .map((surah) => ({ surah, firstAyah: 1, lastAyah: getStudy(surah)!.surah.ayahCount })),
       },
     ],
   );
@@ -66,9 +78,26 @@ test('navigation catalogs distinguish the available lesson from future content a
       .filter((juz) => !juz.available)
       .every(
         (juz) =>
-          !juz.partial && juz.previewSurahNumber === undefined && juz.surahNumbers.length === 0,
+          !juz.partial &&
+          juz.previewSurahNumber === undefined &&
+          juz.surahNumbers.length === 0 &&
+          juz.ranges.length === 0,
       ),
   );
+  // The juz shown follows the ayah being read; only available chapters have ranges.
+  assert.equal(getJuzForAyah(1, 7)?.number, 1);
+  assert.equal(getJuzForAyah(105, 1)?.number, 30);
+  assert.equal(getJuzForAyah(114, 6)?.number, 30);
+  for (const [surah, ayah] of [
+    [1, 8],
+    [114, 7],
+    [2, 1],
+    [18, 75],
+  ] as const)
+    assert.equal(getJuzForAyah(surah, ayah), undefined, `${surah}:${ayah}`);
+  assert.equal(getJuzStartAyah(30, 114), 1);
+  assert.equal(getJuzStartAyah(1, 1), 1);
+  assert.equal(getJuzStartAyah(16, 18), 1, 'unavailable chapters fall back to ayah 1');
   assert.equal(getSurahTitle(114, 'en'), 'An-Nas');
   assert.equal(getSurahTitle(114, 'ur'), 'الناس');
 });

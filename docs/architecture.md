@@ -16,7 +16,7 @@ References for the framework decision: [Vite guide](https://vite.dev/guide/), [N
 
 The initial service is read-only. It offers health, surah inventory, a complete surah, a word detail, and bounded chapter-scoped search endpoints under `/api`. Unknown API routes return JSON 404s and never fall through to the web app. CORS allows configured origins and requests without an Origin header, as used by native clients. No cookies or credentials are needed. Search accepts `surah=105`, for example, and defaults to Surah 1 for compatibility. Unpublished chapters return JSON 404 responses.
 
-No database is necessary for this versioned, read-only seed dataset. Its Urdu teaching explanations await scholarly review. A future content database should preserve occurrence IDs, distinguish root entries from contextual word meanings, and record scholarly review/version history. Authoring and review need their own authorization model before exposing writes.
+No database is necessary to serve this versioned, read-only seed dataset. Synchronised SQLite and Postgres (home-server Supabase) copies of exactly the same content are maintained so a database can replace the bundled data later; see [content databases](database.md). Its Urdu teaching explanations await scholarly review. A future content database should preserve occurrence IDs, distinguish root entries from contextual word meanings, and record scholarly review/version history. Authoring and review need their own authorization model before exposing writes.
 
 ## UI behavior
 

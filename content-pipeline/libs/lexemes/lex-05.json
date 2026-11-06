@@ -1,0 +1,304 @@
+{
+ "entries": [
+  {
+   "key": ">arosala|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَرْسَلَ",
+   "present": "يُرْسِلُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ مادہ ر س ل میں نہ حرفِ علت ہے نہ ہمزہ یا تضعیف، اور شروع کا ہمزہ بابِ افعال کا زائد ہمزہ ہے۔ بھیجنے کے معنی میں متعدی ہے؛ معروف مضارع يُرْسِلُ میں سین پر کسرہ اور مجہول يُرْسَلُ میں فتحہ ہوتا ہے۔",
+   "evidenceEnglish": "QAC tags all 7 occurrences form IV active (LEM:>arosala, root ر س ل). The imperfects in the sample show the form IV vowels: يُرْسِلَ (18:40, subjunctive) and نُرْسِلُ (18:56); perfects أَرْسَلْنَا (23:23, 23:32, 23:44, 23:45, 36:14). Sound root. Same paradigm as the shipped lesson entry 105:3:1 (أَرْسَلَ — يُرْسِلُ); Lane s.v. رسل."
+  },
+  {
+   "key": ">arosala|IV|PASS",
+   "baabUrdu": "بابِ اِفْعَال — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)، مجہول",
+   "past": "أُرْسِلَ",
+   "present": "يُرْسَلُ",
+   "pattern": "أُفْعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح فعل أَرْسَلَ کا مجہول ہے: ماضی أُرْسِلَ میں پہلے حرف پر ضمہ اور عینِ کلمہ پر کسرہ، اور مضارع يُرْسَلُ میں علامتِ مضارع پر ضمہ اور عینِ کلمہ پر فتحہ ہوتا ہے۔ فاعل مذکور نہیں ہوتا اور بھیجا جانے والا نائبِ فاعل بنتا ہے؛ معروف يُرْسِلُ سے فرق صرف سین کی حرکت کا ہے۔",
+   "evidenceEnglish": "QAC 55:35:1 يُرْسَلُ is tagged IMPF|PASS|(IV), LEM:>arosala; i'rab: فعل مضارع مبني للمجهول. The passive perfect أُرْسِلَ is attested elsewhere in QAC (e.g. 7:6). Regular sound form IV passive: أُفْعِلَ — يُفْعَلُ."
+  },
+  {
+   "key": "rafaEa|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "رَفَعَ",
+   "present": "يَرْفَعُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی اور مضارع دونوں میں عینِ کلمہ پر فتحہ ہے، اور بابِ فتح کی شرط کے مطابق لامِ کلمہ «ع» حرفِ حلقی ہے۔ اٹھانے، بلند کرنے یا درجہ بڑھانے کے معنی میں متعدی ہے؛ مجہول رُفِعَ — يُرْفَعُ ہے۔",
+   "evidenceEnglish": "Only occurrence here: 55:7 رَفَعَهَا (QAC PERF, form I, LEM:rafaEa). The a-imperfect is attested elsewhere in QAC: يَرْفَعُ (2:127, 35:10), نَرْفَعُ (6:83); passive تُرْفَعَ (24:36). Guttural third radical ع; Lane and al-Mu'jam al-Wasit give رَفَعَ يَرْفَعُ رَفْعًا (fataha class)."
+  },
+  {
+   "key": "rakiba|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "رَكِبَ",
+   "present": "يَرْكَبُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی میں عینِ کلمہ پر کسرہ اور مضارع میں فتحہ ہے۔ سوار ہونے کے معنی میں براہِ راست مفعول لیتا ہے (رَكِبَهُ)، اور کشتی وغیرہ میں سوار ہونے کے لیے فِي کے ساتھ بھی آتا ہے۔",
+   "evidenceEnglish": "Occurrences: perfect رَكِبَا (18:71, kasra on the middle radical) and imperfect يَرْكَبُونَ (36:42, fatha); QAC form I, LEM:rakiba. Also لِتَرْكَبُوهَا (16:8) and imperative ارْكَبُوا (11:41) in QAC. Lane / Lisan al-Arab: رَكِبَ يَرْكَبُ رُكُوبًا (samiʿa class)."
+  },
+  {
+   "key": "yurohiqa|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَرْهَقَ",
+   "present": "يُرْهِقُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ کسی پر بوجھ یا سختی ڈالنے کے معنی میں عموماً دو مفعول لیتا ہے: ایک وہ جس پر سختی ڈالی جائے اور دوسرا خود وہ سختی۔ ضمہ والے يُرْهِقُ کو مجرد رَهِقَ — يَرْهَقُ (ڈھانپ لینا، آ لینا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC lists the lexeme by the inflected imperfect يُرْهِقَ (LEM:yurohiqa), form IV, root ر ه ق: تُرْهِقْنِى (18:73, jussive) and يُرْهِقَهُمَا (18:80, subjunctive), both with the form IV prefix damma and stem kasra; also سَأُرْهِقُهُ (74:17). Citation perfect أَرْهَقَ per standard lexica (Lane s.v. رهق: أَرْهَقَهُ عُسْرًا, imposed a hard thing on him), distinct from form I رَهِقَ يَرْهَقُ (to overtake/cover). Two objects at 18:73 (ي + عُسْرًا; QAC ayah note: «عُسْرًا» مفعول ثانٍ). At 18:80 QAC's ayah note makes طُغْيَانًا «مصدر في موضع الحال», so هُمَا is the only object there; reading طُغْيَانًا as a second object is an alternative analysis for auditNotes, not the primary one."
+  },
+  {
+   "key": ">araAda|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَرَادَ",
+   "present": "يُرِيدُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "اجوف واوی فعل ہے (مادہ ر و د)؛ اصل أَرْوَدَ — يُرْوِدُ میں واو کی حرکت پچھلے حرف کو منتقل ہوئی، اس لیے ماضی میں الف اور مضارع میں یاء نظر آتی ہے؛ متحرک ضمیرِ فاعل سے پہلے الف گرتا ہے (أَرَدْتُ) اور جزم میں یاء گرتی ہے (يُرِدْ)۔ متعدی ہے اور اکثر أَنْ + مضارع لیتا ہے؛ يُرِيدُ کی یاء اصل میں مادے کی واو ہے۔",
+   "evidenceEnglish": "QAC tags all 10 occurrences form IV, LEM:>araAda, root ر و د: imperfects يُرِيدُونَ and تُرِيدُ (18:28), يُرِيدُ (18:77, 23:24), jussive يُرِدْنِ (36:23, after conditional إِنْ, middle ya dropped); perfects أَرَدتُّ (18:79), أَرَدْنَآ (18:81), أَرَادَ (18:82, 36:82), أَرَادُوٓا۟ (32:20). Hollow-waw form IV (verbal noun إِرَادَة); Lane s.v. رود."
+  },
+  {
+   "key": "zaEama|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "زَعَمَ",
+   "present": "يَزْعُمُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح فعل ہے؛ گمان یا دعویٰ کرنے کے معنی میں آتا ہے، اکثر ایسے دعوے کے لیے جس کی دلیل نہ ہو۔ متعدی اور افعالِ قلوب میں سے ہے: دو مفعول لیتا ہے، جن کی جگہ أَنَّ یا أَنْ والا جملہ بھی آتا ہے، اور کبھی دونوں مفعول حذف ہوتے ہیں۔",
+   "evidenceEnglish": "Both occurrences are the perfect زَعَمْتُمْ (18:48, 18:52), which does not show the imperfect vowel. QAC attests the u-imperfect elsewhere: تَزْعُمُونَ (6:22, 6:94, 28:62), يَزْعُمُونَ (4:60). Lane / Lisan al-Arab: زَعَمَ يَزْعُمُ زَعْمًا (nasara class)."
+  },
+  {
+   "key": "t~aza`waru|VI|ACT",
+   "baabUrdu": "بابِ تَفَاعُل",
+   "formUrdu": "ثلاثی مزید فیہ — ششم (VI)",
+   "past": "تَزَاوَرَ",
+   "present": "يَتَزَاوَرُ",
+   "pattern": "تَفَاعَلَ — يَتَفَاعَلُ",
+   "noteUrdu": "مادہ ز و ر اجوف واوی ہے، مگر بابِ تفاعل میں درمیانی واو بغیر تبدیلی کے رہتی ہے۔ عَنْ کے ساتھ کسی چیز سے ہٹ کر جھک جانے کے معنی میں لازم ہے؛ مضارع کی تاء کے بعد باب کی تاء آئے تو ایک حذف ہو سکتی ہے (تَتَزَاوَرُ سے تَزَاوَرُ)۔",
+   "evidenceEnglish": "QAC's identifier تَّزَٰوَرُ (LEM:t~aza`waru) is the inflected 3FS imperfect at 18:17, tagged form VI, root ز و ر; it is the lexeme's only Quranic occurrence. In Hafs it is تَزَاوَرُ for تَتَزَاوَرُ with one ta elided; the shadda on its ta marks assimilation of the preceding طَلَعَت. Citation تَزَاوَرَ يَتَزَاوَرُ, to incline away from (Lane s.v. زور). The readings تَزَّاوَرُ and تَزْوَرُّ are not Hafs and do not affect this entry."
+  },
+  {
+   "key": "zaAda|I|PASS",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "زَادَ",
+   "present": "يَزِيدُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "اجوف یائی فعل ہے (مادہ ز ي د)؛ ماضی میں یاء الف بنتی ہے اور مضارع يَزِيدُ میں ظاہر رہتی ہے، جبکہ متحرک ضمیرِ فاعل سے پہلے الف گر کر پہلے حرف پر کسرہ آتا ہے: زِدْتُ، زِدْنَا۔ لازم (بڑھنا) بھی ہے اور دو مفعولوں تک متعدی (بڑھانا) بھی؛ معروف زِدْنَا اور مجہول زِيدَ سے بنا زِدْنَا ہم شکل ہیں، فرق سیاق سے ہوتا ہے۔",
+   "evidenceEnglish": "ACTIVE PARADIGM CONFIRMED BY AI REVIEW; scholarly review pending. This raw-source lookup key intentionally retains QAC’s erroneous PASS tag for provenance; the corrected occurrence and emitted paradigm are active. this entry gives the ACTIVE form I paradigm although the key says PASS. QAC (and the i'rab line generated from its tags) marks 18:13:10 وَزِدْنَـٰهُمْ as PERF|PASS with نَا as نائب فاعل, but the verb is active: نَا is the agent (We increased them), هُمْ the first object and هُدًى the second. QAC's own ayah note for 18:13 says «هدى» مفعول ثانٍ, and its 18:14 note coordinates the active «وربطنا» with «زدناهم»; the QAC gloss, Sahih International, Taqi Usmani and al-Muyassar (وزِدْناهم هدى) all read it as active. The 1P perfect زِدْنَا is spelled the same in both voices; QAC tags it passive at 16:88 and 17:97 as well (also active in meaning), while the parallel hollow جِئْنَا (4:41, 7:52) is tagged active. Class a-i: يَزِيدُ (4:173), نَزِيدُ (2:58), imperative زِدْنِي (20:114); Lane: زَادَ يَزِيدُ. A passive card would read زِيدَ — يُزَادُ, which does not fit this occurrence."
+  },
+  {
+   "key": "{zodaAdu|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِزْدَادَ",
+   "present": "يَزْدَادُ",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "اجوف یائی فعل ہے (مادہ ز ي د)؛ زای کے بعد افتعال کی تاء دال بن جاتی ہے (اِزْتَيَدَ سے اِزْدَادَ)، اور درمیانی یاء ماضی و مضارع میں الف ہو کر متحرک ضمیرِ فاعل سے پہلے گر جاتی ہے: اِزْدَدْتُ۔ زَادَ کا مطاوع ہے، اس لیے عموماً لازم (بڑھ جانا) ہے، اگرچہ کبھی ایک مفعول بھی لیتا ہے۔",
+   "evidenceEnglish": "QAC 18:25:7 وَٱزْدَادُوا۟: PERF form VIII, LEM:{zodaAdu (identifier is the inflected stem), root ز ي د. QAC's ayah note: «تسعا» تمييز, and ازداد on افتعل is لازم (contrast فَعَلَ زَادَ with two objects). Form VIII imperfects elsewhere: تَزْدَادُ (13:8), نَزْدَادُ (12:65), لِيَزْدَادُوا (48:4). Regular form VIII with ta to dal after zay and a hollow middle radical; Lane s.v. زيد."
+  },
+  {
+   "key": "yatasaA^'alu|VI|ACT",
+   "baabUrdu": "بابِ تَفَاعُل",
+   "formUrdu": "ثلاثی مزید فیہ — ششم (VI)",
+   "past": "تَسَاءَلَ",
+   "present": "يَتَسَاءَلُ",
+   "pattern": "تَفَاعَلَ — يَتَفَاعَلُ",
+   "noteUrdu": "مہموز العین فعل ہے (مادہ س أ ل)؛ ہمزہ اپنی جگہ برقرار رہتا ہے اور الف کے بعد سطر پر لکھا جاتا ہے۔ آپس میں ایک دوسرے سے پوچھنے کے معنی میں لازم ہے؛ جس کے بارے میں پوچھا جائے وہ عَنْ کے ساتھ آتا ہے، جبکہ بِ کے ساتھ کسی کا واسطہ دے کر ایک دوسرے سے مانگنا مراد ہوتا ہے؛ اسے متعدی سَأَلَ سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC lists the lexeme by the inflected imperfect يَتَسَآءَلُ (LEM:yatasaA^'alu), form VI, root س أ ل: لِيَتَسَآءَلُوا۟ (18:19, subjunctive after lam al-taʿlil) and يَتَسَآءَلُونَ (23:101); also تَسَاءَلُونَ (4:1). Citation perfect تَسَاءَلَ, to ask one another (Lane s.v. سأل)."
+  },
+  {
+   "key": "sa>ala|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَأَلَ",
+   "present": "يَسْأَلُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "مہموز العین فعل ہے؛ ماضی اور مضارع دونوں میں عینِ کلمہ پر فتحہ ہے، اور بابِ فتح کی شرط کے مطابق عینِ کلمہ ہمزہ حرفِ حلقی ہے۔ پوچھنے یا مانگنے کے معنی میں متعدی ہے: دو مفعول لیتا ہے یا دوسری چیز عَنْ کے ساتھ آتی ہے؛ امر اِسْأَلْ ہے اور ہمزہ کی تخفیف سے سَلْ بھی آتا ہے۔",
+   "evidenceEnglish": "Imperfects in the occurrences all have fatha on the hamza: تَسْـَٔلْنِى (18:70), يَسْـَٔلُونَكَ (18:83), تَسْـَٔلُهُمْ (23:72), يَسْـَٔلُكُمْ (36:21), يَسْـَٔلُهُۥ (55:29); imperative فَسْـَٔلِ (23:113); perfect سَأَلْتُكَ (18:76). QAC form I, LEM:sa>ala. Lane / al-Mu'jam al-Wasit: سَأَلَ يَسْأَلُ سُؤَالًا (fataha class; guttural middle radical); سَلْ is the lightened imperative (QAC 2:211)."
+  },
+  {
+   "key": "sa>ala|I|PASS",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "سُئِلَ",
+   "present": "يُسْأَلُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "مہموز العین سَأَلَ کا مجہول ہے؛ ماضی سُئِلَ میں ہمزہ کسرہ کی وجہ سے یاء کی کرسی پر لکھا جاتا ہے، اور مضارع يُسْأَلُ میں علامتِ مضارع پر ضمہ ہے۔ جس سے پوچھا جائے وہ نائبِ فاعل بنتا ہے؛ معروف بھی بابِ فتح سے ہے، اس لیے يُسْأَلُ اور يَسْأَلُ میں فرق صرف پہلی حرکت کا ہے۔",
+   "evidenceEnglish": "QAC 55:39:3 يُسْـَٔلُ: IMPF|PASS, LEM:sa>ala; i'rab فعل مضارع مبني للمجهول. QAC also attests the passive perfect: سُئِلَ (2:108), سُئِلُوا (33:14), سُئِلَتْ (81:8). Because the active is fataha class, the active and passive imperfects differ only in the prefix vowel."
+  },
+  {
+   "key": "sab~aHa|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "سَبَّحَ",
+   "present": "يُسَبِّحُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح فعل ہے؛ عینِ کلمہ «ب» کی تشدید بابِ تفعیل کی علامت ہے۔ اللہ کی پاکی بیان کرنے کے معنی میں براہِ راست مفعول یا لِ کے ساتھ آتا ہے، جبکہ بِحَمْدِ عموماً حال ہوتا ہے (حمد کرتے ہوئے)، مفعول نہیں؛ اسے مجرد سَبَحَ — يَسْبَحُ (تیرنا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC 32:15:10 وَسَبَّحُوا۟: PERF form II, LEM:sab~aHa, root س ب ح. The form II imperfect يُسَبِّحُ is attested (13:13, 17:44). Same paradigm as the shipped lesson entry 110:3:1 (سَبَّحَ — يُسَبِّحُ). Separate QAC lexeme from form I سَبَحَ (yasobaHu)."
+  },
+  {
+   "key": "yasobaHu|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَبَحَ",
+   "present": "يَسْبَحُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی اور مضارع دونوں میں عینِ کلمہ پر فتحہ ہے، اور بابِ فتح کی شرط کے مطابق لامِ کلمہ «ح» حرفِ حلقی ہے۔ تیرنے یا روانی سے چلتے رہنے کے معنی میں لازم ہے، عموماً فِي کے ساتھ؛ اسے بابِ تفعیل کے سَبَّحَ (تسبیح کرنا) سے نہ ملائیں۔",
+   "evidenceEnglish": "QAC lists the lexeme by the imperfect يَسْبَحُ (LEM:yasobaHu), form I, root س ب ح; يَسْبَحُونَ (36:40, also 21:33) shows fatha on the middle radical. Lane / Lisan al-Arab: سَبَحَ يَسْبَحُ سَبْحًا وسِبَاحَةً (fataha class; guttural third radical). Citation perfect سَبَحَ."
+  },
+  {
+   "key": "sabaqa|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَبَقَ",
+   "present": "يَسْبِقُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی میں عینِ کلمہ پر فتحہ اور مضارع میں کسرہ ہے۔ کسی سے آگے نکل جانے یا پہلے آنے کے معنی میں متعدی ہے (سَبَقَهُ)، اور إِلَى کے ساتھ کسی چیز کی طرف سبقت کرنے کا مفہوم دیتا ہے؛ کسی بات یا فیصلے کے پہلے سے طے ہو چکنے کے معنی میں لازم ہے، اور جس کے خلاف یا حق میں ہو وہ عَلَى یا لِ کے ساتھ آتا ہے۔",
+   "evidenceEnglish": "The occurrence تَسْبِقُ (23:43) shows kasra on the middle radical; QAC also has يَسْبِقُونَهُ (21:27) and يَسْبِقُونَا (29:4); perfect سَبَقَ (23:27). QAC form I, LEM:sabaqa. Standard lexica (Lane, al-Mu'jam al-Wasit) give سَبَقَ يَسْبِقُ سَبْقًا (daraba class); Lisan al-Arab and al-Qamus also record يَسْبُقُ, so the vowel class is flagged as lexically variable and the entry follows the attested Quranic kasra imperfect, as nasolaxu|I|ACT does. Transitive at 23:43: أَجَلَهَا is the object and أُمَّةٍ (after extra مِنْ) the subject per the QAC ayah note. Intransitive at 23:27 سَبَقَ عَلَيْهِ ٱلْقَوْلُ: ٱلْقَوْلُ is the subject (QAC NOM) and the جار ومجرور عَلَيْهِ attaches to the verb, i.e. the word (decree) has already gone forth against him; cf. 21:101 سَبَقَتْ with لِ (in someone's favour)."
+  },
+  {
+   "key": "{sotabaqa|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِسْتَبَقَ",
+   "present": "يَسْتَبِقُ",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ مادہ س ب ق کے پہلے اصلی حرف سین کے بعد افتعال کی تاء آئی ہے، اس لیے شروع کے «اِسْتَ» کو بابِ استفعال نہ سمجھیں۔ ایک دوسرے سے آگے بڑھنے کی دوڑ کے معنی دیتا ہے؛ جس چیز کی طرف دوڑ ہو وہ إِلَى کے ساتھ یا حرفِ جر کے حذف سے منصوب آتی ہے۔",
+   "evidenceEnglish": "QAC 36:66:6 فَٱسْتَبَقُوا۟: PERF form VIII, LEM:{sotabaqa, root س ب ق; QAC ayah note: «الصراط» منصوب على نزع الخافض (إلى). Form VIII imperfect نَسْتَبِقُ (12:17) and imperative فَاسْتَبِقُوا (2:148) are attested. The س is radical and the ت is the form VIII infix, so this is not form X. Lane s.v. سبق: اِسْتَبَقُوا, they raced one another."
+  },
+  {
+   "key": "sajada|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَجَدَ",
+   "present": "يَسْجُدُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح فعل ہے؛ مضارع میں عینِ کلمہ پر ضمہ ہے، اسی لیے امر کا ہمزۂ وصل ابتدا میں ضمہ سے پڑھا جاتا ہے: اُسْجُدْ۔ لازم ہے، اور جس کے آگے سجدہ کیا جائے وہ لِ کے ساتھ آتا ہے۔",
+   "evidenceEnglish": "The occurrences show the u-imperfect: يَسْجُدَانِ (55:6) and imperative ٱسْجُدُوا۟ (18:50, damma on the middle radical); perfect فَسَجَدُوٓا۟ (18:50). QAC form I, LEM:sajada; also يَسْجُدُونَ (7:206). Lane: سَجَدَ يَسْجُدُ سُجُودًا (nasara class)."
+  },
+  {
+   "key": "saHaru|I|PASS",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "سُحِرَ",
+   "present": "يُسْحَرُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "سَحَرَ — يَسْحَرُ (جادو کرنا، فریب سے کسی کو کسی چیز سے پھیر دینا) کا مجہول ہے؛ صحیح فعل ہے اور معروف بابِ فتح سے ہے، جس کی شرط کے مطابق عینِ کلمہ «ح» حرفِ حلقی ہے۔ مجہول مضارع يُسْحَرُ میں علامتِ مضارع پر ضمہ اور عینِ کلمہ پر فتحہ ہے، اور جس پر جادو یا فریب کیا جائے وہ نائبِ فاعل بنتا ہے۔",
+   "evidenceEnglish": "QAC 23:89:5 تُسْحَرُونَ: IMPF|PASS, LEM:saHaru (QAC's identifier for سَحَرَ), root س ح ر; i'rab مبني للمجهول. The active fataha class is attested in QAC by لِتَسْحَرَنَا (7:132) and given by standard lexica (Lisan al-Arab: سَحَرَهُ يَسْحَرُهُ); guttural middle radical ح. Passive: سُحِرَ — يُسْحَرُ."
+  },
+  {
+   "key": ">asar~a|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَسَرَّ",
+   "present": "يُسِرُّ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "مضاعف فعل ہے (مادہ س ر ر)؛ پہلی «ر» کی حرکت ساکن «س» کو منتقل ہوتی ہے اور دونوں «ر» مدغم ہو جاتی ہیں (أَسْرَرَ سے أَسَرَّ)، مگر متحرک ضمیرِ فاعل سے پہلے الگ رہتی ہیں: أَسْرَرْتُ۔ چھپانے کے معنی میں متعدی ہے؛ ضمہ والے يُسِرُّ کو مجرد يَسُرُّ (خوش کرنا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC 36:76:7 يُسِرُّونَ: IMPF form IV, LEM:>asar~a, root س ر ر. QAC also has أَسَرَّ (66:3), the unassimilated أَسْرَرْتُ (71:9) and تُسِرُّونَ (16:19). Doubled-root form IV; Lane s.v. سرّ: أَسَرَّهُ, he concealed it. Distinct from form I سَرَّ يَسُرُّ, to gladden."
+  },
+  {
+   "key": "yusa`riEu|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "سَارَعَ",
+   "present": "يُسَارِعُ",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ فاءِ کلمہ کے بعد الف اس باب کی علامت ہے، اور مضارع میں علامتِ مضارع پر ضمہ اور عینِ کلمہ پر کسرہ آتا ہے۔ جلدی کرنے یا ایک دوسرے سے بڑھ کر جلدی کرنے کے معنی میں لازم ہے اور فِي یا إِلَى کے ساتھ آتا ہے۔",
+   "evidenceEnglish": "QAC lists the lexeme by the imperfect يُسَٰرِعُ (LEM:yusa`riEu), form III, root س ر ع: نُسَارِعُ (23:56) and يُسَـٰرِعُونَ (23:61); imperative وَسَارِعُوا (3:133). Citation perfect سَارَعَ (Lane s.v. سرع)."
+  },
+  {
+   "key": "saEaY`|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَعَى",
+   "present": "يَسْعَى",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "ناقص یائی فعل ہے (مادہ س ع ي)؛ بابِ فتح سے ہے جس کی شرط کے مطابق عینِ کلمہ «ع» حرفِ حلقی ہے، اور آخری یاء ماضی و مضارع دونوں میں الف مقصورہ بن جاتی ہے۔ اس لیے مضارع کا رفع اور نصب مقدر رہتا ہے اور جزم میں آخری حرف حذف ہوتا ہے (لَمْ يَسْعَ)؛ دوڑنے اور کوشش کرنے کے معنی میں لازم ہے۔",
+   "evidenceEnglish": "QAC 36:20:6 يَسْعَىٰ: IMPF form I, LEM:saEaY`, root س ع ي; an alif-maqsura imperfect needs fatha on the middle radical (yasʿā), as in every QAC imperfect of this lemma (e.g. تَسْعَى 20:15, 20:20). Lane: سَعَى يَسْعَى سَعْيًا (fataha class; guttural ع). Side note for the 36:20 author: QAC tags this word MOOD:SUBJ and the generated i'rab says منصوب, but QAC's own ayah note makes «يسعى» a نعت of «رجل» with no governing particle, so it is indicative with implied damma; QAC is likewise inconsistent at 28:20 (SUBJ) vs 80:8 (indicative). The paradigm is unaffected."
+  },
+  {
+   "key": ">asoqayo|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَسْقَى",
+   "present": "يُسْقِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "ناقص یائی فعل ہے (مادہ س ق ي)؛ آخری یاء ماضی میں الف مقصورہ بنتی ہے اور متحرک ضمیرِ فاعل سے پہلے ظاہر ہوتی ہے (أَسْقَيْنَا)، جبکہ مضارع يُسْقِي میں رفع مقدر رہتا ہے اور جزم میں یاء حذف ہوتی ہے۔ پلانے کے معنی میں دو مفعول لیتا ہے؛ ضمہ والے يُسْقِي کو مجرد سَقَى — يَسْقِي سے الگ پہچانیں۔",
+   "evidenceEnglish": "QAC lists the lexeme by the stem أَسْقَيْ (LEM:>asoqayo), form IV, root س ق ي. The occurrence نُّسْقِيكُم (23:21) has the form IV prefix damma (Hafs; some other canonical readings have form I نَسْقِيكُمْ). Form IV perfects: وَأَسْقَيْنَاكُمْ (77:27), لَأَسْقَيْنَاهُمْ (72:16). Lane s.v. سقى: أَسْقَاهُ, with two objects."
+  },
+  {
+   "key": ">asokan|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَسْكَنَ",
+   "present": "يُسْكِنُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ کسی کو کہیں ٹھہرانے، بسانے یا ساکن کر دینے کے معنی میں متعدی ہے، اور جگہ فِي یا بِ کے ساتھ آتی ہے۔ لامِ کلمہ نون ہے، اس لیے ضمیر نَا ملنے پر دونوں نون مدغم ہو کر أَسْكَنَّا بنتا ہے؛ اس تشدید کو باب کی علامت نہ سمجھیں۔",
+   "evidenceEnglish": "QAC lists the lexeme as أَسْكَن (LEM:>asokan), form IV, root س ك ن. At 23:18 فَأَسْكَنَّـٰهُ QAC segments the stem as أَسْكَ + نَّـٰ because the final radical nun merges with the suffix نَا. Form IV elsewhere: أَسْكَنتُ (14:37), لَنُسْكِنَنَّكُمُ (14:14), يُسْكِنِ (42:33), أَسْكِنُوهُنَّ (65:6). Lane s.v. سكن: أَسْكَنَهُ."
+  },
+  {
+   "key": "nasolaxu|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَلَخَ",
+   "present": "يَسْلَخُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے؛ قرآن میں اس کا مضارع عینِ کلمہ کے فتحہ سے آیا ہے (لامِ کلمہ «خ» حلقی ہے)، اگرچہ لغت میں يَسْلُخُ بھی منقول ہے۔ کھال اتارنے یا کسی چیز کو دوسری سے کھینچ کر الگ کرنے کے معنی میں متعدی ہے، اور جس سے الگ کیا جائے وہ مِنْ کے ساتھ آتا ہے۔",
+   "evidenceEnglish": "QAC lists the lexeme by the imperfect نَسْلَخُ (LEM:nasolaxu), form I, root س ل خ; 36:37 is its only Quranic verb occurrence and shows fatha on the middle radical. Classical lexica (e.g. al-Qamus, Lisan al-Arab) record both يَسْلَخُ and يَسْلُخُ; the entry follows the attested Quranic form (fataha class; guttural third radical خ). Vowel class flagged as lexically variable; سَبَقَ (sabaqa|I|ACT) in this batch is likewise variable (Lisan al-Arab and al-Qamus give يَسْبِقُ and يَسْبُقُ) and also follows its attested Quranic imperfect."
+  },
+  {
+   "key": "salaka|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَلَكَ",
+   "present": "يَسْلُكُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح فعل ہے؛ مضارع میں عینِ کلمہ پر ضمہ ہے، اسی لیے امر کا ہمزۂ وصل ابتدا میں ضمہ سے پڑھا جاتا ہے: اُسْلُكْ۔ راستے پر چلنے (سَلَكَ الطَّرِيقَ) اور کسی چیز کو دوسری میں داخل کرنے یا رکھنے (فِي کے ساتھ) دونوں معنوں میں متعدی ہے۔",
+   "evidenceEnglish": "Occurrence: imperative فَٱسْلُكْ (23:27), damma on the middle radical (QAC IMPV, LEM:salaka). QAC imperfects elsewhere: نَسْلُكُهُ (15:12), يَسْلُكُ (72:27), لِتَسْلُكُوا (71:20). Lane / al-Mu'jam al-Wasit: سَلَكَ يَسْلُكُ سُلُوكًا (nasara class)."
+  },
+  {
+   "key": ">asomaEa|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَسْمَعَ",
+   "present": "يُسْمِعُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے اور عام استعمال میں سنانے کے معنی میں متعدی ہے۔ احتیاط: تعجب کی ترکیب أَفْعِلْ بِهِ (أَسْمِعْ بِهِ) میں یہ امر کی صورت والا جامد صیغہ ہے جو «کیا خوب سننے والا ہے!» کا مفہوم دیتا ہے، حکم یا سنانا نہیں، اور بِ کے بعد والا اسم لفظاً مجرور مگر فاعل ہوتا ہے۔",
+   "evidenceEnglish": "QAC 18:26:12 وَأَسْمِعْ: tagged IMPV form IV, LEM:>asomaEa, root س م ع. QAC's ayah note analyses «أبصر به … وكذا أسمع» as a past verb in imperative shape for taʿajjub, with redundant ب and the pronoun as subject (Basran view). The same QAC lemma covers causative form IV: أَسْمَعَهُمْ (8:23), تُسْمِعُ (27:80), يُسْمِعُ (35:22). The card therefore gives the form IV paradigm; the exclamatory use is frozen with no conjugation, which the note flags."
+  },
+  {
+   "key": "samiEa|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَمِعَ",
+   "present": "يَسْمَعُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے اور اپنے باب کا نمونہ بھی؛ ماضی میں عینِ کلمہ پر کسرہ اور مضارع میں فتحہ ہے۔ سننے کے معنی میں متعدی ہے، لِ کے ساتھ قبول کرنے یا بات ماننے کا مفہوم بھی دیتا ہے، اور امر اِسْمَعْ ہے۔",
+   "evidenceEnglish": "The occurrences show the i-a pattern: perfect سَمِعْنَا (23:24, 32:12), imperfect يَسْمَعُونَ (32:26), imperative فَٱسْمَعُونِ (36:25). QAC form I, LEM:samiEa. The verb is the eponym of bab samiʿa (Lane: سَمِعَ يَسْمَعُ سَمْعًا)."
+  },
+  {
+   "key": "saA^'a|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَاءَ",
+   "present": "يَسُوءُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "اجوف واوی اور مہموز اللام فعل ہے (مادہ س و أ)؛ واو ماضی میں الف اور مضارع يَسُوءُ میں واوِ مدہ بنتی ہے، اور متحرک ضمیرِ فاعل سے پہلے گر جاتی ہے: سُؤْتُ۔ برا ہونے یا کسی کو رنجیدہ کرنے کے معنی دیتا ہے؛ احتیاط: ذم کے لیے بِئْسَ کی طرح جامد آتا ہے اور اکثر اس کے بعد تمییز ہوتی ہے۔",
+   "evidenceEnglish": "QAC 18:29:27 وَسَآءَتْ: PERF form I, LEM:saA^'a, root س و أ. QAC's ayah note: «ساءت» فعل ماض للذم … و«مرتفقا» تمييز (frozen blame use, like بِئْسَ). The u-imperfect of the same lemma is attested in QAC: تَسُؤْهُمْ (3:120), تَسُؤْكُمْ (5:101), لِيَسُوءُوا (17:7). Lane s.v. سوأ: سَاءَهُ يَسُوءُهُ (nasara class; hollow waw, hamzated third radical). Present kept as يَسُوءُ because the lexeme has an imperfect in use."
+  },
+  {
+   "key": "siyqa|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَاقَ",
+   "present": "يَسُوقُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "اجوف واوی فعل ہے (مادہ س و ق)؛ واو ماضی میں الف اور مضارع يَسُوقُ میں واوِ مدہ بنتی ہے، اور متحرک ضمیرِ فاعل سے پہلے گر کر پہلے حرف پر ضمہ آتا ہے: سُقْنَا۔ ہانکنے یا کسی کو کسی طرف چلا کر لے جانے کے معنی میں متعدی ہے (إِلَى کے ساتھ)؛ مجہول سِيقَ — يُسَاقُ ہے۔",
+   "evidenceEnglish": "QAC's identifier سِيقَ (LEM:siyqa) is a passive perfect, but 32:27 نَسُوقُ is active (QAC IMPF, no PASS), so the citation is active سَاقَ. The u-imperfect is shown by نَسُوقُ itself (also 19:86) and by the active 1P perfect سُقْنَاهُ (7:57, 35:9); passive سِيقَ (39:71), يُسَاقُونَ (8:6). Lane: سَاقَ يَسُوقُ سَوْقًا (nasara class; hollow waw)."
+  }
+ ]
+}

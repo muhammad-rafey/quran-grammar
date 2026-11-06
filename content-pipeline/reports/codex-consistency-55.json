@@ -1,0 +1,773 @@
+{
+  "report": "codex-consistency-55",
+  "date": "2026-11-06",
+  "scope": {
+    "surah": 55,
+    "words": 351,
+    "ayahs": 78,
+    "chunks": 11,
+    "assemblyLemmaVariantGroups": 19,
+    "assemblyVerbLemmaWarnings": [
+      [
+        "55:37:2",
+        "اِنْشَقَّ",
+        "اِنْشَقَّ"
+      ]
+    ],
+    "inputPublicationStatus": "scholarly-review-pending"
+  },
+  "reviewStatus": "independent_ai_consistency_adjudication_complete; report only; recommendations not applied",
+  "scholarlyReview": "not_performed; draft remains held for scholarly review",
+  "policy": [
+    "Different authentic dictionary forms are not automatically errors. Select one canonical valid form where identical repeated context has no morphological reason to alternate; prefer the already dominant valid form to minimize edits.",
+    "Preserve gender when reducing duals/plurals to a singular base; do not force feminine ذات to masculine ذو.",
+    "Preserve the lexeme of a grammatical collective noun rather than automatically replacing it with its unit noun; true plural/dual singularization and collective lexeme identity are distinct.",
+    "Accept citation-case/tanwin and contextual particle-combination differences unless they create an actual false lexical identity or morphology claim.",
+    "Source Arabic, occurrence IDs, qacSegments, segments, morphology/syntax explanations, root libraries and paradigms must not be modified for these lemma-only recommendations."
+  ],
+  "adjudications": [
+    {
+      "id": "ala-identical-refrain-canonical-singular",
+      "severity": "minor",
+      "category": "canonical_consistency_not_lexical_error",
+      "currentCounts": {
+        "أَلًى": 25,
+        "إِلًى": 6
+      },
+      "conclusion": "Both أَلًى and إِلًى are attested singulars of آلاء. No context distinction in the identical refrain justifies alternating citation choices; use أَلًى for all31, requiring only six edits. Existing explanatory text and shared root note remain true.",
+      "evidence": [
+        {
+          "local": "libs/roots/root-01.json root أ ل و",
+          "summary": "Explicitly records أَلًى or إِلًى as singulars."
+        },
+        {
+          "primaryTitle": "Lisān al-ʿArab, entry ألا (Ibn Manzur; hosted text)",
+          "primaryUrl": "https://www.islamweb.net/amp/ar/library/content/122/214/ألا",
+          "sourceExcerpt": "والآلاء: النعم واحدها ألى، بالفتح، وإلي وإلى",
+          "summary": "The text gives the fatḥa form and the kasra alternative; this independently supports both existing draft choices."
+        }
+      ]
+    },
+    {
+      "id": "nakhl-collective-lexeme-canonicalization",
+      "severity": "minor",
+      "category": "canonical_lexeme_identity_consistency",
+      "currentCounts": {
+        "نَخْلَة": 1,
+        "نَخْل": 1
+      },
+      "conclusion": "Both entries explicitly explain an اسم جنس of palm trees and separately identify نخلة as one tree. Canonicalize55:11:3 to the actual collective lexeme نَخْل, as already used at55:68:3. نخلة itself is a correct Arabic unit noun; the issue is alternating collective and unit lemmatization for the same source lexeme, not a spelling error.",
+      "guideInterpretation": "The guide’s singular-base instruction applies straightforwardly to inflected plurals/duals. For a grammatical collective, retaining its lexical base avoids changing it into a distinct unit noun. This policy is consistent with retaining other collective lexemes such as إنس.",
+      "evidence": [
+        {
+          "local": "meta/words.json55:11:3 and55:68:3",
+          "summary": "Both QAC lemma fields are نَخْل."
+        },
+        {
+          "local": "libs/roots/root-12.json root ن خ ل and both occurrence dictionaryUrdu fields",
+          "summary": "نخل is a collective; نخلة denotes one tree."
+        },
+        {
+          "primaryTitle": "Quranic Arabic Corpus dictionary, root ن خ ل",
+          "primaryUrl": "https://corpus.quran.com/qurandictionary.jsp?q=nxl",
+          "summary": "Separately lists نخل, نخلة and نخيل; both55:11:3 and55:68:3 occur under نخل, whereas the unit noun نخلة has distinct19:23/25 occurrences."
+        }
+      ]
+    }
+  ],
+  "exactMinimalLemmaReplacements": [
+    {
+      "wordId": "55:57:2",
+      "file": "content-pipeline/chunks/55/55-c09.json",
+      "field": "lemma",
+      "from": "إِلًى",
+      "to": "أَلًى",
+      "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
+    },
+    {
+      "wordId": "55:59:2",
+      "file": "content-pipeline/chunks/55/55-c09.json",
+      "field": "lemma",
+      "from": "إِلًى",
+      "to": "أَلًى",
+      "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
+    },
+    {
+      "wordId": "55:61:2",
+      "file": "content-pipeline/chunks/55/55-c09.json",
+      "field": "lemma",
+      "from": "إِلًى",
+      "to": "أَلًى",
+      "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
+    },
+    {
+      "wordId": "55:73:2",
+      "file": "content-pipeline/chunks/55/55-c11.json",
+      "field": "lemma",
+      "from": "إِلًى",
+      "to": "أَلًى",
+      "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
+    },
+    {
+      "wordId": "55:75:2",
+      "file": "content-pipeline/chunks/55/55-c11.json",
+      "field": "lemma",
+      "from": "إِلًى",
+      "to": "أَلًى",
+      "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
+    },
+    {
+      "wordId": "55:77:2",
+      "file": "content-pipeline/chunks/55/55-c11.json",
+      "field": "lemma",
+      "from": "إِلًى",
+      "to": "أَلًى",
+      "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
+    },
+    {
+      "wordId": "55:11:3",
+      "file": "content-pipeline/chunks/55/55-c02.json",
+      "field": "lemma",
+      "from": "نَخْلَة",
+      "to": "نَخْل",
+      "reason": "preserve the collective lexeme actually analyzed here and at55:68:3; the unit noun نخلة is separately explained in dictionaryUrdu"
+    }
+  ],
+  "affectedChunks": [
+    "55-c02",
+    "55-c09",
+    "55-c11"
+  ],
+  "verbWarningAdjudication": {
+    "wordId": "55:37:2",
+    "actualLemma": "اِنْشَقَّ",
+    "paradigmActivePast": "اِنْشَقَّ",
+    "nfcEqual": true,
+    "result": "no_semantic_fix; same characters after canonical combining-mark ordering",
+    "rawDifference": "Final ق has shadda then fatha in one string and fatha then shadda in the other; NFC normalizes both to the same sequence.",
+    "recommendedChange": null
+  },
+  "allVariantGroupDispositions": [
+    {
+      "qacLemma": "سَمَآء",
+      "root": "س م و",
+      "pos": "noun",
+      "variants": {
+        "سَمَاء": 3,
+        "سَمَاءٌ": 1
+      },
+      "wordIdsByLemma": {
+        "سَمَاء": [
+          "55:7:1",
+          "55:29:4",
+          "55:33:10"
+        ],
+        "سَمَاءٌ": [
+          "55:37:3"
+        ]
+      },
+      "adjudication": "Accept bare-base versus fully inflected nominative/tanwin citation forms of the same lemma. Do not treat dictionary citation as the case ending of the occurrence, and do not mass-normalize endings."
+    },
+    {
+      "qacLemma": "أَن",
+      "root": null,
+      "pos": "particle",
+      "variants": {
+        "أَنْ + لَا": 1,
+        "أَنْ": 1
+      },
+      "wordIdsByLemma": {
+        "أَنْ + لَا": [
+          "55:8:1"
+        ],
+        "أَنْ": [
+          "55:33:6"
+        ]
+      },
+      "adjudication": "Preserve legitimate structural versus contextual particle citation, fused conjunction/negation/pronoun notation, or alif/maqsurah superscript-alif spelling variation. No forced normalization."
+    },
+    {
+      "qacLemma": "لَا",
+      "root": null,
+      "pos": "particle",
+      "variants": {
+        "لَا": 6,
+        "فَ + لَا": 1,
+        "وَ + لَا": 1
+      },
+      "wordIdsByLemma": {
+        "لَا": [
+          "55:9:4",
+          "55:20:3",
+          "55:33:13",
+          "55:39:2",
+          "55:39:7",
+          "55:74:5"
+        ],
+        "فَ + لَا": [
+          "55:35:7"
+        ],
+        "وَ + لَا": [
+          "55:56:8"
+        ]
+      },
+      "adjudication": "Preserve legitimate structural versus contextual particle citation, fused conjunction/negation/pronoun notation, or alif/maqsurah superscript-alif spelling variation. No forced normalization."
+    },
+    {
+      "qacLemma": "نَخْل",
+      "root": "ن خ ل",
+      "pos": "noun",
+      "variants": {
+        "نَخْلَة": 1,
+        "نَخْل": 1
+      },
+      "wordIdsByLemma": {
+        "نَخْلَة": [
+          "55:11:3"
+        ],
+        "نَخْل": [
+          "55:68:3"
+        ]
+      },
+      "adjudication": "Collective and unit noun are real distinct dictionary forms; keep collective نَخْل as canonical for these two actual collective occurrences (one lemma-only replacement)."
+    },
+    {
+      "qacLemma": "ذُو",
+      "root": null,
+      "pos": "noun",
+      "variants": {
+        "ذَات": 1,
+        "ذُو": 3,
+        "ذَاتٌ": 1
+      },
+      "wordIdsByLemma": {
+        "ذَات": [
+          "55:11:4"
+        ],
+        "ذُو": [
+          "55:12:2",
+          "55:27:4",
+          "55:78:4"
+        ],
+        "ذَاتٌ": [
+          "55:48:1"
+        ]
+      },
+      "adjudication": "Preserve feminine ذَات/ذَاتٌ versus masculine ذُو. Feminine dual ذَوَاتَآ properly reduces to feminine singular ذات, not to masculine ذو. Final citation tanwin is not a verse-form claim."
+    },
+    {
+      "qacLemma": "أَىّ",
+      "root": null,
+      "pos": "noun",
+      "variants": {
+        "أَيّ": 22,
+        "أَيٌّ": 9
+      },
+      "wordIdsByLemma": {
+        "أَيّ": [
+          "55:13:1",
+          "55:16:1",
+          "55:18:1",
+          "55:21:1",
+          "55:23:1",
+          "55:25:1",
+          "55:28:1",
+          "55:30:1",
+          "55:32:1",
+          "55:34:1",
+          "55:49:1",
+          "55:51:1",
+          "55:53:1",
+          "55:55:1",
+          "55:57:1",
+          "55:59:1",
+          "55:61:1",
+          "55:63:1",
+          "55:65:1",
+          "55:67:1",
+          "55:69:1",
+          "55:71:1"
+        ],
+        "أَيٌّ": [
+          "55:36:1",
+          "55:38:1",
+          "55:40:1",
+          "55:42:1",
+          "55:45:1",
+          "55:47:1",
+          "55:73:1",
+          "55:75:1",
+          "55:77:1"
+        ]
+      },
+      "adjudication": "Accept bare-base versus fully inflected nominative/tanwin citation forms of the same lemma. Do not treat dictionary citation as the case ending of the occurrence, and do not mass-normalize endings."
+    },
+    {
+      "qacLemma": "ءَالَآء",
+      "root": "أ ل و",
+      "pos": "noun",
+      "variants": {
+        "أَلًى": 25,
+        "إِلًى": 6
+      },
+      "wordIdsByLemma": {
+        "أَلًى": [
+          "55:13:2",
+          "55:16:2",
+          "55:18:2",
+          "55:21:2",
+          "55:23:2",
+          "55:25:2",
+          "55:28:2",
+          "55:30:2",
+          "55:32:2",
+          "55:34:2",
+          "55:36:2",
+          "55:38:2",
+          "55:40:2",
+          "55:42:2",
+          "55:45:2",
+          "55:47:2",
+          "55:49:2",
+          "55:51:2",
+          "55:53:2",
+          "55:55:2",
+          "55:63:2",
+          "55:65:2",
+          "55:67:2",
+          "55:69:2",
+          "55:71:2"
+        ],
+        "إِلًى": [
+          "55:57:2",
+          "55:59:2",
+          "55:61:2",
+          "55:73:2",
+          "55:75:2",
+          "55:77:2"
+        ]
+      },
+      "adjudication": "Both classical singulars valid; choose أَلًى consistently in the identical repeated refrain (six lemma-only replacements)."
+    },
+    {
+      "qacLemma": "رَبّ",
+      "root": "ر ب ب",
+      "pos": "noun",
+      "variants": {
+        "رَبّ": 25,
+        "رَبٌّ": 11
+      },
+      "wordIdsByLemma": {
+        "رَبّ": [
+          "55:13:3",
+          "55:16:3",
+          "55:17:1",
+          "55:17:3",
+          "55:18:3",
+          "55:21:3",
+          "55:23:3",
+          "55:25:3",
+          "55:27:3",
+          "55:28:3",
+          "55:30:3",
+          "55:32:3",
+          "55:34:3",
+          "55:49:3",
+          "55:51:3",
+          "55:53:3",
+          "55:55:3",
+          "55:57:3",
+          "55:59:3",
+          "55:61:3",
+          "55:63:3",
+          "55:65:3",
+          "55:67:3",
+          "55:69:3",
+          "55:71:3"
+        ],
+        "رَبٌّ": [
+          "55:36:3",
+          "55:38:3",
+          "55:40:3",
+          "55:42:3",
+          "55:45:3",
+          "55:46:4",
+          "55:47:3",
+          "55:73:3",
+          "55:75:3",
+          "55:77:3",
+          "55:78:3"
+        ]
+      },
+      "adjudication": "Accept bare-base versus fully inflected nominative/tanwin citation forms of the same lemma. Do not treat dictionary citation as the case ending of the occurrence, and do not mass-normalize endings."
+    },
+    {
+      "qacLemma": "مِن",
+      "root": null,
+      "pos": "particle",
+      "variants": {
+        "مِنْ": 8,
+        "وَ + مِنْ": 1
+      },
+      "wordIdsByLemma": {
+        "مِنْ": [
+          "55:14:3",
+          "55:15:3",
+          "55:15:5",
+          "55:22:2",
+          "55:33:8",
+          "55:35:4",
+          "55:52:2",
+          "55:54:5"
+        ],
+        "وَ + مِنْ": [
+          "55:62:1"
+        ]
+      },
+      "adjudication": "Preserve legitimate structural versus contextual particle citation, fused conjunction/negation/pronoun notation, or alif/maqsurah superscript-alif spelling variation. No forced normalization."
+    },
+    {
+      "qacLemma": "جَآنّ",
+      "root": "ج ن ن",
+      "pos": "noun",
+      "variants": {
+        "جَانّ": 2,
+        "جَانٌّ": 2
+      },
+      "wordIdsByLemma": {
+        "جَانّ": [
+          "55:15:2",
+          "55:56:9"
+        ],
+        "جَانٌّ": [
+          "55:39:8",
+          "55:74:6"
+        ]
+      },
+      "adjudication": "Accept bare-base versus fully inflected nominative/tanwin citation forms of the same lemma. Do not treat dictionary citation as the case ending of the occurrence, and do not mass-normalize endings."
+    },
+    {
+      "qacLemma": "بَيْن",
+      "root": "ب ي ن",
+      "pos": "noun",
+      "variants": {
+        "بَيْن": 1,
+        "بَيْنٌ": 2
+      },
+      "wordIdsByLemma": {
+        "بَيْن": [
+          "55:20:1"
+        ],
+        "بَيْنٌ": [
+          "55:44:2",
+          "55:44:3"
+        ]
+      },
+      "adjudication": "Accept bare-base versus fully inflected nominative/tanwin citation forms of the same lemma. Do not treat dictionary citation as the case ending of the occurrence, and do not mass-normalize endings."
+    },
+    {
+      "qacLemma": null,
+      "root": null,
+      "pos": "particle",
+      "variants": {
+        "لِ + هُ": 1,
+        "لِ": 1,
+        "بِ + هَا": 1
+      },
+      "wordIdsByLemma": {
+        "لِ + هُ": [
+          "55:24:1"
+        ],
+        "لِ": [
+          "55:31:2"
+        ],
+        "بِ + هَا": [
+          "55:43:5"
+        ]
+      },
+      "adjudication": "No shared QAC lemma: this diagnostic bucket groups unrelated fused preposition/pronoun constructions, so it is not a lexical inconsistency."
+    },
+    {
+      "qacLemma": "عَلَىٰ",
+      "root": null,
+      "pos": "particle",
+      "variants": {
+        "عَلَىٰ": 1,
+        "عَلَى": 3
+      },
+      "wordIdsByLemma": {
+        "عَلَىٰ": [
+          "55:26:3"
+        ],
+        "عَلَى": [
+          "55:35:2",
+          "55:54:2",
+          "55:76:2"
+        ]
+      },
+      "adjudication": "Preserve legitimate structural versus contextual particle citation, fused conjunction/negation/pronoun notation, or alif/maqsurah superscript-alif spelling variation. No forced normalization."
+    },
+    {
+      "qacLemma": "جَلَٰل",
+      "root": "ج ل ل",
+      "pos": "noun",
+      "variants": {
+        "جَلَال": 1,
+        "جَلَالٌ": 1
+      },
+      "wordIdsByLemma": {
+        "جَلَال": [
+          "55:27:5"
+        ],
+        "جَلَالٌ": [
+          "55:78:5"
+        ]
+      },
+      "adjudication": "Accept bare-base versus fully inflected nominative/tanwin citation forms of the same lemma. Do not treat dictionary citation as the case ending of the occurrence, and do not mass-normalize endings."
+    },
+    {
+      "qacLemma": "إِكْرَام",
+      "root": "ك ر م",
+      "pos": "noun",
+      "variants": {
+        "إِكْرَام": 1,
+        "إِكْرَامٌ": 1
+      },
+      "wordIdsByLemma": {
+        "إِكْرَام": [
+          "55:27:6"
+        ],
+        "إِكْرَامٌ": [
+          "55:78:6"
+        ]
+      },
+      "adjudication": "Accept bare-base versus fully inflected nominative/tanwin citation forms of the same lemma. Do not treat dictionary citation as the case ending of the occurrence, and do not mass-normalize endings."
+    },
+    {
+      "qacLemma": "إِنس",
+      "root": "أ ن س",
+      "pos": "noun",
+      "variants": {
+        "إِنْس": 2,
+        "إِنْسٌ": 2
+      },
+      "wordIdsByLemma": {
+        "إِنْس": [
+          "55:33:3",
+          "55:56:6"
+        ],
+        "إِنْسٌ": [
+          "55:39:6",
+          "55:74:3"
+        ]
+      },
+      "adjudication": "Accept bare-base versus fully inflected nominative/tanwin citation forms of the same lemma. Do not treat dictionary citation as the case ending of the occurrence, and do not mass-normalize endings."
+    },
+    {
+      "qacLemma": "جَنَّة",
+      "root": "ج ن ن",
+      "pos": "noun",
+      "variants": {
+        "جَنَّةٌ": 1,
+        "جَنَّة": 2
+      },
+      "wordIdsByLemma": {
+        "جَنَّةٌ": [
+          "55:46:5"
+        ],
+        "جَنَّة": [
+          "55:54:8",
+          "55:62:3"
+        ]
+      },
+      "adjudication": "Accept bare-base versus fully inflected nominative/tanwin citation forms of the same lemma. Do not treat dictionary citation as the case ending of the occurrence, and do not mass-normalize endings."
+    },
+    {
+      "qacLemma": "مُتَّكِـِٔين",
+      "root": "و ك أ",
+      "pos": "noun",
+      "variants": {
+        "مُتَّكِئ": 1,
+        "مُتَّكِئٌ": 1
+      },
+      "wordIdsByLemma": {
+        "مُتَّكِئ": [
+          "55:54:1"
+        ],
+        "مُتَّكِئٌ": [
+          "55:76:1"
+        ]
+      },
+      "adjudication": "Accept bare-base versus fully inflected nominative/tanwin citation forms of the same lemma. Do not treat dictionary citation as the case ending of the occurrence, and do not mass-normalize endings."
+    },
+    {
+      "qacLemma": "حَسَن",
+      "root": "ح س ن",
+      "pos": "adjective",
+      "variants": {
+        "حَسَن": 1,
+        "حَسَنٌ": 1
+      },
+      "wordIdsByLemma": {
+        "حَسَن": [
+          "55:70:3"
+        ],
+        "حَسَنٌ": [
+          "55:76:6"
+        ]
+      },
+      "adjudication": "Accept bare-base versus fully inflected nominative/tanwin citation forms of the same lemma. Do not treat dictionary citation as the case ending of the occurrence, and do not mass-normalize endings."
+    }
+  ],
+  "additionalDefiniteWrongLemmasFound": [],
+  "mechanicalChecks": {
+    "chunkAndDraftLemmasMatchAll351": true,
+    "draftArabicMatchesSourceAll351": true,
+    "recommendationFields": [
+      "lemma"
+    ],
+    "sourceAndProtectedFieldsUnchanged": true,
+    "externalCodexCliInvoked": false
+  },
+  "inputs": [
+    {
+      "path": "content-pipeline/drafts/surah-55.json",
+      "sha256": "690a245b12111655bb57bc7b3ffd26a6af81be26573d1bfa9faeedaa2f504372"
+    },
+    {
+      "path": "content-pipeline/meta/words.json",
+      "sha256": "1a3f2381f565d82b39b5a181dfce5e4d53e8f46d4974dd174cb83b0acde3cd9f"
+    },
+    {
+      "path": "content-pipeline/reports/assembly-report.json",
+      "sha256": "68dbc2f6116dc89d5d9ca52e728cce797f3a19a855ddd04fd0d1db722945d31e"
+    },
+    {
+      "path": "content-pipeline/guide/authoring-guide.md",
+      "sha256": "8ead190b344b7679af969df1fa4b3172ee5fe29035ca49c5d7d1fdccfa9c85ff"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-01.json",
+      "sha256": "b5e639a97d3df9c0d4f2a95b58926caac44502b09de184cd49d2c8edf74e4dc2"
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-12.json",
+      "sha256": "a954072fc2c5efb4a9fa9fdc1c9aa9f8c12be52a2ba76f5f8006fc8f74dfe667"
+    },
+    {
+      "path": "content-pipeline/chunks/55/55-c01.json",
+      "sha256": "52a2038579ee78920baeca31b955a247137b0f0cbed693982f4afa3c6592f68f"
+    },
+    {
+      "path": "content-pipeline/chunks/55/55-c02.json",
+      "sha256": "ed64c761eac6ba39c0ee6df958d20af1c9caf631493aee92d02992489fdcd401"
+    },
+    {
+      "path": "content-pipeline/chunks/55/55-c03.json",
+      "sha256": "9fcd8b5bf03cb363c43581094a7206f558d919da2f3d17f900550c532575ddd8"
+    },
+    {
+      "path": "content-pipeline/chunks/55/55-c04.json",
+      "sha256": "6242d050357fc7a6f78148bace3cc724d74ed6b93bac7c8342a4dd98a043c816"
+    },
+    {
+      "path": "content-pipeline/chunks/55/55-c05.json",
+      "sha256": "8a935088d018b7efc7aaa90420a4caa33a052b10c06d70ca279dda5ffecfafbf"
+    },
+    {
+      "path": "content-pipeline/chunks/55/55-c06.json",
+      "sha256": "8ec1ef54ad0e37a004d5ee30f9a4cb7f9ddac2bb1a8ea8e9069541d054eadd4d"
+    },
+    {
+      "path": "content-pipeline/chunks/55/55-c07.json",
+      "sha256": "26a54af73610a2ade33912eb5d6274da21544b44c31770cd0011970d18979df9"
+    },
+    {
+      "path": "content-pipeline/chunks/55/55-c08.json",
+      "sha256": "1706c37f3895c3704b1972711c082d0cc47cb53a7e03fd43d3e515c8ca5b3619"
+    },
+    {
+      "path": "content-pipeline/chunks/55/55-c09.json",
+      "sha256": "9d92af7776457c40d64eae85b7b3ef1f0cb1f74c164149f9d0c31b24bff6d44a"
+    },
+    {
+      "path": "content-pipeline/chunks/55/55-c10.json",
+      "sha256": "da245a3eb9ee8555b732f097e179cb5db98069553c43ce9ca0a89594926d0b2f"
+    },
+    {
+      "path": "content-pipeline/chunks/55/55-c11.json",
+      "sha256": "aa538a7fb8cc3ebf68d4c624a1551f68dd3e936f9f1474980f42800b68f792fb"
+    },
+    {
+      "path": "content-pipeline/packets/55/55-c01.json",
+      "sha256": "4dbf9c120ff5f710bef640051c46c9b9ef75aff27a50e9f7aee8df36462a6770"
+    },
+    {
+      "path": "content-pipeline/packets/55/55-c02.json",
+      "sha256": "7eb0c18b9cdab6df50e99d2fc8bf054ec10dfe99976005eb9711de8002fbef4e"
+    },
+    {
+      "path": "content-pipeline/packets/55/55-c03.json",
+      "sha256": "4b3f21472d9efa8b4a2694b22d55db094b9f042906c72d94c26226b2fc4d4e56"
+    },
+    {
+      "path": "content-pipeline/packets/55/55-c04.json",
+      "sha256": "59d7f63b6d6853eb8f49dfaf51f116044e2ad131a5ddf301cbb632094c5376b6"
+    },
+    {
+      "path": "content-pipeline/packets/55/55-c05.json",
+      "sha256": "dc42e1528b65b478bf9b90d1e233818fbf40f52e8838749a39dfa2ae6d5e52dc"
+    },
+    {
+      "path": "content-pipeline/packets/55/55-c06.json",
+      "sha256": "78c1bd988eac4b2814c59ea8adc679800239d7d993d7d09421f74446cc6cfa36"
+    },
+    {
+      "path": "content-pipeline/packets/55/55-c07.json",
+      "sha256": "e5bac13580509f479264c0a5e68f7237de0d01a8f887c46753d6c7fcd76a414d"
+    },
+    {
+      "path": "content-pipeline/packets/55/55-c08.json",
+      "sha256": "c741a4da7f16374d324f6d690879e339047f09802caf59e0a6dbffb81c27041d"
+    },
+    {
+      "path": "content-pipeline/packets/55/55-c09.json",
+      "sha256": "33efa2d840fcbca658c3632456237f404b8aff29cb033e2a63f1bf2ea7e36dbb"
+    },
+    {
+      "path": "content-pipeline/packets/55/55-c10.json",
+      "sha256": "19ae258cb55fb3ea87f52927a98748e8175adadacb4a05d698c3d44df18fd5a5"
+    },
+    {
+      "path": "content-pipeline/packets/55/55-c11.json",
+      "sha256": "bc2f09455002ab0cdb1110256a576401803d24496efc334592eb2a8c62ec41d8"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c18.json",
+      "sha256": "622f5d6358d90d58b7aaa9d4ab67605b70dbf057c17a14322f43d9bf69c2649e"
+    }
+  ],
+  "nextStep": "Parent may apply the seven lemma-only replacements in one batch after the main127-chunk queue finishes, then run fresh complete author/reviewer checks for55-c02,55-c09 and55-c11 before reassembly. Do not invalidate unrelated in-flight source hashes. No shared-library edit or18:32:11 rewrite is needed; human scholarly approval remains pending.",
+  "limitations": [
+    "This is cross-chunk lemma consistency adjudication, not scholarly approval or a new full grammatical review of all351 lessons.",
+    "Current assembly-report is diagnostic and groups some unlike particle constructions under absent QAC lemmas; those groups must not drive automatic rewriting."
+  ],
+  "globalNakhlCrossCheck": {
+    "checkedOccurrence": "18:32:11",
+    "file": "content-pipeline/chunks/18/18-c18.json",
+    "lemma": "نَخْلٌ",
+    "sourceLemma": "نَخْل",
+    "dictionaryUrdu": "نَخْل کھجور کے درختوں کا اسمِ جنس ہے؛ ایک درخت نَخْلَة کہلاتا ہے۔ یہاں اسے جمعِ تکسیر سمجھنے کے بجائے اسمِ جنس پہچانیں۔",
+    "conclusion": "The retained occurrence also preserves the collective lexeme نخل rather than the unit noun نخلة. Its final nominative citation tanwin is an accepted citation variant of نَخْل, not a different lexeme and not a claim that the actual بِنَخْلٍ word is nominative. Thus choosing collective نَخْل at55:11:3 makes the three in-scope source-nakhl occurrences globally consistent without changing18:32:11.",
+    "allInScopeSourceNakhlIds": [
+      "18:32:11",
+      "55:11:3",
+      "55:68:3"
+    ],
+    "distinctSourceNakhilIds": [
+      "23:19:6",
+      "36:34:5"
+    ],
+    "distinctSourceNakhilNote": "Those source occurrences have a different QAC lemma نخيل and are not automatically rewritten by this same-source-lemma consistency decision."
+  }
+}

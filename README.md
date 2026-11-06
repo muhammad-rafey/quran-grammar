@@ -48,6 +48,8 @@ Every command below runs from the repository root:
 | `npm run dev:android`       | Android emulator in Expo Go, with the Node API   |
 | `npm run dev:ios`           | iPhone simulator in Expo Go, with the Node API   |
 | `npm run build:android:apk` | Standalone test APK at `build/quran-grammar.apk` |
+| `npm run db:sqlite`         | Local SQLite copy of the content, verified       |
+| `npm run db:sync`           | Postgres (Supabase) copy via `QG_PSQL`, verified |
 
 The simulator commands reuse a healthy Quran Grammar API already running on port 4000, otherwise start one. They stop only the processes they started when you press Ctrl+C. Android requires an Android Studio emulator; iPhone requires macOS, Xcode and an available iOS simulator. Both use an SDK 57-compatible Expo Go client, which supports the native modules currently used by this project. A custom development client can be added when app-specific native modules or native configuration testing require it.
 
@@ -84,6 +86,6 @@ The production Node process serves both the web app and `/api` on localhost port
 
 ## Content and future work
 
-This edition contains Al-Fatihah, Al-Fil, Quraysh, Al-Maʿun, Al-Kawthar, Al-Kafirun, An-Nasr, Al-Masad, Al-Ikhlas, Al-Falaq and An-Nas. The app is read-only; no account system, database or scholar-editing workflow is implied. Stable word occurrence IDs and a versioned API leave room for reviewed content expansion without duplicating the data between platforms. [Content provenance](docs/content-provenance.md) records the source and editorial status.
+This edition contains Al-Fatihah, Al-Fil, Quraysh, Al-Maʿun, Al-Kawthar, Al-Kafirun, An-Nasr, Al-Masad, Al-Ikhlas, Al-Falaq and An-Nas. The app is read-only; no account system or scholar-editing interface is implied. Stable word occurrence IDs and a versioned API leave room for reviewed content expansion without duplicating the data between platforms. An expansion adding Al-Kahf, Al-Mu'minun, As-Sajdah, Ya-Sin and Ar-Rahman has resumed with new content held for scholarly review; 110 of 127 chunks are authored, including complete held drafts of As-Sajdah, Ya-Sin and Ar-Rahman. Further authoring and fresh reviews await restored Codex account capacity. The exact progress, checked libraries and resume commands are in [content-pipeline/README.md](content-pipeline/README.md). [Content provenance](docs/content-provenance.md) records the source and editorial status.
 
 Original application code has no general reuse license assigned yet. Third-party material retains its own licenses; public repository visibility does not change them.

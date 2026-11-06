@@ -359,6 +359,34 @@ test('API failure is recoverable by the retry control', async ({ page }) => {
   await expect(page.locator('.quran-word')).toHaveCount(29);
 });
 
+for (const width of [390, 1440]) {
+  test(`ayah deep links select and scroll to the requested occurrence at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('/#surah=105&ayah=4');
+    const selector = page.getByRole('combobox', { name: 'Select ayah', exact: true });
+    await expect(page.locator('.quran-word')).toHaveCount(23);
+    await expect(word(page, '105:4:1')).toHaveAttribute('aria-pressed', 'true');
+    await expect(selector).toHaveValue('4');
+    await expect(page.locator('#ayah-4')).toBeInViewport();
+    await expect(page.locator('.word-sheet[open]')).toHaveCount(0);
+    await page.evaluate(() => { location.hash = 'surah=105&ayah=2'; });
+    await expect(word(page, '105:2:1')).toHaveAttribute('aria-pressed', 'true');
+    await expect(selector).toHaveValue('2');
+    await expect(page.locator('#ayah-2')).toBeInViewport();
+  });
+}
+
+test('invalid ayah links fall back safely and an explicit word takes precedence', async ({ page }) => {
+  await loadStudy(page);
+  for (const ayah of ['999', '-2', '2.5', 'NaN', '9007199254740992']) {
+    await page.evaluate((value) => { location.hash = `surah=1&ayah=${value}`; }, ayah);
+    await expect(word(page, '1:1:1')).toHaveAttribute('aria-pressed', 'true');
+  }
+  await page.evaluate(() => { location.hash = 'surah=1&ayah=2&word=1%3A5%3A2'; });
+  await expect(word(page, '1:5:2')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.getByRole('combobox', { name: 'Select ayah', exact: true })).toHaveValue('5');
+});
+
 for (const width of [320, 390, 768]) {
   test(`mobile ${width}px sheet preserves reading position, keyboard focus and full content`, async ({
     page,

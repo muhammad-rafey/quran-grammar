@@ -1,0 +1,294 @@
+{
+ "entries": [
+  {
+   "key": ">abaY|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "أَبَى",
+   "present": "يَأْبَى",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "مہموز الفاء اور ناقص یائی ہے: آخری یاء ماضی أَبَى اور مضارع يَأْبَى میں الف مقصورہ بنتی ہے، أَبَوْا میں گر جاتی ہے اور جزم میں يَأْبَ رہ جاتا ہے۔ عین یا لام میں حرفِ حلق نہ ہونے کے باوجود مضارع مفتوح العین ہے، اس لیے اسے شاذ مانا جاتا ہے؛ «انکار کرنا» کے معنی میں متعدی ہے۔",
+   "evidenceEnglish": "Form I (QAC has no form tag). The a-vowel imperfect is attested Quran-wide in QAC: وَيَأْبَى (9:32), وَتَأْبَىٰ (9:8), jussive يَأْبَ (2:282); perfect فَأَبَوْا۟ (18:77). Lane and Lisan al-Arab give أَبَى, aor. يَأْبَى, noted as an anomalous fa'ala/yaf'alu because neither the 2nd nor the 3rd radical is guttural (a rare يَأْبِي is also recorded). Hence bab fataha (a-a)."
+  },
+  {
+   "key": "A^taY|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "آتَى",
+   "present": "يُؤْتِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "مہموز الفاء اور ناقص یائی ہے: باب کی ہمزہ اور مادے کی ہمزہ مل کر آ (مد) بنتی ہیں، یوں أَأْتَى سے آتَى ہوا؛ مضارع يُؤْتِي ہے، جبکہ امر آتِ، آتُوا اور جمع يُؤْتُونَ میں آخری یاء حذف ہوتی ہے۔ «دینا» کے معنی میں متعدی ہے اور اکثر دو مفعول لیتا ہے؛ اسے مجرد أَتَى (آنا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC tags every occurrence (IV): perfect ءَاتَيْنَـٰهُ (18:65), ءَاتَوا۟ (23:60); imperfect يُؤْتِيَنِ (18:40), يُؤْتُونَ (23:60); imperative ءَاتِنَا (18:10), ءَاتُونِى (18:96). af'ala of أ ت ي: أَأْتَى > آتَى, aor. يُؤْتِي 'to give' (Lane; Lisan al-Arab), distinct from Form I أَتَى 'to come'."
+  },
+  {
+   "key": ">ataY|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "أَتَى",
+   "present": "يَأْتِي",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "مہموز الفاء اور ناقص یائی ہے: آخری یاء أَتَى میں الف مقصورہ بنتی اور أَتَيَا، أَتَيْنَا میں ظاہر رہتی ہے؛ مضارع يَأْتِي ہے، جبکہ جزم يَأْتِ اور جمع يَأْتُونَ میں یاء حذف ہوتی ہے۔ بنیادی معنی «آنا» ہے؛ مفعول کے ساتھ «کسی کے پاس آنا» اور بِ کے ساتھ «لانا» بنتا ہے، اسے بابِ افعال آتَى (دینا) سے الگ رکھیں۔",
+   "evidenceEnglish": "Form I (QAC has no form tag). The i-vowel imperfect is attested in the occurrences: يَأْتُونَ (18:15), يَأْتِيَهُمُ (18:55), jussive يَأْتِ (23:68), يَأْتِيهِم (36:30); perfect أَتَيَآ (18:77), أَتَىٰهُم (32:3). Lane and Lisan al-Arab: أَتَى, aor. يَأْتِي. Hence bab daraba (a-i)."
+  },
+  {
+   "key": "{t~axa*a|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِتَّخَذَ",
+   "present": "يَتَّخِذُ",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "مادہ أ خ ذ (مہموز الفاء) سے بابِ افتعال ہے: اِئْتَخَذَ میں فاء کا ہمزہ خلافِ قیاس تاء بن کر افتعال کی تاء میں مدغم ہوا، اس لیے تاء مشدد اور ابتدائی الف ہمزۂ وصل ہے؛ بعض اہلِ لغت اسے ت خ ذ سے مانتے ہیں۔ متعدی ہے: ایک مفعول کے ساتھ «بنا لینا، اختیار کرنا» اور دو مفعولوں کے ساتھ «کسی کو کچھ ٹھہرا لینا»۔",
+   "evidenceEnglish": "QAC tags (VIII) with root أ خ ذ; the i-vowel imperfect is attested: لَنَتَّخِذَنَّ (18:21), أَفَتَتَّخِذُونَهُۥ (18:50), تَتَّخِذَ (18:86), ءَأَتَّخِذُ (36:23). ifta'ala of أَخَذَ with the hamza assimilated to the infixed ت (اِئْتَخَذَ > اِتَّخَذَ), as in Lane and Lisan al-Arab; Lisan also reports a derivation from تَخِذَ, reflected in the canonical variant reading لَتَخِذْتَ at 18:77."
+  },
+  {
+   "key": "yu&aAxi*u|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "آخَذَ",
+   "present": "يُؤَاخِذُ",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "مہموز الفاء ہے: ماضی میں فاء کی ہمزہ اور بابِ مفاعلہ کا الف مل کر آ (مد) لکھے جاتے ہیں (آخَذَ)، اور مضارع يُؤَاخِذُ میں ہمزہ واو کی کرسی پر ہے۔ متعدی ہے اور بِ کے ساتھ «کسی بات پر گرفت یا مؤاخذہ کرنا» کا معنی دیتا ہے؛ یہاں باب میں باہمی شرکت کا مفہوم نہیں۔",
+   "evidenceEnglish": "QAC tags (III). Its lemma يُؤَاخِذُ is an imperfect, and all 9 Quranic attestations are imperfect (يُؤَاخِذُهُم 18:58, jussive تُؤَاخِذْنِى 18:73, يُؤَاخِذُكُمُ 2:225), so no perfect is attested. Citation perfect derived as fa'ala of أ خ ذ: آخَذَهُ بِذَنْبِهِ مُؤَاخَذَةً 'took him to task' (al-Sihah and Lisan al-Arab, which treat وَاخَذَ as a colloquial form; Lane)."
+  },
+  {
+   "key": ">axa*a|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "أَخَذَ",
+   "present": "يَأْخُذُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "مہموز الفاء ہے؛ مضارع يَأْخُذُ میں ہمزہ ساکن رہتی ہے، مگر امر میں خلافِ قیاس ہمزہ حذف ہو کر خُذْ، خُذُوا بنتا ہے۔ متعدی ہے: لینا، پکڑنا، اور سزا کے طور پر گرفت کرنا۔",
+   "evidenceEnglish": "Form I (QAC has no form tag). The u-vowel imperfect is attested: يَأْخُذُ (18:79), تَأْخُذُهُمْ (36:49); QAC also has the imperatives فَخُذْ (2:260), خُذُوا۟ (2:63). Lane and Lisan al-Arab: أَخَذَ, aor. يَأْخُذُ, imperative خُذْ with the hamza dropped (like كُلْ). Hence bab nasara (a-u)."
+  },
+  {
+   "key": ">axa*a|I|PASS",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "أُخِذَ",
+   "present": "يُؤْخَذُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "یہ معروف أَخَذَ يَأْخُذُ کا مجہول ہے: ماضی أُخِذَ میں پہلا حرف مضموم اور عین مکسور، اور مضارع يُؤْخَذُ میں علامتِ مضارع مضموم اور عین مفتوح ہوتا ہے، جہاں ہمزہ واو کی کرسی پر لکھی جاتی ہے۔ فاعل مذکور نہیں ہوتا؛ اس کی جگہ نائبِ فاعل آتا ہے، جو مرفوع اسم یا ضمیر بھی ہو سکتا ہے اور محلِ رفع میں بِ والا جار و مجرور بھی۔",
+   "evidenceEnglish": "QAC tags PASS: فَيُؤْخَذُ (55:41); Quran-wide also يُؤْخَذُ (2:48), jussive يُؤْخَذْ (6:70) and perfect أُخِذَ (8:70). Regular passive of Form I أَخَذَ يَأْخُذُ (bab nasara): fu'ila / yuf'alu."
+  },
+  {
+   "key": "yasota>oxiru|X|ACT",
+   "baabUrdu": "بابِ اِسْتِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — دہم (X)",
+   "past": "اِسْتَأْخَرَ",
+   "present": "يَسْتَأْخِرُ",
+   "pattern": "اِسْتَفْعَلَ — يَسْتَفْعِلُ",
+   "noteUrdu": "مہموز الفاء ہے: فاء کی ہمزہ ساکن رہتی ہے، اور رسمِ عثمانی میں اکثر کرسی کے بغیر لکھی گئی ہے (يَسْتَـْٔخِرُونَ)۔ لازم ہے: پیچھے رہنا، مؤخر ہونا؛ یہاں سین اور تاء طلب کا معنی نہیں دیتے، یہ تَأَخَّرَ کا ہم معنی ہے۔",
+   "evidenceEnglish": "QAC tags (X). Its lemma يَسْتَأْخِرُ is an imperfect, and all 6 Quranic attestations are imperfect (يَسْتَـْٔخِرُونَ 23:43, 10:49; يَسْتَأْخِرُونَ 7:34). Citation perfect derived as istaf'ala of أ خ ر: اِسْتَأْخَرَ = تَأَخَّرَ 'remained behind, was delayed', intransitive (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": ">akala|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "أَكَلَ",
+   "present": "يَأْكُلُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "مہموز الفاء ہے؛ مضارع يَأْكُلُ میں ہمزہ ساکن رہتی ہے، مگر امر میں خلافِ قیاس ہمزہ حذف ہو کر كُلْ، كُلُوا بنتا ہے۔ متعدی ہے: کھانا؛ مفعول کبھی محذوف ہوتا ہے اور مِنْ تبعیض کے لیے آتا ہے۔",
+   "evidenceEnglish": "Form I (QAC has no form tag). The u-vowel imperfect is attested: يَأْكُلُ (23:33), تَأْكُلُونَ (23:19), لِيَأْكُلُوا۟ (36:35); imperative كُلُوا۟ (23:51). Lane and Lisan al-Arab: أَكَلَ, aor. يَأْكُلُ, imperative كُلْ. Hence bab nasara (a-u)."
+  },
+  {
+   "key": "'aAmana|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "آمَنَ",
+   "present": "يُؤْمِنُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "مہموز الفاء ہے: باب کی ہمزہ اور مادے کی ہمزہ مل کر آمَنَ میں آ (مد) بنتی ہیں، اور مضارع يُؤْمِنُ میں ہمزہ واو کی کرسی پر ہے۔ «ایمان لانا» کے معنی میں بِ یا لِ کے ساتھ آتا ہے، اور «امن دینا» کے معنی میں براہِ راست مفعول لیتا ہے۔",
+   "evidenceEnglish": "QAC tags (IV): ءَامَنُوا۟ (18:13), ءَامَنتُ (36:25), يُؤْمِنُونَ (23:44), jussive يُؤْمِنُوا۟ (18:6), فَلْيُؤْمِن (18:29). af'ala of أ م ن: أَأْمَنَ > آمَنَ, aor. يُؤْمِنُ (Lane; Lisan al-Arab); matches the shipped Surah 106 paradigm (آمَنَ — يُؤْمِنُ)."
+  },
+  {
+   "key": ">awaY|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "أَوَى",
+   "present": "يَأْوِي",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "مہموز الفاء اور لفیف مقرون ہے: عین کی واو برقرار رہتی ہے، جبکہ لام کی یاء ماضی أَوَى میں الف مقصورہ بنتی، أَوَيْنَا میں ظاہر رہتی اور امرِ جمع اِئْوُوا میں حذف ہوتی ہے؛ مضارع يَأْوِي ہے۔ لازم ہے اور إِلَى کے ساتھ «پناہ لینا، ٹھکانا پکڑنا» کا معنی دیتا ہے؛ متعدی آوَى (بابِ افعال) سے الگ رکھیں۔",
+   "evidenceEnglish": "Form I (QAC has no form tag). The i-vowel imperfect is attested Quran-wide: ءَاوِىٓ (11:80) and سَـَٔاوِىٓ (11:43), first-person singular of يَأْوِي; imperative فَأْوُۥٓا۟ (18:16); perfect أَوَى (18:10), أَوَيْنَآ (18:63). Lane and Lisan al-Arab: أَوَى إِلَيْهِ, aor. يَأْوِي. Hence bab daraba (a-i)."
+  },
+  {
+   "key": "'aAwaY`^|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "آوَى",
+   "present": "يُؤْوِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "مہموز الفاء اور لفیف مقرون ہے: أَأْوَى کی دو ہمزوں کے ملنے سے آوَى (مد) بنا؛ لام کی یاء ماضی میں الف مقصورہ اور آوَيْنَا میں ظاہر ہے، اور مضارع يُؤْوِي ہے۔ متعدی ہے: «پناہ دینا، ٹھکانا دینا»؛ مجرد أَوَى (خود پناہ لینا، لازم) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC tags (IV): وَءَاوَيْنَـٰهُمَآ (23:50); Quran-wide perfect ءَاوَىٰٓ (12:69), فَـَٔاوَىٰ (93:6) and imperfect تُـْٔوِيهِ (70:13), وَتُـْٔوِىٓ (33:51). af'ala of أ و ي: أَأْوَى > آوَى, aor. يُؤْوِي 'gave shelter' (Lane; Lisan al-Arab), the transitive counterpart of Form I أَوَى."
+  },
+  {
+   "key": "bi}osa|I|ACT",
+   "baabUrdu": "فعلِ جامد (غیر متصرف)",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بِئْسَ",
+   "present": "—",
+   "pattern": "فِعْلَ",
+   "noteUrdu": "مادہ ب أ س مہموز العین ہے؛ یہ فعلِ ذم جامد ہے: اصل بَئِسَ (فَعِلَ) تھا، فاء کو عین کی کسرہ دے کر اور عین ساکن کر کے بِئْسَ بنا؛ اس سے مضارع اور امر نہیں آتے، صرف تانیث کی تاء لگ سکتی ہے (بِئْسَتْ)۔ اس کا فاعل ال والا اسم (یا اس کا مضاف) یا تمییز سے واضح ہونے والی پوشیدہ ضمیر ہوتا ہے، اور مخصوص بالذم کبھی محذوف ہوتا ہے۔",
+   "evidenceEnglish": "QAC tags V PERF 3MS; all 40 Quranic occurrences are the perfect بِئْسَ, with no imperfect or imperative. Classical grammar (e.g. Ibn Aqil's commentary on the Alfiyya, chapter on نِعْمَ and بِئْسَ; Lisan al-Arab) treats بِئْسَ as an inflexible verb of blame from بَئِسَ (fa'ila; the base verb is بَئِسَ يَبْأَسُ, i-a), with the kasra carried to the first radical and the second made quiescent. Bab is labelled 'فعلِ جامد (غیر متصرف)', the label used for its twin نِعْمَ (lex-11) and for لَيْسَ (lex-10), because a vowel-class bab presupposes an imperfect; the base بَئِسَ يَبْأَسُ (i-a, 'to be in misery') is a different, fully conjugated verb. The blame sense is stated in noteUrdu. Present '—' and a past-only pattern per convention. Root ب أ س is hamzated in the 2nd radical: the ئ of بِئْسَ is the radical hamza on a ya seat."
+  },
+  {
+   "key": "bada>a|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بَدَأَ",
+   "present": "يَبْدَأُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "مہموز اللام ہے؛ مضارع يَبْدَأُ میں عین کا فتحہ لام کی ہمزہ (حرفِ حلق) کے سبب ہے، مگر حرفِ حلق والا ہر فعل بابِ فتح کا نہیں ہوتا (جیسے بَلَغَ يَبْلُغُ)۔ ہمزہ حرکات کے مطابق الف، واو یا یاء کی کرسی پر لکھی جاتی ہے (بَدَأَ، تَبْدَئِينَ)، اور رسمِ عثمانی میں کبھی سطر پر (بَدَءُوا)۔ متعدی ہے: شروع کرنا، پہلی بار پیدا کرنا۔",
+   "evidenceEnglish": "Form I (QAC has no form tag): وَبَدَأَ (32:7). The a-vowel imperfect is attested Quran-wide in QAC as يَبْدَؤُا۟ (10:4, 27:64, 30:11), the Uthmani spelling of يَبْدَأُ; the 3rd radical ء is guttural. Lane and Lisan al-Arab: بَدَأَ, aor. يَبْدَأُ. Hence bab fataha (a-a)."
+  },
+  {
+   "key": "yubodila|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَبْدَلَ",
+   "present": "يُبْدِلُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ متعدی ہے اور عموماً دو مفعول لیتا ہے: کسی کو ایک چیز کے بدلے دوسری دینا۔ اسے بابِ تفعیل بَدَّلَ يُبَدِّلُ سے الگ پہچانیں: يُبْدِلُ میں باء ساکن ہے اور دال پر تشدید نہیں۔",
+   "evidenceEnglish": "QAC tags (IV) and the stem يُبْدِلَ has sukun on ب and no shadda (18:81; likewise 66:5, 68:32). QAC's lemma يُبْدِلَ is an imperfect; citation perfect derived as af'ala of ب د ل: أَبْدَلَ, aor. يُبْدِلُ 'to give in exchange, replace' (Lane; Lisan al-Arab). Other canonical readings have Form II يُبَدِّلَ at 18:81, a different bab."
+  },
+  {
+   "key": ">aboraHa|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بَرِحَ",
+   "present": "يَبْرَحُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے: تام ہو تو «جگہ چھوڑنا، ہٹنا» کا معنی دیتا ہے، نفی کے ساتھ بھی؛ اور نفی کے بعد (مَا بَرِحَ، لَا يَبْرَحُ) یہ كَانَ کی طرح فعلِ ناقص بھی بن سکتا ہے، تب خبر لے کر «برابر لگے رہنا» کا معنی دیتا ہے، اس لیے ہر مقام کا اعراب دیکھیں۔ أَبْرَحُ جیسے صیغے کی ہمزہ واحد متکلم کی علامت ہے، بابِ افعال کی نہیں۔",
+   "evidenceEnglish": "QAC's lemma أَبْرَحَ is an inflected first-person singular form; the verb is Form I (no form tag): أَبْرَحُ (18:60), أَبْرَحَ (12:80), نَّبْرَحَ (20:91), all with an a-vowel on the 2nd radical. Lane and Lisan al-Arab: بَرِحَ, aor. يَبْرَحُ; مَا بَرِحَ = مَا زَالَ. Hence bab sami'a (i-a). Sources differ on 18:60: QAC's i'rab note glosses أَبْرَحُ as 'بمعنى أغادر' (complete, tamma, although negated), while al-Muyassar paraphrases it as 'لا أزال أتابع السير' (incomplete, naqisa, predicate elided). Elsewhere negated بَرِحَ is tamma with an object at 12:80 and naqisa with a predicate at 20:91, so negation is a precondition for the naqisa use but does not by itself decide the type; word authors should follow QAC at 18:60 and log the alternative in auditNotes."
+  },
+  {
+   "key": "tabaAraka|VI|ACT",
+   "baabUrdu": "بابِ تَفَاعُل",
+   "formUrdu": "ثلاثی مزید فیہ — ششم (VI)",
+   "past": "تَبَارَكَ",
+   "present": "—",
+   "pattern": "تَفَاعَلَ",
+   "noteUrdu": "صحیح فعل ہے، مگر تعظیم و برکت کے معنی میں جامد ہے: صرف ماضی میں آتا ہے (قرآن میں ہر جگہ واحد مذکر غائب تَبَارَكَ، اور دعا میں خطاب کے لیے تَبَارَكْتَ بھی) اور اللہ تعالیٰ ہی کے لیے بولا جاتا ہے؛ اس سے مضارع، امر یا اسمِ فاعل نہیں آتا۔ یہاں بابِ تفاعل باہمی شرکت کا معنی نہیں دیتا بلکہ برکت، بلندی اور خیر کی کثرت کا۔",
+   "evidenceEnglish": "QAC tags (VI); all 9 Quranic occurrences are the perfect 3MS تَبَارَكَ (e.g. 23:14, 55:78, 67:1). Lane and Lisan al-Arab describe تَبَارَكَ in this sense as said only of God and used only in the perfect (no imperfect, imperative or participle in use); outside the Quran the 2nd-person perfect تَبَارَكْتَ addressed to God is well attested (e.g. the post-prayer dhikr in Sahih Muslim), so the restriction is to the perfect, not to 3MS. Present '—' and a past-only pattern per convention."
+  },
+  {
+   "key": "bu$~ira|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "بَشَّرَ",
+   "present": "يُبَشِّرُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح فعل ہے؛ عین کی تشدید بابِ تفعیل کی علامت ہے، اور معروف ماضی بَشَّرَ ہے جبکہ بُشِّرَ اس کا مجہول ہے۔ متعدی ہے: کسی کو بِ کے ساتھ کسی بات کی خبر دینا، عموماً خوشخبری، مگر طنزاً عذاب کی خبر کے لیے بھی آتا ہے۔",
+   "evidenceEnglish": "QAC tags (II): active imperfect وَيُبَشِّرَ (18:2) and imperative فَبَشِّرْهُ (36:11); Quran-wide perfect بَشَّرْنَـٰكَ (15:55). QAC's lemma بُشِّرَ is passive-shaped, but this key is ACT, so the citation is active fa''ala بَشَّرَ, aor. يُبَشِّرُ (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": ">aboSara|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَبْصَرَ",
+   "present": "يُبْصِرُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ متعدی ہو کر «کسی چیز کو دیکھنا» اور بغیر مفعول کے «دیکھ سکنا، بصیرت رکھنا» کا معنی دیتا ہے۔ امر کی شکل أَبْصِرْ کبھی فعلِ تعجب (أَفْعِلْ بِهِ کا وزن) ہوتی ہے، یعنی «کیا خوب دیکھنے والا ہے»؛ اسے ہر جگہ حکم نہ سمجھیں۔",
+   "evidenceEnglish": "QAC tags (IV): أَبْصَرْنَا (32:12), يُبْصِرُونَ (32:27, 36:9, 36:66) and أَبْصِرْ (18:26), which QAC tags IMPV but which is the exclamatory af'il bihi form (also 19:38). af'ala of ب ص ر: أَبْصَرَ, aor. يُبْصِرُ (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": "baEava|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بَعَثَ",
+   "present": "يَبْعَثُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی بَعَثَ عام وزن فَعَلَ پر ہے، اور مضارع يَبْعَثُ میں عین کا فتحہ درمیانی حرف ع کے حلقی ہونے سے ہے، مگر حرفِ حلق والا ہر فعل بابِ فتح کا نہیں ہوتا (جیسے أَخَذَ يَأْخُذُ)؛ امر اِبْعَثْ کا ابتدائی الف ہمزۂ وصل ہے۔ متعدی ہے: بھیجنا، اور نیند یا موت کے بعد اٹھانا۔",
+   "evidenceEnglish": "Form I (QAC has no form tag); the imperative فَٱبْعَثُوٓا۟ (18:19) shows the a-vowel. Quran-wide QAC attests the imperfect يَبْعَثُ (16:38), نَبْعَثُ (16:84), يَبْعَثَكَ (17:79). Lane and Lisan al-Arab: بَعَثَ, aor. يَبْعَثُ (guttural ع as 2nd radical). Hence bab fataha (a-a)."
+  },
+  {
+   "key": "baEava|I|PASS",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "بُعِثَ",
+   "present": "يُبْعَثُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "یہ معروف بَعَثَ يَبْعَثُ کا مجہول ہے: ماضی بُعِثَ اور مضارع يُبْعَثُ، جس میں علامتِ مضارع مضموم اور عین مفتوح ہے۔ قرآن میں زیادہ تر موت کے بعد اٹھائے جانے کے لیے آتا ہے؛ فاعل کی جگہ نائبِ فاعل مرفوع ہوتا ہے۔",
+   "evidenceEnglish": "QAC tags PASS: تُبْعَثُونَ (23:16), يُبْعَثُونَ (23:100); all 13 Quranic passive attestations are imperfect (e.g. أُبْعَثُ 19:33, لَتُبْعَثُنَّ 64:7). Regular passive of Form I بَعَثَ يَبْعَثُ (bab fataha): fu'ila / yuf'alu, perfect بُعِثَ."
+  },
+  {
+   "key": "bagaY`|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بَغَى",
+   "present": "يَبْغِي",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "ناقص یائی ہے: یاء ماضی بَغَى میں الف مقصورہ، مضارع يَبْغِي میں ظاہر، اور جمع يَبْغُونَ یا جزم يَبْغِ میں حذف ہوتی ہے؛ رسمِ عثمانی میں کبھی غیر مجزوم صیغے کی یاء بھی نہیں لکھی جاتی۔ «چاہنا، تلاش کرنا» کے معنی میں متعدی اور عَلَى کے ساتھ «زیادتی کرنا» کے معنی میں لازم ہے۔",
+   "evidenceEnglish": "Form I (QAC has no form tag). The i-vowel imperfect is attested: يَبْغِيَانِ (55:20), يَبْغُونَ (18:108), and نَبْغِ (18:64), indicative per QAC with the final ي omitted in the rasm; Quran-wide also أَبْغِى (6:164), لَيَبْغِى (38:24). Lane and Lisan al-Arab: بَغَى, aor. يَبْغِي ('to seek'; with عَلَى 'to transgress'). Hence bab daraba (a-i)."
+  },
+  {
+   "key": "{botagaY`|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِبْتَغَى",
+   "present": "يَبْتَغِي",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "ناقص یائی ہے؛ ابتدائی الف ہمزۂ وصل ہے اور فاء کے بعد کی تاء بابِ افتعال کی زائد تاء ہے۔ یاء ماضی اِبْتَغَى میں الف مقصورہ اور مضارع يَبْتَغِي میں ظاہر ہے، جبکہ جمع يَبْتَغُونَ اور جزم و امر (يَبْتَغِ، اِبْتَغِ) میں حذف ہوتی ہے؛ متعدی ہے: طلب کرنا، چاہنا۔",
+   "evidenceEnglish": "QAC tags (VIII): ٱبْتَغَىٰ (23:7); Quran-wide imperfect يَبْتَغُونَ (17:57), أَبْتَغِى (6:114), jussive يَبْتَغِ (3:85), imperative وَٱبْتَغِ (28:77). ifta'ala of ب غ ي: اِبْتَغَى, aor. يَبْتَغِي (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": "yan[bagiY|VII|ACT",
+   "baabUrdu": "بابِ اِنْفِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہفتم (VII)",
+   "past": "اِنْبَغَى",
+   "present": "يَنْبَغِي",
+   "pattern": "اِنْفَعَلَ — يَنْفَعِلُ",
+   "noteUrdu": "ناقص یائی اور لازم ہے؛ مضارع يَنْبَغِي میں آخری یاء ساکن اور رفع مقدر ہوتا ہے۔ یہ عموماً مضارع غائب ہی میں «مناسب یا روا ہونا» کے معنی میں آتا ہے، اکثر لِ کے ساتھ اور أَنْ والے مصدر کو فاعل بنا کر؛ ماضی اِنْبَغَى بہت کم استعمال ہوا ہے۔",
+   "evidenceEnglish": "QAC tags (VII). Its lemma يَنۢبَغِى is an imperfect, and all 6 Quranic attestations are imperfect 3MS (36:40, 36:69, 19:92, 25:18). infa'ala of ب غ ي: يَنْبَغِي 'it is fitting'; the perfect اِنْبَغَى is rare (some grammarians held it unused), so it is given as the regular citation form while usage centres on the imperfect (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": "baqiYa|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بَقِيَ",
+   "present": "يَبْقَى",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "ناقص یائی ہے: عین مکسور ہونے سے ماضی بَقِيَ میں یاء ظاہر رہتی ہے، جبکہ مضارع يَبْقَى میں الف مقصورہ بن جاتی ہے اور رفع و نصب دونوں مقدر رہتے ہیں۔ لازم ہے: باقی رہنا؛ بابِ افعال أَبْقَى (باقی رکھنا) متعدی اور الگ فعل ہے۔",
+   "evidenceEnglish": "Form I (QAC has no form tag): وَيَبْقَىٰ (55:27) shows the a-vowel imperfect; Quran-wide QAC has the perfect بَقِىَ (2:278). Lane and Lisan al-Arab: بَقِيَ, aor. يَبْقَى. Hence bab sami'a (i-a). QAC also files أَبْقَىٰ (53:51) under this lemma, but that is Form IV in meaning. Caution: QAC tags 55:27 وَيَبْقَىٰ IMPF SUBJ and its i'rab line reads 'فعل مضارع منصوب', but no particle governs it; it is indicative (مرفوع, with an implied ضمة on the alif, للتعذر), joined by و to the nominal sentence of 55:26. Word authors should call it مرفوع and log the QAC discrepancy in auditNotes."
+  },
+  {
+   "key": "balaga|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بَلَغَ",
+   "present": "يَبْلُغُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح فعل ہے؛ متعدی ہے: کسی جگہ، وقت یا حد تک پہنچنا، اور منزل براہِ راست مفعول بنتی ہے۔ «پہنچانا» کے لیے بابِ تفعیل بَلَّغَ یا بابِ افعال أَبْلَغَ آتا ہے؛ انہیں اس مجرد فعل سے نہ ملائیں۔",
+   "evidenceEnglish": "Form I (QAC has no form tag). The u-vowel imperfect is attested: أَبْلُغَ (18:60), يَبْلُغَآ (18:82); Quran-wide also أَبْلُغُ (40:36), يَبْلُغَ (2:235). Lane and Lisan al-Arab: بَلَغَ, aor. يَبْلُغُ. Hence bab nasara (a-u)."
+  },
+  {
+   "key": "balawo|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بَلَا",
+   "present": "يَبْلُو",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "ناقص واوی ہے: ماضی میں واو الف بن کر بَلَا ہوتا ہے اور بَلَوْنَا میں ظاہر رہتی ہے؛ مضارع يَبْلُو میں رفع مقدر اور نصب ظاہر (يَبْلُوَ) ہے، جبکہ جزم میں واو حذف ہوتی ہے۔ متعدی ہے: آزمانا، جانچنا؛ بَلِيَ يَبْلَى (پرانا ہونا) الگ فعل ہے۔",
+   "evidenceEnglish": "Form I (QAC has no form tag); QAC's lemma بَلَوْ is only the stem of بَلَوْنَا. The u-vowel imperfect is attested: لِنَبْلُوَهُمْ (18:7); Quran-wide نَبْلُوهُم (7:163), لِّيَبْلُوَكُمْ (5:48), perfect بَلَوْنَآ (68:17). Lane and Lisan al-Arab: بَلَاهُ, aor. يَبْلُوهُ 'tried, tested'. Hence bab nasara (a-u). QAC also files يَبْلَىٰ (20:120), from بَلِيَ 'to wear out', under this lemma; it is a different verb."
+  },
+  {
+   "key": "banaY`|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بَنَى",
+   "present": "يَبْنِي",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "ناقص یائی ہے: یاء ماضی بَنَى میں الف مقصورہ اور بَنَيْنَا میں ظاہر ہے؛ مضارع يَبْنِي ہے، جبکہ امر اِبْنِ اور جمع يَبْنُونَ، اِبْنُوا میں یاء حذف ہوتی ہے، اور امر کا ابتدائی الف ہمزۂ وصل ہے۔ متعدی ہے: تعمیر کرنا۔",
+   "evidenceEnglish": "Form I (QAC has no form tag): imperative ٱبْنُوا۟ (18:21). Quran-wide QAC attests the imperfect أَتَبْنُونَ (26:128), the i-vowel imperative ٱبْنِ (40:36) and perfect بَنَيْنَـٰهَا (50:6), confirming aor. يَبْنِي (Lane; Lisan al-Arab). Hence bab daraba (a-i)."
+  },
+  {
+   "key": "tabiyda|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بَادَ",
+   "present": "يَبِيدُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "اجوف یائی ہے: درمیانی یاء ماضی بَادَ میں الف بنتی ہے، مضارع يَبِيدُ میں ظاہر رہتی ہے، اور ضمیرِ متحرک سے پہلے (بِدْتُ) یا جزم (لَمْ يَبِدْ) میں حذف ہوتی ہے۔ لازم ہے: ہلاک یا فنا ہو جانا۔",
+   "evidenceEnglish": "QAC's lemma تَبِيدَ is an inflected 3rd-person feminine singular subjunctive (18:35, the root's only Quranic verb occurrence). Root ب ي د makes it a hollow-ya Form I verb: بَادَ, aor. يَبِيدُ, with the i-vowel visible in تَبِيدَ (Lane; Lisan al-Arab: بَادَ يَبِيدُ بَيْدًا). Hence bab daraba (a-i)."
+  }
+ ]
+}

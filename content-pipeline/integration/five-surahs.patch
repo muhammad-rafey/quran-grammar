@@ -1,0 +1,520 @@
+diff --git a/README.md b/README.md
+--- a/README.md
++++ b/README.md
+@@ -1,6 +1,6 @@
+ # Quran Grammar · قرآن گرامر
+ 
+-A grammar-focused Quran study app with Urdu explanations, covering Al-Fatihah and the final ten Surahs (105–114). The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
++A grammar-focused Quran study app with Urdu explanations, covering Al-Fatihah, five longer Surahs — Al-Kahf (18), Al-Mu'minun (23), As-Sajdah (32), Ya-Sin (36) and Ar-Rahman (55) — and the final ten Surahs (105–114). The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
+ 
+ ## Project
+ 
+@@ -15,11 +15,11 @@
+ 
+ ## Features
+ 
+-- All 230 word occurrences across 55 ayahs, with contextual Urdu meanings and grammatical segments.
++- All 4,307 word occurrences across 474 ayahs in sixteen Surahs, with contextual Urdu meanings and grammatical segments.
+ - Root-family meanings and a paradigm for every finite verb, including باب، ماضی، مضارع and patterns.
+ - Occurrence-specific morphology, syntax, dictionary explanations, grammar rules, and related-root navigation.
+ - Phrase constructions and concise tafsir notes for every ayah, using the same data format as Al-Fatihah.
+-- Floating bottom navigation, a Surah/Juz catalog, and an ayah selector. Al-Fatihah and Surahs 105–114 are available; other chapters are marked Coming soon. Juz 1 contains Al-Fatihah only, and Juz 30 contains the final ten Surahs; both are explicitly partial previews.
++- Floating bottom navigation, a Surah/Juz catalog, and an ayah selector. Al-Fatihah, Surahs 18, 23, 32, 36, 55 and 105–114 are available; other chapters are marked Coming soon. Juz 1, 15, 16, 18, 21, 22, 23, 27 and 30 are explicitly partial previews that list only their available chapters. Al-Kahf spans Juz 15–16 and Ya-Sin spans Juz 22–23: choosing Juz 16 opens Al-Kahf at ayah 75, choosing Juz 23 opens Ya-Sin at ayah 28, and the Juz label follows the ayah being read.
+ - Part-of-speech filters and the meaning toggle stay behind a collapsed Filters button. Search is currently hidden in both apps; the shared API retains its search endpoint.
+ - Three Al-Fatihah grammar practice questions, explanations and an honest attempt score, with a restart option.
+ - English interface and counts by default; Settings saves an English/Urdu preference on the current browser or device. Language changes affect interface text and numbers only.
+@@ -61,7 +61,7 @@
+ npm run dev:mobile
+ ```
+ 
+-Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app explicitly offers its bundled eleven-Surah edition. See [native setup](apps/mobile/README.md).
++Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app explicitly offers its bundled sixteen-Surah edition. See [native setup](apps/mobile/README.md).
+ 
+ The APK command builds locally with JDK 17+, Android SDK Platform 36 and Build-Tools 36. It bundles JavaScript and fonts, so the installed APK does not require Metro or Expo Go. It uses Expo's debug signing key for local testing, **not a Play Store release**. The first build generates the ignored Android project and downloads native build dependencies. Later builds reuse it without replacing native files. See [APK build setup and options](docs/android-build.md).
+ 
+@@ -86,6 +86,6 @@
+ 
+ ## Content and future work
+ 
+-This edition contains Al-Fatihah, Al-Fil, Quraysh, Al-Maʿun, Al-Kawthar, Al-Kafirun, An-Nasr, Al-Masad, Al-Ikhlas, Al-Falaq and An-Nas. The app is read-only; no account system or scholar-editing interface is implied. Stable word occurrence IDs and a versioned API leave room for reviewed content expansion without duplicating the data between platforms. An expansion adding Al-Kahf, Al-Mu'minun, As-Sajdah, Ya-Sin and Ar-Rahman has resumed with new content held for scholarly review; 110 of 127 chunks are authored, including complete held drafts of As-Sajdah, Ya-Sin and Ar-Rahman. Further authoring and fresh reviews await restored Codex account capacity. The exact progress, checked libraries and resume commands are in [content-pipeline/README.md](content-pipeline/README.md). [Content provenance](docs/content-provenance.md) records the source and editorial status.
++This edition contains Al-Fatihah, Al-Kahf, Al-Mu'minun, As-Sajdah, Ya-Sin, Ar-Rahman, Al-Fil, Quraysh, Al-Maʿun, Al-Kawthar, Al-Kafirun, An-Nasr, Al-Masad, Al-Ikhlas, Al-Falaq and An-Nas. The app is read-only; no account system or scholar-editing interface is implied. Stable word occurrence IDs and a versioned API leave room for reviewed content expansion without duplicating the data between platforms. [Content provenance](docs/content-provenance.md) records the source and editorial status.
+ 
+ Original application code has no general reuse license assigned yet. Third-party material retains its own licenses; public repository visibility does not change them.
+diff --git a/THIRD_PARTY_NOTICES.md b/THIRD_PARTY_NOTICES.md
+--- a/THIRD_PARTY_NOTICES.md
++++ b/THIRD_PARTY_NOTICES.md
+@@ -14,7 +14,7 @@
+ >
+ > License: GNU General Public License
+ 
+-This repository contains newly structured teaching datasets for Al-Fatihah and Surahs 105–114, plus five-Surah drafts (18, 23, 32, 36 and 55) held outside the published registry for scholarly review, with original AI-assisted Urdu explanations. It does not contain the bulk morphology download or claim to be an official Corpus release. The app retains a concise Corpus credit and link. Its Arabic i‘rab reference pages credit the Quran Printing Complex; the corpus describes its Arabic text as based on Tanzil. Preserve the original copyright and source notices when adding or redistributing source datasets, and retain the additional conditions published by the relevant source.
++This repository contains newly structured teaching datasets for Al-Fatihah, Surahs 18, 23, 32, 36, 55 and Surahs 105–114, with original AI-assisted Urdu explanations. It does not contain the bulk morphology download or claim to be an official Corpus release. The app retains a concise Corpus credit and link. Its Arabic i‘rab reference pages credit the Quran Printing Complex; the corpus describes its Arabic text as based on Tanzil. Preserve the original copyright and source notices when adding or redistributing source datasets, and retain the additional conditions published by the relevant source.
+ 
+ ## Dictionaries and explanatory works
+ 
+diff --git a/apps/api/src/app.test.ts b/apps/api/src/app.test.ts
+--- a/apps/api/src/app.test.ts
++++ b/apps/api/src/app.test.ts
+@@ -139,6 +139,11 @@
+ test('every published chapter and word detail stays within its own lesson', async () => {
+   const expected = [
+     [1, 7, 29],
++    [18, 110, 1579],
++    [23, 118, 1050],
++    [32, 30, 372],
++    [36, 83, 725],
++    [55, 78, 351],
+     [105, 5, 23],
+     [106, 4, 17],
+     [107, 7, 25],
+@@ -191,6 +196,8 @@
+     ['/api/v1/surahs/105/words/1%3A1%3A1', 404],
+     ['/api/v1/surahs/1/words/105%3A1%3A1', 404],
+     ['/api/v1/surahs/115', 404],
++    ['/api/v1/surahs/17', 404],
++    ['/api/v1/surahs/18/words/36%3A1%3A1', 404],
+     ['/api/v1/surahs/0', 400],
+     ['/api/v1/search?surah=2', 404],
+     ['/api/v1/search?surah=105&surah=106', 400],
+diff --git a/apps/mobile/README.md b/apps/mobile/README.md
+--- a/apps/mobile/README.md
++++ b/apps/mobile/README.md
+@@ -42,8 +42,11 @@
+ - Choose Surah or Juz in the native catalog sheet, then use the chapter's own
+   ayah picker. The catalog lists all 114 surahs and 30 juz; unavailable entries
+   are disabled and labelled Coming soon. Available chapters come from the shared
+-  registry: Al-Fatihah and surahs 105–114. Juz 1 and Juz 30 are partial previews;
+-  expand a Juz to choose one of its available surahs.
++  registry: Al-Fatihah, surahs 18, 23, 32, 36, 55 and 105–114. Juz 1, 15, 16,
++  18, 21, 22, 23, 27 and 30 are partial previews; expand a Juz to choose one of
++  its available surahs. A surah chosen from a Juz opens at its first ayah in that
++  Juz (Al-Kahf at ayah 75 from Juz 16, Ya-Sin at ayah 28 from Juz 23), and the
++  Juz label follows the ayah being read.
+ - The compact Filter button reveals part-of-speech filters and the word-meaning
+   toggle; full ayah context and translation stay visible. There is no search bar.
+ - Study, Grammar and Settings use English controls by default. Settings switches
+diff --git a/docs/android-build.md b/docs/android-build.md
+--- a/docs/android-build.md
++++ b/docs/android-build.md
+@@ -24,7 +24,7 @@
+ 
+ ## API configuration
+ 
+-The build reads Expo's production `.env` files in `apps/mobile/`; an existing shell `EXPO_PUBLIC_API_URL` takes precedence. Use an HTTPS API origin for an APK that connects to a deployed backend. Public client environment values are bundled into the APK and must not contain credentials. If the API origin is unset, the app uses its bundled eleven-Surah edition. If a configured backend is unavailable, the app offers retry and the matching saved lesson.
++The build reads Expo's production `.env` files in `apps/mobile/`; an existing shell `EXPO_PUBLIC_API_URL` takes precedence. Use an HTTPS API origin for an APK that connects to a deployed backend. Public client environment values are bundled into the APK and must not contain credentials. If the API origin is unset, the app uses its bundled sixteen-Surah edition. If a configured backend is unavailable, the app offers retry and the matching saved lesson.
+ 
+ To explicitly build the offline edition regardless of dotenv configuration, on macOS/Linux:
+ 
+diff --git a/docs/architecture.md b/docs/architecture.md
+--- a/docs/architecture.md
++++ b/docs/architecture.md
+@@ -4,7 +4,7 @@
+ 
+ Use npm workspaces with React/Vite for web, Expo React Native for Android/iOS, and one Express service on Node.js 24. Share typed study content, normalization, searching, schema validation, interface strings and numeral formatting in `@quran-grammar/core`. Keep DOM UI and native UI separate so each uses appropriate layout and accessibility primitives.
+ 
+-The Node service returns a complete chapter from a shared eleven-Surah registry (1 and 105–114). Clients request the selected chapter, validate the chapter number and data relationships, and cancel obsolete requests so content from another chapter cannot appear under the selected title. Search and word inspection run locally after loading, keeping interactions immediate. Stable `surah:ayah:word` IDs preserve contextual differences even when a word is repeated. The native app bundles a clearly labelled copy for offline study; the server remains the source for connected operation.
++The Node service returns a complete chapter from a shared sixteen-Surah registry (1, 18, 23, 32, 36, 55 and 105–114). Clients request the selected chapter, validate the chapter number and data relationships, and cancel obsolete requests so content from another chapter cannot appear under the selected title. Search and word inspection run locally after loading, keeping interactions immediate. Stable `surah:ayah:word` IDs preserve contextual differences even when a word is repeated. The native app bundles a clearly labelled copy for offline study; the server remains the source for connected operation.
+ 
+ ## Why React/Vite for web
+ 
+diff --git a/docs/content-provenance.md b/docs/content-provenance.md
+--- a/docs/content-provenance.md
++++ b/docs/content-provenance.md
+@@ -23,19 +23,23 @@
+
+ The same AI-assisted/pending-review label appears in Settings → About on web, Android and iOS. Per-record source URLs remain in this repository rather than the learning payload.
+
+-## Five-Surah drafts held for scholarly review
+-
+-The expansion targets Al-Kahf (18), Al-Mu’minun (23), As-Sajdah (32), Ya-Sin (36) and Ar-Rahman (55): 419 ayahs and 4,077 word occurrences. Authoring and AI review take place in `content-pipeline/`; the published registry and both synchronized content databases remain the eleven-Surah edition. Drafts are not made available in the study interface by completing an AI review.
+-
+-Arabic word strings come from the Quran.com Content API v4 Uthmani field, with 154 separately spaced recitation signs excluded under the existing token policy and recorded in the tracked inventories. Morphology was checked against a local verbatim Quranic Arabic Corpus 0.4 copy with SHA-256 `910b721a8f04f4334ac5d4c62b19e858f5d720c525bb975f2e750ea2c6bb532d` and a second morphology reference. Raw source fields remain unchanged; 65 adjudicated occurrence corrections and the split of a merged source lexeme are recorded in `content-pipeline/meta/overrides.json`. Internal lookup identifiers preserve source provenance and do not override corrected teaching fields.
+-
+-The Urdu explanations, translations, dictionary notes, rules and tafsir summaries are original AI-assisted drafts. Quran.com’s Muyassar, Sa‘di and abridged Ibn Kathir references and the Saheeh International and Taqi Usmani English translations support meaning checks; their bulk texts remain local and ignored by git. Shared libraries contain 112 rules, 358 verb paradigms and 589 roots. Independent grammar and meaning reviews, corrections, fresh confirmations, source inventories and hash-bound review records document the editorial process. These checks do not constitute scholarly approval.
+-
+-[`content-pipeline/README.md`](../content-pipeline/README.md) records the method and progress. [`review-status.json`](../content-pipeline/review-status.json) keeps all five Surahs pending until actual reviewer identity, date, evidence and an exact content-input digest are recorded. Draft assembly writes outside the runtime; runtime assembly refuses missing or stale scholarly approval. Corpus credit and the required link remain in Settings → About; no per-word reference links are added to the learning payload.
++## Expansion: Surahs 18, 23, 32, 36 and 55
++
++The second expansion adds Al-Kahf, Al-Mu'minun, As-Sajdah, Ya-Sin and Ar-Rahman: 419 ayahs and 4,077 word occurrences, bringing the edition to 16 Surahs, 474 ayahs and 4,307 words. The chapters use the same `StudyData` shape, field meanings and validation as the existing lessons.
++
++**AI involvement is explicit:** the Arabic text is the Quran.com Uthmani text retrieved from the Content API, not generated; recitation signs that the API separates from a word by a space (waqf, saktah and sajdah signs and the rub al-hizb marker) are excluded from word tokens, following the Surahs 110–114 precedent, and every exclusion is listed in the inventory. Word types and roots are derived deterministically from Quranic Arabic Corpus 0.4 stem tags with the mapping that reproduces all 230 roots of the existing lessons. The Corpus file was used locally from a verbatim distribution checked by SHA-256 and is not bundled. Its word and verse i‘rab pages informed the syntax. Where a Corpus tag contradicts the vocalised word or its governing context (for example a passive or indicative verb tagged otherwise), the lesson follows the corrected analysis and the source audit lists each correction.
++
++Urdu meanings, translations, morphology/syntax/dictionary notes, phrase notes, verb-paradigm notes, root notes, rules and concise tafsir summaries are AI-assisted original teaching drafts. They were written by agents with Tafsir al-Muyassar, Tafsir al-Sa‘di and the abridged Ibn Kathir as references, and Saheeh International and Mufti Taqi Usmani translations as meaning checks. Each chunk of ayahs was then checked by two independent reviewers (grammar; meaning, tafsir and Urdu), corrected, and re-checked by a confirming reviewer. Verb paradigms and root entries come from shared libraries that were reviewed the same way. This is AI review and automated validation, **not scholarly approval**.
++
++- [Surah 18: source audit](source-audits/surah-18.md) and [Arabic inventory](source-audits/inventory-18.json).
++- [Surah 23: source audit](source-audits/surah-23.md) and [Arabic inventory](source-audits/inventory-23.json).
++- [Surah 32: source audit](source-audits/surah-32.md) and [Arabic inventory](source-audits/inventory-32.json).
++- [Surah 36: source audit](source-audits/surah-36.md) and [Arabic inventory](source-audits/inventory-36.json).
++- [Surah 55: source audit](source-audits/surah-55.md) and [Arabic inventory](source-audits/inventory-55.json).
+
+ ## Navigation metadata and practice
+
+-The 114 surah numbers, Arabic names and conventional English transliterations in `packages/core/src/catalog.ts` were checked against [Quran.com’s chapter metadata API](https://api.quran.com/api/v4/chapters?language=en) on 2026-10-23; the endpoint is described in the [Quran Foundation chapter documentation](https://api-docs.quran.com/docs/content_apis_versioned/4.0.0/list-chapters/). These are factual navigation labels, not verse text or a translated work. The [juz metadata endpoint](https://api.quran.com/api/v4/juzs) confirms 30 distinct juz numbers and places Al-Fatihah within Juz 1. This edition enables Surah 1 and Surahs 105–114. Juz 1 is a partial preview of Al-Fatihah; Juz 30 is a partial preview of its final ten Surahs. Other chapters remain unavailable. The ayah ranges of all 30 juz were checked against the same juz endpoint on 2026-11-06 and are stored in `catalog.ts`, so a chapter that spans two juz will open at its first ayah inside the chosen juz.
++The 114 surah numbers, Arabic names and conventional English transliterations in `packages/core/src/catalog.ts` were checked against [Quran.com’s chapter metadata API](https://api.quran.com/api/v4/chapters?language=en) on 2026-10-23; the endpoint is described in the [Quran Foundation chapter documentation](https://api-docs.quran.com/docs/content_apis_versioned/4.0.0/list-chapters/). These are factual navigation labels, not verse text or a translated work. The [juz metadata endpoint](https://api.quran.com/api/v4/juzs) confirms 30 distinct juz numbers and places Al-Fatihah within Juz 1. This edition enables Surah 1, Surahs 18, 23, 32, 36, 55 and Surahs 105–114. The ayah ranges of all 30 juz were checked against the same juz endpoint on 2026-11-06 and are stored in `catalog.ts`; Juz 1, 15, 16, 18, 21, 22, 23, 27 and 30 are partial previews of their available chapters, and Al-Kahf (Juz 15–16) and Ya-Sin (Juz 22–23) open at their first ayah inside the chosen juz. Other chapters remain unavailable.
+
+ The three practice questions are original Urdu teaching drafts based on the existing Al-Fatihah entries: identifying نَعْبُدُ as a verb, the imperative form in ٱهْدِنَا, and the root ع ب د. Arabic word choices reuse the exact stored lesson occurrences; distractors are existing words, grammatical labels or roots, without invented Quranic text. The existing scholar-review status applies to these questions too.
+
+diff --git a/packages/core/src/core.test.ts b/packages/core/src/core.test.ts
+--- a/packages/core/src/core.test.ts
++++ b/packages/core/src/core.test.ts
+@@ -21,7 +21,9 @@
+   getJuzStartAyah,
+ } from './index';
+ 
+-const expectedChapters = [1, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
++const lastTen = [105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
++const fiveSurahs = [18, 23, 32, 36, 55];
++const expectedChapters = [1, ...fiveSurahs, ...lastTen];
+ 
+ test('navigation catalogs distinguish the available lesson from future content and partial juz', () => {
+   assert.deepEqual(
+@@ -50,27 +52,29 @@
+     juzCatalog.map((juz) => juz.number),
+     Array.from({ length: 30 }, (_, i) => i + 1),
+   );
++  const preview = (number: number, ranges: Array<[number, number, number]>) => ({
++    number,
++    available: true,
++    partial: true,
++    previewSurahNumber: ranges[0][0],
++    surahNumbers: ranges.map(([surah]) => surah),
++    ranges: ranges.map(([surah, firstAyah, lastAyah]) => ({ surah, firstAyah, lastAyah })),
++  });
+   assert.deepEqual(
+     juzCatalog.filter((juz) => juz.available),
+     [
+-      {
+-        number: 1,
+-        available: true,
+-        partial: true,
+-        previewSurahNumber: 1,
+-        surahNumbers: [1],
+-        ranges: [{ surah: 1, firstAyah: 1, lastAyah: 7 }],
+-      },
+-      {
+-        number: 30,
+-        available: true,
+-        partial: true,
+-        previewSurahNumber: 105,
+-        surahNumbers: expectedChapters.slice(1),
+-        ranges: expectedChapters
+-          .slice(1)
+-          .map((surah) => ({ surah, firstAyah: 1, lastAyah: getStudy(surah)!.surah.ayahCount })),
+-      },
++      preview(1, [[1, 1, 7]]),
++      preview(15, [[18, 1, 74]]),
++      preview(16, [[18, 75, 110]]),
++      preview(18, [[23, 1, 118]]),
++      preview(21, [[32, 1, 30]]),
++      preview(22, [[36, 1, 27]]),
++      preview(23, [[36, 28, 83]]),
++      preview(27, [[55, 1, 78]]),
++      preview(
++        30,
++        lastTen.map((surah) => [surah, 1, getStudy(surah)!.surah.ayahCount]),
++      ),
+     ],
+   );
+   assert.ok(
+@@ -84,27 +88,47 @@
+           juz.ranges.length === 0,
+       ),
+   );
+-  // The juz shown follows the ayah being read; only available chapters have ranges.
+-  assert.equal(getJuzForAyah(1, 7)?.number, 1);
+-  assert.equal(getJuzForAyah(105, 1)?.number, 30);
+-  assert.equal(getJuzForAyah(114, 6)?.number, 30);
++  // Al-Kahf and Ya-Sin span two juz; the juz shown follows the ayah being read.
++  for (const [surah, ayah, juz] of [
++    [18, 1, 15],
++    [18, 74, 15],
++    [18, 75, 16],
++    [18, 110, 16],
++    [23, 118, 18],
++    [32, 15, 21],
++    [36, 27, 22],
++    [36, 28, 23],
++    [36, 83, 23],
++    [55, 13, 27],
++    [1, 7, 1],
++    [114, 6, 30],
++  ] as const)
++    assert.equal(getJuzForAyah(surah, ayah)?.number, juz, `${surah}:${ayah}`);
+   for (const [surah, ayah] of [
+-    [1, 8],
+-    [114, 7],
++    [18, 111],
++    [36, 0],
+     [2, 1],
+-    [18, 75],
+   ] as const)
+     assert.equal(getJuzForAyah(surah, ayah), undefined, `${surah}:${ayah}`);
++  assert.equal(getJuzStartAyah(15, 18), 1);
++  assert.equal(getJuzStartAyah(16, 18), 75);
++  assert.equal(getJuzStartAyah(22, 36), 1);
++  assert.equal(getJuzStartAyah(23, 36), 28);
+   assert.equal(getJuzStartAyah(30, 114), 1);
+-  assert.equal(getJuzStartAyah(1, 1), 1);
+-  assert.equal(getJuzStartAyah(16, 18), 1, 'unavailable chapters fall back to ayah 1');
++  assert.equal(getSurahTitle(18, 'en'), 'Al-Kahf');
++  assert.equal(getSurahTitle(36, 'ur'), 'يس');
+   assert.equal(getSurahTitle(114, 'en'), 'An-Nas');
+   assert.equal(getSurahTitle(114, 'ur'), 'الناس');
+ });
+ 
+-test('all eleven available lessons have complete occurrence, rule and phrase coverage', () => {
++test('all sixteen available lessons have complete occurrence, rule and phrase coverage', () => {
+   const counts = new Map([
+     [1, [7, 29]],
++    [18, [110, 1579]],
++    [23, [118, 1050]],
++    [32, [30, 372]],
++    [36, [83, 725]],
++    [55, [78, 351]],
+     [105, [5, 23]],
+     [106, [4, 17]],
+     [107, [7, 25]],
+@@ -123,14 +147,14 @@
+   );
+   assert.equal(
+     studies.reduce((total, study) => total + study.ayahs.length, 0),
+-    55,
++    474,
+   );
+   assert.equal(
+     studies.reduce((total, study) => total + study.words.length, 0),
+-    230,
++    4307,
+   );
+   const occurrences = studies.flatMap((study) => study.words.map((word) => word.id));
+-  assert.equal(new Set(occurrences).size, 230);
++  assert.equal(new Set(occurrences).size, 4307);
+   for (const study of studies) {
+     const chapter = study.surah.number;
+     assert.equal(getStudy(chapter), study);
+@@ -152,7 +176,48 @@
+       'Source links stay in the repository audit',
+     );
+   }
+-  for (const number of [0, 2, 104, 115, 105.5, NaN]) assert.equal(getStudy(number), undefined);
++  for (const number of [0, 2, 17, 104, 115, 105.5, NaN]) assert.equal(getStudy(number), undefined);
++});
++
++test('five new surahs preserve every audited Uthmani word and occurrence boundary verbatim', () => {
++  let total = 0;
++  for (const number of fiveSurahs) {
++    const inventory = JSON.parse(
++      readFileSync(
++        new URL(`../../../docs/source-audits/inventory-${number}.json`, import.meta.url),
++        'utf8',
++      ),
++    ) as {
++      surah: number;
++      ayahCount: number;
++      wordCount: number;
++      words: Array<{ id: string; arabic: string }>;
++      excludedPauseSigns: Array<{ id: string; apiText: string; excludedMark: string }>;
++    };
++    const study = getStudy(number)!;
++    assert.equal(inventory.surah, number);
++    assert.equal(inventory.ayahCount, study.surah.ayahCount);
++    assert.equal(inventory.wordCount, study.surah.wordCount);
++    assert.deepEqual(
++      study.words.map((word) => [word.id, word.arabic]),
++      inventory.words.map(({ id, arabic }) => [id, arabic]),
++    );
++    for (const sign of inventory.excludedPauseSigns) {
++      const word = study.words.find((entry) => entry.id === sign.id)!;
++      assert.ok(sign.apiText.includes(word.arabic), sign.id);
++      assert.ok(!word.arabic.includes(' '), sign.id);
++    }
++    for (const word of study.words) {
++      assert.equal(
++        word.segments.map((segment) => segment.arabic).join(''),
++        word.arabic,
++        `${word.id}: segments are exact slices of the Quranic word`,
++      );
++      if (word.pos === 'verb') assert.ok(study.verbForms[word.id], `${word.id}: verb paradigm`);
++    }
++    total += inventory.words.length;
++  }
++  assert.equal(total, 4077);
+ });
+ 
+ test('last ten surahs preserve every audited Uthmani word and occurrence boundary verbatim', () => {
+diff --git a/tests/study.e2e.spec.ts b/tests/study.e2e.spec.ts
+--- a/tests/study.e2e.spec.ts
++++ b/tests/study.e2e.spec.ts
+@@ -55,14 +55,14 @@
+   const catalog = page.getByRole('dialog', { name: 'Select surah', exact: true });
+   await expect(catalog).toBeVisible();
+   await expect(catalog.locator('[data-surah]')).toHaveCount(114);
+-  await expect(catalog.locator('[data-surah]:disabled')).toHaveCount(103);
++  await expect(catalog.locator('[data-surah]:disabled')).toHaveCount(98);
+   expect(
+     await catalog
+       .locator('[data-surah]')
+       .evaluateAll((nodes) =>
+-        nodes.slice(0, 11).map((node) => Number(node.getAttribute('data-surah'))),
++        nodes.slice(0, 16).map((node) => Number(node.getAttribute('data-surah'))),
+       ),
+-  ).toEqual([1, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114]);
++  ).toEqual([1, 18, 23, 32, 36, 55, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114]);
+   await expect(catalog.locator('[data-surah="1"]')).toBeEnabled();
+   await expect(catalog.locator('[data-surah="2"]')).toContainText('Coming soon');
+   await expect(catalog.locator('[data-surah="114"]')).toContainText('An-Nas');
+@@ -89,8 +89,14 @@
+   await page.getByRole('dialog').getByRole('button', { name: 'Juz', exact: true }).click();
+   const juz = page.getByRole('dialog', { name: 'Select juz', exact: true });
+   await expect(juz.locator('[data-juz]')).toHaveCount(30);
+-  await expect(juz.locator('[data-juz]:disabled')).toHaveCount(28);
+-  await expect(juz.locator('[data-juz]').nth(1)).toHaveAttribute('data-juz', '30');
++  await expect(juz.locator('[data-juz]:disabled')).toHaveCount(21);
++  expect(
++    await juz
++      .locator('[data-juz]')
++      .evaluateAll((nodes) =>
++        nodes.slice(0, 9).map((node) => Number(node.getAttribute('data-juz'))),
++      ),
++  ).toEqual([1, 15, 16, 18, 21, 22, 23, 27, 30]);
+   await expect(juz.locator('[data-juz="1"]')).toContainText('Al-Fatihah only');
+   await juz.locator('[data-juz="29"]').evaluate((node: HTMLButtonElement) => node.click());
+   await expect(juz).toBeVisible();
+@@ -587,6 +593,102 @@
+   }
+ });
+ 
++const fiveChapters = [
++  [18, 110, 1579, 'Al-Kahf'],
++  [23, 118, 1050, "Al-Mu'minun"],
++  [32, 30, 372, 'As-Sajdah'],
++  [36, 83, 725, 'Ya-Sin'],
++  [55, 78, 351, 'Ar-Rahman'],
++] as const;
++
++test('five longer chapters load complete lessons with grammar, tafsir and paradigms', async ({
++  page,
++}) => {
++  test.setTimeout(180000);
++  await loadStudy(page);
++  for (const [number, ayahs, words, title] of fiveChapters) {
++    await page.getByRole('button', { name: 'Select surah', exact: true }).click();
++    await page.locator(`[data-surah="${number}"]`).click();
++    await expect(page.locator('.quran-word')).toHaveCount(words);
++    await expect(page.locator('.collection-trigger')).toContainText(title);
++    const ids = await page
++      .locator('.quran-word')
++      .evaluateAll((nodes) => nodes.map((node) => node.getAttribute('data-word-id')!));
++    expect(ids.every((id) => id.startsWith(`${number}:`))).toBe(true);
++    expect(new Set(ids).size).toBe(words);
++    await expect(page.getByRole('combobox', { name: 'Select ayah' }).locator('option')).toHaveCount(
++      ayahs,
++    );
++    await expect(detail(page).locator('.detail-navigation')).toContainText(`1 / ${words}`);
++    const verbIds = await page
++      .locator('.quran-word.verb')
++      .evaluateAll((nodes) => nodes.map((node) => node.getAttribute('data-word-id')!));
++    const sample = [
++      ids[0],
++      ids[1],
++      verbIds[0],
++      verbIds[Math.floor(verbIds.length / 2)],
++      ids.at(-1)!,
++    ];
++    for (const id of sample) {
++      const button = word(page, id);
++      const arabic = await button.locator('.arabic').textContent();
++      await button.scrollIntoViewIfNeeded();
++      await button.click();
++      await expect(detail(page).locator('#detail-title')).toHaveText(arabic!);
++      await expect(detail(page).locator('.detail-translation')).not.toBeEmpty();
++      await expect(detail(page).locator('.grammar-rule')).not.toHaveCount(0);
++      if (verbIds.includes(id)) {
++        await expect(detail(page).locator('.baab-title')).not.toBeEmpty();
++        await expect(detail(page).locator('.verb-paradigm')).toBeVisible();
++      }
++    }
++    await page.getByRole('button', { name: 'Grammar', exact: true }).click();
++    await expect(page.locator('.grammar-card')).toHaveCount(ayahs);
++    await expect(page.locator('.tafsir')).toHaveCount(ayahs);
++    await page.getByRole('combobox', { name: 'Select ayah' }).selectOption(String(ayahs));
++    await expect(page.locator(`#grammar-ayah-${ayahs}`)).toBeInViewport();
++    await page.getByRole('button', { name: 'Study', exact: true }).click();
++  }
++});
++
++test('juz previews open a chapter at its first ayah inside that juz', async ({ page }) => {
++  await loadStudy(page);
++  const trigger = page.locator('.collection-trigger');
++  const selector = page.getByRole('combobox', { name: 'Select ayah', exact: true });
++  const openJuz = async (number: number) => {
++    await trigger.click();
++    await page.getByRole('dialog').getByRole('button', { name: 'Juz', exact: true }).click();
++    const catalog = page.getByRole('dialog', { name: 'Select juz', exact: true });
++    await expect(catalog.locator(`[data-juz="${number}"]`)).toContainText('Partial preview');
++    await catalog.locator(`[data-juz="${number}"]`).click();
++    await expect(catalog).not.toBeVisible();
++  };
++  await openJuz(16);
++  await expect(page.locator('.quran-word')).toHaveCount(1579);
++  await expect(selector).toHaveValue('75');
++  await expect(word(page, '18:75:1')).toHaveAttribute('aria-pressed', 'true');
++  await expect(page.locator('#ayah-75')).toBeInViewport();
++  await expect(trigger).toContainText('Juz 16');
++  await expect(trigger).toContainText('Al-Kahf');
++  expect(page.url()).toContain('#surah=18&ayah=75');
++  await selector.selectOption('74');
++  await expect(trigger).toContainText('Juz 15');
++  await openJuz(15);
++  await expect(selector).toHaveValue('1');
++  await expect(trigger).toContainText('Juz 15');
++  await openJuz(23);
++  await expect(page.locator('.quran-word')).toHaveCount(725);
++  await expect(selector).toHaveValue('28');
++  await expect(word(page, '36:28:1')).toHaveAttribute('aria-pressed', 'true');
++  await expect(trigger).toContainText('Juz 23');
++  await expect(trigger).toContainText('Ya-Sin');
++  await page.goto('/#surah=18&ayah=100');
++  await expect(selector).toHaveValue('100');
++  await expect(word(page, '18:100:1')).toHaveAttribute('aria-pressed', 'true');
++  await expectNoOverflow(page);
++});
++
+ test('Juz 30 exposes its ten available chapters without claiming the entire Juz', async ({
+   page,
+ }) => {
+diff --git a/packages/core/src/registry.ts b/packages/core/src/registry.ts
+--- a/packages/core/src/registry.ts
++++ b/packages/core/src/registry.ts
+@@ -1,5 +1,10 @@
+ import { fatihahStudy } from './data';
+ import type { StudyData } from './types';
++import { study18 } from './lessons/surah-18';
++import { study23 } from './lessons/surah-23';
++import { study32 } from './lessons/surah-32';
++import { study36 } from './lessons/surah-36';
++import { study55 } from './lessons/surah-55';
+ import { study105 } from './lessons/surah-105';
+ import { study106 } from './lessons/surah-106';
+ import { study107 } from './lessons/surah-107';
+@@ -14,6 +19,11 @@
+ /** Complete locally bundled study editions. */
+ export const studies: readonly StudyData[] = [
+   fatihahStudy,
++  study18,
++  study23,
++  study32,
++  study36,
++  study55,
+   study105,
+   study106,
+   study107,
+diff --git a/packages/core/src/availability.ts b/packages/core/src/availability.ts
+--- a/packages/core/src/availability.ts
++++ b/packages/core/src/availability.ts
+@@ -1,4 +1,4 @@
+ /** Navigation metadata; kept in sync with the study registry by tests. */
+ export const availableSurahNumbers: readonly number[] = [
+-  1, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114,
++  1, 18, 23, 32, 36, 55, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114,
+ ];

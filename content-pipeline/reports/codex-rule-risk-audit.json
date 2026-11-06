@@ -1,0 +1,363 @@
+{
+  "report": "codex-rule-risk-audit",
+  "date": "2026-11-06",
+  "reviewStatus": "ai_risk_audit_completed; all three definite applicability findings applied by parent and independently confirmed; no shared inputs edited by this auditor",
+  "scholarlyReview": "not_performed; all new lessons remain drafts held for scholarly review",
+  "scope": {
+    "rulesReadInFull": 112,
+    "fieldsRead": [
+      "appliesWhenEnglish",
+      "explanationUrdu"
+    ],
+    "wordMetadataScope": 4077,
+    "surahs": [
+      18,
+      23,
+      32,
+      36,
+      55
+    ],
+    "correctedOccurrenceOverridesConsidered": 65,
+    "purpose": "One batch audit for definite universal-condition or coverage errors affecting tagging, with actual in-scope counterexamples; not a new stylistic review or an independent full re-derivation of every Quranic analysis."
+  },
+  "inputs": [
+    {
+      "path": "content-pipeline/libs/rules.json",
+      "sha256": "0fd3596dab8d41411ee88904055cb7340ec0fbe56747ac418f975ebf2f001a5f"
+    },
+    {
+      "path": "content-pipeline/meta/words.json",
+      "sha256": "1a3f2381f565d82b39b5a181dfce5e4d53e8f46d4974dd174cb83b0acde3cd9f"
+    },
+    {
+      "path": "content-pipeline/meta/ayahs.json",
+      "sha256": "fd0da606c005948b916d8c3d4d6cea937cd39ffa08672ad9f2ffe7e84db3d69b"
+    },
+    {
+      "path": "content-pipeline/meta/overrides.json",
+      "sha256": "2cd47d46176975b911b53f017d840238ad2b3ede1cb02e3e056cdd9c9f5409b5"
+    },
+    {
+      "path": "content-pipeline/reports/codex-rules-confirmation.json",
+      "sha256": "ed57d8c328df8763c07e68a3ac79601918dbb58ca257a662c2b41eb4dcd667e8"
+    },
+    {
+      "path": "content-pipeline/reports/library-rules-lexemes.json",
+      "sha256": "cdab4c68d2cae65f7962e36d3dcc036ba365fbca5190804e62a0340fe1570052"
+    }
+  ],
+  "method": [
+    "Read all 112 criteria and explanations completely in three nontruncated rule-text batches (0–39, 40–79, 80–111).",
+    "Cross-check criterion boundaries against all 4077 available occurrence metadata records, the 65 corrected occurrence overrides, and the existing prior review reports; inspect exact counterexample records rather than infer semantics from raw source identifiers.",
+    "Query QAC verb-form segments across the entire scope: XI occurs exactly once, at55:64:1; independently confirm on the primary Corpus page.",
+    "Independently confirm proper-noun and clause-adjective counterexamples against primary Corpus morphology/irab pages.",
+    "Exclude stylistic preferences, recognized alternative grammatical analyses, opaque source-key spelling, and hypothetical counterexamples absent from the five-Surah scope."
+  ],
+  "checkedRuleIds": [
+    "nominative",
+    "accusative",
+    "genitive",
+    "implied-case",
+    "diptote",
+    "five-nouns",
+    "dual",
+    "sound-plural",
+    "feminine-plural",
+    "broken-plural",
+    "definite",
+    "indefinite",
+    "proper-noun",
+    "feminine-marker",
+    "number-words",
+    "perfect",
+    "imperfect",
+    "imperative",
+    "prohibition",
+    "passive",
+    "future",
+    "qad",
+    "emphatic-nun",
+    "jussive",
+    "subjunctive",
+    "five-verbs",
+    "weak-verb",
+    "hamzated",
+    "doubled",
+    "quadriliteral",
+    "derived-form",
+    "assimilation",
+    "kana",
+    "kada-asa",
+    "praise-blame",
+    "exclamation",
+    "nun-wiqaya",
+    "participle",
+    "verbal-noun",
+    "comparative",
+    "intensive",
+    "resembling-adjective",
+    "noun-of-place-time",
+    "verb-like-noun",
+    "subject-pronoun",
+    "object-pronoun",
+    "pronoun",
+    "independent-pronoun",
+    "separating-pronoun",
+    "pronoun-of-matter",
+    "relative",
+    "demonstrative",
+    "nominal",
+    "verbal-sentence",
+    "subject",
+    "object",
+    "two-objects",
+    "zanna",
+    "inna",
+    "inna-sisters",
+    "lightened-particle",
+    "haal",
+    "tamyiz",
+    "cognate-object",
+    "purpose-object",
+    "adverb",
+    "idh",
+    "quoted-speech",
+    "parenthetical",
+    "fronted-object",
+    "fronting",
+    "elision",
+    "ishtighal",
+    "tanazu",
+    "idafa",
+    "adjective",
+    "badal",
+    "tawkid",
+    "conjunction",
+    "resumption",
+    "preposition",
+    "extra-particle",
+    "vocative",
+    "condition",
+    "conditional-jazm",
+    "law-condition",
+    "lamma",
+    "condition-answer",
+    "oath",
+    "emphatic-lam",
+    "purpose-lam",
+    "imperative-lam",
+    "lam-jussive",
+    "lan-negation",
+    "negation",
+    "negative-in",
+    "la-generic",
+    "restriction",
+    "exception",
+    "interrogative",
+    "kam",
+    "equalization",
+    "masdar-particle",
+    "explanatory-an",
+    "answer-particle",
+    "surprise-idha",
+    "retraction",
+    "deterrence",
+    "detailing",
+    "exhortation",
+    "hatta",
+    "muqattaat"
+  ],
+  "metadataChecks": {
+    "wordCount": 4077,
+    "surahWordCounts": {
+      "18": 1579,
+      "23": 1050,
+      "32": 372,
+      "36": 725,
+      "55": 351
+    },
+    "properNounOccurrenceCount": 68,
+    "explicitQacDerivedFormSegmentCounts": {
+      "IV": 239,
+      "II": 95,
+      "VIII": 67,
+      "VI": 6,
+      "V": 10,
+      "III": 26,
+      "X": 29,
+      "VII": 8,
+      "XI": 1
+    },
+    "aboveX": [
+      {
+        "wordId": "55:64:1",
+        "form": "XI"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "proper-noun-no-tanwin-is-not-diptote",
+      "ruleId": "proper-noun",
+      "field": "appliesWhenEnglish",
+      "severity": "major",
+      "adjudication": "accepted",
+      "origin": "runs/codex/18-c06.json result.libraryIssues",
+      "problem": "Absence of tanwin is a necessary characteristic of diptotes, not a sufficient diagnostic. The current sentence can force a false diptote tag on a proper name, including the divine name explicitly listed in this same criterion. Its Urdu explanation correctly says many names are diptotes, not all.",
+      "counterexamples": [
+        {
+          "wordId": "18:16:6",
+          "arabic": "ٱللَّهَ",
+          "metadata": "QAC PN, ACC; no tanwin; the divine name is not thereby a diptote.",
+          "primaryUrl": "https://corpus.quran.com/wordmorphology.jsp?location=(18:16:6)"
+        },
+        {
+          "wordId": "18:39:12",
+          "arabic": "بِٱللَّهِ",
+          "metadata": "Prefixed preposition + proper noun in GEN, visible kasra; no tanwin. Lack of tanwin remains insufficient to infer diptote.",
+          "primaryUrl": "https://corpus.quran.com/wordmorphology.jsp?location=(18:39:12)"
+        }
+      ],
+      "currentCriteria": "Tag a proper name (QAC PN or a named-entity noun): ٱللَّه، مُوسَىٰ، هَٰرُون، نُوح، فِرْعَوْن، إِبْلِيس، ءَادَم، ذُو ٱلْقَرْنَيْن، يَأْجُوج وَمَأْجُوج، سَيْنَاء، جَهَنَّم، ٱلْقُرْءَان (when QAC marks PN). Pair with diptote when it lacks tanwīn. Not for common nouns or divine attributes used as adjectives unless QAC tags them PN.",
+      "exactReplacementCriteria": "Tag a proper name (QAC PN or a named-entity noun): ٱللَّه، مُوسَىٰ، هَٰرُون، نُوح، فِرْعَوْن، إِبْلِيس، ءَادَم، ذُو ٱلْقَرْنَيْن، يَأْجُوج وَمَأْجُوج، سَيْنَاء، جَهَنَّم، ٱلْقُرْءَان (when QAC marks PN). Pair with diptote only when the proper noun is ممنوع من الصرف; absence of tanwīn alone is insufficient. Not for common nouns or divine attributes used as adjectives unless QAC tags them PN.",
+      "explanationUrduChangeRequired": false,
+      "appliedCriteria": "Tag a proper name (QAC PN or a named-entity noun): ٱللَّه، مُوسَىٰ، هَٰرُون، نُوح، فِرْعَوْن، إِبْلِيس، ءَادَم، ذُو ٱلْقَرْنَيْن، يَأْجُوج وَمَأْجُوج، سَيْنَاء، جَهَنَّم، ٱلْقُرْءَان (when QAC marks PN). Pair with diptote only when the proper noun is ممنوع من الصرف; absence of tanwīn alone is insufficient. Not for common nouns or divine attributes used as adjectives unless QAC tags them PN.",
+      "status": "resolved_independently_confirmed"
+    },
+    {
+      "id": "derived-form-excludes-attested-form-xi",
+      "ruleId": "derived-form",
+      "field": "appliesWhenEnglish",
+      "severity": "major",
+      "adjudication": "accepted",
+      "origin": "fresh all-rule applicability risk audit",
+      "problem": "The II–X range excludes an actual triliteral derived participle in the five-Surah scope. This is a rule applicability omission, not an objection to an opaque lexeme key. The current Urdu explanation of additional triliteral letters and root د ه م note already cover the morphology without contradiction.",
+      "counterexamples": [
+        {
+          "wordId": "55:64:1",
+          "arabic": "مُدْهَآمَّتَانِ",
+          "metadata": "QAC nominative feminine dual active participle, verbForm XI; fork VF:11 agrees. This is the only in-scope QAC form above X.",
+          "primaryUrl": "https://corpus.quran.com/wordmorphology.jsp?location=(55:64:1)",
+          "localSupportingEntry": "libs/roots/root-04.json root د ه م noteUrdu: اِدْهَامَّ / بابِ اِفْعِيلَال"
+        }
+      ],
+      "currentCriteria": "Tag a verb of forms II–X (QAC “(form II)” … “(form X)”) and, when the pattern explains the word’s shape, its participle or verbal noun (مُنذِر، ٱلْمُؤْمِنِينَ، تَأْوِيل، مُسْتَقِيم). Not for form I verbs, quadriliteral roots, or a shadda that comes from a doubled root (doubled). When the added tāʾ of form V/VI/VIII is changed, merged or dropped, also tag assimilation.",
+      "exactReplacementCriteria": "Tag a verb of a derived triliteral form (QAC form II or higher) and, when the pattern explains the word’s shape, its participle or verbal noun (مُنذِر، ٱلْمُؤْمِنِينَ، تَأْوِيل، مُسْتَقِيم، مُدْهَآمَّتَانِ of form XI). Not for form I verbs, quadriliteral roots, or a shadda that comes from a doubled root (doubled). When the added tāʾ of form V/VI/VIII is changed, merged or dropped, also tag assimilation.",
+      "explanationUrduChangeRequired": false,
+      "appliedCriteria": "Tag a verb of an attested augmented triliteral form (II–X and XI) and, when the pattern explains the word’s shape, its participle or verbal noun (مُنذِر، ٱلْمُؤْمِنِينَ، تَأْوِيل، مُسْتَقِيم; the attested form XI active participle مُدْهَآمَّتَانِ). Not for form I verbs, quadriliteral roots, or a shadda that comes from a doubled root (doubled). When the added tāʾ of form V/VI/VIII is changed, merged or dropped, also tag assimilation.",
+      "status": "resolved_independently_confirmed"
+    },
+    {
+      "id": "adjective-clause-head-agreement-overgeneralized",
+      "ruleId": "adjective",
+      "field": "appliesWhenEnglish",
+      "severity": "major",
+      "adjudication": "accepted_independent_cross_confirmation",
+      "origin": "parallel predicate auditor, independently checked here against primary source and metadata",
+      "problem": "The current shared predicate requires agreement in case and definiteness from a single adjective and from a clause or prepositional-phrase head alike. Agreement of an individual adjective does not transfer to the internally inflected head of a whole attributive clause or phrase. The clause or phrase occupies the syntactic adjectival position as a unit.",
+      "counterexamples": [
+        {
+          "wordIds": [
+            "18:22:2",
+            "18:22:3",
+            "18:22:4"
+          ],
+          "arabic": "ثَلَـٰثَةٌۭ رَّابِعُهُمْ كَلْبُهُمْ",
+          "metadata": "18:22:2 is explicitly INDEF. 18:22:3 contains a possessive pronoun suffix in genitive idafa and is definite. QAC verse irab explicitly labels the whole رابعهم كلبهم clause a naat of ثلاثة.",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=22"
+        }
+      ],
+      "currentCriteria": "Tag a word, or the head of a clause or prepositional phrase, that the i‘rab calls نعت/صفة of a preceding noun and that agrees with it in case and definiteness. Boundary with haal: an indefinite accusative describing a definite noun is ḥāl; a clause after an indefinite noun is usually ṣifa, after a definite noun usually ḥāl.",
+      "exactReplacementCriteria": "Tag a word, or the head of a clause or prepositional phrase, that the i‘rab calls نعت/صفة of a preceding noun. For a single-word adjective, apply case and definiteness agreement; for a clause or prepositional phrase, follow the syntactic محل of the modifier as a whole rather than requiring its head word to agree. Boundary with haal: an indefinite accusative describing a definite noun is ḥāl; a clause after an indefinite noun is usually ṣifa, after a definite noun usually ḥāl.",
+      "explanationUrduChangeRequired": false,
+      "explanationNote": "The Urdu card separately introduces a whole clause or prepositional phrase after an indefinite head; the needed definite tagging fix is in the English criterion. Qualifying the opening agreement sentence as single-word would be an optional clarification, not a fourth substantive finding.",
+      "appliedCriteria": "Tag a word, or the head of a clause or prepositional phrase, that the i‘rab calls نعت/صفة of a preceding noun. For a single-word adjective, apply case and definiteness agreement; for a clause or prepositional phrase, follow the syntactic محل of the modifier as a whole rather than requiring its head word to agree. Boundary with haal: an indefinite accusative describing a definite noun is ḥāl; a clause after an indefinite noun is usually ṣifa, after a definite noun usually ḥāl.",
+      "status": "resolved_independently_confirmed"
+    }
+  ],
+  "resolvedPriorFindings": [
+    {
+      "ruleId": "restriction",
+      "status": "resolved_not_reflagged",
+      "evidence": "Criterion explicitly includes negative, prohibitive and interrogative incomplete clauses; 18:22:26 after prohibitive لا is covered."
+    },
+    {
+      "ruleId": "idafa",
+      "status": "resolved_not_reflagged",
+      "evidence": "Urdu explanation scopes no-al to ordinary semantic idafa and permits al under conditions in verbal/لفظی idafa."
+    },
+    {
+      "ruleId": "la-generic",
+      "status": "resolved_not_reflagged",
+      "evidence": "Criterion defines technical مفرد as non-mudaf/non-shabih including dual/plural and uses accusative sign rather than universally fatha; Urdu permits kasra or fatha for sound feminine plurals."
+    }
+  ],
+  "otherDefiniteErrorsFound": [],
+  "validation": {
+    "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline rules",
+    "exitCode": 0,
+    "result": {
+      "ok": true,
+      "kind": "rules",
+      "batch": null,
+      "errors": [],
+      "warnings": []
+    },
+    "note": "Read-only validation of audited current input. Proposed English replacements do not change Urdu or rule IDs; no shared file was mutated for this check."
+  },
+  "limitations": [
+    "AI review is not scholarly approval and does not guarantee no later justified occurrence-specific issue.",
+    "No shared library, guide, occurrence, packet or chunk input was edited; no Codex CLI was invoked.",
+    "The three recommended applicability changes were bundled by the parent in one rules refresh; fresh confirmation shows exactly these three criteria plus the previously resolved restriction criterion differ from HEAD. No Urdu, rule IDs, or other rule fields changed."
+  ],
+  "inputSnapshotNote": "Input file hashes identify the final snapshot read during report creation and fresh confirmation. Parent applied the agreed three changes concurrently after the audit text was read; findings.currentCriteria records the original audited wording, while appliedCriteria records the current wording. The restriction change predates this audit.",
+  "appliedConfirmation": {
+    "rulesSha256": "0fd3596dab8d41411ee88904055cb7340ec0fbe56747ac418f975ebf2f001a5f",
+    "allRuleIdsAndUrduUnchanged": true,
+    "diffAgainstHead": [
+      {
+        "ruleId": "proper-noun",
+        "field": "appliesWhenEnglish"
+      },
+      {
+        "ruleId": "derived-form",
+        "field": "appliesWhenEnglish"
+      },
+      {
+        "ruleId": "adjective",
+        "field": "appliesWhenEnglish"
+      },
+      {
+        "ruleId": "restriction",
+        "field": "appliesWhenEnglish"
+      }
+    ],
+    "newChangesInThisBatch": [
+      {
+        "ruleId": "proper-noun",
+        "field": "appliesWhenEnglish"
+      },
+      {
+        "ruleId": "derived-form",
+        "field": "appliesWhenEnglish"
+      },
+      {
+        "ruleId": "adjective",
+        "field": "appliesWhenEnglish"
+      }
+    ],
+    "derivedFormWording": "Parent chose the explicit in-scope range II–X and XI rather than the proposed open-ended II or higher. This includes every actually attested in-scope derived form and resolves the 55:64:1 omission; independently accepted.",
+    "packetCount": 127,
+    "packetPlannedWordCount": 4077,
+    "packetDistinctWordCount": 4077,
+    "packetCombinedSha256": "0cf0faf5db65bd7bc20a511b36e1f1185fdaacb6a14aaa926f9cd966d000ff46",
+    "packetCheckNote": "All127 JSON packets parse and partition the4077 planned word IDs. Rules are read as a shared file by the pipeline, not embedded in packets; no false claim of embedded rule equality is made.",
+    "validation": {
+      "ok": true,
+      "kind": "rules",
+      "batch": null,
+      "errors": [],
+      "warnings": []
+    }
+  }
+}
