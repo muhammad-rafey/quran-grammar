@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Host, Switch } from '@expo/ui';
@@ -22,6 +22,7 @@ import { FloatingNavigation, type StudyView } from './study-navigation';
 import { StudyPicker, type BrowseMode, type PickerKind } from './study-picker';
 import { QuickPractice } from './quick-practice';
 import { Settings } from './study-settings';
+import { AyahScroll } from './ayah-scroll';
 
 export default function StudyScreen() {
   const { study, selectedSurah, selectSurah } = useStudy();
@@ -29,7 +30,6 @@ export default function StudyScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const scroll = useRef<ScrollView>(null);
-  const ayahPositions = useRef<Record<number, number>>({});
   const [view, setView] = useState<StudyView>('words');
   const [mode, setMode] = useState<BrowseMode>('surah');
   const [browseMode, setBrowseMode] = useState<BrowseMode>('surah');
@@ -41,12 +41,44 @@ export default function StudyScreen() {
   const [pos, setPos] = useState<PartOfSpeechFilter>('all');
   const [showMeanings, setShowMeanings] = useState(true);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  // A juz selection can open a chapter mid-way (Juz 16 starts Al-Kahf at ayah 75).
-  const pendingAyah = useRef<number | null>(null);
-  useEffect(() => {
-    ayahPositions.current = {};
-    scroll.current?.scrollTo({ y: 0, animated: false });
-  }, [selectedSurah]);
+  const requestedAyah = useRef({ surah: selectedSurah, number: 1 });
+  const surface = useMemo(
+    () => ({
+      navigation: new AyahScroll(
+        requestedAyah.current.surah === selectedSurah ? requestedAyah.current.number : 1,
+      ),
+      frame: null as number | null,
+      retry: false,
+    }),
+    [selectedSurah, view],
+  );
+  const activeSurface = useRef<typeof surface | null>(null);
+  useLayoutEffect(() => {
+    surface.navigation.activate();
+    activeSurface.current = surface;
+    return () => {
+      surface.navigation.deactivate();
+      if (surface.frame !== null) cancelAnimationFrame(surface.frame);
+      surface.frame = null;
+      if (activeSurface.current === surface) activeSurface.current = null;
+    };
+  }, [surface]);
+  const applyPendingJump = useCallback(
+    (retry = false) => {
+      if (activeSurface.current !== surface) return;
+      surface.retry ||= retry;
+      if (surface.frame !== null) return;
+      // Content-size events describe native layout; issue the command after that commit.
+      surface.frame = requestAnimationFrame(() => {
+        surface.frame = null;
+        if (activeSurface.current !== surface || !scroll.current) return;
+        const y = surface.navigation.takeScroll(spacing.sm, surface.retry);
+        surface.retry = false;
+        if (y !== null) scroll.current.scrollTo({ y, animated: false });
+      });
+    },
+    [surface],
+  );
   const openWord = useCallback(
     (id: string) => {
       setSelectedWord(id);
@@ -54,13 +86,14 @@ export default function StudyScreen() {
     },
     [router],
   );
-  const recordAyahPosition = useCallback((number: number, y: number) => {
-    ayahPositions.current[number] = y;
-    if (pendingAyah.current === number) {
-      pendingAyah.current = null;
-      scroll.current?.scrollTo({ y: Math.max(0, y - spacing.sm), animated: false });
-    }
-  }, []);
+  const recordAyahPosition = useCallback(
+    (number: number, y: number, height: number) => {
+      if (activeSurface.current !== surface) return;
+      surface.navigation.recordAyah(number, y, height);
+      applyPendingJump();
+    },
+    [surface, applyPendingJump],
+  );
   // Long chapters render over a thousand words; keep scroll-driven ayah updates from re-rendering them.
   const wordAyahs = useMemo(() => {
     if (!study) return null;
@@ -73,7 +106,10 @@ export default function StudyScreen() {
     return study.ayahs.map((item) => (
       <View
         key={`${study.surah.number}:${item.number}`}
-        onLayout={(event) => recordAyahPosition(item.number, event.nativeEvent.layout.y)}
+        onLayout={(event) => {
+          const { y, height } = event.nativeEvent.layout;
+          recordAyahPosition(item.number, y, height);
+        }}
         style={{ ...card, gap: spacing.md }}
         testID={`ayah-${item.number}`}
       >
@@ -101,7 +137,10 @@ export default function StudyScreen() {
       study?.ayahs.map((item) => (
         <View
           key={`${study.surah.number}:${item.number}`}
-          onLayout={(event) => recordAyahPosition(item.number, event.nativeEvent.layout.y)}
+          onLayout={(event) => {
+            const { y, height } = event.nativeEvent.layout;
+            recordAyahPosition(item.number, y, height);
+          }}
         >
           <GrammarAyah ayah={item} study={study} onWord={openWord} />
         </View>
@@ -122,17 +161,16 @@ export default function StudyScreen() {
   const chooseAyah = (number: number) => {
     setPicker(null);
     setAyah(number);
-    scroll.current?.scrollTo({
-      y: Math.max(0, (ayahPositions.current[number] ?? 0) - spacing.sm),
-      animated: true,
-    });
+    requestedAyah.current = { surah: selectedSurah, number };
+    surface.navigation.request(number);
+    applyPendingJump();
   };
   const changeView = (next: StudyView) => {
     if (next === view) return;
-    ayahPositions.current = {};
+    requestedAyah.current = { surah: selectedSurah, number: 1 };
+    activeSurface.current = null;
     setView(next);
     setAyah(1);
-    scroll.current?.scrollTo({ y: 0, animated: false });
   };
 
   return (
@@ -249,17 +287,33 @@ export default function StudyScreen() {
         )}
       </View>
       <ScrollView
+        key={`${selectedSurah}:${view}`}
         ref={scroll}
         testID="study-screen"
         contentInsetAdjustmentBehavior="automatic"
         keyboardShouldPersistTaps="handled"
         scrollEventThrottle={100}
+        onLayout={(event) => {
+          if (activeSurface.current !== surface) return;
+          surface.navigation.recordViewport(event.nativeEvent.layout.height);
+          applyPendingJump();
+        }}
+        onContentSizeChange={(_, height) => {
+          if (activeSurface.current !== surface) return;
+          surface.navigation.recordContent(height);
+          applyPendingJump();
+        }}
+        onScrollBeginDrag={() => {
+          if (activeSurface.current === surface) surface.navigation.beginReading();
+        }}
         onScroll={(event) => {
-          const offset = event.nativeEvent.contentOffset.y + 48;
-          const visible = Object.entries(ayahPositions.current)
-            .filter(([, y]) => y <= offset)
-            .sort((a, b) => b[1] - a[1])[0];
-          if (visible) setAyah(Number(visible[0]));
+          if (activeSurface.current !== surface) return;
+          const result = surface.navigation.observeScroll(
+            event.nativeEvent.contentOffset.y,
+            event.timeStamp,
+          );
+          if (result.retry) applyPendingJump(true);
+          if (result.ayah !== null) setAyah(result.ayah);
         }}
         contentContainerStyle={{
           paddingHorizontal: spacing.lg,
@@ -363,7 +417,8 @@ export default function StudyScreen() {
             chooseAyah(startAyah);
             return;
           }
-          pendingAyah.current = startAyah > 1 ? startAyah : null;
+          requestedAyah.current = { surah: number, number: startAyah };
+          activeSurface.current = null;
           setAyahSelection({ surah: number, number: startAyah });
           selectSurah(number);
         }}

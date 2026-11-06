@@ -1,0 +1,1824 @@
+{
+  "report": "Independent cross-chunk lemma consistency review: complete Ya-Sin draft",
+  "date": "2026-11-06",
+  "surah": 36,
+  "status": "No required lemma field changes found",
+  "scholarlyReview": "Pending. This AI consistency review does not approve any lesson for publication.",
+  "scope": {
+    "authoredChunks": 21,
+    "ayahs": 83,
+    "individualLemmaFieldsRead": 725,
+    "finiteVerbLemmasChecked": 189,
+    "effectiveVoiceCounts": {
+      "active": 175,
+      "passive": 14
+    },
+    "assemblyDiagnosticGroupsReviewed": 49,
+    "chunkLemmaSequenceMatchesDraft": true,
+    "lemmaCoverageSha256": "6d710c3eb1e648b714ae7196d5ea57dab14e8f4ecc7d503ee5d107c571ca5112"
+  },
+  "method": [
+    "Read all725 occurrence Arabic/lemma/word-class/root rows individually in reading order, not only the variant groups.",
+    "Read assembly diagnostics, distinguishing actual lexical sameness from raw QAC grouping artefacts.",
+    "Checked all189 verb lemmas against effective lexemes after overrides; passive occurrences retain active dictionary citations rather than copying passive paradigm past forms.",
+    "Used Unicode NFC only for comparing lemma strings. No occurrence Arabic, lemma or other content was normalized or edited.",
+    "Confirmed that all21chunk ID/lemma sequences exactly match the assembled draft."
+  ],
+  "inputs": [
+    {
+      "path": "drafts/surah-36.json",
+      "sha256": "4a2e410721472586423d07ae9e85687f2c7a273e2d5925be05a72758cc7c410e"
+    },
+    {
+      "path": "meta/plan.json",
+      "sha256": "84d9c20b25cf2bed308f0479cf6be4e19cd1776999627c7890c483065ee538e2"
+    },
+    {
+      "path": "meta/words.json",
+      "sha256": "1a3f2381f565d82b39b5a181dfce5e4d53e8f46d4974dd174cb83b0acde3cd9f"
+    },
+    {
+      "path": "meta/overrides.json",
+      "sha256": "2cd47d46176975b911b53f017d840238ad2b3ede1cb02e3e056cdd9c9f5409b5"
+    },
+    {
+      "path": "reports/assembly-report.json",
+      "sha256": "93b04c2f6ffadac8ae61cdc8aefe68339d3544d4aaf9779f935482ded0ec1d97"
+    },
+    {
+      "path": "guide/authoring-guide.md",
+      "sha256": "8ead190b344b7679af969df1fa4b3172ee5fe29035ca49c5d7d1fdccfa9c85ff"
+    },
+    {
+      "path": "chunks/36/36-c01.json",
+      "sha256": "3707ea4f8e123c3c08b1ad4ea69d92416cc132302dee9e8279be29c56bec18bf"
+    },
+    {
+      "path": "chunks/36/36-c02.json",
+      "sha256": "b13ad9b46b3d8e60082f66cd3129b067f7d60498f730dc924701ebee9d340b55"
+    },
+    {
+      "path": "chunks/36/36-c03.json",
+      "sha256": "035a322b241413a05acc7b97e136250ea1d72aa7c10a5dde1bb811c95dd3086d"
+    },
+    {
+      "path": "chunks/36/36-c04.json",
+      "sha256": "c9676184114b2ddadbe54fd4bbad72e25e2c897f68ec060381092e778021c982"
+    },
+    {
+      "path": "chunks/36/36-c05.json",
+      "sha256": "fcdb31ac05a5f0c7a508dc65ae31645693c1a51e5e94b8795e9c4afdc7091f67"
+    },
+    {
+      "path": "chunks/36/36-c06.json",
+      "sha256": "0717240309877f35f72a3a69277fa7fc5f1fd4d20669f2648adb7af62223035f"
+    },
+    {
+      "path": "chunks/36/36-c07.json",
+      "sha256": "c812d35806bbfdebc5ea03187fb4dcfbf157b80ae27734b922fedb8ed69e91e3"
+    },
+    {
+      "path": "chunks/36/36-c08.json",
+      "sha256": "f677e6ab4174803b8760ba85f111446622bf8bd831b75dcc8c4b53aeef83c6c8"
+    },
+    {
+      "path": "chunks/36/36-c09.json",
+      "sha256": "3f38a25dc940ccfcd8fac0430719dd35124128bdcb49121cf38a910a809dd0b4"
+    },
+    {
+      "path": "chunks/36/36-c10.json",
+      "sha256": "f0bfd2f92a4db0cd80d5647dd0ff5e2410bc0e10337a8c2cdedca78aba039194"
+    },
+    {
+      "path": "chunks/36/36-c11.json",
+      "sha256": "372143421a29cc6189138b0b76e3c767c0f526df090a52abe1b949aef9ebf7ca"
+    },
+    {
+      "path": "chunks/36/36-c12.json",
+      "sha256": "540680c762952ccc067858e3bdd7c6c56afdeadbafb82e9f687ed7d018f5c1bf"
+    },
+    {
+      "path": "chunks/36/36-c13.json",
+      "sha256": "ea496da02b5ca380e67f68b179c3520802786955175ee3b136059c7e522c0988"
+    },
+    {
+      "path": "chunks/36/36-c14.json",
+      "sha256": "fe22d3f9d8197787a9bad7b6d08c9e527f251e8749e95add363328d188fa436c"
+    },
+    {
+      "path": "chunks/36/36-c15.json",
+      "sha256": "5ac93987fa46cee70bf78b6d10daba578f79940a6dc9e6d1b1891c738acdb548"
+    },
+    {
+      "path": "chunks/36/36-c16.json",
+      "sha256": "1aaab9266aa750274339864ee744b2c0d5a0f8904fc004f353ce219b9baabc4e"
+    },
+    {
+      "path": "chunks/36/36-c17.json",
+      "sha256": "a9034462621168430d2f19301e0b662d75f2e31ee231b9ac7ea604717368b992"
+    },
+    {
+      "path": "chunks/36/36-c18.json",
+      "sha256": "555ea0cb61677265ba6afff7b1cd2f1072feba23edaa431d48df97dbe1a0d8fc"
+    },
+    {
+      "path": "chunks/36/36-c19.json",
+      "sha256": "7d05313c0a2d9ef0879719fc32af619c0ce4409eded89ce67ffd3c02c76498b3"
+    },
+    {
+      "path": "chunks/36/36-c20.json",
+      "sha256": "189ada659964480e52630d625fe69948bb60939e8a1e9f74b5ac4376bbef8168"
+    },
+    {
+      "path": "chunks/36/36-c21.json",
+      "sha256": "89cdfc65fc46c2088b4906374234322e0554b827d9678ba8cacf21b9e1db5975"
+    },
+    {
+      "path": "libs/lexemes/lex-01.json",
+      "sha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de"
+    },
+    {
+      "path": "libs/lexemes/lex-02.json",
+      "sha256": "374253c8523f8f335069e1b6217208d8646f31dfc5603c3e49acb88a656a4e8c"
+    },
+    {
+      "path": "libs/lexemes/lex-03.json",
+      "sha256": "a9e3f0fd083ec8da5f39ca511a9fbf300429eac28142cf31d15ea866c362a91a"
+    },
+    {
+      "path": "libs/lexemes/lex-04.json",
+      "sha256": "6053a14223bdfcfcb3cec134d3c5b064dd7d3c1b3f95f5bf145480da27ea3444"
+    },
+    {
+      "path": "libs/lexemes/lex-05.json",
+      "sha256": "54d762f2d71f98c6e1aaf7020a4a74015fc6e4dbd74595efc521c8998c3f7436"
+    },
+    {
+      "path": "libs/lexemes/lex-06.json",
+      "sha256": "5f4717863ed33f88235a5754c0fd344229c1b929c80b86e647953e2101cde079"
+    },
+    {
+      "path": "libs/lexemes/lex-07.json",
+      "sha256": "f2dd42c51b8593f973e6ec00d901005c62c8c98f7bcb107af3389f49dd216b55"
+    },
+    {
+      "path": "libs/lexemes/lex-08.json",
+      "sha256": "ac2d7a6475b92133421b7fa0cd411d582249f6626cf7db8378c71dcc7cc80e65"
+    },
+    {
+      "path": "libs/lexemes/lex-09.json",
+      "sha256": "933439e896f4bd54c1d9cc9eaa93a652f8bd57840c9959abbc19b2a7e596b32e"
+    },
+    {
+      "path": "libs/lexemes/lex-10.json",
+      "sha256": "926510fa3df8596d3f9c63431708eacd6347f8f0aead7d05e6dcaffacaa6dca2"
+    },
+    {
+      "path": "libs/lexemes/lex-11.json",
+      "sha256": "5ef211320057564483171c64945d0e709478cd3e13df40ca6a97ee5f8698a40f"
+    },
+    {
+      "path": "libs/lexemes/lex-12.json",
+      "sha256": "195d15d4ac56e2f36379cde7f247afcb223166de6f4978d5ea420fee7edaa89c"
+    },
+    {
+      "path": "libs/lexemes/lex-extra.json",
+      "sha256": "d070fb3dd018c564cd4ccbeb8396526ba00ec1b68b2d6ec1d3c72528c9a318b8"
+    }
+  ],
+  "findings": [],
+  "requiredReplacements": [],
+  "verbCheck": {
+    "normalizedActiveCitationMismatches": [],
+    "matchingActCardAvailable": 188,
+    "manuallyConfirmedWithoutMatchingActKey": [
+      {
+        "ref": "36:19:5",
+        "effectiveLexemeKey": "*uk~ira|II|PASS",
+        "lemma": "ذَكَّرَ",
+        "decision": "Correct active citation. The passive card explicitly identifies active ذَكَّرَ / يُذَكِّرُ in noteUrdu and evidenceEnglish; absence of a matching ACT key is not a wrong authored lemma.",
+        "libraryPath": "libs/lexemes/lex-04.json"
+      }
+    ],
+    "occurrences": [
+      {
+        "ref": "36:6:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">an*ara|IV|ACT",
+        "authoredLemma": "أَنْذَرَ",
+        "activeCitation": "أَنْذَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:6:4",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": ">an*ara|IV|PASS",
+        "authoredLemma": "أَنْذَرَ",
+        "activeCitation": "أَنْذَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:7:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Haq~a|I|ACT",
+        "authoredLemma": "حَقَّ",
+        "activeCitation": "حَقَّ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:7:8",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "'aAmana|IV|ACT",
+        "authoredLemma": "آمَنَ",
+        "activeCitation": "آمَنَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:8:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "jaEala|I|ACT",
+        "authoredLemma": "جَعَلَ",
+        "activeCitation": "جَعَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:9:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "jaEala|I|ACT",
+        "authoredLemma": "جَعَلَ",
+        "activeCitation": "جَعَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:9:9",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">ugo$iyato|IV|ACT",
+        "authoredLemma": "أَغْشَى",
+        "activeCitation": "أَغْشَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:9:12",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">aboSara|IV|ACT",
+        "authoredLemma": "أَبْصَرَ",
+        "activeCitation": "أَبْصَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:10:3",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">an*ara|IV|ACT",
+        "authoredLemma": "أَنْذَرَ",
+        "activeCitation": "أَنْذَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:10:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">an*ara|IV|ACT",
+        "authoredLemma": "أَنْذَرَ",
+        "activeCitation": "أَنْذَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:10:8",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "'aAmana|IV|ACT",
+        "authoredLemma": "آمَنَ",
+        "activeCitation": "آمَنَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:11:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">an*ara|IV|ACT",
+        "authoredLemma": "أَنْذَرَ",
+        "activeCitation": "أَنْذَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:11:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{t~abaEa|VIII|ACT",
+        "authoredLemma": "اِتَّبَعَ",
+        "activeCitation": "اِتَّبَعَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:11:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "xa$iYa|I|ACT",
+        "authoredLemma": "خَشِيَ",
+        "activeCitation": "خَشِيَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:11:9",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "bu$~ira|II|ACT",
+        "authoredLemma": "بَشَّرَ",
+        "activeCitation": "بَشَّرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:12:3",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">aHoyaA|IV|ACT",
+        "authoredLemma": "أَحْيَا",
+        "activeCitation": "أَحْيَا",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:12:5",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kataba|I|ACT",
+        "authoredLemma": "كَتَبَ",
+        "activeCitation": "كَتَبَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:12:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qad~ama|II|ACT",
+        "authoredLemma": "قَدَّمَ",
+        "activeCitation": "قَدَّمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:12:11",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">aHoSaY`|IV|ACT",
+        "authoredLemma": "أَحْصَى",
+        "activeCitation": "أَحْصَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:13:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Daraba|I|ACT",
+        "authoredLemma": "ضَرَبَ",
+        "activeCitation": "ضَرَبَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:13:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "jaA^'a|I|ACT",
+        "authoredLemma": "جَاءَ",
+        "activeCitation": "جَاءَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:14:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">arosala|IV|ACT",
+        "authoredLemma": "أَرْسَلَ",
+        "activeCitation": "أَرْسَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:14:5",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "ka*~aba|II|ACT",
+        "authoredLemma": "كَذَّبَ",
+        "activeCitation": "كَذَّبَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:14:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Eaz~azo|II|ACT",
+        "authoredLemma": "عَزَّزَ",
+        "activeCitation": "عَزَّزَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:14:8",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qaAla|I|ACT",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:15:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qaAla|I|ACT",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:15:8",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">anzala|IV|ACT",
+        "authoredLemma": "أَنْزَلَ",
+        "activeCitation": "أَنْزَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:15:15",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "ka*aba|I|ACT",
+        "authoredLemma": "كَذَبَ",
+        "activeCitation": "كَذَبَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:16:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qaAla|I|ACT",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:16:3",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Ealima|I|ACT",
+        "authoredLemma": "عَلِمَ",
+        "activeCitation": "عَلِمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:18:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qaAla|I|ACT",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:18:3",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{T~ay~aro|V|ACT",
+        "authoredLemma": "تَطَيَّرَ",
+        "activeCitation": "تَطَيَّرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:18:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{ntahaY`|VIII|ACT",
+        "authoredLemma": "اِنْتَهَى",
+        "activeCitation": "اِنْتَهَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:18:8",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "rajamo|I|ACT",
+        "authoredLemma": "رَجَمَ",
+        "activeCitation": "رَجَمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:18:9",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "mas~a|I|ACT",
+        "authoredLemma": "مَسَّ",
+        "activeCitation": "مَسَّ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:19:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qaAla|I|ACT",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:19:5",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": "*uk~ira|II|PASS",
+        "authoredLemma": "ذَكَّرَ",
+        "activeCitation": "ذَكَّرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:20:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "jaA^'a|I|ACT",
+        "authoredLemma": "جَاءَ",
+        "activeCitation": "جَاءَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:20:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "saEaY`|I|ACT",
+        "authoredLemma": "سَعَى",
+        "activeCitation": "سَعَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:20:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qaAla|I|ACT",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:20:9",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{t~abaEa|VIII|ACT",
+        "authoredLemma": "اِتَّبَعَ",
+        "activeCitation": "اِتَّبَعَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:21:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{t~abaEa|VIII|ACT",
+        "authoredLemma": "اِتَّبَعَ",
+        "activeCitation": "اِتَّبَعَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:21:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "sa>ala|I|ACT",
+        "authoredLemma": "سَأَلَ",
+        "activeCitation": "سَأَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:22:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Eabada|I|ACT",
+        "authoredLemma": "عَبَدَ",
+        "activeCitation": "عَبَدَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:22:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "faTara|I|ACT",
+        "authoredLemma": "فَطَرَ",
+        "activeCitation": "فَطَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:22:8",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": "rajaEa|I|PASS",
+        "authoredLemma": "رَجَعَ",
+        "activeCitation": "رَجَعَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:23:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{t~axa*a|VIII|ACT",
+        "authoredLemma": "اِتَّخَذَ",
+        "activeCitation": "اِتَّخَذَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:23:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">araAda|IV|ACT",
+        "authoredLemma": "أَرَادَ",
+        "activeCitation": "أَرَادَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:23:10",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">agonato|IV|ACT",
+        "authoredLemma": "أَغْنَى",
+        "activeCitation": "أَغْنَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:23:15",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">anqa*a|IV|ACT",
+        "authoredLemma": "أَنْقَذَ",
+        "activeCitation": "أَنْقَذَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:25:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "'aAmana|IV|ACT",
+        "authoredLemma": "آمَنَ",
+        "activeCitation": "آمَنَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:25:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "samiEa|I|ACT",
+        "authoredLemma": "سَمِعَ",
+        "activeCitation": "سَمِعَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:26:1",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": "qaAla|I|PASS",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:26:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "daxala|I|ACT",
+        "authoredLemma": "دَخَلَ",
+        "activeCitation": "دَخَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:26:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qaAla|I|ACT",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:26:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Ealima|I|ACT",
+        "authoredLemma": "عَلِمَ",
+        "activeCitation": "عَلِمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:27:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "gafara|I|ACT",
+        "authoredLemma": "غَفَرَ",
+        "activeCitation": "غَفَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:27:5",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "jaEala|I|ACT",
+        "authoredLemma": "جَعَلَ",
+        "activeCitation": "جَعَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:28:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">anzala|IV|ACT",
+        "authoredLemma": "أَنْزَلَ",
+        "activeCitation": "أَنْزَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:28:12",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:29:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:30:5",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">ataY|I|ACT",
+        "authoredLemma": "أَتَى",
+        "activeCitation": "أَتَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:30:9",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:30:11",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{sotuhozi}a|X|ACT",
+        "authoredLemma": "اِسْتَهْزَأَ",
+        "activeCitation": "اِسْتَهْزَأَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:31:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "ra'aA|I|ACT",
+        "authoredLemma": "رَأَى",
+        "activeCitation": "رَأَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:31:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">aholaka|IV|ACT",
+        "authoredLemma": "أَهْلَكَ",
+        "activeCitation": "أَهْلَكَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:31:11",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "rajaEa|I|ACT",
+        "authoredLemma": "رَجَعَ",
+        "activeCitation": "رَجَعَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:33:5",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">aHoyaA|IV|ACT",
+        "authoredLemma": "أَحْيَا",
+        "activeCitation": "أَحْيَا",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:33:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">axoraja|IV|ACT",
+        "authoredLemma": "أَخْرَجَ",
+        "activeCitation": "أَخْرَجَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:33:10",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">akala|I|ACT",
+        "authoredLemma": "أَكَلَ",
+        "activeCitation": "أَكَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:34:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "jaEala|I|ACT",
+        "authoredLemma": "جَعَلَ",
+        "activeCitation": "جَعَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:34:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "fuj~irato|II|ACT",
+        "authoredLemma": "فَجَّرَ",
+        "activeCitation": "فَجَّرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:35:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">akala|I|ACT",
+        "authoredLemma": "أَكَلَ",
+        "activeCitation": "أَكَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:35:5",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Eamila|I|ACT",
+        "authoredLemma": "عَمِلَ",
+        "activeCitation": "عَمِلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:35:8",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "$akara|I|ACT",
+        "authoredLemma": "شَكَرَ",
+        "activeCitation": "شَكَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:36:3",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "xalaqa|I|ACT",
+        "authoredLemma": "خَلَقَ",
+        "activeCitation": "خَلَقَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:36:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">an[bata|IV|ACT",
+        "authoredLemma": "أَنْبَتَ",
+        "activeCitation": "أَنْبَتَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:36:13",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Ealima|I|ACT",
+        "authoredLemma": "عَلِمَ",
+        "activeCitation": "عَلِمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:37:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "nasolaxu|I|ACT",
+        "authoredLemma": "سَلَخَ",
+        "activeCitation": "سَلَخَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:38:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "jarayo|I|ACT",
+        "authoredLemma": "جَرَى",
+        "activeCitation": "جَرَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:39:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qad~ara|II|ACT",
+        "authoredLemma": "قَدَّرَ",
+        "activeCitation": "قَدَّرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:39:5",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "EaAda|I|ACT",
+        "authoredLemma": "عَادَ",
+        "activeCitation": "عَادَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:40:3",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "yan[bagiY|VII|ACT",
+        "authoredLemma": "اِنْبَغَى",
+        "activeCitation": "اِنْبَغَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:40:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">adoraka|IV|ACT",
+        "authoredLemma": "أَدْرَكَ",
+        "activeCitation": "أَدْرَكَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:40:15",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "yasobaHu|I|ACT",
+        "authoredLemma": "سَبَحَ",
+        "activeCitation": "سَبَحَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:41:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Hamala|I|ACT",
+        "authoredLemma": "حَمَلَ",
+        "activeCitation": "حَمَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:42:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "xalaqa|I|ACT",
+        "authoredLemma": "خَلَقَ",
+        "activeCitation": "خَلَقَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:42:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "rakiba|I|ACT",
+        "authoredLemma": "رَكِبَ",
+        "activeCitation": "رَكِبَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:43:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "$aA^'a|I|ACT",
+        "authoredLemma": "شَاءَ",
+        "activeCitation": "شَاءَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:43:3",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">ugoriqu|IV|ACT",
+        "authoredLemma": "أَغْرَقَ",
+        "activeCitation": "أَغْرَقَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:43:9",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": ">anqa*a|IV|PASS",
+        "authoredLemma": "أَنْقَذَ",
+        "activeCitation": "أَنْقَذَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:45:2",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": "qaAla|I|PASS",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:45:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{t~aqaY`|VIII|ACT",
+        "authoredLemma": "اِتَّقَى",
+        "activeCitation": "اِتَّقَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:45:11",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": "r~aHima|I|PASS",
+        "authoredLemma": "رَحِمَ",
+        "activeCitation": "رَحِمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:46:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">ataY|I|ACT",
+        "authoredLemma": "أَتَى",
+        "activeCitation": "أَتَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:46:9",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:47:2",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": "qaAla|I|PASS",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:47:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">anfaqa|IV|ACT",
+        "authoredLemma": "أَنْفَقَ",
+        "activeCitation": "أَنْفَقَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:47:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "razaqa|I|ACT",
+        "authoredLemma": "رَزَقَ",
+        "activeCitation": "رَزَقَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:47:8",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qaAla|I|ACT",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:47:10",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kafara|I|ACT",
+        "authoredLemma": "كَفَرَ",
+        "activeCitation": "كَفَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:47:12",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "'aAmana|IV|ACT",
+        "authoredLemma": "آمَنَ",
+        "activeCitation": "آمَنَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:47:13",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">aToEama|IV|ACT",
+        "authoredLemma": "أَطْعَمَ",
+        "activeCitation": "أَطْعَمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:47:16",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "$aA^'a|I|ACT",
+        "authoredLemma": "شَاءَ",
+        "activeCitation": "شَاءَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:47:18",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">aToEama|IV|ACT",
+        "authoredLemma": "أَطْعَمَ",
+        "activeCitation": "أَطْعَمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:48:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qaAla|I|ACT",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:48:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:49:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "n~aZara|I|ACT",
+        "authoredLemma": "نَظَرَ",
+        "activeCitation": "نَظَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:49:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">axa*a|I|ACT",
+        "authoredLemma": "أَخَذَ",
+        "activeCitation": "أَخَذَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:49:8",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{xotaSamu|VIII|ACT",
+        "authoredLemma": "اِخْتَصَمَ",
+        "activeCitation": "اِخْتَصَمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:50:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{sotaTaAEa|X|ACT",
+        "authoredLemma": "اِسْتَطَاعَ",
+        "activeCitation": "اِسْتَطَاعَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:50:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "rajaEa|I|ACT",
+        "authoredLemma": "رَجَعَ",
+        "activeCitation": "رَجَعَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:51:1",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": "nafaxa|I|PASS",
+        "authoredLemma": "نَفَخَ",
+        "activeCitation": "نَفَخَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:51:10",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "yansilu|I|ACT",
+        "authoredLemma": "نَسَلَ",
+        "activeCitation": "نَسَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:52:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qaAla|I|ACT",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:52:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "baEava|I|ACT",
+        "authoredLemma": "بَعَثَ",
+        "activeCitation": "بَعَثَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:52:9",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "waEada|I|ACT",
+        "authoredLemma": "وَعَدَ",
+        "activeCitation": "وَعَدَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:52:11",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Sadaqa|I|ACT",
+        "authoredLemma": "صَدَقَ",
+        "activeCitation": "صَدَقَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:53:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:54:3",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": "Zalama|I|PASS",
+        "authoredLemma": "ظَلَمَ",
+        "activeCitation": "ظَلَمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:54:7",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": "jazaY`|I|PASS",
+        "authoredLemma": "جَزَى",
+        "activeCitation": "جَزَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:54:10",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:54:11",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Eamila|I|ACT",
+        "authoredLemma": "عَمِلَ",
+        "activeCitation": "عَمِلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:57:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "yad~aEu|VIII|ACT",
+        "authoredLemma": "اِدَّعَى",
+        "activeCitation": "اِدَّعَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:59:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{mota`zu|VIII|ACT",
+        "authoredLemma": "اِمْتَازَ",
+        "activeCitation": "اِمْتَازَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:60:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Eahida|I|ACT",
+        "authoredLemma": "عَهِدَ",
+        "activeCitation": "عَهِدَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:60:8",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Eabada|I|ACT",
+        "authoredLemma": "عَبَدَ",
+        "activeCitation": "عَبَدَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:61:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Eabada|I|ACT",
+        "authoredLemma": "عَبَدَ",
+        "activeCitation": "عَبَدَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:62:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">aDal~a|IV|ACT",
+        "authoredLemma": "أَضَلَّ",
+        "activeCitation": "أَضَلَّ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:62:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:62:8",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Eaqalu|I|ACT",
+        "authoredLemma": "عَقَلَ",
+        "activeCitation": "عَقَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:63:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:63:5",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": "waEada|I|PASS",
+        "authoredLemma": "وَعَدَ",
+        "activeCitation": "وَعَدَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:64:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "yaSolaY|I|ACT",
+        "authoredLemma": "صَلِيَ",
+        "activeCitation": "صَلِيَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:64:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:64:5",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kafara|I|ACT",
+        "authoredLemma": "كَفَرَ",
+        "activeCitation": "كَفَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:65:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "xatama|I|ACT",
+        "authoredLemma": "خَتَمَ",
+        "activeCitation": "خَتَمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:65:5",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kal~ama|II|ACT",
+        "authoredLemma": "كَلَّمَ",
+        "activeCitation": "كَلَّمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:65:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "$ahida|I|ACT",
+        "authoredLemma": "شَهِدَ",
+        "activeCitation": "شَهِدَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:65:10",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:65:11",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kasaba|I|ACT",
+        "authoredLemma": "كَسَبَ",
+        "activeCitation": "كَسَبَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:66:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "$aA^'a|I|ACT",
+        "authoredLemma": "شَاءَ",
+        "activeCitation": "شَاءَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:66:3",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Tumisato|I|ACT",
+        "authoredLemma": "طَمَسَ",
+        "activeCitation": "طَمَسَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:66:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{sotabaqa|VIII|ACT",
+        "authoredLemma": "اِسْتَبَقَ",
+        "activeCitation": "اِسْتَبَقَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:66:9",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">aboSara|IV|ACT",
+        "authoredLemma": "أَبْصَرَ",
+        "activeCitation": "أَبْصَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:67:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "$aA^'a|I|ACT",
+        "authoredLemma": "شَاءَ",
+        "activeCitation": "شَاءَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:67:3",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "masaxo|I|ACT",
+        "authoredLemma": "مَسَخَ",
+        "activeCitation": "مَسَخَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:67:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{sotaTaAEa|X|ACT",
+        "authoredLemma": "اِسْتَطَاعَ",
+        "activeCitation": "اِسْتَطَاعَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:67:10",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "rajaEa|I|ACT",
+        "authoredLemma": "رَجَعَ",
+        "activeCitation": "رَجَعَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:68:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "yuEam~aru|II|ACT",
+        "authoredLemma": "عَمَّرَ",
+        "activeCitation": "عَمَّرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:68:3",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "nunak~iso|II|ACT",
+        "authoredLemma": "نَكَّسَ",
+        "activeCitation": "نَكَّسَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:68:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Eaqalu|I|ACT",
+        "authoredLemma": "عَقَلَ",
+        "activeCitation": "عَقَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:69:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Eal~ama|II|ACT",
+        "authoredLemma": "عَلَّمَ",
+        "activeCitation": "عَلَّمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:69:5",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "yan[bagiY|VII|ACT",
+        "authoredLemma": "اِنْبَغَى",
+        "activeCitation": "اِنْبَغَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:70:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">an*ara|IV|ACT",
+        "authoredLemma": "أَنْذَرَ",
+        "activeCitation": "أَنْذَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:70:3",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:70:5",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Haq~a|I|ACT",
+        "authoredLemma": "حَقَّ",
+        "activeCitation": "حَقَّ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:71:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "ra'aA|I|ACT",
+        "authoredLemma": "رَأَى",
+        "activeCitation": "رَأَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:71:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "xalaqa|I|ACT",
+        "authoredLemma": "خَلَقَ",
+        "activeCitation": "خَلَقَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:71:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Eamila|I|ACT",
+        "authoredLemma": "عَمِلَ",
+        "activeCitation": "عَمِلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:72:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "*ul~ilato|II|ACT",
+        "authoredLemma": "ذَلَّلَ",
+        "activeCitation": "ذَلَّلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:72:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">akala|I|ACT",
+        "authoredLemma": "أَكَلَ",
+        "activeCitation": "أَكَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:73:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "$akara|I|ACT",
+        "authoredLemma": "شَكَرَ",
+        "activeCitation": "شَكَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:74:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{t~axa*a|VIII|ACT",
+        "authoredLemma": "اِتَّخَذَ",
+        "activeCitation": "اِتَّخَذَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:74:7",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": "naSara|I|PASS",
+        "authoredLemma": "نَصَرَ",
+        "activeCitation": "نَصَرَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:75:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "{sotaTaAEa|X|ACT",
+        "authoredLemma": "اِسْتَطَاعَ",
+        "activeCitation": "اِسْتَطَاعَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:76:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "yaHozun|I|ACT",
+        "authoredLemma": "حَزَنَ",
+        "activeCitation": "حَزَنَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:76:5",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Ealima|I|ACT",
+        "authoredLemma": "عَلِمَ",
+        "activeCitation": "عَلِمَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:76:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">asar~a|IV|ACT",
+        "authoredLemma": "أَسَرَّ",
+        "activeCitation": "أَسَرَّ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:76:9",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">aEolan|IV|ACT",
+        "authoredLemma": "أَعْلَنَ",
+        "activeCitation": "أَعْلَنَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:77:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "ra'aA|I|ACT",
+        "authoredLemma": "رَأَى",
+        "activeCitation": "رَأَى",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:77:5",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "xalaqa|I|ACT",
+        "authoredLemma": "خَلَقَ",
+        "activeCitation": "خَلَقَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:78:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "Daraba|I|ACT",
+        "authoredLemma": "ضَرَبَ",
+        "activeCitation": "ضَرَبَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:78:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "nasiYa|I|ACT",
+        "authoredLemma": "نَسِيَ",
+        "activeCitation": "نَسِيَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:78:6",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qaAla|I|ACT",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:78:8",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">aHoyaA|IV|ACT",
+        "authoredLemma": "أَحْيَا",
+        "activeCitation": "أَحْيَا",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:79:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qaAla|I|ACT",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:79:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">aHoyaA|IV|ACT",
+        "authoredLemma": "أَحْيَا",
+        "activeCitation": "أَحْيَا",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:79:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">an$a>a|IV|ACT",
+        "authoredLemma": "أَنْشَأَ",
+        "activeCitation": "أَنْشَأَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:80:2",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "jaEala|I|ACT",
+        "authoredLemma": "جَعَلَ",
+        "activeCitation": "جَعَلَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:80:11",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">awoqadu|IV|ACT",
+        "authoredLemma": "أَوْقَدَ",
+        "activeCitation": "أَوْقَدَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:81:1",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "l~ayosa|I|ACT",
+        "authoredLemma": "لَيْسَ",
+        "activeCitation": "لَيْسَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:81:3",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "xalaqa|I|ACT",
+        "authoredLemma": "خَلَقَ",
+        "activeCitation": "خَلَقَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:81:9",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "xalaqa|I|ACT",
+        "authoredLemma": "خَلَقَ",
+        "activeCitation": "خَلَقَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:82:4",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": ">araAda|IV|ACT",
+        "authoredLemma": "أَرَادَ",
+        "activeCitation": "أَرَادَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:82:7",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "qaAla|I|ACT",
+        "authoredLemma": "قَالَ",
+        "activeCitation": "قَالَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:82:9",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:82:10",
+        "effectiveVoice": "active",
+        "effectiveLexemeKey": "kaAna|I|ACT",
+        "authoredLemma": "كَانَ",
+        "activeCitation": "كَانَ",
+        "matchesUnderNFC": true
+      },
+      {
+        "ref": "36:83:8",
+        "effectiveVoice": "passive",
+        "effectiveLexemeKey": "rajaEa|I|PASS",
+        "authoredLemma": "رَجَعَ",
+        "activeCitation": "رَجَعَ",
+        "matchesUnderNFC": true
+      }
+    ]
+  },
+  "diagnosticDispositions": [
+    {
+      "category": "Noun/adjective citation and tanwin variants",
+      "refs": [
+        "36:2:1",
+        "36:69:11",
+        "36:3:3",
+        "36:20:10",
+        "36:52:12",
+        "36:5:3",
+        "36:58:5"
+      ],
+      "decision": "Accepted. Bare stems and fully declined citation forms identify the same lexeme; these differences do not justify changing correct content."
+    },
+    {
+      "category": "Canonical mark order in doubled and derived verbs",
+      "refs": [
+        "36:7:2",
+        "36:70:5",
+        "36:14:6",
+        "36:68:2",
+        "36:69:2"
+      ],
+      "decision": "Accepted. Fatha/shadda order differences normalize to the same NFC sequence and do not change the citation form."
+    },
+    {
+      "category": "Gender variants in repeated nominal material",
+      "refs": [
+        "36:29:5",
+        "36:49:5",
+        "36:53:5"
+      ],
+      "lemmas": [
+        "وَاحِدَة",
+        "وَاحِدَةٌ",
+        "وَاحِدٌ"
+      ],
+      "decision": "Accepted as requested. Feminine and masculine dictionary citations are valid; every occurrence explanation correctly identifies the actual feminine adjective. No wrong lexeme or different refrain meaning is introduced."
+    },
+    {
+      "category": "Particle/pronoun compounds and prefix inclusion",
+      "refs": [
+        "36:13:2",
+        "36:16:5",
+        "36:24:1",
+        "36:27:1",
+        "36:37:5",
+        "36:47:3",
+        "36:80:10",
+        "36:82:8",
+        "36:83:7"
+      ],
+      "decision": "Accepted. Head-particle citations and fused particle/pronoun representations are permitted variants, including independent-pronoun citation of a suffix component. Prefix inclusion/omission alone does not identify a different lexeme."
+    },
+    {
+      "category": "Preposition/demonstrative spellings",
+      "refs": [
+        "36:4:1",
+        "36:65:3",
+        "36:48:3",
+        "36:52:7",
+        "36:61:3"
+      ],
+      "decision": "Accepted. Conventional versus small-alif spellings preserve dictionary identity. The exact Quranic occurrence strings remain unchanged."
+    },
+    {
+      "category": "Raw None groups",
+      "decision": "None|None|particle/pronoun groups combine unrelated constructions because their source has no stem lemma. They do not imply that the words require one shared headword."
+    },
+    {
+      "category": "Contextual noun citations outside variant groups",
+      "refs": [
+        "36:12:4",
+        "36:33:4",
+        "36:62:4",
+        "36:71:9"
+      ],
+      "decision": "Accepted. The dead-person singular, feminine dead-earth adjective, collective multitude and livestock collective are supported by source lemmas and their occurrence explanations."
+    },
+    {
+      "category": "Passive and opaque raw lemma labels",
+      "refs": [
+        "36:6:4",
+        "36:19:5",
+        "36:26:1",
+        "36:45:2",
+        "36:47:2",
+        "36:51:1",
+        "36:54:3",
+        "36:63:5",
+        "36:83:8"
+      ],
+      "decision": "Accepted. Active dictionary lemmas coexist correctly with passive occurrence morphology/cards. Raw labels based on imperfect or passive stems do not supersede verified citation fields."
+    }
+  ],
+  "counts": {
+    "clearWrongLexemeFindings": 0,
+    "requiredRefrainCanonicalFixes": 0,
+    "requiredFieldReplacements": 0,
+    "scholarlyApprovalsGranted": 0
+  },
+  "limits": [
+    "This is a lemma-identity and cross-chunk consistency review, not a new scholarly certification of every teaching claim.",
+    "Valid citation, tanwin, gender, fused-form and NFC-mark-order variation was accepted. Optional style homogenization was not proposed.",
+    "Only this report was written. No chunk, library, guide, metadata, registry or approval gate was changed. No external authoring CLI was invoked."
+  ]
+}

@@ -18,7 +18,7 @@ Each packet gives you, per word and per ayah:
 | `arabic`                                                                         | Quran.com API `text_uthmani`                      | The exact Quranic word. **Never retype, normalise or "fix" it.**                                                                 |
 | `qacSegments`, `qacMorphologyEnglish`                                            | Quranic Arabic Corpus (QAC) 0.4                   | Segmentation, part of speech, root, lemma, verb form, voice, mood, case, person/gender/number. **Authoritative for morphology.** |
 | `qacIrabArabic`, ayah `qacGrammarNotesArabic`                                    | QAC i‘rab adapted from the Quran Printing Complex | Syntactic role (i‘rab). **Primary authority for syntax.**                                                                        |
-| `pos`, `root`                                                                    | Derived deterministically from QAC                | Already decided. Do not contradict them; if you believe one is wrong, write normally and explain in `auditNotes`.                |
+| `pos`, `root`                                                                    | Derived deterministically from QAC                | Effective app values, including explicit adjudicated overrides. Follow them; preserve and explain any raw-source disagreement in `auditNotes`.                |
 | `glossEnglishQac`, `glossEnglishQuranCom`                                        | Word-by-word English                              | Meaning check only.                                                                                                              |
 | `translationSahihInternational`, `translationTaqiUsmani`                         | English translations                              | Meaning check only.                                                                                                              |
 | `tafsir.muyassarArabic`, `tafsir.saadiArabic`, `tafsir.ibnKathirEnglishAbridged` | Classical tafsir                                  | Basis for the Urdu tafsir summary.                                                                                               |
@@ -32,8 +32,7 @@ must not reproduce one from memory).
 was adjudicated from the vocalised word and its context — and mention the correction in
 `auditNotes`. If you find another clear contradiction between a QAC tag (or the generated i‘rab
 line) and the vocalised Uthmani word or its governing particle — case, mood, voice, person — write
-the correct analysis and record the discrepancy in `auditNotes`. The `pos` and `root` fields are
-fixed; if you believe one is wrong, write correctly and explain in `auditNotes`.
+the correct analysis and record the discrepancy in `auditNotes`. The packet’s `pos` includes any explicit adjudicated type override; the raw QAC tags remain visible. Follow the effective packet `pos` and `root`; if you believe one is wrong, write correctly and explain in `auditNotes`.
 
 Lexeme keys are opaque lookup handles derived from raw Corpus identifiers. A handle can retain an incorrect raw voice or form tag, or an inflected/truncated lemma, after adjudication. Follow qacCorrection, the corrected occurrence fields and the reviewed paradigm entry. Do not parse the handle to infer teaching content or report a library defect solely because the handle differs from those corrected fields; report actual mismatches in the paradigm, notes or occurrence mapping instead.
 
@@ -159,6 +158,8 @@ Quranic phrase from memory.
   say their meaning is known to Allah, as the classical tafsir does.
 - Proper names without a QAC root keep root `null`; do not invent etymologies.
 - Participles, verbal nouns and adjectives are nouns, never verbs, even when they govern objects.
+
+In Urdu prose, ہمزہ (including ہمزۂ وصل/قطع) is masculine: کا ہمزہ، ہمزہ باقی رہتا ہے، لکھا جاتا ہے. Before a postposition, use the appropriate oblique agreement (کے ہمزۂ وصل پر). Follow the actual antecedent: ہمزہ کی کرسی بدلتی ہے and feminine یاء/تاء agreement remain unchanged. Do not alter quoted Arabic.
 
 ## 6. Accuracy checklist before you finish
 

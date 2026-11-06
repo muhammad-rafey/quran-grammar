@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-06",
+  "status": "passed Android emulator regression checks; all expansion content held",
+  "device": "repro36 Android36 emulator, arm64; no physical device used",
+  "method": "Private isolated Metro fixture copied the app source and supplied held draft JSON; a local debug-signed test APK reused the existing native archive. A persistent scholarly-review-pending banner identified the preview. No runtime registry or API was changed.",
+  "reproducedBug": "Before fix, Juz23 then Ya-Sin settled at ayah6/Juz22 instead of ayah28.",
+  "fix": "Keyed chapter/view scroll surfaces, current-layout readiness and native offset acknowledgment; clamped requests retry and user drag resumes actual reading labels.",
+  "checks": [
+    "Juz 23 opens Ya-Sin at ayah 28 with the exact first word.",
+    "Manual upward scroll changes Ya-Sin 28/Juz 23 to ayah 27/Juz 22.",
+    "Juz 16 opens the complete 1,579-word Al-Kahf at ayah 75.",
+    "Manual upward scroll changes Al-Kahf 75/Juz 16 to ayah 74/Juz 15.",
+    "A same-chapter Juz 16 selection returns to Al-Kahf 75.",
+    "Word 18:75:1 shows counter 1129/1579, root ق و ل, past قَالَ, present يَقُولُ and the expected pattern.",
+    "Closing the word modal retains Al-Kahf 75/Juz 16.",
+    "Grammar starts at ayah 1/Juz 15; returning to Study shows ayah 1 and the correct first word.",
+    "No AndroidRuntime or ReactNativeJS errors appeared in the test log window.",
+    "The stable eleven-Surah APK was rebuilt, installed and launched afterwards; its bundle contains neither the private banner nor expansion occurrence IDs."
+  ],
+  "sourceSha256": {
+    "apps/mobile/src/screens/study-screen.tsx": "65d248ae274cfdaf71d69ed5283c24bd5751e8b947ecaae6f03758aed082d805",
+    "apps/mobile/src/screens/ayah-scroll.ts": "cc688fdab911126092648f960ecf9fb6d888e95b7337d16c4e0bd92feb3cf159",
+    "apps/mobile/tests/ayah-scroll.test.mjs": "bcec899fb64ee8241d6919b0d46464cafba4d1a47dce2de962f1fdfc0c8356c2"
+  },
+  "localEvidenceSha256": {
+    "build/verification/native-juz23-after.xml": "c3969e3352d89f70d9f3dfd259a47444bde42de39e728f050b515a05de29833f",
+    "build/verification/native-juz23-before.xml": "bcab2b101b25d4a1eec788b5524638ee89d80c9a028bb436410779f4336ff015",
+    "build/verification/native-kahf-grammar.xml": "9762e99d00d68cea84c8d913de2f0a4b63357d72d6e5936449ebae8ad578c7af",
+    "build/verification/native-kahf-juz16.xml": "0a6db594d5300b80e3e54238e79b15f50551fd320f631e26d391c10d1c5227d1",
+    "build/verification/native-kahf-modal-return.xml": "2b0cd3ba62796e57a8adbc8e45ef405a34fb6d8409d7892ef9faeb6fb8ef4bbe",
+    "build/verification/native-kahf-paradigm.xml": "a9b05e52dffa6e5bd656ea97289a179f751b192e92226c998fb970def17d8c1a",
+    "build/verification/native-kahf-same-chapter.xml": "2b0cd3ba62796e57a8adbc8e45ef405a34fb6d8409d7892ef9faeb6fb8ef4bbe",
+    "build/verification/native-kahf-study-return.xml": "d2b551f2e79789247c1bc33eeb814a78b5ef483b8bc974a5dd6fbc207c4391b0",
+    "build/verification/native-stable-restored.xml": "4b40baff5ad41b14758bf8f401ba73d48262f443f550fb80a32887a82eb0f482",
+    "build/verification/native-yasin-manual-boundary.xml": "92e2d8b50a340c023c8db7556a832375aa6b252021fd0adce384604b4d9aabab"
+  },
+  "stableApk": {
+    "builtAt": "2026-11-06T15:06:49.802Z",
+    "artifact": "quran-grammar.apk",
+    "bytes": 61793280,
+    "sha256": "f71b5c5f170ee99c387433adc6ee2a447844d44fb54c670d44aa9dba1fb8f7f3",
+    "architectures": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "signing": "Expo debug key; local testing only",
+    "apiConfigured": false,
+    "metroRequired": false
+  },
+  "independentCodeReview": "No actionable findings; API loading, StrictMode, same-chapter jumps, view changes, modal return and memoization checked by a separate agent.",
+  "unitAndBuildChecks": "12 mobile tests and both iOS/Android exports pass. Full repository verification also passed before final model imports.",
+  "limitations": [
+    "No new iOS simulator or physical-phone interaction test.",
+    "The review preview is a local test fixture, not a released sixteen-Surah app.",
+    "All five scholarly approvals remain pending."
+  ]
+}

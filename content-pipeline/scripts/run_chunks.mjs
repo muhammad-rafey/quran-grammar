@@ -184,9 +184,15 @@ export async function run(argv = process.argv.slice(2)) {
       const fix = Object.hasOwn(overrides, word.id) ? overrides[word.id] : null;
       const verb = source.verb ? { ...source.verb } : undefined;
       let lexemeKey = source.lexemeKey;
+      let pos = source.pos;
       let correction;
       if (fix) {
         if (typeof fix !== 'object' || typeof fix.noteEnglish !== 'string') throw new Error(`Invalid occurrence override for ${chunk}`);
+        if (Object.hasOwn(fix, 'pos')) {
+          if (!['noun', 'adjective', 'verb', 'particle', 'pronoun'].includes(fix.pos)) throw new Error(`Invalid pos override for ${word.id}`);
+          if (fix.pos === 'verb' && (!source.verb || typeof source.verb !== 'object' || Array.isArray(source.verb) || !['form', 'aspect', 'passive', 'png'].every((key) => Object.hasOwn(source.verb, key)) || typeof (fix.lexemeKey ?? source.lexemeKey) !== 'string')) throw new Error(`Verb pos override lacks morphology/paradigm for ${word.id}`);
+          pos = fix.pos;
+        }
         if (Object.hasOwn(fix, 'lexemeKey')) lexemeKey = fix.lexemeKey;
         if (verb) {
           for (const [key, field] of [['passive', 'passive'], ['mood', 'mood'], ['png', 'png'], ['verbForm', 'form']]) {
@@ -195,7 +201,7 @@ export async function run(argv = process.argv.slice(2)) {
         }
         correction = `${fix.noteEnglish} Follow this correction, not the raw QAC tag or the generated i‘rab line; record it in auditNotes.`;
       }
-      if (JSON.stringify(word.verb) !== JSON.stringify(verb) || word.lexemeKey !== lexemeKey || word.qacCorrection !== correction) throw new Error(`Stale occurrence correction in ${chunk}; rebuild source packets`);
+      if (word.pos !== pos || JSON.stringify(word.verb) !== JSON.stringify(verb) || word.lexemeKey !== lexemeKey || word.qacCorrection !== correction) throw new Error(`Stale occurrence correction in ${chunk}; rebuild source packets`);
     }
     for (const kind of ['lexemes', 'roots']) {
       for (const [key, entry] of Object.entries(packet[kind] ?? {})) {
@@ -315,6 +321,7 @@ export async function run(argv = process.argv.slice(2)) {
         }
         await mkdir(join(isolated, 'meta'), { recursive: true });
         await writeFile(join(isolated, 'meta', 'words.json'), JSON.stringify(input.wordSubset));
+        await writeFile(join(isolated, 'meta', 'overrides.json'), overrideSource);
         await writeFile(join(isolated, 'meta', 'plan.json'), JSON.stringify([spec]));
         await mkdir(join(isolated, 'packets', String(spec.surah)), { recursive: true });
         await mkdir(dirname(join(isolated, chunkRelative)), { recursive: true });

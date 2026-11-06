@@ -1,0 +1,393 @@
+{
+  "status": "independent adjudication recommendations; no shared inputs edited",
+  "snapshotDate": "2026-11-06",
+  "validationReportSha256": "f99a60473a45d9b1f49956e5cc24520e3a7f9f790120cbfef46a828e82f1106d",
+  "reviewedWarnings": 8,
+  "recommendedPosOverrides": 8,
+  "labelOnlyFixes": 0,
+  "rejectedContextualAnalyses": 0,
+  "sourcesRead": [
+    "guide/authoring-guide.md",
+    "meta/overrides.json",
+    "meta/words.json",
+    "meta/ayahs.json",
+    "qac/qac04-lfs.txt",
+    "all eight affected current chunk auditNotes and word fields",
+    "all eight primary Corpus verse grammar webpages"
+  ],
+  "authority": "The guide gives the verse and word i‘rab primary authority for contextual syntax. Preserve raw Corpus morphology and choose a documented effective app classification matching the adopted contextual analysis. Relative versus masdariyya ma can have recognized alternative analyses; these overrides record the explicitly chosen primary-source analysis, not a universal claim that every relative reading is impossible.",
+  "decisions": [
+    {
+      "id": "18:12:7",
+      "chunk": "18-c04",
+      "arabic": "لِمَا",
+      "currentChunkSha256": "999dd3c81e58fdad06df07637d16c7f07246277f5ac545650e17ffb1782a58f2",
+      "warning": "word 18:12:7: posUrdu \"حرفِ جر + حرفِ مصدری\" does not name the QAC-derived word type pronoun",
+      "rawDerivedPos": "pronoun",
+      "rawQacTags": [
+        "P",
+        "REL"
+      ],
+      "rawWordIrab": [
+        "جار ومجرور"
+      ],
+      "currentOverride": null,
+      "currentDraft": {
+        "posUrdu": "حرفِ جر + حرفِ مصدری",
+        "morphologyUrdu": "لام حرفِ جر، کسرہ پر مبنی ہے؛ ما کو اعرابی ماخذ میں حرفِ مصدری، سکون پر مبنی مانا گیا ہے۔ ما خود ضمیر نہیں بلکہ اگلے جملے کو مصدر کے حکم میں کرتا ہے۔",
+        "syntaxUrdu": "ما اور اگلے فعل سے بننے والا مصدر لام کے سبب محلِ جر میں ہے۔ جار و مجرور مدت کے لفظ کی مقدر حال سے متعلق ہے، یعنی ان کے قیام سے متعلق مدت۔",
+        "ruleIds": [
+          "preposition",
+          "masdar-particle",
+          "haal"
+        ]
+      },
+      "currentAuditNotes": [
+        {
+          "ref": "18:12:7",
+          "noteEnglish": "The ayah grammar note explicitly identifies ma as masdariyya, whereas the word morphology tags it REL and the fixed app pos is pronoun. The lesson follows the ayah syntax and teaches a masdar particle, not a relative pronoun. Lam governs the interpreted masdar, attached to an implied hal of amadan."
+        }
+      ],
+      "primaryVerseEvidence": [
+        "«أيّ» اسم استفهام مبتدأ، و«أحصى» فعل ماض، والجملة سدَّت مسدَّ مفعولَيْ «علم» المعلَّق بالاستفهام، وجملة «أحصى» خبر المبتدأ «أيُّ»، واللام في «لما» جارة، و«ما» مصدرية، والمصدر مجرور متعلق بحال من «أمدًا»، والتقدير: أحصى أمدا كائنا للبثهم، وترجَّحت فعلية «أحصى» على أفعل التفضيل؛ لأن بناء التفضيل من فوق الثلاثي على أفعل نادر."
+      ],
+      "primaryVerseUrl": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=12",
+      "onlinePrimaryCrosschecked": true,
+      "rawQacFileCrosschecked": true,
+      "decision": "Add explicit effective-pos override; retain current contextual Urdu analysis.",
+      "chosenAnalysis": "masdar particle",
+      "reason": "Both lam and masdariyya ma are particles; the interpreted masdar has genitive position, not the particle itself.",
+      "proposedOverride": {
+        "pos": "particle",
+        "noteEnglish": "QAC tags the stem of لِمَا REL, deriving pronoun, but the primary 18:12 verse i‘rab explicitly calls ما مصدرية. Follow the selected masdar-particle analysis: lam governs the interpreted masdar, attached to an implied hal of amadan. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+      },
+      "requiredChunkFieldEdits": [],
+      "auditNoteFollowup": "Retain the original raw-tag disagreement and record that the app effective type now follows this adjudication; remove any stale claim that the warning remains intentionally unresolved."
+    },
+    {
+      "id": "18:22:19",
+      "chunk": "18-c12",
+      "arabic": "مَّا",
+      "currentChunkSha256": "6b5bfbaad577f417c750188872c56f0ed2c25d22701e75cd5701ca051be449c3",
+      "warning": "word 18:22:19: posUrdu \"حرفِ نفی\" does not name the QAC-derived word type pronoun",
+      "rawDerivedPos": "pronoun",
+      "rawQacTags": [
+        "REL"
+      ],
+      "rawWordIrab": [
+        "اسم موصول"
+      ],
+      "currentOverride": null,
+      "currentDraft": {
+        "posUrdu": "حرفِ نفی",
+        "morphologyUrdu": "یہاں ما نافیہ ہے، اسمِ موصول نہیں۔ سکون پر مبنی حرف ہے، اس کا کوئی اعرابی محل نہیں اور یہ مضارع کو مجزوم نہیں کرتا۔",
+        "syntaxUrdu": "یہ بعد کے جاننے کے فعل کی نفی کرتا ہے۔ حرفِ حصر کے ساتھ معنی بنتا ہے کہ چند لوگوں کے سوا کوئی ان کی تعداد نہیں جانتا؛ جملہ نیا بیان ہے۔",
+        "ruleIds": [
+          "negation"
+        ]
+      },
+      "currentAuditNotes": [
+        {
+          "ref": "18:22:19",
+          "noteEnglish": "The packet tags ma as REL/pronoun and its generated word irab says relative noun. Here it is non-governing negative ma, as required by the meaning and the following illa restriction with qalil as subject. The lesson teaches the negative particle; the immutable source pos remains a shared-data discrepancy."
+        }
+      ],
+      "primaryVerseEvidence": [
+        "«ثلاثة» خبر لمبتدأ محذوف أي: هم، جملة «رابعهم كلبهم»، نعت لثلاثة، «رجما» مصدر في موضع الحال من الواو في «يقولون»، والجار متعلق بنعت لـ«رجما». جملة «وثامنهم كلبهم» معطوفة على جملة «هم سبعة»، الجار «بعدَّتهم» متعلق بالخبر«أعلم»، جملة «ما يعلمهم إلا قليل» مستأنفة، «قليل» فاعل، و«إلا» للحصر. جملة «فلا تمار» مستأنفة، «مراء» نائب مفعول مطلق."
+      ],
+      "primaryVerseUrl": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=22",
+      "onlinePrimaryCrosschecked": true,
+      "rawQacFileCrosschecked": true,
+      "decision": "Add explicit effective-pos override; retain current contextual Urdu analysis.",
+      "chosenAnalysis": "negative particle",
+      "reason": "Negation plus illa restriction expresses that only a few know them; a relative-pronoun reading does not fit the adopted complete clause.",
+      "proposedOverride": {
+        "pos": "particle",
+        "noteEnglish": "QAC tags مَّا REL, deriving pronoun, but the primary 18:22 verse analysis makes قليل the subject of ما يعلمهم إلا قليل and إلا restrictive. Ma is the non-governing negative particle here, not a relative noun. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+      },
+      "requiredChunkFieldEdits": [],
+      "auditNoteFollowup": "Retain the original raw-tag disagreement and record that the app effective type now follows this adjudication; remove any stale claim that the warning remains intentionally unresolved."
+    },
+    {
+      "id": "18:26:4",
+      "chunk": "18-c14",
+      "arabic": "بِمَا",
+      "currentChunkSha256": "f27886b1b7725c37398adde5bdbbb379567157d2f8a94ac4346502e4c5c320c2",
+      "warning": "word 18:26:4: posUrdu \"حرفِ جر + مَا مصدریہ\" does not name the QAC-derived word type pronoun",
+      "rawDerivedPos": "pronoun",
+      "rawQacTags": [
+        "P",
+        "REL"
+      ],
+      "rawWordIrab": [
+        "جار ومجرور"
+      ],
+      "currentOverride": null,
+      "currentDraft": {
+        "posUrdu": "حرفِ جر + مَا مصدریہ",
+        "morphologyUrdu": "باء حرفِ جر، کسرہ پر مبنی ہے؛ مَا مصدریہ سکون پر مبنی موصولِ حرفی ہے۔ دونوں حروف کا اپنا کوئی محلِ اعراب نہیں۔",
+        "syntaxUrdu": "مَا اور بعد کا فعل مل کر مصدرِ مؤول بناتے ہیں، جو باء سے محلِ جر میں ہے؛ یہ ترکیب اسمِ تفضیل سے متعلق ہے۔",
+        "ruleIds": [
+          "masdar-particle",
+          "preposition"
+        ]
+      },
+      "currentAuditNotes": [
+        {
+          "ref": "18:26:4",
+          "noteEnglish": "The token is tagged REL and has fixed app pos pronoun, but the primary ayah grammar note explicitly calls ما مصدرية. The lesson follows that syntactic analysis as a masdar particle, without silently relabelling it a relative noun."
+        }
+      ],
+      "primaryVerseEvidence": [
+        "«بما لبثوا» الباء جارة، «ما» مصدرية، والمصدر مجرور متعلق بـ«أعلم»، وجملة «لبثوا» صلة الموصول الحرفيّ، جملة «له غيب السماوات» مستأنفة في حيز القول، وكذا جملة «أبصر به». وقوله «أبصر» فعل ماض جاء على صورة الأمر، والباء زائدة، والهاء ضمير فاعل، وكذا «أسمع»، وحذف فاعل الثانية؛ لدلالة فاعل الأولى عليه. قوله «ما لهم من دونه» «ما» نافية مهملة، والجار متعلق بخبر المبتدأ «ولي»، و«من» زائدة، الجار «من دونه» متعلق بحال من «ولي» والجملة مستأنفة، وجملة «ولا يشرك» معطوفة على جملة «ما لهم ولي»."
+      ],
+      "primaryVerseUrl": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=26",
+      "onlinePrimaryCrosschecked": true,
+      "rawQacFileCrosschecked": true,
+      "decision": "Add explicit effective-pos override; retain current contextual Urdu analysis.",
+      "chosenAnalysis": "masdar particle",
+      "reason": "موصول حرفي means a masdar particle, not the nominal relative pronoun classified under app pronoun.",
+      "proposedOverride": {
+        "pos": "particle",
+        "noteEnglish": "QAC tags the stem of بِمَا REL, deriving pronoun, but the primary 18:26 verse i‘rab explicitly calls ما مصدرية and لبثوا the clause of the حرفي موصول. Follow the selected masdar-particle analysis, with the interpreted masdar governed by bi and attached to أعلم. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+      },
+      "requiredChunkFieldEdits": [],
+      "auditNoteFollowup": "Retain the original raw-tag disagreement and record that the app effective type now follows this adjudication; remove any stale claim that the warning remains intentionally unresolved."
+    },
+    {
+      "id": "23:26:4",
+      "chunk": "23-c08",
+      "arabic": "بِمَا",
+      "currentChunkSha256": "f0e9204c7acb8f41a27d893096a6f97314dbcf61255be07a861ff2b1d5975a4c",
+      "warning": "word 23:26:4: posUrdu \"حرفِ جر + ما مصدریہ\" does not name the QAC-derived word type pronoun",
+      "rawDerivedPos": "pronoun",
+      "rawQacTags": [
+        "P",
+        "REL"
+      ],
+      "rawWordIrab": [
+        "جار ومجرور"
+      ],
+      "currentOverride": null,
+      "currentDraft": {
+        "posUrdu": "حرفِ جر + ما مصدریہ",
+        "morphologyUrdu": "باء حرفِ جر اور سببیت کے لیے ہے۔ ما یہاں مصدریہ، سکون پر مبنی حرف ہے؛ اگلے جملے کو مصدر کے مفہوم میں لاتی ہے۔",
+        "syntaxUrdu": "ما اپنے بعد کے فعل کے ساتھ مصدرِ مؤول بناتی ہے، جو باء کی وجہ سے محلِ جر میں ہے؛ یہ جار و مجرور مدد کے فعل سے متعلق ہے۔",
+        "ruleIds": [
+          "masdar-particle",
+          "preposition"
+        ]
+      },
+      "currentAuditNotes": [
+        {
+          "ref": "23:26:4",
+          "noteEnglish": "The ayah grammar explicitly analyzes ma as masdariyya, overriding the raw REL tag and derived pronoun classification. The interpreted masdar is governed by causal bi and attaches to the imperative. The validator POS-label warning is retained for this source conflict; shared derived pos metadata would need review outside this chunk."
+        }
+      ],
+      "primaryVerseEvidence": [
+        "«الباء» جارَّة للسببية، «ما» مصدرية، والمصدر المؤول مجرور متعلق بالفعل والتقدير: بسبب تكذيبهم."
+      ],
+      "primaryVerseUrl": "https://corpus.quran.com/grammar.jsp?chapter=23&verse=26",
+      "onlinePrimaryCrosschecked": true,
+      "rawQacFileCrosschecked": true,
+      "decision": "Add explicit effective-pos override; retain current contextual Urdu analysis.",
+      "chosenAnalysis": "masdar particle",
+      "reason": "The prayer seeks help because of their denial; bi governs the interpreted masdar بسبب تكذيبهم.",
+      "proposedOverride": {
+        "pos": "particle",
+        "noteEnglish": "QAC tags the stem of بِمَا REL, deriving pronoun, but the primary 23:26 verse i‘rab explicitly calls ما مصدرية and bi causal, with the interpreted masdar attached to انصرني. Follow that selected contextual analysis. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+      },
+      "requiredChunkFieldEdits": [],
+      "auditNoteFollowup": "Retain the original raw-tag disagreement and record that the app effective type now follows this adjudication; remove any stale claim that the warning remains intentionally unresolved."
+    },
+    {
+      "id": "23:39:4",
+      "chunk": "23-c13",
+      "arabic": "بِمَا",
+      "currentChunkSha256": "b8022a6330d2c3698cec4895674b3d2010e351e55144f93f6db61b29d738044d",
+      "warning": "word 23:39:4: posUrdu \"حرفِ جر + ما مصدریہ\" does not name the QAC-derived word type pronoun",
+      "rawDerivedPos": "pronoun",
+      "rawQacTags": [
+        "P",
+        "REL"
+      ],
+      "rawWordIrab": [
+        "جار ومجرور"
+      ],
+      "currentOverride": null,
+      "currentDraft": {
+        "posUrdu": "حرفِ جر + ما مصدریہ",
+        "morphologyUrdu": "باء حرفِ جر، کسرہ پر مبنی ہے؛ ما مصدریہ سکون پر مبنی ہے اور اپنے بعد کے جملے کو مصدر کے حکم میں کرتی ہے۔",
+        "syntaxUrdu": "ما اور بعد کا جملہ مصدرِ مؤول بن کر باء سے محلِ جر میں ہیں؛ یہ ترکیب مدد کی دعا سے متعلق اور اس کا سبب ہے۔",
+        "ruleIds": [
+          "preposition",
+          "masdar-particle"
+        ]
+      },
+      "currentAuditNotes": [
+        {
+          "ref": "23:39:4",
+          "noteEnglish": "Followed the ayah grammar note: ma is masdariyya, although the word-level QAC tag is REL. The app-derived pronoun classification is fixed; the teaching label identifies the source-supported particle analysis. The validator warning about posUrdu is retained intentionally rather than mislabelling this source-supported masdar particle as a nominal relative pronoun."
+        }
+      ],
+      "primaryVerseEvidence": [
+        "جملة «انصرني» جواب النداء مستأنفة، وجملة «كَذَّبون» صلة الموصول الحرفي، و«ما» مصدرية، والمصدر المؤول المجرور متعلق بـ«انصرني»."
+      ],
+      "primaryVerseUrl": "https://corpus.quran.com/grammar.jsp?chapter=23&verse=39",
+      "onlinePrimaryCrosschecked": true,
+      "rawQacFileCrosschecked": true,
+      "decision": "Add explicit effective-pos override; retain current contextual Urdu analysis.",
+      "chosenAnalysis": "masdar particle",
+      "reason": "The source calls it موصول حرفي, not a nominal relative pronoun; the current Urdu and masdar-particle rule match that choice.",
+      "proposedOverride": {
+        "pos": "particle",
+        "noteEnglish": "QAC tags the stem of بِمَا REL, deriving pronoun, but the primary 23:39 verse i‘rab explicitly calls ما مصدرية, with كذبون its clause and the interpreted masdar attached to انصرني. Follow that selected contextual analysis. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+      },
+      "requiredChunkFieldEdits": [],
+      "auditNoteFollowup": "Retain the original raw-tag disagreement and record that the app effective type now follows this adjudication; remove any stale claim that the warning remains intentionally unresolved."
+    },
+    {
+      "id": "32:9:13",
+      "chunk": "32-c04",
+      "arabic": "مَّا",
+      "currentChunkSha256": "2682ecaf7ab3bae6f17feb767d75855b2313d6bae9d056507b8e2258774ffedc",
+      "warning": "word 32:9:13: posUrdu \"حرفِ زائد\" does not name the QAC-derived word type pronoun",
+      "rawDerivedPos": "pronoun",
+      "rawQacTags": [
+        "REL"
+      ],
+      "rawWordIrab": [
+        "اسم موصول"
+      ],
+      "currentOverride": null,
+      "currentDraft": {
+        "posUrdu": "حرفِ زائد",
+        "morphologyUrdu": "زائد حرف ہے، سکون پر مبنی ہے؛ ابتدا کی تشدید پچھلے تنوین کے ادغام سے ہے۔ اس کا کوئی مستقل اسم یا فعل والا صرفی صیغہ نہیں۔",
+        "syntaxUrdu": "اس کا کوئی محلِ اعراب نہیں؛ شکر کی قلت کے بیان میں تاکید دیتا ہے، نہ اسمِ موصول ہے نہ حرفِ نفی۔",
+        "ruleIds": [
+          "extra-particle"
+        ]
+      },
+      "currentAuditNotes": [
+        {
+          "ref": "32:9:13",
+          "noteEnglish": "QAC word morphology and generated word i‘rab tag ma as relative (derived app POS: pronoun), but the primary ayah-level grammar explicitly calls it extra. The lesson follows the ayah grammar: an extra particle emphasizing the small amount of gratitude, with no relative clause or case position."
+        }
+      ],
+      "primaryVerseEvidence": [
+        "الجار «لكم» متعلق بالمفعول الثاني لـ«جعل»، «قليلا» نائب مفعول مطلق، و«ما» زائدة، وجملة «تشكرون» مستأنفة."
+      ],
+      "primaryVerseUrl": "https://corpus.quran.com/grammar.jsp?chapter=32&verse=9",
+      "onlinePrimaryCrosschecked": true,
+      "rawQacFileCrosschecked": true,
+      "decision": "Add explicit effective-pos override; retain current contextual Urdu analysis.",
+      "chosenAnalysis": "extra particle",
+      "reason": "The following تشكرون is a new clause in the primary note; ma emphasizes the small amount of gratitude rather than introducing a nominal relative clause.",
+      "proposedOverride": {
+        "pos": "particle",
+        "noteEnglish": "QAC tags مَّا REL, deriving pronoun, but the primary 32:9 verse i‘rab explicitly calls ما زائدة, after قليلا functioning as نائب مفعول مطلق. Follow the extra-particle analysis, with no case position or relative clause. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+      },
+      "requiredChunkFieldEdits": [],
+      "auditNoteFollowup": "Retain the original raw-tag disagreement and record that the app effective type now follows this adjudication; remove any stale claim that the warning remains intentionally unresolved."
+    },
+    {
+      "id": "32:14:2",
+      "chunk": "32-c06",
+      "arabic": "بِمَا",
+      "currentChunkSha256": "70097f274c0971a6da87d43fcc19b751ba8c6c6d4936e249af5176c413c02258",
+      "warning": "word 32:14:2: posUrdu \"حرفِ جر + مَا مصدریہ\" does not name the QAC-derived word type pronoun",
+      "rawDerivedPos": "pronoun",
+      "rawQacTags": [
+        "P",
+        "REL"
+      ],
+      "rawWordIrab": [
+        "جار ومجرور"
+      ],
+      "currentOverride": null,
+      "currentDraft": {
+        "posUrdu": "حرفِ جر + مَا مصدریہ",
+        "morphologyUrdu": "باء حرفِ جر، کسر پر مبنی ہے؛ مَا یہاں مصدریہ، سکون پر مبنی ہے۔ دونوں غیر متصرف ہیں، اور ما اپنے بعد کے جملے کو مصدر کے معنی دیتا ہے۔",
+        "syntaxUrdu": "باء سبب کے لیے ہے۔ ما اور بھلانے کے جملے کا مصدرِ مؤول باء سے محلِ جر میں ہے اور پہلے چکھنے والے فعل سے متعلق ہے، یعنی تمہاری بے اعتنائی کے سبب۔",
+        "ruleIds": [
+          "preposition",
+          "masdar-particle"
+        ]
+      },
+      "currentAuditNotes": [
+        {
+          "ref": "32:14:2",
+          "noteEnglish": "The QAC segment tags ma REL and derives pos=pronoun, but the primary ayah syntax explicitly calls this ma masdariyya. The lesson follows that syntax: the interpreted masdar is governed by causal bi and attaches to dhuqu. The fixed derived pos is not altered. The resulting posUrdu validator warning is intentional: calling this a relative pronoun in the lesson would contradict the primary ayah irab."
+        }
+      ],
+      "primaryVerseEvidence": [
+        "جملة «فذوقوا» معطوفة على مقول القول المتقدم، ومفعول «ذوقوا» محذوف أي: العذاب، والباء جارة، و«ما» مصدرية، والمصدر المجرور متعلق بـ«ذوقوا»، «هذا» اسم إشارة نعت لـ«يومكم»، مؤول بمشتق أي: المشار إليه، وجملة «إنا نسيناكم» معترضة."
+      ],
+      "primaryVerseUrl": "https://corpus.quran.com/grammar.jsp?chapter=32&verse=14",
+      "onlinePrimaryCrosschecked": true,
+      "rawQacFileCrosschecked": true,
+      "decision": "Add explicit effective-pos override; retain current contextual Urdu analysis.",
+      "chosenAnalysis": "masdar particle",
+      "reason": "This recommendation is only the first bima, 32:14:2. Do not infer a global change for 32:14:12: the latter draft adopts a relative-pronoun analysis with an omitted resumptive object, a recognized alternative.",
+      "proposedOverride": {
+        "pos": "particle",
+        "noteEnglish": "QAC tags the first بِمَا of 32:14 REL, deriving pronoun, but the primary verse i‘rab explicitly calls this ما مصدرية, with the interpreted masdar attached to فذوقوا. Follow that selected causal masdar-particle analysis. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+      },
+      "requiredChunkFieldEdits": [],
+      "auditNoteFollowup": "Retain the original raw-tag disagreement and record that the app effective type now follows this adjudication; remove any stale claim that the warning remains intentionally unresolved."
+    },
+    {
+      "id": "36:32:3",
+      "chunk": "36-c08",
+      "arabic": "لَّمَّا",
+      "currentChunkSha256": "f677e6ab4174803b8760ba85f111446622bf8bd831b75dcc8c4b53aeef83c6c8",
+      "warning": "word 36:32:3: posUrdu \"حرفِ حصر\" does not name the QAC-derived word type noun",
+      "rawDerivedPos": "noun",
+      "rawQacTags": [
+        "T"
+      ],
+      "rawWordIrab": [
+        "ظرف زمان"
+      ],
+      "currentOverride": null,
+      "currentDraft": {
+        "posUrdu": "حرفِ حصر",
+        "morphologyUrdu": "لما یہاں الا کے معنی میں حرفِ حصر ہے، سکون پر مبنی ہے۔ اسے وقت بتانے والا ظرف یا مضارع کو مجزوم کرنے والا حرف سمجھنا درست نہیں۔",
+        "syntaxUrdu": "پہلے آنے والے ان نافیہ کے ساتھ حصر پیدا کرتا ہے۔ اس کے بعد کے اسموں کا اعراب اپنے مبتدا اور خبر والے کردار کے مطابق برقرار رہتا ہے۔",
+        "ruleIds": [
+          "restriction",
+          "lamma"
+        ]
+      },
+      "currentAuditNotes": [
+        {
+          "ref": "36:32:3",
+          "noteEnglish": "The fixed derived pos is noun and the word-level tag is temporal adverb, but the ayah irab correctly identifies lamma as a restrictive particle meaning illa. The lesson follows that contextual analysis."
+        }
+      ],
+      "primaryVerseEvidence": [
+        "الواو عاطفة، «إن» نافية، «كل» مبتدأ، «لما» أداة حصر بمعنى «إلا»، «جميع» خبر «كل»، «لدينا» ظرف مكان متعلق بـ«محضرون»، «محضرون» خبر ثان، والجملة معطوفة على جملة «أَهْلَكْنَا»."
+      ],
+      "primaryVerseUrl": "https://corpus.quran.com/grammar.jsp?chapter=36&verse=32",
+      "onlinePrimaryCrosschecked": true,
+      "rawQacFileCrosschecked": true,
+      "decision": "Add explicit effective-pos override; retain current contextual Urdu analysis.",
+      "chosenAnalysis": "restrictive particle",
+      "reason": "The mustafa0x fork independently tags this occurrence EXP/particle; the nominal subjects and predicates keep their own syntactic cases.",
+      "proposedOverride": {
+        "pos": "particle",
+        "noteEnglish": "QAC tags لَّمَّا T, deriving noun, but the primary 36:32 verse i‘rab explicitly calls لما أداة حصر بمعنى إلا, paired with negative إن. Follow the restrictive-particle analysis, not temporal or jussive lamma. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+      },
+      "requiredChunkFieldEdits": [],
+      "auditNoteFollowup": "Retain the original raw-tag disagreement and record that the app effective type now follows this adjudication; remove any stale claim that the warning remains intentionally unresolved."
+    }
+  ],
+  "implementationRequirements": [
+    "Do not modify meta/words.json, qacSegments, qacMorphologyEnglish, raw word i‘rab, canonical sourceArabic/arabic, occurrence IDs, roots or inventories.",
+    "Apply the explicit pos override consistently to corrected source packets, validator type checks, assembled word.pos and source-audit POS counts; no runtime word may remain pronoun/noun while teaching only a particle analysis.",
+    "Keep the correction in qacCorrection/audit provenance. Do not hide the disagreement by appending an inaccurate اسم or ضمیر to posUrdu just to suppress warnings.",
+    "Rebuild every affected packet; shared override fingerprint changes require fresh independent reviews against current inputs. Update stale audit-note claims of unresolved immutable app type while preserving the raw-source discrepancy.",
+    "Constrain changes to occurrence IDs listed here. In particular do not globally relabel ma or lamma, or change the second bima in32:14 on the strength of the first bima note."
+  ],
+  "verificationLimit": "These are eight source-type adjudications, not an exhaustive morphology audit of all419ayahs/4077words. All new content remains held for actual scholarly review."
+}

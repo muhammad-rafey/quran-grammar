@@ -12,6 +12,7 @@ WORK, CHUNK = sys.argv[1], sys.argv[2]
 surah = int(CHUNK.split('-')[0])
 plan = {p['chunk']: p for p in json.load(open(os.path.join(WORK, 'meta', 'plan.json')))}
 words_meta = json.load(open(os.path.join(WORK, 'meta', 'words.json')))
+overrides = {k: v for k, v in json.load(open(os.path.join(WORK, 'meta', 'overrides.json'))).items() if not k.startswith('_')}
 rules = json.load(open(os.path.join(WORK, 'libs', 'rules.json')))['rules']
 rule_ids = {r['id'] for r in rules}
 path = os.path.join(WORK, 'chunks', str(surah), f'{CHUNK}.json')
@@ -158,11 +159,21 @@ for w in words:
         unknown = [r for r in rids if r not in rule_ids]
         if unknown:
             err(where, f'unknown ruleIds {unknown}; use ids from libs/rules.json only')
-    is_verb = meta['pos'] == 'verb'
+    pos = overrides.get(wid, {}).get('pos', meta['pos'])
+    if pos not in ('noun', 'adjective', 'verb', 'particle', 'pronoun'):
+        err(where, 'invalid effective word type override')
+        continue
+    if pos == 'verb' and 'pos' in overrides.get(wid, {}) and (
+            not isinstance(meta.get('verb'), dict) or
+            not all(key in meta['verb'] for key in ('form', 'aspect', 'passive', 'png')) or
+            not isinstance(overrides[wid].get('lexemeKey', meta.get('lexemeKey')), str)):
+        err(where, 'verb type override lacks morphology/paradigm')
+        continue
+    is_verb = pos == 'verb'
     if is_verb:
         check_text(where, 'verbNoteUrdu', w.get('verbNoteUrdu'))
     elif 'verbNoteUrdu' in w:
-        err(where, 'verbNoteUrdu is only for verbs (this word is not a verb in the QAC-derived word type)')
+        err(where, 'verbNoteUrdu is only for verbs (this word is not a verb in the effective word type)')
     pos_urdu = w.get('posUrdu') or ''
     expect = {
         'verb': r'فعل',
@@ -170,9 +181,9 @@ for w in words:
         'adjective': r'صفت|اسم',
         'particle': r'حرف|حروف',
         'pronoun': r'ضمیر|موصول|اشارہ|اشارة',
-    }[meta['pos']]
+    }[pos]
     if not re.search(expect, pos_urdu):
-        warn(where, f'posUrdu "{pos_urdu}" does not name the QAC-derived word type {meta["pos"]}')
+        warn(where, f'posUrdu "{pos_urdu}" does not name the effective word type {pos}')
 
 # Ayahs
 ayahs = data.get('ayahs')

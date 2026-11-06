@@ -1,0 +1,59 @@
+{
+  "report": "codex-late-library-adjudication",
+  "date": "2026-11-06",
+  "reviewStatus": "independent_confirmation; both agreed fixes already applied by parent",
+  "scholarlyReview": "not_performed; all new lessons remain held",
+  "findings": [
+    {
+      "kind": "rule",
+      "key": "condition-answer",
+      "field": "explanationUrdu",
+      "severity": "major",
+      "adjudication": "accepted_and_applied",
+      "confirmedExactText": "شرطیہ جملے کا دوسرا حصہ جوابِ شرط ہے، جو بتاتا ہے کہ شرط پوری ہونے پر کیا ہوگا۔ جواب جملۂ اسمیہ، امر، نہی، قَدْ، سَ، سَوْفَ یا لَنْ وغیرہ سے شروع ہو تو اس پر فاء ضروری ہے، جسے فاءِ رابطہ کہتے ہیں؛ بعض اسمی جوابوں میں إِذَا فجائیہ اس فاء کی جگہ آتا ہے؛ کبھی جواب حذف ہوتا ہے اور سیاق اس پر دلالت کرتا ہے۔",
+      "reason": "The explicit some-nominal-answers qualification correctly allows surprise إذا to stand in place of fa without weakening the other listed answer types. English criterion already includes any conditional-answer opening, so no English change is needed.",
+      "primaryEvidence": [
+        {
+          "ayah": "23:64",
+          "url": "https://corpus.quran.com/grammar.jsp?chapter=23&verse=64",
+          "note": "Second إذا is فجائية; the clause إذا هم يجأرون is جواب الشرط."
+        },
+        {
+          "ayah": "23:77",
+          "url": "https://corpus.quran.com/grammar.jsp?chapter=23&verse=77",
+          "note": "Parallel nominal answer إذا هم فيه مبلسون has no linking fa."
+        }
+      ]
+    },
+    {
+      "kind": "lexeme",
+      "key": "{t~axa*a|VIII|ACT",
+      "field": "noteUrdu",
+      "severity": "minor",
+      "adjudication": "accepted_and_applied",
+      "oldFragment": "فاء کی ہمزہ خلافِ قیاس تاء بن کر افتعال کی تاء میں مدغم ہوئی",
+      "newFragment": "فاء کا ہمزہ خلافِ قیاس تاء بن کر افتعال کی تاء میں مدغم ہوا",
+      "confirmedExactText": "مادہ أ خ ذ (مہموز الفاء) سے بابِ افتعال ہے: اِئْتَخَذَ میں فاء کا ہمزہ خلافِ قیاس تاء بن کر افتعال کی تاء میں مدغم ہوا، اس لیے تاء مشدد اور ابتدائی الف ہمزۂ وصل ہے؛ بعض اہلِ لغت اسے ت خ ذ سے مانتے ہیں۔ متعدی ہے: ایک مفعول کے ساتھ «بنا لینا، اختیار کرنا» اور دو مفعولوں کے ساتھ «کسی کو کچھ ٹھہرا لینا»۔",
+      "reason": "Urdu ہمزہ is masculine. Possessive کا and predicate ہوا agree with that subject; later افتعال کی تاء remains feminine. Arabic morphology and paradigms are unchanged.",
+      "primaryEvidence": [
+        {
+          "title": "Qawaid-e-Mir, Tazkir-o-Tanis",
+          "url": "https://ur.wikisource.org/wiki/قواعد_میر/تذکیر_و_تانیث",
+          "note": "Letter-name paragraph explicitly includes ہمزہ among masculine letters."
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "path": "content-pipeline/libs/rules.json",
+      "sha256": "70fd701168f2a1850a20e492b28d31ce5d3c8c958fdc75ee75ff352fb9bf70a5"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "sha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de"
+    }
+  ],
+  "sharedInputsWrittenByThisAuditor": false,
+  "furtherRecommendation": "See codex-hamza-agreement-audit.json for the focused358-entry scan and35 additional exact note proposals; do not reapply the already resolved اتخذ fragment."
+}

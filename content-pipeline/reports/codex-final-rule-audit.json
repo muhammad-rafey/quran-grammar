@@ -1,0 +1,349 @@
+{
+  "report": "Independent final review of all 112 shared rule explanations against the five-Surah source scope",
+  "date": "2026-11-06",
+  "status": "Two definite learner-explanation scope corrections proposed; no shared inputs changed",
+  "scholarlyReview": "Not performed. AI review does not grant approval; every expansion lesson remains held for scholarly review.",
+  "scope": {
+    "ruleExplanationsRead": 112,
+    "sourceAyahs": 419,
+    "sourceWords": 4077,
+    "finiteVerbs": 1048,
+    "focus": [
+      "conditional governors and answer linking",
+      "mood versus clause position",
+      "complete and incomplete verbs",
+      "nominal predicates and adjective agreement",
+      "basic inflection templates versus actual false universal claims"
+    ]
+  },
+  "checkedRuleIds": [
+    "nominative",
+    "accusative",
+    "genitive",
+    "implied-case",
+    "diptote",
+    "five-nouns",
+    "dual",
+    "sound-plural",
+    "feminine-plural",
+    "broken-plural",
+    "definite",
+    "indefinite",
+    "proper-noun",
+    "feminine-marker",
+    "number-words",
+    "perfect",
+    "imperfect",
+    "imperative",
+    "prohibition",
+    "passive",
+    "future",
+    "qad",
+    "emphatic-nun",
+    "jussive",
+    "subjunctive",
+    "five-verbs",
+    "weak-verb",
+    "hamzated",
+    "doubled",
+    "quadriliteral",
+    "derived-form",
+    "assimilation",
+    "kana",
+    "kada-asa",
+    "praise-blame",
+    "exclamation",
+    "nun-wiqaya",
+    "participle",
+    "verbal-noun",
+    "comparative",
+    "intensive",
+    "resembling-adjective",
+    "noun-of-place-time",
+    "verb-like-noun",
+    "subject-pronoun",
+    "object-pronoun",
+    "pronoun",
+    "independent-pronoun",
+    "separating-pronoun",
+    "pronoun-of-matter",
+    "relative",
+    "demonstrative",
+    "nominal",
+    "verbal-sentence",
+    "subject",
+    "object",
+    "two-objects",
+    "zanna",
+    "inna",
+    "inna-sisters",
+    "lightened-particle",
+    "haal",
+    "tamyiz",
+    "cognate-object",
+    "purpose-object",
+    "adverb",
+    "idh",
+    "quoted-speech",
+    "parenthetical",
+    "fronted-object",
+    "fronting",
+    "elision",
+    "ishtighal",
+    "tanazu",
+    "idafa",
+    "adjective",
+    "badal",
+    "tawkid",
+    "conjunction",
+    "resumption",
+    "preposition",
+    "extra-particle",
+    "vocative",
+    "condition",
+    "conditional-jazm",
+    "law-condition",
+    "lamma",
+    "condition-answer",
+    "oath",
+    "emphatic-lam",
+    "purpose-lam",
+    "imperative-lam",
+    "lam-jussive",
+    "lan-negation",
+    "negation",
+    "negative-in",
+    "la-generic",
+    "restriction",
+    "exception",
+    "interrogative",
+    "kam",
+    "equalization",
+    "masdar-particle",
+    "explanatory-an",
+    "answer-particle",
+    "surprise-idha",
+    "retraction",
+    "deterrence",
+    "detailing",
+    "exhortation",
+    "hatta",
+    "muqattaat"
+  ],
+  "inputs": [
+    {
+      "path": "libs/rules.json",
+      "sha256": "70fd701168f2a1850a20e492b28d31ce5d3c8c958fdc75ee75ff352fb9bf70a5"
+    },
+    {
+      "path": "meta/words.json",
+      "sha256": "1a3f2381f565d82b39b5a181dfce5e4d53e8f46d4974dd174cb83b0acde3cd9f"
+    },
+    {
+      "path": "meta/ayahs.json",
+      "sha256": "fd0da606c005948b916d8c3d4d6cea937cd39ffa08672ad9f2ffe7e84db3d69b"
+    },
+    {
+      "path": "reports/codex-rule-risk-audit.json",
+      "sha256": "c0b533e393cd72aed0ea6b9e65621039983f429f7958b11fa7b61e213a62dfbf"
+    },
+    {
+      "path": "reports/codex-rule-predicate-audit.json",
+      "sha256": "89e789a8a92bbf42f25066c5ce2a73b77550737c05d085ec1364e33243914320"
+    },
+    {
+      "path": "reports/codex-clause-scope-audit.json",
+      "sha256": "6094b09a8fef13860ee41cec4543f1d155418dd63ca2c972332f0853fcfd43a5"
+    },
+    {
+      "path": "reports/codex-clause-scope-confirmation.json",
+      "sha256": "97f9ea316192461298012f0314723c1779463091cd814bc9fc3a9e2a089fed93"
+    },
+    {
+      "path": "reports/codex-condition-answer-adjudication.json",
+      "sha256": "b7b3580d7777430fe0ba13d436cc3146b638554123291de5c00b59215a3cc4d9"
+    }
+  ],
+  "method": [
+    "Read every current Urdu explanation and the relevant applicability criteria, not just programmatically selected risk terms.",
+    "Read prior rule-risk, predicate, clause-scope and condition-answer reports to avoid repeating resolved findings.",
+    "Compared candidate counterexamples with complete stored ayah syntax notes and occurrence morphology; checked the primary online QAC pages for 18:24,18:40,18:58 and36:66.",
+    "Required an actual in-scope contradiction rather than the existence of an unmentioned theoretical exception or optional teaching expansion."
+  ],
+  "findings": [
+    {
+      "id": "jussive-nonjussive-conditionals-not-excluded-in-urdu",
+      "ruleId": "jussive",
+      "field": "explanationUrdu",
+      "severity": "major",
+      "decision": "Required scope qualifier; English predicate is already correct",
+      "problemEnglish": "The Urdu cause list says imperfect verbs become jussive after conditional tools without limiting those tools to jussive conditionals. The same scope contains indicative imperfects immediately after nonjussive لو, and the separate law-condition card explicitly says لو does not govern jazm. The existing English jussive predicate already makes the necessary distinction.",
+      "currentExplanationUrdu": "مضارع لَمْ، لَمَّا، لامِ امر، لائے نہی اور شرط کے ادوات کے بعد، یا امر کے جواب میں، مجزوم ہوتا ہے۔ صحیح آخر پر سکون (لَمْ يَكْتُبْ)، افعالِ خمسہ میں نون کا حذف، اور معتل آخر میں حرفِ علت کا حذف (لَمْ يَدْعُ) جزم کی علامت ہے؛ اجوف میں درمیانی حرف بھی گر سکتا ہے (لَمْ يَقُلْ)۔",
+      "minimalEdit": {
+        "old": "اور شرط کے ادوات کے بعد",
+        "replacement": "اور جازم ادواتِ شرط کے بعد"
+      },
+      "exactReplacementExplanationUrdu": "مضارع لَمْ، لَمَّا، لامِ امر، لائے نہی اور جازم ادواتِ شرط کے بعد، یا امر کے جواب میں، مجزوم ہوتا ہے۔ صحیح آخر پر سکون (لَمْ يَكْتُبْ)، افعالِ خمسہ میں نون کا حذف، اور معتل آخر میں حرفِ علت کا حذف (لَمْ يَدْعُ) جزم کی علامت ہے؛ اجوف میں درمیانی حرف بھی گر سکتا ہے (لَمْ يَقُلْ)۔",
+      "replacementCharacters": 278,
+      "appliesWhenEnglishChangeRequired": false,
+      "counterexamples": [
+        {
+          "refs": [
+            "18:58:5",
+            "18:58:6"
+          ],
+          "arabic": "لَوْ يُؤَاخِذُهُم",
+          "evidenceEnglish": "The conditional is لو and the following Form III imperfect has visible final damma, not a jussive ending. The primary morphology does not label it jussive.",
+          "primaryUrl": "https://corpus.quran.com/wordbyword.jsp?chapter=18&verse=58"
+        },
+        {
+          "refs": [
+            "32:12:1",
+            "32:12:2"
+          ],
+          "arabic": "وَلَوْ تَرَىٰٓ",
+          "evidenceEnglish": "The imperfect after لو retains the final alif and its indicative damma is implied. The source identifies the لو conditional and its elided answer.",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=32&verse=12"
+        },
+        {
+          "refs": [
+            "36:66:1",
+            "36:66:2",
+            "36:67:1",
+            "36:67:2"
+          ],
+          "arabic": "وَلَوْ نَشَآءُ",
+          "evidenceEnglish": "Both adjacent لو conditionals use نشاء with visible final damma. These are further in-scope indicative counterexamples.",
+          "primaryUrl": "https://corpus.quran.com/wordbyword.jsp?chapter=36&verse=66"
+        }
+      ]
+    },
+    {
+      "id": "kada-asa-complete-asa-not-incomplete-ism-khabar",
+      "ruleId": "kada-asa",
+      "field": "explanationUrdu",
+      "severity": "major",
+      "decision": "Required qualification of incomplete use and short complete-use contrast",
+      "problemEnglish": "The Urdu description assigns the ism/khabar construction to كاد and عسى without limiting it to their incomplete use. The English predicate intentionally covers both alternatives and explicitly follows the selected source on whether the أن-clause is a subject or predicate. At18:24 the source makes that clause the subject of complete عسى; at18:40 it is the predicate of incomplete عسى. The learner card should not teach only the latter operation as universal.",
+      "currentExplanationUrdu": "كَادَ «قریب تھا» اور عَسَى «امید ہے، ممکن ہے» افعالِ مقاربہ و رجا ہیں؛ یہ اسم کو رفع دیتے ہیں اور ان کی خبر عموماً مضارع کا جملہ ہوتی ہے۔ كَادَ کی خبر اکثر أَنْ کے بغیر اور عَسَى کی أَنْ کے ساتھ آتی ہے؛ كَادَ پر نفی ہو تو مطلب ہے کہ کام بمشکل ہوا یا ہوا ہی نہیں۔",
+      "minimalEdits": [
+        "Qualify the ism/khabar operation with ناقص استعمال میں.",
+        "Add the attested complete عسى case: the أن-clause is its فاعل, not its خبر."
+      ],
+      "exactReplacementExplanationUrdu": "كَادَ «قریب تھا» اور عَسَى «امید ہے، ممکن ہے» افعالِ مقاربہ و رجا ہیں؛ ناقص استعمال میں یہ اسم کو رفع دیتے ہیں اور خبر عموماً مضارع کا جملہ ہوتی ہے۔ كَادَ کی خبر اکثر أَنْ کے بغیر اور عَسَى کی أَنْ کے ساتھ آتی ہے؛ عَسَى کبھی تامہ بھی ہوتا ہے، تب أَنْ والا مصدرِ مؤول اس کا فاعل ہوتا ہے۔ كَادَ پر نفی ہو تو کام بمشکل ہوا یا ہوا ہی نہیں۔",
+      "replacementCharacters": 335,
+      "appliesWhenEnglishChangeRequired": false,
+      "counterexamples": [
+        {
+          "refs": [
+            "18:24:10",
+            "18:24:11",
+            "18:24:12"
+          ],
+          "analysisEnglish": "The primary ayah analysis assigns the interpreted masdar headed by أن the subject position of عسى. This is complete عسى, without a separate ism/khabar pair.",
+          "sourceFragment": "والمصدر «أن يهدين» فاعل عسى",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=24"
+        },
+        {
+          "refs": [
+            "18:40:1",
+            "18:40:2",
+            "18:40:3",
+            "18:40:4"
+          ],
+          "analysisEnglish": "Contrast case: ربي is the ism and the interpreted masdar headed by أن is explicitly the khabar of عسى. The proposed qualification preserves this standard incomplete construction.",
+          "sourceFragment": "والمصدر «أن يؤتين» خبر «عسى»",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=40"
+        }
+      ]
+    }
+  ],
+  "resolvedFindingsNotRepeated": [
+    {
+      "cards": [
+        "proper-noun",
+        "derived-form",
+        "adjective"
+      ],
+      "reason": "The current predicates already contain the adjudicated diptote diagnostic, Form XI scope and whole-clause agreement qualifications."
+    },
+    {
+      "cards": [
+        "badal",
+        "object"
+      ],
+      "reason": "The current learner explanations and predicates already distinguish whole-clause syntactic positions from their internal inflection."
+    },
+    {
+      "cards": [
+        "condition-answer"
+      ],
+      "reason": "The current Urdu explanation now permits surprise إذا in some nominal answers, matching23:64/23:77. The pending audit was not counted as a new finding."
+    },
+    {
+      "cards": [
+        "restriction",
+        "idafa",
+        "la-generic"
+      ],
+      "reason": "Earlier resolved scope corrections remain in place; no new definite attested contradiction was found."
+    }
+  ],
+  "notRequiredChanges": [
+    {
+      "cards": [
+        "passive",
+        "weak-verb"
+      ],
+      "reason": "The passive formation paragraph supplies the underlying basic vowel pattern; the verified قيل paradigm explicitly derives the hollow form from قول with vowel transfer. Do not treat omission of a complete weak-conjugation table as a new universal-scope defect."
+    },
+    {
+      "cards": [
+        "idh"
+      ],
+      "reason": "At32:12 the source itself describes the past-time adverb used rhetorically to make the coming scene certain. That is not evidence that the grammatical past-time description is false."
+    },
+    {
+      "cards": [
+        "tamyiz",
+        "kam"
+      ],
+      "reason": "The source-selected analysis of من القرون at32:26/36:31 is attachment to an estimated adjective of كم, and the criterion already records the alternative genitive-tamyiz analysis. No forced tag broadening is justified."
+    },
+    {
+      "cards": [
+        "nominal",
+        "adjective",
+        "verbal-sentence",
+        "inna",
+        "kana"
+      ],
+      "reason": "Original nominative positions, simple-word agreement and incomplete-verb operations are appropriately scoped by their criteria. General/usually wording and explicit clausal alternatives do not require an exhaustive exception catalogue."
+    },
+    {
+      "cards": [
+        "subjunctive",
+        "hatta",
+        "imperative",
+        "five-verbs",
+        "emphatic-nun"
+      ],
+      "reason": "No additional definite contrary use was found within the419ayah source scope. Emphatic-nun separation is already explained by its dedicated card; no in-scope feminine-plural finite-verb counterexample was found."
+    }
+  ],
+  "mechanicalChecks": {
+    "currentLibraryValidator": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline rules",
+    "currentLibraryResult": "Passed with zero errors and zero warnings",
+    "proposedExplanationLengthLimits": "Both proposals fit the existing40–420character range; no shared library was edited."
+  },
+  "counts": {
+    "definiteNewFindings": 2,
+    "proposedSharedExplanationCorrections": 2,
+    "proposedApplicabilityCorrections": 0,
+    "scholarlyApprovalsGranted": 0
+  },
+  "limits": [
+    "This is an independent AI audit, not scholarly certification or a proof that no further source disagreement can ever arise.",
+    "Only the named report file was written. No shared library, guide, source, chunk, registry, approval record or checkpoint was changed. No external authoring CLI was invoked."
+  ]
+}

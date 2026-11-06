@@ -1,5 +1,5 @@
 {
- "_about": "Occurrence-level corrections to QAC 0.4 tags, adjudicated from the vocalised Uthmani word, the governing particle, QAC's own ayah notes, the mustafa0x fork, standard i'rab and the verb-lexeme reviewers' evidence. Applied by build_packets.py (packet data and a note to authors) and assemble.py (paradigm card selection).",
+ "_about": "Occurrence-level QAC 0.4 corrections and selected contextual analyses, adjudicated from the vocalised Uthmani word, governing particles, primary verse i'rab, the reference fork and reviewed lexemes. Raw metadata and source tags stay unchanged. Applied consistently to packets, validation, assembly and audit counts; every change is documented.",
  "18:1:11": {
   "case": "ACC",
   "noteEnglish": "QAC tags عِوَجَا nominative, but it ends in fatha + alif (tanwin al-fath, read ʿiwajā at Hafs' saktah) and is the object of jussive يَجْعَل: accusative."
@@ -263,5 +263,37 @@
  "23:64:4": {
   "case": "ACC",
   "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. مُتْرَفِيهِم is the object of أَخَذْنَا: accusative, marked by the sound-plural ya (nun dropped before the pronoun)."
+ },
+ "18:12:7": {
+  "pos": "particle",
+  "noteEnglish": "QAC tags the stem of لِمَا REL, deriving pronoun, but the primary 18:12 verse i‘rab explicitly calls ما مصدرية. Follow the selected masdar-particle analysis: lam governs the interpreted masdar, attached to an implied hal of amadan. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+ },
+ "18:22:19": {
+  "pos": "particle",
+  "noteEnglish": "QAC tags مَّا REL, deriving pronoun, but the primary 18:22 verse analysis makes قليل the subject of ما يعلمهم إلا قليل and إلا restrictive. Ma is the non-governing negative particle here, not a relative noun. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+ },
+ "18:26:4": {
+  "pos": "particle",
+  "noteEnglish": "QAC tags the stem of بِمَا REL, deriving pronoun, but the primary 18:26 verse i‘rab explicitly calls ما مصدرية and لبثوا the clause of the حرفي موصول. Follow the selected masdar-particle analysis, with the interpreted masdar governed by bi and attached to أعلم. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+ },
+ "23:26:4": {
+  "pos": "particle",
+  "noteEnglish": "QAC tags the stem of بِمَا REL, deriving pronoun, but the primary 23:26 verse i‘rab explicitly calls ما مصدرية and bi causal, with the interpreted masdar attached to انصرني. Follow that selected contextual analysis. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+ },
+ "23:39:4": {
+  "pos": "particle",
+  "noteEnglish": "QAC tags the stem of بِمَا REL, deriving pronoun, but the primary 23:39 verse i‘rab explicitly calls ما مصدرية, with كذبون its clause and the interpreted masdar attached to انصرني. Follow that selected contextual analysis. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+ },
+ "32:9:13": {
+  "pos": "particle",
+  "noteEnglish": "QAC tags مَّا REL, deriving pronoun, but the primary 32:9 verse i‘rab explicitly calls ما زائدة, after قليلا functioning as نائب مفعول مطلق. Follow the extra-particle analysis, with no case position or relative clause. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+ },
+ "32:14:2": {
+  "pos": "particle",
+  "noteEnglish": "QAC tags the first بِمَا of 32:14 REL, deriving pronoun, but the primary verse i‘rab explicitly calls this ما مصدرية, with the interpreted masdar attached to فذوقوا. Follow that selected causal masdar-particle analysis. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+ },
+ "36:32:3": {
+  "pos": "particle",
+  "noteEnglish": "QAC tags لَّمَّا T, deriving noun, but the primary 36:32 verse i‘rab explicitly calls لما أداة حصر بمعنى إلا, paired with negative إن. Follow the restrictive-particle analysis, not temporal or jussive lamma. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
  }
 }
