@@ -1,0 +1,102 @@
+{
+  "review": "Post-handoff independent AI confirmation of five verb-paradigm fixes",
+  "date": "2026-11-06",
+  "status": "confirmed-with-source-cautions",
+  "scope": [
+    "mak~a|II|ACT",
+    "n~aZara|I|ACT",
+    ">axa*a|I|PASS",
+    ">uEiydu|IV|ACT",
+    "sabaqa|I|ACT"
+  ],
+  "findings": [],
+  "confirmed": [
+    {
+      "key": "mak~a|II|ACT",
+      "file": "libs/lexemes/lex-10.json",
+      "result": "The citation forms and Form II pattern are correct. The revised note correctly distinguishes the assimilation of the final root nun before the subject suffix at 18:84:2 and before nun al-wiqayah at 18:95:3 from the unassimilated root nun before emphatic nun in 24:55:16. The QAC stem label omits the final root nun because of segmentation; it must not become the learner's dictionary lemma.",
+      "evidence": [
+        "meta/words.json:18:84:2",
+        "meta/words.json:18:95:3",
+        "qac/qac04-lfs.txt:(24:55:16:3)",
+        "https://corpus.quran.com/grammar.jsp?chapter=18&verse=95"
+      ]
+    },
+    {
+      "key": "n~aZara|I|ACT",
+      "file": "libs/lexemes/lex-11.json",
+      "result": "The sound-root classification, nasara vowel class and citation forms are correct. The revised note covers both the suspended interrogative-clause object at 18:19:27 and the direct noun object with the sense of waiting at 36:49:2. The Quranic imperfect vowels support the selected class. The QAC lemma's leading shadda is not a citation-form root doubling.",
+      "evidence": [
+        "meta/words.json:18:19:27",
+        "meta/words.json:36:49:2",
+        "https://corpus.quran.com/grammar.jsp?chapter=18&verse=19",
+        "sources/qac-grammar/grammar-36.json:49"
+      ]
+    },
+    {
+      "key": ">axa*a|I|PASS",
+      "file": "libs/lexemes/lex-01.json",
+      "result": "The passive perfect and imperfect forms and their pattern are correct. The revised note now permits a prepositional phrase in the syntactic position of deputy subject, matching the QAC analysis at 55:41. It no longer requires an overt nominative noun in this occurrence.",
+      "evidence": [
+        "meta/words.json:55:41:4",
+        "https://corpus.quran.com/grammar.jsp?chapter=55&verse=41"
+      ]
+    },
+    {
+      "key": ">uEiydu|IV|ACT",
+      "file": "libs/lexemes/lex-08.json",
+      "result": "The hollow-waw Form IV citation forms and weak-letter account are correct. The stated jussive analysis of 18:20:7 follows its coordination with the conditional answer at 18:20:5. Both occurrence corrections are present in meta/overrides.json. A direct count of QAC's verb rows confirms the evidence field's 16 Quran-wide imperfect occurrences.",
+      "evidence": [
+        "meta/words.json:18:20:7",
+        "meta/overrides.json:18:20:3",
+        "meta/overrides.json:18:20:5",
+        "meta/overrides.json:18:20:7",
+        "qac/qac04-lfs.txt:LEM:>uEiydu",
+        "https://corpus.quran.com/grammar.jsp?chapter=18&verse=20"
+      ]
+    },
+    {
+      "key": "sabaqa|I|ACT",
+      "file": "libs/lexemes/lex-05.json",
+      "result": "The daraba vowel class follows the kasra imperfect attested at 23:43:2. The revised note correctly includes both the transitive construction at 23:43 and the intransitive decree construction at 23:27. The latter's subject is 23:27:24, with no direct object. The lexical-variability caution is now consistent with the cross-reference in nasolaxu|I|ACT.",
+      "evidence": [
+        "meta/words.json:23:27:22",
+        "meta/words.json:23:27:24",
+        "meta/words.json:23:43:2",
+        "meta/words.json:23:43:5",
+        "https://corpus.quran.com/grammar.jsp?chapter=23&verse=43",
+        "libs/lexemes/lex-05.json:nasolaxu|I|ACT"
+      ]
+    }
+  ],
+  "sourceCautions": [
+    {
+      "severity": "informational",
+      "ref": "18:20:3,18:20:5,18:20:7",
+      "issue": "The raw metadata, QAC segments, generated English morphology and word-level Arabic irab retain the Corpus subjunctive classification. The packet builder deliberately preserves those raw references while correcting verb.mood and adding qacCorrection. This is expected source provenance, not a remaining library error.",
+      "requiredAction": "Rebuild packets before authoring; reviewers must follow the adjudicated jussive correction and require an audit note. Do not infer that agreement between the QAC file and its fork independently confirms the incorrect mood."
+    },
+    {
+      "severity": "informational",
+      "ref": "mak~a|II|ACT,n~aZara|I|ACT,>uEiydu|IV|ACT",
+      "issue": "Raw source lemma labels can be truncated, carry recitation assimilation, or use an inflected form. All three selected library entries correctly supply canonical citation forms.",
+      "requiredAction": "Chunk authors should use the verified paradigm citation form and record source disagreements rather than copy lemmaQac mechanically."
+    }
+  ],
+  "validation": {
+    "commands": [
+      "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline lexemes lex-01",
+      "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline lexemes lex-05",
+      "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline lexemes lex-08",
+      "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline lexemes lex-10",
+      "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline lexemes lex-11"
+    ],
+    "result": "All five batches passed with zero errors and zero warnings."
+  },
+  "limits": [
+    "This is an independent AI confirmation of the five named post-confirmation edits, not a fresh semantic review of all 358 paradigms.",
+    "QAC grammar pages were checked against the cached source copies and current web responses where available. The direct word-page fetches for 23:27:24 and 24:55:14 were unavailable; the local complete QAC source was used, and the emphatic occurrence is correctly indexed at 24:55:16.",
+    "The lexical-variability statements for sabaqa were checked for consistency with the existing library review record and Quranic vowels; no new independent inspection of the cited printed lexica was completed.",
+    "Mechanical validation and AI confirmation do not constitute scholarly approval. All new lessons remain withheld from live publication pending scholarly review."
+  ]
+}

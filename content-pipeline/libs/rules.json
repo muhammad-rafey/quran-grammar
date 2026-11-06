@@ -447,7 +447,7 @@
   {
    "id": "idafa",
    "titleUrdu": "مرکبِ اضافی",
-   "explanationUrdu": "دو اسموں کی نسبت میں پہلا مضاف اور دوسرا مضاف الیہ ہوتا ہے، جیسے كِتَابُ اللَّهِ «اللہ کی کتاب»۔ مضاف الیہ مجرور ہوتا ہے اور مضاف پر نہ ال آتا ہے نہ تنوین، جبکہ مضاف کا اپنا اعراب جملے میں کردار سے طے ہوتا ہے؛ ضمیر یا پورا جملہ بھی مضاف الیہ بن سکتا ہے۔",
+   "explanationUrdu": "دو اسموں کی نسبت میں پہلا مضاف اور دوسرا مضاف الیہ ہوتا ہے، جیسے كِتَابُ اللَّهِ «اللہ کی کتاب»۔ مضاف الیہ مجرور ہوتا ہے اور مضاف کا اپنا اعراب اس کے کردار سے طے ہوتا ہے۔ عام معنوی اضافت میں مضاف پر نہ ال آتا ہے نہ تنوین؛ لفظی اضافت میں بعض شرطوں کے ساتھ ال آ سکتا ہے۔ ضمیر یا پورا جملہ بھی مضاف الیہ بن سکتا ہے۔",
    "appliesWhenEnglish": "Tag the muḍāf and/or the muḍāf ilayh of an iḍāfa (noun + noun, noun + pronoun, adverb + noun or clause). Pair with genitive for the case and with pronoun for a possessive suffix."
   },
   {
@@ -579,8 +579,8 @@
   {
    "id": "la-generic",
    "titleUrdu": "لائے نفیِ جنس",
-   "explanationUrdu": "لائے نفیِ جنس پوری جنس کی مکمل نفی کرتا ہے، جیسے لَا شَكَّ فِيهِ «اس میں کوئی بھی شک نہیں»۔ یہ إِنَّ کی طرح عمل کرتا ہے: اس کا اسم نکرہ ہوتا ہے اور مفرد ہو تو فتحہ پر مبنی اور تنوین کے بغیر، جبکہ خبر مرفوع ہوتی ہے یا جار و مجرور کی صورت میں آتی ہے۔",
-   "appliesWhenEnglish": "Tag لَا that negates a whole class (لا النافية للجنس) and its ism — an indefinite noun with fatḥa and no tanwīn right after لَا (لَا مُبَدِّلَ، لَا قُوَّةَ، لَا بُرْهَٰنَ، فَلَآ أَنسَابَ، لَا رَيْبَ). Not for ordinary negating لَا (negation) or prohibition."
+   "explanationUrdu": "لائے نفیِ جنس پوری جنس کی مکمل نفی کرتا ہے، جیسے لَا شَكَّ فِيهِ «اس میں کوئی بھی شک نہیں»۔ اس کا اسم نکرہ ہوتا ہے؛ مضاف یا شبیہ بالمضاف نہ ہو تو مفرد کہلاتا ہے اور اپنی علامتِ نصب پر مبنی ہوتا ہے۔ واحد اور جمعِ تکسیر میں فتحہ، تثنیہ اور جمع مذکر سالم میں یاء ہوتی ہے؛ جمع مؤنث سالم میں کسرہ یا فتحہ جائز ہے۔ مضاف اور شبیہ بالمضاف اسم منصوب ہوتا ہے، اور خبر مرفوع یا جار و مجرور ہوتی ہے۔",
+   "appliesWhenEnglish": "Tag لَا that negates a whole class (لا النافية للجنس) and its immediately following indefinite ism. A non-muḍāf, non-shabīh bi-l-muḍāf ism (technically مفرد, including duals/plurals) is built on its accusative sign; the current examples use fatḥa without tanwīn (لَا مُبَدِّلَ، لَا قُوَّةَ، لَا بُرْهَٰنَ، فَلَآ أَنسَابَ، لَا رَيْبَ). A muḍāf or shabīh bi-l-muḍāf ism is accusative rather than built. Not for ordinary negating لَا (negation) or prohibition."
   },
   {
    "id": "restriction",

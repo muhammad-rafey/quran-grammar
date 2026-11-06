@@ -1,5 +1,5 @@
 import { DatabaseSync } from 'node:sqlite';
-import { existsSync, mkdirSync, renameSync, rmSync } from 'node:fs';
+import { mkdirSync, renameSync, rmSync } from 'node:fs';
 import { dirname } from 'node:path';
 import type { StudyData } from '@quran-grammar/core';
 import { createTableStatements } from './schema';
@@ -58,7 +58,6 @@ export function writeSqlite(file: string, studies: readonly StudyData[], version
     throw error;
   }
   db.close();
-  if (existsSync(file)) rmSync(file);
   renameSync(temporary, file);
 }
 

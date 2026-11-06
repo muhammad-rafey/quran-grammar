@@ -140,3 +140,22 @@ icon, and complete scholar review of the teaching draft.
   word deep link against the public API. It rendered يُوَسْوِسُ, the quadriliteral
   root و س و س, root meaning, dictionary entry, and the correct 14/20 counter.
   App-specific logs remained free of JavaScript and Android fatal errors.
+
+### Android interaction verification on 2026-11-06
+
+- Rebuilt the current branch's standalone test APK and installed it on the
+  `repro36` Android 36 emulator. Metro was stopped for the interaction checks.
+- Checked Arabic/Urdu rendering, the initially collapsed filter panel, and an
+  ayah-picker jump from Al-Fatihah 1 to 7 with the correct visible words.
+- Opened the Juz catalog: Juz 1 and 30 are partial previews; unavailable Juz
+  entries are disabled. Expanded Juz 30 and selected Al-Fil; its reader reset
+  to ayah 1 and showed its own occurrences.
+- Opened Al-Fil's first word, moved to the second occurrence, and checked the
+  `2 / 23` counter, تَرَ, contextual Urdu meaning and ر أ ي root analysis.
+- Changed the interface to Urdu, cold-launched the standalone app, and verified
+  the saved preference and Urdu ayah numeral. Restored English afterward.
+- Evidence remains local in `build/verification/android-initial.png` and
+  `build/verification/android-word.png`. App-specific fatal/JavaScript logs were
+  checked separately. This is an Android emulator check of the 11-Surah edition;
+  the five draft Surahs are not registered, so their long-chapter scrolling and
+  cross-Juz picker checks remain pending. No new iOS device test was performed.

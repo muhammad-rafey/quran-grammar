@@ -14,6 +14,7 @@ meta = os.path.join(WORK, 'meta')
 lexemes = json.load(open(os.path.join(meta, 'lexemes.json')))
 roots = json.load(open(os.path.join(meta, 'roots.json')))
 words = json.load(open(os.path.join(meta, 'words.json')))
+overrides = json.load(open(os.path.join(meta, 'overrides.json')))
 LEX_BATCH, ROOT_BATCH = 30, 45
 
 # Keep every lexeme of one root in the same batch so forms of a family stay consistent.
@@ -30,6 +31,32 @@ for root in sorted(by_root):
 if current:
     lex_batches[f'lex-{len(lex_batches) + 1:02d}'] = current
 
+# Route every occurrence through the adjudicated key without changing raw meta.
+# This also removes a split occurrence from the original, incorrect paradigm.
+effective_occurrences = {}
+for raw_key, lex in lexemes.items():
+    for raw in lex['occurrences']:
+        occurrence = dict(raw)
+        fix = overrides.get(raw['id'], {})
+        key = fix.get('lexemeKey', raw_key)
+        if fix:
+            occurrence['qacCorrection'] = fix
+            for field in ('mood', 'png'):
+                if field in fix:
+                    occurrence[field] = fix[field]
+        effective_occurrences.setdefault(key, []).append(occurrence)
+
+# Adjudication can split a Corpus lemma into a new lexeme. Keep these in their
+# own batch so rebuilding metadata never drops the reviewed split or renumbers
+# the original authoring batches.
+extra_occurrences = {}
+for wid, fix in overrides.items():
+    key = fix.get('lexemeKey') if isinstance(fix, dict) else None
+    if key and key not in lexemes:
+        extra_occurrences.setdefault(key, []).append(wid)
+if extra_occurrences:
+    lex_batches['lex-extra'] = sorted(extra_occurrences)
+
 root_keys = sorted(roots)
 count = -(-len(root_keys) // ROOT_BATCH)
 size = -(-len(root_keys) // count)
@@ -45,8 +72,20 @@ os.makedirs(os.path.join(WORK, 'inputs', 'roots'), exist_ok=True)
 for name, keys in lex_batches.items():
     items = []
     for k in keys:
+        if k in extra_occurrences:
+            # Source metadata stays verbatim; make the correction explicit in
+            # the reviewer input rather than silently inheriting the bad lemma.
+            items.append({
+                'key': k,
+                'occurrenceCount': len(extra_occurrences[k]),
+                'occurrences': [
+                    {'id': wid, 'word': words[wid], 'qacCorrection': overrides[wid]}
+                    for wid in sorted(extra_occurrences[k])
+                ],
+            })
+            continue
         lex = dict(lexemes[k])
-        occ = lex['occurrences']
+        occ = effective_occurrences.get(k, [])
         lex['occurrenceCount'] = len(occ)
         lex['occurrences'] = occ[:8]
         for o in lex['occurrences']:

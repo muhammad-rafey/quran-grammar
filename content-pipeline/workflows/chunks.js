@@ -18,9 +18,10 @@ const AUTHOR = {
   properties: {
     validatorOk: { type: 'boolean' },
     words: { type: 'integer' },
+    ayahs: { type: 'integer' },
     notes: { type: 'string' },
   },
-  required: ['validatorOk', 'words', 'notes'],
+  required: ['validatorOk', 'words', 'ayahs', 'notes'],
 }
 const ISSUE = {
   type: 'object',
@@ -97,7 +98,7 @@ Inputs:
 Write ${p.file} exactly in the guide's JSON format. Work ayah by ayah; before writing each word, read its QAC segments, qacMorphologyEnglish and qacIrabArabic. Every verb's verbNoteUrdu must agree with its lexeme entry and the occurrence's QAC aspect, mood, voice and person. Copy Arabic quotations exactly from the packet's arabic strings.
 Then run: ${p.validate}
 Fix every error and re-run until it passes; take warnings seriously. Finally re-read the whole file once against the guide's accuracy checklist and correct anything wrong.
-Return validatorOk, the number of words written, and notes on alternative analyses or uncertainties.`
+Return validatorOk, the numbers of words and ayahs written, and notes on alternative analyses or uncertainties.`
 }
 
 function grammarReview(p) {
@@ -161,67 +162,104 @@ ${SEVERITY}`
 
 async function runChunk(chunk) {
   const p = paths(chunk)
+  const blockingReasons = []
+  const libraryIssues = []
+  const confirms = []
+  const issues = []
+  const count = (list, sev) => list.filter((x) => x.severity === sev).length
+  const validAuthor = (r) => r?.validatorOk === true && Number.isSafeInteger(r.words) && r.words > 0
+    && Number.isSafeInteger(r.ayahs) && r.ayahs > 0
+  const validReview = (r) => r && Array.isArray(r.issues) && Array.isArray(r.libraryIssues)
+    && r.checkedWords === authored.words && r.checkedAyahs === authored.ayahs
+  const result = (authored, fixed, lastFix) => ({
+    chunk,
+    status: blockingReasons.length ? 'blocked' : 'ai-reviewed',
+    scholarlyReview: 'pending',
+    blockingReasons,
+    authored,
+    reviewIssues: issues.length,
+    reviewCritical: count(issues, 'critical'),
+    reviewMajor: count(issues, 'major'),
+    fix1: fixed ? { applied: fixed.applied, rejected: fixed.rejected.length, validatorOk: fixed.validatorOk } : null,
+    confirms,
+    finalFix: lastFix === fixed ? null : lastFix,
+    libraryIssues,
+  })
   let authored = await agent(authorPrompt(p), { label: `${chunk}:author`, phase: 'Author', schema: AUTHOR })
-  if (!authored || !authored.validatorOk) {
+  if (!validAuthor(authored)) {
     authored = await agent(
       `${authorPrompt(p)}\n\nA previous attempt may have left ${p.file} incomplete or invalid. Inspect it, keep what is correct, finish or repair it, and make the validator pass.`,
       { label: `${chunk}:author-retry`, phase: 'Author', schema: AUTHOR },
     )
   }
+  if (!validAuthor(authored)) {
+    blockingReasons.push('Author did not produce a validated chunk')
+    return result(authored, null, null)
+  }
   const reviews = await parallel([
     () => agent(grammarReview(p), { label: `${chunk}:verify-grammar`, phase: 'Verify', schema: ISSUES }),
     () => agent(meaningReview(p), { label: `${chunk}:verify-meaning`, phase: 'Verify', schema: ISSUES }),
   ])
-  const libraryIssues = []
-  const issues = []
   reviews.forEach((r, i) => {
-    if (!r) return
+    if (!validReview(r)) {
+      blockingReasons.push(`Missing or malformed ${i === 0 ? 'grammar' : 'meaning'} review`)
+      return
+    }
     issues.push(...r.issues.map((x) => ({ ...x, reviewer: i === 0 ? 'grammar' : 'meaning' })))
     libraryIssues.push(...r.libraryIssues)
   })
-  let fixed = { validatorOk: authored ? authored.validatorOk : false, applied: 0, rejected: [], notes: 'no issues reported' }
+  if (blockingReasons.length) return result(authored, null, null)
+  let fixed = { validatorOk: true, applied: 0, rejected: [], notes: 'no issues reported' }
   if (issues.length) {
     fixed = await agent(fixPrompt(p, issues, 1), { label: `${chunk}:fix-1`, phase: 'Fix', schema: FIXED, effort: 'high' })
   }
+  if (!fixed || fixed.validatorOk !== true || !Array.isArray(fixed.rejected)) {
+    blockingReasons.push('Initial fixer did not produce a validated result')
+    return result(authored, null, null)
+  }
   let lastIssues = issues
   let lastFix = fixed
-  const confirms = []
-  for (let round = 1; round <= 2; round++) {
+  const maxRounds = Number.isSafeInteger(args?.maxConfirmRounds) && args.maxConfirmRounds > 0
+    ? Math.min(args.maxConfirmRounds, 10) : 3
+  let confirmed = false
+  for (let round = 1; round <= maxRounds; round++) {
     const confirm = await agent(confirmPrompt(p, lastIssues, lastFix, round), {
       label: `${chunk}:confirm-${round}`,
       phase: 'Confirm',
       schema: ISSUES,
     })
-    if (!confirm) break
+    if (!validReview(confirm)) {
+      blockingReasons.push(`Missing or malformed confirmation round ${round}`)
+      break
+    }
     libraryIssues.push(...confirm.libraryIssues)
     confirms.push({ round, issues: confirm.issues })
-    if (!confirm.issues.length) break
+    if (!confirm.issues.length) {
+      confirmed = true
+      break
+    }
+    // Never finish on an unconfirmed edit, including fixes of minor findings.
+    if (round === maxRounds) break
     lastFix = await agent(fixPrompt(p, confirm.issues, round + 1), {
       label: `${chunk}:fix-${round + 1}`,
       phase: 'Fix',
       schema: FIXED,
       effort: 'high',
     })
+    if (!lastFix || lastFix.validatorOk !== true || !Array.isArray(lastFix.rejected)) {
+      blockingReasons.push(`Fixer after confirmation round ${round} failed validation`)
+      break
+    }
     lastIssues = confirm.issues
-    if (!confirm.issues.some((x) => x.severity !== 'minor')) break
   }
-  const count = (list, sev) => list.filter((x) => x.severity === sev).length
+  if (!confirmed) blockingReasons.push('No clean confirmation of the final chunk')
+  if (libraryIssues.length) blockingReasons.push('Shared library findings require adjudication')
   log(
     `${chunk}: review ${issues.length} (${count(issues, 'critical')} critical, ${count(issues, 'major')} major); confirm rounds ${confirms
       .map((c) => c.issues.length)
       .join('/')}`,
   )
-  return {
-    chunk,
-    authored,
-    reviewIssues: issues.length,
-    reviewCritical: count(issues, 'critical'),
-    reviewMajor: count(issues, 'major'),
-    fix1: { applied: fixed.applied, rejected: fixed.rejected.length, validatorOk: fixed.validatorOk },
-    confirms,
-    finalFix: lastFix === fixed ? null : lastFix,
-    libraryIssues,
-  }
+  return result(authored, fixed, lastFix)
 }
 
 const chunks = (args && args.chunks) || []

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "policy": "The five expansion Surahs are held outside the runtime until scholarly review is recorded for the exact input digest. AI review and automated validation do not grant scholarly approval.",
+  "surahs": {
+    "18": { "status": "pending", "reviewer": null, "reviewedAt": null, "evidence": null, "contentSha256": null },
+    "23": { "status": "pending", "reviewer": null, "reviewedAt": null, "evidence": null, "contentSha256": null },
+    "32": { "status": "pending", "reviewer": null, "reviewedAt": null, "evidence": null, "contentSha256": null },
+    "36": { "status": "pending", "reviewer": null, "reviewedAt": null, "evidence": null, "contentSha256": null },
+    "55": { "status": "pending", "reviewer": null, "reviewedAt": null, "evidence": null, "contentSha256": null }
+  }
+}
