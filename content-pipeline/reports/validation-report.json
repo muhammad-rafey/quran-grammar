@@ -1,0 +1,796 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-11-06",
+  "validatedChunks": 110,
+  "errors": 0,
+  "warnings": 8,
+  "notice": "Structural checks only. Eight type-label warnings reflect source/analysis disagreements and require explicit adjudication before the final review pass; do not silently alter source fields. All scholarly reviews remain pending.",
+  "chunks": [
+    {
+      "chunk": "18-c01",
+      "contentSha256": "8ab65c4155070f4acbd713f4d41d52c280c73e86efb086acba07e6c1d06bda33",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c02",
+      "contentSha256": "b6d4e4af44b99c1e168cbc68a4a660235a112044a7edef9d5966d98e7484d07c",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c03",
+      "contentSha256": "c64abc80a0c72210c94e7a103d691382ca706d7a4aa0d44cf5864d61b2dda6f6",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c04",
+      "contentSha256": "999dd3c81e58fdad06df07637d16c7f07246277f5ac545650e17ffb1782a58f2",
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "word 18:12:7: posUrdu \"حرفِ جر + حرفِ مصدری\" does not name the QAC-derived word type pronoun"
+      ]
+    },
+    {
+      "chunk": "18-c05",
+      "contentSha256": "b4fcbbcddef874fccc97160f36a26a25b635b2cfcbfe91486e38630bbb7e948f",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c06",
+      "contentSha256": "ef66d8c871c0d238ec146fe908586c7593423112b57e759b5590a5df98812631",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c07",
+      "contentSha256": "077e0943617fe2e51484ebd083dab668c1377523035bcf496b948253aff2b610",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c08",
+      "contentSha256": "6ecb4639082d9c369ce7a3e16239be342c6d516deeb0a5522e740e2d19b14657",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c09",
+      "contentSha256": "482d9947585cd2e59be87b26bab1719c8ab3aae238983489cdfaececff96e90c",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c10",
+      "contentSha256": "db6389a8fc389fd14c740cb9845b919bb0a9a4c4b9a0997f2bbcc5341efa56ee",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c11",
+      "contentSha256": "02b0ff35b426abe6c4f0881eb51308376999838fe09e4478f2b01ecc1932cd4e",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c12",
+      "contentSha256": "6b5bfbaad577f417c750188872c56f0ed2c25d22701e75cd5701ca051be449c3",
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "word 18:22:19: posUrdu \"حرفِ نفی\" does not name the QAC-derived word type pronoun"
+      ]
+    },
+    {
+      "chunk": "18-c13",
+      "contentSha256": "18674987709a5523b8120c599667b2f36f11ee5af58d374862715a65f459f32d",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c14",
+      "contentSha256": "f27886b1b7725c37398adde5bdbbb379567157d2f8a94ac4346502e4c5c320c2",
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "word 18:26:4: posUrdu \"حرفِ جر + مَا مصدریہ\" does not name the QAC-derived word type pronoun"
+      ]
+    },
+    {
+      "chunk": "18-c15",
+      "contentSha256": "49b02d8bc6f6cb7f24e72dc6bf672f0cea894961950cbbb992b2b1fc0b8c26a5",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c16",
+      "contentSha256": "0cf30feccd065f7e6bb9f6ac0e254eda9f7c4ecd178a5ddbc09509ce45ed3a98",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c17",
+      "contentSha256": "7e9737efe93071971552f6cd40f74f5ef0a2323c7d40e429249c1a9724aa0faa",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c18",
+      "contentSha256": "622f5d6358d90d58b7aaa9d4ab67605b70dbf057c17a14322f43d9bf69c2649e",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c19",
+      "contentSha256": "0ed4e1fbd0abdbde1f4433aa87e873ddc72101a92c6c332bc497e0a310370841",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c20",
+      "contentSha256": "c8315e68ef823360e5e617c4faa104be4b7535ba9d096e9ae82da1dc4e338dbd",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c21",
+      "contentSha256": "32cd741c1bd23be121652ad1626adecfd57d41a005ba5a54376f79ead28b85ee",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c22",
+      "contentSha256": "290ed780210fd06b061cb129c89bf7deea24b67d4824352ecda2dc26d13e16bf",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c23",
+      "contentSha256": "1e73c5905b87aa0f252cc91426d9caaa63991baf855a3306497ad8378848fd06",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c24",
+      "contentSha256": "0f18da92464688d4156b4d6eabc52764aa9ccbdccb8fbd1c07de7d559c6e19df",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c25",
+      "contentSha256": "1edf1d8374f4adaaa092a1fa500052b5f1cf0ea42aebaef66f4674c5459153d1",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c26",
+      "contentSha256": "68c6e90b19c598e9a615ed2dce07b0143d2ed0e9754a7c87d74f022b396b5e1d",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c27",
+      "contentSha256": "a5763f54ba48e2cc0ac7709ce077c0dcf3d980f3d5e237fe0aaacfb15e1417a3",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c28",
+      "contentSha256": "289772db5e032a6d9ba83e100fe6528589a293a721c4f4606093f0cb72cec897",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c29",
+      "contentSha256": "f39c34b8413b9e60c71268e913b335c681d877e282ef1262ac797fc6bb74ec1d",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c30",
+      "contentSha256": "a55cb791ab81bfc122e524f9255ccc9a7738a8615551525d35f84d100f50448f",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c31",
+      "contentSha256": "7a0043367730174aa8b07c6c82585e15be5c41f6c139b58e836e3c0b74335694",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c32",
+      "contentSha256": "d4af442ea941fb3939e2368c590ee1b5777123edbacf523ff42ec3879fe3074e",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c33",
+      "contentSha256": "e63d3c04329af5f44434743cacda1b24a24b837f0a20b5ebb1ce5617167f717b",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c34",
+      "contentSha256": "28e2e51127ad5d4c87e4db025d0b211e2ddc59908ef35268fc3b0c6fb4a220e0",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c35",
+      "contentSha256": "e3965db8dc762e6fe0e510681b63b8efc7e964b2e59775f6cc091f9edd9a93be",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c36",
+      "contentSha256": "c0b2951217fb2326e3989fe6e19ec0c6128aaf905187fd5f0028bee5563a3c08",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c37",
+      "contentSha256": "df11f24d820f156ef3fb46e59889359196447ac0bacfce912722f41b90a182e6",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c38",
+      "contentSha256": "3c01b3b6d5033575cf669c5a92f6a3b7007399750f168f729bd037982cd8afaa",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c39",
+      "contentSha256": "b59d35bbe0e86f146c0dbbfc84a66b04ff9d0eae1df0db3249c413c1136f0a2a",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c40",
+      "contentSha256": "68098a4c80ca67576704bab18a002df645998a1a2a2354be9811e6a15e827c4d",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c41",
+      "contentSha256": "d570a6baa6be4016b4d881f641c03bac8229a5ea4ab7f9029e9bef9cc2afb016",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c42",
+      "contentSha256": "760d6b36085e9b82d3ec936d9438cf4767661020d37aacdb06ba18a17cb104c5",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c43",
+      "contentSha256": "5fee5d32cecfb94f5bf13e0950374cd48f664d46fe83b6a9065d4983dc80806b",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "18-c44",
+      "contentSha256": "8bb63c5eaa1c57810c9305f2b2e85f6f885f1362b32dbed5e1e9c221d045f411",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c01",
+      "contentSha256": "0bcc9f8255d10b81b07f681ab4bc9f5c938408cf765efd58cb8e881bc103a2bc",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c02",
+      "contentSha256": "931d3a269453ff6555c8f5a7e4eed4042073914a94ec825ffeb04f6ed1f074e9",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c03",
+      "contentSha256": "2f033c22de8dbccc197fddc6ad99c3dbd805dd49c51318b3c37114a4ef9f6334",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c04",
+      "contentSha256": "5ae2ae1066d12d98ac96b7884011b795b8fed37fc58cfa3d68cfc21679afd1b3",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c05",
+      "contentSha256": "9a778588b7c97328e1768048ef3c9989a1c331b3923cebacc0c7b1a5ae617e0b",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c06",
+      "contentSha256": "a83e09649a18bcb6eb1a1db9036a148bf59a884dfce30b65a03b1064189ae781",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c07",
+      "contentSha256": "8918dc008442e63f36c9451685e1d0889f892ea45b63c73411486a3ec3f4277b",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c08",
+      "contentSha256": "f0e9204c7acb8f41a27d893096a6f97314dbcf61255be07a861ff2b1d5975a4c",
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "word 23:26:4: posUrdu \"حرفِ جر + ما مصدریہ\" does not name the QAC-derived word type pronoun"
+      ]
+    },
+    {
+      "chunk": "23-c09",
+      "contentSha256": "e3b20e9e09f46de04fece5b54ddd2ce17035ce214001bf0b0f7a721048fe6e35",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c10",
+      "contentSha256": "9cee7faf4eea48d1a4d1f763bba074371512249bbf2d5b7fb28d83ba6dc0face",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c11",
+      "contentSha256": "ab1cb70369964f580e8c1e95554dbeb3487b31071e9196cc75eae4f81e37daa9",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c12",
+      "contentSha256": "feba9e05c577bca08a46ac9c87da7eef70dcec06fdf11ff54061b568ce372ea6",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c13",
+      "contentSha256": "b8022a6330d2c3698cec4895674b3d2010e351e55144f93f6db61b29d738044d",
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "word 23:39:4: posUrdu \"حرفِ جر + ما مصدریہ\" does not name the QAC-derived word type pronoun"
+      ]
+    },
+    {
+      "chunk": "23-c14",
+      "contentSha256": "489fe7897ad40de71e7ba9a8290f12762660df8576060822eec263b0a46151c5",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c15",
+      "contentSha256": "bacd4e698e483e633803cf9946829b8669e8fef92f56a6a34c8f4be40be36ec2",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c16",
+      "contentSha256": "3ec17e77fba7ea9257f716a21821eff01ba0cdefec99ff69b4d803930b98cdf9",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c17",
+      "contentSha256": "57b16e863f03638776d84a3f0fee887c06ec027fcf3fc645ceffce4c5642249e",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c18",
+      "contentSha256": "99ac5fb5b5cd7c3a6d1afd248bf33ced5fac3b020b2eb9a263814c1a6b44b753",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c19",
+      "contentSha256": "b6c98e7c6e135593059d69d682e40cb431ed01282de2038deb31c342f3108b4c",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c20",
+      "contentSha256": "c590b62e848933d765f117e1de14c8616fae41b1b75a21ecf73b5f83622beb31",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c21",
+      "contentSha256": "ec190e7752cd7ef57e209b525b73d959b87121e9e382a74ef61fc043c982f849",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "23-c23",
+      "contentSha256": "cbf78d0b9fa2b422a1596e6aae9f3f0eebb7704beacd9ce65807d54d8a302085",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "32-c01",
+      "contentSha256": "a0d87fee6bc2a7b4c6a6b193a8246322576d5b629f75f6afd69cb3f953347893",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "32-c02",
+      "contentSha256": "1f67dd1f89f630a5ccdb4b723a3b2431f551278bf6407f78a5f135ee7ae2ef33",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "32-c03",
+      "contentSha256": "4ee05008f734ef102a9a1192a9f88164668c2bd38e89cdc57ca58de777e67d4b",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "32-c04",
+      "contentSha256": "2682ecaf7ab3bae6f17feb767d75855b2313d6bae9d056507b8e2258774ffedc",
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "word 32:9:13: posUrdu \"حرفِ زائد\" does not name the QAC-derived word type pronoun"
+      ]
+    },
+    {
+      "chunk": "32-c05",
+      "contentSha256": "033c16917c477b2fddae7251c16cb9f796c43a367627bd2ceffc72024c34e6b0",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "32-c06",
+      "contentSha256": "70097f274c0971a6da87d43fcc19b751ba8c6c6d4936e249af5176c413c02258",
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "word 32:14:2: posUrdu \"حرفِ جر + مَا مصدریہ\" does not name the QAC-derived word type pronoun"
+      ]
+    },
+    {
+      "chunk": "32-c07",
+      "contentSha256": "5580c006f5885a645d89b32ddff75b5aebb7ab80ff8284627318ac7125a99fec",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "32-c08",
+      "contentSha256": "a3ba3a51600a9b9be497d24bdebe01906035f3a96590704714d2f7aee9fe4c73",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "32-c09",
+      "contentSha256": "0703cb9706131c3e79d932137bda7c2706e02a7497668db3f59451dfbfb3201d",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "32-c10",
+      "contentSha256": "b5f4a2a31fba598a289af30f5a5c03bb29c3bade000df3b8a9db00ab2151c676",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "32-c11",
+      "contentSha256": "a111492a6396ce50c6d636a651f1e2b4b424b40996a4df1d3a9c2056757effd3",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "32-c12",
+      "contentSha256": "77474730f56b6c9a841b0d40e588cd46f9f5969c2cf91b7bc322dfba0a0f6dca",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c01",
+      "contentSha256": "3707ea4f8e123c3c08b1ad4ea69d92416cc132302dee9e8279be29c56bec18bf",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c02",
+      "contentSha256": "b13ad9b46b3d8e60082f66cd3129b067f7d60498f730dc924701ebee9d340b55",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c03",
+      "contentSha256": "035a322b241413a05acc7b97e136250ea1d72aa7c10a5dde1bb811c95dd3086d",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c04",
+      "contentSha256": "c9676184114b2ddadbe54fd4bbad72e25e2c897f68ec060381092e778021c982",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c05",
+      "contentSha256": "fcdb31ac05a5f0c7a508dc65ae31645693c1a51e5e94b8795e9c4afdc7091f67",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c06",
+      "contentSha256": "0717240309877f35f72a3a69277fa7fc5f1fd4d20669f2648adb7af62223035f",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c07",
+      "contentSha256": "c812d35806bbfdebc5ea03187fb4dcfbf157b80ae27734b922fedb8ed69e91e3",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c08",
+      "contentSha256": "f677e6ab4174803b8760ba85f111446622bf8bd831b75dcc8c4b53aeef83c6c8",
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "word 36:32:3: posUrdu \"حرفِ حصر\" does not name the QAC-derived word type noun"
+      ]
+    },
+    {
+      "chunk": "36-c09",
+      "contentSha256": "3f38a25dc940ccfcd8fac0430719dd35124128bdcb49121cf38a910a809dd0b4",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c10",
+      "contentSha256": "f0bfd2f92a4db0cd80d5647dd0ff5e2410bc0e10337a8c2cdedca78aba039194",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c11",
+      "contentSha256": "372143421a29cc6189138b0b76e3c767c0f526df090a52abe1b949aef9ebf7ca",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c12",
+      "contentSha256": "540680c762952ccc067858e3bdd7c6c56afdeadbafb82e9f687ed7d018f5c1bf",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c13",
+      "contentSha256": "ea496da02b5ca380e67f68b179c3520802786955175ee3b136059c7e522c0988",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c14",
+      "contentSha256": "fe22d3f9d8197787a9bad7b6d08c9e527f251e8749e95add363328d188fa436c",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c15",
+      "contentSha256": "5ac93987fa46cee70bf78b6d10daba578f79940a6dc9e6d1b1891c738acdb548",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c16",
+      "contentSha256": "1aaab9266aa750274339864ee744b2c0d5a0f8904fc004f353ce219b9baabc4e",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c17",
+      "contentSha256": "a9034462621168430d2f19301e0b662d75f2e31ee231b9ac7ea604717368b992",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c18",
+      "contentSha256": "555ea0cb61677265ba6afff7b1cd2f1072feba23edaa431d48df97dbe1a0d8fc",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c19",
+      "contentSha256": "7d05313c0a2d9ef0879719fc32af619c0ce4409eded89ce67ffd3c02c76498b3",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c20",
+      "contentSha256": "189ada659964480e52630d625fe69948bb60939e8a1e9f74b5ac4376bbef8168",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "36-c21",
+      "contentSha256": "89cdfc65fc46c2088b4906374234322e0554b827d9678ba8cacf21b9e1db5975",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "55-c01",
+      "contentSha256": "52a2038579ee78920baeca31b955a247137b0f0cbed693982f4afa3c6592f68f",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "55-c02",
+      "contentSha256": "c97a1749ecdc61a1560cc13819ad3c867cf3beccbf9c74921fb49e14d03da56d",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "55-c03",
+      "contentSha256": "9fcd8b5bf03cb363c43581094a7206f558d919da2f3d17f900550c532575ddd8",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "55-c04",
+      "contentSha256": "6242d050357fc7a6f78148bace3cc724d74ed6b93bac7c8342a4dd98a043c816",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "55-c05",
+      "contentSha256": "8a935088d018b7efc7aaa90420a4caa33a052b10c06d70ca279dda5ffecfafbf",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "55-c06",
+      "contentSha256": "8ec1ef54ad0e37a004d5ee30f9a4cb7f9ddac2bb1a8ea8e9069541d054eadd4d",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "55-c07",
+      "contentSha256": "26a54af73610a2ade33912eb5d6274da21544b44c31770cd0011970d18979df9",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "55-c08",
+      "contentSha256": "1706c37f3895c3704b1972711c082d0cc47cb53a7e03fd43d3e515c8ca5b3619",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "55-c09",
+      "contentSha256": "219b14174c42d75ef4ef27a193738ad048c86880fcbe5d3e2a4773bd5b43dd33",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "55-c10",
+      "contentSha256": "da245a3eb9ee8555b732f097e179cb5db98069553c43ce9ca0a89594926d0b2f",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "chunk": "55-c11",
+      "contentSha256": "1126f603040b34ae5a1f685e82275442e6e9bb5bcf789f5561f3cc7f049586e2",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

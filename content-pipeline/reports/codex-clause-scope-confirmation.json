@@ -1,0 +1,177 @@
+{
+  "report": "Independent confirmation of whole-clause badal and object eligibility",
+  "date": "2026-11-06",
+  "reviewStatus": "both proposals applied and independently confirmed",
+  "scholarlyReview": "not performed; all new lessons remain held for actual scholarly review",
+  "inputs": [
+    {
+      "path": "reports/codex-clause-scope-audit.json",
+      "sha256": "6094b09a8fef13860ee41cec4543f1d155418dd63ca2c972332f0853fcfd43a5"
+    },
+    {
+      "path": "libs/rules.json",
+      "sha256": "0fd3596dab8d41411ee88904055cb7340ec0fbe56747ac418f975ebf2f001a5f"
+    },
+    {
+      "path": "meta/words.json",
+      "sha256": "1a3f2381f565d82b39b5a181dfce5e4d53e8f46d4974dd174cb83b0acde3cd9f"
+    },
+    {
+      "path": "meta/ayahs.json",
+      "sha256": "fd0da606c005948b916d8c3d4d6cea937cd39ffa08672ad9f2ffe7e84db3d69b"
+    }
+  ],
+  "confirmationScope": [
+    "Read the other auditor’s complete report and the actual relevant rule cards.",
+    "Independently read complete selected local ayah syntax notes and occurrence morphology.",
+    "Fetched primary QAC grammar pages for 36:21,18:7,18:99,36:31; local18:19 source gives the same object-clause analysis.",
+    "Cross-checked zanna, two-objects, quoted-speech and individual case-card scopes to avoid unnecessary broadening."
+  ],
+  "findings": [
+    {
+      "ruleId": "badal",
+      "decision": "confirm required clause-eligibility extension",
+      "severity": "major",
+      "reasonEnglish": "The chosen primary source explicitly makes the second imperative clause a badal of an earlier clause. A universal noun-after-noun gate excludes this attested use. Extend eligibility to an explicitly identified whole-clause substitute without requiring case agreement between head words. The Urdu noun-oriented explanation should begin with اسمی بدل, then include a generic sentence on clause substitution.",
+      "evidence": [
+        {
+          "refs": [
+            "36:20",
+            "36:21:1"
+          ],
+          "arabicHead": "ٱتَّبِعُوا۟",
+          "sourceMeaningEnglish": "The second imperative clause substitutes for the preceding imperative clause. Its head remains an imperative verb with its own construction.",
+          "localPath": "meta/ayahs.json:36:21.qacGrammarNotesArabic",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=36&verse=21"
+        }
+      ],
+      "recommendedCriteria": "Tag a word the i‘rab calls بدل — or عطف بيان, which has no separate card — that follows a noun in the same case to specify it: a name after a description, a noun after a demonstrative or after the vocative أَيُّهَا, or a noun restating a previous one. Also tag the head of a whole clause that the i‘rab explicitly calls بدل of an earlier clause (ٱتَّبِعُوا۟ in 36:21); follow the replaced clause’s syntactic status, without requiring case agreement between their head words. Not for coordinated nouns or clauses (conjunction) or adjectives (adjective).",
+      "recommendedExplanationUrdu": "اسمی بدل پہلے اسم کو زیادہ واضح یا متعین کرتا اور اعراب میں اس کی پیروی کرتا ہے، جیسے جَاءَ أَخُوكَ زَيْدٌ۔ یہ پورے کا، اس کے کسی جز کا یا اس سے متعلق کسی چیز کا بدل ہو سکتا ہے؛ عطفِ بیان بھی وضاحت کرتا ہے۔ پورا جملہ بھی پہلے جملے کا بدل ہو سکتا ہے؛ اس میں پہلے جملے کے محلِ اعراب کا لحاظ ہوتا ہے، الگ الفاظ کا اعراب یکساں ہونا لازم نہیں۔",
+      "explanationCharacters": 338,
+      "standaloneCardDecision": "Omit the Surah-specific cross-reference from the teaching explanation. A generic clause-scope sentence preserves the meaning and keeps the card self-contained; retain the concrete counterexample in the audit report.",
+      "caseQualification": "A substitute clause follows the replaced clause’s syntactic status, including absence of a syntactic position when applicable; its individual words need not have matching endings.",
+      "baselineFields": {
+        "id": "badal",
+        "titleUrdu": "بدل",
+        "explanationUrdu": "بدل وہ تابع ہے جو پہلے اسم کی جگہ رکھا جا سکے اور اسی کو زیادہ واضح یا متعین کرے؛ یہ اعراب میں اس کی پیروی کرتا ہے، جیسے جَاءَ أَخُوكَ زَيْدٌ۔ یہ پورے کا، اس کے کسی جز کا یا اس سے متعلق کسی چیز کا بدل ہو سکتا ہے؛ عطفِ بیان بھی تقریباً اسی طرح وضاحت کرتا ہے۔",
+        "appliesWhenEnglish": "Tag a word the i‘rab calls بدل — or عطف بيان, which has no separate card — that follows a noun in the same case to specify it: a name after a description, a noun after a demonstrative or after the vocative أَيُّهَا, or a noun restating a previous one. Not for coordinated nouns with a conjunction (conjunction) or adjectives (adjective)."
+      },
+      "appliedFields": {
+        "id": "badal",
+        "titleUrdu": "بدل",
+        "explanationUrdu": "اسمی بدل پہلے اسم کو زیادہ واضح یا متعین کرتا اور اعراب میں اس کی پیروی کرتا ہے، جیسے جَاءَ أَخُوكَ زَيْدٌ۔ یہ پورے کا، اس کے کسی جز کا یا اس سے متعلق کسی چیز کا بدل ہو سکتا ہے؛ عطفِ بیان بھی وضاحت کرتا ہے۔ پورا جملہ بھی پہلے جملے کا بدل ہو سکتا ہے؛ پہلے جملے کا محلِ اعراب ہو تو یہ بھی اسی محل میں ہوتا ہے، الگ الفاظ کا اعراب یکساں ہونا لازم نہیں۔",
+        "appliesWhenEnglish": "Tag a word the i‘rab calls بدل — or عطف بيان, which has no separate card — that follows a noun in the same case to specify it: a name after a description, a noun after a demonstrative or after the vocative أَيُّهَا, or a noun restating a previous one. Also tag the head of a whole clause that the i‘rab explicitly calls بدل of an earlier clause (ٱتَّبِعُوا۟ in 36:21); follow the replaced clause’s syntactic status, without requiring case agreement between their head words. Not for coordinated nouns or clauses (conjunction) or adjectives (adjective)."
+      },
+      "applicationStatus": "applied and independently confirmed"
+    },
+    {
+      "ruleId": "object",
+      "decision": "confirm whole-clause-object eligibility clarification",
+      "severity": "major",
+      "reasonEnglish": "The selected primary analyses assign direct-object slots to non-masdari interrogative or verbal clauses. zanna already explains suspension and two-objects already explains the two-object relation; these do not remove the noun-only gate in object. Extending object to an explicit clause head accurately describes the whole unit, provided its محل نصب is distinguished from internal inflection.",
+      "evidence": [
+        {
+          "refs": [
+            "18:7:9"
+          ],
+          "arabicHead": "أَيُّهُمْ",
+          "localPath": "meta/ayahs.json:18:7.qacGrammarNotesArabic",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=7",
+          "analysisEnglish": "The interrogative clause is the object of the suspended verb; its head remains an internally nominative mubtada."
+        },
+        {
+          "refs": [
+            "18:19:28"
+          ],
+          "arabicHead": "أَيُّهَآ",
+          "localPath": "meta/ayahs.json:18:19.qacGrammarNotesArabic",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=19",
+          "analysisEnglish": "The primary syntax makes the interrogative clause the object of suspended النظر."
+        },
+        {
+          "refs": [
+            "36:31:4"
+          ],
+          "arabicHead": "أَهْلَكْنَا",
+          "localPath": "meta/ayahs.json:36:31.qacGrammarNotesArabic",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=36&verse=31",
+          "analysisEnglish": "The clause is the object of suspended يروا; internal كم is separately the fronted object of أهلكنا."
+        },
+        {
+          "refs": [
+            "18:99:4"
+          ],
+          "arabicHead": "يَمُوجُ",
+          "localPath": "meta/ayahs.json:18:99.qacGrammarNotesArabic",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=99",
+          "analysisEnglish": "The verbal clause is the second object of ترك. Its verb remains indicative, although the whole clause has the accusative syntactic position."
+        }
+      ],
+      "recommendedCriteria": "Tag an explicit noun (or demonstrative, relative or interpreted masdar), or the head of a whole clause, that the i‘rab calls مفعول به of a verb, participle or masdar. A clause object is in محل نصب; do not infer accusative endings for its internal nouns or subjunctive mood for its internal verbs (18:7، 18:19، 36:31). For pronoun objects use object-pronoun; for an object placed before its verb also fronted-object; for a second object also two-objects; for the quoted sentence after قَالَ use quoted-speech.",
+      "recommendedExplanationUrdu": "متعدی فعل کا اثر جس پر پڑے وہ مفعول بہ ہے اور منصوب ہوتا ہے، جیسے نَصَرَ زَيْدٌ عَمْرًا میں عَمْرًا۔ اسمِ فاعل یا مصدر بھی فعل کی طرح مفعول لے سکتے ہیں، اور أَنْ يَفْعَلَ جیسا مصدری جملہ بھی مفعول بن سکتا ہے۔ سوالیہ یا دوسرا پورا جملہ بھی محلِ نصب میں مفعول ہو سکتا ہے؛ اس کے الگ الفاظ کا اعراب ان کے اپنے کردار سے طے ہوتا ہے۔",
+      "explanationAssessment": "The proposed Urdu addition correctly distinguishes the whole clause’s محل نصب from the roles of its individual words. It does not require moving an internally nominative noun to نصب or an indicative verb to the subjunctive.",
+      "preservedExceptions": [
+        "Use object-pronoun for a pronoun object.",
+        "Keep quoted-speech as the dedicated route for the quoted clause after قال.",
+        "Keep two-objects and zanna for the separately identified relations."
+      ],
+      "baselineFields": {
+        "id": "object",
+        "titleUrdu": "مفعول بہ",
+        "explanationUrdu": "متعدی فعل کا اثر جس پر پڑے وہ مفعول بہ ہے اور منصوب ہوتا ہے، جیسے نَصَرَ زَيْدٌ عَمْرًا میں عَمْرًا۔ اسمِ فاعل یا مصدر بھی فعل کی طرح مفعول لے سکتے ہیں، اور أَنْ يَفْعَلَ جیسا مصدری جملہ بھی مفعول بن سکتا ہے۔",
+        "appliesWhenEnglish": "Tag an explicit noun (or demonstrative, relative or interpreted masdar) that is the مفعول به of a verb, participle or masdar. For pronoun objects use object-pronoun; for an object placed before its verb also fronted-object; for a second object also two-objects; for the quoted sentence after قَالَ use quoted-speech."
+      },
+      "appliedFields": {
+        "id": "object",
+        "titleUrdu": "مفعول بہ",
+        "explanationUrdu": "متعدی فعل کا اثر جس پر پڑے وہ مفعول بہ ہے اور منصوب ہوتا ہے، جیسے نَصَرَ زَيْدٌ عَمْرًا میں عَمْرًا۔ اسمِ فاعل یا مصدر بھی فعل کی طرح مفعول لے سکتے ہیں، اور أَنْ يَفْعَلَ جیسا مصدری جملہ بھی مفعول بن سکتا ہے۔ سوالیہ یا دوسرا پورا جملہ بھی محلِ نصب میں مفعول ہو سکتا ہے؛ اس کے الگ الفاظ کا اعراب ان کے اپنے کردار سے طے ہوتا ہے۔",
+        "appliesWhenEnglish": "Tag an explicit noun (or demonstrative, relative or interpreted masdar), or the head of a whole clause, that the i‘rab calls مفعول به of a verb, participle or masdar. A clause object is in محل نصب; do not infer accusative endings for its internal nouns or subjunctive mood for its internal verbs (18:7، 18:19، 36:31). For pronoun objects use object-pronoun; for an object placed before its verb also fronted-object; for a second object also two-objects; for the quoted sentence after قَالَ use quoted-speech."
+      },
+      "applicationStatus": "applied and independently confirmed"
+    }
+  ],
+  "intentionallyUnchangedScopes": [
+    {
+      "cards": [
+        "nominative",
+        "accusative",
+        "genitive"
+      ],
+      "reason": "These teach individual-word case/sign categories. A whole clause’s محل does not authorize changing its head’s internal case or mood."
+    },
+    {
+      "cards": [
+        "fronted-object",
+        "cognate-object",
+        "purpose-object",
+        "adverb"
+      ],
+      "reason": "No broad theoretical expansion is justified here; respect their noun-role or specialized scope and source-specific analyses."
+    }
+  ],
+  "counts": {
+    "confirmedCoverageCorrections": 2,
+    "rejectedProposals": 0,
+    "newFindingsBeyondRequested": 0,
+    "scholarlyApprovalsGranted": 0
+  },
+  "limits": [
+    "Independent AI confirmation of the requested proposals, not scholarly certification.",
+    "No shared rule, source, library, chunk, script or checkpoint was changed.",
+    "Actual applied fields and final rules hash have now been checked; scholarly approval remains a separate requirement."
+  ],
+  "applicationConfirmation": {
+    "rulesSha256": "187b01bede3ecb5bb642d8d24fffb91f5c82e83a4058b94785a7788c16750375",
+    "checkedRuleCount": 112,
+    "badalUrduRefinement": "Confirmed conditional phrasing: پہلے جملے کا محلِ اعراب ہو تو یہ بھی اسی محل میں ہوتا ہے. This avoids implying that every clause has a syntactic case position; the English criterion continues to follow the replaced clause’s syntactic status.",
+    "nominalIntroduction": "اسمی بدل explicitly limits noun-style case agreement to nominal substitution before explaining the separate whole-clause construction.",
+    "objectScope": "The actual English and Urdu distinguish whole-clause محل نصب from internal noun case and verb mood, preserving all specialized exceptions.",
+    "mechanicalValidation": {
+      "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline rules",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    "scholarlyApproval": "not granted"
+  }
+}

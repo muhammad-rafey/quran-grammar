@@ -49,6 +49,12 @@ process.stdin.on('end', () => {
     fs.writeFileSync(target, JSON.stringify(content));
     if (mode === 'protected-input') fs.writeFileSync(path.join(get('--cd'), 'libs', 'rules.json'), '{}');
     if (mode === 'race-overrides') fs.writeFileSync(path.join(path.dirname(process.env.MOCK_PAYLOAD), 'meta', 'overrides.json'), JSON.stringify({_fixture: 'Changed while author was running'}));
+    if (mode === 'race-relevant-root' || mode === 'race-unused-root') {
+      const file = path.join(path.dirname(process.env.MOCK_PAYLOAD), 'libs', 'roots', 'root-fixture.json');
+      const library = JSON.parse(fs.readFileSync(file));
+      library.entries[mode === 'race-relevant-root' ? 0 : 1].noteUrdu += ' ترمیم';
+      fs.writeFileSync(file, JSON.stringify(library));
+    }
   }
   if (role === 'review' && mode === 'reviewer-write') fs.appendFileSync(target, ' ');
   let value = role === 'author' ? {validatorOk: true, words: content.words.length, ayahs: content.ayahs.length, notes: 'authored'} : role === 'fixer' ? {validatorOk: true, applied: 1, rejected: [], notes: 'fixed'} : {checkedWords: content.words.length, checkedAyahs: content.ayahs.length, issues: [], libraryIssues: [], summary: 'checked'};
@@ -89,6 +95,21 @@ async function fixture(context) {
     child.on('close', (code) => accept({ code, stdout, stderr }));
   });
   return { work, command, checkpoint: async () => JSON.parse(await readFile(join(work, 'runs', 'codex', `${CHUNK}.json`), 'utf8')), calls: async () => (await readFile(join(work, 'calls.jsonl'), 'utf8')).trim().split('\n').map(JSON.parse) };
+}
+
+async function rootInputs(work) {
+  const libraryFile = join(work, 'libs', 'roots', 'root-fixture.json');
+  const entries = [
+    { root: 'ك ت ب', meaningUrdu: 'لکھنا', noteUrdu: 'فراہم کردہ فرضی اندراج' },
+    { root: 'غ ي ر', meaningUrdu: 'بدلنا', noteUrdu: 'پیکٹ میں شامل نہیں' },
+  ];
+  await mkdir(dirname(libraryFile), { recursive: true });
+  await writeFile(libraryFile, JSON.stringify({ entries }));
+  const packetFile = join(work, 'packets', '18', `${CHUNK}.json`);
+  const packet = JSON.parse(await readFile(packetFile, 'utf8'));
+  packet.roots = { [entries[0].root]: entries[0] };
+  await writeFile(packetFile, JSON.stringify(packet));
+  return { libraryFile, entries, packetFile, packet };
 }
 
 test('strict schemas reject missing or additional nested result fields', () => {
@@ -140,6 +161,66 @@ test('successful workflow imports a validated draft, preserves private logs and 
   result = await setup.command('success', ['--resume']);
   assert.equal(result.code, 0, result.stderr);
   assert.equal((await setup.calls()).length, 16, 'packet hash mismatch forces review');
+});
+
+test('reuse-authored preserves valid authorship and runs three fresh review agents', async (context) => {
+  const setup = await fixture(context);
+  await writeFile(join(setup.work, 'chunks', '18', `${CHUNK}.json`), JSON.stringify(pilot));
+  const result = await setup.command('success', ['--reuse-authored']);
+  assert.equal(result.code, 0, result.stderr);
+  const calls = await setup.calls();
+  assert.equal(calls.length, 3);
+  assert.equal(calls.every((call) => call.role === 'review' && call.sandbox === 'read-only'), true);
+  const checkpoint = await setup.checkpoint();
+  assert.equal(checkpoint.status, 'ai-reviewed');
+  assert.match(checkpoint.result.authored.notes, /Existing authored draft SHA [a-f0-9]{64} reused after mechanical validation; no previous content review reused; full fresh independent reviews required/);
+  const events = (await readFile(join(setup.work, 'runs', 'codex', 'journal.jsonl'), 'utf8')).trim().split('\n').map(JSON.parse);
+  const reused = events.filter((event) => event.type === 'authored-reused');
+  assert.equal(reused.length, 1);
+  assert.equal(reused[0].contentHash, checkpoint.contentHash);
+  assert.equal(events.some((event) => event.type === 'started' && event.phase === 'Author'), false);
+});
+
+for (const existing of ['missing', 'invalid']) {
+  test(`reuse-authored with ${existing} existing draft falls through to normal author`, async (context) => {
+    const setup = await fixture(context);
+    if (existing === 'invalid') {
+      const invalid = structuredClone(pilot);
+      invalid.words[0].meaningUrdu = null;
+      await writeFile(join(setup.work, 'chunks', '18', `${CHUNK}.json`), JSON.stringify(invalid));
+    }
+    const result = await setup.command('success', ['--reuse-authored']);
+    assert.equal(result.code, 0, result.stderr);
+    const calls = await setup.calls();
+    assert.equal(calls.length, 4);
+    assert.equal(calls[0].role, 'author');
+    assert.equal((await setup.checkpoint()).status, 'ai-reviewed');
+  });
+}
+
+test('new rule or supplied root input reuses authorship but never previous review approval', async (context) => {
+  const setup = await fixture(context);
+  const inputs = await rootInputs(setup.work);
+  await writeFile(join(setup.work, 'chunks', '18', `${CHUNK}.json`), JSON.stringify(pilot));
+  let result = await setup.command('success', ['--reuse-authored']);
+  assert.equal(result.code, 0, result.stderr);
+  assert.equal((await setup.calls()).length, 3);
+  const rulesFile = join(setup.work, 'libs', 'rules.json');
+  await writeFile(rulesFile, `${await readFile(rulesFile, 'utf8')}\n`);
+  result = await setup.command('success', ['--resume', '--reuse-authored']);
+  assert.equal(result.code, 0, result.stderr);
+  assert.equal((await setup.calls()).length, 6, 'changed rules require both independent reviews and confirmation again');
+  inputs.entries[0].noteUrdu += ' ترمیم';
+  await writeFile(inputs.libraryFile, JSON.stringify({ entries: inputs.entries }));
+  await writeFile(inputs.packetFile, JSON.stringify(inputs.packet));
+  result = await setup.command('success', ['--resume', '--reuse-authored']);
+  assert.equal(result.code, 0, result.stderr);
+  assert.equal((await setup.calls()).length, 9, 'changed supplied root requires fresh reviews');
+  assert.equal((await setup.calls()).every((call) => call.role === 'review'), true);
+  result = await setup.command('success', ['--resume', '--reuse-authored']);
+  assert.equal(result.code, 0, result.stderr);
+  assert.match(result.stdout, /skipped unchanged/);
+  assert.equal((await setup.calls()).length, 9, 'exact reviewed checkpoint still follows normal resume rules');
 });
 
 for (const [mode, message] of [
@@ -287,3 +368,51 @@ test('updated adjudication blocks dry-run and resume until effective packet corr
   assert.notEqual((await setup.checkpoint()).hashes.overrides, oldHash);
   assert.equal((await setup.calls()).length, 8, 'new correction requires fresh reviews');
 });
+
+test('scoped library fingerprints ignore unused root edits, but require review for supplied roots and all rules', async (context) => {
+  const setup = await fixture(context);
+  const inputs = await rootInputs(setup.work);
+  let result = await setup.command();
+  assert.equal(result.code, 0, result.stderr);
+  const originalHash = (await setup.checkpoint()).hashes.libraries;
+  inputs.entries[1].noteUrdu += ' ترمیم';
+  await writeFile(inputs.libraryFile, JSON.stringify({ entries: inputs.entries }));
+  result = await setup.command('success', ['--resume']);
+  assert.equal(result.code, 0, result.stderr);
+  assert.match(result.stdout, /skipped unchanged/);
+  assert.equal((await setup.calls()).length, 4);
+  assert.equal((await setup.checkpoint()).hashes.libraries, originalHash);
+  inputs.entries[0].noteUrdu += ' ترمیم';
+  await writeFile(inputs.libraryFile, JSON.stringify({ entries: inputs.entries }));
+  result = await setup.command('success', ['--resume']);
+  assert.equal(result.code, 1);
+  assert.match(result.stderr, /Stale roots reference/);
+  assert.equal((await setup.calls()).length, 4);
+  await writeFile(inputs.packetFile, JSON.stringify(inputs.packet));
+  result = await setup.command('success', ['--resume']);
+  assert.equal(result.code, 0, result.stderr);
+  assert.notEqual((await setup.checkpoint()).hashes.libraries, originalHash);
+  assert.equal((await setup.calls()).length, 8);
+  const rulesFile = join(setup.work, 'libs', 'rules.json');
+  await writeFile(rulesFile, `${await readFile(rulesFile, 'utf8')}\n`);
+  result = await setup.command('success', ['--resume']);
+  assert.equal(result.code, 0, result.stderr);
+  assert.equal((await setup.calls()).length, 12, 'every supplied rules byte participates in the fingerprint');
+});
+
+for (const mode of ['race-relevant-root', 'race-unused-root']) {
+  test(`${mode}: import rechecks precisely the supplied library entries`, async (context) => {
+    const setup = await fixture(context);
+    await rootInputs(setup.work);
+    const result = await setup.command(mode);
+    if (mode === 'race-relevant-root') {
+      assert.equal(result.code, 1);
+      assert.match(result.stderr, /Source inputs changed during review/);
+      assert.equal((await setup.checkpoint()).status, 'blocked');
+      await assert.rejects(readFile(join(setup.work, 'chunks', '18', `${CHUNK}.json`)));
+    } else {
+      assert.equal(result.code, 0, result.stderr);
+      assert.equal((await setup.checkpoint()).status, 'ai-reviewed');
+    }
+  });
+}

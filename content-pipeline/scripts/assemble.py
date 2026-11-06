@@ -13,6 +13,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import unicodedata
 from collections import Counter, OrderedDict, defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -205,16 +206,20 @@ for s in surahs:
         stem = next((x for x in m['qacSegments'] if x['kind'] == 'STEM'), None)
         key = f"{stem.get('lemmaBuckwalter') if stem else ''}|{m['root']}|{m['pos']}"
         lemma_variants[key][w['lemma']] += 1
-    variants = {k: dict(v) for k, v in lemma_variants.items() if len(v) > 1}
+    # Normalize comparisons only; retain every authored citation in reports/output.
+    variants = {
+        k: dict(v) for k, v in lemma_variants.items()
+        if len({unicodedata.normalize('NFC', lemma) for lemma in v}) > 1
+    }
     verb_lemma_mismatch = []
     for w in words_out:
         m = words_meta[w['id']]
-        if m['pos'] == 'verb' and m['verb']['passive'] is False:
+        if m['pos'] == 'verb' and overrides.get(m['id'], {}).get('passive', m['verb']['passive']) is False:
             lex = lexemes.get(overrides.get(m['id'], {}).get('lexemeKey', m['lexemeKey']))
             if lex is None:
                 continue  # Already recorded above; do not crash before reporting the error.
             past = lex['past']
-            if w['lemma'] != past:
+            if unicodedata.normalize('NFC', w['lemma']) != unicodedata.normalize('NFC', past):
                 verb_lemma_mismatch.append((w['id'], w['lemma'], past))
     rule_use = Counter(r for w in words_out for r in w['ruleIds'])
     report['surahs'][s] = OrderedDict(

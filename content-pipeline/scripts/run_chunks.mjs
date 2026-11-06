@@ -69,6 +69,29 @@ async function treeHashes(directory, prefix = '') {
   return entries;
 }
 
+async function readLibraries(work) {
+  const entries = { lexemes: new Map(), roots: new Map() };
+  for (const [file] of await treeHashes(join(work, 'libs'))) {
+    const kind = file.startsWith('lexemes/') ? 'lexemes' : file.startsWith('roots/') ? 'roots' : null;
+    if (!kind || !file.endsWith('.json')) continue;
+    for (const entry of (await json(join(work, 'libs', file))).entries ?? []) {
+      entries[kind].set(kind === 'lexemes' ? entry.key : entry.root, entry);
+    }
+  }
+  return { entries, rules: sha(await readFile(join(work, 'libs', 'rules.json'))) };
+}
+
+function chunkLibraryHash(packet, libraries) {
+  // Authors receive all rules, but root/paradigm entries only through this packet.
+  // Unrelated library edits must not invalidate an otherwise identical review.
+  return sha(JSON.stringify({
+    version: 2,
+    rules: libraries.rules,
+    lexemes: Object.keys(packet.lexemes ?? {}).sort().map((key) => [key, libraries.entries.lexemes.get(key)]),
+    roots: Object.keys(packet.roots ?? {}).sort().map((key) => [key, libraries.entries.roots.get(key)]),
+  }));
+}
+
 function bounded(limit) {
   let active = 0;
   const waiting = [];
@@ -85,12 +108,13 @@ function bounded(limit) {
 }
 
 function parseOptions(argv) {
-  const options = { work: DEFAULT_WORK, chunks: [], concurrency: 3, chunkConcurrency: 3, maxConfirmRounds: 3, agentBin: 'codex', resume: false, dryRun: false };
+  const options = { work: DEFAULT_WORK, chunks: [], concurrency: 3, chunkConcurrency: 3, maxConfirmRounds: 3, agentBin: 'codex', resume: false, reuseAuthored: false, dryRun: false };
   const valued = { '--work': 'work', '--chunks': 'chunks', '--concurrency': 'concurrency', '--chunk-concurrency': 'chunkConcurrency', '--max-confirm-rounds': 'maxConfirmRounds', '--agent-bin': 'agentBin', '--run-dir': 'runDir' };
   for (let index = 0; index < argv.length; index++) {
     const option = argv[index];
     if (option === '--help' || option === '-h') options.help = true;
     else if (option === '--resume') options.resume = true;
+    else if (option === '--reuse-authored') options.reuseAuthored = true;
     else if (option === '--dry-run') options.dryRun = true;
     else if (Object.hasOwn(valued, option)) {
       const value = argv[++index];
@@ -117,6 +141,7 @@ const HELP = `Usage: node content-pipeline/scripts/run_chunks.mjs --chunks 18-c0
   --chunk-concurrency N       Maximum overlapping chunks; default 3
   --max-confirm-rounds N      Confirmation rounds; default 3
   --resume                    Skip only unchanged, validated AI-reviewed chunks
+  --reuse-authored            Reuse a mechanically valid existing draft; run all fresh reviews
   --dry-run                   Verify inputs and show selection; never start models
   --run-dir PATH              Private checkpoint/log directory under WORK/runs
   --agent-bin PATH            Codex executable, or a mock for offline tests
@@ -136,16 +161,8 @@ export async function run(argv = process.argv.slice(2)) {
   const overridesHash = sha(overrideSource);
   const workflow = await readFile(join(work, 'workflows', 'chunks.js'), 'utf8');
   const workflowFunction = new AsyncFunction('args', 'agent', 'parallel', 'log', workflow.replace(/^export const meta\s*=/m, 'const meta ='));
-  const libraryFiles = await treeHashes(join(work, 'libs'));
-  const libraryHash = sha(JSON.stringify(libraryFiles));
-  const libraryEntries = { lexemes: new Map(), roots: new Map() };
-  for (const [file] of libraryFiles) {
-    const kind = file.startsWith('lexemes/') ? 'lexemes' : file.startsWith('roots/') ? 'roots' : null;
-    if (!kind || !file.endsWith('.json')) continue;
-    for (const entry of (await json(join(work, 'libs', file))).entries ?? []) {
-      libraryEntries[kind].set(kind === 'lexemes' ? entry.key : entry.root, entry);
-    }
-  }
+  const libraries = await readLibraries(work);
+  const libraryEntries = libraries.entries;
   const guideHash = sha(await readFile(join(work, 'guide', 'authoring-guide.md')));
   const validatorHash = sha(await readFile(join(work, 'scripts', 'validate_chunk.py')));
   const inputs = [];
@@ -187,14 +204,14 @@ export async function run(argv = process.argv.slice(2)) {
     }
     if (packet.words.some((word) => (word.lexemeKey && !Object.hasOwn(packet.lexemes ?? {}, word.lexemeKey)) || (word.root && !Object.hasOwn(packet.roots ?? {}, word.root)))) throw new Error(`Missing shared library reference in ${chunk}; rebuild source packets`);
     inputs.push({ chunk, spec, packet, wordSubset, hashes: {
-      packet: sha(packetSource), libraries: libraryHash,
+      packet: sha(packetSource), libraries: chunkLibraryHash(packet, libraries),
       guide: guideHash, validator: validatorHash, workflow: sha(workflow),
       plan: sha(JSON.stringify(spec)), words: sha(JSON.stringify(wordSubset)),
       overrides: overridesHash,
     } });
   }
   if (options.dryRun) {
-    process.stdout.write(`${JSON.stringify({ dryRun: true, chunks: inputs.map(({ chunk, hashes }) => ({ chunk, hashes })), concurrency: options.concurrency, chunkConcurrency: options.chunkConcurrency, publication: 'held-for-scholarly-review' }, null, 2)}\n`);
+    process.stdout.write(`${JSON.stringify({ dryRun: true, chunks: inputs.map(({ chunk, hashes }) => ({ chunk, hashes })), concurrency: options.concurrency, chunkConcurrency: options.chunkConcurrency, reuseAuthored: options.reuseAuthored, publication: 'held-for-scholarly-review' }, null, 2)}\n`);
     return;
   }
 
@@ -312,6 +329,7 @@ export async function run(argv = process.argv.slice(2)) {
           if (actual.size !== baseline.size + Number(actual.has(chunkRelative)) || [...baseline].some(([name, hash]) => actual.get(name) !== hash)) throw new Error(`Agent changed protected inputs or unexpected files for ${chunk}`);
           if (!writable && actual.get(chunkRelative) !== beforeContent) throw new Error(`Read-only reviewer changed chunk ${chunk}`);
         };
+        let mayReuseAuthored = options.reuseAuthored && await exists(join(isolated, chunkRelative));
         const agent = (prompt, settings) => capacity(async () => {
           if (controller.signal.aborted) throw new Error('Run cancelled');
           const agentId = randomUUID();
@@ -320,6 +338,29 @@ export async function run(argv = process.argv.slice(2)) {
           const beforeContent = await exists(join(isolated, chunkRelative)) ? sha(await readFile(join(isolated, chunkRelative))) : undefined;
           const prefix = join(runDir, `${label.replaceAll(':', '-')}-${agentId}`);
           const schema = strictSchema(settings.schema);
+          if (settings.phase === 'Author' && mayReuseAuthored) {
+            mayReuseAuthored = false;
+            let validation;
+            try { validation = await validate(isolated, chunk); }
+            catch (error) {
+              // Invalid drafts go through the normal author. Transport failures
+              // and cancellation must not be mistaken for invalid content.
+              if (!error.message.startsWith('Local validator failed for ')) throw error;
+            }
+            if (validation) {
+              await guard(false, beforeContent);
+              const value = {
+                validatorOk: true,
+                words: spec.wordIds.length,
+                ayahs: spec.ayahs.length,
+                notes: `Existing authored draft SHA ${beforeContent} reused after mechanical validation; no previous content review reused; full fresh independent reviews required.`,
+              };
+              if (!matchesSchema(value, schema)) throw new Error(`Reused authorship metadata does not match required schema for ${label}`);
+              await journal({ type: 'authored-reused', label, phase: 'Author', chunk, contentHash: beforeContent, result: value, validation });
+              process.stdout.write(`${chunk}: existing authored draft mechanically validated; starting full fresh reviews\n`);
+              return value;
+            }
+          }
           await atomicWrite(`${prefix}.schema.json`, `${JSON.stringify(schema)}\n`);
           await journal({ type: 'started', agentId, label, phase: settings.phase });
           process.stdout.write(`${label}: started (${writable ? 'workspace-write' : 'read-only'})\n`);
@@ -356,7 +397,7 @@ export async function run(argv = process.argv.slice(2)) {
         // Re-read source hashes immediately before import so edits made during a run cannot be stamped reviewed.
         const currentSpec = (await json(join(work, 'meta', 'plan.json'))).find((entry) => entry.chunk === chunk);
         const currentWords = await json(join(work, 'meta', 'words.json'));
-        if (sha(await readFile(join(work, 'packets', String(spec.surah), `${chunk}.json`))) !== hashes.packet || sha(JSON.stringify(await treeHashes(join(work, 'libs')))) !== hashes.libraries || sha(await readFile(join(work, 'workflows', 'chunks.js'))) !== hashes.workflow || sha(await readFile(join(work, 'guide', 'authoring-guide.md'))) !== hashes.guide || sha(await readFile(join(work, 'scripts', 'validate_chunk.py'))) !== hashes.validator || sha(JSON.stringify(currentSpec ?? null)) !== hashes.plan || sha(JSON.stringify(Object.fromEntries(spec.wordIds.map((id) => [id, currentWords[id]])))) !== hashes.words || sha(await readFile(join(work, 'meta', 'overrides.json'))) !== hashes.overrides) throw new Error(`Source inputs changed during review for ${chunk}; rerun required`);
+        if (sha(await readFile(join(work, 'packets', String(spec.surah), `${chunk}.json`))) !== hashes.packet || chunkLibraryHash(input.packet, await readLibraries(work)) !== hashes.libraries || sha(await readFile(join(work, 'workflows', 'chunks.js'))) !== hashes.workflow || sha(await readFile(join(work, 'guide', 'authoring-guide.md'))) !== hashes.guide || sha(await readFile(join(work, 'scripts', 'validate_chunk.py'))) !== hashes.validator || sha(JSON.stringify(currentSpec ?? null)) !== hashes.plan || sha(JSON.stringify(Object.fromEntries(spec.wordIds.map((id) => [id, currentWords[id]])))) !== hashes.words || sha(await readFile(join(work, 'meta', 'overrides.json'))) !== hashes.overrides) throw new Error(`Source inputs changed during review for ${chunk}; rerun required`);
         const currentContentHash = await exists(target) ? sha(await readFile(target)) : null;
         if (currentContentHash !== originalContentHash) throw new Error(`Chunk ${chunk} changed outside this run; original preserved`);
         if (controller.signal.aborted) throw new Error('Run cancelled');

@@ -35,6 +35,8 @@ line) and the vocalised Uthmani word or its governing particle — case, mood, v
 the correct analysis and record the discrepancy in `auditNotes`. The `pos` and `root` fields are
 fixed; if you believe one is wrong, write correctly and explain in `auditNotes`.
 
+Lexeme keys are opaque lookup handles derived from raw Corpus identifiers. A handle can retain an incorrect raw voice or form tag, or an inflected/truncated lemma, after adjudication. Follow qacCorrection, the corrected occurrence fields and the reviewed paradigm entry. Do not parse the handle to infer teaching content or report a library defect solely because the handle differs from those corrected fields; report actual mismatches in the paradigm, notes or occurrence mapping instead.
+
 ## 2. What you write (JSON)
 
 Write exactly this structure to the chunk file named in your task:

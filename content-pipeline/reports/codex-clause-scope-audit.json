@@ -1,0 +1,477 @@
+{
+  "report": "codex-clause-scope-audit",
+  "date": "2026-11-06",
+  "reviewStatus": "ai_audit_complete; two definite clause-eligibility findings recommended; no shared input edits",
+  "scholarlyReview": "not_performed; every new lesson remains held for scholarly review",
+  "scope": {
+    "ayahNotesScanned": 419,
+    "wordIrabRecordsScanned": 4077,
+    "missingAyahNotes": 0,
+    "missingWordIrab": 0,
+    "syntacticRoleCardsCompared": [
+      "nominative",
+      "accusative",
+      "genitive",
+      "passive",
+      "kana",
+      "kada-asa",
+      "participle",
+      "verbal-noun",
+      "subject-pronoun",
+      "object-pronoun",
+      "relative",
+      "nominal",
+      "verbal-sentence",
+      "subject",
+      "object",
+      "two-objects",
+      "zanna",
+      "inna",
+      "inna-sisters",
+      "haal",
+      "tamyiz",
+      "cognate-object",
+      "purpose-object",
+      "adverb",
+      "quoted-speech",
+      "parenthetical",
+      "fronted-object",
+      "fronting",
+      "elision",
+      "ishtighal",
+      "tanazu",
+      "idafa",
+      "adjective",
+      "badal",
+      "tawkid",
+      "conjunction",
+      "resumption",
+      "vocative",
+      "condition",
+      "conditional-jazm",
+      "law-condition",
+      "lamma",
+      "condition-answer",
+      "oath",
+      "masdar-particle",
+      "interrogative",
+      "kam",
+      "detailing"
+    ],
+    "purpose": "Focused actual-source clause/phrase eligibility check, not a broad theoretical or style review."
+  },
+  "inputs": [
+    {
+      "path": "content-pipeline/libs/rules.json",
+      "sha256": "0fd3596dab8d41411ee88904055cb7340ec0fbe56747ac418f975ebf2f001a5f"
+    },
+    {
+      "path": "content-pipeline/meta/ayahs.json",
+      "sha256": "fd0da606c005948b916d8c3d4d6cea937cd39ffa08672ad9f2ffe7e84db3d69b"
+    },
+    {
+      "path": "content-pipeline/meta/words.json",
+      "sha256": "1a3f2381f565d82b39b5a181dfce5e4d53e8f46d4974dd174cb83b0acde3cd9f"
+    },
+    {
+      "path": "content-pipeline/meta/overrides.json",
+      "sha256": "2cd47d46176975b911b53f017d840238ad2b3ede1cb02e3e056cdd9c9f5409b5"
+    }
+  ],
+  "extraction": {
+    "algorithm": "Join qacGrammarNotesArabic; split at Arabic comma/semicolon/newline; retain fragments containing جملة/جملتا/جملتي/جملتين and one target-role substring, then inspect complete containing notes to adjudicate the actual clause relation. Separately scan every word qacIrabArabic for جمل plus the same role substrings.",
+    "targetRoleSubstrings": {
+      "badal": [
+        "بدل"
+      ],
+      "object": [
+        "مفعول"
+      ],
+      "haal": [
+        "حال"
+      ],
+      "adjective": [
+        "نعت",
+        "صفة"
+      ],
+      "tawkid": [
+        "توكيد"
+      ],
+      "answer": [
+        "جواب"
+      ],
+      "idafa": [
+        "إليه"
+      ],
+      "subject": [
+        "فاعل"
+      ]
+    },
+    "literalFragmentHitsByRole": {
+      "object": {
+        "count": 19,
+        "ayahKeys": [
+          "18:7",
+          "18:8",
+          "18:12",
+          "18:14",
+          "18:19",
+          "18:48",
+          "18:49",
+          "18:50",
+          "18:52",
+          "18:63",
+          "18:81",
+          "18:82",
+          "18:83",
+          "18:99",
+          "18:105",
+          "32:27",
+          "36:16",
+          "36:31",
+          "36:54"
+        ]
+      },
+      "idafa": {
+        "count": 14,
+        "ayahKeys": [
+          "18:10",
+          "18:14",
+          "18:16",
+          "18:17",
+          "18:19",
+          "18:39",
+          "18:47",
+          "18:48",
+          "18:55",
+          "23:17",
+          "23:100",
+          "32:12",
+          "36:13",
+          "36:83"
+        ]
+      },
+      "adjective": {
+        "count": 43,
+        "ayahKeys": [
+          "18:13",
+          "18:17",
+          "18:19",
+          "18:22",
+          "18:29",
+          "18:31",
+          "18:32",
+          "18:43",
+          "18:45",
+          "18:49",
+          "18:58",
+          "18:77",
+          "18:79",
+          "18:93",
+          "23:19",
+          "23:20",
+          "23:24",
+          "23:33",
+          "23:38",
+          "23:43",
+          "23:62",
+          "23:100",
+          "23:117",
+          "32:3",
+          "32:5",
+          "32:7",
+          "32:24",
+          "32:27",
+          "36:6",
+          "36:20",
+          "36:49",
+          "55:50",
+          "55:52",
+          "55:54",
+          "55:56",
+          "55:58",
+          "55:64",
+          "55:66",
+          "55:68",
+          "55:70",
+          "55:74"
+        ]
+      },
+      "answer": {
+        "count": 57,
+        "ayahKeys": [
+          "18:14",
+          "18:16",
+          "18:17",
+          "18:21",
+          "18:36",
+          "18:40",
+          "18:48",
+          "18:49",
+          "18:61",
+          "18:62",
+          "18:69",
+          "18:70",
+          "18:71",
+          "18:74",
+          "18:77",
+          "18:86",
+          "18:94",
+          "18:95",
+          "18:110",
+          "23:7",
+          "23:27",
+          "23:34",
+          "23:39",
+          "23:40",
+          "23:49",
+          "23:51",
+          "23:52",
+          "23:64",
+          "23:77",
+          "23:82",
+          "23:91",
+          "23:94",
+          "23:101",
+          "23:106",
+          "23:109",
+          "32:10",
+          "32:12",
+          "32:13",
+          "32:21",
+          "36:3",
+          "36:18",
+          "36:62",
+          "36:67",
+          "55:33",
+          "55:39"
+        ]
+      },
+      "haal": {
+        "count": 64,
+        "ayahKeys": [
+          "18:15",
+          "18:16",
+          "18:17",
+          "18:18",
+          "18:26",
+          "18:27",
+          "18:28",
+          "18:31",
+          "18:34",
+          "18:35",
+          "18:37",
+          "18:42",
+          "18:45",
+          "18:47",
+          "18:48",
+          "18:49",
+          "18:50",
+          "18:52",
+          "18:56",
+          "18:64",
+          "18:83",
+          "18:104",
+          "18:108",
+          "18:109",
+          "23:11",
+          "23:14",
+          "23:20",
+          "23:23",
+          "23:29",
+          "23:32",
+          "23:47",
+          "23:60",
+          "23:63",
+          "23:67",
+          "23:70",
+          "23:75",
+          "23:90",
+          "23:100",
+          "23:104",
+          "23:109",
+          "23:116",
+          "23:118",
+          "32:15",
+          "32:16",
+          "32:26",
+          "36:22",
+          "36:30",
+          "36:33",
+          "36:37",
+          "36:38",
+          "36:46",
+          "36:49",
+          "36:78",
+          "55:11",
+          "55:19",
+          "55:20",
+          "55:44",
+          "55:54"
+        ]
+      },
+      "subject": {
+        "count": 14,
+        "ayahKeys": [
+          "18:28",
+          "18:35",
+          "18:47",
+          "18:49",
+          "23:11",
+          "23:20",
+          "23:29",
+          "23:47",
+          "23:67",
+          "23:75",
+          "23:109",
+          "23:118",
+          "32:16",
+          "32:26"
+        ]
+      },
+      "badal": {
+        "count": 2,
+        "ayahKeys": [
+          "18:81",
+          "36:21"
+        ]
+      },
+      "tawkid": {
+        "count": 1,
+        "ayahKeys": [
+          "23:28"
+        ]
+      }
+    },
+    "distinctAyahsWithLiteralHits": 149,
+    "wordIrabClauseRoleMatches": [],
+    "falsePositiveCaution": "Literal hits are candidates, not counts of grammatical constructions. For example أن يبدلهما causes a بدل substring hit, and حال من فاعل mentions a subject without making that clause the subject. Such cases were not flagged."
+  },
+  "findings": [
+    {
+      "id": "badal-clause-substitution-excluded",
+      "ruleId": "badal",
+      "severity": "major",
+      "adjudication": "accepted",
+      "origin": "runs/codex/36-c05.json result.libraryIssues, independently verified",
+      "problem": "Both English and Urdu universally frame badal as a word replacing a noun with the same case. The actual in-scope verse explicitly substitutes one entire imperative clause for another; this is not nominal case agreement.",
+      "counterexamples": [
+        {
+          "ayah": "36:21",
+          "wordId": "36:21:1",
+          "arabic": "ٱتَّبِعُوا۟",
+          "sourceFragment": "جملة «اتبعوا» الثانية بدل من الأولى",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=36&verse=21",
+          "analysis": "The second اتبعوا clause substitutes for اتبعوا المرسلين in36:20; its head is an imperative verb, not a noun following a noun."
+        }
+      ],
+      "currentCriteria": "Tag a word the i‘rab calls بدل — or عطف بيان, which has no separate card — that follows a noun in the same case to specify it: a name after a description, a noun after a demonstrative or after the vocative أَيُّهَا, or a noun restating a previous one. Not for coordinated nouns with a conjunction (conjunction) or adjectives (adjective).",
+      "exactReplacementCriteria": "Tag a word the i‘rab calls بدل — or عطف بيان, which has no separate card — that follows a noun in the same case to specify it: a name after a description, a noun after a demonstrative or after the vocative أَيُّهَا, or a noun restating a previous one. Also tag the head of a whole clause that the i‘rab explicitly calls بدل of an earlier clause (ٱتَّبِعُوا۟ in 36:21); follow the replaced clause’s syntactic status, without requiring case agreement between their head words. Not for coordinated nouns or clauses (conjunction) or adjectives (adjective).",
+      "currentExplanationUrdu": "بدل وہ تابع ہے جو پہلے اسم کی جگہ رکھا جا سکے اور اسی کو زیادہ واضح یا متعین کرے؛ یہ اعراب میں اس کی پیروی کرتا ہے، جیسے جَاءَ أَخُوكَ زَيْدٌ۔ یہ پورے کا، اس کے کسی جز کا یا اس سے متعلق کسی چیز کا بدل ہو سکتا ہے؛ عطفِ بیان بھی تقریباً اسی طرح وضاحت کرتا ہے۔",
+      "exactReplacementExplanationUrdu": "اسمی بدل پہلے اسم کو زیادہ واضح یا متعین کرتا اور اعراب میں اس کی پیروی کرتا ہے، جیسے جَاءَ أَخُوكَ زَيْدٌ۔ یہ پورے کا، اس کے کسی جز کا یا اس سے متعلق کسی چیز کا بدل ہو سکتا ہے؛ عطفِ بیان بھی وضاحت کرتا ہے۔ پورا جملہ بھی پہلے جملے کا بدل بن سکتا ہے، جیسے سورۂ یٰسٓ میں دوسری بار ٱتَّبِعُوا۟؛ یہاں الگ الفاظ کا اعراب یکساں ہونا لازم نہیں۔",
+      "replacementUrduCharacters": 337
+    },
+    {
+      "id": "object-whole-clause-scope-excluded",
+      "ruleId": "object",
+      "severity": "major",
+      "adjudication": "accepted",
+      "origin": "fresh programmatic clause-role coverage audit",
+      "problem": "The explicit noun/demonstrative/relative/interpreted-masdar gate omits non-masdari clauses explicitly assigned the direct-object position. Existing zanna describes suspension, but that separate card does not authorize using object on a clause head under this gate. Whole-clause محل نصب must not be confused with the internal case or mood of its first word.",
+      "counterexamples": [
+        {
+          "ayah": "18:7",
+          "wordId": "18:7:9",
+          "arabic": "أَيُّهُمْ",
+          "sourceFragment": "وجملة «أيهم أحسن» مفعول به لـ«نبلو» المعلق",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=7",
+          "analysis": "The interrogative clause is the object; أيهم itself is an internally nominative mubtada, not an individual accusative object."
+        },
+        {
+          "ayah": "18:19",
+          "wordId": "18:19:28",
+          "arabic": "أَيُّهَآ",
+          "sourceFragment": "والجملة مفعول به للنظر المعلق بالاستفهام",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=19",
+          "analysis": "أيها أزكى interrogative clause fills the object slot of فلينظر."
+        },
+        {
+          "ayah": "36:31",
+          "wordId": "36:31:4",
+          "arabic": "أَهْلَكْنَا",
+          "sourceFragment": "وجملة «أهلكنا» مفعول «يروا» المعلق بـ«كم» الخبرية",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=36&verse=31",
+          "analysis": "The clause headed by the past verb أهلكنا is the object of suspended يروا, distinct from كم as the internal fronted object of أهلكنا."
+        },
+        {
+          "ayah": "18:99",
+          "wordId": "18:99:4",
+          "arabic": "يَمُوجُ",
+          "sourceFragment": "وجملة «يموج» مفعول ثانٍ لـ«ترك»",
+          "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=99",
+          "analysis": "The verbal clause is the second object; two-objects remains applicable and the lexical mood of يموج is independent of whole-clause محل نصب."
+        }
+      ],
+      "currentCriteria": "Tag an explicit noun (or demonstrative, relative or interpreted masdar) that is the مفعول به of a verb, participle or masdar. For pronoun objects use object-pronoun; for an object placed before its verb also fronted-object; for a second object also two-objects; for the quoted sentence after قَالَ use quoted-speech.",
+      "exactReplacementCriteria": "Tag an explicit noun (or demonstrative, relative or interpreted masdar), or the head of a whole clause, that the i‘rab calls مفعول به of a verb, participle or masdar. A clause object is in محل نصب; do not infer accusative endings for its individual words (18:7، 18:19، 36:31). For pronoun objects use object-pronoun; for an object placed before its verb also fronted-object; for a second object also two-objects; for the quoted sentence after قَالَ use quoted-speech.",
+      "currentExplanationUrdu": "متعدی فعل کا اثر جس پر پڑے وہ مفعول بہ ہے اور منصوب ہوتا ہے، جیسے نَصَرَ زَيْدٌ عَمْرًا میں عَمْرًا۔ اسمِ فاعل یا مصدر بھی فعل کی طرح مفعول لے سکتے ہیں، اور أَنْ يَفْعَلَ جیسا مصدری جملہ بھی مفعول بن سکتا ہے۔",
+      "exactReplacementExplanationUrdu": "متعدی فعل کا اثر جس پر پڑے وہ مفعول بہ ہے اور منصوب ہوتا ہے، جیسے نَصَرَ زَيْدٌ عَمْرًا میں عَمْرًا۔ اسمِ فاعل یا مصدر بھی فعل کی طرح مفعول لے سکتے ہیں، اور أَنْ يَفْعَلَ جیسا مصدری جملہ بھی مفعول بن سکتا ہے۔ سوالیہ یا دوسرا پورا جملہ بھی محلِ نصب میں مفعول ہو سکتا ہے؛ اس کے الگ الفاظ کا اعراب ان کے اپنے کردار سے طے ہوتا ہے۔",
+      "replacementUrduCharacters": 326
+    }
+  ],
+  "coveredOrIntentionallyDistinct": [
+    {
+      "family": "haal/adjective",
+      "result": "Already explicitly authorize clause heads and relevant prepositional phrases. Adjective now distinguishes single-word agreement from the syntactic position of a whole modifier. No new scope finding."
+    },
+    {
+      "family": "idafa",
+      "result": "Explicitly permits adverb + clause; e.g18:10,18:14,18:16,18:17,18:39,18:47,18:48,18:55,23:100,32:12,36:13. genitive is a separate individual-word case card, not a requirement to mark an internally inflected clause head GEN."
+    },
+    {
+      "family": "subject",
+      "result": "Interpreted masdars are explicitly included, e.g23:36 and23:114. At32:26 source chooses a hidden subject pronoun; كم أهلكنا merely explains that estimated subject, so it must not be falsely forced into a clause-subject tag."
+    },
+    {
+      "family": "passive",
+      "result": "Explicitly includes relevant phrase and interpreted-masdar substitutes:18:99,18:110,23:101,36:51,55:41. Quotation after قيل may have recognized alternative analyses; current chosen QAC/pronoun analysis is not overridden."
+    },
+    {
+      "family": "tawkid",
+      "result": "The actual technical cases are repeated هيهات or independent pronouns/nominal quantifiers, all already eligible. No actual source clause-tawkid case found. Words such as لتأكيد الربط are not automatically the technical follower construction."
+    },
+    {
+      "family": "answers/oath/quoted-speech",
+      "result": "condition-answer and oath explicitly authorize opening words of whole answers; quoted-speech explicitly covers first words of reported clauses including implied قول. جواب النداء is not a conditional answer and need not take condition-answer."
+    },
+    {
+      "family": "two-objects/zanna/inna/kana/nominal",
+      "result": "Their criteria authorize the governed objects/predicates without a contrary word-class gate. zanna explicitly covers suspended verbs and whole clauses filling object slots; nominal explicitly includes clausal and phrase predicates. No additional definite eligibility contradiction."
+    },
+    {
+      "family": "conjunction",
+      "result": "The criteria explicitly allow the coordinating particle, which is carried by actual clause openings; case-copy language describes nominal coordinated words. No actual clause opening is blocked from conjunction when the source calls the particle coordinative."
+    },
+    {
+      "family": "nominative/accusative/genitive/fronted-object/cognate-object/purpose-object/adverb",
+      "result": "Individual case/sign or noun-role cards can legitimately restrict noun eligibility. Interpreted masdar role examples are already included where attested; internally nominative/indicative words do not inherit a whole clause’s syntactic case. No hypothetical broadening requested."
+    }
+  ],
+  "additionalDefiniteFindings": [],
+  "validation": {
+    "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline rules",
+    "exitCode": 0,
+    "result": {
+      "ok": true,
+      "kind": "rules",
+      "batch": null,
+      "errors": [],
+      "warnings": []
+    },
+    "note": "Read-only current-library validation; no proposed shared-input changes were made."
+  },
+  "limits": [
+    "Programmatic filtering plus complete-source context review can still miss a later justified source issue; this is not scholarly certification.",
+    "No shared library/guide/packet/chunk or metadata input was edited and no Codex CLI was invoked."
+  ]
+}

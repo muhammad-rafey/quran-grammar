@@ -207,6 +207,101 @@ class AssemblyHoldTests(unittest.TestCase):
             command = [sys.executable, '-I', *arguments]
         return subprocess.run(command, capture_output=True, text=True, timeout=30)
 
+    def make_verb_fixture(self, lemmas, raw_passive=False, passive_override=None):
+        """Add synthetic verb occurrences; none represents an actual Quranic ayah."""
+        self.make_surah(32, 30, 372)
+        meta_path = self.work / 'meta/words.json'
+        chunk_path = self.work / 'chunks/32/32-c01.json'
+        metadata = json.loads(meta_path.read_text())
+        chunk = json.loads(chunk_path.read_text())
+        effective_passive = raw_passive if passive_override is None else passive_override
+        # Deliberately use fatha-before-shadda in the paradigm, not the authored
+        # shadda-before-fatha spelling, to exercise canonical mark ordering.
+        past = 'شُقَ\u0651' if effective_passive else 'شَقَ\u0651'
+        arabic = 'شُقَّ' if effective_passive else 'شَقَّ'
+        overrides = {}
+        for word, lemma in zip(chunk['words'], lemmas):
+            metadata[word['id']].update({
+                'arabic': arabic, 'pos': 'verb', 'root': 'ش ق ق',
+                'qacSegments': [{'kind': 'STEM', 'tag': 'V', 'verbForm': 'I',
+                                 'lemmaBuckwalter': 'synthetic-verb', 'root': 'ش ق ق'}],
+                'verb': {'passive': raw_passive}, 'lexemeKey': 'synthetic-verb',
+            })
+            word.update({
+                'lemma': lemma, 'posUrdu': 'فعلِ ماضی',
+                'morphologyUrdu': 'یہ صرف خودکار آزمائش کے لیے بنایا گیا فرضی فعلِ ماضی ہے۔',
+                'verbNoteUrdu': 'یہ صیغہ صرف خودکار آزمائش کے فرضی مواد کا حصہ ہے۔',
+                'segments': [{'arabic': arabic, 'roleUrdu': 'فعلِ ماضی',
+                              'meaningUrdu': 'فرضی آزمائشی فعل'}],
+                'ruleIds': ['perfect'],
+            })
+            if passive_override is not None:
+                overrides[word['id']] = {'passive': passive_override}
+        write_json(meta_path, metadata)
+        write_json(chunk_path, chunk)
+        write_json(self.work / 'meta/overrides.json', overrides)
+        write_json(self.work / 'libs/roots/batch.json', {'entries': [{
+            'root': 'ش ق ق', 'meaningUrdu': 'چیرنا؛ صرف فرضی آزمائش۔',
+            'noteUrdu': 'یہ مادہ صرف خودکار آزمائش کے فرضی مواد کے لیے ہے۔',
+        }]})
+        write_json(self.work / 'libs/lexemes/batch.json', {'entries': [{
+            'key': 'synthetic-verb', 'baabUrdu': 'باب نصر', 'formUrdu': 'ثلاثی مجرد',
+            'past': past, 'present': 'يُشَقُّ' if effective_passive else 'يَشُقُّ',
+            'pattern': 'فُعِلَ يُفْعَلُ' if effective_passive else 'فَعَلَ يَفْعُلُ',
+        }]})
+        rules_path = self.work / 'libs/rules.json'
+        rules = json.loads(rules_path.read_text())
+        rules['rules'].append({
+            'id': 'perfect', 'titleUrdu': 'فرضی فعل کی آزمائش',
+            'explanationUrdu': 'یہ صرف خودکار آزمائش کے لیے بنایا گیا عارضی فرضی قاعدہ ہے۔',
+            'appliesWhenEnglish': 'Synthetic fixture verb rule only.',
+        })
+        write_json(rules_path, rules)
+        return past
+
+    def test_nfc_diagnostics_preserve_authored_strings_and_real_citation_variants(self):
+        lemmas = ['شَقَّ', 'شَقَ\u0651']
+        past = self.make_verb_fixture(lemmas)
+        chunk_path = self.work / 'chunks/32/32-c01.json'
+        chunk = json.loads(chunk_path.read_text())
+        chunk['words'][2]['lemma'] = 'كَلِمَةٌ'
+        write_json(chunk_path, chunk)
+        result = self.run_assemble('--draft', '--surah', '32')
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        report = json.loads((self.work / 'reports/assembly-report.json').read_text())['surahs']['32']
+        self.assertEqual(report['verbLemmaNotActivePast'], [])
+        self.assertEqual(report['lemmaVariants'], {
+            'synthetic|None|noun': {'كَلِمَةٌ': 1, 'كَلِمَة': 369},
+        })
+        draft = json.loads((self.work / 'drafts/surah-32.json').read_text())
+        self.assertEqual(draft['reviewStatus'], 'scholarly-review-pending')
+        for index, lemma in enumerate(lemmas):
+            word = draft['study']['words'][index]
+            self.assertEqual(word['lemma'], lemma)
+            self.assertEqual(word['arabic'], 'شَقَّ')
+            self.assertEqual(word['segments'][0]['arabic'], 'شَقَّ')
+            self.assertEqual(draft['study']['verbForms'][word['id']]['past'], past)
+        self.assertEqual(list(self.repo.rglob('*')), [])
+
+    def test_effective_active_override_checks_lemma_against_active_past(self):
+        past = self.make_verb_fixture(['شُقَّ'], raw_passive=True, passive_override=False)
+        result = self.run_assemble('--draft', '--surah', '32')
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        report = json.loads((self.work / 'reports/assembly-report.json').read_text())['surahs']['32']
+        self.assertEqual(report['verbLemmaNotActivePast'], [
+            ['32:1:1', 'شُقَّ', past],
+        ])
+
+    def test_effective_passive_override_does_not_compare_with_passive_past(self):
+        past = self.make_verb_fixture(['شَقَّ'], raw_passive=False, passive_override=True)
+        result = self.run_assemble('--draft', '--surah', '32')
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        report = json.loads((self.work / 'reports/assembly-report.json').read_text())['surahs']['32']
+        self.assertEqual(report['verbLemmaNotActivePast'], [])
+        study = json.loads((self.work / 'drafts/surah-32.json').read_text())['study']
+        self.assertEqual(study['words'][0]['lemma'], 'شَقَّ')
+        self.assertEqual(study['verbForms']['32:1:1']['past'], past)
+
     def test_write_refuses_pending_before_missing_dependencies(self):
         (self.work / 'meta/words.json').unlink()
         result = self.run_assemble('--write', '--surah', '32')

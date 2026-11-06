@@ -1,0 +1,32 @@
+{
+  "snapshotDate": "2026-11-06",
+  "publication": "eleven-Surah runtime unchanged; all expansion content held",
+  "checks": {
+    "npm run verify": "Passed: types, 27 core/API/mobile/database tests, 163 pipeline Node tests (one completed-manifest check skipped), 37 Python tests, web/API production builds",
+    "BASE_URL=empty npm run test:e2e": "29 passed; 4 incomplete-draft checks skipped; empty BASE_URL matches local CI",
+    "npm run build:mobile": "Android and iOS exports passed; not iOS device evidence",
+    "validate_chunk.py for every authored file": "110 chunks; zero errors; eight source-type-label warnings documented separately",
+    "assemble.py --draft --surah32 36 55": "Three complete structurally validated held JSON artifacts; fresh independent reviews pending",
+    "shared isStudyData on32/36/55": "All three pass",
+    "assemble.py --write": "correctly refuses all five pending scholarly approvals;runtimeWritten=false",
+    "export_reviews.mjs": "correctly refuses stale input fingerprints; no completed review manifest exported",
+    "git apply --check content-pipeline/integration/five-surahs.patch": "passed; patch remains unapplied",
+    "git diff --check": "passed",
+    "database SQLite verification": "11 Surahs, 55 ayahs, 230 words; SHA-256 1e9bca623503f341cd150984af0c4e43a1c7032c60466a9f5be2e891c039219f",
+    "database Postgres verification": "Read-only home-server verification passed: 11 Surahs, 55 ayahs, 230 words; same SHA-256 as SQLite"
+  },
+  "nativeEvidence": {
+    "device": "Android36 repro36 emulator",
+    "build": "fresh standalone org.qurangrammar.app debug-signed APK",
+    "tested": "Arabic/Urdu display, collapsed Filters, ayah jump, Juz30 partial chapter change, word root/paradigm/Next, Urdu preference after cold launch; no fatal or ReactNativeJS errors",
+    "localImages": [
+      "build/verification/android-initial.png",
+      "build/verification/android-word.png"
+    ],
+    "limitations": [
+      "No new iOS simulator/device interaction test",
+      "Expanded Al-Kahf native scrolling not yet tested; content held"
+    ]
+  },
+  "blocker": "Authenticated Codex account usage limit stopped model jobs. Seventeen chunks need authoring and all 110 existing chunks need fresh full reviews after library edits. No final five-Surah scholarly review bundle was generated."
+}

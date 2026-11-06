@@ -1,0 +1,314 @@
+{
+  "report": "Independent risk audit of all rule application predicates",
+  "date": "2026-11-06",
+  "reviewStatus": "completed; all three predicate fixes applied and independently confirmed",
+  "scholarlyReview": "not performed; new lessons remain held for actual scholarly review",
+  "scope": {
+    "rulesRead": 112,
+    "fields": [
+      "appliesWhenEnglish",
+      "explanationUrdu"
+    ],
+    "method": "Read all 112 criteria in full, cross-checked Urdu explanations, and tested plausible generalization gaps against actual source occurrences and selected primary grammar notes. Findings are eligibility errors/clarifications with concrete in-scope counterexamples, not stylistic preferences. This does not replace every chunk’s occurrence-level review."
+  },
+  "inputs": [
+    {
+      "path": "libs/rules.json",
+      "sha256": "0fd3596dab8d41411ee88904055cb7340ec0fbe56747ac418f975ebf2f001a5f"
+    },
+    {
+      "path": "meta/words.json",
+      "sha256": "1a3f2381f565d82b39b5a181dfce5e4d53e8f46d4974dd174cb83b0acde3cd9f"
+    },
+    {
+      "path": "meta/ayahs.json",
+      "sha256": "fd0da606c005948b916d8c3d4d6cea937cd39ffa08672ad9f2ffe7e84db3d69b"
+    },
+    {
+      "path": "meta/overrides.json",
+      "sha256": "2cd47d46176975b911b53f017d840238ad2b3ede1cb02e3e056cdd9c9f5409b5"
+    },
+    {
+      "path": "guide/authoring-guide.md",
+      "sha256": "8ead190b344b7679af969df1fa4b3172ee5fe29035ca49c5d7d1fdccfa9c85ff"
+    }
+  ],
+  "checkedRuleIds": [
+    "nominative",
+    "accusative",
+    "genitive",
+    "implied-case",
+    "diptote",
+    "five-nouns",
+    "dual",
+    "sound-plural",
+    "feminine-plural",
+    "broken-plural",
+    "definite",
+    "indefinite",
+    "proper-noun",
+    "feminine-marker",
+    "number-words",
+    "perfect",
+    "imperfect",
+    "imperative",
+    "prohibition",
+    "passive",
+    "future",
+    "qad",
+    "emphatic-nun",
+    "jussive",
+    "subjunctive",
+    "five-verbs",
+    "weak-verb",
+    "hamzated",
+    "doubled",
+    "quadriliteral",
+    "derived-form",
+    "assimilation",
+    "kana",
+    "kada-asa",
+    "praise-blame",
+    "exclamation",
+    "nun-wiqaya",
+    "participle",
+    "verbal-noun",
+    "comparative",
+    "intensive",
+    "resembling-adjective",
+    "noun-of-place-time",
+    "verb-like-noun",
+    "subject-pronoun",
+    "object-pronoun",
+    "pronoun",
+    "independent-pronoun",
+    "separating-pronoun",
+    "pronoun-of-matter",
+    "relative",
+    "demonstrative",
+    "nominal",
+    "verbal-sentence",
+    "subject",
+    "object",
+    "two-objects",
+    "zanna",
+    "inna",
+    "inna-sisters",
+    "lightened-particle",
+    "haal",
+    "tamyiz",
+    "cognate-object",
+    "purpose-object",
+    "adverb",
+    "idh",
+    "quoted-speech",
+    "parenthetical",
+    "fronted-object",
+    "fronting",
+    "elision",
+    "ishtighal",
+    "tanazu",
+    "idafa",
+    "adjective",
+    "badal",
+    "tawkid",
+    "conjunction",
+    "resumption",
+    "preposition",
+    "extra-particle",
+    "vocative",
+    "condition",
+    "conditional-jazm",
+    "law-condition",
+    "lamma",
+    "condition-answer",
+    "oath",
+    "emphatic-lam",
+    "purpose-lam",
+    "imperative-lam",
+    "lam-jussive",
+    "lan-negation",
+    "negation",
+    "negative-in",
+    "la-generic",
+    "restriction",
+    "exception",
+    "interrogative",
+    "kam",
+    "equalization",
+    "masdar-particle",
+    "explanatory-an",
+    "answer-particle",
+    "surprise-idha",
+    "retraction",
+    "deterrence",
+    "detailing",
+    "exhortation",
+    "hatta",
+    "muqattaat"
+  ],
+  "findings": [
+    {
+      "id": "predicate-001",
+      "ruleId": "proper-noun",
+      "field": "appliesWhenEnglish",
+      "severity": "major",
+      "classification": "absence of tanwin is not a sufficient diptote predicate",
+      "problemEnglish": "The unconditional instruction to pair diptote when a proper noun lacks tanwin includes definite/annexed/built proper names which lack it for other reasons. The divine name is explicitly listed by this same criterion, so it supplies a direct counterexample. No learner-facing paradigm or Arabic source token needs changing.",
+      "counterexamples": [
+        {
+          "ref": "18:15:17",
+          "arabic": "ٱللَّهِ",
+          "sourceDescription": "Proper divine name in the genitive after عَلَى, without tanwin; lack of tanwin must not trigger the diptote card."
+        },
+        {
+          "ref": "18:16:6",
+          "arabic": "ٱللَّهَ",
+          "sourceDescription": "The current chunk’s source explicitly identifies the accusative divine proper name. It lacks tanwin but does not thereby become a diptote."
+        }
+      ],
+      "oldText": "Pair with diptote when it lacks tanwīn.",
+      "recommendedText": "Pair with diptote only when the proper name is independently established as ممنوع من الصرف; absence of tanwīn alone is insufficient.",
+      "sources": [
+        {
+          "path": "meta/words.json",
+          "refs": [
+            "18:15:17",
+            "18:1:2"
+          ]
+        },
+        {
+          "url": "https://corpus.quran.com/wordbyword.jsp?chapter=18&verse=15",
+          "summaryEnglish": "The primary morphology identifies the divine name at 18:15:17 as a genitive proper noun."
+        }
+      ],
+      "criterionAtAudit": "Tag a proper name (QAC PN or a named-entity noun): ٱللَّه، مُوسَىٰ، هَٰرُون، نُوح، فِرْعَوْن، إِبْلِيس، ءَادَم، ذُو ٱلْقَرْنَيْن، يَأْجُوج وَمَأْجُوج، سَيْنَاء، جَهَنَّم، ٱلْقُرْءَان (when QAC marks PN). Pair with diptote only when the proper noun is ممنوع من الصرف; absence of tanwīn alone is insufficient. Not for common nouns or divine attributes used as adjectives unless QAC tags them PN.",
+      "status": "applied and confirmed",
+      "appliedText": "Tag a proper name (QAC PN or a named-entity noun): ٱللَّه، مُوسَىٰ، هَٰرُون، نُوح، فِرْعَوْن، إِبْلِيس، ءَادَم، ذُو ٱلْقَرْنَيْن، يَأْجُوج وَمَأْجُوج، سَيْنَاء، جَهَنَّم، ٱلْقُرْءَان (when QAC marks PN). Pair with diptote only when the proper noun is ممنوع من الصرف; absence of tanwīn alone is insufficient. Not for common nouns or divine attributes used as adjectives unless QAC tags them PN."
+    },
+    {
+      "id": "predicate-002",
+      "ruleId": "adjective",
+      "field": "appliesWhenEnglish",
+      "severity": "minor",
+      "classification": "scope morphological agreement to a single-word adjective",
+      "problemEnglish": "The combined predicate first allows a clause/prepositional-phrase head, then requires agreement in case and definiteness. Agreement of a simple adjective must not be imposed on the head word of an adjective clause. At 18:22 the described numeral is indefinite, while the clause-head رابعهم is annexed to a definite pronoun. The whole clause is still a naat in the selected primary source. The Urdu card already allows clauses and prepositional phrases; only the criterion needs this qualification.",
+      "counterexamples": [
+        {
+          "refs": [
+            "18:22:2",
+            "18:22:3",
+            "18:22:4"
+          ],
+          "arabic": "ثَلَـٰثَةٌۭ رَّابِعُهُمْ كَلْبُهُمْ",
+          "sourceDescription": "The numeral is an indefinite noun. The source calls the following nominal clause a naat; its head is definite through pronominal idafa, so head-level definiteness agreement is not a valid eligibility test."
+        }
+      ],
+      "oldText": "Tag a word, or the head of a clause or prepositional phrase, that the i‘rab calls نعت/صفة of a preceding noun. For a single-word adjective, apply case and definiteness agreement; for a clause or prepositional phrase, follow the syntactic محل of the modifier as a whole rather than requiring its head word to agree. Boundary with haal: an indefinite accusative describing a definite noun is ḥāl; a clause after an indefinite noun is usually ṣifa, after a definite noun usually ḥāl.",
+      "recommendedText": "Tag a word, or the head of a clause or prepositional phrase, that the i‘rab calls نعت/صفة of a preceding noun. For a single-word adjective, apply case and definiteness agreement; for a clause or prepositional phrase, follow the syntactic محل of the modifier as a whole rather than requiring its head word to agree. Boundary with haal: an indefinite accusative describing a definite noun is ḥāl; a clause after an indefinite noun is usually ṣifa, after a definite noun usually ḥāl.",
+      "sources": [
+        {
+          "path": "meta/ayahs.json",
+          "ref": "18:22.qacGrammarNotesArabic"
+        },
+        {
+          "path": "meta/words.json",
+          "refs": [
+            "18:22:2",
+            "18:22:3"
+          ]
+        },
+        {
+          "url": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=22",
+          "summaryEnglish": "The primary ayah analysis assigns the nominal clause as a descriptive clause of the numeral."
+        },
+        {
+          "url": "https://corpus.quran.com/wordbyword.jsp?chapter=18&verse=22",
+          "summaryEnglish": "The morphology distinguishes the indefinite numeral and the clause-head with attached possessive pronoun."
+        }
+      ],
+      "status": "applied and confirmed",
+      "appliedText": "Tag a word, or the head of a clause or prepositional phrase, that the i‘rab calls نعت/صفة of a preceding noun. For a single-word adjective, apply case and definiteness agreement; for a clause or prepositional phrase, follow the syntactic محل of the modifier as a whole rather than requiring its head word to agree. Boundary with haal: an indefinite accusative describing a definite noun is ḥāl; a clause after an indefinite noun is usually ṣifa, after a definite noun usually ḥāl."
+    },
+    {
+      "id": "predicate-003",
+      "ruleId": "derived-form",
+      "field": "appliesWhenEnglish",
+      "severity": "major",
+      "classification": "attested Form XI participle excluded by II–X limit",
+      "problemEnglish": "The criterion restricts the rule to Forms II–X and their derived nouns. An in-scope augmented triliteral active participle is Form XI, so the explicit upper bound would exclude an appropriate and important rule reference. This finding was independently brought by the other library reviewer and cross-confirmed here against both stored sources and the primary page.",
+      "counterexamples": [
+        {
+          "ref": "55:64:1",
+          "arabic": "مُدْهَآمَّتَانِ",
+          "sourceDescription": "Both QAC morphology and the fork mark a nominative feminine dual Form XI active participle with root د ه م. The existing root note already gives the augmented derivation."
+        }
+      ],
+      "oldText": "Tag a verb of an attested augmented triliteral form (II–X and XI) and, when the pattern explains the word’s shape, its participle or verbal noun (مُنذِر، ٱلْمُؤْمِنِينَ، تَأْوِيل، مُسْتَقِيم; the attested form XI active participle مُدْهَآمَّتَانِ). Not for form I verbs, quadriliteral roots, or a shadda that comes from a doubled root (doubled). When the added tāʾ of form V/VI/VIII is changed, merged or dropped, also tag assimilation.",
+      "recommendedText": "Tag a verb of an attested augmented triliteral form (II–X and XI) and, when the pattern explains the word’s shape, its participle or verbal noun (مُنذِر، ٱلْمُؤْمِنِينَ، تَأْوِيل، مُسْتَقِيم; the attested form XI active participle مُدْهَآمَّتَانِ). Not for form I verbs, quadriliteral roots, or a shadda that comes from a doubled root (doubled). When the added tāʾ of form V/VI/VIII is changed, merged or dropped, also tag assimilation.",
+      "sources": [
+        {
+          "path": "meta/words.json",
+          "ref": "55:64:1",
+          "fields": [
+            "qacMorphologyEnglish",
+            "qacSegments[0].verbForm",
+            "forkSegments[0].features"
+          ]
+        },
+        {
+          "path": "libs/roots/root-04.json",
+          "ref": "د ه م"
+        },
+        {
+          "url": "https://corpus.quran.com/wordbyword.jsp?chapter=55&verse=64",
+          "summaryEnglish": "The primary morphology explicitly identifies the word as a Form XI active participle."
+        }
+      ],
+      "explanationAssessment": "The Urdu explanation introduces its examples with جیسے and does not claim to list every augmented pattern; no wholesale explanation rewrite is necessary.",
+      "status": "applied and confirmed",
+      "appliedText": "Tag a verb of an attested augmented triliteral form (II–X and XI) and, when the pattern explains the word’s shape, its participle or verbal noun (مُنذِر، ٱلْمُؤْمِنِينَ، تَأْوِيل، مُسْتَقِيم; the attested form XI active participle مُدْهَآمَّتَانِ). Not for form I verbs, quadriliteral roots, or a shadda that comes from a doubled root (doubled). When the added tāʾ of form V/VI/VIII is changed, merged or dropped, also tag assimilation."
+    }
+  ],
+  "resolvedItemsNotReflagged": [
+    "restriction includes prohibitive clauses",
+    "idafa distinguishes semantic/formal annexation",
+    "la-generic defines its technical unannexed category and appropriate construction signs",
+    "opaque raw Corpus lexeme IDs do not override corrected fields"
+  ],
+  "mechanicalValidation": {
+    "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline rules",
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "counts": {
+    "major": 2,
+    "minor": 1,
+    "critical": 0,
+    "additionalDefiniteFindingsBeyondListed": 0,
+    "scholarlyApprovalsGranted": 0,
+    "openFindings": 0
+  },
+  "limits": [
+    "AI risk audit, not scholarly approval.",
+    "Reading all criteria is not a claim that every possible grammatical analysis of every future chunk has been exhaustively verified.",
+    "No shared rules, sources, libraries, chunks, scripts or checkpoints were changed by this audit."
+  ],
+  "applicationConfirmation": {
+    "rulesSha256": "0fd3596dab8d41411ee88904055cb7340ec0fbe56747ac418f975ebf2f001a5f",
+    "checkedRuleCount": 112,
+    "confirmedChanges": [
+      "proper-noun pairs diptote only with independently established ممنوع من الصرف status",
+      "adjective applies morphological agreement to single-word modifiers and syntactic محل to clause/PP units",
+      "derived-form includes the attested Form XI active participle while retaining the existing exclusions"
+    ],
+    "mechanicalValidation": {
+      "command": "python3 -I content-pipeline/scripts/validate_lib.py content-pipeline rules",
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    "scholarlyApproval": "not granted"
+  }
+}

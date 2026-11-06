@@ -76,7 +76,7 @@
    "id": "proper-noun",
    "titleUrdu": "اسمِ علم",
    "explanationUrdu": "اسمِ علم کسی خاص شخص، جگہ یا چیز کا نام ہے، جیسے مُوسَى اور هَارُونُ؛ یہ خود معرفہ ہوتا ہے، اس لیے اسے ال یا اضافت کی ضرورت نہیں۔ بہت سے عجمی اور مؤنث نام غیر منصرف ہیں؛ اللَّهُ کا لفظ بھی علم ہے، اور اس کی مادہ وار درجہ بندی ایک لغوی اشاریہ ہے، طے شدہ اشتقاق نہیں۔",
-   "appliesWhenEnglish": "Tag a proper name (QAC PN or a named-entity noun): ٱللَّه، مُوسَىٰ، هَٰرُون، نُوح، فِرْعَوْن، إِبْلِيس، ءَادَم، ذُو ٱلْقَرْنَيْن، يَأْجُوج وَمَأْجُوج، سَيْنَاء، جَهَنَّم، ٱلْقُرْءَان (when QAC marks PN). Pair with diptote when it lacks tanwīn. Not for common nouns or divine attributes used as adjectives unless QAC tags them PN."
+   "appliesWhenEnglish": "Tag a proper name (QAC PN or a named-entity noun): ٱللَّه، مُوسَىٰ، هَٰرُون، نُوح، فِرْعَوْن، إِبْلِيس، ءَادَم، ذُو ٱلْقَرْنَيْن، يَأْجُوج وَمَأْجُوج، سَيْنَاء، جَهَنَّم، ٱلْقُرْءَان (when QAC marks PN). Pair with diptote only when the proper noun is ممنوع من الصرف; absence of tanwīn alone is insufficient. Not for common nouns or divine attributes used as adjectives unless QAC tags them PN."
   },
   {
    "id": "feminine-marker",
@@ -184,7 +184,7 @@
    "id": "derived-form",
    "titleUrdu": "ثلاثی مزید فیہ کے ابواب",
    "explanationUrdu": "تین اصلی حروف پر ایک سے تین زائد حروف بڑھانے سے مزید فیہ کے ابواب بنتے ہیں، جیسے أَفْعَلَ، فَعَّلَ، فَاعَلَ، تَفَعَّلَ، تَفَاعَلَ، اِنْفَعَلَ، اِفْتَعَلَ اور اِسْتَفْعَلَ۔ ہر باب معنی میں خاص رنگ لاتا ہے، جیسے متعدی بنانا، کثرت، باہمی عمل یا طلب، مگر مادہ وہی تین حروف رہتا ہے۔",
-   "appliesWhenEnglish": "Tag a verb of forms II–X (QAC “(form II)” … “(form X)”) and, when the pattern explains the word’s shape, its participle or verbal noun (مُنذِر، ٱلْمُؤْمِنِينَ، تَأْوِيل، مُسْتَقِيم). Not for form I verbs, quadriliteral roots, or a shadda that comes from a doubled root (doubled). When the added tāʾ of form V/VI/VIII is changed, merged or dropped, also tag assimilation."
+   "appliesWhenEnglish": "Tag a verb of an attested augmented triliteral form (II–X and XI) and, when the pattern explains the word’s shape, its participle or verbal noun (مُنذِر، ٱلْمُؤْمِنِينَ، تَأْوِيل، مُسْتَقِيم; the attested form XI active participle مُدْهَآمَّتَانِ). Not for form I verbs, quadriliteral roots, or a shadda that comes from a doubled root (doubled). When the added tāʾ of form V/VI/VIII is changed, merged or dropped, also tag assimilation."
   },
   {
    "id": "assimilation",
@@ -333,8 +333,8 @@
   {
    "id": "object",
    "titleUrdu": "مفعول بہ",
-   "explanationUrdu": "متعدی فعل کا اثر جس پر پڑے وہ مفعول بہ ہے اور منصوب ہوتا ہے، جیسے نَصَرَ زَيْدٌ عَمْرًا میں عَمْرًا۔ اسمِ فاعل یا مصدر بھی فعل کی طرح مفعول لے سکتے ہیں، اور أَنْ يَفْعَلَ جیسا مصدری جملہ بھی مفعول بن سکتا ہے۔",
-   "appliesWhenEnglish": "Tag an explicit noun (or demonstrative, relative or interpreted masdar) that is the مفعول به of a verb, participle or masdar. For pronoun objects use object-pronoun; for an object placed before its verb also fronted-object; for a second object also two-objects; for the quoted sentence after قَالَ use quoted-speech."
+   "explanationUrdu": "متعدی فعل کا اثر جس پر پڑے وہ مفعول بہ ہے اور منصوب ہوتا ہے، جیسے نَصَرَ زَيْدٌ عَمْرًا میں عَمْرًا۔ اسمِ فاعل یا مصدر بھی فعل کی طرح مفعول لے سکتے ہیں، اور أَنْ يَفْعَلَ جیسا مصدری جملہ بھی مفعول بن سکتا ہے۔ سوالیہ یا دوسرا پورا جملہ بھی محلِ نصب میں مفعول ہو سکتا ہے؛ اس کے الگ الفاظ کا اعراب ان کے اپنے کردار سے طے ہوتا ہے۔",
+   "appliesWhenEnglish": "Tag an explicit noun (or demonstrative, relative or interpreted masdar), or the head of a whole clause, that the i‘rab calls مفعول به of a verb, participle or masdar. A clause object is in محل نصب; do not infer accusative endings for its internal nouns or subjunctive mood for its internal verbs (18:7، 18:19، 36:31). For pronoun objects use object-pronoun; for an object placed before its verb also fronted-object; for a second object also two-objects; for the quoted sentence after قَالَ use quoted-speech."
   },
   {
    "id": "two-objects",
@@ -454,13 +454,13 @@
    "id": "adjective",
    "titleUrdu": "موصوف اور صفت",
    "explanationUrdu": "صفت اپنے موصوف کی خوبی یا حالت بتاتی ہے اور اس کے بعد آ کر اعراب، معرفہ و نکرہ، جنس اور عدد میں اس کی پیروی کرتی ہے، جیسے الرَّجُلُ الصَّالِحُ۔ نکرہ موصوف کے بعد پورا جملہ یا جار و مجرور بھی صفت بن سکتا ہے، اور غیر عاقل جمع کی صفت اکثر واحد مؤنث آتی ہے۔",
-   "appliesWhenEnglish": "Tag a word, or the head of a clause or prepositional phrase, that the i‘rab calls نعت/صفة of a preceding noun and that agrees with it in case and definiteness. Boundary with haal: an indefinite accusative describing a definite noun is ḥāl; a clause after an indefinite noun is usually ṣifa, after a definite noun usually ḥāl."
+   "appliesWhenEnglish": "Tag a word, or the head of a clause or prepositional phrase, that the i‘rab calls نعت/صفة of a preceding noun. For a single-word adjective, apply case and definiteness agreement; for a clause or prepositional phrase, follow the syntactic محل of the modifier as a whole rather than requiring its head word to agree. Boundary with haal: an indefinite accusative describing a definite noun is ḥāl; a clause after an indefinite noun is usually ṣifa, after a definite noun usually ḥāl."
   },
   {
    "id": "badal",
    "titleUrdu": "بدل",
-   "explanationUrdu": "بدل وہ تابع ہے جو پہلے اسم کی جگہ رکھا جا سکے اور اسی کو زیادہ واضح یا متعین کرے؛ یہ اعراب میں اس کی پیروی کرتا ہے، جیسے جَاءَ أَخُوكَ زَيْدٌ۔ یہ پورے کا، اس کے کسی جز کا یا اس سے متعلق کسی چیز کا بدل ہو سکتا ہے؛ عطفِ بیان بھی تقریباً اسی طرح وضاحت کرتا ہے۔",
-   "appliesWhenEnglish": "Tag a word the i‘rab calls بدل — or عطف بيان, which has no separate card — that follows a noun in the same case to specify it: a name after a description, a noun after a demonstrative or after the vocative أَيُّهَا, or a noun restating a previous one. Not for coordinated nouns with a conjunction (conjunction) or adjectives (adjective)."
+   "explanationUrdu": "اسمی بدل پہلے اسم کو زیادہ واضح یا متعین کرتا اور اعراب میں اس کی پیروی کرتا ہے، جیسے جَاءَ أَخُوكَ زَيْدٌ۔ یہ پورے کا، اس کے کسی جز کا یا اس سے متعلق کسی چیز کا بدل ہو سکتا ہے؛ عطفِ بیان بھی وضاحت کرتا ہے۔ پورا جملہ بھی پہلے جملے کا بدل ہو سکتا ہے؛ پہلے جملے کا محلِ اعراب ہو تو یہ بھی اسی محل میں ہوتا ہے، الگ الفاظ کا اعراب یکساں ہونا لازم نہیں۔",
+   "appliesWhenEnglish": "Tag a word the i‘rab calls بدل — or عطف بيان, which has no separate card — that follows a noun in the same case to specify it: a name after a description, a noun after a demonstrative or after the vocative أَيُّهَا, or a noun restating a previous one. Also tag the head of a whole clause that the i‘rab explicitly calls بدل of an earlier clause (ٱتَّبِعُوا۟ in 36:21); follow the replaced clause’s syntactic status, without requiring case agreement between their head words. Not for coordinated nouns or clauses (conjunction) or adjectives (adjective)."
   },
   {
    "id": "tawkid",
@@ -525,7 +525,7 @@
   {
    "id": "condition-answer",
    "titleUrdu": "جوابِ شرط اور فاءِ رابطہ",
-   "explanationUrdu": "شرطیہ جملے کا دوسرا حصہ جوابِ شرط ہے، جو بتاتا ہے کہ شرط پوری ہونے پر کیا ہوگا۔ جواب جملۂ اسمیہ، امر، نہی، قَدْ، سَ، سَوْفَ یا لَنْ وغیرہ سے شروع ہو تو اس پر فاء ضروری ہے، جسے فاءِ رابطہ کہتے ہیں؛ کبھی جواب حذف ہوتا ہے اور سیاق اس پر دلالت کرتا ہے۔",
+   "explanationUrdu": "شرطیہ جملے کا دوسرا حصہ جوابِ شرط ہے، جو بتاتا ہے کہ شرط پوری ہونے پر کیا ہوگا۔ جواب جملۂ اسمیہ، امر، نہی، قَدْ، سَ، سَوْفَ یا لَنْ وغیرہ سے شروع ہو تو اس پر فاء ضروری ہے، جسے فاءِ رابطہ کہتے ہیں؛ بعض اسمی جوابوں میں إِذَا فجائیہ اس فاء کی جگہ آتا ہے؛ کبھی جواب حذف ہوتا ہے اور سیاق اس پر دلالت کرتا ہے۔",
    "appliesWhenEnglish": "Tag the word that opens the answer of any conditional (إِنْ، مَن، مَا، إِذَا، لَوْ، لَمَّا، أَمَّا…), especially one carrying the linking فَ (الفاء الرابطة لجواب الشرط) — including a فَ answering an implied condition, such as فَبِأَىِّ, even where QAC labels it REM — or the word after which an elided answer is understood. A jussive answer verb also takes jussive."
   },
   {
@@ -586,7 +586,7 @@
    "id": "restriction",
    "titleUrdu": "حصر: إِنَّمَا اور إِلَّا",
    "explanationUrdu": "حصر کسی بات کو ایک ہی چیز تک محدود کرتا ہے، جس کا اردو مفہوم «صرف، فقط، ہی» ہے۔ اس کے عام طریقے نفی کے بعد إِلَّا (مَا… إِلَّا، إِنْ… إِلَّا) اور إِنَّمَا ہیں؛ إِنَّمَا میں مَا کافہ إِنَّ کے عمل کو روک دیتا ہے، اس لیے بعد کا جملہ اپنے عام اعراب پر رہتا ہے۔",
-   "appliesWhenEnglish": "Tag إِلَّا when the clause before it is negated or interrogative and incomplete, so the word after إِلَّا takes the case its own role needs (استثناء مفرّغ / أداة حصر); tag إِنَّمَا/أَنَّمَا (QAC ACC + PREV, كافة ومكفوفة) and لَمَّا meaning إِلَّا. QAC labels every إِلَّا in these surahs RES; decide exception vs restriction by structure — if the group excluded from is stated, use exception."
+   "appliesWhenEnglish": "Tag إِلَّا when the clause before it is negative, prohibitive or interrogative and incomplete, so the word after إِلَّا takes the case its own role needs (استثناء مفرّغ / أداة حصر); tag إِنَّمَا/أَنَّمَا (QAC ACC + PREV, كافة ومكفوفة) and لَمَّا meaning إِلَّا. QAC labels every إِلَّا in these surahs RES; decide exception vs restriction by structure — if the group excluded from is stated, use exception."
   },
   {
    "id": "exception",
