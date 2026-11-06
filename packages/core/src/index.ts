@@ -15,8 +15,8 @@ export { normalizeText, urduNumber, matchesWord } from './search';
 export { isStudyData } from './validate';
 export type { UiLanguage, UiStrings } from './interface';
 export { getUiStrings, formatCount, isUiLanguage } from './interface';
-export type { SurahCatalogEntry, JuzCatalogEntry } from './catalog';
-export { surahCatalog, juzCatalog, getSurahTitle } from './catalog';
+export type { SurahCatalogEntry, JuzCatalogEntry, JuzSurahRange } from './catalog';
+export { surahCatalog, juzCatalog, getSurahTitle, getJuzForAyah, getJuzStartAyah } from './catalog';
 export type {
   PracticeOption,
   PracticeQuestion,

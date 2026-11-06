@@ -23,6 +23,9 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "test:e2e": "playwright test",
+    "db:sqlite": "npm run db:sqlite -w @quran-grammar/api",
+    "db:sync": "npm run db:sync-postgres -w @quran-grammar/api",
+    "db:verify": "npm run db:verify-sqlite -w @quran-grammar/api && npm run db:verify-postgres -w @quran-grammar/api",
     "verify": "npm run typecheck && npm test && npm run build"
   },
   "devDependencies": {

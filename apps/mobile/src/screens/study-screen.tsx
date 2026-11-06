@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Host, Switch } from '@expo/ui';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   matchesWord,
+  getJuzForAyah,
   getSurahTitle,
   juzCatalog,
   type Ayah,
@@ -40,12 +41,77 @@ export default function StudyScreen() {
   const [pos, setPos] = useState<PartOfSpeechFilter>('all');
   const [showMeanings, setShowMeanings] = useState(true);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  // A juz selection can open a chapter mid-way (Juz 16 starts Al-Kahf at ayah 75).
+  const pendingAyah = useRef<number | null>(null);
   useEffect(() => {
     ayahPositions.current = {};
     scroll.current?.scrollTo({ y: 0, animated: false });
   }, [selectedSurah]);
+  const openWord = useCallback(
+    (id: string) => {
+      setSelectedWord(id);
+      router.push({ pathname: '/word/[id]', params: { id } });
+    },
+    [router],
+  );
+  const recordAyahPosition = useCallback((number: number, y: number) => {
+    ayahPositions.current[number] = y;
+    if (pendingAyah.current === number) {
+      pendingAyah.current = null;
+      scroll.current?.scrollTo({ y: Math.max(0, y - spacing.sm), animated: false });
+    }
+  }, []);
+  // Long chapters render over a thousand words; keep scroll-driven ayah updates from re-rendering them.
+  const wordAyahs = useMemo(() => {
+    if (!study) return null;
+    const wordsByAyah = new Map<number, Word[]>();
+    for (const word of study.words) {
+      const list = wordsByAyah.get(word.ayah);
+      if (list) list.push(word);
+      else wordsByAyah.set(word.ayah, [word]);
+    }
+    return study.ayahs.map((item) => (
+      <View
+        key={`${study.surah.number}:${item.number}`}
+        onLayout={(event) => recordAyahPosition(item.number, event.nativeEvent.layout.y)}
+        style={{ ...card, gap: spacing.md }}
+        testID={`ayah-${item.number}`}
+      >
+        <AyahLabel number={item.number} />
+        <View style={{ ...row, flexWrap: 'wrap', alignItems: 'stretch', gap: spacing.sm }}>
+          {(wordsByAyah.get(item.number) ?? []).map((word) => (
+            <WordToken
+              key={word.id}
+              word={word}
+              selected={word.id === selectedWord}
+              matched={matchesWord(word, study, '', pos)}
+              showMeaning={showMeanings}
+              onPress={() => openWord(word.id)}
+            />
+          ))}
+        </View>
+        <View style={{ borderTopWidth: 1, borderColor: colors.border, paddingTop: spacing.md }}>
+          <Paragraph>{item.translationUrdu}</Paragraph>
+        </View>
+      </View>
+    ));
+  }, [study, selectedWord, pos, showMeanings, openWord, recordAyahPosition]);
+  const grammarAyahs = useMemo(
+    () =>
+      study?.ayahs.map((item) => (
+        <View
+          key={`${study.surah.number}:${item.number}`}
+          onLayout={(event) => recordAyahPosition(item.number, event.nativeEvent.layout.y)}
+        >
+          <GrammarAyah ayah={item} study={study} onWord={openWord} />
+        </View>
+      )) ?? null,
+    [study, openWord, recordAyahPosition],
+  );
   if (!study) return <InitialDataState />;
-  const currentJuz = juzCatalog.find((item) => item.surahNumbers.includes(selectedSurah));
+  const currentJuz =
+    getJuzForAyah(selectedSurah, ayah) ??
+    juzCatalog.find((item) => item.surahNumbers.includes(selectedSurah));
   const filters: { value: PartOfSpeechFilter; label: string }[] = [
     { value: 'all', label: ui.allWords },
     { value: 'noun', label: ui.noun },
@@ -53,10 +119,6 @@ export default function StudyScreen() {
     { value: 'particle', label: ui.particle },
     { value: 'pronoun', label: ui.pronoun },
   ];
-  const openWord = (id: string) => {
-    setSelectedWord(id);
-    router.push({ pathname: '/word/[id]', params: { id } });
-  };
   const chooseAyah = (number: number) => {
     setPicker(null);
     setAyah(number);
@@ -276,51 +338,10 @@ export default function StudyScreen() {
                 </Action>
               </View>
             )}
-            {study.ayahs.map((item) => (
-              <View
-                key={`${study.surah.number}:${item.number}`}
-                onLayout={(event) => {
-                  ayahPositions.current[item.number] = event.nativeEvent.layout.y;
-                }}
-                style={{ ...card, gap: spacing.md }}
-                testID={`ayah-${item.number}`}
-              >
-                <AyahLabel number={item.number} />
-                <View style={{ ...row, flexWrap: 'wrap', alignItems: 'stretch', gap: spacing.sm }}>
-                  {study.words
-                    .filter((word) => word.ayah === item.number)
-                    .map((word) => (
-                      <WordToken
-                        key={word.id}
-                        word={word}
-                        selected={word.id === selectedWord}
-                        matched={matchesWord(word, study, '', pos)}
-                        showMeaning={showMeanings}
-                        onPress={() => openWord(word.id)}
-                      />
-                    ))}
-                </View>
-                <View
-                  style={{ borderTopWidth: 1, borderColor: colors.border, paddingTop: spacing.md }}
-                >
-                  <Paragraph>{item.translationUrdu}</Paragraph>
-                </View>
-              </View>
-            ))}
+            {wordAyahs}
           </>
         ) : view === 'grammar' ? (
-          <>
-            {study.ayahs.map((item) => (
-              <View
-                key={`${study.surah.number}:${item.number}`}
-                onLayout={(event) => {
-                  ayahPositions.current[item.number] = event.nativeEvent.layout.y;
-                }}
-              >
-                <GrammarAyah ayah={item} study={study} onWord={openWord} />
-              </View>
-            ))}
-          </>
+          <>{grammarAyahs}</>
         ) : (
           <Settings />
         )}
@@ -335,11 +356,16 @@ export default function StudyScreen() {
         onMode={setBrowseMode}
         onClose={() => setPicker(null)}
         onChooseAyah={chooseAyah}
-        onChooseSurah={(number) => {
+        onChooseSurah={(number, startAyah) => {
           setMode(browseMode);
           setPicker(null);
+          if (number === selectedSurah) {
+            chooseAyah(startAyah);
+            return;
+          }
+          pendingAyah.current = startAyah > 1 ? startAyah : null;
+          setAyahSelection({ surah: number, number: startAyah });
           selectSurah(number);
-          chooseAyah(1);
         }}
       />
     </View>

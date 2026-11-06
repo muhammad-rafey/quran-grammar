@@ -19,7 +19,13 @@ function readLocation() {
   const params = new URLSearchParams(location.hash.slice(1));
   const word = params.get('word');
   const requested = Number(word?.split(':')[0] || params.get('surah') || 1);
-  return { surah: availableSurahNumbers.includes(requested) ? requested : 1, word };
+  const ayah = Number(params.get('ayah'));
+  return {
+    surah: availableSurahNumbers.includes(requested) ? requested : 1,
+    word,
+    // Juz selections open a chapter at its first ayah inside that juz, e.g. Al-Kahf 75 for Juz 16.
+    ayah: !word && Number.isSafeInteger(ayah) && ayah > 1 ? ayah : null,
+  };
 }
 
 export function App() {
@@ -72,9 +78,18 @@ export function App() {
     if (!study || appliedRequest.current === locationRequest) return;
     appliedRequest.current = locationRequest;
     const target = study.words.find((word) => word.id === locationRequest.word);
-    setSelectedId(target?.id || study.words[0].id);
-    setActiveAyah(target?.ayah || 1);
+    const startWord = target
+      ? undefined
+      : study.words.find((word) => word.ayah === locationRequest.ayah);
+    setSelectedId(target?.id || startWord?.id || study.words[0].id);
+    setActiveAyah(target?.ayah || startWord?.ayah || 1);
     setSheetOpen(!!target && matchMedia('(max-width: 1023px)').matches);
+    if (startWord)
+      requestAnimationFrame(() =>
+        document
+          .getElementById(`ayah-${startWord.ayah}`)
+          ?.scrollIntoView({ behavior: 'instant', block: 'start' }),
+      );
   }, [study, locationRequest]);
 
   useEffect(() => {
@@ -160,13 +175,24 @@ export function App() {
               language={language}
               mode={collectionMode}
               surahNumber={locationRequest.surah}
-              onSelect={(mode, surahNumber) => {
+              ayahNumber={activeAyah}
+              onSelect={(mode, surahNumber, startAyah) => {
                 setCollectionMode(mode);
                 setPos('all');
-                setActiveAyah(1);
+                setActiveAyah(startAyah);
                 setSheetOpen(false);
-                history.replaceState(null, '', `#surah=${surahNumber}`);
-                setLocationRequest({ surah: surahNumber, word: null });
+                history.replaceState(
+                  null,
+                  '',
+                  startAyah > 1
+                    ? `#surah=${surahNumber}&ayah=${startAyah}`
+                    : `#surah=${surahNumber}`,
+                );
+                setLocationRequest({
+                  surah: surahNumber,
+                  word: null,
+                  ayah: startAyah > 1 ? startAyah : null,
+                });
                 window.scrollTo({ top: 0, behavior: 'instant' });
               }}
             />

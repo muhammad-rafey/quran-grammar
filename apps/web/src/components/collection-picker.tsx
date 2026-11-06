@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Check, ChevronDown, Layers3, LockKeyhole, X } from 'lucide-react';
 import {
   formatCount,
+  getJuzForAyah,
+  getJuzStartAyah,
   getUiStrings,
   getSurahTitle,
   juzCatalog,
@@ -15,19 +17,24 @@ export function CollectionPicker({
   language,
   mode,
   surahNumber,
+  ayahNumber,
   onSelect,
 }: {
   language: UiLanguage;
   mode: CollectionMode;
   surahNumber: number;
-  onSelect: (mode: CollectionMode, surahNumber: number) => void;
+  ayahNumber: number;
+  /** startAyah is the chapter's first ayah inside the chosen juz, or 1 from the surah list. */
+  onSelect: (mode: CollectionMode, surahNumber: number, startAyah: number) => void;
 }) {
   const ui = getUiStrings(language);
   const direction = language === 'ur' ? 'rtl' : 'ltr';
   const [open, setOpen] = useState(false);
   const [browseMode, setBrowseMode] = useState<CollectionMode>(mode);
   const [browseJuz, setBrowseJuz] = useState<number | null>(null);
-  const currentJuz = juzCatalog.find((juz) => juz.surahNumbers.includes(surahNumber));
+  const currentJuz =
+    getJuzForAyah(surahNumber, ayahNumber) ??
+    juzCatalog.find((juz) => juz.surahNumbers.includes(surahNumber));
   const shownSurahs =
     browseMode === 'surah'
       ? [...surahCatalog].sort((a, b) => Number(b.available) - Number(a.available))
@@ -60,9 +67,9 @@ export function CollectionPicker({
       returnJuzFocus.current = null;
     }
   }, [open, browseMode, browseJuz]);
-  const select = (number: number) => {
+  const select = (number: number, juzNumber: number | null = null) => {
     if (!surahCatalog.find((surah) => surah.number === number)?.available) return;
-    onSelect(browseMode, number);
+    onSelect(browseMode, number, juzNumber === null ? 1 : getJuzStartAyah(juzNumber, number));
     setOpen(false);
   };
   return (
@@ -153,7 +160,7 @@ export function CollectionPicker({
                     disabled={!surah.available}
                     data-surah={surah.number}
                     aria-current={surah.number === surahNumber ? 'true' : undefined}
-                    onClick={() => select(surah.number)}
+                    onClick={() => select(surah.number, browseMode === 'juz' ? browseJuz : null)}
                   >
                     <span className="catalog-number">{formatCount(surah.number, language)}</span>
                     <span className="catalog-entry-copy">
@@ -182,7 +189,7 @@ export function CollectionPicker({
                       data-juz={juz.number}
                       onClick={() => {
                         if (!juz.available) return;
-                        if (juz.surahNumbers.length === 1) select(juz.surahNumbers[0]);
+                        if (juz.surahNumbers.length === 1) select(juz.surahNumbers[0], juz.number);
                         else {
                           returnJuzFocus.current = juz.number;
                           setBrowseJuz(juz.number);
