@@ -1,0 +1,233 @@
+{
+  "report": "codex-qara-root-adjudication",
+  "date": "2026-11-06",
+  "reviewStatus": "independent_adjudication_complete; qualified_accept; report_only",
+  "scholarlyReview": "pending; neither this report nor the candidate is scholarly approval",
+  "finding": {
+    "kind": "root",
+    "key": "ق ر أ",
+    "field": "noteUrdu",
+    "severity": "major",
+    "adjudication": "qualified_accept",
+    "problem": "The first clause presents قرآن categorically as the book’s proper name throughout these lessons. It must allow the attested recitation/recited-revelation sense, including the descriptive analysis chosen at36:69, while preserving proper-name uses and the existing etymology qualification.",
+    "oldNoteUrdu": "قُرْآن سے یہاں اللہ کی نازل کردہ کتاب مراد ہے اور یہ اس کا خاص نام ہے؛ اس کی مدّ میں ہمزہ شامل ہے، جو یہاں درج مادے کا تیسرا حرف ہے اور رسمِ عثمانی میں ء کی صورت میں لکھا گیا ہے۔ قُرْآن کو ق ر أ کے تحت رکھنا لغوی درجہ بندی ہے؛ اس کے اشتقاق میں ایک سے زیادہ اقوال ہیں، اس لیے یہ اندراج کسی ایک قول کا قطعی فیصلہ نہیں۔",
+    "newNoteUrdu": "قُرْآن تلاوت یا پڑھی جانے والی وحی کے معنی میں بھی آتا ہے اور اللہ کی نازل کردہ کتاب کا خاص نام بھی ہے؛ اس کی مدّ میں ہمزہ شامل ہے، جو یہاں درج مادے کا تیسرا حرف ہے اور رسمِ عثمانی میں ء کی صورت میں لکھا گیا ہے۔ قُرْآن کو ق ر أ کے تحت رکھنا لغوی درجہ بندی ہے؛ اس کے اشتقاق میں ایک سے زیادہ اقوال ہیں، اس لیے یہ اندراج کسی ایک قول کا قطعی فیصلہ نہیں۔",
+    "newLength": 349,
+    "exactMinimalEdit": {
+      "old": "قُرْآن سے یہاں اللہ کی نازل کردہ کتاب مراد ہے اور یہ اس کا خاص نام ہے؛",
+      "new": "قُرْآن تلاوت یا پڑھی جانے والی وحی کے معنی میں بھی آتا ہے اور اللہ کی نازل کردہ کتاب کا خاص نام بھی ہے؛"
+    },
+    "unchangedTail": " اس کی مدّ میں ہمزہ شامل ہے، جو یہاں درج مادے کا تیسرا حرف ہے اور رسمِ عثمانی میں ء کی صورت میں لکھا گیا ہے۔ قُرْآن کو ق ر أ کے تحت رکھنا لغوی درجہ بندی ہے؛ اس کے اشتقاق میں ایک سے زیادہ اقوال ہیں، اس لیے یہ اندراج کسی ایک قول کا قطعی فیصلہ نہیں۔",
+    "reasonForGeneralWording": "A shared root card should explain both lexical uses rather than force an unconditional occurrence-specific indefiniteness judgment or imply every occurrence is a common noun."
+  },
+  "occurrenceAdjudication": {
+    "wordId": "36:69:11",
+    "arabic": "وَقُرْءَانٌۭ",
+    "unchangedLemma": "قُرْآنٌ",
+    "currentWord": {
+      "id": "36:69:11",
+      "meaningUrdu": "اور قرآن",
+      "posUrdu": "حرفِ عطف + اسمِ علم",
+      "lemma": "قُرْآنٌ",
+      "morphologyUrdu": "واو فتحہ پر مبنی حرفِ عطف ہے؛ قرآن واحد مذکر اسمِ علم ہے، یہاں ظاہر ضمہ کے ساتھ مرفوع اور تنوین کے ساتھ آیا ہے۔",
+      "syntaxUrdu": "نصیحت والی خبر پر معطوف ہے اور اسی طرح مرفوع ہے؛ اس کے بعد آنے والا اسم اس کی صفت ہے۔",
+      "dictionaryUrdu": "قرآن پڑھی جانے والی وحی کا نام ہے؛ اس کا مادے کے تحت اندراج لغوی ہے، اس کے اشتقاق میں مختلف اقوال ہیں۔",
+      "segments": [
+        {
+          "arabic": "وَ",
+          "roleUrdu": "حرفِ عطف",
+          "meaningUrdu": "اور"
+        },
+        {
+          "arabic": "قُرْءَانٌۭ",
+          "roleUrdu": "معطوف اسم",
+          "meaningUrdu": "قرآن"
+        }
+      ],
+      "ruleIds": [
+        "conjunction",
+        "proper-noun",
+        "nominative"
+      ]
+    },
+    "blockedCandidateWord": {
+      "id": "36:69:11",
+      "meaningUrdu": "اور قرآن",
+      "posUrdu": "حرفِ عطف + اسمِ مرفوع",
+      "lemma": "قُرْآنٌ",
+      "morphologyUrdu": "واو فتحہ پر مبنی حرفِ عطف ہے؛ قرآن یہاں واحد مذکر، نکرہ اسم ہے، ظاہر ضمہ کے ساتھ مرفوع ہے اور اس کے بعد نکرہ صفت آئی ہے۔",
+      "syntaxUrdu": "نصیحت والی خبر پر معطوف ہے اور اسی طرح مرفوع ہے؛ اس کے بعد آنے والا اسم اس کی صفت ہے۔",
+      "dictionaryUrdu": "قرآن یہاں پڑھی جانے والی وحی کے معنی میں ہے؛ نکرہ صفت کی مناسبت سے اسے اسمِ علم کے بجائے نکرہ اسم سمجھا گیا ہے۔",
+      "segments": [
+        {
+          "arabic": "وَ",
+          "roleUrdu": "حرفِ عطف",
+          "meaningUrdu": "اور"
+        },
+        {
+          "arabic": "قُرْءَانٌۭ",
+          "roleUrdu": "معطوف اسم",
+          "meaningUrdu": "قرآن"
+        }
+      ],
+      "ruleIds": [
+        "conjunction",
+        "nominative",
+        "indefinite"
+      ]
+    },
+    "candidateHash": "cc7b16ad07981694d819e26f82b6eca7e39733d21d5daff1057e3b4ac8b74071",
+    "candidateStatus": "blocked",
+    "sourceTags": {
+      "qacStemTag": "PN",
+      "qacStemIndefinite": true,
+      "qacMorphologyEnglish": "CONJ – prefixed conjunction wa (and)\nPN – nominative masculine indefinite proper noun → Quran",
+      "followingWord": "36:69:12 مُبِين",
+      "followingWordSourceIndefinite": true
+    },
+    "conclusion": "The candidate’s common-noun reading is a supported, internally coherent analysis of the descriptive recited-revelation sense with مبين as its attributive adjective. It is not established by tanwin alone and is not asserted to exclude every alternative analysis. The original raw PN and INDEF tags must remain provenance, with the chosen departure explained in auditNotes.",
+    "tanwinCaution": "Proper names can take tanwin; tanwin does not by itself prove indefiniteness. Evidence here is the selected attributive structure together with explicit primary lexical/tafsir interpretation, not merely the final ـٌ.",
+    "sourceArabicAndSegmentsPreserved": true
+  },
+  "primaryEvidence": [
+    {
+      "title": "Ibn Ashur, al-Tahrir wa-l-Tanwir,36:69",
+      "url": "https://tafsir.app/ibn-aashoor/36/69",
+      "sourceExcerpt": "والقُرْآنُ: مَصْدَرُ قَرَأ، أُطْلِقَ عَلى اسْمِ المَفْعُولِ، أيِ الكَلامِ المَقْرُوءِ",
+      "supports": "This verse-specific primary tafsir explicitly interprets Quran as the recited discourse. It supports the candidate’s descriptive lexical analysis and the general root-note qualification; it does not supply a blanket rule that all Quran occurrences are indefinite."
+    },
+    {
+      "title": "Ibn al-Athir, al-Nihaya fi gharib al-hadith, باب القاف مع الراء",
+      "url": "https://www.islamweb.net/ar/library/content/121/2975/باب-القاف-مع-الراء",
+      "sourceExcerpt": "وعلى القراءة نفسها",
+      "supports": "The original lexical work records Quran as a verbal noun and a designation of recitation itself, alongside its naming of the revelation."
+    },
+    {
+      "title": "Verse36:69 irab attributed to Markaz Tafsir and the published verse-irab text",
+      "url": "https://surahquran.com/quran-search/e3rab-aya-69-sora-36.html",
+      "sourceExcerpt": "مُبِينٌ: نَعْتٌ مَرْفُوعٌ",
+      "supports": "The explicitly identified36:69 section calls مبين an attributive naat, supporting the agreement-based reading. The page also contains an adjacent verse70 excerpt; the cited evidence is from the36:69 subsection, not that adjacent excerpt."
+    },
+    {
+      "title": "Quranic Arabic Corpus, grammar36:69",
+      "url": "https://corpus.quran.com/grammar.jsp?chapter=36&verse=69",
+      "supports": "Confirms the surrounding إن هو إلا ذكر nominal restriction. It does not expressly adjudicate whether قرآن is proper or common here; no such explicit claim is attributed to this sparse note."
+    }
+  ],
+  "localEvidence": [
+    {
+      "path": "content-pipeline/packets/36/36-c18.json",
+      "supports": "Preserves PN+INDEF source data for قرآن and INDEF for مبين, with exact source Arabic and occurrence boundaries."
+    },
+    {
+      "path": "content-pipeline/runs/codex/36-c18.candidate.json",
+      "supports": "Freshly corrected blocked candidate consistently teaches the common-noun/indefinite attributive reading and logs the source-tag departure."
+    },
+    {
+      "path": "content-pipeline/libs/roots/root-10.json",
+      "supports": "Current root opening is categorical; the proposed edit changes only that first clause, keeping source spelling/hamza and etymological caution intact."
+    }
+  ],
+  "affectedChunks": [
+    {
+      "chunk": "18-c27",
+      "packet": "content-pipeline/packets/18/18-c27.json",
+      "wordIds": [
+        "18:54:5"
+      ]
+    },
+    {
+      "chunk": "36-c01",
+      "packet": "content-pipeline/packets/36/36-c01.json",
+      "wordIds": [
+        "36:2:1"
+      ]
+    },
+    {
+      "chunk": "36-c18",
+      "packet": "content-pipeline/packets/36/36-c18.json",
+      "wordIds": [
+        "36:69:11"
+      ]
+    },
+    {
+      "chunk": "55-c01",
+      "packet": "content-pipeline/packets/55/55-c01.json",
+      "wordIds": [
+        "55:2:2"
+      ]
+    }
+  ],
+  "fingerprintScope": {
+    "code": "content-pipeline/scripts/run_chunks.mjs chunkLibraryHash version2",
+    "conclusion": "Only the four packets supplied this root entry. After the edit and packet rebuild, these four require fresh complete reviews; unrelated chunks are not invalidated by this root-only change. Do not change global guide/rules/workflow for this adjudication.",
+    "releaseDigestNote": "The scholarly-release content digest separately includes every shared root file. Reassemble the final five pending wrappers after the edit so their contentSha256 values are fresh, even though only the four supplied-root chunks need renewed AI content review."
+  },
+  "validation": {
+    "method": "Proposed root-10 entry tested only in isolated temporary library copy with the existing validator.",
+    "result": {
+      "ok": true,
+      "kind": "roots",
+      "batch": "root-10",
+      "errors": [],
+      "warnings": []
+    },
+    "noteLengthLimit": 360,
+    "proposedLength": 349,
+    "originalMeaningUrduPreserved": true,
+    "noSourceOrChunkWrites": true
+  },
+  "inputs": [
+    {
+      "path": "content-pipeline/libs/roots/root-10.json",
+      "sha256": "e8634b137565f2fc94a011c38032ce1d00a73692ae9e4339c892e5aa1ad164e6"
+    },
+    {
+      "path": "content-pipeline/runs/codex/36-c18.json",
+      "sha256": "28cc094bbc5287f547967fa7010f7fca9b383a49e5e54752a2ac15627d364829"
+    },
+    {
+      "path": "content-pipeline/runs/codex/36-c18.candidate.json",
+      "sha256": "cc7b16ad07981694d819e26f82b6eca7e39733d21d5daff1057e3b4ac8b74071"
+    },
+    {
+      "path": "content-pipeline/chunks/36/36-c18.json",
+      "sha256": "555ea0cb61677265ba6afff7b1cd2f1072feba23edaa431d48df97dbe1a0d8fc"
+    },
+    {
+      "path": "content-pipeline/meta/words.json",
+      "sha256": "1a3f2381f565d82b39b5a181dfce5e4d53e8f46d4974dd174cb83b0acde3cd9f"
+    },
+    {
+      "path": "content-pipeline/meta/ayahs.json",
+      "sha256": "fd0da606c005948b916d8c3d4d6cea937cd39ffa08672ad9f2ffe7e84db3d69b"
+    },
+    {
+      "path": "content-pipeline/scripts/run_chunks.mjs",
+      "sha256": "d0c31fe2b8a760f9f7d95e2416d0ffff49bfd9c50352fa8de40cca0977b3ccf2"
+    },
+    {
+      "path": "content-pipeline/packets/18/18-c27.json",
+      "sha256": "aac2116852df41f720ab4f4fc34b178b8bfee72de1b43437e39a7a5ba5b5002b"
+    },
+    {
+      "path": "content-pipeline/packets/36/36-c01.json",
+      "sha256": "3ed732f2a8172ee41185805bf8dd87da1b7a4828b6e2e71bf0edbeb0bb769eb7"
+    },
+    {
+      "path": "content-pipeline/packets/36/36-c18.json",
+      "sha256": "ba5c1791a9c24378cb9250381cdadccd8ee6b211d59ff0931ad86213a03fc981"
+    },
+    {
+      "path": "content-pipeline/packets/55/55-c01.json",
+      "sha256": "05d2be2470933b32e992f75b7f50c0a9aa8310dcb7a04fe0ce6e220d2009ce8f"
+    }
+  ],
+  "recommendedNextStep": "After the last active worker finishes, apply only the proposed root note, rebuild affected packets and run fresh full reviews for18-c27,36-c01,36-c18,55-c01. Keep the expansion outside runtime pending human scholarly approval.",
+  "limits": [
+    "No assertion that tanwin alone establishes indefiniteness.",
+    "No assertion that every occurrence of قرآن has one grammatical classification.",
+    "Primary lexical support for a derived reading is preserved alongside the existing acknowledgment of alternative etymologies.",
+    "No shared inputs, candidates, chunks, guide, rules or workflow were edited."
+  ]
+}

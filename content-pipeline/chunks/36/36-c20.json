@@ -564,7 +564,7 @@
       "meaningUrdu": "زندہ کرے گا",
       "posUrdu": "فعلِ مضارع",
       "lemma": "أَحْيَا",
-      "morphologyUrdu": "بابِ افعال کا مضارع معروف، واحد مذکر غائب، مرفوع بضمۂ مقدر ہے۔ لفیف مقرون فعل کی آخری یاء یہاں رسم میں نہیں لکھی گئی؛ یہ مجزوم نہیں۔",
+      "morphologyUrdu": "بابِ افعال کا مضارع معروف، واحد مذکر غائب، مرفوع بضمۂ مقدر ہے۔ لفیف مقرون فعل کی آخری یاء وصل میں التقاءِ ساکنین کے سبب حذف ہے اور رسم میں بھی نہیں لکھی گئی؛ یہ مجزوم نہیں۔",
       "syntaxUrdu": "اس کا پوشیدہ فاعل استفہامی مبتدا کی طرف لوٹتا ہے اور ہڈیاں اس کا مفعول بہ ہیں۔ پورا فعلیہ جملہ مبتدا کی خبر، محلِ رفع میں ہے۔",
       "dictionaryUrdu": "بابِ افعال میں معنی زندہ کرنا ہے۔ رسم میں صرف ایک یاء نظر آنے سے اسے مجزوم نہ سمجھیں؛ یہاں جزم دینے والا کوئی حرف نہیں۔",
       "segments": [
@@ -582,7 +582,7 @@
         "elision",
         "subject-pronoun"
       ],
-      "verbNoteUrdu": "أَحْيَا، يُحْيِي بابِ افعال سے ہے؛ یہاں واحد مذکر غائب کا مضارع معروف مرفوع ہے، کیونکہ کوئی ناصب یا جازم نہیں۔ آخری یاء صرف رسم میں حذف ہے اور رفع کا ضمہ مقدر ہے؛ فاعل پوشیدہ ہے۔"
+      "verbNoteUrdu": "أَحْيَا، يُحْيِي بابِ افعال سے ہے؛ یہاں واحد مذکر غائب کا مضارع معروف مرفوع ہے، کیونکہ کوئی ناصب یا جازم نہیں۔ آخری یاء وصل میں التقاءِ ساکنین کے باعث حذف ہے اور رسم میں بھی نہیں لکھی گئی؛ رفع کا ضمہ مقدر اور فاعل پوشیدہ ہے۔"
     },
     {
       "id": "36:78:9",
@@ -923,7 +923,7 @@
     },
     {
       "ref": "36:78:8",
-      "noteEnglish": "Applied the explicit packet qacCorrection: this is an indicative imperfect, not jussive. Final ya is omitted in Uthmani spelling before hamzat al-wasl, with an implied indicative damma."
+      "noteEnglish": "Applied the explicit packet qacCorrection: this is an indicative imperfect, not jussive. Final ya is dropped in connected recitation to avoid two consecutive sukuns before the definite article and is also omitted in Uthmani spelling; the indicative damma remains implied. This is not jussive deletion."
     },
     {
       "ref": "36:78:9",

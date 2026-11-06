@@ -184,6 +184,34 @@
     "errors": [],
     "warnings": []
    }
+  },
+  {
+   "chunk": "36-c18",
+   "contentSha256": "cc7b16ad07981694d819e26f82b6eca7e39733d21d5daff1057e3b4ac8b74071",
+   "previousContentSha256": "555ea0cb61677265ba6afff7b1cd2f1072feba23edaa431d48df97dbe1a0d8fc",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved validated candidate after independent root-note adjudication. No review checkpoint upgraded; all fresh review stages required.",
+   "validation": {
+    "ok": true,
+    "chunk": "36-c18",
+    "errors": [],
+    "warnings": []
+   }
+  },
+  {
+   "chunk": "55-c01",
+   "contentSha256": "7b174dcd98a63c9e610bf774f68fc412fea8811957b479700b5c1c7d09603a39",
+   "previousContentSha256": "52a2038579ee78920baeca31b955a247137b0f0cbed693982f4afa3c6592f68f",
+   "status": "authored-unreviewed",
+   "previousCheckpointStatus": "blocked",
+   "reason": "Preserved validated corrected candidate while independently adjudicating shared-rule Urdu agreement. Full fresh reviews required; checkpoint not upgraded.",
+   "validation": {
+    "ok": true,
+    "chunk": "55-c01",
+    "errors": [],
+    "warnings": []
+   }
   }
  ]
 }

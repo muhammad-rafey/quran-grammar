@@ -295,5 +295,9 @@
  "36:32:3": {
   "pos": "particle",
   "noteEnglish": "QAC tags لَّمَّا T, deriving noun, but the primary 36:32 verse i‘rab explicitly calls لما أداة حصر بمعنى إلا, paired with negative إن. Follow the restrictive-particle analysis, not temporal or jussive lamma. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+ },
+ "23:78:9": {
+  "pos": "particle",
+  "noteEnglish": "QAC tags مَّا REL, deriving pronoun, but the primary 23:78 verse i‘rab explicitly calls ما زائدة after قليلا functioning as نائب مفعول مطلق. Follow the extra-particle analysis, with no case position or relative clause. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
  }
 }

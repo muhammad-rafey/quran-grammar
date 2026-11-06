@@ -1,106 +1,109 @@
 {
-  "status": "applied; fresh independent reviews pending due account usage limit",
-  "publication": "held-for-scholarly-review",
-  "scholarlyReview": "pending",
-  "changes": [
+ "status": "Applied; current full independent AI review completed. Scholarly review pending.",
+ "publication": "held-for-scholarly-review",
+ "scholarlyReview": "pending",
+ "changes": [
+  {
+   "path": "content-pipeline/libs/rules.json",
+   "key": "condition-answer",
+   "field": "explanationUrdu",
+   "beforeSha256": "187b01bede3ecb5bb642d8d24fffb91f5c82e83a4058b94785a7788c16750375",
+   "afterSha256": "70fd701168f2a1850a20e492b28d31ce5d3c8c958fdc75ee75ff352fb9bf70a5",
+   "reason": "Counterexample-backed exception at23:64/77, independently adjudicated in codex-condition-answer-adjudication.json."
+  },
+  {
+   "path": "content-pipeline/libs/lexemes/lex-01.json",
+   "key": "{t~axa*a|VIII|ACT",
+   "field": "noteUrdu",
+   "beforeSha256": "9683fb836898be3b86187cbac4cdc04bb0dee60829306dda426da16f11c758ce",
+   "afterSha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
+   "from": "فاء کی ہمزہ خلافِ قیاس تاء بن کر افتعال کی تاء میں مدغم ہوئی",
+   "to": "فاء کا ہمزہ خلافِ قیاس تاء بن کر افتعال کی تاء میں مدغم ہوا",
+   "reason": "Urdu gender agreement only; grammatical analysis and exact Arabic retained. Masculine gender corroborated by primary Urdu grammar Qawaid-e-Mir, Tazkir-o-Tanis, https://ur.wikisource.org/wiki/قواعد_میر/تذکیر_و_تانیث . Full fresh chunk reviews remain required."
+  },
+  {
+   "path": "content-pipeline/chunks/55/55-c09.json",
+   "fields": [
     {
-      "path": "content-pipeline/libs/rules.json",
-      "key": "condition-answer",
-      "field": "explanationUrdu",
-      "beforeSha256": "187b01bede3ecb5bb642d8d24fffb91f5c82e83a4058b94785a7788c16750375",
-      "afterSha256": "70fd701168f2a1850a20e492b28d31ce5d3c8c958fdc75ee75ff352fb9bf70a5",
-      "reason": "Counterexample-backed exception at23:64/77, independently adjudicated in codex-condition-answer-adjudication.json."
+     "wordId": "55:57:2",
+     "file": "content-pipeline/chunks/55/55-c09.json",
+     "field": "lemma",
+     "from": "إِلًى",
+     "to": "أَلًى",
+     "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
     },
     {
-      "path": "content-pipeline/libs/lexemes/lex-01.json",
-      "key": "{t~axa*a|VIII|ACT",
-      "field": "noteUrdu",
-      "beforeSha256": "9683fb836898be3b86187cbac4cdc04bb0dee60829306dda426da16f11c758ce",
-      "afterSha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
-      "from": "فاء کی ہمزہ خلافِ قیاس تاء بن کر افتعال کی تاء میں مدغم ہوئی",
-      "to": "فاء کا ہمزہ خلافِ قیاس تاء بن کر افتعال کی تاء میں مدغم ہوا",
-      "reason": "Urdu gender agreement only; grammatical analysis and exact Arabic retained. Masculine gender corroborated by primary Urdu grammar Qawaid-e-Mir, Tazkir-o-Tanis, https://ur.wikisource.org/wiki/قواعد_میر/تذکیر_و_تانیث . Full fresh chunk reviews remain required."
+     "wordId": "55:59:2",
+     "file": "content-pipeline/chunks/55/55-c09.json",
+     "field": "lemma",
+     "from": "إِلًى",
+     "to": "أَلًى",
+     "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
     },
     {
-      "path": "content-pipeline/chunks/55/55-c09.json",
-      "fields": [
-        {
-          "wordId": "55:57:2",
-          "file": "content-pipeline/chunks/55/55-c09.json",
-          "field": "lemma",
-          "from": "إِلًى",
-          "to": "أَلًى",
-          "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
-        },
-        {
-          "wordId": "55:59:2",
-          "file": "content-pipeline/chunks/55/55-c09.json",
-          "field": "lemma",
-          "from": "إِلًى",
-          "to": "أَلًى",
-          "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
-        },
-        {
-          "wordId": "55:61:2",
-          "file": "content-pipeline/chunks/55/55-c09.json",
-          "field": "lemma",
-          "from": "إِلًى",
-          "to": "أَلًى",
-          "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
-        }
-      ],
-      "beforeSha256": "9d92af7776457c40d64eae85b7b3ef1f0cb1f74c164149f9d0c31b24bff6d44a",
-      "afterSha256": "219b14174c42d75ef4ef27a193738ad048c86880fcbe5d3e2a4773bd5b43dd33"
-    },
-    {
-      "path": "content-pipeline/chunks/55/55-c11.json",
-      "fields": [
-        {
-          "wordId": "55:73:2",
-          "file": "content-pipeline/chunks/55/55-c11.json",
-          "field": "lemma",
-          "from": "إِلًى",
-          "to": "أَلًى",
-          "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
-        },
-        {
-          "wordId": "55:75:2",
-          "file": "content-pipeline/chunks/55/55-c11.json",
-          "field": "lemma",
-          "from": "إِلًى",
-          "to": "أَلًى",
-          "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
-        },
-        {
-          "wordId": "55:77:2",
-          "file": "content-pipeline/chunks/55/55-c11.json",
-          "field": "lemma",
-          "from": "إِلًى",
-          "to": "أَلًى",
-          "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
-        }
-      ],
-      "beforeSha256": "aa538a7fb8cc3ebf68d4c624a1551f68dd3e936f9f1474980f42800b68f792fb",
-      "afterSha256": "1126f603040b34ae5a1f685e82275442e6e9bb5bcf789f5561f3cc7f049586e2"
-    },
-    {
-      "path": "content-pipeline/chunks/55/55-c02.json",
-      "fields": [
-        {
-          "wordId": "55:11:3",
-          "file": "content-pipeline/chunks/55/55-c02.json",
-          "field": "lemma",
-          "from": "نَخْلَة",
-          "to": "نَخْل",
-          "reason": "preserve the collective lexeme actually analyzed here and at55:68:3; the unit noun نخلة is separately explained in dictionaryUrdu"
-        }
-      ],
-      "beforeSha256": "ed64c761eac6ba39c0ee6df958d20af1c9caf631493aee92d02992489fdcd401",
-      "afterSha256": "c97a1749ecdc61a1560cc13819ad3c867cf3beccbf9c74921fb49e14d03da56d"
+     "wordId": "55:61:2",
+     "file": "content-pipeline/chunks/55/55-c09.json",
+     "field": "lemma",
+     "from": "إِلًى",
+     "to": "أَلًى",
+     "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
     }
-  ],
-  "limitations": [
-    "No review checkpoint was upgraded. The shared rule change invalidates all previous chunk-input fingerprints.",
-    "Other potential Urdu hamza-gender inconsistencies have not been batch-edited; review them before final publication."
-  ]
+   ],
+   "beforeSha256": "9d92af7776457c40d64eae85b7b3ef1f0cb1f74c164149f9d0c31b24bff6d44a",
+   "afterSha256": "219b14174c42d75ef4ef27a193738ad048c86880fcbe5d3e2a4773bd5b43dd33"
+  },
+  {
+   "path": "content-pipeline/chunks/55/55-c11.json",
+   "fields": [
+    {
+     "wordId": "55:73:2",
+     "file": "content-pipeline/chunks/55/55-c11.json",
+     "field": "lemma",
+     "from": "إِلًى",
+     "to": "أَلًى",
+     "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
+    },
+    {
+     "wordId": "55:75:2",
+     "file": "content-pipeline/chunks/55/55-c11.json",
+     "field": "lemma",
+     "from": "إِلًى",
+     "to": "أَلًى",
+     "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
+    },
+    {
+     "wordId": "55:77:2",
+     "file": "content-pipeline/chunks/55/55-c11.json",
+     "field": "lemma",
+     "from": "إِلًى",
+     "to": "أَلًى",
+     "reason": "one canonical attested singular in the identical refrain; accepted lexical alternative, not a false Arabic form"
+    }
+   ],
+   "beforeSha256": "aa538a7fb8cc3ebf68d4c624a1551f68dd3e936f9f1474980f42800b68f792fb",
+   "afterSha256": "1126f603040b34ae5a1f685e82275442e6e9bb5bcf789f5561f3cc7f049586e2"
+  },
+  {
+   "path": "content-pipeline/chunks/55/55-c02.json",
+   "fields": [
+    {
+     "wordId": "55:11:3",
+     "file": "content-pipeline/chunks/55/55-c02.json",
+     "field": "lemma",
+     "from": "نَخْلَة",
+     "to": "نَخْل",
+     "reason": "preserve the collective lexeme actually analyzed here and at55:68:3; the unit noun نخلة is separately explained in dictionaryUrdu"
+    }
+   ],
+   "beforeSha256": "ed64c761eac6ba39c0ee6df958d20af1c9caf631493aee92d02992489fdcd401",
+   "afterSha256": "c97a1749ecdc61a1560cc13819ad3c867cf3beccbf9c74921fb49e14d03da56d"
+  }
+ ],
+ "limitations": [
+  "No review checkpoint was upgraded. The shared rule change invalidates all previous chunk-input fingerprints.",
+  "Other potential Urdu hamza-gender inconsistencies have not been batch-edited; review them before final publication."
+ ],
+ "historicalStatus": "applied; fresh independent reviews pending due account usage limit",
+ "currentReviewManifest": "chunk-review-manifest.json",
+ "notice": "Individual change hashes retain their original historical snapshots; final current input/content hashes are in the completed review manifest."
 }

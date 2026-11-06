@@ -182,6 +182,43 @@ process.stdout.write(JSON.stringify({ dryRun: true, chunks: chunks.map(chunk => 
         self.assertEqual(self.run_export().returncode, 0)
         self.assertEqual(before, {p.relative_to(self.output): p.read_bytes() for p in self.output.rglob('*') if p.is_file()})
 
+    def test_unexpected_existing_files_are_preserved_and_block_all_new_output(self):
+        for relative in ('private-fixture.txt', '.private-fixture', 'nested/.private-fixture'):
+            with self.subTest(path=relative):
+                marker = self.output / relative
+                marker.parent.mkdir(parents=True, exist_ok=True)
+                marker.write_bytes(b'Synthetic unrelated file; no real private data.')
+                before = {p.relative_to(self.output): p.read_bytes()
+                          for p in self.output.rglob('*') if p.is_file()}
+                result = self.run_export()
+                self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+                self.assertIn('Unexpected existing file', result.stdout)
+                self.assertEqual(before, {p.relative_to(self.output): p.read_bytes()
+                                          for p in self.output.rglob('*') if p.is_file()})
+                marker.unlink()
+        # An empty destination and subsequent owned-file regeneration still work.
+        self.assertEqual(self.run_export().returncode, 0)
+        before = {p.relative_to(self.output): p.read_bytes()
+                  for p in self.output.rglob('*') if p.is_file()}
+        self.assertEqual(self.run_export().returncode, 0)
+        self.assertEqual(before, {p.relative_to(self.output): p.read_bytes()
+                                  for p in self.output.rglob('*') if p.is_file()})
+
+    def test_unlisted_directory_symlink_is_not_followed_or_shared(self):
+        outside = self.repo / 'unrelated-fixture'
+        outside.mkdir()
+        sentinel = outside / 'private-fixture.txt'
+        sentinel.write_bytes(b'Synthetic unrelated file; do not export.')
+        self.output.mkdir(parents=True)
+        link = self.output / '.unlisted-directory'
+        link.symlink_to(outside, target_is_directory=True)
+        result = self.run_export()
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        self.assertIn('directory symlink', result.stdout)
+        self.assertTrue(link.is_symlink())
+        self.assertEqual(sentinel.read_bytes(), b'Synthetic unrelated file; do not export.')
+        self.assertEqual(list(self.output.iterdir()), [link])
+
     def test_present_fonts_require_complete_valid_licenses_before_any_output(self):
         fonts = self.copy_fonts()
         license_path = fonts / 'OFL-Nastaliq.txt'

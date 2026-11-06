@@ -602,11 +602,11 @@
     {
       "id": "36:69:11",
       "meaningUrdu": "اور قرآن",
-      "posUrdu": "حرفِ عطف + اسمِ علم",
+      "posUrdu": "حرفِ عطف + اسمِ مرفوع",
       "lemma": "قُرْآنٌ",
-      "morphologyUrdu": "واو فتحہ پر مبنی حرفِ عطف ہے؛ قرآن واحد مذکر اسمِ علم ہے، یہاں ظاہر ضمہ کے ساتھ مرفوع اور تنوین کے ساتھ آیا ہے۔",
+      "morphologyUrdu": "واو فتحہ پر مبنی حرفِ عطف ہے؛ قرآن یہاں واحد مذکر، نکرہ اسم ہے، ظاہر ضمہ کے ساتھ مرفوع ہے اور اس کے بعد نکرہ صفت آئی ہے۔",
       "syntaxUrdu": "نصیحت والی خبر پر معطوف ہے اور اسی طرح مرفوع ہے؛ اس کے بعد آنے والا اسم اس کی صفت ہے۔",
-      "dictionaryUrdu": "قرآن پڑھی جانے والی وحی کا نام ہے؛ اس کا مادے کے تحت اندراج لغوی ہے، اس کے اشتقاق میں مختلف اقوال ہیں۔",
+      "dictionaryUrdu": "قرآن یہاں پڑھی جانے والی وحی کے معنی میں ہے؛ نکرہ صفت کی مناسبت سے اسے اسمِ علم کے بجائے نکرہ اسم سمجھا گیا ہے۔",
       "segments": [
         {
           "arabic": "وَ",
@@ -621,8 +621,8 @@
       ],
       "ruleIds": [
         "conjunction",
-        "proper-noun",
-        "nominative"
+        "nominative",
+        "indefinite"
       ]
     },
     {
@@ -1193,7 +1193,7 @@
     },
     {
       "ref": "36:69:11",
-      "noteEnglish": "QAC simultaneously labels quran a proper noun (PN) and indefinite (INDEF), with an indefinite adjective following it. Retained the supplied proper-name classification, described its visible tanwin without claiming it proves indefiniteness, and followed the attributive reading of mubin. A common grammatical reading treats quran here as an indefinite noun meaning a recitation."
+      "noteEnglish": "Overrode QAC's PN tag and generated proper-noun label: quran here is an indefinite common noun denoting the revealed recitation, consistent with QAC's INDEF tag and the following indefinite adjective mubin. Treating it as a definite proper name would contradict this attributive analysis."
     },
     {
       "ref": "36:70:1",

@@ -10,6 +10,7 @@ from html import escape
 import json
 import os
 from pathlib import Path
+import stat
 import subprocess
 import sys
 import tempfile
@@ -209,6 +210,26 @@ def no_output_symlinks(repo, output, filenames):
                 raise ValueError(f'Refusing output symlink: {path}')
 
 
+def no_unexpected_output_files(output, filenames):
+    """Never carry unrelated files into a reviewer folder that may be shared."""
+    allowed = set(filenames)
+    if not output.exists():
+        return
+
+    def unreadable(error):
+        raise ValueError('Cannot inspect existing review output; no files changed') from error
+
+    for parent, directories, existing_files in os.walk(output, followlinks=False, onerror=unreadable):
+        for name in directories:
+            if (Path(parent) / name).is_symlink():
+                raise ValueError('Refusing an existing output directory symlink')
+        for name in existing_files:
+            path = Path(parent) / name
+            if (not stat.S_ISREG(path.lstat().st_mode) or
+                    path.relative_to(output).as_posix() not in allowed):
+                raise ValueError('Unexpected existing file in review output; no files changed')
+
+
 def export(work, output, selected):
     work = work.resolve()
     if (work / 'runs/codex/.runner.lock').exists():
@@ -280,6 +301,7 @@ def export(work, output, selected):
     if (work / 'runs/codex/.runner.lock').exists():
         raise ValueError('Chunk runner became active during review export')
     no_output_symlinks(repo, output, files)
+    no_unexpected_output_files(output, files)
     for name, data in sorted(files.items()):
         target = output / name
         target.parent.mkdir(parents=True, exist_ok=True)

@@ -5,7 +5,7 @@
  */
 import { execFile } from 'node:child_process';
 import { createHash, randomUUID } from 'node:crypto';
-import { access, lstat, mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
+import { access, lstat, mkdir, readFile, readdir, rename, rm, writeFile } from 'node:fs/promises';
 import { dirname, isAbsolute, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
@@ -21,6 +21,28 @@ const canonical = (value) => JSON.stringify(Object.fromEntries(Object.entries(va
 const count = (value) => Number.isSafeInteger(value) && value >= 0;
 const empty = (value) => Array.isArray(value) && value.length === 0;
 const fail = (chunk, message) => { throw new Error(`${chunk}: ${message}`); };
+
+/** Public tracked dependencies only; CI can check these without ignored packets.
+ * Keep this exact allowlist separate from per-chunk private runner fingerprints.
+ */
+export async function reviewSourceFilesSha256(work) {
+  const paths = ['guide/authoring-guide.md', 'workflows/chunks.js', 'scripts/validate_chunk.py',
+    'meta/plan.json', 'meta/overrides.json', 'libs/rules.json'];
+  for (const directory of ['libs/lexemes', 'libs/roots']) {
+    if (!(await lstat(join(work, directory))).isDirectory()) throw new Error('Review source library directory must be a regular directory');
+    for (const entry of await readdir(join(work, directory), { withFileTypes: true })) {
+      if (!entry.name.endsWith('.json')) continue;
+      if (!entry.isFile()) throw new Error('Review source library entries must be regular files');
+      paths.push(`${directory}/${entry.name}`);
+    }
+  }
+  const records = [];
+  for (const path of paths.sort()) {
+    if (!(await lstat(join(work, path))).isFile()) throw new Error('Review sources must be regular files');
+    records.push([path, sha(await readFile(join(work, path)))]);
+  }
+  return Object.fromEntries(records);
+}
 
 async function checkedJson(path, label) {
   let bytes;
@@ -159,6 +181,8 @@ export async function exportReviews({ work = DEFAULT_WORK, runDir } = {}) {
   for (const spec of plan) {
     if (!spec || !/^(18|23|32|36|55)-c\d{2}$/.test(spec.chunk) || spec.surah !== Number(spec.chunk.split('-')[0]) || !Array.isArray(spec.wordIds) || !spec.wordIds.length || !Array.isArray(spec.ayahs) || !spec.ayahs.length) throw new Error('The chunk plan contains an invalid entry');
   }
+  const sourceFilesSha256 = await reviewSourceFilesSha256(work);
+  if (sourceFilesSha256['meta/plan.json'] !== sha(planRecord.bytes)) throw new Error('Chunk plan changed during review export');
   const current = await fingerprints(work, runDir, ids);
   const rows = [];
   const results = [];
@@ -200,6 +224,7 @@ export async function exportReviews({ work = DEFAULT_WORK, runDir } = {}) {
   for (const snapshot of snapshots) {
     if (sha(await readFile(snapshot.checkpointFile)) !== snapshot.checkpointHash || sha(await readFile(snapshot.contentFile)) !== snapshot.contentHash) throw new Error('Review records changed during export');
   }
+  if (canonical(await reviewSourceFilesSha256(work)) !== canonical(sourceFilesSha256)) throw new Error('Tracked review sources changed during export');
   const reports = join(work, 'reports');
   if (await exists(reports) && (await lstat(reports)).isSymbolicLink()) throw new Error('Reports directory must not be a symlink');
   const manifest = {
@@ -207,7 +232,7 @@ export async function exportReviews({ work = DEFAULT_WORK, runDir } = {}) {
     status: 'ai-reviewed', scholarlyReview: 'pending', publication: 'held-for-scholarly-review',
     safeSummaryOnly: true,
     notice: 'Safe summaries of current private checkpoint results. Model prose and private paths are omitted; raw provenance remains in the private journal. AI review is not scholarly approval.',
-    chunks: rows,
+    sourceFilesSha256, chunks: rows,
   };
   await writeReportPair([
     { path: join(reports, 'chunk-review-manifest.json'), body: `${JSON.stringify(manifest, null, 2)}\n` },

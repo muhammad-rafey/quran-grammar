@@ -98,6 +98,50 @@ class SourceAuditTests(unittest.TestCase):
         self.assertIn('does not certify completion', text)
         self.assertNotIn('snapshot marks all', text)
 
+    def test_public_notes_omit_local_context_paths_but_preserve_source_analysis(self):
+        path = self.work / 'chunks/18/18-c01.json'
+        chunk = json.loads(path.read_text())
+        private_paths = [
+            '/Users/reviewer/.Codex/obsidian/global.md',
+            '/home/reviewer/My Project/AGENTS.md',
+            r'C:\Users\Reviewer\.claude\CLAUDE.md',
+            'file:///Users/reviewer/.codex/runs/model.jsonl',
+            '/private/tmp/quran-grammar-chunk-demo/runs/log.jsonl',
+            '/var/folders/aa/bb/T/codex-agent-demo/context.md',
+            '~/.claude/CLAUDE.md',
+        ]
+        primary = 'https://corpus.quran.com/grammar.jsp?chapter=18&verse=1'
+        source_file = 'content-pipeline/sources/qac-grammar/grammar-18.json'
+        # Quoting also exercises spaces in a local context-file location.
+        for private_path in private_paths:
+            chunk['auditNotes'].append({
+                'ref': '18:1:1',
+                'noteEnglish': f'Ma is زائدة per {primary} and {source_file}; local context "{private_path}" was unavailable.',
+            })
+        # An HTTP path that resembles an instruction path remains a source URL.
+        public_url = 'https://example.org/home/reference/AGENTS.md'
+        chunk['auditNotes'].append({'ref': '18:1:1', 'noteEnglish': public_url})
+        chunk['auditNotes'].append({'ref': private_paths[0], 'noteEnglish': 'Context location only; source analysis remains above.'})
+        write_json(path, chunk)
+        overrides_path = self.work / 'meta/overrides.json'
+        overrides = json.loads(overrides_path.read_text())
+        overrides['18:1:1']['noteEnglish'] = f'Correct VI; primary {primary}; /Users/reviewer/.Codex/obsidian/global.md.'
+        write_json(overrides_path, overrides)
+        originals = {p: p.read_bytes() for p in (path, overrides_path)}
+        result = self.command()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        text = self.outputs()[18].read_text()
+        for private_path in private_paths:
+            self.assertNotIn(private_path, text)
+        self.assertIn('[local instruction/runtime path omitted]', text)
+        self.assertIn('Ma is زائدة', text)
+        self.assertIn(primary, text)
+        self.assertIn(source_file, text)
+        self.assertIn(public_url, text)
+        self.assertIn('Correct VI; primary', text)
+        for p, original in originals.items():
+            self.assertEqual(p.read_bytes(), original)
+
     def test_zero_new_fixes_does_not_invent_totals_for_reused_authored_drafts(self):
         for row in self.results:
             row.update(reviewIssues=0, reviewCritical=0, reviewMajor=0)

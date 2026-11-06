@@ -534,7 +534,7 @@
       "meaningUrdu": "دوسروں",
       "posUrdu": "اسمِ مجرور",
       "lemma": "بَعْض",
-      "morphologyUrdu": "مذکر نکرہ اسم ہے، پچھلے حرفِ جر کی وجہ سے مجرور ہے۔ علامتِ جر کسرہ ہے اور نکرہ ہونے کی تنوین بھی موجود ہے۔",
+      "morphologyUrdu": "مذکر اسم ہے، پچھلے حرفِ جر کی وجہ سے کسرہ کے ساتھ مجرور ہے۔ اس کی تنوین حذف شدہ مضاف الیہ کے عوض ہے؛ مراد انہی معبودوں میں سے دوسرے بعض ہیں۔",
       "syntaxUrdu": "پچھلے حرف کا مجرور ہے؛ دونوں مل کر غالب آنے کے فعل سے متعلق ہیں۔ مراد فرض کیے گئے معبودوں میں سے دوسرے معبود ہیں۔",
       "dictionaryUrdu": "معنی کسی مجموعے کا کچھ حصہ ہے۔ یہاں پہلے «بعض» کے مقابل آنے سے اردو میں «دوسروں» یا «بعض دوسروں» کا مفہوم بنتا ہے۔",
       "segments": [
@@ -547,7 +547,7 @@
       "ruleIds": [
         "genitive",
         "preposition",
-        "indefinite"
+        "elision"
       ]
     },
     {
@@ -850,6 +850,10 @@
     {
       "ref": "23:92:1",
       "noteEnglish": "The genitive active participle follows the supplied ayah analysis as a badal of Allah in 23:91:22. The Urdu independent wording in the translation expresses the meaning without changing this cross-ayah syntactic attachment."
+    },
+    {
+      "ref": "23:91:20",
+      "noteEnglish": "QAC labels ba'd indefinite. Here its tanwin compensates for an omitted mudaf ilayh referring to the same hypothetical gods; elision replaces indefinite in the teaching rules."
     }
   ]
 }

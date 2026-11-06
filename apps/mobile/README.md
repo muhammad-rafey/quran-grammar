@@ -9,7 +9,7 @@ SDK 57 Expo Go client during simulator testing.
 
 ## Run
 
-From the repository root, install the workspace dependencies with `npm install`.
+From the repository root, use Node.js 24 and install the workspace dependencies with `npm ci`.
 Then start the app:
 
 ```sh
@@ -180,6 +180,28 @@ App-specific fatal/JavaScript error logs were empty.
 
 The stable eleven-Surah APK was rebuilt, installed and cold-launched afterwards;
 the private fixture was removed from the emulator. Native scroll tests and both
-platform exports pass. This change has not received a new iOS simulator or physical
-phone interaction test. Exact source hashes and local evidence references are in
+platform exports pass. The iOS simulator interaction regression below also passed;
+no physical phone was tested. Exact source hashes and local evidence references are in
 [`codex-native-verification.json`](../../content-pipeline/reports/codex-native-verification.json).
+### iOS held-draft interaction verification on 2026-11-06
+
+A headless XCTest UI runner drove Expo Go 57.0.9 on the existing iPhone 17 Pro /
+iOS 26.5 simulator, using the isolated pending-review fixture. Native taps and
+drags passed all ten checkpoints: Juz 23 → Ya-Sin 28 and manual 27/Juz 22;
+Juz 16 → Al-Kahf 75 and manual 74/Juz 15; a same-chapter return to 75;
+18:75:1's occurrence counter, root and visible verb paradigm; modal return;
+and Grammar/Study resets to ayah 1/Juz 15. Assertions checked hittable target
+words and current Juz values, alongside screenshots and accessibility snapshots.
+
+The successful XCTest result has one test case and zero failures. The fixture's
+scroll coordinator, reader, picker, word detail and provider bytes matched the
+tracked source. Retained app logs had no matched JavaScript fatal signatures;
+Apple limited logging during repeated accessibility queries, so this is not a
+claim of exhaustive runtime-log coverage. The temporary runner was removed,
+the separate Metro server stopped, and the simulator returned to shutdown.
+
+Evidence and source/data hashes are recorded in the verification JSON linked
+above; local screenshots and accessibility snapshots are under
+`build/verification/ios-*`. This tested offline navigation in Expo Go, without
+activating the held lessons. API mode, a physical iPhone and a standalone iOS IPA
+were not part of this regression. Scholarly review remains pending.

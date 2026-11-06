@@ -1,0 +1,3572 @@
+[
+  {
+    "chunk": "18-c01",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 35,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "c5a9a95aaad4bca1db85674cdc8f9d04c9400325bf9488e71b620a8ca360cb55"
+  },
+  {
+    "chunk": "18-c02",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 38,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "b6d4e4af44b99c1e168cbc68a4a660235a112044a7edef9d5966d98e7484d07c"
+  },
+  {
+    "chunk": "18-c03",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 3
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "7ce19cd351b456d7ff4fd545f438ddd6c43a8f50911fe93a68b71129d23197dc"
+  },
+  {
+    "chunk": "18-c04",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 27,
+      "ayahs": 3
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "d5daff97c826d2dcd09284cd380c7513d4961c16ca08bdc8b1522d53ec1c0f02"
+  },
+  {
+    "chunk": "18-c05",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 37,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "0572a8edaeea9d35dbdb58e7055a55a402301616a0d69e7d6f735cdb5a1ee596"
+  },
+  {
+    "chunk": "18-c06",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 19,
+      "ayahs": 1
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "ef66d8c871c0d238ec146fe908586c7593423112b57e759b5590a5df98812631"
+  },
+  {
+    "chunk": "18-c07",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 34,
+      "ayahs": 1
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "78bdf8f75d29c2aa069275d80c88964a265d6e5b1f3c27ef5b5656e9b3967088"
+  },
+  {
+    "chunk": "18-c08",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 22,
+      "ayahs": 1
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "6ecb4639082d9c369ce7a3e16239be342c6d516deeb0a5522e740e2d19b14657"
+  },
+  {
+    "chunk": "18-c09",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 38,
+      "ayahs": 1
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "fb5d10de351b8bcb7379eb7be554a8b08b0ac2fdc4cebbfe2d1f20a8cfccec15"
+  },
+  {
+    "chunk": "18-c10",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 13,
+      "ayahs": 1
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "db6389a8fc389fd14c740cb9845b919bb0a9a4c4b9a0997f2bbcc5341efa56ee"
+  },
+  {
+    "chunk": "18-c11",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 1
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "02b0ff35b426abe6c4f0881eb51308376999838fe09e4478f2b01ecc1932cd4e"
+  },
+  {
+    "chunk": "18-c12",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 33,
+      "ayahs": 1
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "70d25dda23d06078ba5823185f9d09787fae525dace2d3645e5418ba4d6a3400"
+  },
+  {
+    "chunk": "18-c13",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "18674987709a5523b8120c599667b2f36f11ee5af58d374862715a65f459f32d"
+  },
+  {
+    "chunk": "18-c14",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 38,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "64a5c54a60c0b20fdbf86f83238e87f1fe2f0ff7f25f50a573825528ddfe98b2"
+  },
+  {
+    "chunk": "18-c15",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 1
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "561afadcb41ba900b1caa439a50e37992366288b48287b999f077d8ee5cf50f2"
+  },
+  {
+    "chunk": "18-c16",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 40,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "0cf30feccd065f7e6bb9f6ac0e254eda9f7c4ecd178a5ddbc09509ce45ed3a98"
+  },
+  {
+    "chunk": "18-c17",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 28,
+      "ayahs": 1
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "7e9737efe93071971552f6cd40f74f5ef0a2323c7d40e429249c1a9724aa0faa"
+  },
+  {
+    "chunk": "18-c18",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 38,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "3295e28efed820db464e492c1b5a81d4ede1e979306fd1d4e284f3704f1a7846"
+  },
+  {
+    "chunk": "18-c19",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 40,
+      "ayahs": 3
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "1612e029ba3c1a6476d240802f6ee5c063cd1cc5d2a180cd3a72b3a7ae4175f3"
+  },
+  {
+    "chunk": "18-c20",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 27,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "c8315e68ef823360e5e617c4faa104be4b7535ba9d096e9ae82da1dc4e338dbd"
+  },
+  {
+    "chunk": "18-c21",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 23,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "32cd741c1bd23be121652ad1626adecfd57d41a005ba5a54376f79ead28b85ee"
+  },
+  {
+    "chunk": "18-c22",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "290ed780210fd06b061cb129c89bf7deea24b67d4824352ecda2dc26d13e16bf"
+  },
+  {
+    "chunk": "18-c23",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 2
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "50ae8e4b339b3147fb9d1128e4140a4311611d3de84b27ac490c199dd91d1fd3"
+  },
+  {
+    "chunk": "18-c24",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 40,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "0f18da92464688d4156b4d6eabc52764aa9ccbdccb8fbd1c07de7d559c6e19df"
+  },
+  {
+    "chunk": "18-c25",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 27,
+      "ayahs": 1
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "1edf1d8374f4adaaa092a1fa500052b5f1cf0ea42aebaef66f4674c5459153d1"
+  },
+  {
+    "chunk": "18-c26",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 39,
+      "ayahs": 2
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "188a0dbf0c0bd2929a2cf83093fe987269b1c624a423d85a19765bc28d5cff10"
+  },
+  {
+    "chunk": "18-c27",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 37,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "b567c6c153963d286ec2d88d766843874b9d1180b99206579457d9921ca9fbf4"
+  },
+  {
+    "chunk": "18-c28",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 37,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "c2376ecf849228dcbd46ba498275598862cceda8bf2208a668c2224e809f58a1"
+  },
+  {
+    "chunk": "18-c29",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 1
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": [
+          {
+            "ref": "18:57:19",
+            "field": "ruleIds",
+            "severity": "major"
+          }
+        ]
+      },
+      {
+        "round": 2,
+        "issues": []
+      }
+    ],
+    "finalFix": {
+      "validatorOk": true,
+      "applied": 1,
+      "rejected": []
+    },
+    "libraryIssues": [],
+    "contentSha256": "5026b26a03559a5d87ccacf4cc032d4769f63ccf87f377c211a05baf21c4e9c6"
+  },
+  {
+    "chunk": "18-c30",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 40,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "c408e0c9cda4127e7ed1a39280775158e6e929b0c4ef9a658f6fc844d6424901"
+  },
+  {
+    "chunk": "18-c31",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 23,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "61c5fa4722380ffae00bb7a9655e4f65a652a0aa065bef76711fd25c256939c0"
+  },
+  {
+    "chunk": "18-c32",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 29,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "d4af442ea941fb3939e2368c590ee1b5777123edbacf523ff42ec3879fe3074e"
+  },
+  {
+    "chunk": "18-c33",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 37,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "dfa181f98cd6f6f872cec6b568af820b63a343942c6c90e9a4a75b48c1b53393"
+  },
+  {
+    "chunk": "18-c34",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 37,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "28e2e51127ad5d4c87e4db025d0b211e2ddc59908ef35268fc3b0c6fb4a220e0"
+  },
+  {
+    "chunk": "18-c35",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 34,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "03b30e1def27252561ef5c21444a4fee2a532205bcfb4886cc0b5526c4a9be24"
+  },
+  {
+    "chunk": "18-c36",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 22,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "c95b89b17e30561f4829944b613f6a4cf62f1d7dc2bb76b441d7057db09176d6"
+  },
+  {
+    "chunk": "18-c37",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 36,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "4d0c6a4934e8a075985aa08a9abffef72b5b4afd130d1f43df20c6e586936600"
+  },
+  {
+    "chunk": "18-c38",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 36,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "3c01b3b6d5033575cf669c5a92f6a3b7007399750f168f729bd037982cd8afaa"
+  },
+  {
+    "chunk": "18-c39",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 35,
+      "ayahs": 1
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "b59d35bbe0e86f146c0dbbfc84a66b04ff9d0eae1df0db3249c413c1136f0a2a"
+  },
+  {
+    "chunk": "18-c40",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 21,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "68098a4c80ca67576704bab18a002df645998a1a2a2354be9811e6a15e827c4d"
+  },
+  {
+    "chunk": "18-c41",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 37,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "84ed120e73b76056e5ede125072acb3f055c25760617e83828b59afecb247c2d"
+  },
+  {
+    "chunk": "18-c42",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 31,
+      "ayahs": 3
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "345f7e7755b317c409601f941f1e58161222cdf01bf7b5f11a66bdbc740e5155"
+  },
+  {
+    "chunk": "18-c43",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 22,
+      "ayahs": 3
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "e729097a0f2c44634f117745f93479aaab4b84d1376ba54172102dd5ae52ae0d"
+  },
+  {
+    "chunk": "18-c44",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 31,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "8bb63c5eaa1c57810c9305f2b2e85f6f885f1362b32dbed5e1e9c221d045f411"
+  },
+  {
+    "chunk": "18-c45",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 27,
+      "ayahs": 2
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "187cfc9d018ebfe0f5ff07b266ed52f1373f16b487d70a55031f69f219531a6f"
+  },
+  {
+    "chunk": "18-c46",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 31,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "63fd80fe0dd51f6c7e25ec5d5ce4ca35bf0bc910fa0dd8ca997cab42fc3462a3"
+  },
+  {
+    "chunk": "18-c47",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "998d6c23551299cd5bca80413ec176e9e7c4900fb4e4be2f5dc061f600c2d90b"
+  },
+  {
+    "chunk": "18-c48",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 34,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "b5731ee739249dcc85cc6a8cb56149ba2a7dcc319d5f07696b1cfb4a33e1c3d2"
+  },
+  {
+    "chunk": "18-c49",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 34,
+      "ayahs": 3
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "fc13e68e20aae0b491cf175f2ba463e7d66482953cd2d1b5d5a7b00a7722f586"
+  },
+  {
+    "chunk": "18-c50",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 24,
+      "ayahs": 1
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "ed28cee1e0121ec93e3b7b3ce3e7bc8622a44ffdd3a9646ddfa64afd72949741"
+  },
+  {
+    "chunk": "23-c01",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 31,
+      "ayahs": 6
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "0bcc9f8255d10b81b07f681ab4bc9f5c938408cf765efd58cb8e881bc103a2bc"
+  },
+  {
+    "chunk": "23-c02",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 33,
+      "ayahs": 6
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "931d3a269453ff6555c8f5a7e4eed4042073914a94ec825ffeb04f6ed1f074e9"
+  },
+  {
+    "chunk": "23-c03",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "1abac21b5f63d10273127fe20dfa54b7c856342d05f906751c415c521c3b3429"
+  },
+  {
+    "chunk": "23-c04",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 28,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "5ae2ae1066d12d98ac96b7884011b795b8fed37fc58cfa3d68cfc21679afd1b3"
+  },
+  {
+    "chunk": "23-c05",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 37,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "f16e8946f641c4425e467270e21a3e683554a6bb7d75c36a412777b0656b7c60"
+  },
+  {
+    "chunk": "23-c06",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 20,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "a83e09649a18bcb6eb1a1db9036a148bf59a884dfce30b65a03b1064189ae781"
+  },
+  {
+    "chunk": "23-c07",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 36,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "cee9d7fa1142ba4f123d69a753f5d60ed2a12080c1daa00dbfb2796d264c1871"
+  },
+  {
+    "chunk": "23-c08",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 37,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "77268b6a61923c3fda163624d2255113778a3b40e8573825f53479c7c73e1dad"
+  },
+  {
+    "chunk": "23-c09",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "4cde3cfa076b3518337de9f321998ece35eb67fc6608fb1853f40990c179b96c"
+  },
+  {
+    "chunk": "23-c10",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 20,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "9cee7faf4eea48d1a4d1f763bba074371512249bbf2d5b7fb28d83ba6dc0face"
+  },
+  {
+    "chunk": "23-c11",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "dc7755792f6b470d720b21d7def7e93f8dfb7022a429b03e39bb1399232c1c9c"
+  },
+  {
+    "chunk": "23-c12",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 35,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "bf33fa8b526b8f6d774cebde49a86b1d3e0910b5e6fd786565cfe943383a76c3"
+  },
+  {
+    "chunk": "23-c13",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 31,
+      "ayahs": 5
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "082fab5c993bf79e732bcbf8b46c261058b97677844309ddc225ce2539c478cd"
+  },
+  {
+    "chunk": "23-c14",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 34,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "489fe7897ad40de71e7ba9a8290f12762660df8576060822eec263b0a46151c5"
+  },
+  {
+    "chunk": "23-c15",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 39,
+      "ayahs": 5
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "0aa1ccc8710d27fc9cba9534c6036f6769c86e91f3723d1f18f25448bd68f6c3"
+  },
+  {
+    "chunk": "23-c16",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 36,
+      "ayahs": 5
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "07f56f4fe4d1a74b1708e7b6e182107a21e297294a5f9c2eb8b8b02608522077"
+  },
+  {
+    "chunk": "23-c17",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 34,
+      "ayahs": 5
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "57b16e863f03638776d84a3f0fee887c06ec027fcf3fc645ceffce4c5642249e"
+  },
+  {
+    "chunk": "23-c18",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 34,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "ff5af3dfd54679222057715ed883e13030de3b485a55521e598ad208bbdfd1a6"
+  },
+  {
+    "chunk": "23-c19",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "b6c98e7c6e135593059d69d682e40cb431ed01282de2038deb31c342f3108b4c"
+  },
+  {
+    "chunk": "23-c20",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 33,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "ee8b412ca71f880c9f883969143abe6407d184da72a2811cc15d11ba6d635404"
+  },
+  {
+    "chunk": "23-c21",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 33,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "a6370b4ae4cbd78d4fafbb269dbd86f14aa0dfe62f448fd98d6ac83d32e485aa"
+  },
+  {
+    "chunk": "23-c22",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "e52ba15ea27e6363fa6b7aa4bf74014097c9e24338b65c4e3bf3be1870529c52"
+  },
+  {
+    "chunk": "23-c23",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 31,
+      "ayahs": 4
+    },
+    "reviewIssues": 3,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 3,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "d10b20bf49720673747ffe0a2cd3b059efb4a3815156cb58df764f12e2f6f897"
+  },
+  {
+    "chunk": "23-c24",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 33,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "ae77f8fe6deaa6a109f1f2e6426450d3f3e723c5aff25d5c1efb5915ce8119e5"
+  },
+  {
+    "chunk": "23-c25",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 29,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "e0a3a777230d40d7766195de0fb5d1cc71e5027e7a5c1d08468d29ad38e2e4be"
+  },
+  {
+    "chunk": "23-c26",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "4d37078ebb54273d22a33ba24e8d01b859b8701c596d73a1ebc55cdbd5dcaf2e"
+  },
+  {
+    "chunk": "23-c27",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 35,
+      "ayahs": 5
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "e28523c825faed17761887eef00b30b5d682ee854c2bce7b4b389071a46e7a58"
+  },
+  {
+    "chunk": "23-c28",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 39,
+      "ayahs": 4
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "983ec12fc1d6ee4d637f4ea71ac561341d1e6238a7c28a1149e4d443eb10824e"
+  },
+  {
+    "chunk": "23-c29",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "c48b238d548a9f726c336897bce57f31bc6da02df323a7dd51776af38318e499"
+  },
+  {
+    "chunk": "23-c30",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 34,
+      "ayahs": 4
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "680d2c919de90654a80cd884b5acf3071df23292d7531a40d3301297b3183aa6"
+  },
+  {
+    "chunk": "23-c31",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 31,
+      "ayahs": 4
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "b93346bfc69d999bad440f0619b8bc03cfc3039f23174524a0381b80b35a18c9"
+  },
+  {
+    "chunk": "23-c32",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 28,
+      "ayahs": 3
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "ff84d118c7806316e7d9f3e201850dbdf84e67959b748f107619d1b15c1277f9"
+  },
+  {
+    "chunk": "23-c33",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 25,
+      "ayahs": 2
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "bd1c64f68e3ca935bcff94881de4816350d70b7b9140704e6ec6246e4f373c65"
+  },
+  {
+    "chunk": "32-c01",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 27,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "1888993ff989aad76b99d2e8ec8e3d5c7c46bd1c5477c0a193793be0ced6b820"
+  },
+  {
+    "chunk": "32-c02",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 24,
+      "ayahs": 1
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "1f67dd1f89f630a5ccdb4b723a3b2431f551278bf6407f78a5f135ee7ae2ef33"
+  },
+  {
+    "chunk": "32-c03",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 33,
+      "ayahs": 3
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "66acb8787aa083af570b7d51d04d7e548021a9a415c41f7e427cc4a1cbdc0e4d"
+  },
+  {
+    "chunk": "32-c04",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 36,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "1ec21c67f631b53358fc2fcfeda7a9148c142825ca78ffb30a3cf41fda79b1b7"
+  },
+  {
+    "chunk": "32-c05",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 27,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "033c16917c477b2fddae7251c16cb9f796c43a367627bd2ceffc72024c34e6b0"
+  },
+  {
+    "chunk": "32-c06",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 2
+    },
+    "reviewIssues": 2,
+    "reviewCritical": 0,
+    "reviewMajor": 2,
+    "fix1": {
+      "applied": 2,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "0e166f1eca9b1587e953f4ee92989798a4929ac48b150b0a9a9a2aeefee87ae8"
+  },
+  {
+    "chunk": "32-c07",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 39,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "9d1f69717cc1a679e9a8352b440d2e9714c6f878f926a2cb162bd3f45720b7eb"
+  },
+  {
+    "chunk": "32-c08",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 20,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "a3ba3a51600a9b9be497d24bdebe01906035f3a96590704714d2f7aee9fe4c73"
+  },
+  {
+    "chunk": "32-c09",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "bbbe8f980fde69a568968bac8c9dcf3c02d523bc2d552a28f608771a3c73e99e"
+  },
+  {
+    "chunk": "32-c10",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 37,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "b5f4a2a31fba598a289af30f5a5c03bb29c3bade000df3b8a9db00ab2151c676"
+  },
+  {
+    "chunk": "32-c11",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 29,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "a111492a6396ce50c6d636a651f1e2b4b424b40996a4df1d3a9c2056757effd3"
+  },
+  {
+    "chunk": "32-c12",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 40,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "1b1b7c1a767400ab73c2833ecb328c5427b222919a835cf44283c7345ecac12f"
+  },
+  {
+    "chunk": "36-c01",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 37,
+      "ayahs": 8
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "3707ea4f8e123c3c08b1ad4ea69d92416cc132302dee9e8279be29c56bec18bf"
+  },
+  {
+    "chunk": "36-c02",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "721a59de68f5880ae1356a7d8128f77f00dbd094360d81c9437aa240d0606163"
+  },
+  {
+    "chunk": "36-c03",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 33,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "035a322b241413a05acc7b97e136250ea1d72aa7c10a5dde1bb811c95dd3086d"
+  },
+  {
+    "chunk": "36-c04",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 38,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "c9676184114b2ddadbe54fd4bbad72e25e2c897f68ec060381092e778021c982"
+  },
+  {
+    "chunk": "36-c05",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 34,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "fcdb31ac05a5f0c7a508dc65ae31645693c1a51e5e94b8795e9c4afdc7091f67"
+  },
+  {
+    "chunk": "36-c06",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 31,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "b79bec8754a67162204e31e940ba5b063ae39c195f8fd8314de95f3179bf127f"
+  },
+  {
+    "chunk": "36-c07",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 39,
+      "ayahs": 4
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "712979f0ff4d16019f9a9db352046e5017694622218c8eb42e3070ae66642787"
+  },
+  {
+    "chunk": "36-c08",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 37,
+      "ayahs": 4
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "02263647c2e3a28763a45ace9cc119a9a5a8c866e84037f03c561a95e539db99"
+  },
+  {
+    "chunk": "36-c09",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "3f38a25dc940ccfcd8fac0430719dd35124128bdcb49121cf38a910a809dd0b4"
+  },
+  {
+    "chunk": "36-c10",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 3
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "cd5027c04c5dd2f582baa745209537d9cf59fa0a5ea8fd10b0a3d6ea7ebaa5c0"
+  },
+  {
+    "chunk": "36-c11",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 40,
+      "ayahs": 5
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "dc0868b03cd3425f0133bce47b2e3a2e143a221ac7bca854bd1082c87b195162"
+  },
+  {
+    "chunk": "36-c12",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 35,
+      "ayahs": 2
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "7da3a12d83d265644c32741f33eecfbc4eed426b9e5e02ec0a09cc333068f89a"
+  },
+  {
+    "chunk": "36-c13",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "ea496da02b5ca380e67f68b179c3520802786955175ee3b136059c7e522c0988"
+  },
+  {
+    "chunk": "36-c14",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 33,
+      "ayahs": 3
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "5ca027aad8099a153d571203899218055edd928124ee60410d7dee4b6215db49"
+  },
+  {
+    "chunk": "36-c15",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 29,
+      "ayahs": 5
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "ac05e0077ad5c5b97d38d501baa7561c0e985a9d41debcfaf35e9a9be6829d85"
+  },
+  {
+    "chunk": "36-c16",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 31,
+      "ayahs": 4
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "bd8be52be1935a1b9858108befe1e33807812b9513056af1da9499566206a4e3"
+  },
+  {
+    "chunk": "36-c17",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 35,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "a9c756b343318b7191e53ca3ff86b3a7f003490f08d728187d40139a1aa611cd"
+  },
+  {
+    "chunk": "36-c18",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 39,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "cc7b16ad07981694d819e26f82b6eca7e39733d21d5daff1057e3b4ac8b74071"
+  },
+  {
+    "chunk": "36-c19",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 35,
+      "ayahs": 5
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "7d05313c0a2d9ef0879719fc32af619c0ce4409eded89ce67ffd3c02c76498b3"
+  },
+  {
+    "chunk": "36-c20",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 3
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "0960368cfad0d21159421db57a33034cbc7e3f5a5315d78be47f72b3773cd0dd"
+  },
+  {
+    "chunk": "36-c21",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 43,
+      "ayahs": 4
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "380d478590115fca31209c8372636e1874c77a4ba43d727d59bc3b87717ea6c8"
+  },
+  {
+    "chunk": "55-c01",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 10
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "7b174dcd98a63c9e610bf774f68fc412fea8811957b479700b5c1c7d09603a39"
+  },
+  {
+    "chunk": "55-c02",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 7
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "f41e53355d24854012878edc08a8d1984625a30fbcb9d12762d8ccb68077ecb2"
+  },
+  {
+    "chunk": "55-c03",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 33,
+      "ayahs": 8
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "9fcd8b5bf03cb363c43581094a7206f558d919da2f3d17f900550c532575ddd8"
+  },
+  {
+    "chunk": "55-c04",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 6
+    },
+    "reviewIssues": 2,
+    "reviewCritical": 0,
+    "reviewMajor": 1,
+    "fix1": {
+      "applied": 2,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "003054aedeb1021ac96fb5d24ddcfe79a0ca01b3fb7eb2d0e17c3aad72ab8942"
+  },
+  {
+    "chunk": "55-c05",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 4
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "8a935088d018b7efc7aaa90420a4caa33a052b10c06d70ca279dda5ffecfafbf"
+  },
+  {
+    "chunk": "55-c06",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 6
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "9660e81d9485391543bba36c39f69a0a851eb7f1f1237f7c27079810e7ed417a"
+  },
+  {
+    "chunk": "55-c07",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 30,
+      "ayahs": 7
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "5eb32ad484d9fc9ab68c54390ef5c7a2c88ee7351db81e9c2ac4768044ec5b5f"
+  },
+  {
+    "chunk": "55-c08",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 33,
+      "ayahs": 7
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "1706c37f3895c3704b1972711c082d0cc47cb53a7e03fd43d3e515c8ca5b3619"
+  },
+  {
+    "chunk": "55-c09",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 32,
+      "ayahs": 7
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "219b14174c42d75ef4ef27a193738ad048c86880fcbe5d3e2a4773bd5b43dd33"
+  },
+  {
+    "chunk": "55-c10",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 31,
+      "ayahs": 9
+    },
+    "reviewIssues": 1,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 1,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "bf665f7844e927e9fe161e22fe625677b1b6e60c20f0a29d695df10eab000e76"
+  },
+  {
+    "chunk": "55-c11",
+    "status": "ai-reviewed",
+    "scholarlyReview": "pending",
+    "blockingReasons": [],
+    "authored": {
+      "validatorOk": true,
+      "words": 34,
+      "ayahs": 7
+    },
+    "reviewIssues": 0,
+    "reviewCritical": 0,
+    "reviewMajor": 0,
+    "fix1": {
+      "applied": 0,
+      "rejected": 0,
+      "validatorOk": true
+    },
+    "confirms": [
+      {
+        "round": 1,
+        "issues": []
+      }
+    ],
+    "finalFix": null,
+    "libraryIssues": [],
+    "contentSha256": "2b362d0b542ab18ba43f27923eae1e7fd4c82e076b4a26ffd495928b2808b659"
+  }
+]

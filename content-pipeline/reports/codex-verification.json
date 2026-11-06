@@ -1,32 +1,146 @@
 {
   "snapshotDate": "2026-11-06",
-  "publication": "eleven-Surah runtime unchanged; all expansion content held",
+  "status": "Implementation and current AI review complete; scholarly approval pending",
+  "publication": "Eleven-Surah runtime and serving databases unchanged; all five expansion Surahs held",
   "checks": {
-    "npm run verify": "Passed: types, 27 core/API/mobile/database tests, 163 pipeline Node tests (one completed-manifest check skipped), 37 Python tests, web/API production builds",
-    "BASE_URL=empty npm run test:e2e": "29 passed; 4 incomplete-draft checks skipped; empty BASE_URL matches local CI",
-    "npm run build:mobile": "Android and iOS exports passed; not iOS device evidence",
-    "validate_chunk.py for every authored file": "110 chunks; zero errors; eight source-type-label warnings documented separately",
-    "assemble.py --draft --surah32 36 55": "Three complete structurally validated held JSON artifacts; fresh independent reviews pending",
-    "shared isStudyData on32/36/55": "All three pass",
-    "assemble.py --write": "correctly refuses all five pending scholarly approvals;runtimeWritten=false",
-    "export_reviews.mjs": "correctly refuses stale input fingerprints; no completed review manifest exported",
-    "git apply --check content-pipeline/integration/five-surahs.patch": "passed; patch remains unapplied",
-    "git diff --check": "passed",
-    "database SQLite verification": "11 Surahs, 55 ayahs, 230 words; SHA-256 1e9bca623503f341cd150984af0c4e43a1c7032c60466a9f5be2e891c039219f",
-    "database Postgres verification": "Read-only home-server verification passed: 11 Surahs, 55 ayahs, 230 words; same SHA-256 as SQLite"
+    "npm run verify": {
+      "status": "passed",
+      "nodeTests": 220,
+      "apiTests": 11,
+      "mobileTests": 12,
+      "coreTests": 12,
+      "pipelineNodeTests": 185,
+      "pythonTests": 46,
+      "skipped": 0,
+      "typescript": "all workspaces passed",
+      "builds": "web and API passed"
+    },
+    "npm run build:mobile": "iOS and Android production exports passed",
+    "BASE_URL=empty npm run test:e2e -- --workers=4": {
+      "status": "passed",
+      "tests": 33,
+      "skipped": 0
+    },
+    "all current authored chunks": {
+      "validated": 127,
+      "errors": 0,
+      "warnings": 0
+    },
+    "review manifest": {
+      "complete": true,
+      "chunks": 127,
+      "words": 4077,
+      "ayahs": 419,
+      "contentAndInputHashes": "current",
+      "sha256": "be6a5671d3a61e9d3ac1ee7521b94c00d49f4944c9192e07f5e106887a3830a8"
+    },
+    "offline review bundle": {
+      "results": [
+        {
+          "surah": 18,
+          "words": 1579,
+          "ayahs": 110,
+          "fonts": "all loaded",
+          "arabic": "exact",
+          "mobileOverflow": false
+        },
+        {
+          "surah": 23,
+          "words": 1050,
+          "ayahs": 118,
+          "fonts": "all loaded",
+          "arabic": "exact",
+          "mobileOverflow": false
+        },
+        {
+          "surah": 32,
+          "words": 372,
+          "ayahs": 30,
+          "fonts": "all loaded",
+          "arabic": "exact",
+          "mobileOverflow": false
+        },
+        {
+          "surah": 36,
+          "words": 725,
+          "ayahs": 83,
+          "fonts": "all loaded",
+          "arabic": "exact",
+          "mobileOverflow": false
+        },
+        {
+          "surah": 55,
+          "words": 351,
+          "ayahs": 78,
+          "fonts": "all loaded",
+          "arabic": "exact",
+          "mobileOverflow": false
+        }
+      ],
+      "externalRequests": [],
+      "browserErrors": [],
+      "status": "passed"
+    },
+    "runtime assembly": "Correctly refused all five pending scholarly approvals; runtimeWritten=false; existing lesson modules unchanged.",
+    "deferred integration patch": "git apply --check passed; remains unapplied",
+    "whitespace": "git diff --check passed",
+    "serving SQLite and home-server Postgres": {
+      "status": "read-only verification passed",
+      "surahs": 11,
+      "ayahs": 55,
+      "words": 230,
+      "sha256": "1e9bca623503f341cd150984af0c4e43a1c7032c60466a9f5be2e891c039219f"
+    },
+    "public API": {
+      "status": "passed",
+      "base": "https://quran-grammar.39.36.246.28.sslip.io",
+      "surahs": 11,
+      "ayahs": 55,
+      "words": 230,
+      "heldEndpoints": [
+        {
+          "surah": 18,
+          "status": 404
+        },
+        {
+          "surah": 23,
+          "status": 404
+        },
+        {
+          "surah": 32,
+          "status": 404
+        },
+        {
+          "surah": 36,
+          "status": 404
+        },
+        {
+          "surah": 55,
+          "status": 404
+        }
+      ]
+    }
   },
   "nativeEvidence": {
-    "device": "Android36 repro36 emulator",
-    "build": "fresh standalone org.qurangrammar.app debug-signed APK",
-    "tested": "Arabic/Urdu display, collapsed Filters, ayah jump, Juz30 partial chapter change, word root/paradigm/Next, Urdu preference after cold launch; no fatal or ReactNativeJS errors",
-    "localImages": [
-      "build/verification/android-initial.png",
-      "build/verification/android-word.png"
-    ],
-    "limitations": [
-      "No new iOS simulator/device interaction test",
-      "Expanded Al-Kahf native scrolling not yet tested; content held"
-    ]
+    "report": "codex-native-verification.json",
+    "android": "Actual Android36 emulator interaction regression passed; stable eleven-Surah debug APK rebuilt and restored.",
+    "ios": "Actual iPhone17Pro/iOS26.5 ExpoGo57.0.9 XCTest interaction regression passed:ten checkpoints,one testcase,zero failures.",
+    "limitations": "No physical phone/store-signed build. iOS retained runtime-log coverage was limited by Apple logging quarantine during accessibility queries."
   },
-  "blocker": "Authenticated Codex account usage limit stopped model jobs. Seventeen chunks need authoring and all 110 existing chunks need fresh full reviews after library edits. No final five-Surah scholarly review bundle was generated."
+  "reviewArtifact": {
+    "file": "build/review/quran-grammar-scholarly-review.zip",
+    "bytes": 6153696,
+    "sha256": "4c203d25e1eaa32e641c1fc98ea010acb3a6f4d9684ac48e543bbb2366924d68",
+    "index": "build/review/quran-grammar/index.html",
+    "files": 27,
+    "scholarlyReview": "pending"
+  },
+  "privateProvenanceBackup": {
+    "file": "build/backups/content-pipeline/2026-11-06-final-review-inputs.tar.gz",
+    "sha256": "dc09758b6e3476b7d2020ac4497446fcd5d5822e39ea94c2159211bb30f39adc",
+    "verifiedFiles": 259,
+    "tracked": false
+  },
+  "blocker": null,
+  "publicationBlockedBy": "Qualified human scholarly review remains pending for every expansion Surah."
 }
