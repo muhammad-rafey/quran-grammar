@@ -309,15 +309,17 @@ and CI without the ignored source downloads.
 
 ## 7. Home-server redeploy (after the PR is merged)
 
-The Quran Grammar IP-route repair below was completed on 2026-11-06 and its public HTTPS
-deployment verified. The server still serves its existing `main` build; PR #1 has not been
-merged or deployed. Timestamped `.before-ip-change-*` files preserve the immediate rollback
-configuration. Other services' routes were not changed.
+The Quran Grammar IP-route repair was completed on 2026-11-06 and its public HTTPS deployment
+verified. Deploy merged `main` only; check PR #1 and the server's `git rev-parse HEAD` for the
+current deployed revision. Timestamped `.before-ip-change-*` files preserve the route-repair
+rollback configuration. Other services' routes were not changed. The repaired route does not
+need another IP replacement while its public address remains current.
 
 On the server (`ssh <server>`), from `~/quran-grammar`:
 
 ```sh
-# Move the route to the current public IP (the shared Caddyfile is validated before reload).
+# Only if the public IP changes again: update the scoped route and validate before reload.
+# The following repair already ran; use the actual old/new addresses for a future change.
 for f in .env .deployment/proxy-route.caddy .deployment/README.md; do cp -p "$f" "$f.before-ip-change"; done
 sed -i 's/39\.36\.252\.180/39.36.246.28/g' .env .deployment/proxy-route.caddy .deployment/README.md
 python3 .deployment/manage-proxy.py install
