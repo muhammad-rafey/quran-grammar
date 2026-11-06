@@ -1,0 +1,304 @@
+{
+ "entries": [
+  {
+   "key": "yatadab~aru|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَدَبَّرَ",
+   "present": "يَتَدَبَّرُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی بات کے مطلب اور انجام پر غور و فکر کرنا۔ مضارع میں بابِ تفعل کی تاء کبھی دال بن کر فاءِ کلمہ دال میں مدغم ہو جاتی ہے (يَتَدَبَّرُ کی جگہ يَدَّبَّرُ)؛ یہ کوئی الگ باب نہیں بلکہ اسی بابِ تفعل کا صیغہ ہے۔",
+   "evidenceEnglish": "QAC tags all 4 Quranic occurrences as Form V imperfect (LEM yatadab~aru, root d-b-r): يَتَدَبَّرُونَ (4:82, 47:24) and the assimilated يَدَّبَّرُوا (23:68, 38:29), where the ta of tafa''ala is assimilated to the dal. The QAC lemma is an imperfect identifier; citation perfect تَدَبَّرَ / imperfect يَتَدَبَّرُ is the regular tafa''ala/yatafa''alu paradigm (Lane, Lisan al-Arab: tadabbara al-amr 'considered its outcome')."
+  },
+  {
+   "key": "yudab~iru|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "دَبَّرَ",
+   "present": "يُدَبِّرُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی معاملے کا انجام سوچ کر اس کا انتظام کرنا اور اسے چلانا۔ اسی مادے کے بابِ تفعل تَدَبَّرَ (غور کرنا) سے الگ رکھیں؛ يُدَبِّرُ میں حرفِ مضارعت پر ضمہ اور عینِ کلمہ پر تشدید کے ساتھ کسرہ ہے۔",
+   "evidenceEnglish": "QAC tags all 4 occurrences (10:3, 10:31, 13:2, 32:5) as Form II imperfect يُدَبِّرُ (LEM yudab~iru), each with الْأَمْرَ as object. The perfect is not attested in the Quran; دَبَّرَ / يُدَبِّرُ is the regular fa''ala/yufa''ilu paradigm (Lane, Lisan al-Arab: dabbara al-amr 'managed the affair, looking to its end')."
+  },
+  {
+   "key": "yudoHiDu|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَدْحَضَ",
+   "present": "يُدْحِضُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی دلیل یا بات کو پھسلا کر گرا دینا، یعنی باطل کر دینا؛ مجرد دَحَضَ لازم ہے (پھسلنا، باطل ہونا)۔ ابتدائی ہمزۂ قطع ماضی، امر اور مصدر إِدْحَاض میں نظر آتا ہے، جبکہ مضارع يُدْحِضُ میں حرفِ مضارعت کا ضمہ بابِ افعال کی پہچان ہے۔",
+   "evidenceEnglish": "QAC tags both occurrences (18:56 and 40:5, لِيُدْحِضُوا بِهِ الْحَقَّ) as Form IV imperfect subjunctive (LEM yudoHiDu). Citation أَدْحَضَ / يُدْحِضُ is the causative of intransitive دَحَضَ 'slipped; became void' (Lisan al-Arab, Lane: adhada al-hujjah 'rendered the argument void'); Form IV vowelling is fixed (af'ala/yuf'ilu). QAC lemma is an imperfect identifier."
+  },
+  {
+   "key": "daxala|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "دَخَلَ",
+   "present": "يَدْخُلُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح فعل ہے: داخل ہونا؛ جگہ کا نام عموماً حرفِ جر کے بغیر منصوب آتا ہے (دَخَلَ الْبَيْتَ)، اسی لیے اس کے لازم یا متعدی ہونے میں نحویوں کی رائے مختلف ہے۔ مضارع میں عینِ کلمہ مضموم ہے (يَدْخُلُ)، اس لیے امر اُدْخُلْ کا ہمزۂ وصل بھی مضموم ہے۔",
+   "evidenceEnglish": "QAC (75 occurrences): imperfect stems يَدْخُلُ (13x incl. suffixed forms), تَدْخُلُ, نَدْخُلَ and imperatives ٱدْخُلْ / ٱدْخُلُوا / ٱدْخُلَا (26x) all have damma on the 'ayn of the imperfect stem, confirming a-u, bab nasara (Lane/Lisan: dakhala, aor. yadkhulu, inf. n. dukhul). Matches the existing lesson entry 110:2:3."
+  },
+  {
+   "key": ">adoraka|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَدْرَكَ",
+   "present": "يُدْرِكُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: پیچھے سے جا پکڑنا، کسی چیز تک پہنچ جانا یا اسے پا لینا۔ مضارع میں حرفِ مضارعت کا ضمہ بابِ افعال کی علامت ہے؛ تُدْرِكُ واحد مؤنث غائب بھی ہو سکتا ہے اور واحد مذکر حاضر بھی، اس لیے فاعل سیاق سے متعین کریں۔",
+   "evidenceEnglish": "QAC (6 Form IV occurrences, LEM >adoraka): perfect أَدْرَكَهُ (10:90); imperfects يُدْرِكُ and تُدْرِكُهُ (6:103), تُدْرِكَ (36:40); jussives يُدْرِكْهُ (4:100), يُدْرِككُّمُ (4:78). Regular af'ala/yuf'ilu (Lane: adrakahu 'overtook, reached, attained it')."
+  },
+  {
+   "key": "daEaA|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "دَعَا",
+   "present": "يَدْعُو",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "ناقص واوی اور متعدی فعل ہے: پکارنا، بلانا، دعا کرنا؛ آخری واو ماضی میں الف (دَعَا) بنتی ہے، مضارع میں ساکن (يَدْعُو) رہتی ہے، نصب میں فتحہ لیتی ہے (لَنْ يَدْعُوَ) اور جزم و امر میں گر جاتی ہے (لَمْ يَدْعُ، اُدْعُ)۔ عثمانی رسم میں واحد يَدْعُو کے بعد بھی الف لکھا ملتا ہے، جو واوِ جماعت کی علامت نہیں۔",
+   "evidenceEnglish": "QAC (157 occurrences): imperfects يَدْعُو / تَدْعُو / نَدْعُو / أَدْعُو, jussive and imperative يَدْعُ / تَدْعُ / ٱدْعُ (32x imperative), perfect دَعَا / دَعَوْتُ: final-waw defective verb with u-imperfect, bab nasara (Lane/Lisan: da'a, aor. yad'u, inf. n. du'a', da'wah). Uthmani rasm writes a silent alif after a radical final waw (not the plural pronoun), e.g. يَدْعُوٓا۟ (2:221, 10:25), يَدْعُوا۟ (22:12), أَدْعُوا۟ (13:36), لَن نَّدْعُوَا۟ (18:14)."
+  },
+  {
+   "key": "yad~aEu|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِدَّعَى",
+   "present": "يَدَّعِي",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "ناقص واوی اور متعدی فعل ہے: دعویٰ کرنا، نیز کوئی چیز طلب کرنا یا اس کی تمنا کرنا؛ اصل اِدْتَعَى میں بابِ افتعال کی تاء دال سے بدل گئی اور ساکن فاءِ کلمہ دال اس میں مدغم ہو گئی۔ آخری واو ماضی میں الفِ مقصورہ اور مضارع میں یاء بنتی ہے (يَدَّعِي)، اور جمع يَدَّعُونَ میں یاء گر کر عینِ کلمہ مضموم ہو جاتا ہے۔",
+   "evidenceEnglish": "QAC tags 3 occurrences as Form VIII imperfect (LEM yad~aEu, root d-E-w): يَدَّعُونَ 36:57, تَدَّعُونَ 41:31 and 67:27. Citation اِدَّعَى / يَدَّعِي (ifta'ala/yafta'ilu): the infixed ta is assimilated to the initial dal (idta'a > idda'a) and the final waw surfaces as alif maqsura / ya. In 36:57 and 41:31 tafsir and lexica (e.g. Lisan al-Arab, d-'-w) gloss it as 'what they ask for / wish for'; elsewhere 'to claim'. QAC lemma يَدَّعُ is an inflected identifier."
+  },
+  {
+   "key": "dafaEo|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "دَفَعَ",
+   "present": "يَدْفَعُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: ہٹانا، دور کرنا؛ إِلَى کے ساتھ کسی کے حوالے کرنا (دَفَعَ إِلَيْهِ مَالَهُ)۔ لامِ کلمہ حرفِ حلقی ع ہے اور مضارع میں عینِ کلمہ مفتوح ہے (يَدْفَعُ)، اس لیے امر اِدْفَعْ کا ہمزۂ وصل مکسور ہے۔",
+   "evidenceEnglish": "QAC (5 occurrences): perfect دَفَعْتُمْ (4:6) and imperatives ٱدْفَعْ (23:96, 41:34), ٱدْفَعُوا (3:167, 4:6) with fatha on the 'ayn of the stem (kasra on hamzat al-wasl), i.e. a-a, bab fataha (Lane/Lisan: dafa'ahu, aor. yadfa'uhu, inf. n. daf'). QAC lemma دَفَعْ is a stem identifier; citation دَفَعَ."
+  },
+  {
+   "key": "*ara>a|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "ذَرَأَ",
+   "present": "يَذْرَأُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "مہموز اللام اور متعدی فعل ہے: پیدا کرنا اور نسل کو پھیلانا؛ آخری ہمزہ ماضی و مضارع دونوں میں باقی رہتا ہے (ذَرَأَ، يَذْرَأُ) اور حرکت کے مطابق کبھی واو کی کرسی پر لکھا جاتا ہے۔ اسے ذ ر و والے ناقص فعل ذَرَا (ہوا کا اڑا کر بکھیرنا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC (6 occurrences): perfect ذَرَأَ (6:136, 16:13, 23:79, 67:24), ذَرَأْنَا (7:179) and imperfect يَذْرَؤُكُمْ (42:11) with fatha on the ra, giving a-a, bab fataha, as usual with a hamza third radical (Lane/Lisan: dhara'a, aor. yadhra'u 'created; multiplied'). Only one imperfect is attested, but the lexica agree."
+  },
+  {
+   "key": "ta*oruw|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "ذَرَا",
+   "present": "يَذْرُو",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "ناقص واوی اور متعدی فعل ہے: ہوا کا کسی چیز کو اڑا کر بکھیر دینا؛ آخری واو ماضی میں الف (ذَرَا) اور مضارع میں ساکن واو (يَذْرُو) کی صورت میں آتی ہے اور جزم میں گر جاتی ہے۔ اسے مہموز ذَرَأَ (پیدا کرنا) سے الگ رکھیں؛ حروف ملتے جلتے ہیں مگر مادہ الگ ہے۔",
+   "evidenceEnglish": "Single Quranic occurrence: تَذْرُوهُ الرِّيَاحُ (18:45), QAC Form I imperfect, root *-r-w. The u-imperfect with final waw, supported by the verbal noun ذَرْوًا (51:1), gives a-u, bab nasara (Lane/Lisan: dhara, aor. yadhru; a ya'-variant dhara/yadhri is also recorded but is not used in the Quran). QAC lemma تَذْرُو is an inflected identifier; citation ذَرَا."
+  },
+  {
+   "key": "*akara|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "ذَكَرَ",
+   "present": "يَذْكُرُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: یاد کرنا اور زبان سے ذکر کرنا؛ مضارع میں عینِ کلمہ مضموم ہے (يَذْكُرُ)، اس لیے امر اُذْكُرْ کا ہمزۂ وصل مضموم ہے۔ اسی مادے کے ذَكَّرَ (یاد دلانا) اور تَذَكَّرَ (نصیحت پکڑنا) الگ ابواب ہیں؛ تشدید اور تاء دیکھ کر باب پہچانیں۔",
+   "evidenceEnglish": "QAC (73 occurrences): imperfects يَذْكُرُ / تَذْكُرُ / أَذْكُرَ / نَذْكُرَ and imperatives ٱذْكُرْ / ٱذْكُرُوا (hamzat al-wasl with damma) confirm a-u, bab nasara (Lane/Lisan: dhakara, aor. yadhkuru, inf. n. dhikr)."
+  },
+  {
+   "key": "*uk~ira|II|PASS",
+   "baabUrdu": "بابِ تَفْعِيل — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)، مجہول",
+   "past": "ذُكِّرَ",
+   "present": "يُذَكَّرُ",
+   "pattern": "فُعِّلَ — يُفَعَّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ذَكَّرَ (یاد دلانا، نصیحت کرنا) کا مجہول ہے: یاد دلایا جانا؛ جسے یاد دلایا جائے وہ نائبِ فاعل بنتا ہے اور جس بات کی یاد دہانی ہو وہ عموماً بِ کے ساتھ آتی ہے۔ ماضی مجہول میں پہلے حرف پر ضمہ ہے، اور مضارع مجہول يُذَكَّرُ میں کاف کا فتحہ اسے معروف يُذَكِّرُ سے جدا کرتا ہے۔",
+   "evidenceEnglish": "QAC: 10 occurrences, all Form II perfect passive (LEM *uk~ira): ذُكِّرَ (18:57, 32:22), ذُكِّرُوا (e.g. 5:13, 6:44, 32:15), ذُكِّرْتُم (36:19). The entry voice is passive, so past/present are the passive ذُكِّرَ / يُذَكَّرُ (fu''ila/yufa''alu); the passive imperfect is not attested in the Quran and follows the regular pattern. Active ذَكَّرَ / يُذَكِّرُ 'to remind, admonish' (Lane, Lisan)."
+  },
+  {
+   "key": "ta*ak~ara|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَذَكَّرَ",
+   "present": "يَتَذَكَّرُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "صحیح فعل ہے: نصیحت پکڑنا، دل میں یاد کرنا؛ متعدی بھی آتا ہے مگر قرآن میں زیادہ تر لازم (بغیر مفعول) آیا ہے۔ تاء سے شروع ہونے والے مضارع (حاضر، اور واحد و تثنیہ مؤنث غائب) میں دو تاؤں میں سے ایک گر سکتی ہے (تَتَذَكَّرُونَ کی جگہ تَذَكَّرُونَ)، اور يَذَّكَّرُ میں تاء ذال میں مدغم ہے؛ یہ سب بابِ تفعل ہی کے صیغے ہیں۔",
+   "evidenceEnglish": "QAC (51 Form V occurrences, LEM ta*ak~ara): perfect تَذَكَّرَ; full imperfects يَتَذَكَّرُ / تَتَذَكَّرُونَ (e.g. 32:4); imperfects with one ta elided, تَذَكَّرُونَ (17x, e.g. 23:85); and the assimilated يَذَّكَّرُ (14x). Regular tafa''ala/yatafa''alu; ta-elision and assimilation are standard Form V phenomena (Wright, Grammar of the Arabic Language)."
+  },
+  {
+   "key": "*ul~ilato|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "ذَلَّلَ",
+   "present": "يُذَلِّلُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "مضاعف مادے (ذ ل ل) سے متعدی فعل ہے: رام کرنا، تابع اور فرماں بردار بنا دینا۔ مجرد ذَلَّ میں عین اور لام مدغم ہیں، مگر بابِ تفعیل میں عینِ کلمہ کی تشدید کے بعد لامِ کلمہ الگ ظاہر ہوتا ہے (ذَلَّلَ، يُذَلِّلُ)۔",
+   "evidenceEnglish": "Only active occurrence: وَذَلَّلْنَاهَا (36:72), QAC Form II perfect 1P, root *-l-l. QAC's lemma ذُلِّلَتْ is the passive 3FS form (76:14, tagged PASS separately); the active citation is ذَلَّلَ / يُذَلِّلُ, fa''ala/yufa''ilu (Lane: dhallalahu 'rendered it tractable, subservient'). Form II of a doubled root does not contract."
+  },
+  {
+   "key": "*ahaba|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "ذَهَبَ",
+   "present": "يَذْهَبُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے: جانا، چلے جانا؛ خود لازم ہے مگر بِ کے ساتھ متعدی ہو کر «لے جانا» کا معنی دیتا ہے (ذَهَبَ بِهِ)۔ عینِ کلمہ حرفِ حلقی ہاء ہے اور ماضی و مضارع دونوں میں مفتوح ہے (يَذْهَبُ)؛ امر اِذْهَبْ ہے۔",
+   "evidenceEnglish": "QAC (35 occurrences): imperfects يَذْهَبُ / تَذْهَبُ / نَذْهَبَ and imperatives ٱذْهَبْ / ٱذْهَبُوا (hamzat al-wasl with kasra) give a-a, bab fataha (Lane/Lisan: dhahaba, aor. yadhhabu; dhahaba bihi 'took it away', the sense in 23:91)."
+  },
+  {
+   "key": "*aAqu|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "ذَاقَ",
+   "present": "يَذُوقُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "اجوف واوی اور متعدی فعل ہے: چکھنا، کسی لذت یا تکلیف کا مزہ پانا۔ درمیانی واو ماضی میں الف (ذَاقَ) اور مضارع میں واو (يَذُوقُ) ہے؛ اگلا حرف ساکن ہو تو گر جاتی ہے (ذُقْتُ، امر ذُقْ)، جبکہ جمع کے امر ذُوقُوا میں واپس آ جاتی ہے۔",
+   "evidenceEnglish": "QAC (36 occurrences, LEM *aAqu, root *-w-q): imperfects يَذُوقُ / تَذُوقُوا / يَذُوقُونَ, imperatives ذُقْ (44:49) and ذُوقُوا (23x), perfects ذَاقَ / ذَاقُوا / ذَاقَتْ. Hollow-waw verb of fa'ala/yaf'ulu (dhawaqa/yadhwuqu), i.e. bab nasara (Lane/Lisan: dhaqa, aor. yadhuqu, inf. n. dhawq). QAC lemma ذَاقُ is a stem identifier; citation ذَاقَ."
+  },
+  {
+   "key": ">a*aAqa|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَذَاقَ",
+   "present": "يُذِيقُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "اجوف واوی اور متعدی فعل ہے، عموماً دو مفعولوں کے ساتھ: کسی کو کچھ چکھانا۔ اصل واو ماضی میں الف (أَذَاقَ) اور مضارع میں یاء (يُذِيقُ) بن جاتی ہے، اور آخری حرف ساکن ہونے پر گر جاتی ہے (أَذَقْنَا، لَمْ يُذِقْ)۔",
+   "evidenceEnglish": "QAC (22 Form IV occurrences, LEM >a*aAqa): perfects أَذَاقَ / أَذَقْنَا, imperfects نُذِيقُ / يُذِيقَ, jussive نُذِقْ. Hollow-waw Form IV af'ala/yuf'ilu with waw > alif / ya (Lane: adhaqahu 'made him taste'); doubly transitive (person and thing tasted)."
+  },
+  {
+   "key": "ra'aA|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "رَأَى",
+   "present": "يَرَى",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "مہموز العین اور ناقص یائی متعدی فعل ہے: دیکھنا، اور علم یا رائے کے معنی میں جاننا۔ مضارع میں عین کا ہمزہ گر کر يَرَى بنتا ہے، جزم میں آخری الف بھی حذف ہو جاتا ہے (لَمْ يَرَ)، اور ماضی میں ضمیرِ متحرک سے پہلے یاء ظاہر ہوتی ہے (رَأَيْتَ)۔",
+   "evidenceEnglish": "QAC (269 occurrences, LEM ra'aA): imperfects يَرَى / تَرَى / نَرَى / أَرَى and jussives يَرَ / تَرَ show the 'ayn hamza dropped with fatha before the final alif (underlying yar'ayu), i.e. a-a, bab fataha; perfect رَأَى (Uthmani رَءَا) / رَأَيْتَ (Lane/Lisan: ra'a, aor. yara). Matches existing lesson entries 105:1:2, 107:1:1 and 110:2:1."
+  },
+  {
+   "key": ">arayo|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَرَى",
+   "present": "يُرِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "رَأَى کا بابِ افعال ہے: دکھانا؛ متعدی ہے اور عموماً دو مفعول لیتا ہے۔ مادہ مہموز العین اور ناقص یائی ہے، مگر ماضی و مضارع میں ہمزہ کا گر جانا (أَرَى، يُرِي) رَأَى ہی کی خصوصیت ہے، ہر مہموز العین کا قاعدہ نہیں (نَأَى، يَنْأَى میں ہمزہ باقی ہے)؛ حرفِ مضارعت کا ضمہ اور راء کا کسرہ اسے يَرَى (دیکھتا ہے) سے جدا کرتے ہیں۔",
+   "evidenceEnglish": "QAC (37 Form IV occurrences, LEM >arayo): imperfects يُرِي / نُرِي / تُرِيَ / نُرِيَ, imperatives أَرِنِي / أَرُونِي, perfects أَرَيْنَاكَ (17:60), أَرَيْنَاهُ (20:56); the 3MS perfect أَرَى also occurs (3:152, 8:43), though QAC 0.4 files those under ra'aA. Form IV of ra'a regularly drops the hamza: أَرَى / يُرِي, af'ala/yuf'ilu (Lane, Wright). QAC lemma أَرَيْ is a stem identifier."
+  },
+  {
+   "key": "tarab~aSo|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَرَبَّصَ",
+   "present": "يَتَرَبَّصُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "صحیح فعل ہے، لازم بھی اور متعدی بھی: انتظار کرنا، خصوصاً کسی کے انجام کی تاک میں رہنا؛ جس شخص کے بارے میں انتظار ہو اس پر بِ آتی ہے۔ امر تَرَبَّصْ ہمزۂ وصل کے بغیر ہے، کیونکہ حرفِ مضارعت ہٹانے کے بعد پہلا حرف تاء متحرک رہتا ہے۔",
+   "evidenceEnglish": "QAC (13 Form V occurrences, LEM tarab~aSo): imperfects يَتَرَبَّصُ / نَتَرَبَّصُ / يَتَرَبَّصْنَ, imperative تَرَبَّصُوا (e.g. 23:25), perfect تَرَبَّصْتُمْ (57:14). Regular tafa''ala/yatafa''alu (Lane: tarabbasa bihi 'waited, watched for an event to befall him'; also with a direct object, e.g. 9:98, 52:30). QAC lemma تَرَبَّصْ is a stem identifier; citation تَرَبَّصَ."
+  },
+  {
+   "key": "r~abaTo|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "رَبَطَ",
+   "present": "يَرْبِطُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: باندھنا؛ رَبَطَ عَلَى الْقَلْبِ کا مطلب دل کو مضبوط اور ثابت قدم کر دینا ہے۔ قرآن میں مضارع يَرْبِطُ (عینِ کلمہ مکسور) آیا ہے، اس لیے بابِ ضرب درج ہے، اگرچہ لغت میں يَرْبُطُ بھی منقول ہے۔",
+   "evidenceEnglish": "QAC (3 occurrences): perfect رَبَطْنَا (18:14, 28:10) and imperfect وَلِيَرْبِطَ (8:11) with kasra on the 'ayn, giving a-i, bab daraba. Lisan al-Arab and Lane record both yarbitu and yarbutu; the Quranic imperfect decides yarbitu. QAC lemma رَّبَطْ is a stem identifier; citation رَبَطَ."
+  },
+  {
+   "key": "rajaEa|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "رَجَعَ",
+   "present": "يَرْجِعُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے جو لازم (لوٹنا) اور متعدی (کسی کو لوٹانا) دونوں طرح آتا ہے۔ لامِ کلمہ حرفِ حلقی ع ہونے کے باوجود مضارع میں عینِ کلمہ مکسور ہے (يَرْجِعُ)، اس لیے یہ بابِ فتح نہیں بلکہ بابِ ضرب ہے؛ امر اِرْجِعْ ہے۔",
+   "evidenceEnglish": "QAC (46 active occurrences): imperfects يَرْجِعُ (19x), تَرْجِعُ, أَرْجِعُ and imperatives ٱرْجِعْ / ٱرْجِعُوا consistently have kasra on the 'ayn: a-i, bab daraba, despite the guttural third radical. Used intransitively (yarji'una) and transitively (irji'na 'send us back'). Lane/Lisan: raja'a, aor. yarji'u; inf. n. ruju' (intr.) / raj' (trans.)."
+  },
+  {
+   "key": "rajaEa|I|PASS",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "رُجِعَ",
+   "present": "يُرْجَعُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل رَجَعَ (لوٹانا) کا مجہول ہے: لوٹایا جانا؛ جسے لوٹایا جائے وہ نائبِ فاعل ہوتا ہے۔ مضارع مجہول يُرْجَعُ میں حرفِ مضارعت پر ضمہ اور جیم پر فتحہ ہے، جو اسے معروف يَرْجِعُ (لوٹتا ہے) سے جدا کرتا ہے۔",
+   "evidenceEnglish": "QAC (33 passive occurrences): imperfects تُرْجَعُونَ / تُرْجَعُ (25x together, e.g. 23:115, 36:22) and يُرْجَعُ (7x), perfect رُجِعْتُ (41:50). Passive of transitive raja'a (a-i, bab daraba; see rajaEa|I|ACT), regular fu'ila/yuf'alu."
+  },
+  {
+   "key": "rajamo|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "رَجَمَ",
+   "present": "يَرْجُمُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: پتھر مارنا، سنگسار کرنا؛ مجازاً برا بھلا کہنا اور دھتکارنا بھی اسی میں آتا ہے۔ ماضی میں عینِ کلمہ مفتوح اور مضارع میں مضموم ہے (يَرْجُمُ)، اس لیے یہ بابِ نصر سے ہے۔",
+   "evidenceEnglish": "QAC (5 occurrences): imperfects يَرْجُمُوكُمْ (18:20), لَأَرْجُمَنَّكَ (19:46), لَنَرْجُمَنَّكُمْ (36:18), تَرْجُمُونِ (44:20), all with damma on the 'ayn, and perfect لَرَجَمْنَاكَ (11:91): a-u, bab nasara (Lane/Lisan: rajamahu, aor. yarjumuhu 'stoned him; reviled him'). QAC lemma رَجَمْ is a stem identifier; citation رَجَمَ."
+  },
+  {
+   "key": "yarojuwA@|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "رَجَا",
+   "present": "يَرْجُو",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "ناقص واوی اور متعدی فعل ہے: امید رکھنا، اور بعض مقامات پر اس میں خوف کا مفہوم بھی بیان ہوا ہے؛ آخری واو ماضی میں الف (رَجَا) اور مضارع میں ساکن واو (يَرْجُو) ہے جو جزم و امر میں گر جاتی ہے۔ عثمانی رسم میں واحد يَرْجُو کے بعد لکھا ہوا الف واوِ جماعت کی علامت نہیں۔",
+   "evidenceEnglish": "QAC (22 occurrences, all imperfect or imperative): singular يَرْجُو written يَرْجُوا۟ (18:110, 29:5, 33:21, 39:9, 60:6), يَرْجُونَ, تَرْجُونَ, imperative ٱرْجُوا (29:36): u-imperfect with final waw, bab nasara. The perfect رَجَا is not attested in the Quran; standard per Lane/Lisan (raja, aor. yarju, inf. n. raja'), which also record raja' in the sense of fear (cf. 71:13). QAC lemma يَرْجُوا۟ is an inflected identifier."
+  },
+  {
+   "key": "r~aHima|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "رَحِمَ",
+   "present": "يَرْحَمُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: رحم کرنا، مہربانی کرنا۔ ماضی میں عینِ کلمہ مکسور (رَحِمَ) اور مضارع میں مفتوح (يَرْحَمُ) ہے، اس لیے بابِ سمع ہے اور امر اِرْحَمْ کا ہمزۂ وصل مکسور ہے۔",
+   "evidenceEnglish": "QAC (20 active occurrences): perfects رَحِمَ / رَحِمْنَا with kasra on the 'ayn; imperfects يَرْحَمُ / تَرْحَمْ and imperative ٱرْحَمْ (5x) with fatha: i-a, bab sami'a (Lane/Lisan: rahima, aor. yarhamu, inf. n. rahmah). The initial shadda in QAC's lemma string رَّحِمَ is contextual; citation رَحِمَ."
+  },
+  {
+   "key": "r~aHima|I|PASS",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "رُحِمَ",
+   "present": "يُرْحَمُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل رَحِمَ کا مجہول ہے: رحم کیا جانا؛ جس پر رحم ہو وہ نائبِ فاعل بنتا ہے۔ اس باب کے معروف مضارع يَرْحَمُ میں بھی عینِ کلمہ مفتوح ہے، اس لیے مجہول يُرْحَمُ کی پہچان صرف حرفِ مضارعت کا ضمہ ہے۔",
+   "evidenceEnglish": "QAC (8 passive occurrences), all imperfect تُرْحَمُونَ (e.g. 3:132, 36:45, 49:10); the passive perfect رُحِمَ is not attested in the Quran but follows fu'ila. Passive of rahima (i-a, bab sami'a); active and passive imperfects differ only in the prefix vowel (yarhamu / yurhamu)."
+  },
+  {
+   "key": "rad~a|I|PASS",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "رُدَّ",
+   "present": "يُرَدُّ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "مضاعف اور متعدی فعل رَدَّ (لوٹانا، پھیرنا) کا مجہول ہے: لوٹایا جانا؛ دونوں دال مدغم ہو کر ایک مشدد دال بنتے ہیں (رُدَّ، يُرَدُّ)۔ ضمیرِ متحرک (تُ، نَا) لگنے پر ادغام کھل جاتا ہے اور دونوں دال الگ لکھے جاتے ہیں (رُدِدْتُ)۔",
+   "evidenceEnglish": "QAC (22 passive occurrences): perfects رُدُّوا / رُدَّتْ / رُدِدتُّ (18:36, uncontracted before the subject suffix), imperfects يُرَدُّ / تُرَدُّونَ / نُرَدُّ. Passive of radda, whose active imperfect is attested with damma (يَرُدُّوكُمْ 2:217, 3:149; فَنَرُدَّهَا 4:47): a-u, bab nasara (Lane/Lisan: radda, aor. yaruddu). Doubled fu'ila/yuf'alu contracts to rudda/yuraddu."
+  },
+  {
+   "key": "{rotad~a|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِرْتَدَّ",
+   "present": "يَرْتَدُّ",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "مضاعف اور لازم فعل ہے: پلٹ جانا، واپس لوٹنا؛ عَنْ کے ساتھ دین سے پھر جانا۔ اصل اِرْتَدَدَ اور يَرْتَدِدُ میں دونوں دال مدغم ہو کر اِرْتَدَّ اور يَرْتَدُّ بنے، اور جزم میں يَرْتَدِدْ اور يَرْتَدَّ دونوں صورتیں آتی ہیں۔",
+   "evidenceEnglish": "QAC (8 Form VIII occurrences, LEM {rotad~a): perfects ٱرْتَدَّ / ٱرْتَدُّوا, imperfect يَرْتَدُّ, and jussives both uncontracted يَرْتَدِدْ (2:217) and contracted يَرْتَدَّ (5:54). Regular ifta'ala/yafta'ilu of a doubled root (Lane: irtadda 'returned; turned back; apostatized')."
+  },
+  {
+   "key": "razaqa|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "رَزَقَ",
+   "present": "يَرْزُقُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: روزی دینا، عطا کرنا؛ أَعْطَى کی طرح دو مفعول لے سکتا ہے، یعنی جسے دیا جائے اور جو دیا جائے۔ مضارع میں عینِ کلمہ مضموم ہے (يَرْزُقُ)، اس لیے امر اُرْزُقْ کا ہمزۂ وصل مضموم ہے۔",
+   "evidenceEnglish": "QAC (56 occurrences): imperfects يَرْزُقُ / نَرْزُقُ / تَرْزُقُ and imperatives ٱرْزُقْ / ٱرْزُقُوهُمْ with damma on the 'ayn: a-u, bab nasara (Lane/Lisan: razaqahu, aor. yarzuquhu, inf. n. rizq). Doubly transitive like a'ta (in mimma razaqnahum the relative ma is governed by min, and the second object is the omitted resumptive pronoun ('a'id) referring back to it, i.e. razaqnahumuhu)."
+  }
+ ]
+}

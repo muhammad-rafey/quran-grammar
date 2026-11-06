@@ -1,0 +1,67 @@
+"""Split verb lexemes and roots into authoring batches; write batch input files.
+
+Usage: python3 -I make_batches.py <work-dir>
+"""
+import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from qac import dump  # noqa: E402
+
+WORK = sys.argv[1]
+meta = os.path.join(WORK, 'meta')
+lexemes = json.load(open(os.path.join(meta, 'lexemes.json')))
+roots = json.load(open(os.path.join(meta, 'roots.json')))
+words = json.load(open(os.path.join(meta, 'words.json')))
+LEX_BATCH, ROOT_BATCH = 30, 45
+
+# Keep every lexeme of one root in the same batch so forms of a family stay consistent.
+by_root = {}
+for key, lex in lexemes.items():
+    by_root.setdefault(lex['root'] or '∅', []).append(key)
+lex_batches, current = {}, []
+for root in sorted(by_root):
+    group = by_root[root]
+    if current and len(current) + len(group) > LEX_BATCH:
+        lex_batches[f'lex-{len(lex_batches) + 1:02d}'] = current
+        current = []
+    current.extend(group)
+if current:
+    lex_batches[f'lex-{len(lex_batches) + 1:02d}'] = current
+
+root_keys = sorted(roots)
+count = -(-len(root_keys) // ROOT_BATCH)
+size = -(-len(root_keys) // count)
+root_batches = {
+    f'root-{i // size + 1:02d}': root_keys[i : i + size]
+    for i in range(0, len(root_keys), size)
+}
+
+dump(os.path.join(meta, 'lexeme-batches.json'), lex_batches)
+dump(os.path.join(meta, 'root-batches.json'), root_batches)
+os.makedirs(os.path.join(WORK, 'inputs', 'lexemes'), exist_ok=True)
+os.makedirs(os.path.join(WORK, 'inputs', 'roots'), exist_ok=True)
+for name, keys in lex_batches.items():
+    items = []
+    for k in keys:
+        lex = dict(lexemes[k])
+        occ = lex['occurrences']
+        lex['occurrenceCount'] = len(occ)
+        lex['occurrences'] = occ[:8]
+        for o in lex['occurrences']:
+            w = words[o['id']]
+            o['qacIrabArabic'] = w['qacIrabArabic']
+            o['qacSegments'] = [
+                {'formArabic': s['formArabic'], 'tag': s['tag'], 'features': s['features']}
+                for s in w['qacSegments']
+            ]
+        items.append(lex)
+    dump(os.path.join(WORK, 'inputs', 'lexemes', f'{name}.json'), {'batch': name, 'lexemes': items})
+for name, keys in root_batches.items():
+    dump(
+        os.path.join(WORK, 'inputs', 'roots', f'{name}.json'),
+        {'batch': name, 'roots': [roots[k] for k in keys]},
+    )
+print('lexeme batches', len(lex_batches), [len(v) for v in lex_batches.values()])
+print('root batches', len(root_batches), [len(v) for v in root_batches.values()])

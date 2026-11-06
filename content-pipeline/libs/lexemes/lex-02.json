@@ -1,0 +1,304 @@
+{
+  "entries": [
+    {
+      "key": "{t~abaEa|VIII|ACT",
+      "baabUrdu": "بابِ اِفْتِعَال",
+      "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+      "past": "اِتَّبَعَ",
+      "present": "يَتَّبِعُ",
+      "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+      "noteUrdu": "صحیح اور متعدی فعل ہے: کسی کی پیروی کرنا، پیچھے چلنا۔ مادے کا پہلا حرف خود تاء ہے، اس لیے یہ ساکن اصلی تاء بابِ اِفْتِعَال کی زائد تاء میں مدغم ہو کر تَّ بنی (اِتْتَبَعَ سے اِتَّبَعَ)؛ شروع میں ہمزۂ وصل ہے جو ملا کر پڑھنے میں نہیں بولا جاتا۔",
+      "evidenceEnglish": "QAC tags every in-scope occurrence as form VIII (LEM {t~abaEa, root ت ب ع): perfects اتَّبَعَ (18:28, 23:71, 36:11) and اتَّبَعْتَنِي (18:70), imperfect أَتَّبِعُكَ (18:66), imperative اتَّبِعُوا (36:20, 36:21). Quran-wide QAC has 56 active imperfects, all with kasra on the second radical (يَتَّبِعُ، تَتَّبِعْ). Lexica (Lisan al-Arab and al-Mu'jam al-Wasit s.v. تبع; Lane): اِتَّبَعَهُ = he followed him; the vowelless radical ta (the verb's fa') is assimilated into the infixed ta of ifta'ala (اِتْتَبَعَ > اِتَّبَعَ). Wasl-initial forms are written with kasra on the alif, matching بابِ اِفْتِعَال."
+    },
+    {
+      "key": ">atobaEa|IV|ACT",
+      "baabUrdu": "بابِ اِفْعَال",
+      "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+      "past": "أَتْبَعَ",
+      "present": "يُتْبِعُ",
+      "pattern": "أَفْعَلَ — يُفْعِلُ",
+      "noteUrdu": "صحیح اور متعدی فعل ہے: کسی کے پیچھے چل کر جا ملنا یا کسی راہ کے پیچھے لگنا، اور دو مفعولوں کے ساتھ ایک چیز کے پیچھے دوسری کو لگا دینا۔ ہمزہ بابِ اِفْعَال کا ہمزۂ قطع ہے جو مضارع يُتْبِعُ میں حذف ہو جاتا ہے؛ اسے ہمزۂ وصل والے اِتَّبَعَ (بابِ اِفْتِعَال) سے نہ ملائیں۔",
+      "evidenceEnglish": "QAC tags form IV (LEM >atobaEa) for 18:85 فَأَتْبَعَ, 18:89 and 18:92 أَتْبَعَ, and 23:44 فَأَتْبَعْنَا. Quran-wide imperfects يُتْبِعُونَ (2:262) and نُتْبِعُهُمُ (77:17) confirm أَفْعَلَ — يُفْعِلُ. Lexica (Lisan al-Arab s.v. تبع; Lane; al-Mu'jam al-Wasit): أَتْبَعَهُ = he followed and overtook him; أَتْبَعَهُ الشَّيْءَ = he made him follow it (two objects, as in 23:44). In 18:85/89/92 Hafs (with Ibn 'Amir and the other Kufans) reads أَتْبَعَ, while Nafi', Ibn Kathir and Abu 'Amr read اتَّبَعَ (form VIII); the entry follows the Hafs text shown in the app."
+    },
+    {
+      "key": ">utorifu|IV|ACT",
+      "baabUrdu": "بابِ اِفْعَال",
+      "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+      "past": "أَتْرَفَ",
+      "present": "يُتْرِفُ",
+      "pattern": "أَفْعَلَ — يُفْعِلُ",
+      "noteUrdu": "صحیح اور متعدی فعل ہے: کسی کو خوش حالی اور عیش و آرام کی فراوانی دینا۔ اس کا مجہول ماضی أُتْرِفَ ہے، اور اسمِ مفعول مُتْرَف (عیش میں پلا ہوا، آسودہ حال) اسم ہے، فعل نہیں۔",
+      "evidenceEnglish": "The only in-scope occurrence, 23:33 وَأَتْرَفْنَاهُمْ, is tagged active PERF (IV) with a 3MP object. QAC's lexeme id أُتْرِفُ is not a citation form: it reflects the passive perfects أُتْرِفُوا (11:116) and أُتْرِفْتُمْ (21:13) filed under the same lemma. Citation أَتْرَفَ — يُتْرِفُ per Lisan al-Arab and al-Mu'jam al-Wasit s.v. ترف (أَتْرَفَتْهُ النِّعْمَةُ = affluence pampered him; Lane). The passive participle مُتْرَفِيهِمْ (23:64, QAC PASS PCPL (IV)) belongs to the same verb."
+    },
+    {
+      "key": "taraka|I|ACT",
+      "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "تَرَكَ",
+      "present": "يَتْرُكُ",
+      "pattern": "فَعَلَ — يَفْعُلُ",
+      "noteUrdu": "صحیح اور متعدی فعل ہے: چھوڑنا، پیچھے چھوڑ جانا؛ مضارع يَتْرُكُ میں عینِ کلمہ مضموم ہے۔ کبھی صَيَّرَ کے معنی میں دو مفعول لیتا ہے، یعنی کسی کو کسی حالت میں چھوڑ دینا، اور دوسرا مفعول جملہ بھی ہو سکتا ہے۔",
+      "evidenceEnglish": "In-scope occurrences are form I perfects (18:99 وَتَرَكْنَا, 23:100 تَرَكْتُ). Quran-wide QAC imperfects تَتْرُكْهُ (7:176) and نَتْرُكَ (11:87) and the imperative اتْرُكِ (44:24) have damma on the second radical; lexica: تَرَكَهُ يَتْرُكُهُ تَرْكًا (Lisan al-Arab, al-Mu'jam al-Wasit s.v. ترك; Lane) -> a-u, bab nasara. The QAC i'rab of 18:99 makes جملة «يموج» the second object of تَرَكَ (used in the sense of صَيَّرَ)."
+    },
+    {
+      "key": "talaY`|I|ACT",
+      "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "تَلَا",
+      "present": "يَتْلُو",
+      "pattern": "فَعَلَ — يَفْعُلُ",
+      "noteUrdu": "ناقص واوی اور متعدی فعل ہے: پڑھ کر سنانا، تلاوت کرنا؛ اس کا ایک معنی کسی کے پیچھے آنا بھی ہے۔ آخری واو ماضی تَلَا میں الف بنتی ہے، مضارع يَتْلُو میں ساکن رہتی ہے اور جزم یا امر (اُتْلُ) میں حذف ہو جاتی ہے۔",
+      "evidenceEnglish": "Root ت ل و (QAC tlw). In scope: imperative وَاتْلُ (18:27, final waw dropped) and imperfect سَأَتْلُو (18:83) with damma on the second radical; Quran-wide QAC has 28 active imperfects, all with damma (يَتْلُو، نَتْلُو، تَتْلُو). Lexica: تَلَا يَتْلُو تِلَاوَةً (recite) and تُلُوًّا (follow) (Lisan al-Arab, al-Mu'jam al-Wasit s.v. تلو; Lane) -> a-u, bab nasara. QAC's lemma spelling تَلَىٰ follows the Uthmani rasm of 91:2; the standard citation spelling of this waw-final verb is تَلَا."
+    },
+    {
+      "key": "talaY`|I|PASS",
+      "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+      "past": "تُلِيَ",
+      "present": "يُتْلَى",
+      "pattern": "فُعِلَ — يُفْعَلُ",
+      "noteUrdu": "ناقص واوی فعل تَلَا کا مجہول ہے: پڑھا جانا، پڑھ کر سنایا جانا؛ جو کلام پڑھا جائے وہ نائبِ فاعل ہوتا ہے۔ آخری واو ماضی تُلِيَ میں کسرہ کے بعد یاء اور مضارع يُتْلَى میں فتحہ کے بعد الف مقصورہ بن جاتی ہے۔",
+      "evidenceEnglish": "QAC tags 23:66 and 23:105 تُتْلَىٰ as IMPF PASS form I of تَلَا (root ت ل و); QAC i'rab: فعل مضارع مبني للمجهول. Quran-wide: passive perfect تُلِيَتْ (8:2) and 23 passive imperfects (يُتْلَىٰ 5:1, 22:30; تُتْلَىٰ 8:31). Regular passive of a waw-final form I verb: تُلِيَ — يُتْلَى (waw > ya after kasra, > alif maqsura after fatha). Bab follows the active تَلَا يَتْلُو (a-u)."
+    },
+    {
+      "key": "vaqulato|I|ACT",
+      "baabUrdu": "بابِ كَرُمَ يَكْرُمُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "ثَقُلَ",
+      "present": "يَثْقُلُ",
+      "pattern": "فَعُلَ — يَفْعُلُ",
+      "noteUrdu": "صحیح اور لازم فعل ہے: بھاری یا وزنی ہونا۔ فَعُلَ کے وزن کے افعال کسی صفت یا کیفیت کے پیدا ہونے کو بتاتے ہیں اور لازم ہوتے ہیں، اس لیے ان کا مفعول بہ نہیں آتا۔ ان کا مضارع ہمیشہ يَفْعُلُ کے وزن پر آتا ہے؛ یہ فَعُلَ کے وزن کا قاعدہ ہے، لازم ہونے کا نتیجہ نہیں (لازم حَبِطَ کا مضارع يَحْبَطُ ہے)۔",
+      "evidenceEnglish": "QAC's lemma id ثَقُلَتْ (vaqulato) is an inflected form; all four Quranic occurrences (7:8, 7:187, 23:102, 101:6) are 3FS perfects with damma on the second radical. No imperfect is attested in the Quran; lexica give ثَقُلَ يَثْقُلُ ثِقَلًا وثَقَالَةً (Lisan al-Arab, al-Mu'jam al-Wasit s.v. ثقل; Lane), and fa'ula verbs always take yaf'ulu -> u-u, bab karuma."
+    },
+    {
+      "key": "yajo_#aru|I|ACT",
+      "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "جَأَرَ",
+      "present": "يَجْأَرُ",
+      "pattern": "فَعَلَ — يَفْعَلُ",
+      "noteUrdu": "مہموز العین اور لازم فعل ہے: گڑگڑا کر بلند آواز سے فریاد کرنا؛ جس سے فریاد کی جائے وہ إِلَى کے ساتھ آتا ہے۔ عینِ کلمہ ہمزہ (حرفِ حلقی) ہے اور ماضی و مضارع دونوں میں مفتوح ہے؛ قرآنی رسم میں یہ ہمزہ کرسی کے بغیر لکھا گیا ہے، مگر مادے کا اصلی حرف ہے۔",
+      "evidenceEnglish": "QAC's lemma id يَجْـَٔرُ (yajo_#aru) is an imperfect form. Attested imperfects يَجْأَرُونَ (23:64), تَجْأَرُوا (23:65, jussive) and تَجْأَرُونَ (16:53) all have fatha on the hamza (middle radical). Lexica: جَأَرَ يَجْأَرُ جَأْرًا وجُؤَارًا = raised the voice in supplication (Lisan al-Arab s.v. جأر; al-Mu'jam al-Wasit; Lane) -> a-a, bab fataha (guttural middle radical)."
+    },
+    {
+      "key": "ja`dalu|III|ACT",
+      "baabUrdu": "بابِ مُفَاعَلَة",
+      "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+      "past": "جَادَلَ",
+      "present": "يُجَادِلُ",
+      "pattern": "فَاعَلَ — يُفَاعِلُ",
+      "noteUrdu": "صحیح اور متعدی فعل ہے: کسی سے بحث اور جھگڑا کرنا؛ جس بات میں جھگڑا ہو وہ عموماً فِي کے ساتھ اور جس چیز کو ذریعہ بنایا جائے وہ بِ کے ساتھ آتی ہے۔ بابِ مُفَاعَلَة میں فاءِ کلمہ کے بعد الف بڑھتا ہے اور عموماً دو فریقوں کے باہمی عمل کا مفہوم ہوتا ہے۔",
+      "evidenceEnglish": "QAC tags 18:56 وَيُجَادِلُ as IMPF (III); Quran-wide QAC has 20 imperfects (يُجَادِلُ، تُجَادِلْ), perfects at 4:109, 11:32, 22:68, 40:5 and the imperative جَادِلْهُمْ (16:125). QAC's lemma id جَٰدَلُ is not a citation form; standard: جَادَلَ — يُجَادِلُ مُجَادَلَةً وجِدَالًا (Lisan al-Arab, al-Mu'jam al-Wasit s.v. جدل; Lane)."
+    },
+    {
+      "key": "jarayo|I|ACT",
+      "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "جَرَى",
+      "present": "يَجْرِي",
+      "pattern": "فَعَلَ — يَفْعِلُ",
+      "noteUrdu": "ناقص یائی اور لازم فعل ہے: بہنا، رواں ہونا، چلنا۔ آخری یاء ماضی جَرَى میں الف مقصورہ کی صورت میں لکھی جاتی ہے، مضارع يَجْرِي میں ساکن رہتی ہے، تثنیہ يَجْرِيَانِ میں متحرک ہوتی ہے اور جزم میں حذف ہو جاتی ہے۔",
+      "evidenceEnglish": "In-scope imperfects تَجْرِي (18:31, 36:38) and تَجْرِيَانِ (55:50) have kasra before the final ya; Quran-wide QAC has 56 imperfects, all with kasra, and one perfect (جَرَيْنَ, 10:22). Lexica: جَرَى يَجْرِي جَرْيًا وجَرَيَانًا (Lisan al-Arab, al-Mu'jam al-Wasit s.v. جري; Lane) -> a-i, bab daraba. QAC's lemma id جَرَيْ is not a citation form. Note for chunk authors: QAC 0.4 tags 55:50 تَجْرِيَانِ as 2FD, but its subject عَيْنَانِ is third person; the bundled morphology fork tags it 3FD."
+    },
+    {
+      "key": "jazaY`|I|ACT",
+      "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "جَزَى",
+      "present": "يَجْزِي",
+      "pattern": "فَعَلَ — يَفْعِلُ",
+      "noteUrdu": "ناقص یائی اور متعدی فعل ہے: بدلہ دینا؛ جسے بدلہ دیا جائے وہ پہلا مفعول اور بدلے کی چیز دوسرا مفعول ہو سکتی ہے، جبکہ سبب بِ کے ساتھ آتا ہے۔ آخری یاء ماضی جَزَى میں الف مقصورہ، فاعل کی متحرک ضمیر سے پہلے یاء (جَزَيْتُ؛ مفعول کی ضمیر کے ساتھ الف ہی رہتا ہے: جَزَاهُمْ) اور مضارع يَجْزِي میں ساکن یاء کی صورت میں ہے۔",
+      "evidenceEnglish": "QAC tags 23:111 جَزَيْتُهُمُ as form I PERF (root ج ز ي) with هم as object. Quran-wide QAC has 46 active imperfects, all with kasra before the final ya (يَجْزِي، نَجْزِي، لِيَجْزِيَ 10:4). Lexica: جَزَاهُ بِهِ جَزَاءً = he requited him for it (Lisan al-Arab, al-Mu'jam al-Wasit s.v. جزي; Lane) -> a-i, bab daraba."
+    },
+    {
+      "key": "jazaY`|I|PASS",
+      "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ — مجہول",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+      "past": "جُزِيَ",
+      "present": "يُجْزَى",
+      "pattern": "فُعِلَ — يُفْعَلُ",
+      "noteUrdu": "ناقص یائی فعل جَزَى کا مجہول ہے: بدلہ دیا جانا؛ جسے بدلہ ملے وہ نائبِ فاعل ہوتا ہے اور بدلے کی چیز منصوب رہ سکتی ہے۔ مضارع يُجْزَى میں آخری یاء الف مقصورہ کی صورت میں ہے، جو جمع کی واو سے پہلے گر جاتی ہے اور فتحہ باقی رہتا ہے (يُجْزَوْنَ)۔",
+      "evidenceEnglish": "QAC tags 36:54 تُجْزَوْنَ as IMPF PASS form I (i'rab: فعل مضارع مبني للمجهول، والواو نائب فاعل; the QAC ayah note makes «ما» the second object). Quran-wide QAC has 23 passive imperfects (يُجْزَى 6:160, 28:84; تُجْزَى 20:15). Regular passive of جَزَى يَجْزِي: جُزِيَ — يُجْزَى; bab follows the active (a-i)."
+    },
+    {
+      "key": "jaEala|I|ACT",
+      "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "جَعَلَ",
+      "present": "يَجْعَلُ",
+      "pattern": "فَعَلَ — يَفْعَلُ",
+      "noteUrdu": "صحیح اور متعدی فعل ہے؛ عینِ کلمہ حرفِ حلقی ع ہے اور ماضی و مضارع دونوں میں مفتوح ہے۔ ایک مفعول کے ساتھ بنانا یا رکھنا، اور دو مفعولوں کے ساتھ کسی کو کچھ بنا دینا یا قرار دینا (صَيَّرَ) کے معنی دیتا ہے؛ کون سا معنی ہے، یہ مفعولوں کی تعداد اور سیاق سے پہچانیں۔",
+      "evidenceEnglish": "In-scope imperfects يَجْعَلْ (18:1), نَجْعَلَ (18:48), نَجْعَلْ (18:90), نَجْعَلُ and تَجْعَلَ (18:94), أَجْعَلْ (18:95) and تَجْعَلْنِى (23:94) all have fatha on the ع; Quran-wide QAC has 83 imperfects (all fatha) and 22 imperatives (اجْعَلْ). Lexica: جَعَلَ يَجْعَلُ جَعْلًا (Lisan al-Arab, al-Mu'jam al-Wasit s.v. جعل; Lane) -> a-a, bab fataha. Matches the shipped Surah 105 entries (جَعَلَ — يَجْعَلُ، بابِ فَتَحَ يَفْتَحُ)."
+    },
+    {
+      "key": "tatajaAfaY`|I|ACT",
+      "baabUrdu": "بابِ تَفَاعُل",
+      "formUrdu": "ثلاثی مزید فیہ — ششم (VI)",
+      "past": "تَجَافَى",
+      "present": "يَتَجَافَى",
+      "pattern": "تَفَاعَلَ — يَتَفَاعَلُ",
+      "noteUrdu": "ناقص واوی اور لازم فعل ہے: کسی چیز سے الگ رہنا یا دور ہٹنا؛ جس سے دوری ہو وہ عَنْ کے ساتھ آتی ہے۔ مادہ ج ف و ہے: شروع کی تاء بابِ تَفَاعُل کی زائد تاء ہے، اور آخری واو ماضی و مضارع دونوں میں الف مقصورہ (ى) بن جاتی ہے۔",
+      "evidenceEnglish": "FORM CORRECTED: the key says form I only because QAC 0.4 (and the bundled morphology fork) tag 32:16 تَتَجَافَىٰ with no derived-form marker and use the inflected word as the lemma id. Morphologically it is the 3FS imperfect of form VI (تَفَاعَلَ): 3FS prefix تَ + تَجَافَى (form-VI ta, long ā after the first radical); form I of ج ف و is جَفَا يَجْفُو (3FS تَجْفُو). Lexica: تَجَافَى عَنْهُ = drew away from it, did not keep to it (Lisan al-Arab s.v. جفا; Lane; al-Mu'jam al-Wasit); al-Muyassar glosses the verse with ترتفع. QAC i'rab: فعل مضارع. Chunk authors should record the QAC form tag as a discrepancy in auditNotes."
+    },
+    {
+      "key": "jamaEa|I|ACT",
+      "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "جَمَعَ",
+      "present": "يَجْمَعُ",
+      "pattern": "فَعَلَ — يَفْعَلُ",
+      "noteUrdu": "صحیح اور متعدی فعل ہے: اکٹھا کرنا، جمع کرنا؛ دو چیزوں کو ملانے کے لیے بَيْنَ کے ساتھ بھی آتا ہے۔ لامِ کلمہ حرفِ حلقی ع ہے اور مضارع يَجْمَعُ مفتوح العین ہے؛ خود اکٹھا ہونے کا لازم معنی بابِ اِفْتِعَال (اِجْتَمَعَ) سے آتا ہے۔",
+      "evidenceEnglish": "QAC: 18:99 فَجَمَعْنَاهُمْ, form I PERF. Quran-wide QAC has 12 active imperfects, all with fatha on the middle radical (يَجْمَعُ 34:26, 64:9; نَجْمَعَ 75:3). Lexica: جَمَعَ الشَّيْءَ يَجْمَعُهُ جَمْعًا (Lisan al-Arab, al-Mu'jam al-Wasit s.v. جمع; Lane) -> a-a, bab fataha."
+    },
+    {
+      "key": "{sotajaAba|X|ACT",
+      "baabUrdu": "بابِ اِسْتِفْعَال",
+      "formUrdu": "ثلاثی مزید فیہ — دہم (X)",
+      "past": "اِسْتَجَابَ",
+      "present": "يَسْتَجِيبُ",
+      "pattern": "اِسْتَفْعَلَ — يَسْتَفْعِلُ",
+      "noteUrdu": "اجوف واوی فعل ہے (مادہ ج و ب): درمیانی واو ماضی میں الف اور مضارع میں یاء بن جاتی ہے، اور آخری حرف ساکن ہو تو گر جاتی ہے (اِسْتَجَبْنَا، لَمْ يَسْتَجِبْ)۔ معنی پکار کا جواب دینا یا دعا قبول کرنا ہے؛ جس کی بات قبول کی جائے وہ عموماً لِ کے ساتھ آتا ہے۔",
+      "evidenceEnglish": "QAC tags 18:52 يَسْتَجِيبُوا as IMPF (X), jussive after لَمْ (the long i stays because the ب is not vowelless). Quran-wide QAC: 12 perfects (اسْتَجَابَ، اسْتَجَبْنَا), 13 imperfects (يَسْتَجِيبُ; أَسْتَجِبْ 40:60) and the imperative اسْتَجِيبُوا (8:24). Hollow root ج و ب (QAC jwb). Lexica: اسْتَجَابَ لَهُ = he answered him, granted his request (Lisan al-Arab s.v. جوب; al-Mu'jam al-Wasit; Lane)."
+    },
+    {
+      "key": "yujiyru|IV|ACT",
+      "baabUrdu": "بابِ اِفْعَال",
+      "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+      "past": "أَجَارَ",
+      "present": "يُجِيرُ",
+      "pattern": "أَفْعَلَ — يُفْعِلُ",
+      "noteUrdu": "اجوف واوی اور متعدی فعل ہے: پناہ دینا، بچانا؛ جس چیز سے بچایا جائے وہ مِنْ اور جس کے خلاف پناہ دی جائے وہ عَلَى کے ساتھ آتا ہے۔ درمیانی واو ماضی أَجَارَ میں الف اور مضارع يُجِيرُ میں یاء بنتی ہے، اور آخری حرف ساکن ہو تو گر جاتی ہے (يُجِرْ، أَجِرْ)۔",
+      "evidenceEnglish": "QAC's lemma id يُجِيرُ (yujiyru) is an imperfect form; 23:88 يُجِيرُ is tagged IMPF (IV). Quran-wide: يُجِيرُ (67:28), يُجِيرَنِي (72:22), يُجِرْكُمْ (46:31) and the imperative أَجِرْهُ (9:6). Hollow root ج و ر (QAC jwr). Lexica: أَجَارَهُ = he gave him protection, rescued him (Lisan al-Arab s.v. جور; al-Mu'jam al-Wasit; Lane). Citation perfect أَجَارَ (underlying أَجْوَرَ)."
+    },
+    {
+      "key": "yujiyru|IV|PASS",
+      "baabUrdu": "بابِ اِفْعَال — مجہول",
+      "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)، مجہول",
+      "past": "أُجِيرَ",
+      "present": "يُجَارُ",
+      "pattern": "أُفْعِلَ — يُفْعَلُ",
+      "noteUrdu": "اجوف واوی فعل أَجَارَ کا مجہول ہے: پناہ دیا جانا؛ جس کے خلاف پناہ ہو وہ عَلَى کے ساتھ آتا ہے۔ درمیانی واو ماضی أُجِيرَ میں یاء اور مضارع يُجَارُ میں الف بن جاتی ہے؛ معروف يُجِيرُ اور مجہول يُجَارُ کو اسی حرفِ علت اور حرکت کے فرق سے پہچانیں۔",
+      "evidenceEnglish": "QAC tags 23:88 يُجَارُ as IMPF PASS form IV (i'rab: فعل مضارع مبني للمجهول); it is the only passive occurrence of this lexeme in the Quran. Regular hollow form IV passive: أُجِيرَ — يُجَارُ (cf. أُقِيمَ — يُقَامُ), from أَجَارَ — يُجِيرُ; the passive perfect is given by standard analogy, not by attestation."
+    },
+    {
+      "key": "jaAwaza|III|ACT",
+      "baabUrdu": "بابِ مُفَاعَلَة",
+      "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+      "past": "جَاوَزَ",
+      "present": "يُجَاوِزُ",
+      "pattern": "فَاعَلَ — يُفَاعِلُ",
+      "noteUrdu": "متعدی فعل ہے: کسی جگہ یا حد سے آگے گزر جانا؛ بِ کے ساتھ کسی کو پار لے جانے کا معنی دیتا ہے۔ مادہ ج و ز اجوف ہے، مگر اس باب میں واو الف کے بعد متحرک رہتی ہے اور نہیں بدلتی، اس لیے گردان صحیح فعل کی طرح ہوتی ہے۔",
+      "evidenceEnglish": "QAC tags 18:62 جَاوَزَا as PERF (III) 3MD. Quran-wide perfects at 2:249, 7:138 and 10:90 (the last two followed by بِبَنِي: brought across). Hollow root ج و ز, but in form III the waw follows the long a and stays sound: جَاوَزَ — يُجَاوِزُ مُجَاوَزَةً (Lisan al-Arab s.v. جوز; al-Mu'jam al-Wasit; Lane)."
+    },
+    {
+      "key": "jaA^'a|I|ACT",
+      "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "جَاءَ",
+      "present": "يَجِيءُ",
+      "pattern": "فَعَلَ — يَفْعِلُ",
+      "noteUrdu": "اجوف یائی اور مہموز اللام فعل ہے (مادہ ج ي أ): درمیانی یاء ماضی جَاءَ میں الف بنتی ہے؛ فاعل کی متحرک ضمیر سے پہلے یہ گر جاتی ہے اور جیم کو کسرہ ملتا ہے (جِئْتَ، جِئْنَا)، مگر مفعول کی ضمیر سے کوئی تبدیلی نہیں ہوتی (جَاءَهُمْ)؛ مضارع يَجِيءُ ہے۔ جس کے پاس آئے اسے مفعول بھی لیتا ہے، اور بِ کے ساتھ لانے کا معنی دیتا ہے۔",
+      "evidenceEnglish": "QAC root ج ي أ (jyA), form I. All 13 in-scope occurrences are perfects (جَاءَ، جَاءَهُمْ، جِئْتَ، جِئْنَا، جِئْتُمُونَا), and QAC has no active imperfect of this lexeme anywhere in the Quran. Lexica: جَاءَ يَجِيءُ جَيْئًا ومَجِيئًا (Lisan al-Arab s.v. جيأ; al-Mu'jam al-Wasit; Lane) -> a-i, bab daraba; the class rests on the lexica, not on the root type (the hollow-ya, hamza-final شَاءَ, originally شَيِئَ, has يَشَاءُ, i-a). Matches the shipped Surah 110 entry (جَاءَ — يَجِيءُ). Note for chunk authors: in 18:71 and 18:74 جِئْتَ + object means 'you have done/committed'."
+    },
+    {
+      "key": "HabiTa|I|ACT",
+      "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "حَبِطَ",
+      "present": "يَحْبَطُ",
+      "pattern": "فَعِلَ — يَفْعَلُ",
+      "noteUrdu": "صحیح اور لازم فعل ہے: کسی عمل کا اکارت اور بے اثر ہو جانا؛ اس کا فاعل عموماً اعمال ہوتے ہیں۔ مضارع يَحْبَطُ میں عینِ کلمہ مفتوح ہے، اور اکارت کر دینے کا متعدی معنی بابِ اِفْعَال (أَحْبَطَ) سے آتا ہے۔",
+      "evidenceEnglish": "QAC: 18:105 فَحَبِطَتْ, form I PERF with kasra on ب (all 10 Quranic perfects are حَبِطَ/حَبِطَتْ). The Quran-wide imperfects لَيَحْبَطَنَّ (39:65) and تَحْبَطَ (49:2) have fatha on ب, confirming i-a. Lexica: حَبِطَ عَمَلُهُ يَحْبَطُ حَبْطًا وحُبُوطًا = his work became void (Lisan al-Arab s.v. حبط; al-Mu'jam al-Wasit; Lane); a variant حَبَطَ يَحْبِطُ recorded by some lexica is not the Quranic form -> bab sami'a."
+    },
+    {
+      "key": "yuHodivu|IV|ACT",
+      "baabUrdu": "بابِ اِفْعَال",
+      "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+      "past": "أَحْدَثَ",
+      "present": "يُحْدِثُ",
+      "pattern": "أَفْعَلَ — يُفْعِلُ",
+      "noteUrdu": "صحیح اور متعدی فعل ہے: کوئی نئی چیز پیدا کرنا، وجود میں لانا یا سامنے لانا۔ بابِ اِفْعَال کا ہمزہ مضارع میں حذف ہو جاتا ہے اور علامتِ مضارع مضموم ہوتی ہے؛ اس لیے واحد متکلم أُحْدِثُ کا ہمزہ علامتِ مضارع ہے، باب کا ہمزہ نہیں۔",
+      "evidenceEnglish": "QAC's lemma id يُحْدِثُ (yuHodivu) is an imperfect form; 18:70 أُحْدِثَ is tagged IMPF (IV) 1S, subjunctive after حَتَّى. Quran-wide imperfects يُحْدِثُ (20:113, 65:1). Lexica: أَحْدَثَ الشَّيْءَ = he brought it into being, originated it (Lisan al-Arab s.v. حدث; al-Mu'jam al-Wasit; Lane). Citation form أَحْدَثَ — يُحْدِثُ."
+    },
+    {
+      "key": "yaHozun|I|ACT",
+      "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "حَزَنَ",
+      "present": "يَحْزُنُ",
+      "pattern": "فَعَلَ — يَفْعُلُ",
+      "noteUrdu": "صحیح اور متعدی فعل ہے: کسی کو غمگین کرنا؛ جسے غم پہنچے وہ مفعول اور غم کا سبب فاعل ہوتا ہے۔ اسے لازم حَزِنَ يَحْزَنُ (خود غمگین ہونا، بابِ سَمِعَ) سے الگ رکھیں: متعدی کے مضارع میں زاء پر ضمہ اور لازم میں فتحہ ہے۔",
+      "evidenceEnglish": "Only in-scope occurrence: 36:76 يَحْزُنْكَ (IMPF JUS 3MS) with damma on ز and the direct object كَ, i.e. transitive حَزَنَهُ يَحْزُنُهُ = it grieved him (Lisan al-Arab s.v. حزن, which also gives أَحْزَنَهُ; al-Mu'jam al-Wasit; Lane) -> a-u, bab nasara. Caution: QAC's lemma id yaHozun also covers intransitive حَزِنَ يَحْزَنُ elsewhere (28 imperfects with fatha, e.g. يَحْزَنُونَ 2:38, تَحْزَنْ 15:88, vs 9 transitive with damma); this entry describes the transitive verb actually attested in scope. Other canonical readings (e.g. Nafi') have يُحْزِنْكَ from form IV أَحْزَنَ; Hafs has form I."
+    },
+    {
+      "key": "Hasiba|I|ACT",
+      "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "حَسِبَ",
+      "present": "يَحْسَبُ",
+      "pattern": "فَعِلَ — يَفْعَلُ",
+      "noteUrdu": "افعالِ قلوب میں سے صحیح فعل ہے: گمان کرنا، سمجھنا؛ دو مفعول لیتا ہے، جن کی جگہ أَنَّ یا أَنْ والا جملہ بھی آ سکتا ہے۔ حفص کی قراءت میں مضارع يَحْسَبُ ہے، اس لیے بابِ سَمِعَ درج ہے؛ بعض دوسری قراءتوں میں يَحْسِبُ ہے، اور بابِ حَسِبَ يَحْسِبُ کا نام اسی فعل سے ہے۔",
+      "evidenceEnglish": "VOWEL-CLASS DECISION: the Hafs text shown in the app has fatha in every imperfect: تَحْسَبُهُمْ (18:18), يَحْسَبُونَ (18:104), أَيَحْسَبُونَ (23:55); QAC lists 31 Quranic imperfects, all with fatha. Ibn 'Amir, 'Asim and Hamza read يَحْسَبُ, while Nafi', Ibn Kathir, Abu 'Amr and al-Kisa'i read يَحْسِبُ (the Hijazi form), which is why classical sarf names the rare fa'ila-yaf'ilu bab after this verb; Lisan al-Arab s.v. حسب records both. The card therefore follows the Hafs class (i-a, bab sami'a), not بابِ حَسِبَ يَحْسِبُ. Perfects have kasra (حَسِبْتَ 18:9, حَسِبَ 18:102, حَسِبْتُمْ 23:115). Verb of the heart (ظَنَّ وأخواتها) taking two objects."
+    },
+    {
+      "key": ">aHosana|IV|ACT",
+      "baabUrdu": "بابِ اِفْعَال",
+      "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+      "past": "أَحْسَنَ",
+      "present": "يُحْسِنُ",
+      "pattern": "أَفْعَلَ — يُفْعِلُ",
+      "noteUrdu": "صحیح فعل ہے: اچھا کام یا نیکی کرنا، کسی چیز کو عمدہ بنانا، اور إِلَى کے ساتھ کسی سے حسنِ سلوک کرنا۔ اس کے ماضی أَحْسَنَ اور اسمِ تفضیل أَحْسَنُ (زیادہ اچھا) کے حروف ایک ہیں؛ فرق سیاق اور اعراب سے کریں، کیونکہ اسمِ تفضیل اسم ہے، فعل نہیں۔",
+      "evidenceEnglish": "QAC tags 18:30 and 32:7 أَحْسَنَ as PERF (IV) and 18:104 يُحْسِنُونَ as IMPF (IV). Quran-wide: imperative أَحْسِنْ (28:77), imperfect تُحْسِنُوا (4:128). Lexica: أَحْسَنَ = he did good; أَحْسَنَ الشَّيْءَ = he did it well; أَحْسَنَ إِلَيْهِ = he treated him well (Lisan al-Arab s.v. حسن; al-Mu'jam al-Wasit; Lane). Caution: the elative noun أَحْسَنُ has the same letters (18:7 أَحْسَنُ عَمَلًا, tagged N by QAC), whereas 18:30 أَحْسَنَ عَمَلًا is this verb."
+    },
+    {
+      "key": "Hasuna|I|ACT",
+      "baabUrdu": "بابِ كَرُمَ يَكْرُمُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "حَسُنَ",
+      "present": "يَحْسُنُ",
+      "pattern": "فَعُلَ — يَفْعُلُ",
+      "noteUrdu": "صحیح اور لازم فعل ہے: اچھا یا خوب صورت ہونا؛ فَعُلَ کے وزن کے افعال کیفیت بتاتے ہیں اور لازم رہتے ہیں۔ تمییز کے ساتھ آ کر تعریف (مدح) کا مفہوم دیتا ہے، یعنی «کیا ہی خوب ہے»؛ اسے بابِ اِفْعَال کے أَحْسَنَ سے الگ رکھیں۔",
+      "evidenceEnglish": "QAC: 18:31 وَحَسُنَتْ, form I PERF with damma on س (likewise 4:69 and 25:76; no imperfect attested). Lexica: حَسُنَ يَحْسُنُ حُسْنًا (Lisan al-Arab s.v. حسن; al-Mu'jam al-Wasit; Lane); fa'ula verbs take yaf'ulu -> u-u, bab karuma. With a tamyiz (مُرْتَفَقًا) it expresses praise like نِعْمَ (QAC i'rab: فعل ماض)."
+    },
+    {
+      "key": "Ha$ara|I|ACT",
+      "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "حَشَرَ",
+      "present": "يَحْشُرُ",
+      "pattern": "فَعَلَ — يَفْعُلُ",
+      "noteUrdu": "صحیح اور متعدی فعل ہے: لوگوں کو اکٹھا کر کے ایک جگہ لے آنا؛ قرآن میں اکثر قیامت کے دن جمع کرنے کے لیے آتا ہے۔ مضارع يَحْشُرُ میں عینِ کلمہ مضموم ہے، اور جس کی طرف جمع کیا جائے وہ عموماً إِلَى کے ساتھ آتا ہے۔",
+      "evidenceEnglish": "QAC: 18:47 وَحَشَرْنَاهُمْ, form I PERF. Quran-wide QAC has 14 active imperfects, all with damma on ش (يَحْشُرُهُمْ 6:128, 10:45; نَحْشُرُ 19:85, 20:124), and the imperative احْشُرُوا (37:22). Lexica: حَشَرَهُمْ يَحْشُرُهُمْ حَشْرًا = he gathered them (Lisan al-Arab s.v. حشر, which also notes a rarer يَحْشِرُ; al-Mu'jam al-Wasit; Lane) -> a-u, bab nasara."
+    },
+    {
+      "key": "Ha$ara|I|PASS",
+      "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+      "past": "حُشِرَ",
+      "present": "يُحْشَرُ",
+      "pattern": "فُعِلَ — يُفْعَلُ",
+      "noteUrdu": "حَشَرَ کا مجہول ہے: اکٹھا کیا جانا، خصوصاً قیامت کے دن جمع کر کے لایا جانا؛ جسے جمع کیا جائے وہ نائبِ فاعل ہوتا ہے۔ صحیح فعل ہونے سے مجہول کا قاعدہ بغیر تبدیلی کے لگتا ہے: ماضی میں پہلا حرف مضموم اور عین مکسور، مضارع میں علامتِ مضارع مضموم اور عین مفتوح ہوتا ہے۔",
+      "evidenceEnglish": "QAC tags 23:79 تُحْشَرُونَ as IMPF PASS form I (i'rab: فعل مضارع مبني للمجهول، والواو نائب فاعل). Quran-wide: passive perfects حُشِرَ (27:17, 46:6) and حُشِرَتْ (81:5); 15 passive imperfects (تُحْشَرُونَ، يُحْشَرُونَ). Regular passive of حَشَرَ يَحْشُرُ; bab follows the active (a-u)."
+    },
+    {
+      "key": ">aHoSaY`|IV|ACT",
+      "baabUrdu": "بابِ اِفْعَال",
+      "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+      "past": "أَحْصَى",
+      "present": "يُحْصِي",
+      "pattern": "أَفْعَلَ — يُفْعِلُ",
+      "noteUrdu": "ناقص اور متعدی فعل ہے (مادہ ح ص ي): کسی چیز کو پوری طرح گن لینا اور احاطہ کر لینا۔ آخری حرفِ علت ماضی أَحْصَى میں الف مقصورہ، فاعل کی متحرک ضمیر سے پہلے یاء (أَحْصَيْنَا؛ مفعول کی ضمیر کے ساتھ الف ہی رہتا ہے: أَحْصَاهَا) اور مضارع يُحْصِي میں ساکن یاء ہے، جو جزم میں اور جمع کی واو سے پہلے گر جاتی ہے (تُحْصُوا)۔",
+      "evidenceEnglish": "QAC tags 18:49 أَحْصَاهَا and 36:12 أَحْصَيْنَاهُ as PERF (IV); root ح ص ي (QAC HSy). Quran-wide: تُحْصُوهَا (14:34, 16:18), تُحْصُوهُ (73:20) and the imperative أَحْصُوا (65:1). Lexica: أَحْصَى الشَّيْءَ = he counted it exhaustively, comprehended it (Lisan al-Arab, al-Mu'jam al-Wasit; Lane); some lexica file it under ح ص و. Citation form أَحْصَى — يُحْصِي."
+    },
+    {
+      "key": "HaDara|I|ACT",
+      "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "حَضَرَ",
+      "present": "يَحْضُرُ",
+      "pattern": "فَعَلَ — يَفْعُلُ",
+      "noteUrdu": "صحیح فعل ہے: حاضر یا موجود ہونا، کسی کے پاس آ پہنچنا؛ لازم بھی آتا ہے اور جس کے پاس آئے اسے مفعول بہ بھی لیتا ہے۔ مضارع يَحْضُرُ میں عینِ کلمہ مضموم ہے؛ حَاضِر اسی کا اسمِ فاعل ہے۔",
+      "evidenceEnglish": "In-scope imperfect يَحْضُرُونِ (23:98; subjunctive after أَنْ, with the 1S object ya elided) has damma on ض. Quran-wide perfects حَضَرَ (2:133, 2:180, 4:8, 4:18, 5:106) all take a direct accusative object. Lexica: حَضَرَ يَحْضُرُ حُضُورًا (Lisan al-Arab s.v. حضر, which also mentions a dialectal حَضِرَ; al-Mu'jam al-Wasit; Lane) -> a-u, bab nasara."
+    }
+  ]
+}

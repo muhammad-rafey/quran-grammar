@@ -1,0 +1,363 @@
+{
+ "items": {
+  "18-c01": {
+   "author": {
+    "validatorOk": true
+   },
+   "verify-grammar": {
+    "minor": 1
+   },
+   "verify-meaning": {
+    "minor": 5
+   },
+   "fix-1": {
+    "applied": 6,
+    "rejected": 0,
+    "validatorOk": true
+   },
+   "confirm-1": {
+    "minor": 2
+   },
+   "confirm-1-detail": [
+    "minor 18:2:6 syntaxUrdu: The ending «مِّن لَّدُنْهُ» مل کر «بَأْسًۭا» کی دوسری صفت سے متعلق ہیں leaves out that the governor is elided (محذوف). A learner will look f",
+    "minor 18:2 tafsirUrdu: The accepted comma fix correctly lets تاکہ govern both verbs, but it made the whole tafsir one 346-character sentence with four nested claus"
+   ],
+   "fix-2": {
+    "applied": 2,
+    "rejected": 0,
+    "validatorOk": true
+   }
+  },
+  "55-c01": {
+   "author": {
+    "validatorOk": true
+   },
+   "verify-grammar": {
+    "minor": 1
+   },
+   "verify-meaning": {
+    "minor": 6
+   },
+   "fix-1": {
+    "applied": 7,
+    "rejected": 0,
+    "validatorOk": true
+   }
+  },
+  "36-c01": {
+   "author": {
+    "validatorOk": true
+   },
+   "verify-grammar": {
+    "minor": 3
+   },
+   "verify-meaning": {
+    "major": 1,
+    "minor": 2
+   },
+   "fix-1": {
+    "applied": 6,
+    "rejected": 0,
+    "validatorOk": true
+   },
+   "confirm-1": 0,
+   "confirm-1-detail": []
+  }
+ },
+ "raw": [
+  {
+   "label": "18-c01:author",
+   "value": {
+    "validatorOk": true,
+    "words": 35,
+    "notes": "Wrote /Users/me/Projects/quran-grammar/.content-work/chunks/18/18-c01.json: ayahs 18:1–4, 35 words, 19 phrases and 10 auditNotes. The validator passed with 0 errors and 0 warnings. My own checks also passed: all 122 Arabic quotes match the packet's arabic strings exactly, every segment set joins back to its word exactly, and word ids follow plannedWordIds in order.\n\nPoints a reviewer should check:\n\n1. 18:1:11 عِوَجَاۜ — packet data looks wrong. The packet tags it nominative (NOM, i'rab «اسم مرفوع»). But the text itself ends in fatha + alif (tanwin al-fath, read with Hafs' saktah), and the word is the object of the jussive يَجْعَل. I wrote it as منصوب مفعول بہ, tagged accusative/indefinite, and logged it. The validator did not flag this, so the source data should be checked.\n\n2. 18:2:1 قَيِّمًا — I followed the QAC ayah note: حال of the pronoun in لَّهُۥ. I read the word-level «صفة منصوبة» as naming the word class, not its role. Two alternatives are logged: a حال of ٱلْكِتَـٰبَ with the لَمْ clause in between, or the object of an implied جَعَلَهُ (how Muyassar and Ibn Kathir paraphrase it). syntaxUrdu mentions the implied-verb view in one line.\n\n3. Hidden subject of يُنذِرَ / يُبَشِّرَ / وَيُنذِرَ — taken as Allah, following Ibn Kathir and Sa'di. Some analyses refer it to the Book or the Prophet; this is logged.\n\n4. Objects of أَنْذَرَ — I treated بَأْسًا as the thing warned of, with the people warned left out (Muyassar supplies الكافرين). 18:4:1 is the reverse. QAC only says «اسم منصوب», so this role and the two-objects tag are my analysis.\n\n5. لَدُنْهُ — QAC calls it a genitive noun; the ayah note says it is built on sukun in a genitive position. I wrote «مبنی بر سکون، محلاً مجرور», which fits both.\n\n6. Lemmas that differ from QAC:\n   - بَشَّرَ (active, per the lexeme entry) instead of QAC's passive-shaped بُشِّرَ.\n   - صَالِحَة instead of the plural صَّٰلِحَٰت.\n   - أَبَد instead of أَبَدًا.\n   - اِتَّخَذَ, spelled as in the lexeme entry.\n\n7. حَمْد — described as a masdar per the root library. QAC tags it a plain noun, so I did not use the verbal-noun rule.\n\n8. 18:4 tafsir — the sources differ on who claimed Allah has a child. Muyassar says the polytheists and Ibn Kathir, citing Ibn Ishaq, the pagan Arabs who called the angels Allah's daughters. Sa'di includes Jews, Christians and polytheists. Both views are given with «بعض مفسرین کے نزدیک».\n\n9. Translation choices:\n   - وَلَدًا is «اولاد» (any offspring), following the root entry and Sa'di, not \"son\".\n   - In 18:2, the bracketed «(اسے) بالکل سیدھی (کتاب بنا کر اتارا)» supplies the meaning.\n\nTo copy the Arabic exactly, I used a generator script at /private/tmp/claude-501/-Users-me-Projects-quran-grammar/28c1ddaf-0f5d-403c-bab0-0492dfce2585/scratchpad/gen_18c01.py. It fills in quotes and segments from the packet's own strings. It is not part of the repository; no repository file other than the chunk was touched, and git was not run."
+   }
+  },
+  {
+   "label": "55-c01:author",
+   "value": {
+    "validatorOk": true,
+    "words": 30,
+    "notes": "Wrote /Users/me/Projects/quran-grammar/.content-work/chunks/55/55-c01.json for 55:1-10: 30 words and 10 ayahs. The validator returns ok with 0 errors and 0 warnings. I wrote the file with a generator script at /private/tmp/claude-501/-Users-me-Projects-quran-grammar/28c1ddaf-0f5d-403c-bab0-0492dfce2585/scratchpad/gen_55_c01.py. Every quoted Arabic run and every segment slice comes straight from the packet's arabic strings, and the script checks that the segments rebuild each word exactly. Each verbNoteUrdu takes past, present and bab word for word from its lexeme entry. I checked the whole file once against the accuracy checklist and fixed six things: the order of the ayah 4 tafsir (Allah set man apart by teaching him البيان), awkward wording in the ayah 3 tafsir, a missing 'hereafter' blessing in the ayah 1 tafsir, a contested claim that إِلَّا is not a compound, and two wording issues at 55:2:2 and 55:5:2.\n\nUncertainties and alternative analyses (all logged in auditNotes):\n1. 55:8:1-2 أَلَّا تَطْغَوْا۟ is the main one for a scholar. The sources conflict: QAC morphology tags أَ as an explanatory أن (INT), while the ayah i'rab says أن مصدرية, with the interpreted masdar accusative because the lam is dropped (منصوب بنزع الخافض). The explanatory-an rule says to follow the ayah i'rab, so I tagged masdar-particle. I kept QAC's prohibitive لا and jussive mood, as the task requires verb notes to agree with QAC's mood. The result is a masdar أن introducing a prohibition, a known analysis. Two common alternatives are recorded in the word syntax and the notes: masdar أن with negative لا and a subjunctive verb (the written form is the same), or explanatory أن with prohibitive لا.\n2. 55:1:1 ٱلرَّحْمَـٰنُ: I followed the ayah i'rab. It is the mubtada; 55:2 is its first khabar and 55:3 and 55:4 its second and third. Another reading makes it the khabar of an omitted mubtada. I tagged resembling-adjective because the rule library lists the فَعْلَان pattern there; some grammarians call it a صيغة مبالغة instead.\n3. 55:2: the i'rab does not say who was taught. I described ٱلْقُرْءَانَ as the thing taught, with the first object elided (two-objects plus elision tags), and filled in the learner from the tafsir: الإنسان in Muyassar, عباده in Sa'di.\n4. 55:5:3 بِحُسْبَانٍۢ: the i'rab only says the sentence is مستأنفة. I attached the phrase to an elided khabar, glossed with Muyassar's يجريان. Lexicographers differ on whether حُسْبَان is a masdar or the plural of حساب, so the Urdu does not decide.\n5. 55:6: the ayah i'rab is empty, so I used the standard analysis: wa joins this nominal sentence to 55:5, النجم is the mubtada, الشجر is joined to it, and يَسْجُدَانِ is the khabar. The tafsir disagrees on النجم: stars (Mujahid, Sa'di, Ibn Kathir's preference) or stemless plants (Ibn Abbas, Ibn Jarir's preference). The gloss, translation and tafsir give both views.\n6. Smaller decisions:\n   - 55:9:4: I took وَلَا تُخْسِرُوا۟ ٱلْمِيزَانَ as coordinated on the imperative clause, which the i'rab does not state.\n   - 55:10:2: I called وَضَعَهَا an explanatory clause by parallel with 55:7, where رفعها is labelled تفسيرية.\n   - 55:9:5: the lemma is أَخْسَرَ (the lexeme's perfect, taken from the lexica), while QAC's lemma ID is the imperfect يُخْسِرُ.\n   - 55:9:2 وَزْن and 55:4:2 بَيَان: QAC tags them as plain nouns, so I did not tag them verbal-noun.\n7. Ayah 1's translation ends in «نے» (رحمٰن… نے). That follows the mubtada analysis, so it reads together with ayah 2, «قرآن سکھایا»."
+   }
+  },
+  {
+   "label": "36-c01:author",
+   "value": {
+    "validatorOk": true,
+    "words": 37,
+    "notes": "Wrote /Users/me/Projects/quran-grammar/.content-work/chunks/36/36-c01.json. It covers ayahs 1–8 and all 37 planned words, in order. The validator passes with 0 errors and 0 warnings. My own checks also pass: every word's segments rebuild its packet string exactly, all 88 Arabic «quotes» are exact word-aligned runs from the packet, every word of each ayah appears in a phrase, and field lengths and sentence counts fit the guide. The packet often puts the shadda before the vowel (e.g. مُّ = م + shadda + damma), so I re-sliced every segment, quote and lexeme form (يَحِقُّ, حَقَّ) from the packet's exact code points. Every point below is also logged in auditNotes.\n\nSource conflicts, and the side I took:\n(1) فَ in 36:6:6, 36:7:6 and 36:8:9. QAC tags it REM and the word i'rab says الفاء استئنافية, but the ayah i'rab says each clause is معطوفة. I followed the ayah i'rab (conjunction with a causal sense), using the tie-breaker in the rules library's resumption rule, and mention the resumptive reading briefly.\n(2) 36:5:2 ٱلْعَزِيزِ. The QAC word i'rab says صفة مجرورة. The lesson explains that it is grammatically the muḍāf ilayh of تَنزِيلَ: an attribute standing in for the unmentioned noun (Allah).\n(3) 36:4:3 مُّسْتَقِيمٍۢ. The QAC i'rab says only اسم مجرور. I treated it as the na't of صِرَٰطٍۢ, the standard analysis.\n\nQAC analyses I followed, with well-known alternatives mentioned briefly:\n(4) 36:4: عَلَىٰ صِرَٰطٍۢ attaches to ٱلْمُرْسَلِينَ. Alternative: a second khabar of إِنَّ. The Urdu translation «سیدھی راہ پر (قائم)» fits both.\n(5) 36:5:1 تَنزِيلَ is the مفعول مطلق of an implied نَزَّلَ. Alternative: accusative of praise. Some other canonical readings have the nominative تَنْزِيلُ; this appears only in auditNotes and I have not verified which readings.\n(6) 36:8:2 جَعَلَ takes two objects, the second elided, with فِىٓ أَعْنَـٰقِهِمْ attached to it. I tagged two-objects, zanna and elision. Alternative: جَعَلَ = 'put' with one object. A reviewer may want to drop the zanna tag.\n(7) 36:6:3 مَا is negative, per QAC and all three tafsirs. Some exegetes allow a relative or masdari مَا. This is in auditNotes only.\n\nLemma decisions:\n(8) I gave singular lemmas as the guide asks: أَب (QAC آبَاء), ذَقَن (QAC أَذْقَان), مُقْمَح (QAC مُّقْمَحُون).\n(9) 36:8:5: lemma غُلّ, 'iron collar', with damma, following the verified root entry and the lexica. QAC's lemma is غِلّ, with kasra, which means rancour.\n(10) 36:2:1: lemma in dictionary spelling قُرْآن rather than QAC's Uthmani قُرْءَان.\n(11) 36:1:1 has no QAC lemma, so the lemma is يسٓ itself.\n(12) 36:8:1: segments follow QAC (إِنَّ + ا), with the alif explained as what remains of نَا.\n\nOther choices:\n(13) حَكِيم is described only as a فَعِيل adjective. Whether it is صفة مشبهة, an intensive form, or فعيل meaning مُحْكَم is debated, so I asserted no class. عَزِيز is tagged resembling-adjective and رَحِيم intensive, as the rules library lists.\n(14) Tafsir: I left out Ibn Kathir's narrations on the virtues of Ya-Sin, since their grading is not settled here. Ayah 8 is summarised as the simile shared by Muyassar and Ibn Kathir, plus Sa'di's point that the collars stand for barriers to faith. Ibn Kathir's report from Ikrimah about Abu Jahl is not summarised."
+   }
+  },
+  {
+   "label": "18-c01:verify-grammar",
+   "value": {
+    "checkedWords": 35,
+    "checkedAyahs": 4,
+    "issues": [
+     {
+      "ref": "18:2:12",
+      "field": "ruleIds",
+      "severity": "minor",
+      "problem": "The ayah note (qacGrammarNotesArabic) says the interpreted masdar «أن لهم أجرا» is منصوب على نزع الخافض الباء. syntaxUrdu and phrase 7 make the dropped بِ a central point. The 'elision' rule explicitly covers this case (\"an omitted preposition (منصوب على نزع الخافض)\"), but it is not tagged, so the learner gets no rule card for the حذف/تقدیر of the preposition.",
+      "fix": "[\"inna-sisters\", \"masdar-particle\", \"elision\"]"
+     }
+    ],
+    "libraryIssues": [],
+    "summary": "I checked all 35 words and 4 ayahs (18:1–18:4) field by field against the QAC segments and features, qacMorphologyEnglish, the word i'rab, the ayah grammar notes, the lexeme and root entries, and libs/rules.json. validate_chunk.py passed with no errors and no warnings.\n\nThe grammar is accurate. Morphology matches QAC for every word: word class, pattern, gender, number, definiteness, voice, verb form, attached pronouns, and case or mood with its sign. Built words are correctly described as مبنی with محلاً case. Syntax follows the i'rab: ٱلَّذِىٓ is نعت of the divine name; the لَمْ clause is coordinated on the صلہ; لَّهُۥ attaches to the verb. In 18:2, قَيِّمًا is حال of the pronoun in لَهُ, لِيُنذِرَ attaches to أَنزَلَ, and مِن لَّدُنْهُ is attached to a second نعت of بَأْسًا. The أَنَّ clause is منصوب على نزع الخافض, مَاكِثِينَ is حال of هُمْ in لَهُمْ, and وَيُنذِرَ is coordinated on يُبَشِّرَ.\n\n- **18:1:11 deviation is correct:** QAC tags عِوَجَاۜ as nominative ('اسم مرفوع'), but the author wrote منصوب, مفعول بہ of يَجْعَل. That is right by established grammar: the text shows fatha + alif, which is tanwin al-fath read as alif at Hafs's saktah. The disagreement is logged in auditNotes.\n- **18:2:1 word i'rab:** reading the word-level 'صفة منصوبة' as a word-class label, and following the ayah note's حال, is sound and also logged.\n- **Lemmas:** all are proper citation forms, including active بَشَّرَ for QAC's passive-shaped بُشِّرَ, and صَالِحَة, مَاكِث, أَبَد.\n- **Segments:** all concatenate exactly to the packet text. Splitting و and نَ in يَعْمَلُونَ is a correct teaching division.\n- **Verb notes:** every verbNoteUrdu agrees with its lexeme (bab, form, past and present forms) and with the occurrence's mood and its cause, voice, person/gender/number, and hidden or attached subject.\n- **Phrases:** they cover every word and label the constructions correctly.\n- **Arabic quotes:** every «»-quoted Arabic run is an exact contiguous run from the packet. Arabic written outside «» is only paradigm forms or lemmas. No Urdu/Arabic letter mixing and no Latin punctuation.\n- **Rules:** every tagged rule's condition holds, including two-objects for doubly transitive أَنْذَرَ with one object elided.\n\nOnly finding: 18:2:12 is missing the 'elision' rule for the dropped بِ (minor).\n\nNo problems found in the lexeme, root or rule library entries used by this chunk."
+   }
+  },
+  {
+   "label": "18-c01:verify-meaning",
+   "value": {
+    "checkedWords": 35,
+    "checkedAyahs": 4,
+    "issues": [
+     {
+      "ref": "18:2",
+      "field": "tafsirUrdu",
+      "severity": "minor",
+      "problem": "After the full stop, the second sentence 'اور ان مومنوں کو ... اچھے اجر کی خوشخبری دے، ...' ends in a subjunctive verb that has no تاکہ governing it. It reads as a sentence fragment, or as an optative ('and may He give good news'). The purpose clause from the first sentence should carry on. Joining the sentences with a comma fixes the grammar and keeps the length at 346 characters.",
+      "fix": "اللہ نے اس کتاب کو سیدھا بنایا جس میں نہ اختلاف ہے نہ تضاد، تاکہ اس کے ذریعے اپنے حکم کی مخالفت کرنے والوں کو اپنی طرف سے سخت سزا سے خبردار کرے، جو دنیا اور آخرت دونوں میں ہو سکتی ہے، اور ان مومنوں کو جو اخلاص اور سنت کی پیروی کے ساتھ نیک عمل کرتے ہیں اچھے اجر کی خوشخبری دے، جس کا سب سے بڑا حصہ اللہ کی رضا اور جنت ہے اور جس میں کوئی کدورت نہیں۔"
+     },
+     {
+      "ref": "18:2:13",
+      "field": "dictionaryUrdu",
+      "severity": "minor",
+      "problem": "'یہ اجر ان کا حق ہوگا' presents the reward as the believers' own entitlement, with no link to Allah's promise or grace. The provided tafsir frames it as a reward Allah has ordained (Sa'di: الثواب الذي رتبه الله). Mainstream Sunni wording ties any 'right' to reward to Allah's promise. This is a precision problem, not a creed error, but a learner could read it as merit-based entitlement.",
+      "fix": "لِ یہاں استحقاق اور ملکیت کا معنی دیتا ہے: اللہ کے وعدے سے یہ اجر انہی کا ہوگا اور انہیں ضرور ملے گا۔"
+     },
+     {
+      "ref": "18:2:7",
+      "field": "dictionaryUrdu",
+      "severity": "minor",
+      "problem": "The text gives 'news whose effect shows on the face' as the settled core meaning of بَشَّرَ. The root entry ب ش ر offers this link to بَشَرَة (skin) only as the view of 'بعض اہلِ لغت', and the lexeme entry bu$~ira|II|ACT simply defines it as giving news, usually good news. The dictionary text should keep the library's hedge.",
+      "fix": "بَشَّرَ کا معنی کسی کو کسی بات کی خبر دینا ہے، عموماً خوشخبری؛ بعض اہلِ لغت اسے بَشَرَة (ظاہری جلد) سے جوڑتے ہیں، کیونکہ ایسی خبر کا اثر چہرے پر ظاہر ہوتا ہے۔ یہاں اچھے اجر کی خوشخبری مراد ہے۔"
+     },
+     {
+      "ref": "18:2:5",
+      "field": "meaningUrdu",
+      "severity": "minor",
+      "problem": "The gloss 'کی طرف سے' for مِّن leaves 'کی' dangling. It also repeats the idea of 'side', which is already in the gloss of the next word لَّدُنْهُ ('اس کی (خاص) جانب'). Read together, the glosses become 'کی طرف سے | اس کی (خاص) جانب'. The word's own segment gloss is 'سے', which combines correctly into 'اس کی (خاص) جانب سے'.",
+      "fix": "سے"
+     },
+     {
+      "ref": "18:2:15",
+      "field": "dictionaryUrdu",
+      "severity": "minor",
+      "problem": "In 'اجر کو حسن کہنے سے', Urdu readers will naturally read the unvowelled 'حسن' as حُسن (beauty) rather than the adjective حَسَن ('good') that the ayah uses. Adding the vowels makes it clear.",
+      "fix": "حَسَن کا معنی اچھا اور خوب ہے؛ اجر کو حَسَن کہنے سے یہ بتایا گیا کہ اس میں کسی طرح کی کدورت یا کمی نہیں۔"
+     }
+    ],
+    "libraryIssues": [],
+    "summary": "I reviewed all 35 words and 4 ayahs of 18-c01 for meaning, tafsir and Urdu, and found 5 minor problems and nothing critical or major. The validator (validate_chunk.py 18-c01) returns ok, with no errors and no warnings.\n\n**Arabic quotes:** I checked every «» quotation by script against the packet's word runs, and all of them match exactly.\n\n**Urdu text:** There is no Latin text, no ASCII punctuation, and no Urdu word misspelt with Arabic ي, ك or ه. The only Arabic-letter tokens are the root letters ه and ى.\n\n**Translations:** All four are complete and faithful to Sahih International and Taqi Usmani, with no clause dropped:\n- 18:1 has the bracketed (محمد ﷺ).\n- 18:2 brackets the implied verb for قَيِّمًا and supplies منکروں for the omitted object, as Muyassar's الكافرين does.\n- 18:3 renders أَبَدًا as ہمیشہ ہمیشہ.\n- 18:4 renders وَلَدًا as اولاد, which matches the و ل د root entry and Sa'di's inclusion of Jews, Christians and polytheists. The choice is recorded in the audit notes.\n\nNone of these ayahs addresses anyone directly, so the guide's address-form rules do not come into play.\n\n**Tafsir:** Every statement traces to Muyassar, Sa'di or Ibn Kathir. In 18:4 the difference is presented correctly with بعض مفسرین: Ibn Ishaq via Ibn Kathir names the pagan Arabs who called the angels Allah's daughters, while Sa'di includes Jews, Christians and polytheists. No narrations, names or numbers were invented.\n\n**Word glosses and dictionary text:** Meanings are contextual and include attached particles and pronouns. Gender agreement in the glosses is correct (نازل کی، رکھی، بنا لی). Apart from the two hedging problems below, the dictionary entries agree with the root and lexeme libraries.\n\n**The 5 minor problems:**\n1. **18:2 tafsir:** the second sentence is a fragment, a subjunctive verb with no تاکہ after the full stop.\n2. **18:2:13 dictionary:** 'ان کا حق ہوگا' should be tied to Allah's promise.\n3. **18:2:7 dictionary:** the link to بَشَرَة needs the root entry's 'بعض اہلِ لغت' hedge.\n4. **18:2:5 meaning:** 'کی طرف سے' doubles up with the gloss of the next word, لَّدُنْهُ, and should be 'سے'.\n5. **18:2:15 dictionary:** the unvowelled حسن reads as حُسن (beauty) and should be written حَسَن.\n\nThe shared lexeme and root entries in the packet look correct, so there are no library issues."
+   }
+  },
+  {
+   "label": "18-c01:fix-1",
+   "value": {
+    "validatorOk": true,
+    "applied": 6,
+    "rejected": [],
+    "notes": "I checked all six issues against packet 18-c01 and libs/rules.json, found each one correct, and applied all of them to /Users/me/Projects/quran-grammar/.content-work/chunks/18/18-c01.json.\n(1) 18:2:12 now has the ruleIds [\"inna-sisters\",\"masdar-particle\",\"elision\"]. The rule's condition is met: QAC notes say the interpreted masdar is «منصوب على نزع الخافض الباء».\n(2) 18:2 tafsirUrdu: the full stop before «اور ان مومنوں» is now a comma, so تاکہ governs both verbs. It is 346 characters.\n(3) 18:2:13 dictionaryUrdu now says the reward is theirs through Allah's promise. This matches Sa'di's «الثواب الذي رتبه الله».\n(4) 18:2:7 dictionaryUrdu now defines the word as the lexeme entry does, and gives the link to بَشَرَة only as the view of «بعض اہلِ لغت», as the ب ش ر root entry does. It no longer says «یعنی جنت»; the word «اجر» still covers it.\n(5) 18:2:5 meaningUrdu is now «سے». This matches its segment gloss and reads correctly with the next word: «اس کی (خاص) جانب سے».\n(6) 18:2:15: the second «حسن» in dictionaryUrdu now has its vowels, «حَسَن».\nNo other text was changed, and ids, structure and order are the same. The validator passes with no errors and no warnings."
+   }
+  },
+  {
+   "label": "55-c01:verify-grammar",
+   "value": {
+    "checkedWords": 30,
+    "checkedAyahs": 10,
+    "issues": [
+     {
+      "ref": "55:8:1",
+      "field": "syntaxUrdu",
+      "severity": "minor",
+      "problem": "The word follows the ayah i'rab: أَنْ is مصدریہ, لَا is ناہیہ and تَطْغَوْا۟ is مجزوم. That reading is valid (Sibawayh lets masdar أَنْ connect to a command or prohibition) and is logged in auditNotes. But the text never says why أَنْ does not make the verb منصوب here. The word is tagged with masdar-particle, and that rule card tells the learner «أَنْ مضارع کو نصب بھی دیتا ہے». On the next word (55:8:2), the منصوب reading appears only as the alternative. So a learner sees an apparent contradiction: a masdar أَنْ that does not give نصب, with no explanation.",
+      "fix": "آیت کے اعراب کے مطابق أَنْ مصدریہ اور لَا ناہیہ ہے جو «تَطْغَوْا۟» کو جزم دیتا ہے؛ نہی سے ملنے کی وجہ سے یہاں أَنْ نصب نہیں دیتا۔ مصدرِ مؤول حرفِ جر لام کے حذف سے منصوب ہے، اور ایک تجزیے میں أَنْ تفسیریہ ہے۔"
+     }
+    ],
+    "libraryIssues": [],
+    "summary": "I found no critical or major grammar problems in chunk 55-c01 and only one minor clarity issue. I checked all 30 words and 10 ayahs field by field against the packet, and the validator passes with no errors or warnings.\n\n- **Morphology:** every word matches the Corpus segments and features: word class, verb form (II for عَلَّمَ; IV for أَقِيمُوا۟ and تُخْسِرُوا۟; I for the others), aspect, mood with its sign (يَسْجُدَانِ indicative with the nūn kept; تَطْغَوْا۟ and تُخْسِرُوا۟ jussive with the nūn dropped; أَقِيمُوا۟ built on the dropped nūn), voice, person/gender/number, case with its sign, definiteness, and attached pronouns. The notes on weak letters are also correct (سَمَاء's hamza comes from wāw, مِيزَان comes from مِوْزَان, and so on).\n- **Syntax:** every role follows the i'rab: الرحمن as subject (مبتدا) with ayahs 2–4 as its first, second and third predicates; ayah 5 a new independent sentence with بِحُسْبَانٍۢ attached to an omitted predicate; the اشتغال construction in ayahs 7 and 10, with explanatory clauses that have no case position; the coordinations given in the 55:7, 55:9 and 55:10 notes; بِٱلْقِسْطِ as a حال of the plural wāw; and the masdar of ayah 8, accusative because the lām was dropped.\n- **Ayah 8 conflict:** the Corpus tags أَنْ as explanatory (تفسیریہ) with prohibitive لَا, while the ayah i'rab calls أَنْ مصدریہ. The draft combines the two (masdar أَنْ + prohibitive لَا + jussive), which is the only reading consistent with all three statements. This is a recognised analysis, it follows the rule library's explanatory-an boundary, and the author logged it with both alternatives.\n- **Lemmas, labels, rules and verb notes:** lemmas are correct (verbs in the perfect, including أَخْسَرَ from its lexeme entry). The word-type labels (posUrdu) name the correct types. Each rule id meets its \"applies when\" condition, and none is missing that should be there. Every verb note agrees with its lexeme entry (form, past and present forms).\n- **Segments and phrases:** segments join back to the exact Arabic, and the phrases cover every word with correct analysis.\n- **Arabic quotes:** every «» quotation exactly matches a run of the packet's Arabic, and the lemmas and embedded Arabic use Arabic letters, not Urdu ی ک ہ ے.\n\nThe one minor issue is at 55:8:1 (syntaxUrdu). It never explains why the masdar أَنْ does not make the verb منصوب, even though the masdar-particle rule card says أَنْ gives نصب. The issue entry has an exact replacement sentence. I found no errors in the shared lexeme, root or rule entries used here."
+   }
+  },
+  {
+   "label": "36-c01:verify-grammar",
+   "value": {
+    "checkedWords": 37,
+    "checkedAyahs": 8,
+    "issues": [
+     {
+      "ref": "36:4:1",
+      "field": "morphologyUrdu",
+      "severity": "minor",
+      "problem": "Says the final alif maqsura of عَلَى «کسی حالت میں نہیں بدلتا» (never changes in any state). As a built particle it does not change for i‘rab, but its alif becomes yā' before an attached pronoun (عَلَيْهِ، عَلَيْهِمْ). Learners meet that form constantly, so the absolute claim is inaccurate.",
+      "fix": "حرفِ جر ہے جو سکون پر مبنی ہے؛ اس کا آخری الف یاء کی شکل میں لکھا جاتا ہے (الفِ مقصورہ)؛ مبنی ہونے کی وجہ سے اعراب سے نہیں بدلتا، البتہ ضمیر سے ملنے پر یاء بن جاتا ہے، جیسے عَلَيْهِ۔"
+     },
+     {
+      "ref": "36:7:4",
+      "field": "morphologyUrdu",
+      "severity": "minor",
+      "problem": "Same inaccuracy as 36:4:1: «آخر کا الفِ مقصورہ کسی حالت میں نہیں بدلتا». The alif of عَلَى turns into yā' before an attached pronoun (عَلَيْهِمْ). What does not change is its built (مبنی) ending, not its spelling in every context.",
+      "fix": "حرفِ جر ہے جو سکون پر مبنی ہے؛ آخر کا الفِ مقصورہ اعراب سے نہیں بدلتا، البتہ ضمیر سے ملنے پر یاء بن جاتا ہے (عَلَيْهِمْ)؛ اوپر مد کی علامت اگلے ہمزہ کی وجہ سے ہے۔"
+     },
+     {
+      "ref": "36:1",
+      "field": "tafsirUrdu",
+      "severity": "minor",
+      "problem": "Refers the learner to an earlier discussion: «جن پر گفتگو سورۂ بقرہ کے آغاز میں گزر چکی ہے». This copies Muyassar's cross-reference (سبق الكلام … في أول سورة البقرة). Guide §3 (tafsirUrdu) forbids exactly this kind of pointer, because the app does not contain that discussion. This is outside the grammar scope, but it is a clear guide violation.",
+      "fix": "«يسٓ» حروفِ مقطعات میں سے ہے، جن کا حقیقی معنی اللہ ہی جانتا ہے۔ سلامتی کی راہ یہ ہے کہ کسی شرعی دلیل کے بغیر ان کا معنی متعین نہ کیا جائے، اور یقین رکھا جائے کہ اللہ نے انہیں بے مقصد نہیں بلکہ ایسی حکمت سے نازل کیا ہے جسے ہم نہیں جانتے۔"
+     }
+    ],
+    "libraryIssues": [],
+    "summary": "The validator passed with no errors or warnings. The grammar in 36-c01 is accurate: I found three minor issues and no critical, major or library issues.\n\nChecked:\n- All 37 words, field by field, against the QAC segments and features, qacMorphologyEnglish, qacIrabArabic and each ayah's qacGrammarNotesArabic.\n- The 5 lexeme entries and 20 root entries in the packet.\n- Every rules.json entry the chunk cites.\n\nWhat holds up:\n- **Morphology:** word class, pattern, gender, number, case or mood with its sign, definiteness, voice and form are correct for every word. That includes mood and voice in لِتُنذِرَ (Form IV subjunctive after an implied أَنْ), أُنذِرَ (Form IV passive) and يُؤْمِنُونَ (indicative, shown by the kept nūn).\n- **Syntax:** the i‘rab roles match QAC, including the oath and its answer, the implied نَزَّلَ governing تَنزِيلَ as مفعول مطلق, the لِتُنذِرَ clause attaching to تَنزِيلَ, and the elided second object of جَعَلْنَا.\n- **Justified departures from QAC, all flagged in the Urdu text or auditNotes:**\n  - ٱلْعَزِيزِ is treated as مضاف الیہ rather than QAC's word-level صفة مجرورة. This is the correct analysis.\n  - The فَ in the three فَهُمْ words is taken as عاطفة, following the ayah notes (جملة … معطوفة); QAC's word level says استئنافية. The resumption rule's tie-breaker supports this.\n  - The lemma غُلّ for أَغْلَـٰلًۭا is right; QAC's غِلّ means rancour. The singular lemmas أَب، ذَقَن and مُقْمَح also follow the guide.\n- **Lemmas, segments and pieces:** all lemmas are correct and use only Arabic letters. All segment splits concatenate exactly to the packet word.\n- **Rule ids:** every cited rule's appliesWhenEnglish condition holds, and no important rule is missing.\n- **Verb notes:** all five agree with their lexeme entries (bab, form, past, present) and with this occurrence's aspect, mood and its cause, voice and pronouns.\n- **Phrases:** they cover every word and are labelled correctly.\n- **Quotes:** every Arabic quote in «» is an exact contiguous run of packet words (checked by script).\n\nIssues:\n1. **36:4:1 and 36:7:4, morphologyUrdu:** both say the alif maqsura of عَلَى never changes in any state. In fact it becomes yā' before an attached pronoun (عَلَيْهِمْ).\n2. **36:1, tafsirUrdu:** it refers the learner to the discussion at the start of Surah al-Baqarah, which the guide forbids. This is outside the grammar scope, but it is a clear guide violation.\n\nAll three are minor, with exact replacement text given; I checked each replacement's length against the guide's ranges."
+   }
+  },
+  {
+   "label": "36-c01:verify-meaning",
+   "value": {
+    "checkedWords": 37,
+    "checkedAyahs": 8,
+    "issues": [
+     {
+      "ref": "36:1",
+      "field": "tafsirUrdu",
+      "severity": "major",
+      "problem": "The clause «جن پر گفتگو سورۂ بقرہ کے آغاز میں گزر چکی ہے» (carried over from Muyassar's one-line pointer) sends the learner to a discussion at the start of Surah al-Baqarah. The app does not contain that discussion, and the binding guide (§3, tafsirUrdu) explicitly forbids this kind of cross-reference, citing almost the same example («جیسا کہ سورۂ بقرہ کے آغاز میں گزرا»). Also, «سلامتی کی راہ» is an unidiomatic calque of Sa'di's الأسلم. The rest of the content (Sa'di: do not fix a meaning without a shar'i basis, while being certain the letters were revealed for a wisdom we do not know) is accurate and is kept in the fix. The fix replaces the pointer with Sa'di's direct point that these letters open several surahs.",
+      "fix": "«يسٓ» ان حروفِ مقطعات میں سے ہے جو کئی سورتوں کے آغاز میں آئے ہیں۔ ان کے بارے میں سب سے محفوظ طریقہ یہ ہے کہ کسی شرعی دلیل کے بغیر ان کا معنی متعین نہ کیا جائے، اور پختہ یقین رکھا جائے کہ اللہ نے انہیں بے مقصد نہیں بلکہ کسی ایسی حکمت کے تحت اتارا ہے جسے ہم نہیں جانتے۔"
+     },
+     {
+      "ref": "36:8",
+      "field": "translationUrdu",
+      "severity": "minor",
+      "problem": "«تو وہ ٹھوڑیوں تک (پہنچے ہوئے) ہیں، سو وہ سر اوپر اٹھائے رہ گئے ہیں» uses «وہ» twice in a row for different referents. The first renders هِيَ, i.e. the collars (أَغْلَـٰلًۭا; Sa'di: the collars reached their chins). The second renders هُم, i.e. the people. The word gloss for 36:8:6 already says «تو وہ (طوق)», but the ayah translation leaves the first «وہ» unmarked, so a learner can read it as the people reaching to their chins. Add the referent in parentheses.",
+      "fix": "بے شک ہم نے ان کی گردنوں میں طوق ڈال دیے ہیں، تو وہ (طوق) ٹھوڑیوں تک (پہنچے ہوئے) ہیں، سو وہ سر اوپر اٹھائے رہ گئے ہیں۔"
+     },
+     {
+      "ref": "36:6:7",
+      "field": "dictionaryUrdu",
+      "severity": "minor",
+      "problem": "«وہ ایمان اور نیک عمل پر قائم رہنے سے غافل ہیں» most naturally reads as 'heedless of staying firm on faith and righteous deeds' (cf. the common collocation «ایمان پر قائم رہنا»). That implies they had faith but did not persevere. Muyassar says ساهون عن الإيمان والاستقامة على العمل الصالح: heedless of faith itself and of steadfastness in righteous deeds. The ayah's own tafsirUrdu («ایمان اور نیک عمل سے غافل») states this correctly, so the word note should match it.",
+      "fix": "غَافِل کا معنی بے خبر اور بے پروا ہے؛ تفسیر کے مطابق وہ ایمان سے بھی غافل ہیں اور نیک عمل پر جمے رہنے سے بھی، کیونکہ جس قوم میں ڈرانے والا نہ آئے وہ غفلت میں پڑ جاتی ہے۔"
+     }
+    ],
+    "libraryIssues": [],
+    "summary": "Validator (python3 -I scripts/validate_chunk.py .content-work 36-c01): ok, no errors or warnings. I reviewed all 37 words and 8 ayahs for: contextual meaningUrdu (compared with both English glosses and both translations), consistency of dictionaryUrdu with the packet's root and lexeme entries, completeness and address forms of each translation, support for every tafsir point in the provided Muyassar, Sa'di and Ibn Kathir texts, and Urdu quality. A script confirmed that every Arabic quotation inside the Urdu text matches the packet's arabic strings exactly and that no Arabic ي/ك/ه letters appear inside Urdu words. All lengths are within the guide's targets. Translations are complete and match Sahih International and Taqi Usmani in meaning, with آپ for the Prophet ﷺ and ہم for the divine plural. Every tafsir statement traces to the provided sources and the presentation is mainstream; where the sources take different angles (36:5 Qur'an vs path; 36:7 decree vs punishment; 36:8 simile vs barriers) the text combines them rather than picking one. Findings: 1 major, 2 minor. Major: the 36:1 tafsir refers learners to a Surah al-Baqarah discussion that the app does not contain, which the guide explicitly forbids. Minor: an ambiguous «وہ» in the 36:8 translation, and phrasing in the 36:6:7 dictionaryUrdu that implies the people had faith. I applied all three replacement strings to a scratch copy of the chunk (the repository file was not modified); that copy passes the validator with no errors or warnings and all quotations still match. No library issues found in the lexeme or root entries."
+   }
+  },
+  {
+   "label": "36-c01:fix-1",
+   "value": {
+    "validatorOk": true,
+    "applied": 6,
+    "rejected": [],
+    "notes": "I checked all six issues against the packet and the guide, and all six were correct. They became five field edits in /Users/me/Projects/quran-grammar/.content-work/chunks/36/36-c01.json. 36:4:1 and 36:7:4 morphologyUrdu: replaced the claim that the alif \"never changes in any state\" with the narrower point: the built ending does not change for i'rab, but the alif becomes yā' before an attached pronoun (عَلَيْهِ / عَلَيْهِمْ). The rest of each sentence is unchanged. 36:1 tafsirUrdu: both reports were right about the forbidden Baqarah cross-reference (guide §3; it comes from Muyassar's pointer). I used one edit, the meaning reviewer's wording, because it also replaces the calque «سلامتی کی راہ» and keeps Sa'di's point that these letters open several surahs. The text is 268 characters and contains no outside pointer. 36:8 translationUrdu: added «(طوق)» after the first «وہ», so it matches the gloss of 36:8:6 and Sa'di's reading that the collars reach the chins. 36:6:7 dictionaryUrdu: it now says they are heedless of faith itself and of steadfastness in good deeds. This matches Muyassar (ساهون عن الإيمان والاستقامة على العمل الصالح) and the ayah's tafsirUrdu. A diff shows only these five fields changed; formatting, ids and order are unchanged. The validator passes with no errors and no warnings."
+   }
+  },
+  {
+   "label": "55-c01:verify-meaning",
+   "value": {
+    "checkedWords": 30,
+    "checkedAyahs": 10,
+    "issues": [
+     {
+      "ref": "55:4",
+      "field": "tafsirUrdu",
+      "severity": "minor",
+      "problem": "The clause «یعنی اپنے دل کی بات کو واضح طور پر ظاہر کرنا» comes after the main verb «ممتاز کیا». As written, it reads as an explanation of the act of distinguishing, not of بیان. The entry also follows Sa'di clause by clause (وميزه على سائر الحيوانات / التبيين عما في ضميره / النطقي والخطي / من أجل نعمه), which the guide forbids. The content itself is supported by Sa'di and Muyassar.",
+      "fix": "بیان سے مراد اپنے دل کی بات کو واضح طور پر ظاہر کرنا ہے، اور یہی وہ صلاحیت ہے جس کے ذریعے اللہ نے انسان کو باقی جانداروں سے ممتاز کیا۔ یہ بول کر بات سمجھانے اور لکھ کر سمجھانے دونوں کو شامل ہے، اور انسان پر اللہ کی سب سے بڑی نعمتوں میں سے ہے۔"
+     },
+     {
+      "ref": "55:2:1",
+      "field": "dictionaryUrdu",
+      "severity": "minor",
+      "problem": "«تفسیر میں اس سے انسان اور اللہ کے بندے مراد لیے گئے ہیں» reads as if two different groups are being taught. The sources name a single referent in different words: Muyassar الإنسان, Sa'di عباده, Ibn Kathir 'His servants'.",
+      "fix": "Keep the first sentence unchanged. Replace the second sentence with: یہاں جسے سکھایا گیا وہ مذکور نہیں؛ تفسیر میں اس سے انسان، یعنی اللہ کے بندے، مراد لیے گئے ہیں۔"
+     },
+     {
+      "ref": "55:5",
+      "field": "tafsirUrdu",
+      "severity": "minor",
+      "problem": "Each sentence translates a whole source sentence clause by clause. The first renders Muyassar's complete entry (الشمس والقمر يجريان متعاقبين بحساب متقن، لا يختلف ولا يضطرب). The second renders Sa'di's (رحمة بالعباد وعناية بهم، وليقوم بذلك من مصالحهم… وليعرف العباد عدد السنين والحساب). The guide forbids sentence-by-sentence translation. Accuracy is fine. The replacement keeps the same supported content; its opening link is supported by Ibn Kathir's heading 'Among Allah's Signs: the Sun, the Moon…'.",
+      "fix": "انسان سے متعلق نعمتوں کے بعد اب کائنات کی نشانیوں کا ذکر ہے: سورج اور چاند اللہ کے ٹھہرائے ہوئے ایسے پختہ حساب کے پابند ہیں جس میں کبھی کوئی بے ترتیبی نہیں آتی۔ یہ نظام بھی بندوں پر اس کی رحمت ہے، کیونکہ اسی سے ان کے بہت سے فائدے وابستہ ہیں اور اسی سے وہ سالوں کا شمار اور حساب جانتے ہیں۔"
+     },
+     {
+      "ref": "55:9",
+      "field": "tafsirUrdu",
+      "severity": "minor",
+      "problem": "The entry renders Sa'di's two glosses in order (اجعلوه قائما بالعدل الذي تصل إليه مقدرتكم وإمكانكم / لا تنقصوه وتعملوا بضده وهو الجور والظلم والطغيان), with Muyassar's إذا وزنتم للناس inserted. It restates the ayah as a command instead of explaining it in context. Both are against the guide. Accuracy is fine.",
+      "fix": "پچھلی آیت میں حد سے بڑھنے کی ممانعت تھی؛ یہاں عملی ہدایت ہے کہ لوگوں کے لیے تولتے وقت اپنی پوری استطاعت کے مطابق تول کو انصاف پر قائم رکھو اور ترازو میں کمی نہ کرو۔ کمی کرنا عدل کو چھوڑ کر اس کی ضد، یعنی ظلم، ناانصافی اور سرکشی کو اختیار کرنا ہے۔"
+     },
+     {
+      "ref": "55:1",
+      "field": "tafsirUrdu",
+      "severity": "minor",
+      "problem": "The entry translates Sa'di's opening paragraph clause by clause, with Arabic calques: الدال على becomes «دلالت کرتا ہے» and عموم إحسانه becomes «احسان کی عمومیت». The guide asks for an original summary. The content is supported.",
+      "fix": "سورت اللہ کے نام «ٱلرَّحْمَـٰنُ» سے شروع ہوتی ہے، جو بتاتا ہے کہ اس کی رحمت بے حد وسیع ہے اور اس کا احسان و فضل سب کو شامل ہے۔ آگے کی آیات اسی رحمت کے آثار، یعنی دین، دنیا اور آخرت کی نعمتیں گنواتی ہیں، اور ہر قسم کی نعمت کے بعد جن و انس کو اپنے رب کا شکر ادا کرنے پر ابھارتی ہیں۔ (Keep the «ٱلرَّحْمَـٰنُ» quote byte-for-byte as it is in the current text.)"
+     },
+     {
+      "ref": "55:8:1",
+      "field": "dictionaryUrdu",
+      "severity": "minor",
+      "problem": "The opening word cites this occurrence (یہاں) of the Quranic word أَلَّا, but it is not in «» and its code points differ from the packet. The chunk has fatha before shadda (U+064E U+0651); the packet word has shadda before fatha (U+0644 U+0651 U+064E). The two render identically but are not an exact copy, and the validator does not check unquoted text.",
+      "fix": "Change only the opening «أَلَّا یہاں» to «أَلَّا» in guillemets followed by یہاں, so the line begins: «أَلَّا» یہاں تاکہ نہ کا مفہوم دیتا ہے اور میزان قائم کرنے کی وجہ بتاتا ہے۔ Copy أَلَّا from packet word 55:8:1 (U+0623 U+064E U+0644 U+0651 U+064E U+0627). The rest of the line is unchanged."
+     }
+    ],
+    "libraryIssues": [],
+    "summary": "The validator passes with no errors or warnings. I checked all 30 words and 10 ayahs for meaning, tafsir and Urdu quality and found no critical or major problems.\n\n- **Meanings:** Every word's meaningUrdu and dictionaryUrdu matches both English glosses and the two translations, including attached pronouns and particles. Feminine agreement for میزان and ترازو is correct.\n- **Consistency with the libraries:** The dictionary lines agree with the root entries. Each verb note agrees with its lexeme entry (bab, past and present forms) and with QAC aspect and mood.\n- **Translations:** All ten are complete and faithful. They match Sahih International and Taqi Usmani and use تم for people. The split «رحمٰن … نے / قرآن سکھایا» fits the i‘rab (mubtada with khabar in 55:2–4). In 55:6 the translation keeps both readings of النجم, stars or stemless plants.\n- **Tafsir accuracy:** Every statement is supported by the provided texts, and nothing is invented. The 55:6 difference over النجم is presented as بعض مفسرین… بعض. For 55:8, the word-level lines follow Muyassar's narrow sense (weighing), while the tafsir also carries Sa'di's broader balance of justice; this is acceptable and mainstream.\n- **Themes and phrases:** Themes are apt and phrase explanations are clear.\n- **Arabic quotes:** Every «» quote matches the packet exactly. Urdu spelling uses ی ک ہ ے throughout, with no Arabic letter forms in Urdu words.\n\nAll six findings are minor:\n1. In 55:4 the «یعنی…» clause comes after the main verb, so it no longer clearly explains بیان.\n2. In 55:2:1 the dictionary line reads as if «انسان» and «اللہ کے بندے» were two different groups taught.\n3. Four tafsir entries are near clause-by-clause translations of Sa'di or Muyassar, which the guide forbids: 55:1, 55:4, 55:5 and 55:9. The other ayahs merge and condense their sources and are acceptable.\n4. In 55:8:1 the dictionary line cites أَلَّا outside «» with its diacritics in a different code-point order from the packet. It looks the same but is not an exact copy.\n\nNo problems were found in the shared lexeme, root or rule entries."
+   }
+  },
+  {
+   "label": "55-c01:fix-1",
+   "value": {
+    "validatorOk": true,
+    "applied": 7,
+    "rejected": [],
+    "notes": "I checked all 7 issues against the packet and they were all correct, so all 7 are applied. The validator passes with no errors or warnings. A diff confirms only the 7 target fields changed (ayahs 1, 4, 5 and 9 tafsirUrdu; 55:2:1 dictionaryUrdu; 55:8:1 syntaxUrdu and dictionaryUrdu). The JSON structure, ids and order are unchanged.\n- 55:8:1 syntaxUrdu: I added the sentence explaining that أَنْ gives no نصب here because it is joined to a نہی. This is the standard view (Sibawayh: masdar أَنْ can connect to an amr or nahy). The field is now 203 characters, just over the guide's 'about 200'.\n- 55:8:1 dictionaryUrdu: the opening word is now «أَلَّا», copied from the packet's arabic string (U+0623 U+064E U+0644 U+0651 U+064E U+0627).\n- 55:1 tafsir: the «ٱلرَّحْمَـٰنُ» quote was copied unchanged from the existing text.\n- 55:5 tafsir: I changed one phrase in the suggested text. «حساب کے پابند ہیں» became «حساب سے چلتے ہیں», so the sentence keeps the sense of the sun and moon moving (Muyassar يجريان, Sa'di).\n- 55:9 tafsir: I made the suggested text impersonal («قائم رکھا جائے … کمی نہ کی جائے») so it explains the ayah instead of restating it as a command, which was the reviewer's own complaint.\n- 55:4 and 55:2:1: applied exactly as proposed.\nOriginal file backed up at /private/tmp/claude-501/-Users-me-Projects-quran-grammar/28c1ddaf-0f5d-403c-bab0-0492dfce2585/scratchpad/55-c01.orig.json."
+   }
+  },
+  {
+   "label": "18-c01:confirm-1",
+   "value": {
+    "checkedWords": 35,
+    "checkedAyahs": 4,
+    "issues": [
+     {
+      "ref": "18:2:6",
+      "field": "syntaxUrdu",
+      "severity": "minor",
+      "problem": "The ending «مِّن لَّدُنْهُ» مل کر «بَأْسًۭا» کی دوسری صفت سے متعلق ہیں leaves out that the governor is elided (محذوف). A learner will look for a 'second adjective' in the ayah and find only شَدِيدًۭا, which is the first. 18:2:5 syntaxUrdu and ayah-2 phrase 3 both say «محذوف سے متعلق ہو کر … دوسری صفت ہے», which matches the QAC note (متعلق بنعت ثانٍ لـ«بأسا»). This word should say the same.",
+      "fix": "Change only the end of the field and leave every Arabic quote before it untouched (do not retype «مِّن» or «مِّن لَّدُنْهُ», because their shadda/vowel codepoint order must stay as it is). Replace the final words \"مل کر «بَأْسًۭا» کی دوسری صفت سے متعلق ہیں۔\" with \"محذوف سے متعلق ہو کر «بَأْسًۭا» کی دوسری صفت ہے۔\". Result, 152 characters: «مِّن» کا مجرور (محلاً) اور مضاف ہے؛ ضمیر هُ مضاف الیہ ہے جو اللہ کی طرف لوٹتی ہے، اور «مِّن لَّدُنْهُ» محذوف سے متعلق ہو کر «بَأْسًۭا» کی دوسری صفت ہے۔"
+     },
+     {
+      "ref": "18:2",
+      "field": "tafsirUrdu",
+      "severity": "minor",
+      "problem": "The accepted comma fix correctly lets تاکہ govern both verbs, but it made the whole tafsir one 346-character sentence with four nested clauses. The authoring guide requires 2–3 sentences, and a sentence this long is hard for learners to read. The sentence can break after «خوشخبری دے» instead: the purpose clause stays complete (so the earlier grammar fix holds), and the description of the reward becomes its own sentence. Only the tail changes: «، جس کا» becomes «۔ اس اجر کا» and «اور جس میں» becomes «اور اس میں». The result is 350 characters and 2 sentences.",
+      "fix": "اللہ نے اس کتاب کو سیدھا بنایا جس میں نہ اختلاف ہے نہ تضاد، تاکہ اس کے ذریعے اپنے حکم کی مخالفت کرنے والوں کو اپنی طرف سے سخت سزا سے خبردار کرے، جو دنیا اور آخرت دونوں میں ہو سکتی ہے، اور ان مومنوں کو جو اخلاص اور سنت کی پیروی کے ساتھ نیک عمل کرتے ہیں اچھے اجر کی خوشخبری دے۔ اس اجر کا سب سے بڑا حصہ اللہ کی رضا اور جنت ہے اور اس میں کوئی کدورت نہیں۔"
+     }
+    ],
+    "libraryIssues": [],
+    "summary": "Chunk 18-c01 is accurate apart from two minor issues. Validator: python3 -I /Users/me/Projects/quran-grammar/.content-work/scripts/validate_chunk.py /Users/me/Projects/quran-grammar/.content-work 18-c01 returns ok, with 0 errors and 0 warnings.\n\nAccepted fixes: all six were applied correctly in /Users/me/Projects/quran-grammar/.content-work/chunks/18/18-c01.json.\n- 18:2:12 ruleIds now include 'elision'. This is correct: the QAC note says «منصوب على نزع الخافض الباء», which is the rule's stated condition.\n- 18:2 tafsirUrdu: تاکہ now governs both verbs. The fix did leave a single 346-character sentence, so I report a minor follow-up below.\n- 18:2:13 dictionaryUrdu now ties the reward to Allah's promise, in line with Sa'di.\n- 18:2:7 dictionaryUrdu now defines the word as the lexeme entry does and keeps the root entry's «بعض اہلِ لغت» hedge.\n- 18:2:5 meaningUrdu is now «سے», which matches its segment gloss.\n- 18:2:15 now has the vowelled «حَسَن».\nNone of the fixes introduced a contradiction. There were no rejections to judge.\n\nRe-check: I checked all 35 words and 4 ayahs against the QAC morphology and i'rab, the lexeme and root entries, the rule conditions and the tafsir. Specifically:\n- Case, mood, voice, form and built-ending (مبنی) statements are correct.\n- QAC's erroneous NOM tag on 18:1:11 عِوَجَاۜ is correctly overridden as منصوب مفعول بہ and logged in auditNotes.\n- The ḥāl analyses of قَيِّمًۭا and مَّـٰكِثِينَ, the two-object treatment of أَنْذَرَ (in 18:2 and 18:4), the masdar-particle/elision analysis of أَنَّ, and the idgham explanations (لِّ، مِّن، لَّدُنْهُ، مَّـٰكِثِينَ، لَّهُۥ) are correct.\n- Verb notes agree with their lexeme entries.\n- Translations are complete, and the tafsir for every ayah is supported by Muyassar, Sa'di and Ibn Kathir. The 18:4 difference of opinion is hedged with «بعض مفسرین کے نزدیک».\n- A script check confirmed that every «» Arabic quote matches the packet text exactly and that every segment set joins back into its exact word.\n\nRemaining minor issues:\n1. 18:2:6 syntaxUrdu omits «محذوف» and so contradicts the wording in 18:2:5 and phrase 3. The fix is given as a tail-only replacement, because the packet stores shadda before the short vowel and retyped quotes can reverse that order.\n2. The 18:2 tafsir is now one sentence, while the guide asks for 2–3. A 350-character, two-sentence fix keeps the grammar correction.\n\nNo library entry (lexeme, root or rule) is wrong."
+   }
+  },
+  {
+   "label": "18-c01:fix-2",
+   "value": {
+    "validatorOk": true,
+    "applied": 2,
+    "rejected": [],
+    "notes": "I applied both fixes to /Users/me/Projects/quran-grammar/.content-work/chunks/18/18-c01.json, and the validator passes with no errors and no warnings. 18:2:6 syntaxUrdu: the packet's QAC note says «لدنه» … متعلق بنعت ثانٍ لـ«بأسا», so the phrase is tied to an omitted word that acts as the second adjective of «بَأْسًۭا». The old wording left out that this word is omitted. I replaced only the end of the field. The new ending matches the 18:2:5 syntaxUrdu and phrase 3 of ayah 2. The Arabic quotes earlier in the field were not retyped, so their character order is unchanged. The field is now 152 characters. 18:2 tafsirUrdu: I split the text into two sentences after «خوشخبری دے». The purpose clause, where تاکہ governs both verbs, is still complete. Only the tail changed («جس کا» became «اس اجر کا» and «جس میں» became «اس میں»). The field is now 350 characters, which is within the guide's limit. No other fields needed changing."
+   }
+  },
+  {
+   "label": "36-c01:confirm-1",
+   "value": {
+    "checkedWords": 37,
+    "checkedAyahs": 8,
+    "issues": [],
+    "libraryIssues": [],
+    "summary": "All six accepted issues were fixed correctly in five field edits, and the fixes introduced no new errors. The validator passes with no errors or warnings, and the fresh review of all 37 words and 8 ayahs found nothing new to report.\n\nHow the fixes were checked: each edited field matches its requested replacement character for character.\n- 36:4:1 and 36:7:4 morphologyUrdu: the absolute claim «کسی حالت میں نہیں بدلتا» is gone. The fields now say the built ending does not change for i'rab, but the alif becomes yā' before an attached pronoun. That is accurate. It also matches 36:8:7 (إِلَى), which makes no absolute claim.\n- 36:1 tafsirUrdu: the Baqarah cross-reference and the calque «سلامتی کی راہ» are gone everywhere in the file. The new text follows Sa'di closely (الأسلم … من غير مستند شرعي … لحكمة لا نعلمها). It has 2 sentences and 268 characters. The guide's §5 point that only Allah knows the meaning of these letters is still made in the 36:1:1 dictionaryUrdu.\n- 36:8 translationUrdu: «(طوق)» now agrees with the 36:8:6 gloss, the 36:8:7 and 36:8:8 notes, Sa'di (قد وصلت إلى أذقانهم) and Taqi Usmani.\n- 36:6:7 dictionaryUrdu: now matches Muyassar (ساهون عن الإيمان والاستقامة على العمل الصالح). It is consistent with the ayah tafsir.\n- The fixer rejected nothing, so there were no rejections to judge.\n\nWhat the fresh review covered:\n- **Grammar:** morphology matches QAC in every word (case and sign, mood, voice, verb form, person, gender and number, and what each built word is built on).\n- **Syntax:** every word follows the QAC i'rab. Where the lesson departs from it, an audit note records the reason: 36:5:2 is mudaf ilayh even though QAC calls it صفة, and the three فَهُمْ follow the ayah i'rab (معطوفة) over QAC's REM tag. That second choice matches the resumption tie-breaker in rules.json and the standard i'rab works.\n- **Verb notes:** all five agree with their lexeme entries.\n- **Rule ids:** every rule id meets its appliesWhen condition.\n- **Mechanics:** segments join back to each word exactly, every Arabic quote is an exact run from the packet, and no Urdu and Arabic letter forms are mixed.\n- **Meaning:** translations, word meanings and dictionary notes are faithful, and each tafsir is supported by Muyassar, Sa'di or Ibn Kathir with nothing invented.\n- **Libraries:** no errors in the five lexeme entries, the 20 root entries, or the rule entries this chunk uses.\n\nTwo borderline points that I decided not to report:\n- The 36:6:1 dictionaryUrdu calls warning the purpose of sending the Messenger, while the i'rab attaches لِ to تَنزِيلَ. Sa'di and Ibn Kathir support that wording, so it is not an error.\n- The gloss «یقیناً میں سے (ہیں)» for 36:3:2 reads a little awkwardly, but it is acceptable as a word-by-word gloss."
+   }
+  }
+ ]
+}

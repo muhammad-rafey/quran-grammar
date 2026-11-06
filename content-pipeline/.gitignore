@@ -1,0 +1,15 @@
+# Third-party reference texts and derived bulk data: re-create them with the scripts
+# (see README.md). Never commit tafsir, translation or bulk Corpus text.
+sources/
+qac/
+packets/
+inputs/
+meta/words.json
+meta/ayahs.json
+meta/lexemes.json
+meta/roots.json
+meta/tag-inventory.json
+meta/juz-table.ts.txt
+meta/verb-flags.json
+reports/*-raw.json
+__pycache__/
