@@ -156,9 +156,7 @@ export function App() {
       </a>
       <header className="site-header ui" lang={language} dir={direction}>
         <a className="brand" href="./">
-          <span className="brand-mark">
-            <BookOpen size={23} strokeWidth={1.5} />
-          </span>
+          <img className="brand-mark" src="/brand/logo.png" width="44" height="44" alt="" />
           <span>{language === 'en' ? 'Quran Grammar' : 'قرآن گرامر'}</span>
         </a>
       </header>

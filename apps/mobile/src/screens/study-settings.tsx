@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from 'react-native';
+import { Image, Pressable, Text, View } from 'react-native';
 import { useStudy } from '@/state/study-provider';
 import { useInterface } from '@/state/preferences-provider';
 import { Action, DataStatus, Label, Section, StudyFooter } from '@/components/study-ui';
@@ -9,6 +9,12 @@ export function Settings() {
   const { bundled, hasApi, loading, retry } = useStudy();
   return (
     <View style={{ gap: 16 }}>
+      <Image
+        source={require('../../assets/logo.png')}
+        accessible={false}
+        resizeMode="contain"
+        style={{ width: 80, height: 80, alignSelf: 'center' }}
+      />
       <Section title={ui.interfaceLanguage}>
         <View style={{ ...controlRow, flexWrap: 'wrap' }}>
           {(

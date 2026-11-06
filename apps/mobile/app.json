@@ -6,8 +6,22 @@
     "version": "0.1.0",
     "userInterfaceStyle": "light",
     "icon": "./assets/icon.png",
-    "ios": { "supportsTablet": true, "bundleIdentifier": "org.qurangrammar.app" },
-    "android": { "package": "org.qurangrammar.app" },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "org.qurangrammar.app",
+      "icon": {
+        "light": "./assets/icon.png",
+        "dark": "./assets/icon-dark.png"
+      }
+    },
+    "android": {
+      "package": "org.qurangrammar.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png",
+        "backgroundColor": "#f7f8ef"
+      }
+    },
     "plugins": ["expo-router", "expo-font", "expo-system-ui"],
     "experiments": { "typedRoutes": true }
   }

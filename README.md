@@ -67,6 +67,14 @@ The APK command builds locally with JDK 17+, Android SDK Platform 36 and Build-T
 
 ## Verify
 
+The approved open-book artwork is in `design/app-icons/19-book-only-{light,black}.png`.
+Run `npm run build:icons` after replacing that artwork to regenerate the 1024px
+mobile icons, Android adaptive/themed layers, web header logo and favicons.
+iOS has light and black icon appearances. Android uses the light adaptive icon;
+supported launchers apply the user's palette to the monochrome themed layer.
+Native launcher icon changes require a new app build/install; Expo Go does not
+verify the installed app's launcher icons.
+
 ```sh
 npm run verify          # all TypeScript checks, core/API tests, web/API builds
 npm run build:mobile    # Android + iOS JavaScript bundles
