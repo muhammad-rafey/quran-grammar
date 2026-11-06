@@ -15,7 +15,7 @@ const sha = (value) => createHash('sha256').update(value).digest('hex');
 const pilot = JSON.parse(await readFile(join(ROOT, 'chunks', '18', '18-c01.json'), 'utf8'));
 const PRIVATE = 'PROTECTED_MODEL_NOTE_DO_NOT_EXPORT';
 
-async function fixture(context, count = 1) {
+async function fixture(context, count = 1, { mutateDuringValidation = false } = {}) {
   const work = await mkdtemp(join(tmpdir(), 'quran-grammar-review-export-test-'));
   context.after(() => rm(work, { recursive: true, force: true }));
   for (const path of ['guide/authoring-guide.md', 'libs/rules.json', 'scripts/validate_chunk.py', 'workflows/chunks.js']) {
@@ -23,6 +23,16 @@ async function fixture(context, count = 1) {
     await copyFile(join(ROOT, path), join(work, path));
   }
   for (const directory of ['meta', 'packets/18', 'chunks/18', 'runs/fixtures']) await mkdir(join(work, directory), { recursive: true });
+  for (const directory of ['libs/lexemes', 'libs/roots']) {
+    await mkdir(join(work, directory), { recursive: true });
+    await writeFile(join(work, directory, 'fixture.json'), '{"entries":[]}');
+  }
+  if (mutateDuringValidation) {
+    const validator = join(work, 'scripts', 'validate_chunk.py');
+    await writeFile(validator, 'from pathlib import Path as _FixturePath\n' +
+      '_FixturePath(__file__).resolve().parents[1].joinpath("libs/roots/fixture.json").write_text(\'{"entries":[],"fixture":"changed during validation"}\')\n' +
+      await readFile(validator, 'utf8'));
+  }
   // Exact Arabic/Urdu comes from the unchanged tracked pilot. Multiple records
   // repeat that same pilot only as isolated export-transport fixtures.
   const words = Object.fromEntries(pilot.words.map((word) => [word.id, {
@@ -88,6 +98,13 @@ test('complete current plan exports deterministic safe summaries and bare gen_au
   assert.equal(manifest.reviewedChunks, 2);
   assert.equal(manifest.scholarlyReview, 'pending');
   assert.equal(manifest.safeSummaryOnly, true);
+  const sourcePaths = ['guide/authoring-guide.md', 'workflows/chunks.js', 'scripts/validate_chunk.py',
+    'meta/plan.json', 'meta/overrides.json', 'libs/rules.json', 'libs/lexemes/fixture.json', 'libs/roots/fixture.json'].sort();
+  assert.deepEqual(Object.keys(manifest.sourceFilesSha256), sourcePaths);
+  for (const path of sourcePaths) assert.equal(manifest.sourceFilesSha256[path], sha(await readFile(join(setup.work, path))));
+  for (const excluded of ['meta/words.json', 'scripts/export_reviews.mjs', 'reports/chunk-results.json']) {
+    assert.equal(Object.hasOwn(manifest.sourceFilesSha256, excluded), false);
+  }
   assert.deepEqual(manifest.chunks.map((row) => row.chunk), setup.plan.map((spec) => spec.chunk));
   const manifestFile = join(setup.work, 'reports', 'chunk-review-manifest.json');
   const resultsFile = join(setup.work, 'reports', 'chunk-results.json');
@@ -108,6 +125,24 @@ test('complete current plan exports deterministic safe summaries and bare gen_au
   }
   await exportReviews(setup.options);
   assert.deepEqual(await Promise.all([readFile(manifestFile, 'utf8'), readFile(resultsFile, 'utf8')]), bytes);
+});
+
+test('tracked guide changes invalidate reviews even when reviewed chunk bytes are unchanged', async (context) => {
+  const setup = await fixture(context);
+  const file = join(setup.work, 'chunks', '18', '18-c01.json');
+  const before = await readFile(file);
+  const guide = join(setup.work, 'guide', 'authoring-guide.md');
+  await writeFile(guide, `${await readFile(guide, 'utf8')}\nFixture source clarification.\n`);
+  await assert.rejects(exportReviews(setup.options), /fingerprints are stale/);
+  assert.deepEqual(await readFile(file), before);
+  await assert.rejects(readFile(join(setup.work, 'reports', 'chunk-review-manifest.json')));
+});
+
+test('tracked library mutations during validation block both report writes even outside chunk inputs', async (context) => {
+  const setup = await fixture(context, 1, { mutateDuringValidation: true });
+  await assert.rejects(exportReviews(setup.options), /Tracked review sources changed during export/);
+  await assert.rejects(readFile(join(setup.work, 'reports', 'chunk-review-manifest.json')));
+  await assert.rejects(readFile(join(setup.work, 'reports', 'chunk-results.json')));
 });
 
 for (const [name, mutate, expected] of [

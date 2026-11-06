@@ -527,7 +527,7 @@
       "lemma": "غَدَاءٌ",
       "morphologyUrdu": "مذکر واحد اسم ہے، فتحہ سے منصوب اور مضاف ہے۔ متکلم جمع کی ضمیر سکون پر مبنی ہے اور اضافت سے اسم معرفہ ہے۔",
       "syntaxUrdu": "کھانا لا کر دینے کے امر کا دوسرا مفعول ہے۔ متصل ضمیر محلِ جر میں مضاف الیہ ہے، مفعول کی ضمیر نہیں۔",
-      "dictionaryUrdu": "دن کے ابتدائی حصے کے کھانے کو کہتے ہیں۔ یہاں سفر کے لیے ساتھ رکھا ہوا کھانا مراد ہے؛ آخری ہمزہ مادے کی واو سے بدلی ہوئی ہے۔",
+      "dictionaryUrdu": "دن کے ابتدائی حصے کے کھانے کو کہتے ہیں۔ یہاں سفر کے لیے ساتھ رکھا ہوا کھانا مراد ہے؛ آخری ہمزہ مادے کی واو سے بدلا ہوا ہے۔",
       "segments": [
         {
           "arabic": "غَدَآءَ",
@@ -687,6 +687,7 @@
       ],
       "ruleIds": [
         "object",
+        "verbal-noun",
         "accusative",
         "indefinite"
       ]
@@ -708,6 +709,10 @@
     {
       "ref": "18:61-62",
       "noteEnglish": "The packet provides Muyassar and Sa‘di for these ayahs, while Ibn Kathir is only a pointer to grouped commentary not included here. The Urdu summaries use the supplied substantive tafsir texts."
+    },
+    {
+      "ref": "18:61:1",
+      "noteEnglish": "The word-level i‘rab calls fa resumptive, whereas the ayah grammar note coordinates the clause with an implied udhkur. Retained the word-level resumptive analysis as a recognised alternative."
     }
   ]
 }

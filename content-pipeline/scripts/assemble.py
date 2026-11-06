@@ -66,6 +66,18 @@ for name in sorted(os.listdir(os.path.join(WORK, 'libs', 'roots'))):
         roots[e['root']] = e
 
 overrides = {k: v for k, v in json.load(open(os.path.join(meta, 'overrides.json'))).items() if not k.startswith('_')}
+# Keep raw metadata unchanged; apply only explicitly adjudicated app types.
+words_effective = {}
+for wid, word in words_meta.items():
+    fix = overrides.get(wid, {})
+    pos = fix.get('pos', word['pos'])
+    if pos not in ('noun', 'adjective', 'verb', 'particle', 'pronoun'):
+        raise ValueError(f'Invalid pos override for {wid}')
+    if pos == 'verb' and 'pos' in fix and (not isinstance(word.get('verb'), dict) or
+            not all(key in word['verb'] for key in ('form', 'aspect', 'passive', 'png')) or
+            not isinstance(fix.get('lexemeKey', word.get('lexemeKey')), str)):
+        raise ValueError(f'Verb pos override lacks morphology/paradigm for {wid}')
+    words_effective[wid] = dict(word, pos=pos)
 report = OrderedDict(errors=[], warnings=[], surahs=OrderedDict())
 outputs = []
 runtime_studies = []
@@ -102,7 +114,7 @@ for s in surahs:
     for spec in chunks:
         data = authored[spec['chunk']]
         for w in data['words']:
-            m = words_meta[w['id']]
+            m = words_effective[w['id']]
             entry = OrderedDict(
                 id=m['id'],
                 ayah=m['ayah'],
@@ -122,7 +134,7 @@ for s in surahs:
             words_out.append(entry)
             word_by_id[entry['id']] = entry
             if m['pos'] == 'verb':
-                lex_key = overrides.get(m['id'], {}).get('lexemeKey', m['lexemeKey'])
+                lex_key = overrides.get(m['id'], {}).get('lexemeKey', m.get('lexemeKey'))
                 lex = lexemes.get(lex_key)
                 if lex is None:
                     report['errors'].append(f"{m['id']}: missing lexeme {lex_key}")
@@ -202,7 +214,7 @@ for s in surahs:
         report['errors'].append(f'{s}: ayah numbering mismatch')
     lemma_variants = defaultdict(Counter)
     for w in words_out:
-        m = words_meta[w['id']]
+        m = words_effective[w['id']]
         stem = next((x for x in m['qacSegments'] if x['kind'] == 'STEM'), None)
         key = f"{stem.get('lemmaBuckwalter') if stem else ''}|{m['root']}|{m['pos']}"
         lemma_variants[key][w['lemma']] += 1
@@ -213,9 +225,9 @@ for s in surahs:
     }
     verb_lemma_mismatch = []
     for w in words_out:
-        m = words_meta[w['id']]
+        m = words_effective[w['id']]
         if m['pos'] == 'verb' and overrides.get(m['id'], {}).get('passive', m['verb']['passive']) is False:
-            lex = lexemes.get(overrides.get(m['id'], {}).get('lexemeKey', m['lexemeKey']))
+            lex = lexemes.get(overrides.get(m['id'], {}).get('lexemeKey', m.get('lexemeKey')))
             if lex is None:
                 continue  # Already recorded above; do not crash before reporting the error.
             past = lex['past']

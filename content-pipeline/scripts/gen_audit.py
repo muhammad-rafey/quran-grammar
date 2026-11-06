@@ -5,6 +5,7 @@ Usage: python3 -I gen_audit.py <work-dir> <repo-dir> [<chunk-results.json>]
 import json
 import hashlib
 import os
+import re
 import sys
 import tempfile
 from collections import Counter, defaultdict
@@ -30,6 +31,33 @@ def blocked(message):
 
 def nonnegative_integer(value):
     return type(value) is int and value >= 0
+
+
+LOCAL_PATH = re.compile(r"""(?<![\w:/\\])(?:
+    (?P<quote>["'`])(?P<quoted>(?:file://)?(?:~[/\\]|/(?:Users|home|root|tmp|private|var)/|[A-Za-z]:[\\/])[^"'`\n]+)(?P=quote)
+    |(?P<bare>(?:file://)?(?:~[/\\]|/(?:Users|home|root|tmp|private|var)/|[A-Za-z]:[\\/])[^\s<>"'`«»]+)
+)""", re.X)
+
+
+def public_audit_note(value):
+    """Omit local instruction/runtime locations, retaining source analysis and URLs."""
+    def redact(match):
+        path = match['quoted'] or match['bare']
+        core = path.rstrip('.,;:)]}۔،؛')
+        parts = re.split(r'[/\\]+', core.casefold())
+        instruction = (any(part in ('.codex', '.claude') for part in parts) or
+                       parts[-1] in ('agents.md', 'claude.md', 'global.md'))
+        runtime = any(parts[index:index + 2] in (['runs', 'codex'], ['runs', 'claude'])
+                      for index in range(len(parts) - 1))
+        temporary = re.match(r'^(?:file://)?/(?:tmp/|private/(?:tmp/|var/folders/)|var/folders/)', core)
+        runtime = runtime or (temporary and any(part.startswith(
+            ('quran-grammar-chunk-', 'codex-', 'claude-')) for part in parts))
+        if not instruction and not runtime:
+            return match[0]
+        quote = match['quote'] or ''
+        return quote + '[local instruction/runtime path omitted]' + path[len(core):] + quote
+
+    return LOCAL_PATH.sub(redact, ' '.join(value.split()))
 
 
 def validate_result(result, spec):
@@ -132,6 +160,19 @@ def chunk_file(spec):
     return os.path.join(WORK, 'chunks', str(spec['surah']), f"{spec['chunk']}.json")
 
 
+# Derive the same app types used by packets, validation and held assembly.
+words_effective = {}
+for wid, word in words.items():
+    fix = overrides.get(wid, {})
+    pos = fix.get('pos', word['pos'])
+    if pos not in ('noun', 'adjective', 'verb', 'particle', 'pronoun'):
+        blocked(f'{wid}: invalid effective word type override')
+    if pos == 'verb' and 'pos' in fix and (not isinstance(word.get('verb'), dict) or
+            not all(key in word['verb'] for key in ('form', 'aspect', 'passive', 'png')) or
+            not isinstance(fix.get('lexemeKey', word.get('lexemeKey')), str)):
+        blocked(f'{wid}: verb type override lacks morphology/paradigm')
+    words_effective[wid] = dict(word, pos=pos)
+
 results = load_results(RESULTS)
 # Count the reviewed library itself, including adjudicated splits; raw metadata
 # can deliberately retain the Corpus's merged or erroneous lookup identifiers.
@@ -149,7 +190,7 @@ outputs = {}
 for surah, name in NAMES.items():
     chunks = [p for p in plan if p['surah'] == surah]
     inv = json.load(open(os.path.join(WORK, 'inventory', f'inventory-{surah}.json')))
-    surah_words = [w for w in words.values() if w['surah'] == surah]
+    surah_words = [w for w in words_effective.values() if w['surah'] == surah]
     surah_ayahs = [a for a in ayahs.values() if a['surah'] == surah]
     per_ayah = [len(a['wordIds']) for a in sorted(surah_ayahs, key=lambda a: a['ayah'])]
     pos = Counter(w['pos'] for w in surah_words)
@@ -208,7 +249,7 @@ for surah, name in NAMES.items():
         'It was consulted locally for segmentation, part of speech, root, lemma, verb form, voice, mood and case; it is not bundled or redistributed.'
     )
     out(
-        '- **Word types and roots** are derived deterministically from the Corpus stem tags with the mapping that reproduces all 230 roots of the existing lessons. '
+        '- **Word types and roots** are derived deterministically from the Corpus stem tags with the mapping that reproduces root assignments for all 230 word occurrences of the existing lessons, including words with no root. '
         'A preposition with an attached pronoun (لَهُ، بِهِ، عَلَيْهِمْ) is a particle, following Surahs 1, 105 and 112. Words without a Corpus root, such as proper names, keep no root.'
     )
     out(
@@ -224,7 +265,7 @@ for surah, name in NAMES.items():
         'Translations consulted for meaning only: Saheeh International and Mufti Taqi Usmani. The Urdu wording is original and concise; it is not a translation of these works.'
     )
     out('')
-    out('Verb-form and passive-voice counts below apply the adjudicated occurrence overrides; they are not uncorrected Corpus tag counts.')
+    out('Word-type, verb-form and passive-voice counts below apply the adjudicated occurrence overrides; they are not uncorrected Corpus tag counts.')
     out('')
     out('| Measure | Count |')
     out('| --- | ---: |')
@@ -270,10 +311,10 @@ for surah, name in NAMES.items():
     if fixes:
         out('## Corrections to Corpus tags')
         out('')
-        out('These occurrences carry a Corpus 0.4 tag that contradicts the vocalised Uthmani word or its governing context. The lessons follow the corrected analysis; the Corpus data itself is unchanged.')
+        out('These occurrences carry an adjudicated correction or a documented source/analysis disagreement. The lessons follow the recorded contextual analysis; the raw Corpus data itself is unchanged.')
         out('')
         for wid, fix in sorted(fixes.items(), key=lambda kv: [int(x) for x in kv[0].split(':')]):
-            out(f"- **{wid}** {words[wid]['arabic']}: {fix['noteEnglish']}")
+            out(f"- **{wid}** {words[wid]['arabic']}: {public_audit_note(fix['noteEnglish'])}")
         out('')
     out('## Analysis decisions and cautions')
     out('')
@@ -282,8 +323,8 @@ for surah, name in NAMES.items():
     any_note = False
     for spec in chunks:
         for note in notes.get(spec['chunk'], []):
-            text = ' '.join(note['noteEnglish'].split())
-            out(f"- **{note['ref']}:** {text}")
+            text = public_audit_note(note['noteEnglish'])
+            out(f"- **{public_audit_note(note['ref'])}:** {text}")
             any_note = True
     if not any_note:
         out('- No alternative analyses were recorded.')

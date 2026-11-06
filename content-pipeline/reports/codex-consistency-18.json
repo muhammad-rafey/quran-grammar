@@ -1,0 +1,4265 @@
+{
+  "report": "codex-consistency-18",
+  "date": "2026-11-06",
+  "reviewStatus": "independent AI lemma consistency adjudication complete; report only; recommendations not applied",
+  "scope": {
+    "surah": 18,
+    "chunks": 50,
+    "ayahs": 110,
+    "words": 1579,
+    "allWordLemmaFieldsRead": 1579,
+    "verbsIndividuallyChecked": 437,
+    "effectiveActiveVerbs": 423,
+    "effectivePassiveVerbs": 14,
+    "nonverbsIndividuallyChecked": 1142,
+    "multiVariantSourceGroupsReviewed": 78,
+    "verbCitationGroupsRead": 182,
+    "nonverbCitationGroupsRead": 493,
+    "finalImportedChunksIncluded": [
+      "18-c45",
+      "18-c46",
+      "18-c47",
+      "18-c48",
+      "18-c49",
+      "18-c50"
+    ],
+    "assembledDraftCompared": "content-pipeline/drafts/surah-18.json"
+  },
+  "method": "Read all 1,579 occurrence lemmas in grouped views that enumerated every occurrence ID and Quranic form for each actual authored lemma; inspect every active verb against its effective reviewed paradigm using NFC, every passive active-citation pair with full occurrence/library notes, and all 78 cross-chunk variant groups. No code rewrites or model CLI calls were used.",
+  "scholarlyReview": "Not performed. All new lessons remain held for actual scholarly review.",
+  "adjudications": [
+    {
+      "id": "directional-dhat-canonical-feminine",
+      "severity": "minor",
+      "category": "unjustified_identical_repeated_context_alternation",
+      "conclusion": "Use ذَاتٌ for all four identical directional feminine nouns at18:17:8/13 and18:18:6/8. ذُو remains a legitimate broader dictionary/source headword; this is a narrow repeated-context citation choice, not a claim that the raw QAC lemma is false. Keep masculine possessor/name uses as ذُو. No morphology, syntax, Arabic or source metadata replacement is required.",
+      "primaryEvidence": [
+        {
+          "url": "https://corpus.quran.com/grammar.jsp?chapter=18&verse=17",
+          "excerpt": "«ذات» ظرف مكان متعلق بالفعل",
+          "summary": "The primary verse i‘rab treats this as directional dhat, not a five-noun possessor with letter-based inflection."
+        },
+        {
+          "local": "content-pipeline/chunks/18/18-c07.json and18-c08.json",
+          "summary": "All four words explicitly teach feminine direction/side and visible fatha; current c08 citations already preserve that feminine lexical base."
+        }
+      ],
+      "existingMatchingOccurrences": [
+        {
+          "wordId": "18:18:6",
+          "lemma": "ذَاتٌ"
+        },
+        {
+          "wordId": "18:18:8",
+          "lemma": "ذَاتٌ"
+        }
+      ],
+      "doNotRewrite": [
+        {
+          "wordId": "18:58:3",
+          "lemma": "ذُو",
+          "reason": "Masculine possessor ذو الرحمة."
+        },
+        {
+          "wordId": "18:83:3",
+          "lemma": "ذُو",
+          "reason": "Masculine Dhu l-Qarnayn title in oblique occurrence form."
+        }
+      ]
+    }
+  ],
+  "exactMinimalLemmaReplacements": [
+    {
+      "wordId": "18:17:8",
+      "file": "content-pipeline/chunks/18/18-c07.json",
+      "field": "lemma",
+      "from": "ذُو",
+      "to": "ذَاتٌ",
+      "category": "canonical_consistency_in_identical_context_not_false_source_headword",
+      "reason": "Match the retained feminine directional base used in the same ذَاتَ اليمين/الشمال constructions at18:18:6/8; both occurrences already explicitly teach singular feminine جانب with regular visible fatha."
+    },
+    {
+      "wordId": "18:17:13",
+      "file": "content-pipeline/chunks/18/18-c07.json",
+      "field": "lemma",
+      "from": "ذُو",
+      "to": "ذَاتٌ",
+      "category": "canonical_consistency_in_identical_context_not_false_source_headword",
+      "reason": "Match the retained feminine directional base used in the same ذَاتَ اليمين/الشمال constructions at18:18:6/8; both occurrences already explicitly teach singular feminine جانب with regular visible fatha."
+    }
+  ],
+  "affectedChunks": [
+    "18-c07"
+  ],
+  "additionalDefiniteWrongLexemesFound": [],
+  "verbResults": {
+    "active423": "All match the reviewed active past citation after NFC; no active citation replacements.",
+    "passive14": "All correctly cite the active lexical verb while teaching the supplied passive paradigm; no replacements.",
+    "passiveOccurrenceAdjudications": [
+      {
+        "wordId": "18:18:20",
+        "arabic": "وَلَمُلِئْتَ",
+        "authoredLemma": "مَلَأَ",
+        "libraryPast": "مُلِئَ",
+        "lexemeKey": "muli}ato|I|PASS",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      },
+      {
+        "wordId": "18:27:3",
+        "arabic": "أُوحِىَ",
+        "authoredLemma": "أَوْحَى",
+        "libraryPast": "أُوحِيَ",
+        "lexemeKey": ">awoHaY`^|IV|PASS",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      },
+      {
+        "wordId": "18:29:20",
+        "arabic": "يُغَاثُوا۟",
+        "authoredLemma": "أَغَاثَ",
+        "libraryPast": "أُغِيثَ",
+        "lexemeKey": "yugaAvu|IV|ACT",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      },
+      {
+        "wordId": "18:31:9",
+        "arabic": "يُحَلَّوْنَ",
+        "authoredLemma": "حَلَّى",
+        "libraryPast": "حُلِّيَ",
+        "lexemeKey": "Hul~u|II|PASS",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      },
+      {
+        "wordId": "18:36:6",
+        "arabic": "رُّدِدتُّ",
+        "authoredLemma": "رَدَّ",
+        "libraryPast": "رُدَّ",
+        "lexemeKey": "rad~a|I|PASS",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      },
+      {
+        "wordId": "18:42:1",
+        "arabic": "وَأُحِيطَ",
+        "authoredLemma": "أَحَاطَ",
+        "libraryPast": "أُحِيطَ",
+        "lexemeKey": ">aHaATa|IV|PASS",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      },
+      {
+        "wordId": "18:48:1",
+        "arabic": "وَعُرِضُوا۟",
+        "authoredLemma": "عَرَضَ",
+        "libraryPast": "عُرِضَ",
+        "lexemeKey": "EaraDa|I|PASS",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      },
+      {
+        "wordId": "18:49:1",
+        "arabic": "وَوُضِعَ",
+        "authoredLemma": "وَضَعَ",
+        "libraryPast": "وُضِعَ",
+        "lexemeKey": "waDaEa|I|PASS",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      },
+      {
+        "wordId": "18:56:17",
+        "arabic": "أُنذِرُوا۟",
+        "authoredLemma": "أَنْذَرَ",
+        "libraryPast": "أُنْذِرَ",
+        "lexemeKey": ">an*ara|IV|PASS",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      },
+      {
+        "wordId": "18:57:4",
+        "arabic": "ذُكِّرَ",
+        "authoredLemma": "ذَكَّرَ",
+        "libraryPast": "ذُكِّرَ",
+        "lexemeKey": "*uk~ira|II|PASS",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      },
+      {
+        "wordId": "18:66:10",
+        "arabic": "عُلِّمْتَ",
+        "authoredLemma": "عَلَّمَ",
+        "libraryPast": "عُلِّمَ",
+        "lexemeKey": "Eal~ama|II|PASS",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      },
+      {
+        "wordId": "18:87:8",
+        "arabic": "يُرَدُّ",
+        "authoredLemma": "رَدَّ",
+        "libraryPast": "رُدَّ",
+        "lexemeKey": "rad~a|I|PASS",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      },
+      {
+        "wordId": "18:99:7",
+        "arabic": "وَنُفِخَ",
+        "authoredLemma": "نَفَخَ",
+        "libraryPast": "نُفِخَ",
+        "lexemeKey": "nafaxa|I|PASS",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      },
+      {
+        "wordId": "18:110:6",
+        "arabic": "يُوحَىٰٓ",
+        "authoredLemma": "أَوْحَى",
+        "libraryPast": "أُوحِيَ",
+        "lexemeKey": ">awoHaY`^|IV|PASS",
+        "disposition": "Accepted active lexical citation for passive occurrence; full occurrence note and paradigm note explicitly identify the active/passive pair."
+      }
+    ]
+  },
+  "allVariantGroupDispositions": [
+    {
+      "qacLemma": "ٱللَّه",
+      "root": "أ ل ه",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "اللَّه": [
+          "18:1:2",
+          "18:4:5",
+          "18:38:3",
+          "18:39:8",
+          "18:39:12",
+          "18:44:3",
+          "18:45:19",
+          "18:69:5"
+        ],
+        "اللَّهُ": [
+          "18:15:17",
+          "18:16:6",
+          "18:17:22",
+          "18:17:25",
+          "18:21:7",
+          "18:26:2",
+          "18:43:8"
+        ],
+        "ٱللَّه": [
+          "18:24:4"
+        ]
+      },
+      "disposition": "Accept conventional versus Uthmani orthography, dagger-alif/wasla and valid final citation vowels; expanded attached-pronoun citation where present does not change lexical identity."
+    },
+    {
+      "qacLemma": "ٱلَّذِى",
+      "root": null,
+      "effectivePosAtReview": "pronoun",
+      "variants": {
+        "الَّذِي": [
+          "18:1:3",
+          "18:2:9",
+          "18:4:2",
+          "18:21:26",
+          "18:28:4",
+          "18:37:7",
+          "18:52:5",
+          "18:56:8",
+          "18:101:1",
+          "18:102:2",
+          "18:104:1",
+          "18:105:2",
+          "18:107:2"
+        ],
+        "ٱلَّذِي": [
+          "18:30:2"
+        ]
+      },
+      "disposition": "Accept conventional versus Uthmani orthography, dagger-alif/wasla and valid final citation vowels; expanded attached-pronoun citation where present does not change lexical identity."
+    },
+    {
+      "qacLemma": "عَلَىٰ",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "عَلَى": [
+          "18:1:5",
+          "18:6:4",
+          "18:7:4",
+          "18:8:4",
+          "18:11:2",
+          "18:13:3",
+          "18:14:2",
+          "18:15:16",
+          "18:31:23",
+          "18:45:20",
+          "18:48:2",
+          "18:57:15",
+          "18:64:7",
+          "18:66:6",
+          "18:68:3",
+          "18:77:23",
+          "18:78:11",
+          "18:90:8",
+          "18:94:14",
+          "18:96:18"
+        ],
+        "عَلَى + هُمْ": [
+          "18:15:9"
+        ],
+        "عَلَىٰ": [
+          "18:18:16",
+          "18:21:3",
+          "18:21:20",
+          "18:21:28",
+          "18:21:31",
+          "18:40:9",
+          "18:42:6",
+          "18:42:12",
+          "18:82:34",
+          "18:83:7"
+        ],
+        "عَلَىٰ + كُمْ": [
+          "18:20:4"
+        ]
+      },
+      "disposition": "Accept conventional versus Uthmani orthography, dagger-alif/wasla and valid final citation vowels; expanded attached-pronoun citation where present does not change lexical identity."
+    },
+    {
+      "qacLemma": "عَبْد",
+      "root": "ع ب د",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "عَبْد": [
+          "18:1:6"
+        ],
+        "عَبْدٌ": [
+          "18:65:2",
+          "18:65:4",
+          "18:102:6"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "كِتَٰب",
+      "root": "ك ت ب",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "كِتَاب": [
+          "18:1:7"
+        ],
+        "كِتَابٌ": [
+          "18:27:6",
+          "18:49:2",
+          "18:49:12"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "لَم",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "لَمْ": [
+          "18:1:8",
+          "18:6:7",
+          "18:33:5",
+          "18:42:16",
+          "18:43:1",
+          "18:47:8",
+          "18:52:8",
+          "18:53:7",
+          "18:68:5",
+          "18:78:9",
+          "18:82:32",
+          "18:90:10"
+        ],
+        "أَ + لَمْ": [
+          "18:72:2",
+          "18:75:2"
+        ]
+      },
+      "disposition": "Accept canonical head citation versus expanded fused-particle/pronoun construction, with the actual occurrence context distinguishing each. The raw ma family includes source-type disagreements separately adjudicated; those do not require a lemma rewrite."
+    },
+    {
+      "qacLemma": "",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "لِ": [
+          "18:1:10",
+          "18:2:13",
+          "18:16:11",
+          "18:16:16",
+          "18:17:32",
+          "18:31:2",
+          "18:32:2",
+          "18:34:2",
+          "18:37:2",
+          "18:43:3",
+          "18:45:2",
+          "18:48:15",
+          "18:52:10",
+          "18:84:3",
+          "18:94:12",
+          "18:97:7",
+          "18:107:7"
+        ],
+        "لِ + هُمْ": [
+          "18:5:2",
+          "18:26:14",
+          "18:58:10",
+          "18:58:13",
+          "18:90:12",
+          "18:105:11"
+        ],
+        "بِ + هُ": [
+          "18:5:3"
+        ],
+        "لِ + هَا": [
+          "18:7:7"
+        ],
+        "لِ + نَا": [
+          "18:10:13"
+        ],
+        "بِ": [
+          "18:19:37",
+          "18:21:24",
+          "18:45:11",
+          "18:56:12"
+        ],
+        "لِ + هُوَ": [
+          "18:26:6",
+          "18:41:7",
+          "18:88:6",
+          "18:88:10"
+        ],
+        "بِ + هُوَ": [
+          "18:26:11"
+        ],
+        "بِ + هُمْ": [
+          "18:29:16"
+        ],
+        "لِ + كُمْ": [
+          "18:50:22"
+        ],
+        "لِـ + هُوَ": [
+          "18:66:2"
+        ],
+        "بِـ + هُوَ": [
+          "18:68:7"
+        ],
+        "لِ + كَ": [
+          "18:69:9",
+          "18:70:10",
+          "18:75:4"
+        ],
+        "لِ + هُمَا": [
+          "18:82:11"
+        ]
+      },
+      "disposition": "Accept: missing raw stem lemma groups unlike preposition/pronoun constructions. Particle head only versus expanded particle+pronoun citations, attached versus standalone pronoun citation, and tatweel are valid citation conventions; no false same-lexeme inference."
+    },
+    {
+      "qacLemma": "مِن",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "مِنْ": [
+          "18:2:5",
+          "18:5:4",
+          "18:5:11",
+          "18:9:8",
+          "18:10:9",
+          "18:10:14",
+          "18:14:13",
+          "18:15:4",
+          "18:16:13",
+          "18:16:17",
+          "18:17:18",
+          "18:17:20",
+          "18:18:18",
+          "18:18:21",
+          "18:19:7",
+          "18:19:33",
+          "18:22:32",
+          "18:24:15",
+          "18:26:15",
+          "18:26:17",
+          "18:27:5",
+          "18:27:13",
+          "18:29:3",
+          "18:31:6",
+          "18:31:11",
+          "18:31:13",
+          "18:31:18",
+          "18:32:8",
+          "18:33:7",
+          "18:34:10",
+          "18:36:11",
+          "18:37:9",
+          "18:37:12",
+          "18:39:17",
+          "18:40:6",
+          "18:40:11",
+          "18:43:6",
+          "18:45:8",
+          "18:47:10",
+          "18:50:10",
+          "18:50:19",
+          "18:54:7",
+          "18:58:17",
+          "18:62:9",
+          "18:65:3",
+          "18:65:7",
+          "18:65:10",
+          "18:73:8",
+          "18:76:11",
+          "18:81:6",
+          "18:82:23",
+          "18:83:8",
+          "18:84:7",
+          "18:88:11",
+          "18:90:13",
+          "18:93:7",
+          "18:98:4",
+          "18:102:7"
+        ],
+        "مِنْ + مَنْ": [
+          "18:15:14",
+          "18:57:3"
+        ],
+        "مِنْ + مَا": [
+          "18:49:6",
+          "18:66:9"
+        ],
+        "مِنْ + هُ": [
+          "18:70:11"
+        ]
+      },
+      "disposition": "Accept canonical head citation versus expanded fused-particle/pronoun construction, with the actual occurrence context distinguishing each. The raw ma family includes source-type disagreements separately adjudicated; those do not require a lemma rewrite."
+    },
+    {
+      "qacLemma": "صَّٰلِحَٰت",
+      "root": "ص ل ح",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "صَالِحَة": [
+          "18:2:11",
+          "18:46:7",
+          "18:107:5"
+        ],
+        "صَالِحَةٌ": [
+          "18:30:5"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "أَنّ",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "أَنَّ": [
+          "18:2:12",
+          "18:9:3",
+          "18:21:5",
+          "18:21:9",
+          "18:53:5"
+        ],
+        "أَنَّ + هُمْ": [
+          "18:104:9"
+        ],
+        "أَنَّمَا": [
+          "18:110:8"
+        ]
+      },
+      "disposition": "Accept canonical head citation versus expanded fused-particle/pronoun construction, with the actual occurrence context distinguishing each. The raw ma family includes source-type disagreements separately adjudicated; those do not require a lemma rewrite."
+    },
+    {
+      "qacLemma": "أَجْر",
+      "root": "أ ج ر",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "أَجْر": [
+          "18:2:14"
+        ],
+        "أَجْرٌ": [
+          "18:30:9",
+          "18:77:24"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "أَبَدًا",
+      "root": "أ ب د",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "أَبَد": [
+          "18:3:3"
+        ],
+        "أَبَدٌ": [
+          "18:20:13",
+          "18:35:12",
+          "18:57:30"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "مَا",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "مَا": [
+          "18:5:1",
+          "18:26:13",
+          "18:35:7",
+          "18:36:1",
+          "18:43:9",
+          "18:51:1",
+          "18:51:9",
+          "18:55:1",
+          "18:56:1",
+          "18:63:10",
+          "18:82:25",
+          "18:97:1",
+          "18:97:5"
+        ],
+        "كَ + مَا": [
+          "18:48:7"
+        ]
+      },
+      "disposition": "Accept canonical head citation versus expanded fused-particle/pronoun construction, with the actual occurrence context distinguishing each. The raw ma family includes source-type disagreements separately adjudicated; those do not require a lemma rewrite."
+    },
+    {
+      "qacLemma": "لَا",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "وَ + لَا": [
+          "18:5:6",
+          "18:26:19",
+          "18:49:16",
+          "18:49:24",
+          "18:69:7",
+          "18:73:6"
+        ],
+        "لَا": [
+          "18:19:35",
+          "18:21:11",
+          "18:22:23",
+          "18:22:29",
+          "18:23:1",
+          "18:27:8",
+          "18:28:11",
+          "18:28:19",
+          "18:30:7",
+          "18:38:5",
+          "18:39:9",
+          "18:49:13",
+          "18:51:6",
+          "18:60:5",
+          "18:73:2",
+          "18:93:10",
+          "18:101:9",
+          "18:108:3",
+          "18:110:20"
+        ],
+        "فَ + لَا": [
+          "18:70:4",
+          "18:76:7",
+          "18:105:9"
+        ]
+      },
+      "disposition": "Accept canonical head citation versus expanded fused-particle/pronoun construction, with the actual occurrence context distinguishing each. The raw ma family includes source-type disagreements separately adjudicated; those do not require a lemma rewrite."
+    },
+    {
+      "qacLemma": "إِن",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "إِنْ": [
+          "18:5:13",
+          "18:6:6",
+          "18:20:2",
+          "18:29:18",
+          "18:36:5",
+          "18:39:13",
+          "18:57:23",
+          "18:69:3",
+          "18:76:2"
+        ],
+        "فَ + إِنْ": [
+          "18:70:2"
+        ]
+      },
+      "disposition": "Accept canonical head citation versus expanded fused-particle/pronoun construction, with the actual occurrence context distinguishing each. The raw ma family includes source-type disagreements separately adjudicated; those do not require a lemma rewrite."
+    },
+    {
+      "qacLemma": "نَفْس",
+      "root": "ن ف س",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "نَفْسٌ": [
+          "18:6:3",
+          "18:28:2",
+          "18:35:5",
+          "18:51:8"
+        ],
+        "نَفْس": [
+          "18:74:9",
+          "18:74:12"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "أَثَر",
+      "root": "أ ث ر",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "أَثَرٌ": [
+          "18:6:5"
+        ],
+        "أَثَر": [
+          "18:64:8"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "هَٰذَا",
+      "root": null,
+      "effectivePosAtReview": "pronoun",
+      "variants": {
+        "هَٰذَا": [
+          "18:6:9",
+          "18:15:1",
+          "18:24:16",
+          "18:49:11",
+          "18:54:4",
+          "18:62:11",
+          "18:78:2",
+          "18:98:2"
+        ],
+        "هَٰذِهِ": [
+          "18:19:24"
+        ],
+        "هَذِهِ": [
+          "18:35:11"
+        ]
+      },
+      "disposition": "Accept contextually appropriate gender/number/deictic citation variants. QAC groups unlike surface demonstratives under one broad lemma; do not force masculine across feminine contexts."
+    },
+    {
+      "qacLemma": "إِنّ",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "إِنَّ + نَا": [
+          "18:7:1",
+          "18:8:1",
+          "18:29:11",
+          "18:30:6",
+          "18:57:13",
+          "18:84:1",
+          "18:102:10"
+        ],
+        "إِنَّ + هُمْ": [
+          "18:13:6",
+          "18:20:1"
+        ],
+        "إِنَّ + ي": [
+          "18:23:4"
+        ],
+        "إِنَّ": [
+          "18:30:1",
+          "18:63:7",
+          "18:94:4",
+          "18:107:1"
+        ],
+        "إِنَّ + أَنْتَ": [
+          "18:67:2"
+        ],
+        "إِنَّ + كَ": [
+          "18:72:4",
+          "18:75:5"
+        ],
+        "إِنَّمَا": [
+          "18:110:2"
+        ]
+      },
+      "disposition": "Accept canonical head citation versus expanded fused-particle/pronoun construction, with the actual occurrence context distinguishing each. The raw ma family includes source-type disagreements separately adjudicated; those do not require a lemma rewrite."
+    },
+    {
+      "qacLemma": "مَا",
+      "root": null,
+      "effectivePosAtReview": "pronoun",
+      "variants": {
+        "مَا": [
+          "18:7:3",
+          "18:8:3",
+          "18:16:3",
+          "18:19:19",
+          "18:22:19",
+          "18:27:2",
+          "18:39:6",
+          "18:42:7",
+          "18:49:21",
+          "18:56:16",
+          "18:57:10",
+          "18:58:7",
+          "18:64:3",
+          "18:68:4",
+          "18:78:8",
+          "18:82:31",
+          "18:91:4",
+          "18:95:2"
+        ],
+        "لِ + مَا": [
+          "18:12:7"
+        ],
+        "بِ + مَا": [
+          "18:26:4",
+          "18:73:4",
+          "18:106:4"
+        ]
+      },
+      "disposition": "Accept canonical head citation versus expanded fused-particle/pronoun construction, with the actual occurrence context distinguishing each. The raw ma family includes source-type disagreements separately adjudicated; those do not require a lemma rewrite."
+    },
+    {
+      "qacLemma": "أَرْض",
+      "root": "أ ر ض",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "أَرْضٌ": [
+          "18:7:5",
+          "18:14:10",
+          "18:26:9",
+          "18:51:5",
+          "18:84:5"
+        ],
+        "أَرْض": [
+          "18:45:13",
+          "18:47:5",
+          "18:94:9"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "زِينَة",
+      "root": "ز ي ن",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "زِينَةٌ": [
+          "18:7:6",
+          "18:28:16"
+        ],
+        "زِينَة": [
+          "18:46:3"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "عَمَل",
+      "root": "ع م ل",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "عَمَلٌ": [
+          "18:7:11",
+          "18:30:12",
+          "18:103:5",
+          "18:105:8"
+        ],
+        "عَمَل": [
+          "18:110:18"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "كَهْف",
+      "root": "ك ه ف",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "كَهْف": [
+          "18:9:5",
+          "18:10:5",
+          "18:25:3"
+        ],
+        "كَهْفٌ": [
+          "18:11:5",
+          "18:16:9",
+          "18:17:7"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "ءَايَة",
+      "root": "أ ي ي",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "آيَة": [
+          "18:9:9",
+          "18:56:15"
+        ],
+        "آيَةٌ": [
+          "18:17:21",
+          "18:57:5",
+          "18:105:4",
+          "18:106:7"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "إِلَىٰ",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "إِلَى": [
+          "18:10:4",
+          "18:19:25",
+          "18:36:7",
+          "18:57:25",
+          "18:63:5",
+          "18:110:7"
+        ],
+        "إِلَىٰ": [
+          "18:16:8",
+          "18:87:9"
+        ],
+        "إِلَى + أَنْتَ": [
+          "18:27:4"
+        ]
+      },
+      "disposition": "Accept conventional versus Uthmani orthography, dagger-alif/wasla and valid final citation vowels; expanded attached-pronoun citation where present does not change lexical identity."
+    },
+    {
+      "qacLemma": "رَبّ",
+      "root": "ر ب ب",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "رَبّ": [
+          "18:10:7",
+          "18:24:6",
+          "18:24:13",
+          "18:38:4",
+          "18:38:7",
+          "18:40:2",
+          "18:46:10",
+          "18:48:3",
+          "18:55:10",
+          "18:58:1",
+          "18:81:4",
+          "18:82:16",
+          "18:82:24",
+          "18:87:10",
+          "18:95:5",
+          "18:109:7",
+          "18:109:14",
+          "18:110:16",
+          "18:110:23"
+        ],
+        "رَبٌّ": [
+          "18:13:9",
+          "18:14:7",
+          "18:14:8",
+          "18:16:12",
+          "18:19:17",
+          "18:21:22",
+          "18:22:16",
+          "18:27:7",
+          "18:28:6",
+          "18:29:4",
+          "18:36:8",
+          "18:42:18",
+          "18:49:26",
+          "18:50:15",
+          "18:57:6",
+          "18:98:5",
+          "18:98:9",
+          "18:98:14",
+          "18:105:5"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "رَحْمَة",
+      "root": "ر ح م",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "رَحْمَة": [
+          "18:10:11",
+          "18:58:4",
+          "18:82:22"
+        ],
+        "رَحْمَةٌ": [
+          "18:16:14",
+          "18:65:6",
+          "18:98:3"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "أَمْر",
+      "root": "أ م ر",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "أَمْر": [
+          "18:10:15",
+          "18:69:10",
+          "18:73:9",
+          "18:82:28",
+          "18:88:12"
+        ],
+        "أَمْرٌ": [
+          "18:16:18",
+          "18:21:17",
+          "18:21:29",
+          "18:28:29",
+          "18:50:14"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "سِنِين",
+      "root": "س ن و",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "سَنَةٌ": [
+          "18:11:6"
+        ],
+        "سَنَة": [
+          "18:25:6"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "",
+      "root": null,
+      "effectivePosAtReview": "pronoun",
+      "variants": {
+        "نَحْنُ": [
+          "18:13:1"
+        ],
+        "هُمْ": [
+          "18:17:15",
+          "18:18:3",
+          "18:50:21"
+        ],
+        "هُوَ": [
+          "18:17:26",
+          "18:34:6",
+          "18:35:3",
+          "18:37:4",
+          "18:38:2",
+          "18:44:5"
+        ],
+        "أَنَا": [
+          "18:34:8",
+          "18:39:15",
+          "18:110:3"
+        ],
+        "هِيَ": [
+          "18:42:10"
+        ],
+        "وَ + هُمْ": [
+          "18:104:7"
+        ]
+      },
+      "disposition": "Accept: missing raw stem lemma groups unlike preposition/pronoun constructions. Particle head only versus expanded particle+pronoun citations, attached versus standalone pronoun citation, and tatweel are valid citation conventions; no false same-lexeme inference."
+    },
+    {
+      "qacLemma": "حَقّ",
+      "root": "ح ق ق",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "حَقٌّ": [
+          "18:13:5",
+          "18:21:8",
+          "18:29:2",
+          "18:98:15"
+        ],
+        "حَقّ": [
+          "18:44:4",
+          "18:56:13"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "سَمَآء",
+      "root": "س م و",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "سَمَاءٌ": [
+          "18:14:9",
+          "18:26:8",
+          "18:51:4"
+        ],
+        "سَمَاء": [
+          "18:40:12",
+          "18:45:9"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "لَن",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "لَنْ": [
+          "18:14:11",
+          "18:17:30",
+          "18:41:5",
+          "18:57:27",
+          "18:58:15",
+          "18:67:3",
+          "18:72:5",
+          "18:75:6"
+        ],
+        "وَ + لَنْ": [
+          "18:20:10",
+          "18:27:11"
+        ]
+      },
+      "disposition": "Accept canonical head citation versus expanded fused-particle/pronoun construction, with the actual occurrence context distinguishing each. The raw ma family includes source-type disagreements separately adjudicated; those do not require a lemma rewrite."
+    },
+    {
+      "qacLemma": "دُون",
+      "root": "د و ن",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "دُونٌ": [
+          "18:14:14",
+          "18:15:5",
+          "18:102:8"
+        ],
+        "دُونَ": [
+          "18:26:16",
+          "18:27:14",
+          "18:43:7"
+        ],
+        "دُون": [
+          "18:50:20",
+          "18:58:18",
+          "18:90:14",
+          "18:93:8"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "إِلَٰه",
+      "root": "أ ل ه",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "إِلَٰهٌ": [
+          "18:14:15",
+          "18:15:6"
+        ],
+        "إِلَٰه": [
+          "18:110:9",
+          "18:110:10"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "قَد",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "لَ + قَدْ": [
+          "18:14:16",
+          "18:48:5",
+          "18:62:7",
+          "18:71:12",
+          "18:74:13"
+        ],
+        "وَ + لَ + قَدْ": [
+          "18:54:1"
+        ],
+        "قَدْ": [
+          "18:76:9",
+          "18:91:2"
+        ]
+      },
+      "disposition": "Accept canonical head citation versus expanded fused-particle/pronoun construction, with the actual occurrence context distinguishing each. The raw ma family includes source-type disagreements separately adjudicated; those do not require a lemma rewrite."
+    },
+    {
+      "qacLemma": "قَوْم",
+      "root": "ق و م",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "قَوْمٌ": [
+          "18:15:2"
+        ],
+        "قَوْم": [
+          "18:86:13",
+          "18:90:9",
+          "18:93:9"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "شَمْس",
+      "root": "ش م س",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "شَمْسٌ": [
+          "18:17:2"
+        ],
+        "شَمْس": [
+          "18:86:5",
+          "18:90:5"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "ذُو",
+      "root": null,
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "ذُو": [
+          "18:17:8",
+          "18:17:13",
+          "18:58:3",
+          "18:83:3"
+        ],
+        "ذَاتٌ": [
+          "18:18:6",
+          "18:18:8"
+        ]
+      },
+      "disposition": "Two directional citations at18:17:8/13 should use ذَاتٌ like the identical directional constructions18:18:6/8. Keep masculine possessor/name citations18:58:3/83:3 as ذُو; no global rewrite of the QAC lemma family."
+    },
+    {
+      "qacLemma": "ذَٰلِك",
+      "root": null,
+      "effectivePosAtReview": "pronoun",
+      "variants": {
+        "ذَٰلِكَ": [
+          "18:17:19",
+          "18:19:1",
+          "18:21:1",
+          "18:23:6",
+          "18:64:2",
+          "18:82:29",
+          "18:91:1",
+          "18:106:1"
+        ],
+        "تِلْكَ": [
+          "18:59:1"
+        ]
+      },
+      "disposition": "Accept contextually appropriate gender/number/deictic citation variants. QAC groups unlike surface demonstratives under one broad lemma; do not force masculine across feminine contexts."
+    },
+    {
+      "qacLemma": "بَيْن",
+      "root": "ب ي ن",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "بَيْنَ": [
+          "18:19:4",
+          "18:21:16",
+          "18:32:13"
+        ],
+        "بَيْن": [
+          "18:52:12",
+          "18:93:4",
+          "18:94:17",
+          "18:94:18",
+          "18:95:10",
+          "18:95:11",
+          "18:96:7"
+        ],
+        "بَيْنٌ": [
+          "18:61:4",
+          "18:78:4",
+          "18:78:5"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "يَوْم",
+      "root": "ي و م",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "يَوْمٌ": [
+          "18:19:12",
+          "18:19:15",
+          "18:105:12"
+        ],
+        "يَوْم": [
+          "18:47:1",
+          "18:52:1"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "أَحَد",
+      "root": "أ ح د",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "أَحَدٌ": [
+          "18:19:22",
+          "18:19:38",
+          "18:22:33",
+          "18:26:23",
+          "18:32:6",
+          "18:42:19",
+          "18:49:27"
+        ],
+        "أَحَد": [
+          "18:38:8",
+          "18:47:11",
+          "18:110:24"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "مَدِينَة",
+      "root": "م د ن",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "مَدِينَةٌ": [
+          "18:19:26"
+        ],
+        "مَدِينَة": [
+          "18:82:7"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "شَىْء",
+      "root": "ش ي أ",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "شَيْء": [
+          "18:23:3",
+          "18:45:22",
+          "18:54:13",
+          "18:70:7",
+          "18:71:14",
+          "18:74:15",
+          "18:76:5"
+        ],
+        "شَيْءٌ": [
+          "18:33:8",
+          "18:84:9"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "أَن",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "أَنْ": [
+          "18:24:2",
+          "18:24:11",
+          "18:35:9",
+          "18:40:3",
+          "18:55:4",
+          "18:55:12",
+          "18:57:18",
+          "18:63:14",
+          "18:66:7",
+          "18:77:10",
+          "18:77:16",
+          "18:79:9",
+          "18:80:7",
+          "18:81:2",
+          "18:82:17",
+          "18:86:18",
+          "18:86:21",
+          "18:94:15",
+          "18:97:3",
+          "18:102:4",
+          "18:109:11"
+        ],
+        "أَنْ + لَنْ": [
+          "18:48:13"
+        ]
+      },
+      "disposition": "Accept canonical head citation versus expanded fused-particle/pronoun construction, with the actual occurrence context distinguishing each. The raw ma family includes source-type disagreements separately adjudicated; those do not require a lemma rewrite."
+    },
+    {
+      "qacLemma": "كَلِمَٰت",
+      "root": "ك ل م",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "كَلِمَةٌ": [
+          "18:27:10"
+        ],
+        "كَلِمَة": [
+          "18:109:6",
+          "18:109:13"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "عَيْن",
+      "root": "ع ي ن",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "عَيْنٌ": [
+          "18:28:13",
+          "18:101:3"
+        ],
+        "عَيْن": [
+          "18:86:9"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "حَيَوٰة",
+      "root": "ح ي ي",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "حَيَاةٌ": [
+          "18:28:17",
+          "18:104:5"
+        ],
+        "حَيَاة": [
+          "18:45:4",
+          "18:46:4"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "ذِكْر",
+      "root": "ذ ك ر",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "ذِكْرٌ": [
+          "18:28:25",
+          "18:83:9",
+          "18:101:7"
+        ],
+        "ذِكْر": [
+          "18:70:12"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "نَار",
+      "root": "ن و ر",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "نَارٌ": [
+          "18:29:14"
+        ],
+        "نَار": [
+          "18:53:3",
+          "18:96:14"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "مَآء",
+      "root": "م و ه",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "مَاءٌ": [
+          "18:29:21"
+        ],
+        "مَاء": [
+          "18:41:3",
+          "18:45:6"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "جَنَّة",
+      "root": "ج ن ن",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "جَنَّةٌ": [
+          "18:31:3",
+          "18:32:7",
+          "18:33:2",
+          "18:35:2"
+        ],
+        "جَنَّة": [
+          "18:39:4",
+          "18:40:7",
+          "18:107:8"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "تَحْت",
+      "root": "ت ح ت",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "تَحْتَ": [
+          "18:31:7"
+        ],
+        "تَحْت": [
+          "18:82:9"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "ثَوَاب",
+      "root": "ث و ب",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "ثَوَابٌ": [
+          "18:31:26"
+        ],
+        "ثَوَاب": [
+          "18:44:7",
+          "18:46:11"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "مَثَل",
+      "root": "م ث ل",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "مَثَلٌ": [
+          "18:32:3"
+        ],
+        "مَثَل": [
+          "18:45:3",
+          "18:54:9"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "مَال",
+      "root": "م و ل",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "مَالٌ": [
+          "18:34:11"
+        ],
+        "مَال": [
+          "18:39:18",
+          "18:46:1"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "خَيْر",
+      "root": "خ ي ر",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "خَيْرٌ": [
+          "18:36:10"
+        ],
+        "خَيْر": [
+          "18:40:5",
+          "18:44:6",
+          "18:44:8",
+          "18:46:12"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "كُلّ",
+      "root": "ك ل ل",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "كُلّ": [
+          "18:45:21",
+          "18:54:8",
+          "18:79:15"
+        ],
+        "كُلٌّ": [
+          "18:84:8"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "مُجْرِم",
+      "root": "ج ر م",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "مُجْرِمٌ": [
+          "18:49:4"
+        ],
+        "مُجْرِم": [
+          "18:53:2"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "هُزُو",
+      "root": "ه ز أ",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "هُزُو": [
+          "18:56:18"
+        ],
+        "هُزُوٌ": [
+          "18:106:9"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "قَرْيَة",
+      "root": "ق ر ي",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "قَرْيَة": [
+          "18:59:2"
+        ],
+        "قَرْيَةٌ": [
+          "18:77:6"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "حَتَّىٰ",
+      "root": null,
+      "effectivePosAtReview": "particle",
+      "variants": {
+        "حَتَّى": [
+          "18:60:7",
+          "18:70:8",
+          "18:71:2",
+          "18:74:2",
+          "18:77:2",
+          "18:90:1",
+          "18:96:4",
+          "18:96:11"
+        ],
+        "حَتَّىٰ": [
+          "18:86:1",
+          "18:93:1"
+        ]
+      },
+      "disposition": "Accept conventional versus Uthmani orthography, dagger-alif/wasla and valid final citation vowels; expanded attached-pronoun citation where present does not change lexical identity."
+    },
+    {
+      "qacLemma": "مَجْمَع",
+      "root": "ج م ع",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "مَجْمَع": [
+          "18:60:9"
+        ],
+        "مَجْمَعٌ": [
+          "18:61:3"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "بَحْر",
+      "root": "ب ح ر",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "بَحْر": [
+          "18:60:10",
+          "18:63:19",
+          "18:79:7",
+          "18:109:4",
+          "18:109:9"
+        ],
+        "بَحْرٌ": [
+          "18:61:10"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "حُوت",
+      "root": "ح و ت",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "حُوتٌ": [
+          "18:61:6"
+        ],
+        "حُوت": [
+          "18:63:9"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "سَبِيل",
+      "root": "س ب ل",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "سَبِيلٌ": [
+          "18:61:8"
+        ],
+        "سَبِيل": [
+          "18:63:17"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "صَبْر",
+      "root": "ص ب ر",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "صَبْرٌ": [
+          "18:67:6",
+          "18:78:12"
+        ],
+        "صَبْر": [
+          "18:72:8",
+          "18:75:9",
+          "18:82:35"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "خُبْر",
+      "root": "خ ب ر",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "خُبْرٌ": [
+          "18:68:8"
+        ],
+        "خُبْر": [
+          "18:91:6"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "أَهْل",
+      "root": "أ ه ل",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "أَهْل": [
+          "18:71:11"
+        ],
+        "أَهْلٌ": [
+          "18:77:5",
+          "18:77:8"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "جِدَار",
+      "root": "ج د ر",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "جِدَارٌ": [
+          "18:77:14"
+        ],
+        "جِدَار": [
+          "18:82:2"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "تَأْوِيل",
+      "root": "أ و ل",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "تَأْوِيلٌ": [
+          "18:78:7"
+        ],
+        "تَأْوِيل": [
+          "18:82:30"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "قَرْن",
+      "root": "ق ر ن",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "قَرْنٌ": [
+          "18:83:4"
+        ],
+        "قَرْن": [
+          "18:86:16",
+          "18:94:3"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "سَبَب",
+      "root": "س ب ب",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "سَبَبٌ": [
+          "18:84:10",
+          "18:85:2"
+        ],
+        "سَبَب": [
+          "18:89:3",
+          "18:92:3"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "جَزَآء",
+      "root": "ج ز ي",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "جَزَاء": [
+          "18:88:7"
+        ],
+        "جَزَاءٌ": [
+          "18:106:2"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "نُزُل",
+      "root": "ن ز ل",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "نُزُلٌ": [
+          "18:102:14"
+        ],
+        "نُزُل": [
+          "18:107:10"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    },
+    {
+      "qacLemma": "لِقَآء",
+      "root": "ل ق ي",
+      "effectivePosAtReview": "noun",
+      "variants": {
+        "لِقَاءٌ": [
+          "18:105:6"
+        ],
+        "لِقَاء": [
+          "18:110:15"
+        ]
+      },
+      "disposition": "Accept bare base versus legitimate citation case/tanwin. These do not state the occurrence case and do not justify mechanical mass normalization."
+    }
+  ],
+  "acceptedAdditionalChoices": [
+    "Authentic singular forms of plurals/duals, noun versus adjective gender citation conventions and contextually correct demonstrative forms are retained. The narrow directional dhat decision does not impose a global feminine-citation convention on participles/adjectives.",
+    "The collective نَخْلٌ at18:32:11 remains the collective lexical base, not the unit noun نخلة.",
+    "Elative أَحْصَى at18:12:6 follows the deliberately retained alternative noun analysis; do not replace its lemma or convert the occurrence into a verb merely because primary verse syntax prefers a verb.",
+    "Hafs-compatible هُزُو and هُزُوٌ share the same recognized non-hamzated citation; final citation tanwin alone is not a different lexeme.",
+    "Fused particles may cite the particle head or expand the attached construction; no unsupported universal expansion was imposed."
+  ],
+  "mechanicalChecks": {
+    "all1579plannedIdsExactAndOrdered": true,
+    "all1579canonicalArabicSegmentJoinsExact": true,
+    "heldDraftIdLemmaSequenceMatchesAll1579": true,
+    "heldDraftArabicMatchesSourceAll1579": true,
+    "heldStatus": "scholarly-review-pending",
+    "recommendationFields": [
+      "lemma"
+    ],
+    "externalModelCliInvoked": false,
+    "sharedInputsOrChunksEdited": false
+  },
+  "chunkCoverage": [
+    {
+      "chunk": "18-c01",
+      "words": 35,
+      "verbs": 8,
+      "ayahs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "sha256": "8ab65c4155070f4acbd713f4d41d52c280c73e86efb086acba07e6c1d06bda33"
+    },
+    {
+      "chunk": "18-c02",
+      "words": 38,
+      "verbs": 6,
+      "ayahs": [
+        5,
+        6,
+        7
+      ],
+      "sha256": "b6d4e4af44b99c1e168cbc68a4a660235a112044a7edef9d5966d98e7484d07c"
+    },
+    {
+      "chunk": "18-c03",
+      "words": 32,
+      "verbs": 6,
+      "ayahs": [
+        8,
+        9,
+        10
+      ],
+      "sha256": "c64abc80a0c72210c94e7a103d691382ca706d7a4aa0d44cf5864d61b2dda6f6"
+    },
+    {
+      "chunk": "18-c04",
+      "words": 27,
+      "verbs": 7,
+      "ayahs": [
+        11,
+        12,
+        13
+      ],
+      "sha256": "999dd3c81e58fdad06df07637d16c7f07246277f5ac545650e17ffb1782a58f2"
+    },
+    {
+      "chunk": "18-c05",
+      "words": 37,
+      "verbs": 8,
+      "ayahs": [
+        14,
+        15
+      ],
+      "sha256": "b4fcbbcddef874fccc97160f36a26a25b635b2cfcbfe91486e38630bbb7e948f"
+    },
+    {
+      "chunk": "18-c06",
+      "words": 19,
+      "verbs": 5,
+      "ayahs": [
+        16
+      ],
+      "sha256": "ef66d8c871c0d238ec146fe908586c7593423112b57e759b5590a5df98812631"
+    },
+    {
+      "chunk": "18-c07",
+      "words": 34,
+      "verbs": 8,
+      "ayahs": [
+        17
+      ],
+      "sha256": "077e0943617fe2e51484ebd083dab668c1377523035bcf496b948253aff2b610"
+    },
+    {
+      "chunk": "18-c08",
+      "words": 22,
+      "verbs": 5,
+      "ayahs": [
+        18
+      ],
+      "sha256": "6ecb4639082d9c369ce7a3e16239be342c6d516deeb0a5522e740e2d19b14657"
+    },
+    {
+      "chunk": "18-c09",
+      "words": 38,
+      "verbs": 13,
+      "ayahs": [
+        19
+      ],
+      "sha256": "482d9947585cd2e59be87b26bab1719c8ab3aae238983489cdfaececff96e90c"
+    },
+    {
+      "chunk": "18-c10",
+      "words": 13,
+      "verbs": 4,
+      "ayahs": [
+        20
+      ],
+      "sha256": "db6389a8fc389fd14c740cb9845b919bb0a9a4c4b9a0997f2bbcc5341efa56ee"
+    },
+    {
+      "chunk": "18-c11",
+      "words": 32,
+      "verbs": 8,
+      "ayahs": [
+        21
+      ],
+      "sha256": "02b0ff35b426abe6c4f0881eb51308376999838fe09e4478f2b01ecc1932cd4e"
+    },
+    {
+      "chunk": "18-c12",
+      "words": 33,
+      "verbs": 7,
+      "ayahs": [
+        22
+      ],
+      "sha256": "6b5bfbaad577f417c750188872c56f0ed2c25d22701e75cd5701ca051be449c3"
+    },
+    {
+      "chunk": "18-c13",
+      "words": 32,
+      "verbs": 9,
+      "ayahs": [
+        23,
+        24,
+        25
+      ],
+      "sha256": "18674987709a5523b8120c599667b2f36f11ee5af58d374862715a65f459f32d"
+    },
+    {
+      "chunk": "18-c14",
+      "words": 38,
+      "verbs": 8,
+      "ayahs": [
+        26,
+        27
+      ],
+      "sha256": "f27886b1b7725c37398adde5bdbbb379567157d2f8a94ac4346502e4c5c320c2"
+    },
+    {
+      "chunk": "18-c15",
+      "words": 30,
+      "verbs": 9,
+      "ayahs": [
+        28
+      ],
+      "sha256": "49b02d8bc6f6cb7f24e72dc6bf672f0cea894961950cbbb992b2b1fc0b8c26a5"
+    },
+    {
+      "chunk": "18-c16",
+      "words": 40,
+      "verbs": 16,
+      "ayahs": [
+        29,
+        30
+      ],
+      "sha256": "0cf30feccd065f7e6bb9f6ac0e254eda9f7c4ecd178a5ddbc09509ce45ed3a98"
+    },
+    {
+      "chunk": "18-c17",
+      "words": 28,
+      "verbs": 5,
+      "ayahs": [
+        31
+      ],
+      "sha256": "7e9737efe93071971552f6cd40f74f5ef0a2323c7d40e429249c1a9724aa0faa"
+    },
+    {
+      "chunk": "18-c18",
+      "words": 38,
+      "verbs": 10,
+      "ayahs": [
+        32,
+        33,
+        34
+      ],
+      "sha256": "622f5d6358d90d58b7aaa9d4ab67605b70dbf057c17a14322f43d9bf69c2649e"
+    },
+    {
+      "chunk": "18-c19",
+      "words": 40,
+      "verbs": 12,
+      "ayahs": [
+        35,
+        36,
+        37
+      ],
+      "sha256": "0ed4e1fbd0abdbde1f4433aa87e873ddc72101a92c6c332bc497e0a310370841"
+    },
+    {
+      "chunk": "18-c20",
+      "words": 27,
+      "verbs": 5,
+      "ayahs": [
+        38,
+        39
+      ],
+      "sha256": "c8315e68ef823360e5e617c4faa104be4b7535ba9d096e9ae82da1dc4e338dbd"
+    },
+    {
+      "chunk": "18-c21",
+      "words": 23,
+      "verbs": 6,
+      "ayahs": [
+        40,
+        41
+      ],
+      "sha256": "32cd741c1bd23be121652ad1626adecfd57d41a005ba5a54376f79ead28b85ee"
+    },
+    {
+      "chunk": "18-c22",
+      "words": 30,
+      "verbs": 9,
+      "ayahs": [
+        42,
+        43
+      ],
+      "sha256": "290ed780210fd06b061cb129c89bf7deea24b67d4824352ecda2dc26d13e16bf"
+    },
+    {
+      "chunk": "18-c23",
+      "words": 32,
+      "verbs": 6,
+      "ayahs": [
+        44,
+        45
+      ],
+      "sha256": "1e73c5905b87aa0f252cc91426d9caaa63991baf855a3306497ad8378848fd06"
+    },
+    {
+      "chunk": "18-c24",
+      "words": 40,
+      "verbs": 9,
+      "ayahs": [
+        46,
+        47,
+        48
+      ],
+      "sha256": "0f18da92464688d4156b4d6eabc52764aa9ccbdccb8fbd1c07de7d559c6e19df"
+    },
+    {
+      "chunk": "18-c25",
+      "words": 27,
+      "verbs": 8,
+      "ayahs": [
+        49
+      ],
+      "sha256": "1edf1d8374f4adaaa092a1fa500052b5f1cf0ea42aebaef66f4674c5459153d1"
+    },
+    {
+      "chunk": "18-c26",
+      "words": 39,
+      "verbs": 9,
+      "ayahs": [
+        50,
+        51
+      ],
+      "sha256": "68c6e90b19c598e9a615ed2dce07b0143d2ed0e9754a7c87d74f022b396b5e1d"
+    },
+    {
+      "chunk": "18-c27",
+      "words": 37,
+      "verbs": 11,
+      "ayahs": [
+        52,
+        53,
+        54
+      ],
+      "sha256": "a5763f54ba48e2cc0ac7709ce077c0dcf3d980f3d5e237fe0aaacfb15e1417a3"
+    },
+    {
+      "chunk": "18-c28",
+      "words": 37,
+      "verbs": 12,
+      "ayahs": [
+        55,
+        56
+      ],
+      "sha256": "289772db5e032a6d9ba83e100fe6528589a293a721c4f4606093f0cb72cec897"
+    },
+    {
+      "chunk": "18-c29",
+      "words": 30,
+      "verbs": 8,
+      "ayahs": [
+        57
+      ],
+      "sha256": "f39c34b8413b9e60c71268e913b335c681d877e282ef1262ac797fc6bb74ec1d"
+    },
+    {
+      "chunk": "18-c30",
+      "words": 40,
+      "verbs": 11,
+      "ayahs": [
+        58,
+        59,
+        60
+      ],
+      "sha256": "a55cb791ab81bfc122e524f9255ccc9a7738a8615551525d35f84d100f50448f"
+    },
+    {
+      "chunk": "18-c31",
+      "words": 23,
+      "verbs": 7,
+      "ayahs": [
+        61,
+        62
+      ],
+      "sha256": "7a0043367730174aa8b07c6c82585e15be5c41f6c139b58e836e3c0b74335694"
+    },
+    {
+      "chunk": "18-c32",
+      "words": 29,
+      "verbs": 11,
+      "ayahs": [
+        63,
+        64
+      ],
+      "sha256": "d4af442ea941fb3939e2368c590ee1b5777123edbacf523ff42ec3879fe3074e"
+    },
+    {
+      "chunk": "18-c33",
+      "words": 37,
+      "verbs": 11,
+      "ayahs": [
+        65,
+        66,
+        67,
+        68
+      ],
+      "sha256": "e63d3c04329af5f44434743cacda1b24a24b837f0a20b5ebb1ce5617167f717b"
+    },
+    {
+      "chunk": "18-c34",
+      "words": 37,
+      "verbs": 15,
+      "ayahs": [
+        69,
+        70,
+        71
+      ],
+      "sha256": "28e2e51127ad5d4c87e4db025d0b211e2ddc59908ef35268fc3b0c6fb4a220e0"
+    },
+    {
+      "chunk": "18-c35",
+      "words": 34,
+      "verbs": 13,
+      "ayahs": [
+        72,
+        73,
+        74
+      ],
+      "sha256": "e3965db8dc762e6fe0e510681b63b8efc7e964b2e59775f6cc091f9edd9a93be"
+    },
+    {
+      "chunk": "18-c36",
+      "words": 22,
+      "verbs": 7,
+      "ayahs": [
+        75,
+        76
+      ],
+      "sha256": "c0b2951217fb2326e3989fe6e19ec0c6128aaf905187fd5f0028bee5563a3c08"
+    },
+    {
+      "chunk": "18-c37",
+      "words": 36,
+      "verbs": 15,
+      "ayahs": [
+        77,
+        78
+      ],
+      "sha256": "df11f24d820f156ef3fb46e59889359196447ac0bacfce912722f41b90a182e6"
+    },
+    {
+      "chunk": "18-c38",
+      "words": 36,
+      "verbs": 11,
+      "ayahs": [
+        79,
+        80,
+        81
+      ],
+      "sha256": "3c01b3b6d5033575cf669c5a92f6a3b7007399750f168f729bd037982cd8afaa"
+    },
+    {
+      "chunk": "18-c39",
+      "words": 35,
+      "verbs": 8,
+      "ayahs": [
+        82
+      ],
+      "sha256": "b59d35bbe0e86f146c0dbbfc84a66b04ff9d0eae1df0db3249c413c1136f0a2a"
+    },
+    {
+      "chunk": "18-c40",
+      "words": 21,
+      "verbs": 6,
+      "ayahs": [
+        83,
+        84,
+        85
+      ],
+      "sha256": "68098a4c80ca67576704bab18a002df645998a1a2a2354be9811e6a15e827c4d"
+    },
+    {
+      "chunk": "18-c41",
+      "words": 37,
+      "verbs": 12,
+      "ayahs": [
+        86,
+        87
+      ],
+      "sha256": "d570a6baa6be4016b4d881f641c03bac8229a5ea4ab7f9029e9bef9cc2afb016"
+    },
+    {
+      "chunk": "18-c42",
+      "words": 31,
+      "verbs": 8,
+      "ayahs": [
+        88,
+        89,
+        90
+      ],
+      "sha256": "760d6b36085e9b82d3ec936d9438cf4767661020d37aacdb06ba18a17cb104c5"
+    },
+    {
+      "chunk": "18-c43",
+      "words": 22,
+      "verbs": 6,
+      "ayahs": [
+        91,
+        92,
+        93
+      ],
+      "sha256": "5fee5d32cecfb94f5bf13e0950374cd48f664d46fe83b6a9065d4983dc80806b"
+    },
+    {
+      "chunk": "18-c44",
+      "words": 31,
+      "verbs": 7,
+      "ayahs": [
+        94,
+        95
+      ],
+      "sha256": "8bb63c5eaa1c57810c9305f2b2e85f6f885f1362b32dbed5e1e9c221d045f411"
+    },
+    {
+      "chunk": "18-c45",
+      "words": 27,
+      "verbs": 11,
+      "ayahs": [
+        96,
+        97
+      ],
+      "sha256": "567537c389dd365c2d17852b7c1a9da779c5302be342ed3cb0287cfc3ffd05d3"
+    },
+    {
+      "chunk": "18-c46",
+      "words": 31,
+      "verbs": 9,
+      "ayahs": [
+        98,
+        99,
+        100
+      ],
+      "sha256": "5ee9a13af50c55b9de836091d063c082712e09dbe002afde4a59d979e436d23b"
+    },
+    {
+      "chunk": "18-c47",
+      "words": 30,
+      "verbs": 9,
+      "ayahs": [
+        101,
+        102,
+        103
+      ],
+      "sha256": "fc3cc3083d1c5281c726b4ea40c0730ca231d61f7cdd515549e9018fda0627d4"
+    },
+    {
+      "chunk": "18-c48",
+      "words": 34,
+      "verbs": 8,
+      "ayahs": [
+        104,
+        105,
+        106
+      ],
+      "sha256": "625ae10e8e81edc971f818a301201174594abd94eb5738417d3a7f43ed01ab93"
+    },
+    {
+      "chunk": "18-c49",
+      "words": 34,
+      "verbs": 9,
+      "ayahs": [
+        107,
+        108,
+        109
+      ],
+      "sha256": "3d5323047837fed64e85c21332119f813d48fb94681f952614c4ad84b31641db"
+    },
+    {
+      "chunk": "18-c50",
+      "words": 24,
+      "verbs": 6,
+      "ayahs": [
+        110
+      ],
+      "sha256": "62b621d3575f9a87b9b35798fb0c25d36714af7e07370c80b5eaa2ba3b3c596a"
+    }
+  ],
+  "reviewedWordIds": [
+    "18:1:1",
+    "18:1:2",
+    "18:1:3",
+    "18:1:4",
+    "18:1:5",
+    "18:1:6",
+    "18:1:7",
+    "18:1:8",
+    "18:1:9",
+    "18:1:10",
+    "18:1:11",
+    "18:2:1",
+    "18:2:2",
+    "18:2:3",
+    "18:2:4",
+    "18:2:5",
+    "18:2:6",
+    "18:2:7",
+    "18:2:8",
+    "18:2:9",
+    "18:2:10",
+    "18:2:11",
+    "18:2:12",
+    "18:2:13",
+    "18:2:14",
+    "18:2:15",
+    "18:3:1",
+    "18:3:2",
+    "18:3:3",
+    "18:4:1",
+    "18:4:2",
+    "18:4:3",
+    "18:4:4",
+    "18:4:5",
+    "18:4:6",
+    "18:5:1",
+    "18:5:2",
+    "18:5:3",
+    "18:5:4",
+    "18:5:5",
+    "18:5:6",
+    "18:5:7",
+    "18:5:8",
+    "18:5:9",
+    "18:5:10",
+    "18:5:11",
+    "18:5:12",
+    "18:5:13",
+    "18:5:14",
+    "18:5:15",
+    "18:5:16",
+    "18:6:1",
+    "18:6:2",
+    "18:6:3",
+    "18:6:4",
+    "18:6:5",
+    "18:6:6",
+    "18:6:7",
+    "18:6:8",
+    "18:6:9",
+    "18:6:10",
+    "18:6:11",
+    "18:7:1",
+    "18:7:2",
+    "18:7:3",
+    "18:7:4",
+    "18:7:5",
+    "18:7:6",
+    "18:7:7",
+    "18:7:8",
+    "18:7:9",
+    "18:7:10",
+    "18:7:11",
+    "18:8:1",
+    "18:8:2",
+    "18:8:3",
+    "18:8:4",
+    "18:8:5",
+    "18:8:6",
+    "18:9:1",
+    "18:9:2",
+    "18:9:3",
+    "18:9:4",
+    "18:9:5",
+    "18:9:6",
+    "18:9:7",
+    "18:9:8",
+    "18:9:9",
+    "18:9:10",
+    "18:10:1",
+    "18:10:2",
+    "18:10:3",
+    "18:10:4",
+    "18:10:5",
+    "18:10:6",
+    "18:10:7",
+    "18:10:8",
+    "18:10:9",
+    "18:10:10",
+    "18:10:11",
+    "18:10:12",
+    "18:10:13",
+    "18:10:14",
+    "18:10:15",
+    "18:10:16",
+    "18:11:1",
+    "18:11:2",
+    "18:11:3",
+    "18:11:4",
+    "18:11:5",
+    "18:11:6",
+    "18:11:7",
+    "18:12:1",
+    "18:12:2",
+    "18:12:3",
+    "18:12:4",
+    "18:12:5",
+    "18:12:6",
+    "18:12:7",
+    "18:12:8",
+    "18:12:9",
+    "18:13:1",
+    "18:13:2",
+    "18:13:3",
+    "18:13:4",
+    "18:13:5",
+    "18:13:6",
+    "18:13:7",
+    "18:13:8",
+    "18:13:9",
+    "18:13:10",
+    "18:13:11",
+    "18:14:1",
+    "18:14:2",
+    "18:14:3",
+    "18:14:4",
+    "18:14:5",
+    "18:14:6",
+    "18:14:7",
+    "18:14:8",
+    "18:14:9",
+    "18:14:10",
+    "18:14:11",
+    "18:14:12",
+    "18:14:13",
+    "18:14:14",
+    "18:14:15",
+    "18:14:16",
+    "18:14:17",
+    "18:14:18",
+    "18:14:19",
+    "18:15:1",
+    "18:15:2",
+    "18:15:3",
+    "18:15:4",
+    "18:15:5",
+    "18:15:6",
+    "18:15:7",
+    "18:15:8",
+    "18:15:9",
+    "18:15:10",
+    "18:15:11",
+    "18:15:12",
+    "18:15:13",
+    "18:15:14",
+    "18:15:15",
+    "18:15:16",
+    "18:15:17",
+    "18:15:18",
+    "18:16:1",
+    "18:16:2",
+    "18:16:3",
+    "18:16:4",
+    "18:16:5",
+    "18:16:6",
+    "18:16:7",
+    "18:16:8",
+    "18:16:9",
+    "18:16:10",
+    "18:16:11",
+    "18:16:12",
+    "18:16:13",
+    "18:16:14",
+    "18:16:15",
+    "18:16:16",
+    "18:16:17",
+    "18:16:18",
+    "18:16:19",
+    "18:17:1",
+    "18:17:2",
+    "18:17:3",
+    "18:17:4",
+    "18:17:5",
+    "18:17:6",
+    "18:17:7",
+    "18:17:8",
+    "18:17:9",
+    "18:17:10",
+    "18:17:11",
+    "18:17:12",
+    "18:17:13",
+    "18:17:14",
+    "18:17:15",
+    "18:17:16",
+    "18:17:17",
+    "18:17:18",
+    "18:17:19",
+    "18:17:20",
+    "18:17:21",
+    "18:17:22",
+    "18:17:23",
+    "18:17:24",
+    "18:17:25",
+    "18:17:26",
+    "18:17:27",
+    "18:17:28",
+    "18:17:29",
+    "18:17:30",
+    "18:17:31",
+    "18:17:32",
+    "18:17:33",
+    "18:17:34",
+    "18:18:1",
+    "18:18:2",
+    "18:18:3",
+    "18:18:4",
+    "18:18:5",
+    "18:18:6",
+    "18:18:7",
+    "18:18:8",
+    "18:18:9",
+    "18:18:10",
+    "18:18:11",
+    "18:18:12",
+    "18:18:13",
+    "18:18:14",
+    "18:18:15",
+    "18:18:16",
+    "18:18:17",
+    "18:18:18",
+    "18:18:19",
+    "18:18:20",
+    "18:18:21",
+    "18:18:22",
+    "18:19:1",
+    "18:19:2",
+    "18:19:3",
+    "18:19:4",
+    "18:19:5",
+    "18:19:6",
+    "18:19:7",
+    "18:19:8",
+    "18:19:9",
+    "18:19:10",
+    "18:19:11",
+    "18:19:12",
+    "18:19:13",
+    "18:19:14",
+    "18:19:15",
+    "18:19:16",
+    "18:19:17",
+    "18:19:18",
+    "18:19:19",
+    "18:19:20",
+    "18:19:21",
+    "18:19:22",
+    "18:19:23",
+    "18:19:24",
+    "18:19:25",
+    "18:19:26",
+    "18:19:27",
+    "18:19:28",
+    "18:19:29",
+    "18:19:30",
+    "18:19:31",
+    "18:19:32",
+    "18:19:33",
+    "18:19:34",
+    "18:19:35",
+    "18:19:36",
+    "18:19:37",
+    "18:19:38",
+    "18:20:1",
+    "18:20:2",
+    "18:20:3",
+    "18:20:4",
+    "18:20:5",
+    "18:20:6",
+    "18:20:7",
+    "18:20:8",
+    "18:20:9",
+    "18:20:10",
+    "18:20:11",
+    "18:20:12",
+    "18:20:13",
+    "18:21:1",
+    "18:21:2",
+    "18:21:3",
+    "18:21:4",
+    "18:21:5",
+    "18:21:6",
+    "18:21:7",
+    "18:21:8",
+    "18:21:9",
+    "18:21:10",
+    "18:21:11",
+    "18:21:12",
+    "18:21:13",
+    "18:21:14",
+    "18:21:15",
+    "18:21:16",
+    "18:21:17",
+    "18:21:18",
+    "18:21:19",
+    "18:21:20",
+    "18:21:21",
+    "18:21:22",
+    "18:21:23",
+    "18:21:24",
+    "18:21:25",
+    "18:21:26",
+    "18:21:27",
+    "18:21:28",
+    "18:21:29",
+    "18:21:30",
+    "18:21:31",
+    "18:21:32",
+    "18:22:1",
+    "18:22:2",
+    "18:22:3",
+    "18:22:4",
+    "18:22:5",
+    "18:22:6",
+    "18:22:7",
+    "18:22:8",
+    "18:22:9",
+    "18:22:10",
+    "18:22:11",
+    "18:22:12",
+    "18:22:13",
+    "18:22:14",
+    "18:22:15",
+    "18:22:16",
+    "18:22:17",
+    "18:22:18",
+    "18:22:19",
+    "18:22:20",
+    "18:22:21",
+    "18:22:22",
+    "18:22:23",
+    "18:22:24",
+    "18:22:25",
+    "18:22:26",
+    "18:22:27",
+    "18:22:28",
+    "18:22:29",
+    "18:22:30",
+    "18:22:31",
+    "18:22:32",
+    "18:22:33",
+    "18:23:1",
+    "18:23:2",
+    "18:23:3",
+    "18:23:4",
+    "18:23:5",
+    "18:23:6",
+    "18:23:7",
+    "18:24:1",
+    "18:24:2",
+    "18:24:3",
+    "18:24:4",
+    "18:24:5",
+    "18:24:6",
+    "18:24:7",
+    "18:24:8",
+    "18:24:9",
+    "18:24:10",
+    "18:24:11",
+    "18:24:12",
+    "18:24:13",
+    "18:24:14",
+    "18:24:15",
+    "18:24:16",
+    "18:24:17",
+    "18:25:1",
+    "18:25:2",
+    "18:25:3",
+    "18:25:4",
+    "18:25:5",
+    "18:25:6",
+    "18:25:7",
+    "18:25:8",
+    "18:26:1",
+    "18:26:2",
+    "18:26:3",
+    "18:26:4",
+    "18:26:5",
+    "18:26:6",
+    "18:26:7",
+    "18:26:8",
+    "18:26:9",
+    "18:26:10",
+    "18:26:11",
+    "18:26:12",
+    "18:26:13",
+    "18:26:14",
+    "18:26:15",
+    "18:26:16",
+    "18:26:17",
+    "18:26:18",
+    "18:26:19",
+    "18:26:20",
+    "18:26:21",
+    "18:26:22",
+    "18:26:23",
+    "18:27:1",
+    "18:27:2",
+    "18:27:3",
+    "18:27:4",
+    "18:27:5",
+    "18:27:6",
+    "18:27:7",
+    "18:27:8",
+    "18:27:9",
+    "18:27:10",
+    "18:27:11",
+    "18:27:12",
+    "18:27:13",
+    "18:27:14",
+    "18:27:15",
+    "18:28:1",
+    "18:28:2",
+    "18:28:3",
+    "18:28:4",
+    "18:28:5",
+    "18:28:6",
+    "18:28:7",
+    "18:28:8",
+    "18:28:9",
+    "18:28:10",
+    "18:28:11",
+    "18:28:12",
+    "18:28:13",
+    "18:28:14",
+    "18:28:15",
+    "18:28:16",
+    "18:28:17",
+    "18:28:18",
+    "18:28:19",
+    "18:28:20",
+    "18:28:21",
+    "18:28:22",
+    "18:28:23",
+    "18:28:24",
+    "18:28:25",
+    "18:28:26",
+    "18:28:27",
+    "18:28:28",
+    "18:28:29",
+    "18:28:30",
+    "18:29:1",
+    "18:29:2",
+    "18:29:3",
+    "18:29:4",
+    "18:29:5",
+    "18:29:6",
+    "18:29:7",
+    "18:29:8",
+    "18:29:9",
+    "18:29:10",
+    "18:29:11",
+    "18:29:12",
+    "18:29:13",
+    "18:29:14",
+    "18:29:15",
+    "18:29:16",
+    "18:29:17",
+    "18:29:18",
+    "18:29:19",
+    "18:29:20",
+    "18:29:21",
+    "18:29:22",
+    "18:29:23",
+    "18:29:24",
+    "18:29:25",
+    "18:29:26",
+    "18:29:27",
+    "18:29:28",
+    "18:30:1",
+    "18:30:2",
+    "18:30:3",
+    "18:30:4",
+    "18:30:5",
+    "18:30:6",
+    "18:30:7",
+    "18:30:8",
+    "18:30:9",
+    "18:30:10",
+    "18:30:11",
+    "18:30:12",
+    "18:31:1",
+    "18:31:2",
+    "18:31:3",
+    "18:31:4",
+    "18:31:5",
+    "18:31:6",
+    "18:31:7",
+    "18:31:8",
+    "18:31:9",
+    "18:31:10",
+    "18:31:11",
+    "18:31:12",
+    "18:31:13",
+    "18:31:14",
+    "18:31:15",
+    "18:31:16",
+    "18:31:17",
+    "18:31:18",
+    "18:31:19",
+    "18:31:20",
+    "18:31:21",
+    "18:31:22",
+    "18:31:23",
+    "18:31:24",
+    "18:31:25",
+    "18:31:26",
+    "18:31:27",
+    "18:31:28",
+    "18:32:1",
+    "18:32:2",
+    "18:32:3",
+    "18:32:4",
+    "18:32:5",
+    "18:32:6",
+    "18:32:7",
+    "18:32:8",
+    "18:32:9",
+    "18:32:10",
+    "18:32:11",
+    "18:32:12",
+    "18:32:13",
+    "18:32:14",
+    "18:33:1",
+    "18:33:2",
+    "18:33:3",
+    "18:33:4",
+    "18:33:5",
+    "18:33:6",
+    "18:33:7",
+    "18:33:8",
+    "18:33:9",
+    "18:33:10",
+    "18:33:11",
+    "18:34:1",
+    "18:34:2",
+    "18:34:3",
+    "18:34:4",
+    "18:34:5",
+    "18:34:6",
+    "18:34:7",
+    "18:34:8",
+    "18:34:9",
+    "18:34:10",
+    "18:34:11",
+    "18:34:12",
+    "18:34:13",
+    "18:35:1",
+    "18:35:2",
+    "18:35:3",
+    "18:35:4",
+    "18:35:5",
+    "18:35:6",
+    "18:35:7",
+    "18:35:8",
+    "18:35:9",
+    "18:35:10",
+    "18:35:11",
+    "18:35:12",
+    "18:36:1",
+    "18:36:2",
+    "18:36:3",
+    "18:36:4",
+    "18:36:5",
+    "18:36:6",
+    "18:36:7",
+    "18:36:8",
+    "18:36:9",
+    "18:36:10",
+    "18:36:11",
+    "18:36:12",
+    "18:37:1",
+    "18:37:2",
+    "18:37:3",
+    "18:37:4",
+    "18:37:5",
+    "18:37:6",
+    "18:37:7",
+    "18:37:8",
+    "18:37:9",
+    "18:37:10",
+    "18:37:11",
+    "18:37:12",
+    "18:37:13",
+    "18:37:14",
+    "18:37:15",
+    "18:37:16",
+    "18:38:1",
+    "18:38:2",
+    "18:38:3",
+    "18:38:4",
+    "18:38:5",
+    "18:38:6",
+    "18:38:7",
+    "18:38:8",
+    "18:39:1",
+    "18:39:2",
+    "18:39:3",
+    "18:39:4",
+    "18:39:5",
+    "18:39:6",
+    "18:39:7",
+    "18:39:8",
+    "18:39:9",
+    "18:39:10",
+    "18:39:11",
+    "18:39:12",
+    "18:39:13",
+    "18:39:14",
+    "18:39:15",
+    "18:39:16",
+    "18:39:17",
+    "18:39:18",
+    "18:39:19",
+    "18:40:1",
+    "18:40:2",
+    "18:40:3",
+    "18:40:4",
+    "18:40:5",
+    "18:40:6",
+    "18:40:7",
+    "18:40:8",
+    "18:40:9",
+    "18:40:10",
+    "18:40:11",
+    "18:40:12",
+    "18:40:13",
+    "18:40:14",
+    "18:40:15",
+    "18:41:1",
+    "18:41:2",
+    "18:41:3",
+    "18:41:4",
+    "18:41:5",
+    "18:41:6",
+    "18:41:7",
+    "18:41:8",
+    "18:42:1",
+    "18:42:2",
+    "18:42:3",
+    "18:42:4",
+    "18:42:5",
+    "18:42:6",
+    "18:42:7",
+    "18:42:8",
+    "18:42:9",
+    "18:42:10",
+    "18:42:11",
+    "18:42:12",
+    "18:42:13",
+    "18:42:14",
+    "18:42:15",
+    "18:42:16",
+    "18:42:17",
+    "18:42:18",
+    "18:42:19",
+    "18:43:1",
+    "18:43:2",
+    "18:43:3",
+    "18:43:4",
+    "18:43:5",
+    "18:43:6",
+    "18:43:7",
+    "18:43:8",
+    "18:43:9",
+    "18:43:10",
+    "18:43:11",
+    "18:44:1",
+    "18:44:2",
+    "18:44:3",
+    "18:44:4",
+    "18:44:5",
+    "18:44:6",
+    "18:44:7",
+    "18:44:8",
+    "18:44:9",
+    "18:45:1",
+    "18:45:2",
+    "18:45:3",
+    "18:45:4",
+    "18:45:5",
+    "18:45:6",
+    "18:45:7",
+    "18:45:8",
+    "18:45:9",
+    "18:45:10",
+    "18:45:11",
+    "18:45:12",
+    "18:45:13",
+    "18:45:14",
+    "18:45:15",
+    "18:45:16",
+    "18:45:17",
+    "18:45:18",
+    "18:45:19",
+    "18:45:20",
+    "18:45:21",
+    "18:45:22",
+    "18:45:23",
+    "18:46:1",
+    "18:46:2",
+    "18:46:3",
+    "18:46:4",
+    "18:46:5",
+    "18:46:6",
+    "18:46:7",
+    "18:46:8",
+    "18:46:9",
+    "18:46:10",
+    "18:46:11",
+    "18:46:12",
+    "18:46:13",
+    "18:47:1",
+    "18:47:2",
+    "18:47:3",
+    "18:47:4",
+    "18:47:5",
+    "18:47:6",
+    "18:47:7",
+    "18:47:8",
+    "18:47:9",
+    "18:47:10",
+    "18:47:11",
+    "18:48:1",
+    "18:48:2",
+    "18:48:3",
+    "18:48:4",
+    "18:48:5",
+    "18:48:6",
+    "18:48:7",
+    "18:48:8",
+    "18:48:9",
+    "18:48:10",
+    "18:48:11",
+    "18:48:12",
+    "18:48:13",
+    "18:48:14",
+    "18:48:15",
+    "18:48:16",
+    "18:49:1",
+    "18:49:2",
+    "18:49:3",
+    "18:49:4",
+    "18:49:5",
+    "18:49:6",
+    "18:49:7",
+    "18:49:8",
+    "18:49:9",
+    "18:49:10",
+    "18:49:11",
+    "18:49:12",
+    "18:49:13",
+    "18:49:14",
+    "18:49:15",
+    "18:49:16",
+    "18:49:17",
+    "18:49:18",
+    "18:49:19",
+    "18:49:20",
+    "18:49:21",
+    "18:49:22",
+    "18:49:23",
+    "18:49:24",
+    "18:49:25",
+    "18:49:26",
+    "18:49:27",
+    "18:50:1",
+    "18:50:2",
+    "18:50:3",
+    "18:50:4",
+    "18:50:5",
+    "18:50:6",
+    "18:50:7",
+    "18:50:8",
+    "18:50:9",
+    "18:50:10",
+    "18:50:11",
+    "18:50:12",
+    "18:50:13",
+    "18:50:14",
+    "18:50:15",
+    "18:50:16",
+    "18:50:17",
+    "18:50:18",
+    "18:50:19",
+    "18:50:20",
+    "18:50:21",
+    "18:50:22",
+    "18:50:23",
+    "18:50:24",
+    "18:50:25",
+    "18:50:26",
+    "18:51:1",
+    "18:51:2",
+    "18:51:3",
+    "18:51:4",
+    "18:51:5",
+    "18:51:6",
+    "18:51:7",
+    "18:51:8",
+    "18:51:9",
+    "18:51:10",
+    "18:51:11",
+    "18:51:12",
+    "18:51:13",
+    "18:52:1",
+    "18:52:2",
+    "18:52:3",
+    "18:52:4",
+    "18:52:5",
+    "18:52:6",
+    "18:52:7",
+    "18:52:8",
+    "18:52:9",
+    "18:52:10",
+    "18:52:11",
+    "18:52:12",
+    "18:52:13",
+    "18:53:1",
+    "18:53:2",
+    "18:53:3",
+    "18:53:4",
+    "18:53:5",
+    "18:53:6",
+    "18:53:7",
+    "18:53:8",
+    "18:53:9",
+    "18:53:10",
+    "18:54:1",
+    "18:54:2",
+    "18:54:3",
+    "18:54:4",
+    "18:54:5",
+    "18:54:6",
+    "18:54:7",
+    "18:54:8",
+    "18:54:9",
+    "18:54:10",
+    "18:54:11",
+    "18:54:12",
+    "18:54:13",
+    "18:54:14",
+    "18:55:1",
+    "18:55:2",
+    "18:55:3",
+    "18:55:4",
+    "18:55:5",
+    "18:55:6",
+    "18:55:7",
+    "18:55:8",
+    "18:55:9",
+    "18:55:10",
+    "18:55:11",
+    "18:55:12",
+    "18:55:13",
+    "18:55:14",
+    "18:55:15",
+    "18:55:16",
+    "18:55:17",
+    "18:55:18",
+    "18:55:19",
+    "18:56:1",
+    "18:56:2",
+    "18:56:3",
+    "18:56:4",
+    "18:56:5",
+    "18:56:6",
+    "18:56:7",
+    "18:56:8",
+    "18:56:9",
+    "18:56:10",
+    "18:56:11",
+    "18:56:12",
+    "18:56:13",
+    "18:56:14",
+    "18:56:15",
+    "18:56:16",
+    "18:56:17",
+    "18:56:18",
+    "18:57:1",
+    "18:57:2",
+    "18:57:3",
+    "18:57:4",
+    "18:57:5",
+    "18:57:6",
+    "18:57:7",
+    "18:57:8",
+    "18:57:9",
+    "18:57:10",
+    "18:57:11",
+    "18:57:12",
+    "18:57:13",
+    "18:57:14",
+    "18:57:15",
+    "18:57:16",
+    "18:57:17",
+    "18:57:18",
+    "18:57:19",
+    "18:57:20",
+    "18:57:21",
+    "18:57:22",
+    "18:57:23",
+    "18:57:24",
+    "18:57:25",
+    "18:57:26",
+    "18:57:27",
+    "18:57:28",
+    "18:57:29",
+    "18:57:30",
+    "18:58:1",
+    "18:58:2",
+    "18:58:3",
+    "18:58:4",
+    "18:58:5",
+    "18:58:6",
+    "18:58:7",
+    "18:58:8",
+    "18:58:9",
+    "18:58:10",
+    "18:58:11",
+    "18:58:12",
+    "18:58:13",
+    "18:58:14",
+    "18:58:15",
+    "18:58:16",
+    "18:58:17",
+    "18:58:18",
+    "18:58:19",
+    "18:59:1",
+    "18:59:2",
+    "18:59:3",
+    "18:59:4",
+    "18:59:5",
+    "18:59:6",
+    "18:59:7",
+    "18:59:8",
+    "18:60:1",
+    "18:60:2",
+    "18:60:3",
+    "18:60:4",
+    "18:60:5",
+    "18:60:6",
+    "18:60:7",
+    "18:60:8",
+    "18:60:9",
+    "18:60:10",
+    "18:60:11",
+    "18:60:12",
+    "18:60:13",
+    "18:61:1",
+    "18:61:2",
+    "18:61:3",
+    "18:61:4",
+    "18:61:5",
+    "18:61:6",
+    "18:61:7",
+    "18:61:8",
+    "18:61:9",
+    "18:61:10",
+    "18:61:11",
+    "18:62:1",
+    "18:62:2",
+    "18:62:3",
+    "18:62:4",
+    "18:62:5",
+    "18:62:6",
+    "18:62:7",
+    "18:62:8",
+    "18:62:9",
+    "18:62:10",
+    "18:62:11",
+    "18:62:12",
+    "18:63:1",
+    "18:63:2",
+    "18:63:3",
+    "18:63:4",
+    "18:63:5",
+    "18:63:6",
+    "18:63:7",
+    "18:63:8",
+    "18:63:9",
+    "18:63:10",
+    "18:63:11",
+    "18:63:12",
+    "18:63:13",
+    "18:63:14",
+    "18:63:15",
+    "18:63:16",
+    "18:63:17",
+    "18:63:18",
+    "18:63:19",
+    "18:63:20",
+    "18:64:1",
+    "18:64:2",
+    "18:64:3",
+    "18:64:4",
+    "18:64:5",
+    "18:64:6",
+    "18:64:7",
+    "18:64:8",
+    "18:64:9",
+    "18:65:1",
+    "18:65:2",
+    "18:65:3",
+    "18:65:4",
+    "18:65:5",
+    "18:65:6",
+    "18:65:7",
+    "18:65:8",
+    "18:65:9",
+    "18:65:10",
+    "18:65:11",
+    "18:65:12",
+    "18:66:1",
+    "18:66:2",
+    "18:66:3",
+    "18:66:4",
+    "18:66:5",
+    "18:66:6",
+    "18:66:7",
+    "18:66:8",
+    "18:66:9",
+    "18:66:10",
+    "18:66:11",
+    "18:67:1",
+    "18:67:2",
+    "18:67:3",
+    "18:67:4",
+    "18:67:5",
+    "18:67:6",
+    "18:68:1",
+    "18:68:2",
+    "18:68:3",
+    "18:68:4",
+    "18:68:5",
+    "18:68:6",
+    "18:68:7",
+    "18:68:8",
+    "18:69:1",
+    "18:69:2",
+    "18:69:3",
+    "18:69:4",
+    "18:69:5",
+    "18:69:6",
+    "18:69:7",
+    "18:69:8",
+    "18:69:9",
+    "18:69:10",
+    "18:70:1",
+    "18:70:2",
+    "18:70:3",
+    "18:70:4",
+    "18:70:5",
+    "18:70:6",
+    "18:70:7",
+    "18:70:8",
+    "18:70:9",
+    "18:70:10",
+    "18:70:11",
+    "18:70:12",
+    "18:71:1",
+    "18:71:2",
+    "18:71:3",
+    "18:71:4",
+    "18:71:5",
+    "18:71:6",
+    "18:71:7",
+    "18:71:8",
+    "18:71:9",
+    "18:71:10",
+    "18:71:11",
+    "18:71:12",
+    "18:71:13",
+    "18:71:14",
+    "18:71:15",
+    "18:72:1",
+    "18:72:2",
+    "18:72:3",
+    "18:72:4",
+    "18:72:5",
+    "18:72:6",
+    "18:72:7",
+    "18:72:8",
+    "18:73:1",
+    "18:73:2",
+    "18:73:3",
+    "18:73:4",
+    "18:73:5",
+    "18:73:6",
+    "18:73:7",
+    "18:73:8",
+    "18:73:9",
+    "18:73:10",
+    "18:74:1",
+    "18:74:2",
+    "18:74:3",
+    "18:74:4",
+    "18:74:5",
+    "18:74:6",
+    "18:74:7",
+    "18:74:8",
+    "18:74:9",
+    "18:74:10",
+    "18:74:11",
+    "18:74:12",
+    "18:74:13",
+    "18:74:14",
+    "18:74:15",
+    "18:74:16",
+    "18:75:1",
+    "18:75:2",
+    "18:75:3",
+    "18:75:4",
+    "18:75:5",
+    "18:75:6",
+    "18:75:7",
+    "18:75:8",
+    "18:75:9",
+    "18:76:1",
+    "18:76:2",
+    "18:76:3",
+    "18:76:4",
+    "18:76:5",
+    "18:76:6",
+    "18:76:7",
+    "18:76:8",
+    "18:76:9",
+    "18:76:10",
+    "18:76:11",
+    "18:76:12",
+    "18:76:13",
+    "18:77:1",
+    "18:77:2",
+    "18:77:3",
+    "18:77:4",
+    "18:77:5",
+    "18:77:6",
+    "18:77:7",
+    "18:77:8",
+    "18:77:9",
+    "18:77:10",
+    "18:77:11",
+    "18:77:12",
+    "18:77:13",
+    "18:77:14",
+    "18:77:15",
+    "18:77:16",
+    "18:77:17",
+    "18:77:18",
+    "18:77:19",
+    "18:77:20",
+    "18:77:21",
+    "18:77:22",
+    "18:77:23",
+    "18:77:24",
+    "18:78:1",
+    "18:78:2",
+    "18:78:3",
+    "18:78:4",
+    "18:78:5",
+    "18:78:6",
+    "18:78:7",
+    "18:78:8",
+    "18:78:9",
+    "18:78:10",
+    "18:78:11",
+    "18:78:12",
+    "18:79:1",
+    "18:79:2",
+    "18:79:3",
+    "18:79:4",
+    "18:79:5",
+    "18:79:6",
+    "18:79:7",
+    "18:79:8",
+    "18:79:9",
+    "18:79:10",
+    "18:79:11",
+    "18:79:12",
+    "18:79:13",
+    "18:79:14",
+    "18:79:15",
+    "18:79:16",
+    "18:79:17",
+    "18:80:1",
+    "18:80:2",
+    "18:80:3",
+    "18:80:4",
+    "18:80:5",
+    "18:80:6",
+    "18:80:7",
+    "18:80:8",
+    "18:80:9",
+    "18:80:10",
+    "18:81:1",
+    "18:81:2",
+    "18:81:3",
+    "18:81:4",
+    "18:81:5",
+    "18:81:6",
+    "18:81:7",
+    "18:81:8",
+    "18:81:9",
+    "18:82:1",
+    "18:82:2",
+    "18:82:3",
+    "18:82:4",
+    "18:82:5",
+    "18:82:6",
+    "18:82:7",
+    "18:82:8",
+    "18:82:9",
+    "18:82:10",
+    "18:82:11",
+    "18:82:12",
+    "18:82:13",
+    "18:82:14",
+    "18:82:15",
+    "18:82:16",
+    "18:82:17",
+    "18:82:18",
+    "18:82:19",
+    "18:82:20",
+    "18:82:21",
+    "18:82:22",
+    "18:82:23",
+    "18:82:24",
+    "18:82:25",
+    "18:82:26",
+    "18:82:27",
+    "18:82:28",
+    "18:82:29",
+    "18:82:30",
+    "18:82:31",
+    "18:82:32",
+    "18:82:33",
+    "18:82:34",
+    "18:82:35",
+    "18:83:1",
+    "18:83:2",
+    "18:83:3",
+    "18:83:4",
+    "18:83:5",
+    "18:83:6",
+    "18:83:7",
+    "18:83:8",
+    "18:83:9",
+    "18:84:1",
+    "18:84:2",
+    "18:84:3",
+    "18:84:4",
+    "18:84:5",
+    "18:84:6",
+    "18:84:7",
+    "18:84:8",
+    "18:84:9",
+    "18:84:10",
+    "18:85:1",
+    "18:85:2",
+    "18:86:1",
+    "18:86:2",
+    "18:86:3",
+    "18:86:4",
+    "18:86:5",
+    "18:86:6",
+    "18:86:7",
+    "18:86:8",
+    "18:86:9",
+    "18:86:10",
+    "18:86:11",
+    "18:86:12",
+    "18:86:13",
+    "18:86:14",
+    "18:86:15",
+    "18:86:16",
+    "18:86:17",
+    "18:86:18",
+    "18:86:19",
+    "18:86:20",
+    "18:86:21",
+    "18:86:22",
+    "18:86:23",
+    "18:86:24",
+    "18:87:1",
+    "18:87:2",
+    "18:87:3",
+    "18:87:4",
+    "18:87:5",
+    "18:87:6",
+    "18:87:7",
+    "18:87:8",
+    "18:87:9",
+    "18:87:10",
+    "18:87:11",
+    "18:87:12",
+    "18:87:13",
+    "18:88:1",
+    "18:88:2",
+    "18:88:3",
+    "18:88:4",
+    "18:88:5",
+    "18:88:6",
+    "18:88:7",
+    "18:88:8",
+    "18:88:9",
+    "18:88:10",
+    "18:88:11",
+    "18:88:12",
+    "18:88:13",
+    "18:89:1",
+    "18:89:2",
+    "18:89:3",
+    "18:90:1",
+    "18:90:2",
+    "18:90:3",
+    "18:90:4",
+    "18:90:5",
+    "18:90:6",
+    "18:90:7",
+    "18:90:8",
+    "18:90:9",
+    "18:90:10",
+    "18:90:11",
+    "18:90:12",
+    "18:90:13",
+    "18:90:14",
+    "18:90:15",
+    "18:91:1",
+    "18:91:2",
+    "18:91:3",
+    "18:91:4",
+    "18:91:5",
+    "18:91:6",
+    "18:92:1",
+    "18:92:2",
+    "18:92:3",
+    "18:93:1",
+    "18:93:2",
+    "18:93:3",
+    "18:93:4",
+    "18:93:5",
+    "18:93:6",
+    "18:93:7",
+    "18:93:8",
+    "18:93:9",
+    "18:93:10",
+    "18:93:11",
+    "18:93:12",
+    "18:93:13",
+    "18:94:1",
+    "18:94:2",
+    "18:94:3",
+    "18:94:4",
+    "18:94:5",
+    "18:94:6",
+    "18:94:7",
+    "18:94:8",
+    "18:94:9",
+    "18:94:10",
+    "18:94:11",
+    "18:94:12",
+    "18:94:13",
+    "18:94:14",
+    "18:94:15",
+    "18:94:16",
+    "18:94:17",
+    "18:94:18",
+    "18:94:19",
+    "18:95:1",
+    "18:95:2",
+    "18:95:3",
+    "18:95:4",
+    "18:95:5",
+    "18:95:6",
+    "18:95:7",
+    "18:95:8",
+    "18:95:9",
+    "18:95:10",
+    "18:95:11",
+    "18:95:12",
+    "18:96:1",
+    "18:96:2",
+    "18:96:3",
+    "18:96:4",
+    "18:96:5",
+    "18:96:6",
+    "18:96:7",
+    "18:96:8",
+    "18:96:9",
+    "18:96:10",
+    "18:96:11",
+    "18:96:12",
+    "18:96:13",
+    "18:96:14",
+    "18:96:15",
+    "18:96:16",
+    "18:96:17",
+    "18:96:18",
+    "18:96:19",
+    "18:97:1",
+    "18:97:2",
+    "18:97:3",
+    "18:97:4",
+    "18:97:5",
+    "18:97:6",
+    "18:97:7",
+    "18:97:8",
+    "18:98:1",
+    "18:98:2",
+    "18:98:3",
+    "18:98:4",
+    "18:98:5",
+    "18:98:6",
+    "18:98:7",
+    "18:98:8",
+    "18:98:9",
+    "18:98:10",
+    "18:98:11",
+    "18:98:12",
+    "18:98:13",
+    "18:98:14",
+    "18:98:15",
+    "18:99:1",
+    "18:99:2",
+    "18:99:3",
+    "18:99:4",
+    "18:99:5",
+    "18:99:6",
+    "18:99:7",
+    "18:99:8",
+    "18:99:9",
+    "18:99:10",
+    "18:99:11",
+    "18:100:1",
+    "18:100:2",
+    "18:100:3",
+    "18:100:4",
+    "18:100:5",
+    "18:101:1",
+    "18:101:2",
+    "18:101:3",
+    "18:101:4",
+    "18:101:5",
+    "18:101:6",
+    "18:101:7",
+    "18:101:8",
+    "18:101:9",
+    "18:101:10",
+    "18:101:11",
+    "18:102:1",
+    "18:102:2",
+    "18:102:3",
+    "18:102:4",
+    "18:102:5",
+    "18:102:6",
+    "18:102:7",
+    "18:102:8",
+    "18:102:9",
+    "18:102:10",
+    "18:102:11",
+    "18:102:12",
+    "18:102:13",
+    "18:102:14",
+    "18:103:1",
+    "18:103:2",
+    "18:103:3",
+    "18:103:4",
+    "18:103:5",
+    "18:104:1",
+    "18:104:2",
+    "18:104:3",
+    "18:104:4",
+    "18:104:5",
+    "18:104:6",
+    "18:104:7",
+    "18:104:8",
+    "18:104:9",
+    "18:104:10",
+    "18:104:11",
+    "18:105:1",
+    "18:105:2",
+    "18:105:3",
+    "18:105:4",
+    "18:105:5",
+    "18:105:6",
+    "18:105:7",
+    "18:105:8",
+    "18:105:9",
+    "18:105:10",
+    "18:105:11",
+    "18:105:12",
+    "18:105:13",
+    "18:105:14",
+    "18:106:1",
+    "18:106:2",
+    "18:106:3",
+    "18:106:4",
+    "18:106:5",
+    "18:106:6",
+    "18:106:7",
+    "18:106:8",
+    "18:106:9",
+    "18:107:1",
+    "18:107:2",
+    "18:107:3",
+    "18:107:4",
+    "18:107:5",
+    "18:107:6",
+    "18:107:7",
+    "18:107:8",
+    "18:107:9",
+    "18:107:10",
+    "18:108:1",
+    "18:108:2",
+    "18:108:3",
+    "18:108:4",
+    "18:108:5",
+    "18:108:6",
+    "18:109:1",
+    "18:109:2",
+    "18:109:3",
+    "18:109:4",
+    "18:109:5",
+    "18:109:6",
+    "18:109:7",
+    "18:109:8",
+    "18:109:9",
+    "18:109:10",
+    "18:109:11",
+    "18:109:12",
+    "18:109:13",
+    "18:109:14",
+    "18:109:15",
+    "18:109:16",
+    "18:109:17",
+    "18:109:18",
+    "18:110:1",
+    "18:110:2",
+    "18:110:3",
+    "18:110:4",
+    "18:110:5",
+    "18:110:6",
+    "18:110:7",
+    "18:110:8",
+    "18:110:9",
+    "18:110:10",
+    "18:110:11",
+    "18:110:12",
+    "18:110:13",
+    "18:110:14",
+    "18:110:15",
+    "18:110:16",
+    "18:110:17",
+    "18:110:18",
+    "18:110:19",
+    "18:110:20",
+    "18:110:21",
+    "18:110:22",
+    "18:110:23",
+    "18:110:24"
+  ],
+  "inputs": [
+    {
+      "path": "content-pipeline/meta/words.json",
+      "sha256": "1a3f2381f565d82b39b5a181dfce5e4d53e8f46d4974dd174cb83b0acde3cd9f"
+    },
+    {
+      "path": "content-pipeline/meta/overrides.json",
+      "sha256": "2cd47d46176975b911b53f017d840238ad2b3ede1cb02e3e056cdd9c9f5409b5"
+    },
+    {
+      "path": "content-pipeline/meta/plan.json",
+      "sha256": "84d9c20b25cf2bed308f0479cf6be4e19cd1776999627c7890c483065ee538e2"
+    },
+    {
+      "path": "content-pipeline/guide/authoring-guide.md",
+      "sha256": "8ead190b344b7679af969df1fa4b3172ee5fe29035ca49c5d7d1fdccfa9c85ff"
+    },
+    {
+      "path": "content-pipeline/drafts/surah-18.json",
+      "sha256": "0a57b37393cf98cc154aebc1aa56d3a505aedf5d0467f0ae6298882ff7906403"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c01.json",
+      "sha256": "8ab65c4155070f4acbd713f4d41d52c280c73e86efb086acba07e6c1d06bda33"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c02.json",
+      "sha256": "b6d4e4af44b99c1e168cbc68a4a660235a112044a7edef9d5966d98e7484d07c"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c03.json",
+      "sha256": "c64abc80a0c72210c94e7a103d691382ca706d7a4aa0d44cf5864d61b2dda6f6"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c04.json",
+      "sha256": "999dd3c81e58fdad06df07637d16c7f07246277f5ac545650e17ffb1782a58f2"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c05.json",
+      "sha256": "b4fcbbcddef874fccc97160f36a26a25b635b2cfcbfe91486e38630bbb7e948f"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c06.json",
+      "sha256": "ef66d8c871c0d238ec146fe908586c7593423112b57e759b5590a5df98812631"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c07.json",
+      "sha256": "077e0943617fe2e51484ebd083dab668c1377523035bcf496b948253aff2b610"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c08.json",
+      "sha256": "6ecb4639082d9c369ce7a3e16239be342c6d516deeb0a5522e740e2d19b14657"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c09.json",
+      "sha256": "482d9947585cd2e59be87b26bab1719c8ab3aae238983489cdfaececff96e90c"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c10.json",
+      "sha256": "db6389a8fc389fd14c740cb9845b919bb0a9a4c4b9a0997f2bbcc5341efa56ee"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c11.json",
+      "sha256": "02b0ff35b426abe6c4f0881eb51308376999838fe09e4478f2b01ecc1932cd4e"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c12.json",
+      "sha256": "6b5bfbaad577f417c750188872c56f0ed2c25d22701e75cd5701ca051be449c3"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c13.json",
+      "sha256": "18674987709a5523b8120c599667b2f36f11ee5af58d374862715a65f459f32d"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c14.json",
+      "sha256": "f27886b1b7725c37398adde5bdbbb379567157d2f8a94ac4346502e4c5c320c2"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c15.json",
+      "sha256": "49b02d8bc6f6cb7f24e72dc6bf672f0cea894961950cbbb992b2b1fc0b8c26a5"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c16.json",
+      "sha256": "0cf30feccd065f7e6bb9f6ac0e254eda9f7c4ecd178a5ddbc09509ce45ed3a98"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c17.json",
+      "sha256": "7e9737efe93071971552f6cd40f74f5ef0a2323c7d40e429249c1a9724aa0faa"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c18.json",
+      "sha256": "622f5d6358d90d58b7aaa9d4ab67605b70dbf057c17a14322f43d9bf69c2649e"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c19.json",
+      "sha256": "0ed4e1fbd0abdbde1f4433aa87e873ddc72101a92c6c332bc497e0a310370841"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c20.json",
+      "sha256": "c8315e68ef823360e5e617c4faa104be4b7535ba9d096e9ae82da1dc4e338dbd"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c21.json",
+      "sha256": "32cd741c1bd23be121652ad1626adecfd57d41a005ba5a54376f79ead28b85ee"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c22.json",
+      "sha256": "290ed780210fd06b061cb129c89bf7deea24b67d4824352ecda2dc26d13e16bf"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c23.json",
+      "sha256": "1e73c5905b87aa0f252cc91426d9caaa63991baf855a3306497ad8378848fd06"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c24.json",
+      "sha256": "0f18da92464688d4156b4d6eabc52764aa9ccbdccb8fbd1c07de7d559c6e19df"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c25.json",
+      "sha256": "1edf1d8374f4adaaa092a1fa500052b5f1cf0ea42aebaef66f4674c5459153d1"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c26.json",
+      "sha256": "68c6e90b19c598e9a615ed2dce07b0143d2ed0e9754a7c87d74f022b396b5e1d"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c27.json",
+      "sha256": "a5763f54ba48e2cc0ac7709ce077c0dcf3d980f3d5e237fe0aaacfb15e1417a3"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c28.json",
+      "sha256": "289772db5e032a6d9ba83e100fe6528589a293a721c4f4606093f0cb72cec897"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c29.json",
+      "sha256": "f39c34b8413b9e60c71268e913b335c681d877e282ef1262ac797fc6bb74ec1d"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c30.json",
+      "sha256": "a55cb791ab81bfc122e524f9255ccc9a7738a8615551525d35f84d100f50448f"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c31.json",
+      "sha256": "7a0043367730174aa8b07c6c82585e15be5c41f6c139b58e836e3c0b74335694"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c32.json",
+      "sha256": "d4af442ea941fb3939e2368c590ee1b5777123edbacf523ff42ec3879fe3074e"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c33.json",
+      "sha256": "e63d3c04329af5f44434743cacda1b24a24b837f0a20b5ebb1ce5617167f717b"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c34.json",
+      "sha256": "28e2e51127ad5d4c87e4db025d0b211e2ddc59908ef35268fc3b0c6fb4a220e0"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c35.json",
+      "sha256": "e3965db8dc762e6fe0e510681b63b8efc7e964b2e59775f6cc091f9edd9a93be"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c36.json",
+      "sha256": "c0b2951217fb2326e3989fe6e19ec0c6128aaf905187fd5f0028bee5563a3c08"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c37.json",
+      "sha256": "df11f24d820f156ef3fb46e59889359196447ac0bacfce912722f41b90a182e6"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c38.json",
+      "sha256": "3c01b3b6d5033575cf669c5a92f6a3b7007399750f168f729bd037982cd8afaa"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c39.json",
+      "sha256": "b59d35bbe0e86f146c0dbbfc84a66b04ff9d0eae1df0db3249c413c1136f0a2a"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c40.json",
+      "sha256": "68098a4c80ca67576704bab18a002df645998a1a2a2354be9811e6a15e827c4d"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c41.json",
+      "sha256": "d570a6baa6be4016b4d881f641c03bac8229a5ea4ab7f9029e9bef9cc2afb016"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c42.json",
+      "sha256": "760d6b36085e9b82d3ec936d9438cf4767661020d37aacdb06ba18a17cb104c5"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c43.json",
+      "sha256": "5fee5d32cecfb94f5bf13e0950374cd48f664d46fe83b6a9065d4983dc80806b"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c44.json",
+      "sha256": "8bb63c5eaa1c57810c9305f2b2e85f6f885f1362b32dbed5e1e9c221d045f411"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c45.json",
+      "sha256": "567537c389dd365c2d17852b7c1a9da779c5302be342ed3cb0287cfc3ffd05d3"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c46.json",
+      "sha256": "5ee9a13af50c55b9de836091d063c082712e09dbe002afde4a59d979e436d23b"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c47.json",
+      "sha256": "fc3cc3083d1c5281c726b4ea40c0730ca231d61f7cdd515549e9018fda0627d4"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c48.json",
+      "sha256": "625ae10e8e81edc971f818a301201174594abd94eb5738417d3a7f43ed01ab93"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c49.json",
+      "sha256": "3d5323047837fed64e85c21332119f813d48fb94681f952614c4ad84b31641db"
+    },
+    {
+      "path": "content-pipeline/chunks/18/18-c50.json",
+      "sha256": "62b621d3575f9a87b9b35798fb0c25d36714af7e07370c80b5eaa2ba3b3c596a"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "sha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-02.json",
+      "sha256": "374253c8523f8f335069e1b6217208d8646f31dfc5603c3e49acb88a656a4e8c"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-03.json",
+      "sha256": "a9e3f0fd083ec8da5f39ca511a9fbf300429eac28142cf31d15ea866c362a91a"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-04.json",
+      "sha256": "6053a14223bdfcfcb3cec134d3c5b064dd7d3c1b3f95f5bf145480da27ea3444"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-05.json",
+      "sha256": "54d762f2d71f98c6e1aaf7020a4a74015fc6e4dbd74595efc521c8998c3f7436"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-06.json",
+      "sha256": "5f4717863ed33f88235a5754c0fd344229c1b929c80b86e647953e2101cde079"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-07.json",
+      "sha256": "f2dd42c51b8593f973e6ec00d901005c62c8c98f7bcb107af3389f49dd216b55"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-08.json",
+      "sha256": "ac2d7a6475b92133421b7fa0cd411d582249f6626cf7db8378c71dcc7cc80e65"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-09.json",
+      "sha256": "933439e896f4bd54c1d9cc9eaa93a652f8bd57840c9959abbc19b2a7e596b32e"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-10.json",
+      "sha256": "926510fa3df8596d3f9c63431708eacd6347f8f0aead7d05e6dcaffacaa6dca2"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-11.json",
+      "sha256": "5ef211320057564483171c64945d0e709478cd3e13df40ca6a97ee5f8698a40f"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-12.json",
+      "sha256": "195d15d4ac56e2f36379cde7f247afcb223166de6f4978d5ea420fee7edaa89c"
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-extra.json",
+      "sha256": "d070fb3dd018c564cd4ccbeb8396526ba00ec1b68b2d6ec1d3c72528c9a318b8"
+    }
+  ],
+  "limitations": [
+    "This is cross-chunk lemma consistency review, not another full grammar/translation/tafsir review or scholarly approval.",
+    "The held draft became available during this review and was compared exactly; the earlier lack of assembled Al-Kahf is resolved for this input snapshot.",
+    "Source-type override recommendations remain separately recorded in codex-type-adjudication.json and unapplied in this review snapshot. Their future effective-type application requires fresh workflow review, not silently reused approval."
+  ],
+  "nextStep": "After active workers finish, parent may apply the two lemma-only replacements in18-c07, refresh the held assembly and run all 127 fresh independent reviews against the final shared inputs. Preserve every protected field and scholarly hold."
+}

@@ -1,43 +1,71 @@
 # Five-Surah expansion — plan, progress and handoff
 
-**Status (2026-11-06): resumed by the owner; all new content is held for scholarly review.**
+**Status (2026-11-06): all 127 chunks authored and AI-reviewed; review bundle complete; scholarly review pending.**
 No new lesson is live. The app still ships Al-Fatihah and Surahs 105–114 (11 Surahs, 55 ayahs,
-230 words). This folder holds everything needed to resume: the plan, the deterministic tooling,
-the verified shared libraries, the verified pilot chunks, the adjudicated corrections to the
-Corpus data, the workflow scripts and a ready-to-apply integration patch.
+230 words). This folder holds the authoring and review records, deterministic tooling,
+shared libraries, source inventories, adjudicated Corpus corrections, held JSON drafts
+and a deferred integration patch. The patch must remain unapplied until scholarly approval.
 
 Read this file first. Then read `guide/authoring-guide.md`, which every authoring and review agent
 follows.
 
 ### Resumption status
 
-- **110 of 127 chunks are authored and structurally valid:** 365 ayahs and 3,553 words.
-  As-Sajdah (32), Ya-Sin (36) and Ar-Rahman (55) have complete held JSON drafts in `drafts/`.
-  Al-Kahf has 44/50 chunks; Al-Mu’minun has 22/33. These are drafts, not new live lessons.
-- **Codex account capacity is exhausted.** The CLI and review agents reported a usage limit
-  with a reset of November 12, 2026 at 3:39 PM (timezone not supplied). Further model work
-  requires restored capacity. Do not repeatedly retry while the limit remains.
-- **101 chunks completed independent AI reviews against the prior library version.** Two late
-  shared-library findings were then corrected: the `condition-answer` exception for suddenness
-  إِذَا (23:64/77), and Urdu agreement in the اِتَّخَذَ paradigm note. Seven Ar-Rahman lemma-only
-  consistency edits were also applied. **All 110 authored chunks now need fresh full reviews**
-  against current inputs; no checkpoint was upgraded or counted current. See
-  `reports/progress.json`, `reports/codex-final-corrections.json` and the source-backed
-  `reports/codex-condition-answer-adjudication.json`.
-- All 112 rules received fresh initial confirmation and focused predicate/clause audits;
-  the five outstanding verb notes were confirmed. Later findings above demonstrate why
-  these AI audits must not be called exhaustive correctness certification. Root-risk and
-  library-adjudication reports preserve the decisions. Other possible Urdu agreement polish
-  should be checked during the resumed reviews.
-- Sources were checked and all 127 packets rebuilt. Arabic inventories and the plan reproduce
-  unchanged. `make_batches.py` preserves the adjudicated `lex-extra` split on regeneration.
+- **All 127 chunks are authored: 419 ayahs and 4,077 words.** All five complete held JSON
+  drafts exist in `drafts/`. Their final snapshots, all five source audits and the offline
+  bundle are complete from the reviewed inputs; all remain outside the published app.
+- **All 127 chunks passed current-input independent AI review.** Each has separate grammar
+  and meaning/tafsir/Urdu reviews plus a clean final confirmation bound to current source and
+  content hashes. No chunk is blocked or active. This includes the final source-type, rule
+  and scoped root-note corrections. These are AI checks, not scholarly approval.
+- **All nine source-type conflicts are resolved through explicit particle overrides.**
+  `meta/overrides.json` now has 74 occurrence records: 65 prior tag corrections plus nine
+  selected contextual-type analyses. Raw source metadata, occurrence IDs and Arabic remain
+  unchanged. Recognized alternative analyses are not automatically source errors.
+- **The final preparation batch is applied:** two rule-scope clarifications, Urdu agreement
+  fixes in 35 lexeme and 21 root notes, and two Al-Kahf lemma consistency edits. The exact
+  changes and input/output hashes are in `reports/codex-resumption-corrections.json`, backed
+  by the rule, agreement, type and cross-chunk consistency reports. Earlier condition-answer
+  corrections and seven Ar-Rahman lemma edits remain documented in
+  `reports/codex-final-corrections.json`. These AI audits are not scholarly approval.
+- Sources and packets were checked against current libraries and overrides. Arabic inventories
+  and the plan preserve the original coverage. `make_batches.py` preserves the adjudicated
+  `lex-extra` split on regeneration. All five cross-chunk lemma audits are recorded in
+  `reports/codex-consistency-{18,23,32,36,55}.json`.
+- The `ق ر أ` root-note clarification permits both recitation/recited-revelation and
+  proper-name uses of Quran. `reports/codex-qara-root-adjudication.json` records the primary
+  evidence and the four affected chunks: `18-c27`, `36-c01`, `36-c18`, `55-c01`. That root-only edit
+  affected four chunk review fingerprints. The later global override and rule changes
+  triggered a fresh all-127 pass, now complete. All five final wrappers have current release
+  digests, which include every shared root file.
+- The later `ن ه ر` note now distinguishes both initial hamza and nūn sukūn in أَنْهَار
+  from nūn fatḥa in نَهَار. `reports/codex-nahr-root-adjudication.json` records the exact
+  correction and five supplied-root chunks: `18-c17`, `18-c18`, `23-c23`, `36-c09`, `36-c10`.
+  The affected chunks passed fresh reviews; all final wrappers have current release digests.
+- The `ق ص ر` note now gives the full feminine plural مَقْصُورَات its مَفْعُولَات
+  pattern, explicitly identifying it as a feminine sound plural of the passive participle.
+  `reports/codex-qasr-root-adjudication.json` records the exact correction, isolated validation
+  and affected supplied-root chunks `55-c09` and `55-c11`. Both passed fresh reviews.
 - The owner explicitly approved authenticated Codex CLI processing of public reference packets
   and draft text. Approval persists; do not request it again. The runner uses the owner’s CLI
   model/settings, bounded concurrency, isolated workspaces and input/content checkpoints.
-- The Quran Grammar HTTPS route is repaired with backups and Caddy validation. Both content
-  databases and the actual API still contain only the published eleven-Surah edition.
-- Android/iOS bundles and a fresh Android 36 emulator APK test passed. Private browser fixtures
-  can exercise assembled drafts without changing the real registry, API or publication hold.
+- **PR #1 is merged and deployed at `a52e1de`.** The repaired public HTTPS app and both content
+  databases remain the published eleven-Surah edition: 55 ayahs and 230 words.
+- The native Juz navigation bug is fixed. Private Android emulator and iPhone 17 Pro / iOS 26.5
+  simulator previews verified both Juz boundary jumps, manual reading labels, same-chapter
+  jumps, root/paradigm/modal return and Study/Grammar switching. The ten iOS assertions passed
+  in Expo Go 57 with headless XCTest. `reports/codex-native-verification.json` records the
+  evidence and retained-log limitations, including an Apple logging-quarantine fault. No
+  physical phone or standalone iOS IPA was tested. Both platform bundles export.
+- The offline reviewer exporter embeds the existing licensed project fonts in every HTML page
+  and preserves their licenses. The completed 27-file bundle is available locally at
+  [the index](../build/review/quran-grammar/index.html) and
+  [the ZIP](../build/review/quran-grammar-scholarly-review.zip). Generated files are git-ignored.
+- `reports/chunk-review-manifest.json` pins all 127 current reviewed chunks. All five held
+  JSON drafts assembled with zero errors; the final all-chunk structural scan has zero errors
+  and zero warnings. All five source audits were regenerated. Chromium verified exact Arabic
+  for every one of the 4,077 words and 419 ayahs, loaded fonts, no overflow or page errors,
+  and no external requests in the offline bundle.
 
 **Publication hold:** `review-status.json` records all five new Surahs as pending. `assemble.py
 --write` refuses runtime output until an actual scholarly review record has a reviewer, date,
@@ -81,7 +109,8 @@ explanation — implemented with parallel subagents and double verification.
    - Meaning references: Tafsir al-Muyassar and Tafsir al-Sa‘di (Arabic), Ibn Kathir abridged
      (English), Saheeh International and Taqi Usmani translations — all via the Quran.com API.
    - Word type (`pos`) and `root` are derived from QAC stem tags with a mapping that reproduces
-     all 230 existing roots and 228/230 existing word types (the two exceptions are an
+     root assignments for all 230 existing word occurrences, including words with no root,
+     and 228/230 existing word types (the two exceptions are an
      inconsistency in Surah 109; see §5).
    - 127 chunks of whole ayahs, about 30 words each (`meta/plan.json`).
 2. **Shared libraries, authored once and double-verified** (so every chunk agrees):
@@ -102,7 +131,7 @@ explanation — implemented with parallel subagents and double verification.
 
 ## 3. Done
 
-### 3.1 App and infrastructure (in this PR, verified)
+### 3.1 App and infrastructure (merged baseline and continuation)
 
 - **Juz boundaries:** `catalog.ts` now has the ayah ranges of all 30 juz (checked against the
   Quran.com `/juzs` endpoint; every ayah of all 114 chapters covered once). `JuzCatalogEntry`
@@ -117,10 +146,16 @@ explanation — implemented with parallel subagents and double verification.
   (`npm run db:sync`, private schema `quran_grammar`), and a verify step that reads every table
   back and compares it byte for byte with the bundled lessons. The live app still serves the
   bundled data (owner decision).
-- Verified: `npm run verify` (typecheck, all unit/API/database tests, web and API builds),
-  `npm run test:e2e` (now 24/24), `npm run build:mobile`. The current 11-Surah APK has now
-  passed Android emulator interactions. Private browser checks now cover the complete held
-  As-Sajdah, Ya-Sin and Ar-Rahman drafts and Ya-Sin’s Juz boundary; long-chapter native checks remain.
+- The merged baseline passed `npm run verify`, browser tests and `npm run build:mobile`;
+  its eleven-Surah Android APK passed emulator interactions. Continuation checks include
+  private browser previews of held drafts and Android emulator/iOS simulator interactions for
+  both mid-Juz starts, manual boundaries, same-chapter jumps, word details and view switching.
+  The native reader’s initial Juz navigation race was found and fixed during this preview.
+  Final verification passed: 220 Node tests (11 API, 12 mobile, 12 core, 185 pipeline), 46
+  Python tests and 33 browser tests, with zero skips; web/API builds and both mobile exports
+  also passed. Native evidence and
+  the qualified iOS log check are in `reports/codex-native-verification.json`; no physical
+  phone was used.
 
 ### 3.2 Content pipeline (this folder)
 
@@ -129,8 +164,9 @@ explanation — implemented with parallel subagents and double verification.
 - 154 recitation signs that the API separates from a word by a space (waqf signs, the saktah
   sign, the sajdah sign ۩ and the rub al-hizb marker ۞) are excluded from stored word tokens,
   following the Surahs 110–114 precedent. Each exclusion is listed in `inventory/inventory-N.json`.
-- **65 adjudicated corrections to QAC tags** in `meta/overrides.json`; see §5.
-- **Libraries, verified:**
+- **74 occurrence override records** in `meta/overrides.json`: 65 prior tag corrections and
+  nine selected contextual-type analyses; see §5.
+- **Historical library review counts (before the later corrections listed above):**
 
   | Library        | Entries | Review findings (critical / major / minor) |                       Applied | Confirm round                                         |
   | -------------- | ------: | ------------------------------------------ | ----------------------------: | ----------------------------------------------------- |
@@ -147,9 +183,23 @@ explanation — implemented with parallel subagents and double verification.
   `chunks/55/55-c01.json` (55:1–10, 30 words). Reviews found 1 major issue in total (a tafsir
   cross-reference to Surah al-Baqarah, now forbidden by the guide) and minor polish, all fixed.
   Those original pilot records were superseded by fresh independent reviews during resumption.
-  They now require another full review after the shared-library corrections above, like every
-  other authored chunk. These are AI checks, not scholarly approval.
-- `reports/`: per-agent review summaries for the libraries and the pilot.
+  Like every authored chunk, they passed current-input reviews after the latest shared-input
+  corrections. These are AI checks, not scholarly approval.
+- Latest preparation: two final rule-scope clarifications, 35 lexeme-note and 21 root-note Urdu
+  agreement fixes, initially eight contextual-type overrides and two Al-Kahf lemma edits.
+  `reports/codex-resumption-corrections.json` records each applied change and its hashes.
+  The later `ق ر أ` lexical qualification is recorded separately in
+  `reports/codex-qara-root-adjudication.json`; it changes no source Arabic or occurrence IDs.
+  The ninth selected type analysis, extra-particle مَا at 23:78:9, is documented in
+  `reports/codex-final-type-adjudication.json`. The final prohibition-card clarification
+  supplies explicit حرف as its Urdu antecedent;
+  `reports/codex-prohibition-agreement-adjudication.json` records the evidence and full rule
+  agreement scan. Neither changes source Arabic. The subsequent `ن ه ر` vowel-contrast
+  correction and its five affected chunks are recorded in
+  `reports/codex-nahr-root-adjudication.json`. The later feminine-plural pattern correction
+  for `ق ص ر` and its two affected chunks are in `reports/codex-qasr-root-adjudication.json`.
+- `reports/`: library/chunk reviews, source adjudications and all five cross-chunk lemma audits.
+  These reports describe their own snapshots; only exact current review hashes count for export.
 
 ### 3.3 Operations (outside the repository)
 
@@ -163,56 +213,35 @@ explanation — implemented with parallel subagents and double verification.
 
 ## 4. What is left (in order)
 
-1. **Restore authenticated Codex account capacity.** Model jobs stopped on the usage limit,
-   not on a code or permission failure. Public-reference processing is already authorized.
-2. **Author the 17 missing chunks first:** `18-c45`–`18-c50`, `23-c22`, `23-c24`–`23-c33`.
-   `23-c22` has an incomplete private candidate missing two words; it was deliberately not
-   imported. Nine other interrupted candidates passed strict validation and were preserved
-   as unreviewed authored text (`reports/codex-authored-seeds.json`).
-3. **Complete fresh independent reviews for all 127 chunks.** Use `--resume --reuse-authored`:
-   valid authored text is retained, but grammar and meaning reviews, fixes and a clean final
-   confirmation still run. Resolve library findings before the final full pass. The recent
-   rule change invalidates every old input fingerprint; the seven lemma edits also invalidate
-   their old content hashes. No historical completion record grants current approval.
-4. **Finish cross-chunk consistency and source-type adjudication.** `reports/validation-report.json`
-   records zero structural errors and eight type-label warnings across the 110 chunks. Resolve
-   those source/analysis disagreements explicitly before the final fresh pass; retain evidence
-   and add a justified override rather than silently changing raw metadata. As-Sajdah’s 372 lemmas have no required corrections.
-   Ar-Rahman’s seven recommendations are applied and await fresh review. Complete this pass
-   for Al-Kahf, Al-Mu’minun and Ya-Sin after their current reviews; compare diagnostic variants
-   carefully, preserving authentic citation forms and exact Arabic. The assembler compares
-   Unicode-normalized strings only for diagnostics and respects effective passive overrides.
-5. **Export and assemble the completed review edition:**
+The AI-reviewed edition, source audits, current manifest and offline review bundle are complete.
+Open [the local index](../build/review/quran-grammar/index.html) or share
+[the ZIP](../build/review/quran-grammar-scholarly-review.zip) with a qualified scholarly reviewer.
+The ZIP is 6,153,696 bytes; SHA-256:
+`4c203d25e1eaa32e641c1fc98ea010acb3a6f4d9684ac48e543bbb2366924d68`.
+Its persistent English/Urdu banner identifies every page as an AI draft awaiting scholarly review.
 
-   ```sh
-   node content-pipeline/scripts/export_reviews.mjs
-   python3 -I content-pipeline/scripts/assemble.py content-pipeline . --draft
-   python3 -I content-pipeline/scripts/gen_audit.py content-pipeline . content-pipeline/reports/chunk-results.json
-   python3 -I content-pipeline/scripts/review_bundle.py content-pipeline --output "$PWD/build/review/quran-grammar"
-   ```
-
-   The exporter refuses missing/stale/incomplete reviews and pins all 127 exact chunk bytes.
-   Source audits validate the complete result snapshot before writing. The offline HTML bundle
-   requires current AI-review inputs and carries a persistent scholarly-review-pending notice.
-   It copies only original drafts, inventories, public audits and review metadata; no raw
-   third-party downloads, private model logs or credentials. No completed bundle exists yet.
-6. **Verify the held drafts and stable app.** Run `npm run verify`, `npm run test:e2e` and
-   `npm run build:mobile`. The private preview tests check every assembled chapter’s complete
-   IDs/Arabic/counts, both Juz boundaries and the 390px Al-Kahf word-detail flow. Missing drafts
-   are skipped explicitly; public `BASE_URL` runs always skip private fixtures. The long-chapter
-   native/device check remains outstanding; the current eleven-Surah Android APK was tested.
-7. **Obtain actual scholarly review.** All five records in `review-status.json` remain pending.
-   Apply reviewer corrections, repeat AI/structural checks, regenerate artifacts and record
-   reviewer identity, date, evidence and the exact final digest. AI cannot grant this approval.
-8. **Only after approval:** gated `assemble.py --write`, apply the future integration patch,
-   verify the sixteen-Surah app on web/native, sync the databases, merge and deploy from main.
-   Until then, databases and runtime registry stay at eleven Surahs. Stable infrastructure
-   changes may ship independently through the existing PR without activating the drafts.
+1. **Obtain qualified scholarly review of all five Surahs.** All five records in
+   `review-status.json` remain pending. Review the Urdu meanings, contextual syntax,
+   dictionary and root notes, paradigms, grammar cards, phrases and tafsir summaries.
+   Record actual reviewer identity, date, evidence and the exact reviewed content-input digest.
+   AI reviews and automated checks cannot grant this approval.
+2. **Apply reviewer corrections and regenerate the review edition if needed.** Preserve exact
+   Arabic and occurrence IDs. Obtain current independent AI reviews for affected chunks,
+   export the manifest, regenerate held drafts/audits/bundle and repeat relevant checks. The
+   reproducibility commands are in §6. Any changed digest requires corresponding scholarly
+   approval of the revised content. Do not manually promote held or stale checkpoints.
+3. **Only after recorded approval:** use gated `assemble.py --write`, check/apply the deferred
+   integration patch, verify the sixteen-Surah app on web/native, sync the databases, merge
+   and deploy from main. Until then, databases and runtime registry stay at eleven Surahs.
+   PR #1 is already merged/deployed; app fixes can ship independently of held content.
+   Physical-phone and standalone iOS IPA tests remain separate outstanding coverage; Android
+   emulator and iOS simulator interaction checks already passed for the private held preview.
 
 ## 5. Issues and hurdles (read before resuming)
 
-- **QAC 0.4 has occurrence-level tag errors.** Found so far and corrected in
-  `meta/overrides.json` (65 entries, each with evidence): verb mood (e.g. يُوحَىٰ 18:110,
+- **QAC 0.4 has occurrence-level tag errors and contextual-analysis disagreements.**
+  `meta/overrides.json` has 74 evidence-bearing records: 65 prior tag corrections plus nine
+  selected contextual-type analyses. Prior tag corrections include verb mood (e.g. يُوحَىٰ 18:110,
   يَتَوَفَّىٰكُم 32:11, يَسْعَىٰ 36:20, وَيَبْقَىٰ 55:27 tagged subjunctive though indicative;
   تَسْطِع 18:82 tagged indicative though jussive after لَمْ), voice (تُظْلَمُ 36:54 and يُغَاثُوا۟
   18:29 are passive; وَزِدْنَـٰهُمْ 18:13, مِتُّمْ 23:35 and مِتْنَا 23:82 are active), person
@@ -224,7 +253,11 @@ explanation — implemented with parallel subagents and double verification.
   وَلَعَلَا now has its own paradigm (`libs/lexemes/lex-extra.json`).
   `scripts/check_verbs.py` flags further mood/voice contradictions heuristically; most of its
   flags on weak verbs are false positives, so adjudicate by hand. Authors are instructed to
-  follow the vocalised word and log any further discrepancy in `auditNotes`.
+  follow the vocalised word and log any further discrepancy in `auditNotes`. The nine particle
+  overrides document the chosen contextual reading (for example, مصدرية rather than relative ما),
+  not a claim that every alternate analysis is impossible. `reports/codex-type-adjudication.json`
+  and `reports/codex-resumption-corrections.json` preserve the initial eight decisions and
+  applied changes. `reports/codex-final-type-adjudication.json` records the ninth at 23:78:9.
 - **Quran.com pause signs:** `text_uthmani` appends waqf/saktah/sajdah signs and prefixes ۞ with a
   space; these are excluded (saktah written inside a word without a space, e.g. عِوَجَاۜ 18:1, is
   kept). Segments must rejoin to the stored word exactly.
@@ -252,6 +285,11 @@ explanation — implemented with parallel subagents and double verification.
 
 ## 6. How to resume
 
+All 127 current-input AI reviews and clean confirmations are complete. The commands below
+preserve reproducibility and support future reviewer corrections; do not repeat authoring
+unless inputs or content change. Existing sources, chunks and packets are prepared, and all final
+review artifacts are complete. Public-reference processing is already authorized.
+
 ```sh
 cd content-pipeline
 python3 -I scripts/fetch_sources.py .   # Quran.com + QAC pages, about 10 minutes, rate-limited
@@ -260,14 +298,14 @@ python3 -I scripts/prepare.py . .       # words/ayahs metadata, plan, inventorie
 python3 -I scripts/make_batches.py .    # library batch inputs (libraries already exist)
 python3 -I scripts/check_verbs.py .     # optional: heuristic QAC mood/voice flags
 python3 -I scripts/build_packets.py .   # one source packet per chunk, with corrections
-# Local Codex CLI, once external processing is explicitly authorized:
+# Local Codex CLI for future corrections (processing is already authorized):
 node scripts/run_chunks.mjs --chunks 18-c02,18-c03 --dry-run
 node scripts/run_chunks.mjs --chunks 18-c02,18-c03 --concurrency 3 --chunk-concurrency 3 --resume --reuse-authored
 # Or Workflow tool: workflows/chunks.js with {"chunks": [...], "work": "<abs path>"}
 python3 -I scripts/assemble.py . ..          # report only
-python3 -I scripts/assemble.py . .. --draft  # reviewer artifacts outside the live app
-# After all chunks pass current AI reviews, export their public summaries:
+# After all affected chunks pass current AI reviews, export their public summaries:
 node scripts/export_reviews.mjs
+python3 -I scripts/assemble.py . .. --draft  # reviewer artifacts outside the live app
 python3 -I scripts/gen_audit.py . .. reports/chunk-results.json
 python3 -I scripts/review_bundle.py . --output "$PWD/../build/review/quran-grammar"
 # Only after actual scholarly review is recorded for every selected Surah:
@@ -278,11 +316,9 @@ npm run verify && npm run test:e2e && npm run build:mobile
 npm run db:sqlite && QG_PSQL='…' npm run db:sync
 ```
 
-After capacity is restored, run the missing-source group first from the repository root:
+If a future correction requires a complete fresh review pass, run from the repository root:
 
 ```sh
-node content-pipeline/scripts/run_chunks.mjs --chunks 18-c45,18-c46,18-c47,18-c48,18-c49,18-c50,23-c22,23-c24,23-c25,23-c26,23-c27,23-c28,23-c29,23-c30,23-c31,23-c32,23-c33 --concurrency 16 --chunk-concurrency 16 --resume --reuse-authored
-# After adjudicating any new library findings, review the entire plan against final inputs.
 QG_ALL_CHUNKS=$(node --input-type=module -e 'import {readFileSync} from "node:fs"; console.log(JSON.parse(readFileSync("content-pipeline/meta/plan.json", "utf8")).map(x => x.chunk).join(","))')
 node content-pipeline/scripts/run_chunks.mjs --chunks "$QG_ALL_CHUNKS" --concurrency 16 --chunk-concurrency 16 --resume --reuse-authored
 ```
@@ -299,19 +335,23 @@ Summarise a workflow's journal with
 The adapter uses the installed Codex login, model and reasoning settings. Each chunk runs in an
 isolated temporary folder; reviewers are read-only. Raw logs, checkpoints and blocked candidates
 stay private under git-ignored `runs/`. `--resume` reuses work only when source and content hashes
-match; concurrent invocations cannot share a run directory. Library fingerprints cover all
-supplied rules and only the specific root/paradigm entries supplied to a chunk. The optional
+match; concurrent invocations cannot share a run directory. `meta/overrides.json` has a whole-file
+fingerprint, so any override edit requires fresh reviews of all 127 chunks under the current
+policy; this triggered the conservative rerun after the ninth selected type analysis. Library
+fingerprints cover all supplied rules, while root/paradigm fingerprints cover only the specific
+entries supplied to each packet. The optional
 `--reuse-authored` flag preserves a structurally valid draft as authored text, with explicit
 provenance, but requires both independent reviews and a clean confirmation against current inputs. The runner never applies the
 integration patch, updates a database or deploys. From the repository root,
 `npm run test:content-pipeline` runs offline regressions; these also run in `npm run verify`
 and CI without the ignored source downloads.
 
-## 7. Home-server redeploy (after the PR is merged)
+## 7. Home-server deployment (merged baseline; future redeploys)
 
 The Quran Grammar IP-route repair was completed on 2026-11-06 and its public HTTPS deployment
-verified. Deploy merged `main` only; check PR #1 and the server's `git rev-parse HEAD` for the
-current deployed revision. Timestamped `.before-ip-change-*` files preserve the route-repair
+verified. PR #1 was merged and deployed at `a52e1de`; the live app/databases still serve
+11 Surahs, 55 ayahs and 230 words. Deploy merged `main` only; check the server's
+`git rev-parse HEAD` before a future redeploy. Timestamped `.before-ip-change-*` files preserve the route-repair
 rollback configuration. Other services' routes were not changed. The repaired route does not
 need another IP replacement while its public address remains current.
 
@@ -354,11 +394,11 @@ files and re-run `manage-proxy.py install`.
 | `tests/`                                                       | Offline runner, confirmation, correction and publication-hold regressions | yes |
 | `runs/`                                                        | Private CLI logs, checkpoints and blocked candidates                 | no      |
 | `inventory/`                                                   | Arabic inventories with excluded signs                              | yes     |
-| `meta/overrides.json`                                          | Adjudicated QAC corrections                                         | yes     |
+| `meta/overrides.json`                                          | 74 evidence-bearing tag/contextual-analysis overrides                                         | yes     |
 | `meta/plan.json`, `meta/*-batches.json`                        | Chunk plan and library batches                                      | yes     |
 | `meta/existing-rules.json`, `meta/style-exemplars.json`        | Inputs taken from the existing lessons                              | yes     |
 | `integration/five-surahs.patch`                                | Registry, availability, 16-Surah tests and docs                     | yes     |
 | `reports/`                                                     | Library/chunk reviews, exact progress and consistency adjudications  | yes     |
 | `drafts/`                                                      | Held reviewer JSON and Arabic inventories; never runtime imports     | yes     |
-| `build/review/quran-grammar/` (repository root)                   | Offline HTML reviewer bundle after current reviews complete         | no      |
+| `build/review/quran-grammar/` (repository root)                   | Completed offline HTML reviewer bundle         | no      |
 | `sources/`, `qac/`, `packets/`, `inputs/`, other `meta/*.json` | Third-party or regenerable data                                     | no      |

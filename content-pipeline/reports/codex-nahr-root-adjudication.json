@@ -1,0 +1,72 @@
+{
+  "status": "AI editorial adjudication; scholarly review pending",
+  "decision": "accept substantive correction",
+  "root": "ن ه ر",
+  "field": "noteUrdu",
+  "file": "content-pipeline/libs/roots/root-13.json",
+  "fileSha256Before": "d8d3e9b0a3e021e8f2521389f2b4d0ebcf2846e5fff4a46fd9eb9251aaa13e6f",
+  "severity": "minor factual teaching error",
+  "old": "نَهَر دریا اور نہر ہے اور اس کی جمع أَنْهَار، جبکہ نَهَار دن کا روشن وقت؛ اہلِ لغت دونوں میں کشادگی اور کھل کر پھیلنے کا مفہوم بتاتے ہیں۔ أَنْهَار (دریا) اور نَهَار (دن) میں صرف شروع کے ہمزہ کا فرق ہے، اس لیے دونوں کو احتیاط سے پہچانیں۔",
+  "new": "نَهَر دریا اور نہر ہے اور اس کی جمع أَنْهَار، جبکہ نَهَار دن کا روشن وقت؛ اہلِ لغت دونوں میں کشادگی اور کھل کر پھیلنے کا مفہوم بتاتے ہیں۔ أَنْهَار (دریا) میں شروع کا ہمزہ اور نون کا سکون ہے، جبکہ نَهَار (دن) میں نون پر فتحہ ہے؛ دونوں کو احتیاط سے پہچانیں۔",
+  "rationale": "The forms differ in both initial hamza and the nun vowel: ANHAR has nun sukun; NAHAR has nun fatha. The original exclusive only-hamza claim omits the second audible and written contrast. No lexical sense, root etymology, source Arabic, lemma, morphology or occurrence ID changes.",
+  "evidence": [
+    {
+      "packet": "content-pipeline/packets/18/18-c17.json",
+      "wordId": "18:31:8",
+      "arabic": "ٱلْأَنْهَـٰرُ",
+      "sourceLemma": "نَهَر",
+      "primaryMorphologyUrl": "https://corpus.quran.com/wordmorphology.jsp?location=(18:31:8)"
+    },
+    {
+      "packet": "content-pipeline/packets/18/18-c18.json",
+      "wordId": "18:33:11",
+      "arabic": "نَهَرًۭا",
+      "sourceLemma": "نَهَر",
+      "primaryMorphologyUrl": "https://corpus.quran.com/wordmorphology.jsp?location=(18:33:11)"
+    },
+    {
+      "packet": "content-pipeline/packets/23/23-c23.json",
+      "wordId": "23:80:8",
+      "arabic": "وَٱلنَّهَارِ",
+      "sourceLemma": "نَهَار",
+      "primaryMorphologyUrl": "https://corpus.quran.com/wordmorphology.jsp?location=(23:80:8)"
+    },
+    {
+      "packet": "content-pipeline/packets/36/36-c09.json",
+      "wordId": "36:37:6",
+      "arabic": "ٱلنَّهَارَ",
+      "sourceLemma": "نَهَار",
+      "primaryMorphologyUrl": "https://corpus.quran.com/wordmorphology.jsp?location=(36:37:6)"
+    },
+    {
+      "packet": "content-pipeline/packets/36/36-c10.json",
+      "wordId": "36:40:11",
+      "arabic": "ٱلنَّهَارِ",
+      "sourceLemma": "نَهَار",
+      "primaryMorphologyUrl": "https://corpus.quran.com/wordmorphology.jsp?location=(36:40:11)"
+    }
+  ],
+  "affectedChunks": [
+    "18-c17",
+    "18-c18",
+    "23-c23",
+    "36-c09",
+    "36-c10"
+  ],
+  "validation": {
+    "proposedNoteCharacters": 255,
+    "isolatedCommand": "python3 -I content-pipeline/scripts/validate_lib.py /tmp/qg-nhr-check roots root-13",
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "sharedInputEdited": false
+  },
+  "narrowScan": {
+    "entriesScanned": 589,
+    "predicate": "All 589 notes screened; full notes read when containing صرف and at least one of ہمز، فرق، حرکت، فتح، سکون، کسر، ضمہ.",
+    "candidateNotes": 9,
+    "additionalDefiniteSameKindErrors": 0,
+    "disposition": "زُبَر / زُبُر differ only in the bāʾ vowel; مُنْزَل / مُنْزِل differ only in the zāy vowel; ن ف د / ن ف ذ are root-letter contrasts. Other matches do not assert an exhaustive hamza/vowel contrast."
+  },
+  "publication": "All expansion lessons remain held for scholarly review."
+}

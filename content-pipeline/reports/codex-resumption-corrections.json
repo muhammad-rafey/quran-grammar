@@ -1,0 +1,398 @@
+{
+ "status": "Applied; all127 current independent grammar/meaning reviews and clean confirmations complete. Scholarly review pending.",
+ "publication": "held-for-scholarly-review",
+ "scholarlyReview": "pending",
+ "counts": {
+  "lexemeNotes": 35,
+  "rootNotes": 21,
+  "ruleExplanations": 2,
+  "posOverrides": 8,
+  "lemmaFields": 2,
+  "resolvedAuditNotes": 8
+ },
+ "rawSourceSha256Preserved": {
+  "content-pipeline/meta/words.json": "1a3f2381f565d82b39b5a181dfce5e4d53e8f46d4974dd174cb83b0acde3cd9f",
+  "content-pipeline/meta/ayahs.json": "fd0da606c005948b916d8c3d4d6cea937cd39ffa08672ad9f2ffe7e84db3d69b"
+ },
+ "changes": [
+  {
+   "path": "content-pipeline/libs/lexemes/lex-01.json",
+   "keys": [
+    "A^taY|IV|ACT",
+    "yu&aAxi*u|III|ACT",
+    ">axa*a|I|ACT",
+    ">axa*a|I|PASS",
+    "yasota>oxiru|X|ACT",
+    ">akala|I|ACT",
+    "'aAmana|IV|ACT",
+    "'aAwaY`^|IV|ACT",
+    "bada>a|I|ACT",
+    ">aboraHa|I|ACT"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
+   "afterSha256": "048f39b62e187621ec611a632c9ebb7c5305175a8372c2226b0a9ab3e0c9ba12"
+  },
+  {
+   "path": "content-pipeline/libs/lexemes/lex-03.json",
+   "keys": [
+    "xaraqa|I|ACT"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "a9e3f0fd083ec8da5f39ca511a9fbf300429eac28142cf31d15ea866c362a91a",
+   "afterSha256": "832328e712813834654d25e282becec40367032ff23f2f791b93ad392b0a218e"
+  },
+  {
+   "path": "content-pipeline/libs/lexemes/lex-06.json",
+   "keys": [
+    ">a$oraka|IV|ACT",
+    "yu$oEiru|IV|ACT",
+    ">a$ohada|IV|ACT",
+    "$aA^'a|I|ACT",
+    ">aSobaHa|IV|ACT",
+    "{sotaToEama|X|ACT",
+    ">aToEama|IV|ACT"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "5f4717863ed33f88235a5754c0fd344229c1b929c80b86e647953e2101cde079",
+   "afterSha256": "6b80e7da54a94ab3893b25eb0af44692d7d0f94b274f61e208a7caacafb8dad4"
+  },
+  {
+   "path": "content-pipeline/libs/lexemes/lex-08.json",
+   "keys": [
+    ">aEolan|IV|ACT",
+    "Eamila|I|ACT",
+    "Eu*o|I|ACT",
+    ">aEaAna|IV|ACT",
+    ">aEiyba|I|ACT",
+    ">ugoriqu|IV|ACT",
+    ">agofalo|IV|ACT"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "ac2d7a6475b92133421b7fa0cd411d582249f6626cf7db8378c71dcc7cc80e65",
+   "afterSha256": "63a2c50c754c55a59a58f00f3e0b80c11f6560858df5894d66102261faabe80e"
+  },
+  {
+   "path": "content-pipeline/libs/lexemes/lex-09.json",
+   "keys": [
+    ">aforigo|IV|ACT",
+    ">afolaHa|IV|ACT"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "933439e896f4bd54c1d9cc9eaa93a652f8bd57840c9959abbc19b2a7e596b32e",
+   "afterSha256": "ac1a088246b3981cacad1b01e2321a4956eb7924904d7db4bba62bf0299a6395"
+  },
+  {
+   "path": "content-pipeline/libs/lexemes/lex-11.json",
+   "keys": [
+    "nab~a>a|II|ACT"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "5ef211320057564483171c64945d0e709478cd3e13df40ca6a97ee5f8698a40f",
+   "afterSha256": "277c1655f387c46ab67621e00f05a22c5923ade5d7fc63e5be14b2117b8d1ff2"
+  },
+  {
+   "path": "content-pipeline/libs/lexemes/lex-12.json",
+   "keys": [
+    "tanfu*u|I|ACT",
+    ">anfaqa|IV|ACT",
+    ">anqa*a|IV|ACT",
+    "{hojuro|I|ACT",
+    "{sotuhozi}a|X|ACT",
+    ">aholaka|IV|ACT",
+    "yuhay~i}o|II|ACT"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "195d15d4ac56e2f36379cde7f247afcb223166de6f4978d5ea420fee7edaa89c",
+   "afterSha256": "8574d395ee90ea5f573d8a38fc173c17f30042b1b89051aa4d910bb1c191e13f"
+  },
+  {
+   "path": "content-pipeline/libs/roots/root-01.json",
+   "keys": [
+    "أ ر ك"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "b5e639a97d3df9c0d4f2a95b58926caac44502b09de184cd49d2c8edf74e4dc2",
+   "afterSha256": "ba9fe06eef72ce46567189419238f0630fa60b154bf780eb5356fc51237b25d9"
+  },
+  {
+   "path": "content-pipeline/libs/roots/root-02.json",
+   "keys": [
+    "ب ص ر",
+    "ب ط ن",
+    "ج د ث",
+    "ج ز ي",
+    "ج م ع"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "bd6ec9121e565e518c8643560353f53902a91928f9816b7bae28c42869890b7e",
+   "afterSha256": "8a1e675adcd5465559e740f39e5922ae31335e43f925f16f167bd477624d6cbf"
+  },
+  {
+   "path": "content-pipeline/libs/roots/root-03.json",
+   "keys": [
+    "خ ر ق"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "a805891404fe007f7befac26bfcf18e85fb0537117eedcab93d0ed2296018f63",
+   "afterSha256": "60e836dde6264f542abeb549768cd48f29518cdec5bec870a60cda0454fb1554"
+  },
+  {
+   "path": "content-pipeline/libs/roots/root-06.json",
+   "keys": [
+    "س م و"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "431592d9ae9bf4e8b9154ffd93994532c42a1e51037af15e44447bbd368be760",
+   "afterSha256": "ac0eceefe1617f4c0ef8734251a02ec22d409c2298509c353b3693caf67ce31b"
+  },
+  {
+   "path": "content-pipeline/libs/roots/root-08.json",
+   "keys": [
+    "ط ي ر"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "7ee51bca7e6f2ae36a9e8f4a0a15d2c8e67137c3174b98b34c3f55bc6331ae7d",
+   "afterSha256": "b936b1b8bae9c02f3552bdc93b0f1335d651173a0c1074ca85685f3b5700b05a"
+  },
+  {
+   "path": "content-pipeline/libs/roots/root-09.json",
+   "keys": [
+    "غ ث و",
+    "غ د و",
+    "غ ط و"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "95b8712adb98dd72274c989d6c7f339a1cb3f10d080bb0cca2dee01087fcf67c",
+   "afterSha256": "89d6cdd6283203d4d86685c73dc15ef98a16bf56ea098876abedf48d78d755d6"
+  },
+  {
+   "path": "content-pipeline/libs/roots/root-10.json",
+   "keys": [
+    "ق ت ل"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "dfdd28e3b816c8c50113b71771b1f0ebd87ae9fccf80030563e2cf32845f85ba",
+   "afterSha256": "e8634b137565f2fc94a011c38032ce1d00a73692ae9e4339c892e5aa1ad164e6"
+  },
+  {
+   "path": "content-pipeline/libs/roots/root-12.json",
+   "keys": [
+    "ل ق ي",
+    "ل ي س",
+    "م أ ي",
+    "م ض ي",
+    "م ل أ",
+    "م و ه",
+    "ن ب أ",
+    "ن س ب"
+   ],
+   "field": "noteUrdu",
+   "beforeSha256": "a954072fc2c5efb4a9fa9fdc1c9aa9f8c12be52a2ba76f5f8006fc8f74dfe667",
+   "afterSha256": "a88c8c9ded36adbdf3d548f8f8f90f2330b1a647c5cd2e9d157e03fc1d35eb26"
+  },
+  {
+   "path": "content-pipeline/libs/rules.json",
+   "keys": [
+    "jussive",
+    "kada-asa"
+   ],
+   "field": "explanationUrdu",
+   "beforeSha256": "70fd701168f2a1850a20e492b28d31ce5d3c8c958fdc75ee75ff352fb9bf70a5",
+   "afterSha256": "021fb5db4532891d6d8152872cf03191056f6be4a85d33c73c1f2109c99f45d4"
+  },
+  {
+   "path": "content-pipeline/meta/overrides.json",
+   "keys": [
+    "18:12:7",
+    "18:22:19",
+    "18:26:4",
+    "23:26:4",
+    "23:39:4",
+    "32:9:13",
+    "32:14:2",
+    "36:32:3"
+   ],
+   "beforeSha256": "2cd47d46176975b911b53f017d840238ad2b3ede1cb02e3e056cdd9c9f5409b5",
+   "afterSha256": "cdd865f5d9b11f77246690d67ce0b66dd391e961c06ac2ee470a034f0a02f565"
+  },
+  {
+   "path": "content-pipeline/chunks/18/18-c04.json",
+   "fields": [
+    {
+     "wordId": "18:12:7",
+     "field": "auditNotes",
+     "reason": "Resolve prior app/source type mismatch using explicit effective particle override; old note retained in the adjudication report and git history."
+    }
+   ],
+   "beforeSha256": "999dd3c81e58fdad06df07637d16c7f07246277f5ac545650e17ffb1782a58f2",
+   "afterSha256": "56c80ce7c19391bc13be65a7d91ee287e48f0d390eb1d9078ca1df96ec1c6a2e"
+  },
+  {
+   "path": "content-pipeline/chunks/18/18-c12.json",
+   "fields": [
+    {
+     "wordId": "18:22:19",
+     "field": "auditNotes",
+     "reason": "Resolve prior app/source type mismatch using explicit effective particle override; old note retained in the adjudication report and git history."
+    }
+   ],
+   "beforeSha256": "6b5bfbaad577f417c750188872c56f0ed2c25d22701e75cd5701ca051be449c3",
+   "afterSha256": "70d25dda23d06078ba5823185f9d09787fae525dace2d3645e5418ba4d6a3400"
+  },
+  {
+   "path": "content-pipeline/chunks/18/18-c14.json",
+   "fields": [
+    {
+     "wordId": "18:26:4",
+     "field": "auditNotes",
+     "reason": "Resolve prior app/source type mismatch using explicit effective particle override; old note retained in the adjudication report and git history."
+    }
+   ],
+   "beforeSha256": "f27886b1b7725c37398adde5bdbbb379567157d2f8a94ac4346502e4c5c320c2",
+   "afterSha256": "64a5c54a60c0b20fdbf86f83238e87f1fe2f0ff7f25f50a573825528ddfe98b2"
+  },
+  {
+   "path": "content-pipeline/chunks/23/23-c08.json",
+   "fields": [
+    {
+     "wordId": "23:26:4",
+     "field": "auditNotes",
+     "reason": "Resolve prior app/source type mismatch using explicit effective particle override; old note retained in the adjudication report and git history."
+    }
+   ],
+   "beforeSha256": "f0e9204c7acb8f41a27d893096a6f97314dbcf61255be07a861ff2b1d5975a4c",
+   "afterSha256": "668d89f614aeb75a727ed9d55729be2f0f95884d84402410b089060ddf44a651"
+  },
+  {
+   "path": "content-pipeline/chunks/23/23-c13.json",
+   "fields": [
+    {
+     "wordId": "23:39:4",
+     "field": "auditNotes",
+     "reason": "Resolve prior app/source type mismatch using explicit effective particle override; old note retained in the adjudication report and git history."
+    }
+   ],
+   "beforeSha256": "b8022a6330d2c3698cec4895674b3d2010e351e55144f93f6db61b29d738044d",
+   "afterSha256": "6dd3dbda26c47a35a7a8e5b6bde5ccfd6374635305a1fafe8f93ce66d0646731"
+  },
+  {
+   "path": "content-pipeline/chunks/32/32-c04.json",
+   "fields": [
+    {
+     "wordId": "32:9:13",
+     "field": "auditNotes",
+     "reason": "Resolve prior app/source type mismatch using explicit effective particle override; old note retained in the adjudication report and git history."
+    }
+   ],
+   "beforeSha256": "2682ecaf7ab3bae6f17feb767d75855b2313d6bae9d056507b8e2258774ffedc",
+   "afterSha256": "6921d5a36f8054c890c9c7d459a84319247df9270abb18d2caba486715be9fae"
+  },
+  {
+   "path": "content-pipeline/chunks/32/32-c06.json",
+   "fields": [
+    {
+     "wordId": "32:14:2",
+     "field": "auditNotes",
+     "reason": "Resolve prior app/source type mismatch using explicit effective particle override; old note retained in the adjudication report and git history."
+    }
+   ],
+   "beforeSha256": "70097f274c0971a6da87d43fcc19b751ba8c6c6d4936e249af5176c413c02258",
+   "afterSha256": "2181239703b3345073ddca5ef920f277e95673b9e8e1b8efb6ad4e783d6b76c5"
+  },
+  {
+   "path": "content-pipeline/chunks/36/36-c08.json",
+   "fields": [
+    {
+     "wordId": "36:32:3",
+     "field": "auditNotes",
+     "reason": "Resolve prior app/source type mismatch using explicit effective particle override; old note retained in the adjudication report and git history."
+    }
+   ],
+   "beforeSha256": "f677e6ab4174803b8760ba85f111446622bf8bd831b75dcc8c4b53aeef83c6c8",
+   "afterSha256": "2e232bfbe1a86f20b74c55278c39bd1344a026be3d98bc2506f5e1349810f07b"
+  },
+  {
+   "path": "content-pipeline/chunks/18/18-c07.json",
+   "fields": [
+    {
+     "wordId": "18:17:8",
+     "file": "content-pipeline/chunks/18/18-c07.json",
+     "field": "lemma",
+     "from": "ذُو",
+     "to": "ذَاتٌ",
+     "category": "canonical_consistency_in_identical_context_not_false_source_headword",
+     "reason": "Match the retained feminine directional base used in the same ذَاتَ اليمين/الشمال constructions at18:18:6/8; both occurrences already explicitly teach singular feminine جانب with regular visible fatha."
+    },
+    {
+     "wordId": "18:17:13",
+     "file": "content-pipeline/chunks/18/18-c07.json",
+     "field": "lemma",
+     "from": "ذُو",
+     "to": "ذَاتٌ",
+     "category": "canonical_consistency_in_identical_context_not_false_source_headword",
+     "reason": "Match the retained feminine directional base used in the same ذَاتَ اليمين/الشمال constructions at18:18:6/8; both occurrences already explicitly teach singular feminine جانب with regular visible fatha."
+    }
+   ],
+   "beforeSha256": "077e0943617fe2e51484ebd083dab668c1377523035bcf496b948253aff2b610",
+   "afterSha256": "78bdf8f75d29c2aa069275d80c88964a265d6e5b1f3c27ef5b5656e9b3967088"
+  },
+  {
+   "path": "content-pipeline/guide/authoring-guide.md",
+   "beforeSha256": "8ead190b344b7679af969df1fa4b3172ee5fe29035ca49c5d7d1fdccfa9c85ff",
+   "afterSha256": "9c6c983587404eb9b0a7814c225c61462252393e2ad5f5b4da162260584ce2a9"
+  }
+ ],
+ "finalPreflightCorrections": [
+  {
+   "report": "codex-qara-root-adjudication.json",
+   "change": "Qualified ق ر أ root note to allow recitation/recited-revelation and proper-name uses; exact Arabic and meaning fields preserved."
+  },
+  {
+   "report": "codex-final-type-adjudication.json",
+   "change": "Added ninth contextual particle override23:78:9;74total occurrence records;65prior corrections plus9contextual analyses. Updated stale audit note; raw sources preserved."
+  },
+  {
+   "report": "codex-prohibition-agreement-adjudication.json",
+   "change": "Made the implicit head حرف explicit in the prohibition rule opening; same rule meaning and Arabic tokens preserved.",
+   "path": "content-pipeline/libs/rules.json",
+   "beforeSha256": "021fb5db4532891d6d8152872cf03191056f6be4a85d33c73c1f2109c99f45d4",
+   "afterSha256": "b6d98dc92d4f1b4f07e3ea7345737c4a0240afabdfb56930e84e22c1900585e9"
+  }
+ ],
+ "finalScopedRootCorrections": [
+  {
+   "report": "codex-nahr-root-adjudication.json",
+   "path": "content-pipeline/libs/roots/root-13.json",
+   "beforeSha256": "d8d3e9b0a3e021e8f2521389f2b4d0ebcf2846e5fff4a46fd9eb9251aaa13e6f",
+   "afterSha256": "3035e6c390611333d8c7d04c7b48e50f84d9990a2f269a65a6a27b7fe119a2b2",
+   "affectedChunks": [
+    "18-c17",
+    "18-c18",
+    "23-c23",
+    "36-c09",
+    "36-c10"
+   ],
+   "change": "Corrected the exclusive hamza-only comparison; explicitly preserves nun-sukun versus nun-fatha distinction. Unchanged meaningUrdu, source Arabic, lemmas and occurrence IDs. Fresh full reviews required for all five supplied-root chunks."
+  },
+  {
+   "report": "codex-qasr-root-adjudication.json",
+   "path": "content-pipeline/libs/roots/root-10.json",
+   "beforeSha256": "915e0e0726add5aa470d89bf7a15fc6b1e28f51600a62db730258b3605e94851",
+   "afterSha256": "73fb8142b6cf1f3123fc5f4a2065869b13bc925ae3161f2f4903316310c7f553",
+   "affectedChunks": [
+    "55-c09",
+    "55-c11"
+   ],
+   "change": "Specified the complete feminine sound-plural passive-participle pattern مَفْعُولَات for مَقْصُورَات; meaningUrdu and all source data unchanged. Fresh full reviews required for both supplied-root chunks."
+  }
+ ],
+ "countsNotice": "counts describes the initial resumption batch; additional preflight/scoped corrections are recorded separately below.",
+ "finalCounts": {
+  "occurrenceRecords": 74,
+  "priorTagCorrections": 65,
+  "selectedContextualTypeAnalyses": 9,
+  "lateRootClarifications": 3
+ },
+ "currentReviewManifest": "chunk-review-manifest.json"
+}

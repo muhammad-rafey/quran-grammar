@@ -1,0 +1,149 @@
+{
+  "date": "2026-11-06",
+  "status": "passed Android emulator and iOS simulator regression checks; all expansion content held",
+  "device": "repro36 Android36 emulator, arm64; no physical device used",
+  "method": "Private isolated Metro fixture copied the app source and supplied held draft JSON; a local debug-signed test APK reused the existing native archive. A persistent scholarly-review-pending banner identified the preview. No runtime registry or API was changed.",
+  "reproducedBug": "Before fix, Juz23 then Ya-Sin settled at ayah6/Juz22 instead of ayah28.",
+  "fix": "Keyed chapter/view scroll surfaces, current-layout readiness and native offset acknowledgment; clamped requests retry and user drag resumes actual reading labels.",
+  "checks": [
+    "Juz 23 opens Ya-Sin at ayah 28 with the exact first word.",
+    "Manual upward scroll changes Ya-Sin 28/Juz 23 to ayah 27/Juz 22.",
+    "Juz 16 opens the complete 1,579-word Al-Kahf at ayah 75.",
+    "Manual upward scroll changes Al-Kahf 75/Juz 16 to ayah 74/Juz 15.",
+    "A same-chapter Juz 16 selection returns to Al-Kahf 75.",
+    "Word 18:75:1 shows counter 1129/1579, root ق و ل, past قَالَ, present يَقُولُ and the expected pattern.",
+    "Closing the word modal retains Al-Kahf 75/Juz 16.",
+    "Grammar starts at ayah 1/Juz 15; returning to Study shows ayah 1 and the correct first word.",
+    "No AndroidRuntime or ReactNativeJS errors appeared in the test log window.",
+    "The stable eleven-Surah APK was rebuilt, installed and launched afterwards; its bundle contains neither the private banner nor expansion occurrence IDs."
+  ],
+  "sourceSha256": {
+    "apps/mobile/src/screens/study-screen.tsx": "65d248ae274cfdaf71d69ed5283c24bd5751e8b947ecaae6f03758aed082d805",
+    "apps/mobile/src/screens/ayah-scroll.ts": "cc688fdab911126092648f960ecf9fb6d888e95b7337d16c4e0bd92feb3cf159",
+    "apps/mobile/tests/ayah-scroll.test.mjs": "bcec899fb64ee8241d6919b0d46464cafba4d1a47dce2de962f1fdfc0c8356c2"
+  },
+  "localEvidenceSha256": {
+    "build/verification/native-juz23-after.xml": "c3969e3352d89f70d9f3dfd259a47444bde42de39e728f050b515a05de29833f",
+    "build/verification/native-juz23-before.xml": "bcab2b101b25d4a1eec788b5524638ee89d80c9a028bb436410779f4336ff015",
+    "build/verification/native-kahf-grammar.xml": "9762e99d00d68cea84c8d913de2f0a4b63357d72d6e5936449ebae8ad578c7af",
+    "build/verification/native-kahf-juz16.xml": "0a6db594d5300b80e3e54238e79b15f50551fd320f631e26d391c10d1c5227d1",
+    "build/verification/native-kahf-modal-return.xml": "2b0cd3ba62796e57a8adbc8e45ef405a34fb6d8409d7892ef9faeb6fb8ef4bbe",
+    "build/verification/native-kahf-paradigm.xml": "a9b05e52dffa6e5bd656ea97289a179f751b192e92226c998fb970def17d8c1a",
+    "build/verification/native-kahf-same-chapter.xml": "2b0cd3ba62796e57a8adbc8e45ef405a34fb6d8409d7892ef9faeb6fb8ef4bbe",
+    "build/verification/native-kahf-study-return.xml": "d2b551f2e79789247c1bc33eeb814a78b5ef483b8bc974a5dd6fbc207c4391b0",
+    "build/verification/native-stable-restored.xml": "4b40baff5ad41b14758bf8f401ba73d48262f443f550fb80a32887a82eb0f482",
+    "build/verification/native-yasin-manual-boundary.xml": "92e2d8b50a340c023c8db7556a832375aa6b252021fd0adce384604b4d9aabab"
+  },
+  "stableApk": {
+    "builtAt": "2026-11-06T15:06:49.802Z",
+    "artifact": "quran-grammar.apk",
+    "bytes": 61793280,
+    "sha256": "f71b5c5f170ee99c387433adc6ee2a447844d44fb54c670d44aa9dba1fb8f7f3",
+    "architectures": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "signing": "Expo debug key; local testing only",
+    "apiConfigured": false,
+    "metroRequired": false
+  },
+  "independentCodeReview": "No actionable findings; API loading, StrictMode, same-chapter jumps, view changes, modal return and memoization checked by a separate agent.",
+  "unitAndBuildChecks": "Final npm run verify passed:220Node tests (including12mobile and185pipeline),46Python tests and web/API builds;33browser tests passed with0skips;both iOS/Android exports passed. See codex-verification.json.",
+  "limitations": [
+    "No physical-phone interaction test or store-signed release build.",
+    "The review preview is a local test fixture, not a released sixteen-Surah app.",
+    "All five scholarly approvals remain pending."
+  ],
+  "iosSimulatorRegression": {
+    "status": "passed real native interaction assertions; scholarly review pending",
+    "device": "iPhone 17 Pro simulator, iOS 26.5; no physical device used",
+    "client": "Expo Go 57.0.9; Expo SDK 57 / React Native 0.86.3",
+    "toolchain": "Xcode 27.2 (27B52), headless XCTest UI runner",
+    "method": "XCTest activated only Expo Go, tapped native catalog, word and tab controls, dragged native scroll views, and asserted current ayah/Juz and hittable target words. Each checkpoint retained an app screenshot and full accessibility snapshot. The isolated port-8094 Metro fixture displayed a persistent PRIVATE TEST / SCHOLARLY REVIEW PENDING banner and supplied held JSON without changing the runtime registry or API.",
+    "test": {
+      "name": "ReviewUITests.testHeldDraftScrollRegression",
+      "startedAt": "2026-11-06T21:15:12.163+05:00",
+      "finishedAt": "2026-11-06T21:20:04.213+05:00",
+      "testCases": 1,
+      "failures": 0,
+      "durationSeconds": 292.048,
+      "resultBundle": "build/verification/ios-ui-regression/regression-3.xcresult"
+    },
+    "checks": [
+      "Juz 23 opens Ya-Sin at ayah 28; occurrence 36:28:1 is hittable, and the catalog identifies current Juz 23.",
+      "A native upward reading-position drag selects Ya-Sin 27/Juz 22; the ayah 27 card intersects the reading line.",
+      "Juz 16 opens Al-Kahf at ayah 75; occurrence 18:75:1 is hittable, and the catalog identifies current Juz 16.",
+      "A native upward reading-position drag selects Al-Kahf 74/Juz 15; the ayah 74 card intersects the reading line.",
+      "Selecting Juz 16 within the same chapter returns to Al-Kahf 75 and the hittable target occurrence.",
+      "Word 18:75:1 opens with counter 1129 / 1579 and root ق و ل.",
+      "Native modal scrolling exposes قَالَ, يَقُولُ and فَعَلَ — يَفْعُلُ as hittable text.",
+      "Back to study retains Al-Kahf 75, its target occurrence and current Juz 16.",
+      "Grammar starts at ayah 1/Juz 15.",
+      "Returning to Study shows ayah 1/Juz 15 with occurrence 18:1:1 hittable."
+    ],
+    "sourceSha256": {
+      "apps/mobile/src/screens/study-screen.tsx": "65d248ae274cfdaf71d69ed5283c24bd5751e8b947ecaae6f03758aed082d805",
+      "apps/mobile/src/screens/ayah-scroll.ts": "cc688fdab911126092648f960ecf9fb6d888e95b7337d16c4e0bd92feb3cf159",
+      "apps/mobile/src/screens/study-picker.tsx": "20b1a89c7c63732ef5be741a0091b1eff0894ca8f3bf52ff928e372845cfb944",
+      "apps/mobile/src/screens/word-screen.tsx": "fb7d76ec50779e06bd2a2ab688da00a685bd1e810fc5dcf70635327fb05c0660",
+      "apps/mobile/src/state/study-provider.tsx": "f8fdca963a9538a8dd09ddbbb76d0c9976d1a5e0846c5afd5b5fd516c9fb800f"
+    },
+    "fixtureDataSha256": {
+      "build/review/native-preview/surah-18.json": "c5ff9aac2da1229b17e66cfba142040fbb91a435bfff774659bd2ce05b4d5e9e",
+      "build/review/native-preview/surah-23.json": "b2f89ae7492156f31c31b7db2b4ce17e5a16bd4de6d063601faa9dce3943c7f6",
+      "build/review/native-preview/surah-32.json": "2dd8a16db4cef7f0413ecafc8dca71fe95e1d736ca55675547a4bbd2de9623e6",
+      "build/review/native-preview/surah-36.json": "47296a83a3ea5fed629286f8764146b2b22a9680a838f415f43c42bba8a422ff",
+      "build/review/native-preview/surah-55.json": "575fdf6f70e99c7f0539e50609640da064a7982da7a02ba286ed43b6ed44ffcc"
+    },
+    "localEvidenceSha256": {
+      "build/verification/ios-yasin-juz23-ayah28.png": "8367a5a9d44dedd31b7f2a04a6a4ff4f39624ef9f4a0b986415ac14e1ce2ade8",
+      "build/verification/ios-yasin-juz23-ayah28-accessibility.txt": "bd9ba25c41ba1cbe79ec0145775f8e3a526f406dc8fd36b9c6a393283ff6d12d",
+      "build/verification/ios-yasin-manual-ayah27-juz22.png": "d2860d03283282cd3e123319e18c7ce457363ff23d0a9ea910bd17ceb736fc09",
+      "build/verification/ios-yasin-manual-ayah27-juz22-accessibility.txt": "93ced4d08d49d5108b5654a160c4f7a6855866eb988237f99445dfbf5d9af371",
+      "build/verification/ios-kahf-juz16-ayah75.png": "4219d544af8623709b466c0a17787fd27ae45b761817c16cec55a61e201d7afa",
+      "build/verification/ios-kahf-juz16-ayah75-accessibility.txt": "0b45999082455c683a7b395a059c5c9b73f635127cc3e4db957e89d784700e48",
+      "build/verification/ios-kahf-manual-ayah74-juz15.png": "e1def9518d627bbd8b91940f44004355217f14b37c9d13d06934c24fc5406abe",
+      "build/verification/ios-kahf-manual-ayah74-juz15-accessibility.txt": "ac18671bca678cfd4e8285799977682de935fb3ec6c4bb276bcbb97e6f69a5a0",
+      "build/verification/ios-kahf-same-chapter-ayah75.png": "27f7ab5762052d3f5e03385914216076f9e53eea8d4be5b4558b80159f0e5cb0",
+      "build/verification/ios-kahf-same-chapter-ayah75-accessibility.txt": "b14de9832d3ab1b4341dcade54a653a40c23084f2ae44290f324ac7033301d3a",
+      "build/verification/ios-kahf-word-root.png": "f1768cb79a49088ee684bbcfd7a3ebd6e3e5ffcf3080e037cbd3a27095f3d41b",
+      "build/verification/ios-kahf-word-root-accessibility.txt": "23c51ebf24bad59e33f944c7c301f29cf9fa56686f6002690567a0965990bce1",
+      "build/verification/ios-kahf-word-paradigm.png": "a7b744da3494c707e2d03584f7adc94eaaacf6099a7d5e6069a9aa4ee9af3510",
+      "build/verification/ios-kahf-word-paradigm-accessibility.txt": "7353828cd19617cf6b94099fd0e11b42ab5bb623e6bd8365af39fe90ea61621c",
+      "build/verification/ios-kahf-modal-return.png": "587ed57379f1ac28ccbd8a26d4e88f3d40713b77c6afd686221f884d69684b40",
+      "build/verification/ios-kahf-modal-return-accessibility.txt": "c8ad228ba49b8abcd7a7696e34fcc5e55eca7b6685a84e7edde3e8520ed86f02",
+      "build/verification/ios-kahf-grammar-return.png": "cbbf75d246be0837ab4acc561f65542389117da77f99f6735cfeddfde6501cb5",
+      "build/verification/ios-kahf-grammar-return-accessibility.txt": "6479fb5d5ac2ffc9fb7bfc49d1c933b5c6f796ed1bb21f04d66cfe3a157514f5",
+      "build/verification/ios-kahf-study-return.png": "fdcc9323d375ada113923c3766e396ee1e2f97531e10792105777a5d18fb1da6",
+      "build/verification/ios-kahf-study-return-accessibility.txt": "045baa5757b161365db508794099c9eaeaf352196bbfa05f51e950f1239f6434",
+      "build/verification/ios-ui-regression/ReviewUITests.swift": "2d9decc624670be4d0a0ab02141d93ec465b4aabc1dbe956f2fd3d143506c560",
+      "build/verification/ios-ui-regression/regression-3.log": "9779a8f5861a79cbfd03225a5c1624fb34d6832318cbfc529eebb6dff58f4db7",
+      "build/verification/ios-ui-regression/app-log.json": "22e6b41f0ff94ee9ba0c717d7158a879ee810b0047949c7408b41f70d04b733e"
+    },
+    "runtimeLog": {
+      "scope": "Expo Go process during the successful test window",
+      "records": 333295,
+      "javascriptFatalSignatureMatches": 0,
+      "signaturesChecked": [
+        "Unhandled JS Exception",
+        "RCTFatal",
+        "ReferenceError",
+        "TypeError",
+        "Invariant Violation"
+      ],
+      "faultMessage": "QUARANTINED DUE TO HIGH LOGGING VOLUME",
+      "limitation": "One Apple logging-quarantine fault occurred during repeated native accessibility queries; absence of matched fatal signatures is limited to the retained log."
+    },
+    "cleanup": {
+      "temporaryXCTestRunnerUninstalled": true,
+      "previewMetroPort8094Stopped": true,
+      "selectedSimulatorRestoredToShutdown": true,
+      "otherDevicesAndServersUntouched": true
+    },
+    "limitations": [
+      "Offline private-fixture navigation test, not API-mode coverage or scholarly validation of the supplied draft snapshot.",
+      "Expo Go development overlay overlaps a top-right close control; the test dismissed catalog sheets using the native sheet grabber and returned from word detail using Back to study.",
+      "No physical iPhone or custom standalone iOS IPA was tested."
+    ]
+  }
+}

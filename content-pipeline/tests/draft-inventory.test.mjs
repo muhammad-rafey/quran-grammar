@@ -1,9 +1,11 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { readFile, readdir } from 'node:fs/promises';
-import { join } from 'node:path';
+import { mkdir, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { dirname, join } from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
+import { reviewSourceFilesSha256 } from '../scripts/export_reviews.mjs';
 
 // These checks use only committed material, so CI needs neither the Corpus
 // download nor the ignored source packets or private model-run checkpoints.
@@ -60,6 +62,51 @@ function fields(value, required, optional, where) {
     assert.ok(required.includes(name) || optional.includes(name), `${where}: unexpected field ${name}`);
   }
 }
+
+async function assertReviewedSourceFiles(work, recorded) {
+  object(recorded, 'completed manifest sourceFilesSha256');
+  const current = await reviewSourceFilesSha256(work);
+  assert.deepEqual(Object.keys(recorded).sort(), Object.keys(current).sort(),
+    'completed manifest must pin exactly the tracked review source files');
+  for (const [path, hash] of Object.entries(current)) {
+    assert.equal(typeof recorded[path], 'string', `${path}: missing reviewed source hash`);
+    assert.match(recorded[path], /^[0-9a-f]{64}$/, `${path}: malformed reviewed source hash`);
+    assert.equal(recorded[path], hash, `${path}: source changed since its completed AI review`);
+  }
+}
+
+test('completed-manifest source verification catches changed shared files without a chunk edit', async (context) => {
+  const work = await mkdtemp(join(tmpdir(), 'quran-grammar-manifest-source-test-'));
+  context.after(() => rm(work, { recursive: true, force: true }));
+  const files = ['guide/authoring-guide.md', 'workflows/chunks.js', 'scripts/validate_chunk.py',
+    'meta/plan.json', 'meta/overrides.json', 'libs/rules.json', 'libs/lexemes/fixture.json', 'libs/roots/fixture.json'];
+  for (const path of files) {
+    await mkdir(dirname(join(work, path)), { recursive: true });
+    await writeFile(join(work, path), 'Synthetic source-hash fixture; no lesson content.\n');
+  }
+  await mkdir(join(work, 'chunks', '18'), { recursive: true });
+  const chunk = join(work, 'chunks', '18', '18-c01.json');
+  await writeFile(chunk, '{"synthetic":true}');
+  const chunkBefore = await readFile(chunk);
+  const recorded = await reviewSourceFilesSha256(work);
+  assert.deepEqual(Object.keys(recorded), files.sort());
+  await assertReviewedSourceFiles(work, recorded);
+  for (const path of ['guide/authoring-guide.md', 'libs/rules.json', 'libs/lexemes/fixture.json', 'libs/roots/fixture.json']) {
+    const previous = await readFile(join(work, path));
+    await writeFile(join(work, path), 'Changed fixture source.\n');
+    await assert.rejects(assertReviewedSourceFiles(work, recorded), /source changed since its completed AI review/);
+    assert.deepEqual(await readFile(chunk), chunkBefore);
+    await writeFile(join(work, path), previous);
+  }
+  const incomplete = { ...recorded };
+  delete incomplete['guide/authoring-guide.md'];
+  await assert.rejects(assertReviewedSourceFiles(work, incomplete), /exactly the tracked review source files/);
+  await assert.rejects(assertReviewedSourceFiles(work, { ...recorded, 'meta/words.json': '0'.repeat(64) }),
+    /exactly the tracked review source files/);
+  await assert.rejects(assertReviewedSourceFiles(work, undefined), /expected an object/);
+  await writeFile(join(work, 'libs/roots/new-fixture.json'), '{"entries":[]}');
+  await assert.rejects(assertReviewedSourceFiles(work, recorded), /exactly the tracked review source files/);
+});
 
 test('the tracked plan and canonical inventories cover all five Surahs exactly once', () => {
   assert.equal(plan.length, 127);
@@ -194,6 +241,7 @@ test('a completed review manifest pins every planned draft to its reviewed bytes
     context.skip('Review manifest is not yet complete.');
     return;
   }
+  await assertReviewedSourceFiles(pipeline, manifest.sourceFilesSha256);
   assert.equal(manifest.expectedChunks, 127);
   assert.ok(Array.isArray(manifest.chunks));
   assert.equal(manifest.chunks.length, plan.length);

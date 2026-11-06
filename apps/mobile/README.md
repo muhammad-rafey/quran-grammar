@@ -9,7 +9,7 @@ SDK 57 Expo Go client during simulator testing.
 
 ## Run
 
-From the repository root, install the workspace dependencies with `npm install`.
+From the repository root, use Node.js 24 and install the workspace dependencies with `npm ci`.
 Then start the app:
 
 ```sh
@@ -156,6 +156,52 @@ icon, and complete scholar review of the teaching draft.
   the saved preference and Urdu ayah numeral. Restored English afterward.
 - Evidence remains local in `build/verification/android-initial.png` and
   `build/verification/android-word.png`. App-specific fatal/JavaScript logs were
-  checked separately. This is an Android emulator check of the 11-Surah edition;
-  the five draft Surahs are not registered, so their long-chapter scrolling and
-  cross-Juz picker checks remain pending. No new iOS device test was performed.
+  checked separately. This first check covered the 11-Surah edition. The held
+  long-chapter checks were subsequently completed in the private preview below.
+  No new iOS device test was performed.
+
+### Held-draft scroll regression on 2026-11-06
+
+An isolated local Metro fixture supplied all five held draft chapters to a private
+Android preview with a persistent scholarly-review-pending banner. The actual
+registry, API and databases stayed at eleven Surahs. This exposed a native race:
+Juz 23 selected Ya-Sin 28, but an early scroll command was clamped to the previous
+short chapter's content extent and settled around ayah 6. The reader now waits for
+current chapter/view measurements and confirms the native offset before ending a
+pending jump. Old surfaces cannot update the new reading state; manual dragging
+resumes normal ayah tracking.
+
+On the `repro36` Android 36 emulator, checked Juz 23 → Ya-Sin 28, manual scrolling
+back to 27/Juz 22, Juz 16 → Al-Kahf 75, manual scrolling to 74/Juz 15 and a same-chapter
+jump back to 75. Al-Kahf's full 1,579-word reader opened occurrence 18:75:1 with the
+correct 1129/1579 counter, root and verb paradigm; closing retained the reader's
+position. Study/Grammar switching started fresh at ayah 1 without stale geometry.
+App-specific fatal/JavaScript error logs were empty.
+
+The stable eleven-Surah APK was rebuilt, installed and cold-launched afterwards;
+the private fixture was removed from the emulator. Native scroll tests and both
+platform exports pass. The iOS simulator interaction regression below also passed;
+no physical phone was tested. Exact source hashes and local evidence references are in
+[`codex-native-verification.json`](../../content-pipeline/reports/codex-native-verification.json).
+### iOS held-draft interaction verification on 2026-11-06
+
+A headless XCTest UI runner drove Expo Go 57.0.9 on the existing iPhone 17 Pro /
+iOS 26.5 simulator, using the isolated pending-review fixture. Native taps and
+drags passed all ten checkpoints: Juz 23 → Ya-Sin 28 and manual 27/Juz 22;
+Juz 16 → Al-Kahf 75 and manual 74/Juz 15; a same-chapter return to 75;
+18:75:1's occurrence counter, root and visible verb paradigm; modal return;
+and Grammar/Study resets to ayah 1/Juz 15. Assertions checked hittable target
+words and current Juz values, alongside screenshots and accessibility snapshots.
+
+The successful XCTest result has one test case and zero failures. The fixture's
+scroll coordinator, reader, picker, word detail and provider bytes matched the
+tracked source. Retained app logs had no matched JavaScript fatal signatures;
+Apple limited logging during repeated accessibility queries, so this is not a
+claim of exhaustive runtime-log coverage. The temporary runner was removed,
+the separate Metro server stopped, and the simulator returned to shutdown.
+
+Evidence and source/data hashes are recorded in the verification JSON linked
+above; local screenshots and accessibility snapshots are under
+`build/verification/ios-*`. This tested offline navigation in Expo Go, without
+activating the held lessons. API mode, a physical iPhone and a standalone iOS IPA
+were not part of this regression. Scholarly review remains pending.

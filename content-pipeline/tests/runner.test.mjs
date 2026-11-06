@@ -416,3 +416,28 @@ for (const mode of ['race-relevant-root', 'race-unused-root']) {
     }
   });
 }
+
+test('isolated workflow validates against the same effective type overrides as its packet', async (context) => {
+  const setup = await fixture(context);
+  // Synthetic transport classification only; the repository pilot is unchanged.
+  const id = spec.wordIds[0];
+  const source = structuredClone(words);
+  source[id].pos = 'verb';
+  await writeFile(join(setup.work, 'meta/words.json'), JSON.stringify(source));
+  const note = 'Synthetic transport override; no actual Quran morphology adjudication.';
+  await writeFile(join(setup.work, 'meta/overrides.json'), JSON.stringify({ [id]: { pos: 'particle', noteEnglish: note } }));
+  const packetFile = join(setup.work, 'packets/18', `${CHUNK}.json`);
+  const packet = JSON.parse(await readFile(packetFile, 'utf8'));
+  packet.words[0].pos = 'particle';
+  packet.words[0].qacCorrection = `${note} Follow this correction, not the raw QAC tag or the generated i‘rab line; record it in auditNotes.`;
+  await writeFile(packetFile, JSON.stringify(packet));
+  const authored = structuredClone(pilot);
+  authored.words[0].posUrdu = 'حرف';
+  await writeFile(join(setup.work, 'payload.json'), JSON.stringify(authored));
+  const result = await setup.command();
+  assert.equal(result.code, 0, result.stderr);
+  const checkpoint = await setup.checkpoint();
+  assert.equal(checkpoint.status, 'ai-reviewed');
+  assert.equal(checkpoint.validation.warnings.some((warning) => warning.startsWith(`word ${id}: posUrdu`)), false);
+  assert.deepEqual(JSON.parse(await readFile(join(setup.work, 'meta/words.json'), 'utf8')), source);
+});

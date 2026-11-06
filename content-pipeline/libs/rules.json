@@ -111,7 +111,7 @@
   {
    "id": "prohibition",
    "titleUrdu": "نہی: لَا ناہیہ",
-   "explanationUrdu": "لَا ناہیہ مضارع کو مجزوم کر کے کسی کام سے روکتا ہے، جیسے لَا تَقُلْ «نہ کہو»؛ آخر میں سکون، نون کا حذف یا حرفِ علت کا حذف جزم کی علامت ہوتا ہے۔ اسے لَا نافیہ سے الگ رکھیں، جس کے بعد مضارع مرفوع رہتا ہے اور صرف خبر کی نفی ہوتی ہے۔",
+   "explanationUrdu": "لَا ناہیہ ایسا حرف ہے جو مضارع کو مجزوم کر کے کسی کام سے روکتا ہے، جیسے لَا تَقُلْ «نہ کہو»؛ آخر میں سکون، نون کا حذف یا حرفِ علت کا حذف جزم کی علامت ہوتا ہے۔ اسے لَا نافیہ سے الگ رکھیں، جس کے بعد مضارع مرفوع رہتا ہے اور صرف خبر کی نفی ہوتی ہے۔",
    "appliesWhenEnglish": "Tag prohibitive لَا (QAC PRO, i‘rab ناهية) and the jussive verb it governs (وَلَا تَقُولَنَّ، فَلَا تُمَارِ، لَا تُؤَاخِذْنِي), including requests addressed to Allah; also tag jussive on the verb. Not for negating لَا with an indicative verb (negation) or generic لَا (la-generic)."
   },
   {
@@ -141,7 +141,7 @@
   {
    "id": "jussive",
    "titleUrdu": "جزم اور اس کے اسباب",
-   "explanationUrdu": "مضارع لَمْ، لَمَّا، لامِ امر، لائے نہی اور شرط کے ادوات کے بعد، یا امر کے جواب میں، مجزوم ہوتا ہے۔ صحیح آخر پر سکون (لَمْ يَكْتُبْ)، افعالِ خمسہ میں نون کا حذف، اور معتل آخر میں حرفِ علت کا حذف (لَمْ يَدْعُ) جزم کی علامت ہے؛ اجوف میں درمیانی حرف بھی گر سکتا ہے (لَمْ يَقُلْ)۔",
+   "explanationUrdu": "مضارع لَمْ، لَمَّا، لامِ امر، لائے نہی اور جازم ادواتِ شرط کے بعد، یا امر کے جواب میں، مجزوم ہوتا ہے۔ صحیح آخر پر سکون (لَمْ يَكْتُبْ)، افعالِ خمسہ میں نون کا حذف، اور معتل آخر میں حرفِ علت کا حذف (لَمْ يَدْعُ) جزم کی علامت ہے؛ اجوف میں درمیانی حرف بھی گر سکتا ہے (لَمْ يَقُلْ)۔",
    "appliesWhenEnglish": "Tag every imperfect verb in the jussive mood — after لَمْ، لَمَّا (jussive), the lām of command, prohibitive لَا, a jussive conditional (both verbs), or as the answer to a command/implied condition (فَأْوُۥٓا۟ … يَنشُرْ) — and optionally the governing particle. Decide the mood by its cause: QAC 0.4 labels some conditional five-verbs with dropped nūn as subjunctive (e.g. after إِنْ); tag them jussive and log an auditNote. Pair with the cause rule (lam-jussive, prohibition, imperative-lam, conditional-jazm). The conditional five-verbs QAC calls subjunctive here are يَظْهَرُوا۟، يَرْجُمُوكُمْ، يُعِيدُوكُمْ (18:20) and يَسْتَغِيثُوا۟، يُغَاثُوا۟ (18:29). Conversely, QAC 0.4 labels يُظْلَمُونَ (23:62) and تُظْلَمُ (36:54) jussive although they are indicative after negating لَا (the nūn of raf‘ and the ḍamma are visible): tag them imperfect + negation (+ passive), not jussive or prohibition, and log it."
   },
   {
@@ -201,7 +201,7 @@
   {
    "id": "kada-asa",
    "titleUrdu": "كَادَ اور عَسَى",
-   "explanationUrdu": "كَادَ «قریب تھا» اور عَسَى «امید ہے، ممکن ہے» افعالِ مقاربہ و رجا ہیں؛ یہ اسم کو رفع دیتے ہیں اور ان کی خبر عموماً مضارع کا جملہ ہوتی ہے۔ كَادَ کی خبر اکثر أَنْ کے بغیر اور عَسَى کی أَنْ کے ساتھ آتی ہے؛ كَادَ پر نفی ہو تو مطلب ہے کہ کام بمشکل ہوا یا ہوا ہی نہیں۔",
+   "explanationUrdu": "كَادَ «قریب تھا» اور عَسَى «امید ہے، ممکن ہے» افعالِ مقاربہ و رجا ہیں؛ ناقص استعمال میں یہ اسم کو رفع دیتے ہیں اور خبر عموماً مضارع کا جملہ ہوتی ہے۔ كَادَ کی خبر اکثر أَنْ کے بغیر اور عَسَى کی أَنْ کے ساتھ آتی ہے؛ عَسَى کبھی تامہ بھی ہوتا ہے، تب أَنْ والا مصدرِ مؤول اس کا فاعل ہوتا ہے۔ كَادَ پر نفی ہو تو کام بمشکل ہوا یا ہوا ہی نہیں۔",
    "appliesWhenEnglish": "Tag كَادَ/يَكَادُ and عَسَىٰ (verbs of approximation and hope) and, when relevant, their predicate verb (لَّا يَكَادُونَ يَفْقَهُونَ، عَسَىٰٓ أَن يَهْدِيَنِ، فَعَسَىٰ رَبِّىٓ أَن يُؤْتِيَنِ). Tag the أَنْ there with masdar-particle; follow the i‘rab on whether the أَنْ-clause is the fāʿil or the khabar of عَسَىٰ."
   },
   {

@@ -1,0 +1,65 @@
+{
+  "status": "AI editorial adjudication; scholarly review pending",
+  "decision": "accept substantive pattern correction",
+  "severity": "minor factual teaching error",
+  "root": "ق ص ر",
+  "file": "content-pipeline/libs/roots/root-10.json",
+  "field": "noteUrdu",
+  "fileSha256Before": "915e0e0726add5aa470d89bf7a15fc6b1e28f51600a62db730258b3605e94851",
+  "old": "قَاصِرَات اسمِ فاعل کی جمع مؤنث ہے، یعنی اپنی نگاہیں روک کر رکھنے والیاں، اور مَقْصُورَات مَفْعُول کے وزن پر ہے، یعنی محفوظ رکھی گئیں؛ دونوں میں روکنے اور محدود رکھنے کا مفہوم ہے۔ اردو کے «قاصر»، یعنی عاجز، کا مفہوم یہاں مراد نہیں۔",
+  "new": "قَاصِرَات اسمِ فاعل کی جمع مؤنث ہے، یعنی اپنی نگاہیں روک کر رکھنے والیاں، اور مَقْصُورَات اسمِ مفعول کی جمع مؤنث سالم ہے اور مَفْعُولَات کے وزن پر ہے، یعنی محفوظ رکھی گئیں؛ دونوں میں روکنے اور محدود رکھنے کا مفہوم ہے۔ اردو کے «قاصر»، یعنی عاجز، کا مفہوم یہاں مراد نہیں۔",
+  "exactReplacement": {
+    "old": "مَقْصُورَات مَفْعُول کے وزن پر ہے",
+    "new": "مَقْصُورَات اسمِ مفعول کی جمع مؤنث سالم ہے اور مَفْعُولَات کے وزن پر ہے"
+  },
+  "rationale": "The full feminine sound plural مَقْصُورَات follows مَفْعُولَات. Its feminine singular مَقْصُورَة follows مَفْعُولَة; the masculine base مَقْصُور follows مَفْعُول. The original note attaches the bare masculine-base pattern to the complete feminine plural without qualification. Correcting that pattern and explicitly naming the plural preserves its passive-participle derivation and existing contextual meaning.",
+  "evidence": [
+    {
+      "packet": "content-pipeline/packets/55/55-c09.json",
+      "wordId": "55:56:2",
+      "arabic": "قَـٰصِرَٰتُ",
+      "sourceLemma": "قَٰصِرَٰت",
+      "qacMorphologyEnglish": "N – nominative feminine plural active participle",
+      "qacIrabArabic": [
+        "اسم مرفوع"
+      ],
+      "primaryMorphologyUrl": "https://corpus.quran.com/wordmorphology.jsp?location=(55:56:2)"
+    },
+    {
+      "packet": "content-pipeline/packets/55/55-c11.json",
+      "wordId": "55:72:2",
+      "arabic": "مَّقْصُورَٰتٌۭ",
+      "sourceLemma": "مَّقْصُورَٰت",
+      "qacMorphologyEnglish": "N – nominative feminine plural indefinite noun",
+      "qacIrabArabic": [
+        "اسم مرفوع"
+      ],
+      "primaryMorphologyUrl": "https://corpus.quran.com/wordmorphology.jsp?location=(55:72:2)"
+    }
+  ],
+  "affectedChunks": [
+    "55-c09",
+    "55-c11"
+  ],
+  "narrowScan": {
+    "entriesScreened": 589,
+    "notesWithWeightAndPluralOrFeminineReadInFull": 29,
+    "additionalBareMafoolPatternNotesChecked": [
+      "ر ف ق",
+      "ش ح ن",
+      "ق ل ب",
+      "ل ح د"
+    ],
+    "additionalDefiniteSameKindErrors": 0,
+    "disposition": "The other bare passive-pattern descriptions concern matching singular forms or اسمِ مفعول as a derivational class, not full feminine/plural forms incorrectly equated to the unsuffixed pattern."
+  },
+  "validation": {
+    "proposedNoteCharacters": 269,
+    "sharedInputEdited": false,
+    "command": "python3 -I content-pipeline/scripts/validate_lib.py /tmp/qg-qasr-check roots root-10",
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "publication": "No source Arabic, occurrence IDs, lexical meanings or runtime availability changes. AI adjudication is not scholarly approval."
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-06",
+  "status": "confirmed recommendation; report only; shared override and chunk not edited by this audit",
+  "finding": {
+    "wordId": "23:78:9",
+    "chunk": "23-c22",
+    "arabic": "مَّا",
+    "severity": "major",
+    "category": "effective_filter_type_disagrees_with_adopted_contextual_grammar",
+    "rawQacTag": "REL",
+    "rawDerivedPos": "pronoun",
+    "currentEffectivePos": "pronoun",
+    "authoredPosUrdu": "حرفِ زائد",
+    "authoredRuleIds": [
+      "extra-particle"
+    ],
+    "currentMorphologyUrdu": "آیت کے نحوی نوٹ کے مطابق ما یہاں حرفِ زائد ہے؛ سکون پر مبنی ہے، اور ابتدائی تشدید پچھلی تنوین کے ادغام کی وجہ سے ہے۔",
+    "currentSyntaxUrdu": "اس کا کوئی محلِ اعراب نہیں اور یہ فعل پر عمل نہیں کرتا؛ یہاں اسمِ موصول یا نفی کے بجائے شکر کی کمی کے بیان میں تاکید دیتا ہے۔",
+    "existingAuditNotes": [
+      {
+        "ref": "23:78:9",
+        "noteEnglish": "QAC labels ma a relative pronoun (and the fixed app pos is pronoun), but the primary ayah irab explicitly calls it extra: tashkuruna shukran qalilan. The lesson correctly teaches an extra particle and does not assign a relative-clause or negation analysis."
+      }
+    ],
+    "primaryNote": [
+      "جملة «وهو الذي» مستأنفة، «قليلا» نائب مفعول مطلق؛ لأنه صفة المصدر، و«ما» زائدة أي: تشكرون شكرا قليلا وجملة «تشكرون» مستأنفة."
+    ],
+    "primaryUrl": "https://corpus.quran.com/grammar.jsp?chapter=23&verse=78",
+    "primaryOnlineCrosschecked": true,
+    "primaryRelevantExcerpt": "«ما» زائدة أي: تشكرون شكرا قليلا",
+    "reason": "The chosen syntax is extra ma in the little-gratitude construction. Both its adopted grammatical class and the current Urdu fields are a particle with no case position; categorizing it under the pronoun filter contradicts that adopted analysis. Merely adding a pronoun label to suppress the warning would misrepresent the lesson. The primary verse analysis matches the already adjudicated32:9:13 construction.",
+    "proposedOverride": {
+      "pos": "particle",
+      "noteEnglish": "QAC tags مَّا REL, deriving pronoun, but the primary 23:78 verse i‘rab explicitly calls ما زائدة after قليلا functioning as نائب مفعول مطلق. Follow the extra-particle analysis, with no case position or relative clause. The effective app word type is particle; preserve raw QAC tags and exact Arabic."
+    },
+    "chunkFieldReplacementsRequired": [],
+    "auditNoteFollowup": "After applying the override, preserve the raw REL disagreement and replace only the stale claim that the app effective type remains fixed as pronoun.",
+    "affectedChunks": [
+      "23-c22"
+    ],
+    "affectedAyahs": [
+      76,
+      77,
+      78
+    ],
+    "preserve": [
+      "raw meta/words.json",
+      "QAC segments and raw REL annotation",
+      "Arabic/sourceArabic and exact segment slices",
+      "occurrence IDs and order",
+      "root null",
+      "lemma مَا",
+      "the adopted extra-particle grammar and meaning"
+    ]
+  },
+  "snapshotContext": {
+    "allAuthoredChunks": 127,
+    "allAyahs": 419,
+    "allWords": 4077,
+    "currentReadOnlyValidationErrors": 0,
+    "currentReadOnlyValidationWarnings": 1,
+    "originalEightTypeAuditScope": "110 then-authored chunks;23-c22 was among17 missing chunks, so this occurrence was outside that historical warning list.",
+    "overrideRecordsBeforeThisRecommendation": 73,
+    "overrideRecordsAfterAdoption": 74,
+    "typeOverridesBefore": 8,
+    "typeOverridesAfter": 9
+  },
+  "reviewImpact": {
+    "currentFingerprintPolicy": "run_chunks.mjs hashes the complete meta/overrides.json bytes for every chunk, compares exact hashes for resume, and rereads the complete hash immediately before import. export_reviews.mjs and review_bundle.py also compare exact current runner fingerprints.",
+    "recordedCurrentGlobalOverrideSha256": "cdd865f5d9b11f77246690d67ce0b66dd391e961c06ac2ee470a034f0a02f565",
+    "currentBytesExactlyMatchCommittedHeadBlob": true,
+    "directPacketSemanticChange": [
+      "23-c22"
+    ],
+    "currentPolicyReviewInvalidation": "Adding this ninth override changes the complete-file hash for every one of127 chunks. All127 need genuine fresh independent reviews/fixes/clean confirmation against the new inputs under the existing policy, even though only23-c22 has a changed packet meaning.",
+    "timing": "Wait until the current four scoped reviews finish and the runner lock is gone before changing shared inputs.",
+    "selectedResolution": "Parent chose the conservative existing policy: apply the real correction, rebuild packets, and perform an actual full127 fresh review pass. No fingerprint scoping or compatibility implementation is authorized in this task.",
+    "prohibitedShortcuts": [
+      "Do not manually rewrite checkpoint hashes or completed status.",
+      "Do not change posUrdu to an inaccurate nominal/pronoun label just to suppress the warning.",
+      "Do not claim all source-type disagreements resolved or zero warnings before this correction and final validation."
+    ]
+  },
+  "scopingAssessmentForProvenance": {
+    "status": "Considered but not selected; no implementation edits",
+    "futureSafeBasis": "For a future versioned scoped-fingerprint design, verify historical override bytes against each recorded global SHA256; compare complete per-chunk projections over planned IDs, including absent entries and every override field; require unchanged packet/content/all other dependencies and an already clean completed result; preserve original provenance. Changed scope23-c22 must always run fresh.",
+    "whyPacketFieldsAloneInsufficient": "The packet contains corrected effective fields and the English correction, but does not encode every full override field or explicit-presence distinction. Full historical metadata is the stronger available proof; the current file matches its committed old snapshot.",
+    "requiredFutureConsumers": [
+      "runner resume and import race checks",
+      "isolated validator override snapshot",
+      "review exporter fingerprint comparison",
+      "offline bundle fingerprint comparison"
+    ],
+    "notApproval": "Dependency-equivalence logic would need separate tests and explicit provenance; it must not become manual checkpoint promotion."
+  },
+  "requiredFinalDocumentationUpdates": [
+    "Update current override count73→74 and selected type-analysis count8→9 in current README/provenance/status descriptions after adoption. Preserve original eight-warning audit as historical.",
+    "Regenerate final127-row validation report with current file hashes; rerun rather than stamping expected zero warnings.",
+    "Export a complete hash-bound AI review manifest only after the actual new full pass finishes; scholarly review stays pending."
+  ],
+  "inputs": [
+    {
+      "path": "content-pipeline/chunks/23/23-c22.json",
+      "sha256": "321c9fafcdac20f4ab894af370b22b2e848fb825b8a519b639ab9b37fcd867ef"
+    },
+    {
+      "path": "content-pipeline/meta/overrides.json",
+      "sha256": "cdd865f5d9b11f77246690d67ce0b66dd391e961c06ac2ee470a034f0a02f565"
+    },
+    {
+      "path": "content-pipeline/meta/words.json",
+      "sha256": "1a3f2381f565d82b39b5a181dfce5e4d53e8f46d4974dd174cb83b0acde3cd9f"
+    },
+    {
+      "path": "content-pipeline/meta/ayahs.json",
+      "sha256": "fd0da606c005948b916d8c3d4d6cea937cd39ffa08672ad9f2ffe7e84db3d69b"
+    },
+    {
+      "path": "content-pipeline/scripts/run_chunks.mjs",
+      "sha256": "d0c31fe2b8a760f9f7d95e2416d0ffff49bfd9c50352fa8de40cca0977b3ccf2"
+    },
+    {
+      "path": "content-pipeline/scripts/validate_chunk.py",
+      "sha256": "16d9c6332f60d1c303dda3bb6231e86066e1fbc98ac042ce2672a49678101fd7"
+    }
+  ],
+  "scholarlyReview": "Pending; no human approval performed or inferred."
+}

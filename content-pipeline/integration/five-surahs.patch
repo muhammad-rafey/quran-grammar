@@ -3,16 +3,16 @@ diff --git a/README.md b/README.md
 +++ b/README.md
 @@ -1,6 +1,6 @@
  # Quran Grammar · قرآن گرامر
- 
+
 -A grammar-focused Quran study app with Urdu explanations, covering Al-Fatihah and the final ten Surahs (105–114). The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
 +A grammar-focused Quran study app with Urdu explanations, covering Al-Fatihah, five longer Surahs — Al-Kahf (18), Al-Mu'minun (23), As-Sajdah (32), Ya-Sin (36) and Ar-Rahman (55) — and the final ten Surahs (105–114). The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
- 
+
  ## Project
- 
+
 @@ -15,11 +15,11 @@
- 
+
  ## Features
- 
+
 -- All 230 word occurrences across 55 ayahs, with contextual Urdu meanings and grammatical segments.
 +- All 4,307 word occurrences across 474 ayahs in sixteen Surahs, with contextual Urdu meanings and grammatical segments.
  - Root-family meanings and a paradigm for every finite verb, including باب، ماضی، مضارع and patterns.
@@ -26,19 +26,23 @@ diff --git a/README.md b/README.md
 @@ -61,7 +61,7 @@
  npm run dev:mobile
  ```
- 
+
 -Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app explicitly offers its bundled eleven-Surah edition. See [native setup](apps/mobile/README.md).
 +Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app explicitly offers its bundled sixteen-Surah edition. See [native setup](apps/mobile/README.md).
- 
+
  The APK command builds locally with JDK 17+, Android SDK Platform 36 and Build-Tools 36. It bundles JavaScript and fonts, so the installed APK does not require Metro or Expo Go. It uses Expo's debug signing key for local testing, **not a Play Store release**. The first build generates the ignored Android project and downloads native build dependencies. Later builds reuse it without replacing native files. See [APK build setup and options](docs/android-build.md).
- 
-@@ -86,6 +86,6 @@
- 
+
+@@ -86,10 +86,6 @@
+
  ## Content and future work
- 
--This edition contains Al-Fatihah, Al-Fil, Quraysh, Al-Maʿun, Al-Kawthar, Al-Kafirun, An-Nasr, Al-Masad, Al-Ikhlas, Al-Falaq and An-Nas. The app is read-only; no account system or scholar-editing interface is implied. Stable word occurrence IDs and a versioned API leave room for reviewed content expansion without duplicating the data between platforms. An expansion adding Al-Kahf, Al-Mu'minun, As-Sajdah, Ya-Sin and Ar-Rahman has resumed with new content held for scholarly review; 110 of 127 chunks are authored, including complete held drafts of As-Sajdah, Ya-Sin and Ar-Rahman. Further authoring and fresh reviews await restored Codex account capacity. The exact progress, checked libraries and resume commands are in [content-pipeline/README.md](content-pipeline/README.md). [Content provenance](docs/content-provenance.md) records the source and editorial status.
+
+-This edition contains Al-Fatihah, Al-Fil, Quraysh, Al-Maʿun, Al-Kawthar, Al-Kafirun, An-Nasr, Al-Masad, Al-Ikhlas, Al-Falaq and An-Nas. The app is read-only; no account system or scholar-editing interface is implied. Stable word occurrence IDs and a versioned API leave room for reviewed content expansion without duplicating the data between platforms.
+-
+-All 127 chunks of the five-Surah expansion — Al-Kahf, Al-Mu'minun, As-Sajdah, Ya-Sin and Ar-Rahman — are authored: 419 ayahs and 4,077 words. All five held JSON drafts exist. All 127 chunks have passed current-input independent grammar and meaning reviews plus clean final confirmation, including the [ن ه ر vowel contrast](content-pipeline/reports/codex-nahr-root-adjudication.json) and [ق ص ر plural pattern](content-pipeline/reports/codex-qasr-root-adjudication.json) corrections. The [current review manifest](content-pipeline/reports/chunk-review-manifest.json), all five held drafts and source audits are complete; structural validation reports zero errors and zero warnings. Scholarly review remains pending; the public app and both content databases still contain 11 Surahs, 55 ayahs and 230 words. PR #1 was merged and deployed at `a52e1de` without activating the expansion.
+-
+-Private browser fixtures, an Android emulator and an iPhone 17 Pro simulator running iOS 26.5 exercise the held drafts without changing the public registry. Both native previews verified the Juz boundary jumps, manual reading labels, same-chapter jumps, roots/paradigms, modal return and Study/Grammar switching. The iOS checks used Expo Go 57 and headless XCTest; no physical phone or standalone iOS IPA was tested. [Native verification](content-pipeline/reports/codex-native-verification.json) records the evidence and log limitations. The completed offline review bundle embeds the existing licensed Arabic/Urdu fonts: [open the index](build/review/quran-grammar/index.html) or [download the ZIP](build/review/quran-grammar-scholarly-review.zip). These generated files remain local and git-ignored. All 4,077 word strings and 419 ayah strings matched the source inventories in Chromium, with fonts loaded and no overflow, page errors or external requests. Final verification passed: 220 Node tests, 46 Python tests, 33 browser tests, web/API builds and both mobile exports, with no test skips. The remaining work and exact commands are in [content-pipeline/README.md](content-pipeline/README.md); [content provenance](docs/content-provenance.md) records the source and editorial status.
 +This edition contains Al-Fatihah, Al-Kahf, Al-Mu'minun, As-Sajdah, Ya-Sin, Ar-Rahman, Al-Fil, Quraysh, Al-Maʿun, Al-Kawthar, Al-Kafirun, An-Nasr, Al-Masad, Al-Ikhlas, Al-Falaq and An-Nas. The app is read-only; no account system or scholar-editing interface is implied. Stable word occurrence IDs and a versioned API leave room for reviewed content expansion without duplicating the data between platforms. [Content provenance](docs/content-provenance.md) records the source and editorial status.
- 
+
  Original application code has no general reuse license assigned yet. Third-party material retains its own licenses; public repository visibility does not change them.
 diff --git a/THIRD_PARTY_NOTICES.md b/THIRD_PARTY_NOTICES.md
 --- a/THIRD_PARTY_NOTICES.md
@@ -46,12 +50,12 @@ diff --git a/THIRD_PARTY_NOTICES.md b/THIRD_PARTY_NOTICES.md
 @@ -14,7 +14,7 @@
  >
  > License: GNU General Public License
- 
+
 -This repository contains newly structured teaching datasets for Al-Fatihah and Surahs 105–114, plus five-Surah drafts (18, 23, 32, 36 and 55) held outside the published registry for scholarly review, with original AI-assisted Urdu explanations. It does not contain the bulk morphology download or claim to be an official Corpus release. The app retains a concise Corpus credit and link. Its Arabic i‘rab reference pages credit the Quran Printing Complex; the corpus describes its Arabic text as based on Tanzil. Preserve the original copyright and source notices when adding or redistributing source datasets, and retain the additional conditions published by the relevant source.
 +This repository contains newly structured teaching datasets for Al-Fatihah, Surahs 18, 23, 32, 36, 55 and Surahs 105–114, with original AI-assisted Urdu explanations. It does not contain the bulk morphology download or claim to be an official Corpus release. The app retains a concise Corpus credit and link. Its Arabic i‘rab reference pages credit the Quran Printing Complex; the corpus describes its Arabic text as based on Tanzil. Preserve the original copyright and source notices when adding or redistributing source datasets, and retain the additional conditions published by the relevant source.
- 
+
  ## Dictionaries and explanatory works
- 
+
 diff --git a/apps/api/src/app.test.ts b/apps/api/src/app.test.ts
 --- a/apps/api/src/app.test.ts
 +++ b/apps/api/src/app.test.ts
@@ -97,55 +101,59 @@ diff --git a/docs/android-build.md b/docs/android-build.md
 --- a/docs/android-build.md
 +++ b/docs/android-build.md
 @@ -24,7 +24,7 @@
- 
+
  ## API configuration
- 
+
 -The build reads Expo's production `.env` files in `apps/mobile/`; an existing shell `EXPO_PUBLIC_API_URL` takes precedence. Use an HTTPS API origin for an APK that connects to a deployed backend. Public client environment values are bundled into the APK and must not contain credentials. If the API origin is unset, the app uses its bundled eleven-Surah edition. If a configured backend is unavailable, the app offers retry and the matching saved lesson.
 +The build reads Expo's production `.env` files in `apps/mobile/`; an existing shell `EXPO_PUBLIC_API_URL` takes precedence. Use an HTTPS API origin for an APK that connects to a deployed backend. Public client environment values are bundled into the APK and must not contain credentials. If the API origin is unset, the app uses its bundled sixteen-Surah edition. If a configured backend is unavailable, the app offers retry and the matching saved lesson.
- 
+
  To explicitly build the offline edition regardless of dotenv configuration, on macOS/Linux:
- 
+
 diff --git a/docs/architecture.md b/docs/architecture.md
 --- a/docs/architecture.md
 +++ b/docs/architecture.md
 @@ -4,7 +4,7 @@
- 
+
  Use npm workspaces with React/Vite for web, Expo React Native for Android/iOS, and one Express service on Node.js 24. Share typed study content, normalization, searching, schema validation, interface strings and numeral formatting in `@quran-grammar/core`. Keep DOM UI and native UI separate so each uses appropriate layout and accessibility primitives.
- 
+
 -The Node service returns a complete chapter from a shared eleven-Surah registry (1 and 105–114). Clients request the selected chapter, validate the chapter number and data relationships, and cancel obsolete requests so content from another chapter cannot appear under the selected title. Search and word inspection run locally after loading, keeping interactions immediate. Stable `surah:ayah:word` IDs preserve contextual differences even when a word is repeated. The native app bundles a clearly labelled copy for offline study; the server remains the source for connected operation.
 +The Node service returns a complete chapter from a shared sixteen-Surah registry (1, 18, 23, 32, 36, 55 and 105–114). Clients request the selected chapter, validate the chapter number and data relationships, and cancel obsolete requests so content from another chapter cannot appear under the selected title. Search and word inspection run locally after loading, keeping interactions immediate. Stable `surah:ayah:word` IDs preserve contextual differences even when a word is repeated. The native app bundles a clearly labelled copy for offline study; the server remains the source for connected operation.
- 
+
  ## Why React/Vite for web
- 
+
 diff --git a/docs/content-provenance.md b/docs/content-provenance.md
 --- a/docs/content-provenance.md
 +++ b/docs/content-provenance.md
-@@ -23,19 +23,23 @@
+@@ -23,23 +23,25 @@
 
  The same AI-assisted/pending-review label appears in Settings → About on web, Android and iOS. Per-record source URLs remain in this repository rather than the learning payload.
 
 -## Five-Surah drafts held for scholarly review
 -
--The expansion targets Al-Kahf (18), Al-Mu’minun (23), As-Sajdah (32), Ya-Sin (36) and Ar-Rahman (55): 419 ayahs and 4,077 word occurrences. Authoring and AI review take place in `content-pipeline/`; the published registry and both synchronized content databases remain the eleven-Surah edition. Drafts are not made available in the study interface by completing an AI review.
+-The expansion targets Al-Kahf (18), Al-Mu’minun (23), As-Sajdah (32), Ya-Sin (36) and Ar-Rahman (55): 419 ayahs and 4,077 word occurrences. All 127 chunks are authored and all five held JSON drafts exist in `content-pipeline/drafts/`. All 127 chunks have passed current-input independent grammar and meaning reviews plus clean final confirmation after the source-type, rule and root-note corrections. The [current review manifest](../content-pipeline/reports/chunk-review-manifest.json), all five final held drafts and source audits are complete. Final structural validation reports zero errors and zero warnings. The published registry and both synchronized content databases remain the eleven-Surah edition (55 ayahs, 230 words). PR #1 was merged and deployed at `a52e1de` without activating these drafts. Completing an AI review does not make a draft available in the public study interface.
 -
--Arabic word strings come from the Quran.com Content API v4 Uthmani field, with 154 separately spaced recitation signs excluded under the existing token policy and recorded in the tracked inventories. Morphology was checked against a local verbatim Quranic Arabic Corpus 0.4 copy with SHA-256 `910b721a8f04f4334ac5d4c62b19e858f5d720c525bb975f2e750ea2c6bb532d` and a second morphology reference. Raw source fields remain unchanged; 65 adjudicated occurrence corrections and the split of a merged source lexeme are recorded in `content-pipeline/meta/overrides.json`. Internal lookup identifiers preserve source provenance and do not override corrected teaching fields.
+-Arabic word strings come from the Quran.com Content API v4 Uthmani field, with 154 separately spaced recitation signs excluded under the existing token policy and recorded in the tracked inventories. Morphology was checked against a local verbatim Quranic Arabic Corpus 0.4 copy with SHA-256 `910b721a8f04f4334ac5d4c62b19e858f5d720c525bb975f2e750ea2c6bb532d` and a second morphology reference. Raw source metadata, occurrence IDs and Arabic remain unchanged. `content-pipeline/meta/overrides.json` contains 74 occurrence records: 65 prior tag corrections plus nine explicitly selected contextual-type analyses, all nine classified as particles. These document the adopted source-backed contextual reading rather than ruling out every recognized alternative. The split of a merged source lexeme is also preserved. Internal lookup identifiers preserve source provenance and do not override corrected teaching fields.
 -
--The Urdu explanations, translations, dictionary notes, rules and tafsir summaries are original AI-assisted drafts. Quran.com’s Muyassar, Sa‘di and abridged Ibn Kathir references and the Saheeh International and Taqi Usmani English translations support meaning checks; their bulk texts remain local and ignored by git. Shared libraries contain 112 rules, 358 verb paradigms and 589 roots. Independent grammar and meaning reviews, corrections, fresh confirmations, source inventories and hash-bound review records document the editorial process. These checks do not constitute scholarly approval.
+-The Urdu explanations, translations, dictionary notes, rules and tafsir summaries are original AI-assisted drafts. Quran.com’s Muyassar, Sa‘di and abridged Ibn Kathir references and the Saheeh International and Taqi Usmani English translations support meaning checks; their bulk texts remain local and ignored by git. Shared libraries contain 112 rules, 358 verb paradigms and 589 roots. Independent grammar and meaning reviews, corrections, fresh confirmations, source inventories and hash-bound review records document the editorial process. The latest preparation batch applied two rule-scope clarifications, Urdu agreement fixes in 35 lexeme and 21 root notes, and two Al-Kahf lemma consistency edits. [`codex-resumption-corrections.json`](../content-pipeline/reports/codex-resumption-corrections.json) records the applied changes and hashes; its supporting rule, agreement, type and five cross-chunk consistency reports preserve the evidence. The later [`ق ر أ adjudication`](../content-pipeline/reports/codex-qara-root-adjudication.json) qualifies Quran's recitation and proper-name uses without changing source Arabic or imposing one analysis on every occurrence. That root-only edit affected four supplied-root chunk fingerprints; the later global override and rule changes triggered a fresh all-127 pass, now complete. Final draft wrappers have current release digests. The ninth selected particle analysis at 23:78:9 is recorded in [`codex-final-type-adjudication.json`](../content-pipeline/reports/codex-final-type-adjudication.json); the explicit حرف antecedent in the prohibition card is documented in [`codex-prohibition-agreement-adjudication.json`](../content-pipeline/reports/codex-prohibition-agreement-adjudication.json). The later [`ن ه ر correction`](../content-pipeline/reports/codex-nahr-root-adjudication.json) distinguishes initial hamza and nūn sukūn in أَنْهَار from nūn fatḥa in نَهَار; its five supplied-root chunks (`18-c17`, `18-c18`, `23-c23`, `36-c09`, `36-c10`) have passed fresh AI reviews. The [`ق ص ر correction`](../content-pipeline/reports/codex-qasr-root-adjudication.json) gives the full feminine plural مَقْصُورَات its مَفْعُولَات pattern; supplied-root chunks `55-c09` and `55-c11` have passed fresh reviews. Earlier reports retain their original snapshot status. These checks do not constitute scholarly approval.
+-
+-The offline review exporter uses only held drafts, inventories, public source audits, review metadata and the existing licensed project fonts. Each HTML page embeds the original Amiri/Naskh/Nastaliq fonts and their SIL OFL notices for offline reading; raw reference downloads, private model logs and credentials are excluded. The completed 27-file bundle is available locally as [HTML](../build/review/quran-grammar/index.html) and [a ZIP](../build/review/quran-grammar-scholarly-review.zip), both git-ignored. Chromium checked exact source Arabic for all 4,077 words and 419 ayahs, font loading and absence of overflow, page errors and external requests. The 6,153,696-byte ZIP has SHA-256 `4c203d25e1eaa32e641c1fc98ea010acb3a6f4d9684ac48e543bbb2366924d68`.
 -
 -[`content-pipeline/README.md`](../content-pipeline/README.md) records the method and progress. [`review-status.json`](../content-pipeline/review-status.json) keeps all five Surahs pending until actual reviewer identity, date, evidence and an exact content-input digest are recorded. Draft assembly writes outside the runtime; runtime assembly refuses missing or stale scholarly approval. Corpus credit and the required link remain in Settings → About; no per-word reference links are added to the learning payload.
 +## Expansion: Surahs 18, 23, 32, 36 and 55
 +
 +The second expansion adds Al-Kahf, Al-Mu'minun, As-Sajdah, Ya-Sin and Ar-Rahman: 419 ayahs and 4,077 word occurrences, bringing the edition to 16 Surahs, 474 ayahs and 4,307 words. The chapters use the same `StudyData` shape, field meanings and validation as the existing lessons.
 +
-+**AI involvement is explicit:** the Arabic text is the Quran.com Uthmani text retrieved from the Content API, not generated; recitation signs that the API separates from a word by a space (waqf, saktah and sajdah signs and the rub al-hizb marker) are excluded from word tokens, following the Surahs 110–114 precedent, and every exclusion is listed in the inventory. Word types and roots are derived deterministically from Quranic Arabic Corpus 0.4 stem tags with the mapping that reproduces all 230 roots of the existing lessons. The Corpus file was used locally from a verbatim distribution checked by SHA-256 and is not bundled. Its word and verse i‘rab pages informed the syntax. Where a Corpus tag contradicts the vocalised word or its governing context (for example a passive or indicative verb tagged otherwise), the lesson follows the corrected analysis and the source audit lists each correction.
++**AI involvement is explicit:** the Arabic text is the Quran.com Uthmani text retrieved from the Content API, not generated; recitation signs that the API separates from a word by a space (waqf, saktah and sajdah signs and the rub al-hizb marker) are excluded from word tokens, following the Surahs 110–114 precedent, and every exclusion is listed in the inventory. Word types and roots are derived deterministically from Quranic Arabic Corpus 0.4 stem tags with explicit evidence-bearing overrides. The 74 occurrence records comprise 65 prior tag corrections and nine selected contextual-type analyses, all classified as particles; the latter preserve the chosen source-backed reading without denying recognized alternatives. Raw source metadata, occurrence IDs and Arabic remain unchanged. The mapping reproduces root assignments for all 230 existing word occurrences, including words with no root. The Corpus file was used locally from a verbatim distribution checked by SHA-256 and is not bundled. Its word and verse i‘rab pages informed the syntax. Where a Corpus tag contradicts the vocalised word or its governing context (for example a passive or indicative verb tagged otherwise), the lesson follows the corrected analysis and the source audit lists each correction.
 +
-+Urdu meanings, translations, morphology/syntax/dictionary notes, phrase notes, verb-paradigm notes, root notes, rules and concise tafsir summaries are AI-assisted original teaching drafts. They were written by agents with Tafsir al-Muyassar, Tafsir al-Sa‘di and the abridged Ibn Kathir as references, and Saheeh International and Mufti Taqi Usmani translations as meaning checks. Each chunk of ayahs was then checked by two independent reviewers (grammar; meaning, tafsir and Urdu), corrected, and re-checked by a confirming reviewer. Verb paradigms and root entries come from shared libraries that were reviewed the same way. This is AI review and automated validation, **not scholarly approval**.
++Urdu meanings, translations, morphology/syntax/dictionary notes, phrase notes, verb-paradigm notes, root notes, rules and concise tafsir summaries are AI-assisted original teaching drafts. They were written by agents with Tafsir al-Muyassar, Tafsir al-Sa‘di and the abridged Ibn Kathir as references, and Saheeh International and Mufti Taqi Usmani translations as meaning checks. Each chunk of ayahs was then checked by two independent reviewers (grammar; meaning, tafsir and Urdu), corrected, and re-checked by a confirming reviewer. Verb paradigms and root entries come from shared libraries that were reviewed the same way. This is AI review and automated validation, **not scholarly approval**. The final preparation batch, including two rule-scope clarifications, Urdu agreement fixes in 35 lexeme and 21 root notes, and two Al-Kahf lemma edits, is documented in [`codex-resumption-corrections.json`](../content-pipeline/reports/codex-resumption-corrections.json). The ninth selected particle analysis at 23:78:9 is recorded in [`codex-final-type-adjudication.json`](../content-pipeline/reports/codex-final-type-adjudication.json). The prohibition card explicitly supplies حرف as its Urdu antecedent, as documented in [`codex-prohibition-agreement-adjudication.json`](../content-pipeline/reports/codex-prohibition-agreement-adjudication.json). A later [`ق ر أ qualification`](../content-pipeline/reports/codex-qara-root-adjudication.json) preserves both recitation/recited-revelation and proper-name uses of Quran without imposing one analysis on every occurrence. The later [`ن ه ر correction`](../content-pipeline/reports/codex-nahr-root-adjudication.json) distinguishes initial hamza and nūn sukūn in أَنْهَار from nūn fatḥa in نَهَار and affects `18-c17`, `18-c18`, `23-c23`, `36-c09` and `36-c10`. The [`ق ص ر correction`](../content-pipeline/reports/codex-qasr-root-adjudication.json) identifies مَقْصُورَات as a feminine sound plural of the passive participle on مَفْعُولَات and affects `55-c09` and `55-c11`. The final [AI review manifest](../content-pipeline/reports/chunk-review-manifest.json) pins all 127 reviewed chunks; all five held JSON drafts and source audits were regenerated with zero structural errors or warnings. The offline review bundle preserves the held review snapshot and its pending-review notice. Actual scholarly approval is recorded separately in [`review-status.json`](../content-pipeline/review-status.json), bound to the exact final content-input digest; missing or stale approval blocks runtime assembly.
 +
 +- [Surah 18: source audit](source-audits/surah-18.md) and [Arabic inventory](source-audits/inventory-18.json).
 +- [Surah 23: source audit](source-audits/surah-23.md) and [Arabic inventory](source-audits/inventory-23.json).
 +- [Surah 32: source audit](source-audits/surah-32.md) and [Arabic inventory](source-audits/inventory-32.json).
 +- [Surah 36: source audit](source-audits/surah-36.md) and [Arabic inventory](source-audits/inventory-36.json).
 +- [Surah 55: source audit](source-audits/surah-55.md) and [Arabic inventory](source-audits/inventory-55.json).
+
+ Private Android emulator and iPhone 17 Pro / iOS 26.5 simulator interactions verified held-fixture Juz jumps, reading-position labels, same-chapter selection, roots/paradigms, modal return and Study/Grammar switching. The ten iOS assertions passed in Expo Go 57 with headless XCTest. [`Native verification`](../content-pipeline/reports/codex-native-verification.json) preserves evidence and log limitations, including an Apple logging-quarantine fault. These were simulator tests of a private preview, not physical-phone tests, a standalone iOS IPA test or scholarly approval.
 
  ## Navigation metadata and practice
 
@@ -160,12 +168,12 @@ diff --git a/packages/core/src/core.test.ts b/packages/core/src/core.test.ts
 @@ -21,7 +21,9 @@
    getJuzStartAyah,
  } from './index';
- 
+
 -const expectedChapters = [1, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
 +const lastTen = [105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
 +const fiveSurahs = [18, 23, 32, 36, 55];
 +const expectedChapters = [1, ...fiveSurahs, ...lastTen];
- 
+
  test('navigation catalogs distinguish the available lesson from future content and partial juz', () => {
    assert.deepEqual(
 @@ -50,27 +52,29 @@
@@ -261,7 +269,7 @@ diff --git a/packages/core/src/core.test.ts b/packages/core/src/core.test.ts
    assert.equal(getSurahTitle(114, 'en'), 'An-Nas');
    assert.equal(getSurahTitle(114, 'ur'), 'الناس');
  });
- 
+
 -test('all eleven available lessons have complete occurrence, rule and phrase coverage', () => {
 +test('all sixteen available lessons have complete occurrence, rule and phrase coverage', () => {
    const counts = new Map([
@@ -340,7 +348,7 @@ diff --git a/packages/core/src/core.test.ts b/packages/core/src/core.test.ts
 +  }
 +  assert.equal(total, 4077);
  });
- 
+
  test('last ten surahs preserve every audited Uthmani word and occurrence boundary verbatim', () => {
 diff --git a/tests/study.e2e.spec.ts b/tests/study.e2e.spec.ts
 --- a/tests/study.e2e.spec.ts
@@ -380,10 +388,10 @@ diff --git a/tests/study.e2e.spec.ts b/tests/study.e2e.spec.ts
    await expect(juz.locator('[data-juz="1"]')).toContainText('Al-Fatihah only');
    await juz.locator('[data-juz="29"]').evaluate((node: HTMLButtonElement) => node.click());
    await expect(juz).toBeVisible();
-@@ -587,6 +593,102 @@
+@@ -615,6 +621,102 @@
    }
  });
- 
+
 +const fiveChapters = [
 +  [18, 110, 1579, 'Al-Kahf'],
 +  [23, 118, 1050, "Al-Mu'minun"],

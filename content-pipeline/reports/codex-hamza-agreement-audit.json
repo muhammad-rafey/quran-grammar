@@ -1,0 +1,1343 @@
+{
+  "report": "codex-hamza-agreement-audit",
+  "date": "2026-11-06",
+  "reviewStatus": "report_only; exact minimal Urdu agreement proposals, not applied by this auditor",
+  "scholarlyReview": "not_performed; all expansion content remains pending human scholarly review",
+  "scope": {
+    "lexemeEntriesScanned": 358,
+    "hamzaBearingNotesReadInFull": 84,
+    "files": 13,
+    "method": "Scan all358 noteUrdu fields for explicit ہمزہ/ہمزۂ and variant spelling; read all84 matching notes in full and resolve each adjective/possessive/verb antecedent. Scan nonmatching notes for alternate hamza spellings and direct related agreement constructions. This is a focused Urdu agreement audit, not broad stylistic polishing or a new morphology adjudication."
+  },
+  "primaryEvidence": [
+    {
+      "title": "Qawaid-e-Mir, Tazkir-o-Tanis, letter-name rule",
+      "url": "https://ur.wikisource.org/wiki/قواعد_میر/تذکیر_و_تانیث",
+      "location": "Letter-name paragraph, rendered line116",
+      "finding": "The rule explicitly places ہمزہ among masculine letter names. It separately distinguishes the feminine short letter names.",
+      "quote": "واؤ، ہمزہ ... مذکر ہیں",
+      "application": "Use کا for a direct masculine singular hamza head; کے for an oblique head before پر or an oblique plural; رہتا/ہوتا/لکھا/گرتا for a directly coreferential singular predicate."
+    },
+    {
+      "title": "Rekhta Dictionary, hamza-e-qatii",
+      "url": "https://rekhtadictionary.com/meaning-of-hamza-e-qatii?lang=ur",
+      "finding": "Dictionary publisher search result labels the technical letter expression اسم، مذکر. The direct page fetch was unavailable, so Qawaid-e-Mir remains the primary adjudicative basis."
+    }
+  ],
+  "findings": [
+    {
+      "key": "A^taY|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "inputFileSha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "باب کی ہمزہ اور مادے کی ہمزہ مل کر آ (مد) بنتی ہیں",
+          "new": "باب کا ہمزہ اور مادے کا ہمزہ مل کر آ (مد) بنتے ہیں"
+        }
+      ],
+      "oldNoteUrdu": "مہموز الفاء اور ناقص یائی ہے: باب کی ہمزہ اور مادے کی ہمزہ مل کر آ (مد) بنتی ہیں، یوں أَأْتَى سے آتَى ہوا؛ مضارع يُؤْتِي ہے، جبکہ امر آتِ، آتُوا اور جمع يُؤْتُونَ میں آخری یاء حذف ہوتی ہے۔ «دینا» کے معنی میں متعدی ہے اور اکثر دو مفعول لیتا ہے؛ اسے مجرد أَتَى (آنا) سے الگ رکھیں۔",
+      "newNoteUrdu": "مہموز الفاء اور ناقص یائی ہے: باب کا ہمزہ اور مادے کا ہمزہ مل کر آ (مد) بنتے ہیں، یوں أَأْتَى سے آتَى ہوا؛ مضارع يُؤْتِي ہے، جبکہ امر آتِ، آتُوا اور جمع يُؤْتُونَ میں آخری یاء حذف ہوتی ہے۔ «دینا» کے معنی میں متعدی ہے اور اکثر دو مفعول لیتا ہے؛ اسے مجرد أَتَى (آنا) سے الگ رکھیں۔",
+      "newLength": 278
+    },
+    {
+      "key": "yu&aAxi*u|III|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "inputFileSha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "فاء کی ہمزہ",
+          "new": "فاء کا ہمزہ"
+        }
+      ],
+      "oldNoteUrdu": "مہموز الفاء ہے: ماضی میں فاء کی ہمزہ اور بابِ مفاعلہ کا الف مل کر آ (مد) لکھے جاتے ہیں (آخَذَ)، اور مضارع يُؤَاخِذُ میں ہمزہ واو کی کرسی پر ہے۔ متعدی ہے اور بِ کے ساتھ «کسی بات پر گرفت یا مؤاخذہ کرنا» کا معنی دیتا ہے؛ یہاں باب میں باہمی شرکت کا مفہوم نہیں۔",
+      "newNoteUrdu": "مہموز الفاء ہے: ماضی میں فاء کا ہمزہ اور بابِ مفاعلہ کا الف مل کر آ (مد) لکھے جاتے ہیں (آخَذَ)، اور مضارع يُؤَاخِذُ میں ہمزہ واو کی کرسی پر ہے۔ متعدی ہے اور بِ کے ساتھ «کسی بات پر گرفت یا مؤاخذہ کرنا» کا معنی دیتا ہے؛ یہاں باب میں باہمی شرکت کا مفہوم نہیں۔",
+      "newLength": 256
+    },
+    {
+      "key": ">axa*a|I|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "inputFileSha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "ہمزہ ساکن رہتی ہے",
+          "new": "ہمزہ ساکن رہتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "مہموز الفاء ہے؛ مضارع يَأْخُذُ میں ہمزہ ساکن رہتی ہے، مگر امر میں خلافِ قیاس ہمزہ حذف ہو کر خُذْ، خُذُوا بنتا ہے۔ متعدی ہے: لینا، پکڑنا، اور سزا کے طور پر گرفت کرنا۔",
+      "newNoteUrdu": "مہموز الفاء ہے؛ مضارع يَأْخُذُ میں ہمزہ ساکن رہتا ہے، مگر امر میں خلافِ قیاس ہمزہ حذف ہو کر خُذْ، خُذُوا بنتا ہے۔ متعدی ہے: لینا، پکڑنا، اور سزا کے طور پر گرفت کرنا۔",
+      "newLength": 165
+    },
+    {
+      "key": ">axa*a|I|PASS",
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "inputFileSha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "ہمزہ واو کی کرسی پر لکھی جاتی ہے",
+          "new": "ہمزہ واو کی کرسی پر لکھا جاتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "یہ معروف أَخَذَ يَأْخُذُ کا مجہول ہے: ماضی أُخِذَ میں پہلا حرف مضموم اور عین مکسور، اور مضارع يُؤْخَذُ میں علامتِ مضارع مضموم اور عین مفتوح ہوتا ہے، جہاں ہمزہ واو کی کرسی پر لکھی جاتی ہے۔ فاعل مذکور نہیں ہوتا؛ اس کی جگہ نائبِ فاعل آتا ہے، جو مرفوع اسم یا ضمیر بھی ہو سکتا ہے اور محلِ رفع میں بِ والا جار و مجرور بھی۔",
+      "newNoteUrdu": "یہ معروف أَخَذَ يَأْخُذُ کا مجہول ہے: ماضی أُخِذَ میں پہلا حرف مضموم اور عین مکسور، اور مضارع يُؤْخَذُ میں علامتِ مضارع مضموم اور عین مفتوح ہوتا ہے، جہاں ہمزہ واو کی کرسی پر لکھا جاتا ہے۔ فاعل مذکور نہیں ہوتا؛ اس کی جگہ نائبِ فاعل آتا ہے، جو مرفوع اسم یا ضمیر بھی ہو سکتا ہے اور محلِ رفع میں بِ والا جار و مجرور بھی۔",
+      "newLength": 316
+    },
+    {
+      "key": "yasota>oxiru|X|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "inputFileSha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "فاء کی ہمزہ ساکن رہتی ہے",
+          "new": "فاء کا ہمزہ ساکن رہتا ہے"
+        },
+        {
+          "old": "کرسی کے بغیر لکھی گئی ہے",
+          "new": "کرسی کے بغیر لکھا گیا ہے"
+        }
+      ],
+      "oldNoteUrdu": "مہموز الفاء ہے: فاء کی ہمزہ ساکن رہتی ہے، اور رسمِ عثمانی میں اکثر کرسی کے بغیر لکھی گئی ہے (يَسْتَـْٔخِرُونَ)۔ لازم ہے: پیچھے رہنا، مؤخر ہونا؛ یہاں سین اور تاء طلب کا معنی نہیں دیتے، یہ تَأَخَّرَ کا ہم معنی ہے۔",
+      "newNoteUrdu": "مہموز الفاء ہے: فاء کا ہمزہ ساکن رہتا ہے، اور رسمِ عثمانی میں اکثر کرسی کے بغیر لکھا گیا ہے (يَسْتَـْٔخِرُونَ)۔ لازم ہے: پیچھے رہنا، مؤخر ہونا؛ یہاں سین اور تاء طلب کا معنی نہیں دیتے، یہ تَأَخَّرَ کا ہم معنی ہے۔",
+      "newLength": 211
+    },
+    {
+      "key": ">akala|I|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "inputFileSha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "ہمزہ ساکن رہتی ہے",
+          "new": "ہمزہ ساکن رہتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "مہموز الفاء ہے؛ مضارع يَأْكُلُ میں ہمزہ ساکن رہتی ہے، مگر امر میں خلافِ قیاس ہمزہ حذف ہو کر كُلْ، كُلُوا بنتا ہے۔ متعدی ہے: کھانا؛ مفعول کبھی محذوف ہوتا ہے اور مِنْ تبعیض کے لیے آتا ہے۔",
+      "newNoteUrdu": "مہموز الفاء ہے؛ مضارع يَأْكُلُ میں ہمزہ ساکن رہتا ہے، مگر امر میں خلافِ قیاس ہمزہ حذف ہو کر كُلْ، كُلُوا بنتا ہے۔ متعدی ہے: کھانا؛ مفعول کبھی محذوف ہوتا ہے اور مِنْ تبعیض کے لیے آتا ہے۔",
+      "newLength": 185
+    },
+    {
+      "key": "'aAmana|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "inputFileSha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "باب کی ہمزہ اور مادے کی ہمزہ مل کر آمَنَ میں آ (مد) بنتی ہیں",
+          "new": "باب کا ہمزہ اور مادے کا ہمزہ مل کر آمَنَ میں آ (مد) بنتے ہیں"
+        }
+      ],
+      "oldNoteUrdu": "مہموز الفاء ہے: باب کی ہمزہ اور مادے کی ہمزہ مل کر آمَنَ میں آ (مد) بنتی ہیں، اور مضارع يُؤْمِنُ میں ہمزہ واو کی کرسی پر ہے۔ «ایمان لانا» کے معنی میں بِ یا لِ کے ساتھ آتا ہے، اور «امن دینا» کے معنی میں براہِ راست مفعول لیتا ہے۔",
+      "newNoteUrdu": "مہموز الفاء ہے: باب کا ہمزہ اور مادے کا ہمزہ مل کر آمَنَ میں آ (مد) بنتے ہیں، اور مضارع يُؤْمِنُ میں ہمزہ واو کی کرسی پر ہے۔ «ایمان لانا» کے معنی میں بِ یا لِ کے ساتھ آتا ہے، اور «امن دینا» کے معنی میں براہِ راست مفعول لیتا ہے۔",
+      "newLength": 227
+    },
+    {
+      "key": "'aAwaY`^|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "inputFileSha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "أَأْوَى کی دو ہمزوں",
+          "new": "أَأْوَى کے دو ہمزوں"
+        }
+      ],
+      "oldNoteUrdu": "مہموز الفاء اور لفیف مقرون ہے: أَأْوَى کی دو ہمزوں کے ملنے سے آوَى (مد) بنا؛ لام کی یاء ماضی میں الف مقصورہ اور آوَيْنَا میں ظاہر ہے، اور مضارع يُؤْوِي ہے۔ متعدی ہے: «پناہ دینا، ٹھکانا دینا»؛ مجرد أَوَى (خود پناہ لینا، لازم) سے الگ رکھیں۔",
+      "newNoteUrdu": "مہموز الفاء اور لفیف مقرون ہے: أَأْوَى کے دو ہمزوں کے ملنے سے آوَى (مد) بنا؛ لام کی یاء ماضی میں الف مقصورہ اور آوَيْنَا میں ظاہر ہے، اور مضارع يُؤْوِي ہے۔ متعدی ہے: «پناہ دینا، ٹھکانا دینا»؛ مجرد أَوَى (خود پناہ لینا، لازم) سے الگ رکھیں۔",
+      "newLength": 238
+    },
+    {
+      "key": "bada>a|I|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "inputFileSha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "لام کی ہمزہ",
+          "new": "لام کا ہمزہ"
+        },
+        {
+          "old": "کرسی پر لکھی جاتی ہے",
+          "new": "کرسی پر لکھا جاتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "مہموز اللام ہے؛ مضارع يَبْدَأُ میں عین کا فتحہ لام کی ہمزہ (حرفِ حلق) کے سبب ہے، مگر حرفِ حلق والا ہر فعل بابِ فتح کا نہیں ہوتا (جیسے بَلَغَ يَبْلُغُ)۔ ہمزہ حرکات کے مطابق الف، واو یا یاء کی کرسی پر لکھی جاتی ہے (بَدَأَ، تَبْدَئِينَ)، اور رسمِ عثمانی میں کبھی سطر پر (بَدَءُوا)۔ متعدی ہے: شروع کرنا، پہلی بار پیدا کرنا۔",
+      "newNoteUrdu": "مہموز اللام ہے؛ مضارع يَبْدَأُ میں عین کا فتحہ لام کا ہمزہ (حرفِ حلق) کے سبب ہے، مگر حرفِ حلق والا ہر فعل بابِ فتح کا نہیں ہوتا (جیسے بَلَغَ يَبْلُغُ)۔ ہمزہ حرکات کے مطابق الف، واو یا یاء کی کرسی پر لکھا جاتا ہے (بَدَأَ، تَبْدَئِينَ)، اور رسمِ عثمانی میں کبھی سطر پر (بَدَءُوا)۔ متعدی ہے: شروع کرنا، پہلی بار پیدا کرنا۔",
+      "newLength": 319
+    },
+    {
+      "key": ">aboraHa|I|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "inputFileSha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "صیغے کی ہمزہ",
+          "new": "صیغے کا ہمزہ"
+        }
+      ],
+      "oldNoteUrdu": "صحیح فعل ہے: تام ہو تو «جگہ چھوڑنا، ہٹنا» کا معنی دیتا ہے، نفی کے ساتھ بھی؛ اور نفی کے بعد (مَا بَرِحَ، لَا يَبْرَحُ) یہ كَانَ کی طرح فعلِ ناقص بھی بن سکتا ہے، تب خبر لے کر «برابر لگے رہنا» کا معنی دیتا ہے، اس لیے ہر مقام کا اعراب دیکھیں۔ أَبْرَحُ جیسے صیغے کی ہمزہ واحد متکلم کی علامت ہے، بابِ افعال کی نہیں۔",
+      "newNoteUrdu": "صحیح فعل ہے: تام ہو تو «جگہ چھوڑنا، ہٹنا» کا معنی دیتا ہے، نفی کے ساتھ بھی؛ اور نفی کے بعد (مَا بَرِحَ، لَا يَبْرَحُ) یہ كَانَ کی طرح فعلِ ناقص بھی بن سکتا ہے، تب خبر لے کر «برابر لگے رہنا» کا معنی دیتا ہے، اس لیے ہر مقام کا اعراب دیکھیں۔ أَبْرَحُ جیسے صیغے کا ہمزہ واحد متکلم کی علامت ہے، بابِ افعال کی نہیں۔",
+      "newLength": 309
+    },
+    {
+      "key": "xaraqa|I|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-03.json",
+      "inputFileSha256": "a9e3f0fd083ec8da5f39ca511a9fbf300429eac28142cf31d15ea866c362a91a",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "بابِ افعال کی ہمزہ",
+          "new": "بابِ افعال کا ہمزہ"
+        }
+      ],
+      "oldNoteUrdu": "صحیح سالم اور متعدی فعل ہے یعنی پھاڑنا یا سوراخ کرنا؛ قرآن میں مضارع زیر کے ساتھ آیا ہے، اس لیے بابِ ضرب لیا گیا ہے، اگرچہ لغت میں يَخْرُقُ بھی منقول ہے۔ فعل سے پہلے آنے والا أَ استفہام کا بھی ہو سکتا ہے؛ اسے بابِ افعال کی ہمزہ نہ سمجھیں۔",
+      "newNoteUrdu": "صحیح سالم اور متعدی فعل ہے یعنی پھاڑنا یا سوراخ کرنا؛ قرآن میں مضارع زیر کے ساتھ آیا ہے، اس لیے بابِ ضرب لیا گیا ہے، اگرچہ لغت میں يَخْرُقُ بھی منقول ہے۔ فعل سے پہلے آنے والا أَ استفہام کا بھی ہو سکتا ہے؛ اسے بابِ افعال کا ہمزہ نہ سمجھیں۔",
+      "newLength": 238
+    },
+    {
+      "key": ">a$oraka|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-06.json",
+      "inputFileSha256": "5f4717863ed33f88235a5754c0fd344229c1b929c80b86e647953e2101cde079",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "بابِ افعال کی ہمزہ مضارع میں حذف ہو جاتی ہے",
+          "new": "بابِ افعال کا ہمزہ مضارع میں حذف ہو جاتا ہے"
+        },
+        {
+          "old": "أُشْرِكُ کی ہمزہ",
+          "new": "أُشْرِكُ کا ہمزہ"
+        }
+      ],
+      "oldNoteUrdu": "صحیح فعل ہے؛ بابِ افعال کی ہمزہ مضارع میں حذف ہو جاتی ہے اور علامتِ مضارع پر پیش آتا ہے (يُشْرِكُ)، اس لیے واحد متکلم أُشْرِكُ کی ہمزہ متکلم کی علامت ہے۔ متعدی ہے: أَشْرَكَ بِهِ غَيْرَهُ — کسی کے ساتھ کسی اور کو شریک ٹھہرانا، اور أَشْرَكَهُ فِي الْأَمْرِ — کسی کام میں شریک کرنا۔",
+      "newNoteUrdu": "صحیح فعل ہے؛ بابِ افعال کا ہمزہ مضارع میں حذف ہو جاتا ہے اور علامتِ مضارع پر پیش آتا ہے (يُشْرِكُ)، اس لیے واحد متکلم أُشْرِكُ کا ہمزہ متکلم کی علامت ہے۔ متعدی ہے: أَشْرَكَ بِهِ غَيْرَهُ — کسی کے ساتھ کسی اور کو شریک ٹھہرانا، اور أَشْرَكَهُ فِي الْأَمْرِ — کسی کام میں شریک کرنا۔",
+      "newLength": 279
+    },
+    {
+      "key": "yu$oEiru|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-06.json",
+      "inputFileSha256": "5f4717863ed33f88235a5754c0fd344229c1b929c80b86e647953e2101cde079",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "بابِ افعال کی ہمزہ مضارع میں حذف ہو جاتی ہے",
+          "new": "بابِ افعال کا ہمزہ مضارع میں حذف ہو جاتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "صحیح فعل ہے؛ بابِ افعال کی ہمزہ مضارع میں حذف ہو جاتی ہے اور علامتِ مضارع پر پیش آتا ہے (يُشْعِرُ)۔ متعدی ہے: کسی کو کسی بات کی خبر یا احساس کرا دینا (أَشْعَرَهُ بِهِ)؛ اسے لازم مجرد شَعَرَ يَشْعُرُ (خود محسوس کرنا) سے الگ رکھیں۔",
+      "newNoteUrdu": "صحیح فعل ہے؛ بابِ افعال کا ہمزہ مضارع میں حذف ہو جاتا ہے اور علامتِ مضارع پر پیش آتا ہے (يُشْعِرُ)۔ متعدی ہے: کسی کو کسی بات کی خبر یا احساس کرا دینا (أَشْعَرَهُ بِهِ)؛ اسے لازم مجرد شَعَرَ يَشْعُرُ (خود محسوس کرنا) سے الگ رکھیں۔",
+      "newLength": 229
+    },
+    {
+      "key": ">a$ohada|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-06.json",
+      "inputFileSha256": "5f4717863ed33f88235a5754c0fd344229c1b929c80b86e647953e2101cde079",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "بابِ افعال کی ہمزہ مضارع میں حذف ہو جاتی ہے",
+          "new": "بابِ افعال کا ہمزہ مضارع میں حذف ہو جاتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "صحیح فعل ہے؛ بابِ افعال کی ہمزہ مضارع میں حذف ہو جاتی ہے اور علامتِ مضارع پر پیش آتا ہے (يُشْهِدُ)۔ متعدی ہے: کسی کو گواہ بنانا یا کسی معاملے پر حاضر کرنا (أَشْهَدَهُ عَلَى الْأَمْرِ)، اور دو مفعول بھی لے سکتا ہے؛ اسے مجرد شَهِدَ (خود گواہ یا حاضر ہونا) سے الگ رکھیں۔",
+      "newNoteUrdu": "صحیح فعل ہے؛ بابِ افعال کا ہمزہ مضارع میں حذف ہو جاتا ہے اور علامتِ مضارع پر پیش آتا ہے (يُشْهِدُ)۔ متعدی ہے: کسی کو گواہ بنانا یا کسی معاملے پر حاضر کرنا (أَشْهَدَهُ عَلَى الْأَمْرِ)، اور دو مفعول بھی لے سکتا ہے؛ اسے مجرد شَهِدَ (خود گواہ یا حاضر ہونا) سے الگ رکھیں۔",
+      "newLength": 267
+    },
+    {
+      "key": "$aA^'a|I|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-06.json",
+      "inputFileSha256": "5f4717863ed33f88235a5754c0fd344229c1b929c80b86e647953e2101cde079",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "ہمزہ باقی رہتی ہے",
+          "new": "ہمزہ باقی رہتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "اجوف یائی اور مہموز اللام ہے (اصل: شَيِئَ يَشْيَأُ)؛ درمیانی یاء الف میں بدل جاتی ہے (شَاءَ، يَشَاءُ)، اور ساکن ہمزہ سے پہلے یہ الف گر جاتا ہے جبکہ ہمزہ باقی رہتی ہے (شِئْتُ، لَمْ يَشَأْ)؛ شِئْتُ میں شین کو کسرہ بھی ملتا ہے۔ متعدی ہے: چاہنا، ارادہ کرنا؛ اس کا مفعول اکثر محذوف ہوتا ہے اور سیاق سے سمجھا جاتا ہے۔",
+      "newNoteUrdu": "اجوف یائی اور مہموز اللام ہے (اصل: شَيِئَ يَشْيَأُ)؛ درمیانی یاء الف میں بدل جاتی ہے (شَاءَ، يَشَاءُ)، اور ساکن ہمزہ سے پہلے یہ الف گر جاتا ہے جبکہ ہمزہ باقی رہتا ہے (شِئْتُ، لَمْ يَشَأْ)؛ شِئْتُ میں شین کو کسرہ بھی ملتا ہے۔ متعدی ہے: چاہنا، ارادہ کرنا؛ اس کا مفعول اکثر محذوف ہوتا ہے اور سیاق سے سمجھا جاتا ہے۔",
+      "newLength": 311
+    },
+    {
+      "key": ">aSobaHa|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-06.json",
+      "inputFileSha256": "5f4717863ed33f88235a5754c0fd344229c1b929c80b86e647953e2101cde079",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "بابِ افعال کی ہمزہ مضارع میں حذف ہو جاتی ہے",
+          "new": "بابِ افعال کا ہمزہ مضارع میں حذف ہو جاتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "صحیح فعل ہے؛ بابِ افعال کی ہمزہ مضارع میں حذف ہو جاتی ہے اور علامتِ مضارع پر پیش آتا ہے (يُصْبِحُ)۔ اکثر كَانَ کی طرح فعلِ ناقص ہو کر اسم کو رفع اور خبر کو نصب دیتا ہے اور «ہو جانا» کا معنی دیتا ہے، تام ہو تو صبح کے وقت میں داخل ہونا؛ یہاں ناقص نحوی اصطلاح ہے، معتل اللام نہیں۔",
+      "newNoteUrdu": "صحیح فعل ہے؛ بابِ افعال کا ہمزہ مضارع میں حذف ہو جاتا ہے اور علامتِ مضارع پر پیش آتا ہے (يُصْبِحُ)۔ اکثر كَانَ کی طرح فعلِ ناقص ہو کر اسم کو رفع اور خبر کو نصب دیتا ہے اور «ہو جانا» کا معنی دیتا ہے، تام ہو تو صبح کے وقت میں داخل ہونا؛ یہاں ناقص نحوی اصطلاح ہے، معتل اللام نہیں۔",
+      "newLength": 277
+    },
+    {
+      "key": "{sotaToEama|X|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-06.json",
+      "inputFileSha256": "5f4717863ed33f88235a5754c0fd344229c1b929c80b86e647953e2101cde079",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "شروع کی ہمزۂ وصل",
+          "new": "شروع کا ہمزۂ وصل"
+        }
+      ],
+      "oldNoteUrdu": "صحیح فعل ہے؛ شروع کی ہمزۂ وصل، سین اور تاء بابِ استفعال کے زائد حروف ہیں اور مادہ ط ع م ہے۔ متعدی ہے اور اس باب کا طلب والا معنی دیتا ہے: کسی سے کھانا مانگنا۔",
+      "newNoteUrdu": "صحیح فعل ہے؛ شروع کا ہمزۂ وصل، سین اور تاء بابِ استفعال کے زائد حروف ہیں اور مادہ ط ع م ہے۔ متعدی ہے اور اس باب کا طلب والا معنی دیتا ہے: کسی سے کھانا مانگنا۔",
+      "newLength": 158
+    },
+    {
+      "key": ">aToEama|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-06.json",
+      "inputFileSha256": "5f4717863ed33f88235a5754c0fd344229c1b929c80b86e647953e2101cde079",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "بابِ افعال کی ہمزہ مضارع میں حذف ہو جاتی ہے",
+          "new": "بابِ افعال کا ہمزہ مضارع میں حذف ہو جاتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "صحیح فعل ہے؛ بابِ افعال کی ہمزہ مضارع میں حذف ہو جاتی ہے اور علامتِ مضارع پر پیش آتا ہے (يُطْعِمُ)۔ یہ باب تعدیہ دیتا ہے: مجرد طَعِمَ (کھانا) سے أَطْعَمَ (کھلانا)؛ ایک یا دو مفعول لیتا ہے (أَطْعَمَهُ الطَّعَامَ)۔",
+      "newNoteUrdu": "صحیح فعل ہے؛ بابِ افعال کا ہمزہ مضارع میں حذف ہو جاتا ہے اور علامتِ مضارع پر پیش آتا ہے (يُطْعِمُ)۔ یہ باب تعدیہ دیتا ہے: مجرد طَعِمَ (کھانا) سے أَطْعَمَ (کھلانا)؛ ایک یا دو مفعول لیتا ہے (أَطْعَمَهُ الطَّعَامَ)۔",
+      "newLength": 212
+    },
+    {
+      "key": ">aEolan|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-08.json",
+      "inputFileSha256": "ac2d7a6475b92133421b7fa0cd411d582249f6626cf7db8378c71dcc7cc80e65",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "ماضی کی ہمزۂ قطع",
+          "new": "ماضی کا ہمزۂ قطع"
+        },
+        {
+          "old": "حذف ہوتی ہے",
+          "new": "حذف ہوتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "صحیح سالم اور متعدی فعل ہے: کسی بات کو ظاہر اور علانیہ کرنا۔ ماضی کی ہمزۂ قطع مضارع يُعْلِنُ میں حذف ہوتی ہے اور حرفِ مضارع مضموم ہے؛ یہ اکثر أَسَرَّ (چھپانا) کے مقابل آتا ہے۔",
+      "newNoteUrdu": "صحیح سالم اور متعدی فعل ہے: کسی بات کو ظاہر اور علانیہ کرنا۔ ماضی کا ہمزۂ قطع مضارع يُعْلِنُ میں حذف ہوتا ہے اور حرفِ مضارع مضموم ہے؛ یہ اکثر أَسَرَّ (چھپانا) کے مقابل آتا ہے۔",
+      "newLength": 175
+    },
+    {
+      "key": "Eamila|I|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-08.json",
+      "inputFileSha256": "ac2d7a6475b92133421b7fa0cd411d582249f6626cf7db8378c71dcc7cc80e65",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "ابتدا میں زیر سے پڑھی جاتی ہے",
+          "new": "ابتدا میں زیر سے پڑھا جاتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "صحیح سالم اور متعدی فعل ہے: عینِ کلمہ ماضی عَمِلَ میں مکسور اور مضارع يَعْمَلُ میں مفتوح ہے۔ معنی کام یا عمل کرنا ہے؛ امر اِعْمَلْ ہمزۂ وصل سے شروع ہوتا ہے، جو ابتدا میں زیر سے پڑھی جاتی ہے۔",
+      "newNoteUrdu": "صحیح سالم اور متعدی فعل ہے: عینِ کلمہ ماضی عَمِلَ میں مکسور اور مضارع يَعْمَلُ میں مفتوح ہے۔ معنی کام یا عمل کرنا ہے؛ امر اِعْمَلْ ہمزۂ وصل سے شروع ہوتا ہے، جو ابتدا میں زیر سے پڑھا جاتا ہے۔",
+      "newLength": 190
+    },
+    {
+      "key": "Eu*o|I|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-08.json",
+      "inputFileSha256": "ac2d7a6475b92133421b7fa0cd411d582249f6626cf7db8378c71dcc7cc80e65",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "أَعُوذُ کی ہمزہ",
+          "new": "أَعُوذُ کا ہمزہ"
+        }
+      ],
+      "oldNoteUrdu": "اجوف واوی اور لازم فعل ہے: درمیانی واو ماضی عَاذَ میں الف بنتی ہے، عُذْتُ اور امر عُذْ میں گر جاتی ہے اور مضارع يَعُوذُ میں ظاہر رہتی ہے۔ معنی پناہ لینا ہے (بِ اور مِنْ کے ساتھ)؛ أَعُوذُ کی ہمزہ واحد متکلم کی علامت ہے، بابِ افعال کی نہیں۔",
+      "newNoteUrdu": "اجوف واوی اور لازم فعل ہے: درمیانی واو ماضی عَاذَ میں الف بنتی ہے، عُذْتُ اور امر عُذْ میں گر جاتی ہے اور مضارع يَعُوذُ میں ظاہر رہتی ہے۔ معنی پناہ لینا ہے (بِ اور مِنْ کے ساتھ)؛ أَعُوذُ کا ہمزہ واحد متکلم کی علامت ہے، بابِ افعال کی نہیں۔",
+      "newLength": 238
+    },
+    {
+      "key": ">aEaAna|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-08.json",
+      "inputFileSha256": "ac2d7a6475b92133421b7fa0cd411d582249f6626cf7db8378c71dcc7cc80e65",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "امر کی ہمزہ بابِ افعال کی ہمزۂ قطع",
+          "new": "امر کا ہمزہ بابِ افعال کا ہمزۂ قطع"
+        }
+      ],
+      "oldNoteUrdu": "اجوف واوی اور متعدی فعل ہے: درمیانی واو ماضی أَعَانَ میں الف اور مضارع يُعِينُ میں یاء بنتی ہے، اور امر واحد أَعِنْ میں حذف ہو جاتی ہے۔ معنی مدد کرنا ہے (جس کام میں مدد کی جائے اس پر عَلَى آتا ہے)؛ امر کی ہمزہ بابِ افعال کی ہمزۂ قطع ہے، ہمزۂ وصل نہیں۔",
+      "newNoteUrdu": "اجوف واوی اور متعدی فعل ہے: درمیانی واو ماضی أَعَانَ میں الف اور مضارع يُعِينُ میں یاء بنتی ہے، اور امر واحد أَعِنْ میں حذف ہو جاتی ہے۔ معنی مدد کرنا ہے (جس کام میں مدد کی جائے اس پر عَلَى آتا ہے)؛ امر کا ہمزہ بابِ افعال کا ہمزۂ قطع ہے، ہمزۂ وصل نہیں۔",
+      "newLength": 251
+    },
+    {
+      "key": ">aEiyba|I|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-08.json",
+      "inputFileSha256": "ac2d7a6475b92133421b7fa0cd411d582249f6626cf7db8378c71dcc7cc80e65",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "أَعِيبُ کی ہمزہ",
+          "new": "أَعِيبُ کا ہمزہ"
+        },
+        {
+          "old": "بابِ افعال کی ہمزہ",
+          "new": "بابِ افعال کا ہمزہ"
+        }
+      ],
+      "oldNoteUrdu": "اجوف یائی اور متعدی فعل ہے: درمیانی یاء ماضی عَابَ میں الف بنتی ہے اور متحرک ضمیر سے پہلے گر کر پہلا حرف مکسور کر دیتی ہے (عِبْتُ)، جبکہ مضارع يَعِيبُ میں ظاہر رہتی ہے۔ معنی عیب دار کرنا یا عیب لگانا ہے؛ واحد متکلم مضارع أَعِيبُ کی ہمزہ حرفِ مضارع ہے، بابِ افعال کی ہمزہ نہیں۔",
+      "newNoteUrdu": "اجوف یائی اور متعدی فعل ہے: درمیانی یاء ماضی عَابَ میں الف بنتی ہے اور متحرک ضمیر سے پہلے گر کر پہلا حرف مکسور کر دیتی ہے (عِبْتُ)، جبکہ مضارع يَعِيبُ میں ظاہر رہتی ہے۔ معنی عیب دار کرنا یا عیب لگانا ہے؛ واحد متکلم مضارع أَعِيبُ کا ہمزہ حرفِ مضارع ہے، بابِ افعال کا ہمزہ نہیں۔",
+      "newLength": 276
+    },
+    {
+      "key": ">ugoriqu|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-08.json",
+      "inputFileSha256": "ac2d7a6475b92133421b7fa0cd411d582249f6626cf7db8378c71dcc7cc80e65",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "ماضی کی ہمزۂ قطع",
+          "new": "ماضی کا ہمزۂ قطع"
+        },
+        {
+          "old": "حذف ہوتی ہے",
+          "new": "حذف ہوتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "صحیح سالم اور متعدی فعل ہے: ثلاثی مجرد غَرِقَ يَغْرَقُ (ڈوبنا، لازم) سے بابِ افعال میں ڈبو دینا بنتا ہے۔ ماضی کی ہمزۂ قطع مضارع يُغْرِقُ میں حذف ہوتی ہے اور حرفِ مضارع مضموم ہے۔",
+      "newNoteUrdu": "صحیح سالم اور متعدی فعل ہے: ثلاثی مجرد غَرِقَ يَغْرَقُ (ڈوبنا، لازم) سے بابِ افعال میں ڈبو دینا بنتا ہے۔ ماضی کا ہمزۂ قطع مضارع يُغْرِقُ میں حذف ہوتا ہے اور حرفِ مضارع مضموم ہے۔",
+      "newLength": 177
+    },
+    {
+      "key": ">agofalo|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-08.json",
+      "inputFileSha256": "ac2d7a6475b92133421b7fa0cd411d582249f6626cf7db8378c71dcc7cc80e65",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "ماضی کی ہمزۂ قطع",
+          "new": "ماضی کا ہمزۂ قطع"
+        },
+        {
+          "old": "حذف ہوتی ہے",
+          "new": "حذف ہوتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "صحیح سالم اور متعدی فعل ہے: ثلاثی مجرد غَفَلَ يَغْفُلُ (غافل ہونا) سے بابِ افعال میں غافل کر دینا بنتا ہے، اور جس چیز سے غافل کیا جائے اس پر عَنْ آتا ہے۔ ماضی کی ہمزۂ قطع مضارع يُغْفِلُ میں حذف ہوتی ہے۔",
+      "newNoteUrdu": "صحیح سالم اور متعدی فعل ہے: ثلاثی مجرد غَفَلَ يَغْفُلُ (غافل ہونا) سے بابِ افعال میں غافل کر دینا بنتا ہے، اور جس چیز سے غافل کیا جائے اس پر عَنْ آتا ہے۔ ماضی کا ہمزۂ قطع مضارع يُغْفِلُ میں حذف ہوتا ہے۔",
+      "newLength": 202
+    },
+    {
+      "key": ">aforigo|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-09.json",
+      "inputFileSha256": "933439e896f4bd54c1d9cc9eaa93a652f8bd57840c9959abbc19b2a7e596b32e",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "ماضی کی ہمزہ بابِ افعال کی زائد ہمزۂ قطعی",
+          "new": "ماضی کا ہمزہ بابِ افعال کا زائد ہمزۂ قطعی"
+        },
+        {
+          "old": "گر جاتی ہے",
+          "new": "گر جاتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "صحیح اور متعدی فعل ہے: انڈیلنا، برتن خالی کر دینا؛ عَلَى کے ساتھ کسی چیز پر ڈالنا۔ ماضی کی ہمزہ بابِ افعال کی زائد ہمزۂ قطعی ہے جو مضارع میں گر جاتی ہے اور علامتِ مضارع پر ضمہ آتا ہے (يُفْرِغُ، أُفْرِغُ)؛ لازم مجرد فَرَغَ (فارغ ہونا) الگ فعل ہے۔",
+      "newNoteUrdu": "صحیح اور متعدی فعل ہے: انڈیلنا، برتن خالی کر دینا؛ عَلَى کے ساتھ کسی چیز پر ڈالنا۔ ماضی کا ہمزہ بابِ افعال کا زائد ہمزۂ قطعی ہے جو مضارع میں گر جاتا ہے اور علامتِ مضارع پر ضمہ آتا ہے (يُفْرِغُ، أُفْرِغُ)؛ لازم مجرد فَرَغَ (فارغ ہونا) الگ فعل ہے۔",
+      "newLength": 245
+    },
+    {
+      "key": ">afolaHa|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-09.json",
+      "inputFileSha256": "933439e896f4bd54c1d9cc9eaa93a652f8bd57840c9959abbc19b2a7e596b32e",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "ماضی کی ہمزہ بابِ افعال کی زائد ہمزہ",
+          "new": "ماضی کا ہمزہ بابِ افعال کا زائد ہمزہ"
+        },
+        {
+          "old": "گر جاتی ہے",
+          "new": "گر جاتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "صحیح اور لازم فعل ہے: کامیاب ہونا، مقصد پا لینا۔ ماضی کی ہمزہ بابِ افعال کی زائد ہمزہ ہے جو مضارع میں گر جاتی ہے اور علامتِ مضارع پر ضمہ آتا ہے (يُفْلِحُ، تُفْلِحُونَ)؛ مُفْلِح اسی باب کا اسمِ فاعل ہے، فعل نہیں۔",
+      "newNoteUrdu": "صحیح اور لازم فعل ہے: کامیاب ہونا، مقصد پا لینا۔ ماضی کا ہمزہ بابِ افعال کا زائد ہمزہ ہے جو مضارع میں گر جاتا ہے اور علامتِ مضارع پر ضمہ آتا ہے (يُفْلِحُ، تُفْلِحُونَ)؛ مُفْلِح اسی باب کا اسمِ فاعل ہے، فعل نہیں۔",
+      "newLength": 211
+    },
+    {
+      "key": "nab~a>a|II|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-11.json",
+      "inputFileSha256": "5ef211320057564483171c64945d0e709478cd3e13df40ca6a97ee5f8698a40f",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "یاء کی کرسی پر لکھی جاتی ہے",
+          "new": "یاء کی کرسی پر لکھا جاتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "مہموز اللام فعل ہے (مادہ ن ب أ) اور بابِ تفعیل کی تشدید عینِ کلمہ باء پر ہے۔ متعدی ہے: کسی کو خبر دینا، اور خبر اکثر بِ کے ساتھ آتی ہے؛ يُنَبِّئُ میں ئ اصل ہمزہ ہے جو کسرے کے بعد یاء کی کرسی پر لکھی جاتی ہے۔",
+      "newNoteUrdu": "مہموز اللام فعل ہے (مادہ ن ب أ) اور بابِ تفعیل کی تشدید عینِ کلمہ باء پر ہے۔ متعدی ہے: کسی کو خبر دینا، اور خبر اکثر بِ کے ساتھ آتی ہے؛ يُنَبِّئُ میں ئ اصل ہمزہ ہے جو کسرے کے بعد یاء کی کرسی پر لکھا جاتا ہے۔",
+      "newLength": 207
+    },
+    {
+      "key": "tanfu*u|I|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-12.json",
+      "inputFileSha256": "195d15d4ac56e2f36379cde7f247afcb223166de6f4978d5ea420fee7edaa89c",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "اُنْفُذْ کی ہمزۂ وصل پر",
+          "new": "اُنْفُذْ کے ہمزۂ وصل پر"
+        }
+      ],
+      "oldNoteUrdu": "صحیح سالم فعل ہے اور عموماً لازم آتا ہے: کسی چیز کے آر پار نکل جانا؛ جس جگہ یا حد سے نکلا جائے وہ مِنْ کے ساتھ آتی ہے۔ مضارع میں عینِ کلمہ مضموم ہے، اس لیے امر اُنْفُذْ کی ہمزۂ وصل پر پیش آتا ہے؛ اسے دال والے نَفِدَ (ختم ہو جانا) سے الگ پہچانیں۔",
+      "newNoteUrdu": "صحیح سالم فعل ہے اور عموماً لازم آتا ہے: کسی چیز کے آر پار نکل جانا؛ جس جگہ یا حد سے نکلا جائے وہ مِنْ کے ساتھ آتی ہے۔ مضارع میں عینِ کلمہ مضموم ہے، اس لیے امر اُنْفُذْ کے ہمزۂ وصل پر پیش آتا ہے؛ اسے دال والے نَفِدَ (ختم ہو جانا) سے الگ پہچانیں۔",
+      "newLength": 245
+    },
+    {
+      "key": ">anfaqa|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-12.json",
+      "inputFileSha256": "195d15d4ac56e2f36379cde7f247afcb223166de6f4978d5ea420fee7edaa89c",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "(أَنْفَقَ، أَنْفِقْ) کی ہمزۂ قطع بابِ افعال کی زائد ہمزہ",
+          "new": "(أَنْفَقَ، أَنْفِقْ) کا ہمزۂ قطع بابِ افعال کا زائد ہمزہ"
+        },
+        {
+          "old": "گر جاتی ہے",
+          "new": "گر جاتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "صحیح سالم اور متعدی فعل ہے: مال وغیرہ خرچ کرنا؛ خرچ کی جانے والی چیز مفعول بنتی ہے یا مِنْ کے ساتھ آتی ہے۔ ماضی اور امر (أَنْفَقَ، أَنْفِقْ) کی ہمزۂ قطع بابِ افعال کی زائد ہمزہ ہے جو مضارع يُنْفِقُ میں گر جاتی ہے؛ اسی مادے کا بابِ مفاعلہ نَافَقَ (نفاق کرنا) الگ فعل ہے۔",
+      "newNoteUrdu": "صحیح سالم اور متعدی فعل ہے: مال وغیرہ خرچ کرنا؛ خرچ کی جانے والی چیز مفعول بنتی ہے یا مِنْ کے ساتھ آتی ہے۔ ماضی اور امر (أَنْفَقَ، أَنْفِقْ) کا ہمزۂ قطع بابِ افعال کا زائد ہمزہ ہے جو مضارع يُنْفِقُ میں گر جاتا ہے؛ اسی مادے کا بابِ مفاعلہ نَافَقَ (نفاق کرنا) الگ فعل ہے۔",
+      "newLength": 269
+    },
+    {
+      "key": ">anqa*a|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-12.json",
+      "inputFileSha256": "195d15d4ac56e2f36379cde7f247afcb223166de6f4978d5ea420fee7edaa89c",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "ماضی کی زائد ہمزۂ قطع",
+          "new": "ماضی کا زائد ہمزۂ قطع"
+        },
+        {
+          "old": "گر جاتی ہے",
+          "new": "گر جاتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "صحیح سالم اور متعدی فعل ہے: کسی کو ہلاکت یا مصیبت سے بچا لینا، چھڑا لینا؛ جس چیز سے بچایا جائے وہ مِنْ کے ساتھ آتی ہے۔ ماضی کی زائد ہمزۂ قطع مضارع میں گر جاتی ہے اور حرفِ مضارع پر پیش آتا ہے؛ معروف يُنْقِذُ میں قاف پر زیر ہے، جبکہ مجہول يُنْقَذُ میں زبر۔",
+      "newNoteUrdu": "صحیح سالم اور متعدی فعل ہے: کسی کو ہلاکت یا مصیبت سے بچا لینا، چھڑا لینا؛ جس چیز سے بچایا جائے وہ مِنْ کے ساتھ آتی ہے۔ ماضی کا زائد ہمزۂ قطع مضارع میں گر جاتا ہے اور حرفِ مضارع پر پیش آتا ہے؛ معروف يُنْقِذُ میں قاف پر زیر ہے، جبکہ مجہول يُنْقَذُ میں زبر۔",
+      "newLength": 254
+    },
+    {
+      "key": "{hojuro|I|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-12.json",
+      "inputFileSha256": "195d15d4ac56e2f36379cde7f247afcb223166de6f4978d5ea420fee7edaa89c",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "اُهْجُرْ کی ہمزۂ وصل پر",
+          "new": "اُهْجُرْ کے ہمزۂ وصل پر"
+        }
+      ],
+      "oldNoteUrdu": "صحیح سالم فعل ہے: متعدی معنی کسی کو چھوڑ دینا، تعلق توڑ لینا؛ اور هُجْر یعنی بیہودہ یا بے معنی بات کرنے کے معنی میں بھی آتا ہے۔ مضارع میں عینِ کلمہ مضموم ہے، اس لیے امر اُهْجُرْ کی ہمزۂ وصل پر پیش آتا ہے؛ بابِ مفاعلہ کا هَاجَرَ (ہجرت کرنا) الگ فعل ہے۔",
+      "newNoteUrdu": "صحیح سالم فعل ہے: متعدی معنی کسی کو چھوڑ دینا، تعلق توڑ لینا؛ اور هُجْر یعنی بیہودہ یا بے معنی بات کرنے کے معنی میں بھی آتا ہے۔ مضارع میں عینِ کلمہ مضموم ہے، اس لیے امر اُهْجُرْ کے ہمزۂ وصل پر پیش آتا ہے؛ بابِ مفاعلہ کا هَاجَرَ (ہجرت کرنا) الگ فعل ہے۔",
+      "newLength": 251
+    },
+    {
+      "key": "{sotuhozi}a|X|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-12.json",
+      "inputFileSha256": "195d15d4ac56e2f36379cde7f247afcb223166de6f4978d5ea420fee7edaa89c",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "یہ کرسی کے بغیر لکھی گئی ہے",
+          "new": "یہ کرسی کے بغیر لکھا گیا ہے"
+        }
+      ],
+      "oldNoteUrdu": "مہموز اللام فعل ہے: مذاق اڑانا؛ جس کا مذاق اڑایا جائے وہ بِ کے ساتھ آتا ہے، اور شروع کے سین اور تاء بابِ استفعال کے زائد حروف ہیں، مادہ ه ز أ ہے۔ آخری ہمزہ اصلی ہے اور حرکت کے مطابق اس کی کرسی بدلتی ہے (اِسْتَهْزَأَ، يَسْتَهْزِئُ)؛ قرآنی رسم میں جمع کی واو سے پہلے یہ کرسی کے بغیر لکھی گئی ہے (يَسْتَهْزِءُونَ)۔",
+      "newNoteUrdu": "مہموز اللام فعل ہے: مذاق اڑانا؛ جس کا مذاق اڑایا جائے وہ بِ کے ساتھ آتا ہے، اور شروع کے سین اور تاء بابِ استفعال کے زائد حروف ہیں، مادہ ه ز أ ہے۔ آخری ہمزہ اصلی ہے اور حرکت کے مطابق اس کی کرسی بدلتی ہے (اِسْتَهْزَأَ، يَسْتَهْزِئُ)؛ قرآنی رسم میں جمع کی واو سے پہلے یہ کرسی کے بغیر لکھا گیا ہے (يَسْتَهْزِءُونَ)۔",
+      "newLength": 311
+    },
+    {
+      "key": ">aholaka|IV|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-12.json",
+      "inputFileSha256": "195d15d4ac56e2f36379cde7f247afcb223166de6f4978d5ea420fee7edaa89c",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "ماضی کی زائد ہمزہ",
+          "new": "ماضی کا زائد ہمزہ"
+        },
+        {
+          "old": "گر جاتی ہے",
+          "new": "گر جاتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "صحیح سالم اور متعدی فعل ہے: ہلاک کرنا، برباد کر دینا؛ مجرد هَلَكَ (ہلاک ہونا) لازم ہے اور بابِ افعال نے اسے متعدی بنایا ہے۔ متحرک ضمیرِ فاعل سے پہلے لامِ کلمہ ساکن ہو جاتا ہے (أَهْلَكْنَا)، اور ماضی کی زائد ہمزہ مضارع میں گر جاتی ہے جہاں حرفِ مضارع پر پیش آتا ہے (يُهْلِكُ)۔",
+      "newNoteUrdu": "صحیح سالم اور متعدی فعل ہے: ہلاک کرنا، برباد کر دینا؛ مجرد هَلَكَ (ہلاک ہونا) لازم ہے اور بابِ افعال نے اسے متعدی بنایا ہے۔ متحرک ضمیرِ فاعل سے پہلے لامِ کلمہ ساکن ہو جاتا ہے (أَهْلَكْنَا)، اور ماضی کا زائد ہمزہ مضارع میں گر جاتا ہے جہاں حرفِ مضارع پر پیش آتا ہے (يُهْلِكُ)۔",
+      "newLength": 274
+    },
+    {
+      "key": "yuhay~i}o|II|ACT",
+      "path": "content-pipeline/libs/lexemes/lex-12.json",
+      "inputFileSha256": "195d15d4ac56e2f36379cde7f247afcb223166de6f4978d5ea420fee7edaa89c",
+      "severity": "minor",
+      "field": "noteUrdu",
+      "reason": "Urdu ہمزہ is masculine: correct the possessive modifier and/or directly coreferential predicate only; retain feminine agreement for distinct یاء/تاء/کرسی/علامت/لکھائی antecedents.",
+      "minimalEdits": [
+        {
+          "old": "حرفِ علت کی طرح گرتی نہیں بلکہ ساکن ہوتی ہے",
+          "new": "حرفِ علت کی طرح گرتا نہیں بلکہ ساکن ہوتا ہے"
+        }
+      ],
+      "oldNoteUrdu": "مادہ ه ي أ اجوف یائی اور مہموز اللام ہے، مگر بابِ تفعیل میں درمیانی یاء مشدد ہو کر صحیح حرف کی طرح رہتی ہے؛ متعدی ہے یعنی تیار کرنا، مہیا کرنا، اور جس کے لیے ہو وہ لِ کے ساتھ آتا ہے۔ آخری ہمزہ اصلی ہے، اس لیے جزم اور امر میں حرفِ علت کی طرح گرتی نہیں بلکہ ساکن ہوتی ہے (يُهَيِّئْ، هَيِّئْ)۔",
+      "newNoteUrdu": "مادہ ه ي أ اجوف یائی اور مہموز اللام ہے، مگر بابِ تفعیل میں درمیانی یاء مشدد ہو کر صحیح حرف کی طرح رہتی ہے؛ متعدی ہے یعنی تیار کرنا، مہیا کرنا، اور جس کے لیے ہو وہ لِ کے ساتھ آتا ہے۔ آخری ہمزہ اصلی ہے، اس لیے جزم اور امر میں حرفِ علت کی طرح گرتا نہیں بلکہ ساکن ہوتا ہے (يُهَيِّئْ، هَيِّئْ)۔",
+      "newLength": 290
+    }
+  ],
+  "counts": {
+    "proposedNotes": 35,
+    "minimalTextReplacements": 47,
+    "filesAffected": 7
+  },
+  "preservedConstructions": [
+    {
+      "key": "{t~axa*a|VIII|ACT",
+      "result": "Already resolved: فاء کا ہمزہ ... مدغم ہوا. No new edit."
+    },
+    {
+      "key": "sa>ala|I|ACT",
+      "text": "ہمزہ کی تخفیف",
+      "result": "Correct feminine possessive because the head is تخفیف, not ہمزہ; keep unchanged."
+    },
+    {
+      "key": "{xosa_#u|I|ACT",
+      "text": "اس کی لکھائی ... بدل سکتی ہے",
+      "result": "Correct feminine predicate agrees with لکھائی; keep unchanged."
+    },
+    {
+      "keys": [
+        "muli}ato|I|PASS",
+        "muli}ato|I|ACT",
+        ">an$a>a|IV|ACT",
+        "{sotuhozi}a|X|ACT"
+      ],
+      "text": "ہمزہ کی کرسی ... بدلتی ہے",
+      "result": "Correct feminine predicate/possessive belongs to کرسی; preserve even when another clause in the same note needs masculine hamza agreement."
+    },
+    {
+      "keys": [
+        "{t~abaEa|VIII|ACT",
+        "{botagaY`|VIII|ACT",
+        "banaY`|I|ACT",
+        ">aTaAEa|IV|ACT"
+      ],
+      "result": "Feminine predicates refer explicitly to تاء/یاء/واو rather than ہمزہ; do not blanket-replace feminine endings."
+    },
+    {
+      "keys": [
+        ">aboraHa|I|ACT",
+        "Eu*o|I|ACT"
+      ],
+      "text": "واحد متکلم کی علامت ہے، بابِ افعال کی نہیں",
+      "result": "The final کی can agree with elliptical علامت. Only the explicit possessive before ہمزہ is proposed for correction."
+    }
+  ],
+  "conditionalAnswerRecheck": {
+    "ruleId": "condition-answer",
+    "rulesSha256": "70fd701168f2a1850a20e492b28d31ce5d3c8c958fdc75ee75ff352fb9bf70a5",
+    "currentExplanationUrdu": "شرطیہ جملے کا دوسرا حصہ جوابِ شرط ہے، جو بتاتا ہے کہ شرط پوری ہونے پر کیا ہوگا۔ جواب جملۂ اسمیہ، امر، نہی، قَدْ، سَ، سَوْفَ یا لَنْ وغیرہ سے شروع ہو تو اس پر فاء ضروری ہے، جسے فاءِ رابطہ کہتے ہیں؛ بعض اسمی جوابوں میں إِذَا فجائیہ اس فاء کی جگہ آتا ہے؛ کبھی جواب حذف ہوتا ہے اور سیاق اس پر دلالت کرتا ہے۔",
+    "status": "resolved_correctly_qualified",
+    "evidence": [
+      "23:64 explicitly identifies the second إذا as فجائية and its clause as جواب الشرط.",
+      "23:77 gives the independent parallel إذا هم فيه مبلسون answer."
+    ],
+    "primaryUrls": [
+      "https://corpus.quran.com/grammar.jsp?chapter=23&verse=64",
+      "https://corpus.quran.com/grammar.jsp?chapter=23&verse=77"
+    ],
+    "conclusion": "Current Urdu expressly permits surprise إذا in some nominal answers in place of fa. The English criterion already covers any conditional-answer opening; no further change recommended."
+  },
+  "inputs": [
+    {
+      "path": "content-pipeline/libs/lexemes/lex-01.json",
+      "sha256": "148eda529c7c1eb1a89af8991224ee6c7ed2be3ad34e7c6e65d2e6bcd78cb7de",
+      "entryCount": 29
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-02.json",
+      "sha256": "374253c8523f8f335069e1b6217208d8646f31dfc5603c3e49acb88a656a4e8c",
+      "entryCount": 30
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-03.json",
+      "sha256": "a9e3f0fd083ec8da5f39ca511a9fbf300429eac28142cf31d15ea866c362a91a",
+      "entryCount": 29
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-04.json",
+      "sha256": "6053a14223bdfcfcb3cec134d3c5b064dd7d3c1b3f95f5bf145480da27ea3444",
+      "entryCount": 30
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-05.json",
+      "sha256": "54d762f2d71f98c6e1aaf7020a4a74015fc6e4dbd74595efc521c8998c3f7436",
+      "entryCount": 30
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-06.json",
+      "sha256": "5f4717863ed33f88235a5754c0fd344229c1b929c80b86e647953e2101cde079",
+      "entryCount": 30
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-07.json",
+      "sha256": "f2dd42c51b8593f973e6ec00d901005c62c8c98f7bcb107af3389f49dd216b55",
+      "entryCount": 30
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-08.json",
+      "sha256": "ac2d7a6475b92133421b7fa0cd411d582249f6626cf7db8378c71dcc7cc80e65",
+      "entryCount": 30
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-09.json",
+      "sha256": "933439e896f4bd54c1d9cc9eaa93a652f8bd57840c9959abbc19b2a7e596b32e",
+      "entryCount": 30
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-10.json",
+      "sha256": "926510fa3df8596d3f9c63431708eacd6347f8f0aead7d05e6dcaffacaa6dca2",
+      "entryCount": 29
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-11.json",
+      "sha256": "5ef211320057564483171c64945d0e709478cd3e13df40ca6a97ee5f8698a40f",
+      "entryCount": 30
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-12.json",
+      "sha256": "195d15d4ac56e2f36379cde7f247afcb223166de6f4978d5ea420fee7edaa89c",
+      "entryCount": 30
+    },
+    {
+      "path": "content-pipeline/libs/lexemes/lex-extra.json",
+      "sha256": "d070fb3dd018c564cd4ccbeb8396526ba00ec1b68b2d6ec1d3c72528c9a318b8",
+      "entryCount": 1
+    }
+  ],
+  "checkedKeys": [
+    ">abaY|I|ACT",
+    "A^taY|IV|ACT",
+    ">ataY|I|ACT",
+    "{t~axa*a|VIII|ACT",
+    "yu&aAxi*u|III|ACT",
+    ">axa*a|I|ACT",
+    ">axa*a|I|PASS",
+    "yasota>oxiru|X|ACT",
+    ">akala|I|ACT",
+    "'aAmana|IV|ACT",
+    ">awaY|I|ACT",
+    "'aAwaY`^|IV|ACT",
+    "bi}osa|I|ACT",
+    "bada>a|I|ACT",
+    "yubodila|IV|ACT",
+    ">aboraHa|I|ACT",
+    "tabaAraka|VI|ACT",
+    "bu$~ira|II|ACT",
+    ">aboSara|IV|ACT",
+    "baEava|I|ACT",
+    "baEava|I|PASS",
+    "bagaY`|I|ACT",
+    "{botagaY`|VIII|ACT",
+    "yan[bagiY|VII|ACT",
+    "baqiYa|I|ACT",
+    "balaga|I|ACT",
+    "balawo|I|ACT",
+    "banaY`|I|ACT",
+    "tabiyda|I|ACT",
+    "{t~abaEa|VIII|ACT",
+    ">atobaEa|IV|ACT",
+    ">utorifu|IV|ACT",
+    "taraka|I|ACT",
+    "talaY`|I|ACT",
+    "talaY`|I|PASS",
+    "vaqulato|I|ACT",
+    "yajo_#aru|I|ACT",
+    "ja`dalu|III|ACT",
+    "jarayo|I|ACT",
+    "jazaY`|I|ACT",
+    "jazaY`|I|PASS",
+    "jaEala|I|ACT",
+    "tatajaAfaY`|I|ACT",
+    "jamaEa|I|ACT",
+    "{sotajaAba|X|ACT",
+    "yujiyru|IV|ACT",
+    "yujiyru|IV|PASS",
+    "jaAwaza|III|ACT",
+    "jaA^'a|I|ACT",
+    "HabiTa|I|ACT",
+    "yuHodivu|IV|ACT",
+    "yaHozun|I|ACT",
+    "Hasiba|I|ACT",
+    ">aHosana|IV|ACT",
+    "Hasuna|I|ACT",
+    "Ha$ara|I|ACT",
+    "Ha$ara|I|PASS",
+    ">aHoSaY`|IV|ACT",
+    "HaDara|I|ACT",
+    "yuHaAfiZu|III|ACT",
+    "Hafafo|I|ACT",
+    "Haq~a|I|ACT",
+    "Hul~u|II|PASS",
+    "Hamala|I|PASS",
+    "Hamala|I|ACT",
+    "yuHaAwiru|III|ACT",
+    ">aHaATa|IV|ACT",
+    ">aHaATa|IV|PASS",
+    "HaY~a|I|ACT",
+    ">aHoyaA|IV|ACT",
+    "xatama|I|ACT",
+    "xaraja|I|ACT",
+    "{sotaxoraja|X|ACT",
+    ">axoraja|IV|ACT",
+    "xar~a|I|ACT",
+    "xaraqa|I|ACT",
+    "{xosa_#u|I|ACT",
+    "xasira|I|ACT",
+    "yuxosiru|IV|ACT",
+    "xa$iYa|I|ACT",
+    "{xotaSamu|VIII|ACT",
+    "xaATaba|III|ACT",
+    "xaf~ato|I|ACT",
+    ">uxofiYa|IV|PASS",
+    "{xotalaTa|VIII|ACT",
+    "{xotalafa|VIII|ACT",
+    "xalaqa|I|ACT",
+    "xaAfa|I|ACT",
+    "yatadab~aru|V|ACT",
+    "yudab~iru|II|ACT",
+    "yudoHiDu|IV|ACT",
+    "daxala|I|ACT",
+    ">adoraka|IV|ACT",
+    "daEaA|I|ACT",
+    "yad~aEu|VIII|ACT",
+    "dafaEo|I|ACT",
+    "*ara>a|I|ACT",
+    "ta*oruw|I|ACT",
+    "*akara|I|ACT",
+    "*uk~ira|II|PASS",
+    "ta*ak~ara|V|ACT",
+    "*ul~ilato|II|ACT",
+    "*ahaba|I|ACT",
+    "*aAqu|I|ACT",
+    ">a*aAqa|IV|ACT",
+    "ra'aA|I|ACT",
+    ">arayo|IV|ACT",
+    "tarab~aSo|V|ACT",
+    "r~abaTo|I|ACT",
+    "rajaEa|I|ACT",
+    "rajaEa|I|PASS",
+    "rajamo|I|ACT",
+    "yarojuwA@|I|ACT",
+    "r~aHima|I|ACT",
+    "r~aHima|I|PASS",
+    "rad~a|I|PASS",
+    "{rotad~a|VIII|ACT",
+    "razaqa|I|ACT",
+    ">arosala|IV|ACT",
+    ">arosala|IV|PASS",
+    "rafaEa|I|ACT",
+    "rakiba|I|ACT",
+    "yurohiqa|IV|ACT",
+    ">araAda|IV|ACT",
+    "zaEama|I|ACT",
+    "t~aza`waru|VI|ACT",
+    "zaAda|I|PASS",
+    "{zodaAdu|VIII|ACT",
+    "yatasaA^'alu|VI|ACT",
+    "sa>ala|I|ACT",
+    "sa>ala|I|PASS",
+    "sab~aHa|II|ACT",
+    "yasobaHu|I|ACT",
+    "sabaqa|I|ACT",
+    "{sotabaqa|VIII|ACT",
+    "sajada|I|ACT",
+    "saHaru|I|PASS",
+    ">asar~a|IV|ACT",
+    "yusa`riEu|III|ACT",
+    "saEaY`|I|ACT",
+    ">asoqayo|IV|ACT",
+    ">asokan|IV|ACT",
+    "nasolaxu|I|ACT",
+    "salaka|I|ACT",
+    ">asomaEa|IV|ACT",
+    "samiEa|I|ACT",
+    "saA^'a|I|ACT",
+    "siyqa|I|ACT",
+    "saw~aY`|II|ACT",
+    "saAwaY`|III|ACT",
+    "{sotawaY`^|VIII|ACT",
+    "suy~irato|II|ACT",
+    "$ariba|I|ACT",
+    ">a$oraka|IV|ACT",
+    "yu$oEiru|IV|ACT",
+    "ya$oEuru|I|ACT",
+    "{n$aq~a|VII|ACT",
+    "$akara|I|ACT",
+    ">a$ohada|IV|ACT",
+    "$ahida|I|ACT",
+    "ya$owiY|I|ACT",
+    "$aA^'a|I|ACT",
+    ">aSobaHa|IV|ACT",
+    "Sabara|I|ACT",
+    "tuSa`Hibo|III|ACT",
+    "Sadaqa|I|ACT",
+    "Sar~afo|II|ACT",
+    "yaSolaY|I|ACT",
+    "SanaEu|I|ACT",
+    "DaHikato|I|ACT",
+    "Daraba|I|ACT",
+    "yataDar~aEu|V|ACT",
+    ">aDal~a|IV|ACT",
+    "Dal~a|I|ACT",
+    ">aDaAEu|IV|ACT",
+    "yuDay~ifu|II|ACT",
+    "{sotaToEama|X|ACT",
+    ">aToEama|IV|ACT",
+    "TagaY`|I|ACT",
+    "TalaEat|I|ACT",
+    "T~alaEa|VIII|ACT",
+    "{nTalaqa|VII|ACT",
+    "yaTomivo|I|ACT",
+    "Tumisato|I|ACT",
+    ">aTaAEa|IV|ACT",
+    "{sotaTaAEa|X|ACT",
+    "TaAfa|I|ACT",
+    "{T~ay~aro|V|ACT",
+    "Zalama|I|ACT",
+    "Zalama|I|PASS",
+    "Zan~a|I|ACT",
+    "Zahara|I|ACT",
+    "Eabada|I|ACT",
+    ">aEotadato|IV|ACT",
+    ">aEovaro|IV|ACT",
+    "Eaj~ala|II|ACT",
+    "Ead~a|I|ACT",
+    "yaEodu|I|ACT",
+    "Ea*~aba|II|ACT",
+    "yaEoruju|I|ACT",
+    "EaraDa|I|PASS",
+    ">aEoraDa|IV|ACT",
+    "EaraDa|I|ACT",
+    "Earafa|I|ACT",
+    "Earafa|I|PASS",
+    "Eaz~azo|II|ACT",
+    "{Eotazala|VIII|ACT",
+    "EasaY|I|ACT",
+    "EaSaA|I|ACT",
+    "Eaqalu|I|ACT",
+    "Ealima|I|ACT",
+    "Eal~ama|II|ACT",
+    "Eal~ama|II|PASS",
+    ">aEolan|IV|ACT",
+    "taEa`laY`|I|ACT",
+    "yuEam~aru|II|ACT",
+    "Eamila|I|ACT",
+    "yaEomahu|I|ACT",
+    "Eahida|I|ACT",
+    ">uEiydu|IV|ACT",
+    "EaAda|I|ACT",
+    ">uEiydu|IV|PASS",
+    "Eu*o|I|ACT",
+    ">aEaAna|IV|ACT",
+    ">aEiyba|I|ACT",
+    "yugaAdiru|III|ACT",
+    "garabat|I|ACT",
+    ">ugoriqu|IV|ACT",
+    ">ugo$iyato|IV|ACT",
+    "{sotagofara|X|ACT",
+    "gafara|I|ACT",
+    ">agofalo|IV|ACT",
+    "galabu|I|ACT",
+    ">agonato|IV|ACT",
+    "{sotaga`va|X|ACT",
+    "yugaAvu|IV|ACT",
+    "fataHa|I|ACT",
+    "yasotafotu|X|ACT",
+    "fuj~irato|II|ACT",
+    ">aforigo|IV|ACT",
+    "farago|I|ACT",
+    "{fotaraY`|VIII|ACT",
+    "fasadati|I|ACT",
+    "fasaqa|I|ACT",
+    "faSala|I|ACT",
+    "yatafaD~ala|V|ACT",
+    "faTara|I|ACT",
+    "faEala|I|ACT",
+    "yafoqahu|I|ACT",
+    ">afolaHa|IV|ACT",
+    "faAra|I|ACT",
+    "qatala|I|ACT",
+    "qad~ara|II|ACT",
+    "qad~ama|II|ACT",
+    "t~aqoriDu|I|ACT",
+    "qaS~a|I|ACT",
+    "yanqaD~a|VII|ACT",
+    "t~aqaT~aEa|V|ACT",
+    "qal~abu|II|ACT",
+    "qaAla|I|ACT",
+    "qaAla|I|PASS",
+    "qaAma|I|ACT",
+    ">aqaAma|IV|ACT",
+    "kabura|I|ACT",
+    "{sotakobara|X|ACT",
+    "kataba|I|ACT",
+    "ka*~aba|II|ACT",
+    "ka*aba|I|ACT",
+    "kasaba|I|ACT",
+    "kasawo|I|ACT",
+    "ka$afa|I|ACT",
+    "kafara|I|ACT",
+    "yukal~ifu|II|ACT",
+    "kal~ama|II|ACT",
+    "kaAda|I|ACT",
+    "kaAna|I|ACT",
+    "{sotakaAnu|X|ACT",
+    "labiva|I|ACT",
+    "labaso|I|ACT",
+    "l~aj~u|I|ACT",
+    "yatalaT~afo|V|ACT",
+    "talofaHu|I|ACT",
+    "laqu|I|ACT",
+    "{lotaqaY|VIII|ACT",
+    "l~ayosa|I|ACT",
+    ">amad~a|IV|ACT",
+    "maraja|I|ACT",
+    "tumaAri|III|ACT",
+    "masaxo|I|ACT",
+    "mas~a|I|ACT",
+    "m~a$a|I|ACT",
+    "maDaY`|I|ACT",
+    "mak~a|II|ACT",
+    "muli}ato|I|PASS",
+    "muli}ato|I|ACT",
+    "malakato|I|ACT",
+    "m~anaEa|I|ACT",
+    "m~aAta|I|PASS",
+    "m~aAta|I|ACT",
+    ">amaAta|IV|ACT",
+    "yamuwju|I|ACT",
+    "{mota`zu|VIII|ACT",
+    "nab~a>a|II|ACT",
+    "tan[butu|I|ACT",
+    ">an[bata|IV|ACT",
+    "naj~aY`|II|ACT",
+    "naAdaY`|III|ACT",
+    ">an*ara|IV|ACT",
+    ">an*ara|IV|PASS",
+    "tana`zaEu|VI|ACT",
+    ">anzala|IV|ACT",
+    "yansilu|I|ACT",
+    "nasiYa|I|ACT",
+    ">ansaY`|IV|ACT",
+    ">an$a>a|IV|ACT",
+    "nu$irato|I|ACT",
+    "naSara|I|ACT",
+    "naSara|I|PASS",
+    "{ntaSara|VIII|ACT",
+    "yanTiqu|I|ACT",
+    "n~aZara|I|ACT",
+    "yunZaru|IV|PASS",
+    "yantaZiru|VIII|ACT",
+    "niEoma|I|ACT",
+    "nafaxa|I|ACT",
+    "nafaxa|I|PASS",
+    "nafida|I|ACT",
+    "tanfu*u|I|ACT",
+    "nafaEa|I|ACT",
+    ">anfaqa|IV|ACT",
+    ">anqa*a|IV|ACT",
+    ">anqa*a|IV|PASS",
+    "nunak~iso|II|ACT",
+    "nakaSa|I|ACT",
+    "{ntahaY`|VIII|ACT",
+    "{hojuro|I|ACT",
+    "hadaY|I|ACT",
+    "{hotadaY`|VIII|ACT",
+    "{sotuhozi}a|X|ACT",
+    ">aholaka|IV|ACT",
+    "yuhay~i}o|II|ACT",
+    "wajada|I|ACT",
+    ">awoHaY`^|IV|PASS",
+    ">awoHaY`^|IV|ACT",
+    "ya*ara|I|ACT",
+    "wariva|I|ACT",
+    "yaSifu|I|ACT",
+    "waDaEa|I|PASS",
+    "waDaEa|I|ACT",
+    "waEada|I|ACT",
+    "waEada|I|PASS",
+    "tawaf~aY`|V|ACT",
+    ">awoqadu|IV|ACT",
+    "{t~aqaY`|VIII|ACT",
+    "wuk~ila|II|PASS",
+    "wal~aY`|II|ACT",
+    "yuwqinu|IV|ACT",
+    "EalaA|I|ACT"
+  ],
+  "hamzaNotesChecked": [
+    "A^taY|IV|ACT",
+    "{t~axa*a|VIII|ACT",
+    "yu&aAxi*u|III|ACT",
+    ">axa*a|I|ACT",
+    ">axa*a|I|PASS",
+    "yasota>oxiru|X|ACT",
+    ">akala|I|ACT",
+    "'aAmana|IV|ACT",
+    "'aAwaY`^|IV|ACT",
+    "bada>a|I|ACT",
+    ">aboraHa|I|ACT",
+    "baEava|I|ACT",
+    "{botagaY`|VIII|ACT",
+    "banaY`|I|ACT",
+    "{t~abaEa|VIII|ACT",
+    ">atobaEa|IV|ACT",
+    "yajo_#aru|I|ACT",
+    "yuHodivu|IV|ACT",
+    "{sotaxoraja|X|ACT",
+    ">axoraja|IV|ACT",
+    "xaraqa|I|ACT",
+    "{xosa_#u|I|ACT",
+    "{xotalaTa|VIII|ACT",
+    "{xotalafa|VIII|ACT",
+    "yudoHiDu|IV|ACT",
+    "daxala|I|ACT",
+    "dafaEo|I|ACT",
+    "*ara>a|I|ACT",
+    "*akara|I|ACT",
+    "ra'aA|I|ACT",
+    ">arayo|IV|ACT",
+    "tarab~aSo|V|ACT",
+    "r~aHima|I|ACT",
+    "razaqa|I|ACT",
+    ">arosala|IV|ACT",
+    "yatasaA^'alu|VI|ACT",
+    "sa>ala|I|ACT",
+    "sa>ala|I|PASS",
+    "sajada|I|ACT",
+    "salaka|I|ACT",
+    ">a$oraka|IV|ACT",
+    "yu$oEiru|IV|ACT",
+    "{n$aq~a|VII|ACT",
+    ">a$ohada|IV|ACT",
+    "$aA^'a|I|ACT",
+    ">aSobaHa|IV|ACT",
+    "{sotaToEama|X|ACT",
+    ">aToEama|IV|ACT",
+    "{nTalaqa|VII|ACT",
+    ">aTaAEa|IV|ACT",
+    "Eabada|I|ACT",
+    ">aEoraDa|IV|ACT",
+    "{Eotazala|VIII|ACT",
+    ">aEolan|IV|ACT",
+    "Eamila|I|ACT",
+    "Eu*o|I|ACT",
+    ">aEaAna|IV|ACT",
+    ">aEiyba|I|ACT",
+    ">ugoriqu|IV|ACT",
+    "{sotagofara|X|ACT",
+    ">agofalo|IV|ACT",
+    ">aforigo|IV|ACT",
+    ">afolaHa|IV|ACT",
+    "yanqaD~a|VII|ACT",
+    "{sotakobara|X|ACT",
+    "muli}ato|I|PASS",
+    "muli}ato|I|ACT",
+    "nab~a>a|II|ACT",
+    ">an*ara|IV|ACT",
+    ">an*ara|IV|PASS",
+    ">anzala|IV|ACT",
+    ">an$a>a|IV|ACT",
+    "nu$irato|I|ACT",
+    "naSara|I|ACT",
+    "yantaZiru|VIII|ACT",
+    "nafaxa|I|ACT",
+    "tanfu*u|I|ACT",
+    ">anfaqa|IV|ACT",
+    ">anqa*a|IV|ACT",
+    ">anqa*a|IV|PASS",
+    "{hojuro|I|ACT",
+    "{sotuhozi}a|X|ACT",
+    ">aholaka|IV|ACT",
+    "yuhay~i}o|II|ACT"
+  ],
+  "protection": {
+    "onlyProposedField": "noteUrdu",
+    "arabicSourceParadigmsAndOccurrenceFieldsChanged": false,
+    "sharedInputWrites": false,
+    "proposedNotesWithin320CharacterLimit": true,
+    "codexCliInvoked": false
+  },
+  "limitations": [
+    "This prescriptive Urdu agreement correction does not change the Arabic morphology analysis or count as scholarly approval.",
+    "No blanket text replacement should be applied beyond the exact per-note proposals: many nearby feminine forms are correct."
+  ],
+  "validation": {
+    "method": "Apply exact proposed note replacements only in isolated temporary library copies, then run existing validate_lib.py; no shared input was written.",
+    "affectedBatchCount": 7,
+    "results": [
+      {
+        "batch": "lex-01",
+        "exitCode": 0,
+        "result": {
+          "ok": true,
+          "kind": "lexemes",
+          "batch": "lex-01",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      {
+        "batch": "lex-03",
+        "exitCode": 0,
+        "result": {
+          "ok": true,
+          "kind": "lexemes",
+          "batch": "lex-03",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      {
+        "batch": "lex-06",
+        "exitCode": 0,
+        "result": {
+          "ok": true,
+          "kind": "lexemes",
+          "batch": "lex-06",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      {
+        "batch": "lex-08",
+        "exitCode": 0,
+        "result": {
+          "ok": true,
+          "kind": "lexemes",
+          "batch": "lex-08",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      {
+        "batch": "lex-09",
+        "exitCode": 0,
+        "result": {
+          "ok": true,
+          "kind": "lexemes",
+          "batch": "lex-09",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      {
+        "batch": "lex-11",
+        "exitCode": 0,
+        "result": {
+          "ok": true,
+          "kind": "lexemes",
+          "batch": "lex-11",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      {
+        "batch": "lex-12",
+        "exitCode": 0,
+        "result": {
+          "ok": true,
+          "kind": "lexemes",
+          "batch": "lex-12",
+          "errors": [],
+          "warnings": []
+        }
+      }
+    ],
+    "vocalizedArabicTokenSequencesUnchangedInAll35Notes": true
+  }
+}

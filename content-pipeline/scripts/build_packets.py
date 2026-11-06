@@ -26,6 +26,15 @@ def corrected(word):
     if not fix:
         return word
     word = json.loads(json.dumps(word))
+    if 'pos' in fix:
+        if fix['pos'] not in ('noun', 'adjective', 'verb', 'particle', 'pronoun'):
+            raise ValueError(f"Invalid pos override for {word['id']}")
+        if fix['pos'] == 'verb' and (
+                not isinstance(word.get('verb'), dict) or
+                not all(key in word['verb'] for key in ('form', 'aspect', 'passive', 'png')) or
+                not isinstance(fix.get('lexemeKey', word.get('lexemeKey')), str)):
+            raise ValueError(f"Verb pos override lacks morphology/paradigm for {word['id']}")
+        word['pos'] = fix['pos']
     if 'lexemeKey' in fix:
         word['lexemeKey'] = fix['lexemeKey']
     if 'verb' in word:

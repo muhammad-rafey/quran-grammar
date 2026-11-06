@@ -1,0 +1,44 @@
+{
+  "status": "AI editorial adjudication; scholarly review pending",
+  "scope": {
+    "rulesReadInFull": 112,
+    "fields": [
+      "explanationUrdu"
+    ],
+    "additionalDefiniteAgreementFindings": 0
+  },
+  "finding": {
+    "rule": "prohibition",
+    "field": "explanationUrdu",
+    "decision": "Accept explicit-head clarification; do not accept the categorical claim that masculine reference to the cited particle is intrinsically ungrammatical.",
+    "severity": "editorial clarification",
+    "old": "لَا ناہیہ مضارع کو مجزوم کر کے کسی کام سے روکتا ہے، جیسے لَا تَقُلْ «نہ کہو»؛ آخر میں سکون، نون کا حذف یا حرفِ علت کا حذف جزم کی علامت ہوتا ہے۔ اسے لَا نافیہ سے الگ رکھیں، جس کے بعد مضارع مرفوع رہتا ہے اور صرف خبر کی نفی ہوتی ہے۔",
+    "new": "لَا ناہیہ ایسا حرف ہے جو مضارع کو مجزوم کر کے کسی کام سے روکتا ہے، جیسے لَا تَقُلْ «نہ کہو»؛ آخر میں سکون، نون کا حذف یا حرفِ علت کا حذف جزم کی علامت ہوتا ہے۔ اسے لَا نافیہ سے الگ رکھیں، جس کے بعد مضارع مرفوع رہتا ہے اور صرف خبر کی نفی ہوتی ہے۔",
+    "rationale": "Adding ایسا حرف ہے جو supplies an explicit masculine antecedent for روکتا ہے, removes ambiguity, and preserves the exact grammar claim. Cited Arabic labels such as ناہیہ do not by themselves force feminine Urdu predication when حرف is understood. Feminine reference can also be natural under a different understood antecedent; no mass normalization is justified.",
+    "appliesWhenEnglishChanged": false,
+    "appliedBy": "parent agent",
+    "verifiedActualText": true
+  },
+  "evidence": [
+    {
+      "type": "primary Urdu grammar publisher",
+      "title": "نصاب الصرف، سبق نمبر 18: فعل نہی",
+      "url": "https://www.dawateislami.net/bookslibrary/ur/nisab-us-sarf/page-102",
+      "excerpt": "لفظی اور معنوی تبدیلیاں کرتا ہے",
+      "relevance": "The published lesson refers to لائے نہی with masculine کرتا ہے and explicitly locates it among حروف جوازم."
+    },
+    {
+      "type": "local reviewer checkpoint",
+      "path": "content-pipeline/runs/codex/55-c01.json",
+      "candidateHash": "7b174dcd98a63c9e610bf774f68fc412fea8811957b479700b5c1c7d09603a39",
+      "note": "Reviewer suggested روکتی ہے. The candidate is a preserved seed, not current-input AI approval."
+    }
+  ],
+  "validation": {
+    "rulesSha256": "b6d98dc92d4f1b4f07e3ea7345737c4a0240afabdfb56930e84e22c1900585e9",
+    "count": 112,
+    "exactChange": "Only the opening gains ایسا حرف ہے جو; all remaining explanation text and the English application criterion are unchanged.",
+    "fullScanDisposition": "No further definite Urdu gender agreement conflict requiring a shared-input correction. Masculine particle references can have understood حرف; feminine antecedents such as علامت, ضمیر, تاء, یاء and Arabic quoted labels were distinguished."
+  },
+  "publication": "No content activation; AI editorial review is not scholarly approval."
+}
