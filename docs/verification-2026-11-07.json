@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-07",
+  "timezone": "Asia/Karachi",
+  "release": "Owner-authorized published drafts; scholarly review pending",
+  "edition": {
+    "surahs": 16,
+    "ayahs": 474,
+    "words": 4307,
+    "contentSha256": "485f1fdfbf8678f6d4029afca8cca4165e7222e9641491c2e9c5450493c859fd"
+  },
+  "verification": {
+    "nodeTests": 221,
+    "pythonTests": 46,
+    "localBrowserTests": 35,
+    "liveHttpsBrowserTests": 35,
+    "skipped": 0,
+    "webAndApiBuilds": "passed",
+    "iosAndAndroidBundles": "passed",
+    "changedCodeLint": "passed",
+    "runtimeSnapshotHashes": "All five generated runtime studies match draft-publication.json exactly",
+    "postgres": "Every row reconstructed and compared to runtime content; checksum and counts match",
+    "sqlite": "Every row reconstructed and compared to runtime content; checksum and counts match"
+  },
+  "android": {
+    "device": "repro36 Android 36 arm64 emulator; no physical phone tested",
+    "artifact": "build/quran-grammar.apk",
+    "bytes": 66528758,
+    "sha256": "61265059a3b2ecacdf7ff5f1441f8548721026fe682af8028620a0aa45a45e5c",
+    "offline": true,
+    "metroRequired": false,
+    "checks": [
+      "Al-Kahf 18:1:4: root and exact past/present/pattern verified",
+      "Surah 18: draft notice, exact first Arabic/Urdu and 1579-word count verified",
+      "Surah 23: draft notice, exact first Arabic/Urdu and 1050-word count verified",
+      "Surah 32: draft notice, exact first Arabic/Urdu and 372-word count verified",
+      "Surah 36: draft notice, exact first Arabic/Urdu and 725-word count verified",
+      "Surah 55: draft notice, exact first Arabic/Urdu and 351-word count verified",
+      "Juz 16 opens Surah 18 at ayah 75, with exact target occurrence visible",
+      "Juz 23 opens Surah 36 at ayah 28, with exact target occurrence visible",
+      "Urdu preference persists across an actual Android cold start",
+      "English preference restored after testing",
+      "Approved open-book icon visually verified in the actual Android launcher",
+      "Current tested app process log captured without fatal exception or ReactNativeJS error"
+    ],
+    "nativeConfig": "Each build explicitly synchronizes Expo config with --no-clean and verifies debug signing before and after"
+  },
+  "limitations": [
+    "Scholarly approvals remain pending; no Quranic text, Urdu explanation or paradigm was rewritten for this release",
+    "No physical-phone test or store-signed Android release",
+    "iOS bundle exported; no iOS device test in this release"
+  ],
+  "evidenceDirectory": "build/verification/draft-release (git-ignored screenshots, XML and logs)"
+}

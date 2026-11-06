@@ -1,5 +1,14 @@
 # Quran Grammar · iOS and Android
 
+## Current draft edition — 2026-11-07
+
+The owner authorized publishing Surahs 18, 23, 32, 36 and 55 as labeled drafts.
+The native app bundles all 16 Surahs, 474 ayahs and 4,307 words. Draft readers show
+the scholarly-review-pending notice; scholarly approvals remain pending. The APK
+command now synchronizes app config and icons before compiling. Earlier native
+verification records below describe their original pre-publication snapshots.
+
+
 A native Expo SDK 57 app. The React Native screens share their content, TypeScript
 types, search and validation with `@quran-grammar/core`; they are not a WebView of
 the website. Expo Router provides the native navigation stack and dismissible
@@ -42,8 +51,10 @@ cancelled requests cannot replace the newly selected lesson.
 - Choose Surah or Juz in the native catalog sheet, then use the chapter's own
   ayah picker. The catalog lists all 114 surahs and 30 juz; unavailable entries
   are disabled and labelled Coming soon. Available chapters come from the shared
-  registry: Al-Fatihah and surahs 105–114. Juz 1 and Juz 30 are partial previews;
-  expand a Juz to choose one of its available surahs.
+  registry: Al-Fatihah, surahs 18, 23, 32, 36, 55 and 105–114. The five longer
+  chapters show a scholarly-review-pending notice. Available Juz ranges are
+  partial previews; Juz 16 opens Al-Kahf at ayah 75 and Juz 23 opens Ya-Sin at
+  ayah 28. Expand a Juz to choose one of its available surahs.
 - The compact Filter button reveals part-of-speech filters and the word-meaning
   toggle; full ayah context and translation stay visible. There is no search bar.
 - Study, Grammar and Settings use English controls by default. Settings switches

@@ -6,6 +6,7 @@ import {
   getSurahTitle,
   formatCount,
   getUiStrings,
+  isStudyDraft,
   type PartOfSpeechFilter,
 } from '@quran-grammar/core';
 import { Grammar } from './components/grammar';
@@ -162,6 +163,11 @@ export function App() {
       </header>
       <main className="page-shell" id="main" tabIndex={-1}>
         <h1 className="sr-only">{getSurahTitle(locationRequest.surah, language)}</h1>
+        {view !== 'settings' && isStudyDraft(locationRequest.surah) && (
+          <p className="draft-notice ui" lang={language} dir={direction} role="note">
+            {ui.draftNotice}
+          </p>
+        )}
         {view !== 'settings' && (
           <section
             className="lesson-toolbar ui"

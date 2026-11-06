@@ -55,14 +55,14 @@ test('surah and juz catalogs expose available lessons and preserve picker focus'
   const catalog = page.getByRole('dialog', { name: 'Select surah', exact: true });
   await expect(catalog).toBeVisible();
   await expect(catalog.locator('[data-surah]')).toHaveCount(114);
-  await expect(catalog.locator('[data-surah]:disabled')).toHaveCount(103);
+  await expect(catalog.locator('[data-surah]:disabled')).toHaveCount(98);
   expect(
     await catalog
       .locator('[data-surah]')
       .evaluateAll((nodes) =>
-        nodes.slice(0, 11).map((node) => Number(node.getAttribute('data-surah'))),
+        nodes.slice(0, 16).map((node) => Number(node.getAttribute('data-surah'))),
       ),
-  ).toEqual([1, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114]);
+  ).toEqual([1, 18, 23, 32, 36, 55, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114]);
   await expect(catalog.locator('[data-surah="1"]')).toBeEnabled();
   await expect(catalog.locator('[data-surah="2"]')).toContainText('Coming soon');
   await expect(catalog.locator('[data-surah="114"]')).toContainText('An-Nas');
@@ -89,8 +89,14 @@ test('surah and juz catalogs expose available lessons and preserve picker focus'
   await page.getByRole('dialog').getByRole('button', { name: 'Juz', exact: true }).click();
   const juz = page.getByRole('dialog', { name: 'Select juz', exact: true });
   await expect(juz.locator('[data-juz]')).toHaveCount(30);
-  await expect(juz.locator('[data-juz]:disabled')).toHaveCount(28);
-  await expect(juz.locator('[data-juz]').nth(1)).toHaveAttribute('data-juz', '30');
+  await expect(juz.locator('[data-juz]:disabled')).toHaveCount(21);
+  expect(
+    await juz
+      .locator('[data-juz]')
+      .evaluateAll((nodes) =>
+        nodes.slice(0, 9).map((node) => Number(node.getAttribute('data-juz'))),
+      ),
+  ).toEqual([1, 15, 16, 18, 21, 22, 23, 27, 30]);
   await expect(juz.locator('[data-juz="1"]')).toContainText('Al-Fatihah only');
   await juz.locator('[data-juz="29"]').evaluate((node: HTMLButtonElement) => node.click());
   await expect(juz).toBeVisible();
@@ -613,6 +619,102 @@ test('all ten new chapters use their own words, root details, grammar and ayah s
     await page.getByRole('button', { name: 'Study', exact: true }).click();
     await expect(word(page, `${number}:1:1`)).toHaveAttribute('aria-pressed', 'true');
   }
+});
+
+const fiveChapters = [
+  [18, 110, 1579, 'Al-Kahf'],
+  [23, 118, 1050, "Al-Mu'minun"],
+  [32, 30, 372, 'As-Sajdah'],
+  [36, 83, 725, 'Ya-Sin'],
+  [55, 78, 351, 'Ar-Rahman'],
+] as const;
+
+test('five longer chapters load complete lessons with grammar, tafsir and paradigms', async ({
+  page,
+}) => {
+  test.setTimeout(180000);
+  await loadStudy(page);
+  for (const [number, ayahs, words, title] of fiveChapters) {
+    await page.getByRole('button', { name: 'Select surah', exact: true }).click();
+    await page.locator(`[data-surah="${number}"]`).click();
+    await expect(page.locator('.quran-word')).toHaveCount(words);
+    await expect(page.locator('.collection-trigger')).toContainText(title);
+    const ids = await page
+      .locator('.quran-word')
+      .evaluateAll((nodes) => nodes.map((node) => node.getAttribute('data-word-id')!));
+    expect(ids.every((id) => id.startsWith(`${number}:`))).toBe(true);
+    expect(new Set(ids).size).toBe(words);
+    await expect(page.getByRole('combobox', { name: 'Select ayah' }).locator('option')).toHaveCount(
+      ayahs,
+    );
+    await expect(detail(page).locator('.detail-navigation')).toContainText(`1 / ${words}`);
+    const verbIds = await page
+      .locator('.quran-word.verb')
+      .evaluateAll((nodes) => nodes.map((node) => node.getAttribute('data-word-id')!));
+    const sample = [
+      ids[0],
+      ids[1],
+      verbIds[0],
+      verbIds[Math.floor(verbIds.length / 2)],
+      ids.at(-1)!,
+    ];
+    for (const id of sample) {
+      const button = word(page, id);
+      const arabic = await button.locator('.arabic').textContent();
+      await button.scrollIntoViewIfNeeded();
+      await button.click();
+      await expect(detail(page).locator('#detail-title')).toHaveText(arabic!);
+      await expect(detail(page).locator('.detail-translation')).not.toBeEmpty();
+      await expect(detail(page).locator('.grammar-rule')).not.toHaveCount(0);
+      if (verbIds.includes(id)) {
+        await expect(detail(page).locator('.baab-title')).not.toBeEmpty();
+        await expect(detail(page).locator('.verb-paradigm')).toBeVisible();
+      }
+    }
+    await page.getByRole('button', { name: 'Grammar', exact: true }).click();
+    await expect(page.locator('.grammar-card')).toHaveCount(ayahs);
+    await expect(page.locator('.tafsir')).toHaveCount(ayahs);
+    await page.getByRole('combobox', { name: 'Select ayah' }).selectOption(String(ayahs));
+    await expect(page.locator(`#grammar-ayah-${ayahs}`)).toBeInViewport();
+    await page.getByRole('button', { name: 'Study', exact: true }).click();
+  }
+});
+
+test('juz previews open a chapter at its first ayah inside that juz', async ({ page }) => {
+  await loadStudy(page);
+  const trigger = page.locator('.collection-trigger');
+  const selector = page.getByRole('combobox', { name: 'Select ayah', exact: true });
+  const openJuz = async (number: number) => {
+    await trigger.click();
+    await page.getByRole('dialog').getByRole('button', { name: 'Juz', exact: true }).click();
+    const catalog = page.getByRole('dialog', { name: 'Select juz', exact: true });
+    await expect(catalog.locator(`[data-juz="${number}"]`)).toContainText('Partial preview');
+    await catalog.locator(`[data-juz="${number}"]`).click();
+    await expect(catalog).not.toBeVisible();
+  };
+  await openJuz(16);
+  await expect(page.locator('.quran-word')).toHaveCount(1579);
+  await expect(selector).toHaveValue('75');
+  await expect(word(page, '18:75:1')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('#ayah-75')).toBeInViewport();
+  await expect(trigger).toContainText('Juz 16');
+  await expect(trigger).toContainText('Al-Kahf');
+  expect(page.url()).toContain('#surah=18&ayah=75');
+  await selector.selectOption('74');
+  await expect(trigger).toContainText('Juz 15');
+  await openJuz(15);
+  await expect(selector).toHaveValue('1');
+  await expect(trigger).toContainText('Juz 15');
+  await openJuz(23);
+  await expect(page.locator('.quran-word')).toHaveCount(725);
+  await expect(selector).toHaveValue('28');
+  await expect(word(page, '36:28:1')).toHaveAttribute('aria-pressed', 'true');
+  await expect(trigger).toContainText('Juz 23');
+  await expect(trigger).toContainText('Ya-Sin');
+  await page.goto('/#surah=18&ayah=100');
+  await expect(selector).toHaveValue('100');
+  await expect(word(page, '18:100:1')).toHaveAttribute('aria-pressed', 'true');
+  await expectNoOverflow(page);
 });
 
 test('Juz 30 exposes its ten available chapters without claiming the entire Juz', async ({

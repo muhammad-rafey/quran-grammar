@@ -1,6 +1,6 @@
 # Quran Grammar · قرآن گرامر
 
-A grammar-focused Quran study app with Urdu explanations, covering Al-Fatihah and the final ten Surahs (105–114). The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
+A grammar-focused Quran study app with Urdu explanations, covering Al-Fatihah, Surahs 18, 23, 32, 36 and 55, and the final ten Surahs (105–114). The five longer chapters are published drafts awaiting scholarly review, explicitly authorized by the owner on 2026-11-07. The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
 
 ## Project
 
@@ -15,11 +15,11 @@ The web app uses React with Vite because the current product is an interactive s
 
 ## Features
 
-- All 230 word occurrences across 55 ayahs, with contextual Urdu meanings and grammatical segments.
+- All 4,307 word occurrences across 474 ayahs in 16 Surahs, with contextual Urdu meanings and grammatical segments. The five longer chapters show a persistent draft/review-pending notice while reading.
 - Root-family meanings and a paradigm for every finite verb, including باب، ماضی، مضارع and patterns.
 - Occurrence-specific morphology, syntax, dictionary explanations, grammar rules, and related-root navigation.
 - Phrase constructions and concise tafsir notes for every ayah, using the same data format as Al-Fatihah.
-- Floating bottom navigation, a Surah/Juz catalog, and an ayah selector. Al-Fatihah and Surahs 105–114 are available; other chapters are marked Coming soon. Juz 1 contains Al-Fatihah only, and Juz 30 contains the final ten Surahs; both are explicitly partial previews.
+- Floating bottom navigation, a Surah/Juz catalog, and an ayah selector. Al-Fatihah, Surahs 18, 23, 32, 36, 55 and 105–114 are available; other chapters are marked Coming soon. Available Juz ranges are explicitly partial previews. Juz 16 opens Al-Kahf at ayah 75 and Juz 23 opens Ya-Sin at ayah 28.
 - Part-of-speech filters and the meaning toggle stay behind a collapsed Filters button. Search is currently hidden in both apps; the shared API retains its search endpoint.
 - Three Al-Fatihah grammar practice questions, explanations and an honest attempt score, with a restart option.
 - English interface and counts by default; Settings saves an English/Urdu preference on the current browser or device. Language changes affect interface text and numbers only.
@@ -61,9 +61,9 @@ cp apps/mobile/.env.example apps/mobile/.env
 npm run dev:mobile
 ```
 
-Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app explicitly offers its bundled eleven-Surah edition. See [native setup](apps/mobile/README.md).
+Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app uses its bundled sixteen-Surah edition, including the five labeled drafts. See [native setup](apps/mobile/README.md).
 
-The APK command builds locally with JDK 17+, Android SDK Platform 36 and Build-Tools 36. It bundles JavaScript and fonts, so the installed APK does not require Metro or Expo Go. It uses Expo's debug signing key for local testing, **not a Play Store release**. The first build generates the ignored Android project and downloads native build dependencies. Later builds reuse it without replacing native files. See [APK build setup and options](docs/android-build.md).
+The APK command builds locally with JDK 17+, Android SDK Platform 36 and Build-Tools 36. It bundles JavaScript and fonts, so the installed APK does not require Metro or Expo Go. It uses Expo's debug signing key for local testing, **not a Play Store release**. Each build applies the current app config and launcher icons through incremental Expo Prebuild, retaining the native directory and build caches. See [APK build setup and options](docs/android-build.md).
 
 ## Verify
 
@@ -93,6 +93,14 @@ docker compose up -d --build --wait
 The production Node process serves both the web app and `/api` on localhost port 8080. Only API runtime dependencies are included in the final image. [Home server deployment and removal](docs/deployment.md) describes HTTPS through an existing Caddy proxy and the Portainer-visible Compose project.
 
 ## Content and future work
+
+**Current release (2026-11-07):** the owner authorized publishing the five completed
+expansion snapshots as drafts while scholarly review continues. The app, PostgreSQL
+copy and SQLite copy use the same 16-Surah registry. See
+[`draft-publication.json`](content-pipeline/draft-publication.json) for exact hashes
+and authorization, and `npm run publish:drafts` to reproduce the runtime modules.
+Scholarly approvals remain pending. The following paragraphs record the earlier
+pre-publication review and private testing snapshot.
 
 This edition contains Al-Fatihah, Al-Fil, Quraysh, Al-Maʿun, Al-Kawthar, Al-Kafirun, An-Nasr, Al-Masad, Al-Ikhlas, Al-Falaq and An-Nas. The app is read-only; no account system or scholar-editing interface is implied. Stable word occurrence IDs and a versioned API leave room for reviewed content expansion without duplicating the data between platforms.
 

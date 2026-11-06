@@ -24,7 +24,23 @@ The override attaches the `quran-grammar` container to the existing external `ap
 
 The actual deployment includes untracked `.deployment/` files with the public hostname, its proxy configuration backup, and a targeted removal script. These operational files are excluded from the public repository. The previous static demo is retained separately as `~/quran-grammar-prototype`, with its Compose project, container and image using that same name. It has no public proxy route. Its removal script is scoped to that prototype. Previously shared lesson-specific hostnames redirect to the Quran Grammar hostname.
 
-## Remove
+## Content and database updates
+
+The web/API image and native bundle share the core study registry. The API serves
+that registry; PostgreSQL and SQLite are verified relational copies, not independent
+content sources. Updating one database alone does not change the deployed API.
+
+After updating the repository and running `npm ci`, regenerate the SQLite copy
+with `npm run db:sqlite`. Use the existing deployment's private `QG_PSQL` command
+with `npm run db:sync` to update PostgreSQL transactionally and verify every row.
+Back up the dedicated `quran_grammar` schema before updating it; other application
+schemas must remain untouched. `npm run db:verify` compares both copies against
+the same registry, including the content checksum, roots and verb paradigms.
+
+The owner-authorized draft edition has 16 Surahs, 474 ayahs and 4,307 words.
+The five longer chapters retain their scholarly-review-pending notices.
+
+## Remove the deployment
 
 On the configured home server, use:
 

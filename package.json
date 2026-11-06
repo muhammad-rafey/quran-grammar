@@ -18,6 +18,7 @@
     "dev:mobile": "npm run start -w @quran-grammar/mobile",
     "build": "npm run build -w @quran-grammar/web && npm run build -w @quran-grammar/api",
     "build:icons": "node scripts/generate-app-icons.mjs",
+    "publish:drafts": "node --import tsx scripts/publish-draft-lessons.ts",
     "build:mobile": "npm run export -w @quran-grammar/mobile",
     "build:android:apk": "node scripts/build-android-apk.mjs",
     "start": "npm run start -w @quran-grammar/api",

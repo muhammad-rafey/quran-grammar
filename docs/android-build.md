@@ -18,13 +18,13 @@ adb install -r build/quran-grammar.apk
 
 This is a release-variant APK with bundled JavaScript and assets, signed with Expo's debug key for local testing. It works without Metro or Expo Go. It is not configured or signed for Play Store distribution. Its default ABIs are `arm64-v8a` and `x86_64`, covering modern Android phones and 64-bit emulators. The first native build can take several minutes and download Gradle, Maven artifacts or Android native tools; later builds reuse caches.
 
-The command generates `apps/mobile/android/` with Expo Prebuild only if that directory is absent. It never cleans or replaces an existing native project or changes an existing signing configuration. Native directories stay ignored. After changing app config or config plugins, deliberately regenerate or update the native project with Expo's normal workflow before building again; preserve any native customizations first.
+The command synchronizes `apps/mobile/android/` with Expo Prebuild before each build, including changes to the launcher icons and app config. It explicitly passes `--no-clean` (SDK 57 otherwise cleans by default), retaining the native directory and build caches. Existing incomplete projects or custom release-signing configurations are rejected before synchronization. Keep native customizations in app config/config plugins; native directories stay ignored.
 
 Expo SDK 57 requires Reanimated 4.5.1 with Worklets 0.10.1. The root override keeps Expo Router's transitive Reanimated dependency on that same version: allowing a second Reanimated 4.7.x copy selects an incompatible Worklets requirement and fails native compilation. Preserve this SDK-compatible pair until deliberately upgrading the Expo SDK, and check the dependency tree with `npm ls react-native-reanimated react-native-worklets` after dependency updates.
 
 ## API configuration
 
-The build reads Expo's production `.env` files in `apps/mobile/`; an existing shell `EXPO_PUBLIC_API_URL` takes precedence. Use an HTTPS API origin for an APK that connects to a deployed backend. Public client environment values are bundled into the APK and must not contain credentials. If the API origin is unset, the app uses its bundled eleven-Surah edition. If a configured backend is unavailable, the app offers retry and the matching saved lesson.
+The build reads Expo's production `.env` files in `apps/mobile/`; an existing shell `EXPO_PUBLIC_API_URL` takes precedence. Use an HTTPS API origin for an APK that connects to a deployed backend. Public client environment values are bundled into the APK and must not contain credentials. If the API origin is unset, the app uses its bundled sixteen-Surah edition, including the five visibly labeled drafts awaiting scholarly review. If a configured backend is unavailable, the app offers retry and the matching saved lesson.
 
 To explicitly build the offline edition regardless of dotenv configuration, on macOS/Linux:
 
@@ -58,6 +58,6 @@ npm run build:android:apk -- --prepare
 APK_ABIS=arm64-v8a APK_GRADLE_WORKERS=2 npm run build:android:apk
 ```
 
-`--check` validates installed tooling without generating a native project. `--prepare` also generates missing Android files but does not compile an APK. `APK_ABIS` selects architectures; `APK_GRADLE_WORKERS` limits parallel Gradle workers. If a build fails, no old APK is reported as a new success and the previous successful output remains available.
+`--check` validates installed tooling without changing a native project. `--prepare` synchronizes Android config and launcher icons but does not compile an APK. `APK_ABIS` selects architectures; `APK_GRADLE_WORKERS` limits parallel Gradle workers. If a build fails, no old APK is reported as a new success and the previous successful output remains available.
 
 Workflow references: [Expo SDK 57](https://docs.expo.dev/versions/v57.0.0/), [local development builds](https://docs.expo.dev/guides/local-app-development/), and [local release builds and store signing](https://docs.expo.dev/guides/local-app-production/).

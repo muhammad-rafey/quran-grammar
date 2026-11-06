@@ -36,6 +36,7 @@ async function prebuild(expoCli, env) {
   const packagePath = join(mobile, 'package.json');
   const beforeText = await readFile(packagePath, 'utf8');
   const before = JSON.parse(beforeText);
+  let prebuildError;
   try {
     await run(
       process.execPath,
@@ -45,12 +46,16 @@ async function prebuild(expoCli, env) {
         '--platform',
         'android',
         '--no-install',
+        '--no-clean',
         '--skip-dependency-update',
         Object.keys(before.dependencies ?? {}).join(','),
       ],
       { cwd: mobile, env },
     );
-  } finally {
+  } catch (error) {
+    prebuildError = error;
+  }
+  {
     // Prebuild changes Expo's default launch scripts. Restore only this known
     // change; preserve and flag anything else rather than overwriting it.
     const after = JSON.parse(await readFile(packagePath, 'utf8'));
@@ -67,12 +72,13 @@ async function prebuild(expoCli, env) {
       );
     await writeFile(packagePath, beforeText);
   }
+  if (prebuildError) throw prebuildError;
 }
 
 async function main() {
   if (process.argv.includes('--help')) {
     console.log(
-      'npm run build:android:apk [-- --check | --prepare]\nBuild a local test APK at build/quran-grammar.apk.\n--check validates installed tooling; --prepare also generates missing Android files.\nEXPO_PUBLIC_API_URL optionally selects an HTTP(S) API origin; unset uses the bundled lesson.\nAPK_ABIS defaults to arm64-v8a,x86_64. APK_GRADLE_WORKERS defaults to 4.',
+      'npm run build:android:apk [-- --check | --prepare]\nBuild a local test APK at build/quran-grammar.apk.\n--check validates installed tooling; --prepare synchronizes Android config and icons without compiling.\nEXPO_PUBLIC_API_URL optionally selects an HTTP(S) API origin; unset uses the bundled lessons.\nAPK_ABIS defaults to arm64-v8a,x86_64. APK_GRADLE_WORKERS defaults to 4.',
     );
     return;
   }
@@ -144,21 +150,34 @@ async function main() {
     EXPO_NO_DOTENV: '1',
     CI: '1',
   };
-  if (!existsSync(android)) {
-    console.log('Generating the Android project once with Expo Prebuild.');
-    await prebuild(expoCli, env);
-  } else console.log('Using the existing Android project without regenerating it.');
   const gradleFile = join(android, 'app/build.gradle');
   const wrapper = join(android, process.platform === 'win32' ? 'gradlew.bat' : 'gradlew');
+  // Validate an existing project before Prebuild can touch it. In particular,
+  // never let Prebuild replace a malformed project or change custom signing.
+  const assertTestSigning = async () => {
+    const gradle = await readFile(gradleFile, 'utf8');
+    if (!/release\s*\{[^{}]*signingConfig\s+signingConfigs\.debug/.test(gradle))
+      throw new Error(
+        'The release variant does not use Expo’s debug signing key. This command builds local test APKs and will not change an existing signing configuration.',
+      );
+  };
+  if (existsSync(android)) {
+    if (!existsSync(wrapper) || !existsSync(gradleFile))
+      throw new Error(
+        'The existing Android directory is incomplete. Review it first; this script never replaces an existing native project.',
+      );
+    await assertTestSigning();
+  }
+  // Gradle rebuilds resources already in android/; it does not apply app.json.
+  // Re-run incremental Prebuild so later icon/config edits reach every APK.
+  // SDK 57 cleans by default; --no-clean retains the directory and build caches.
+  console.log('Synchronizing Android app configuration and launcher icons with Expo Prebuild (no clean).');
+  await prebuild(expoCli, env);
   if (!existsSync(wrapper) || !existsSync(gradleFile))
     throw new Error(
       'The existing Android directory is incomplete. Review it first; this script never replaces an existing native project.',
     );
-  const gradle = await readFile(gradleFile, 'utf8');
-  if (!/release\s*\{[^{}]*signingConfig\s+signingConfigs\.debug/.test(gradle))
-    throw new Error(
-      'The release variant does not use Expo’s debug signing key. This command builds local test APKs and will not change an existing signing configuration.',
-    );
+  await assertTestSigning();
   if (process.argv.includes('--prepare')) {
     console.log('Android project ready; no APK build was requested.');
     return;

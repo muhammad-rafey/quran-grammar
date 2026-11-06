@@ -21,7 +21,9 @@ import {
   getJuzStartAyah,
 } from './index';
 
-const expectedChapters = [1, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
+const lastTen = [105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
+const fiveSurahs = [18, 23, 32, 36, 55];
+const expectedChapters = [1, ...fiveSurahs, ...lastTen];
 
 test('navigation catalogs distinguish the available lesson from future content and partial juz', () => {
   assert.deepEqual(
@@ -50,27 +52,29 @@ test('navigation catalogs distinguish the available lesson from future content a
     juzCatalog.map((juz) => juz.number),
     Array.from({ length: 30 }, (_, i) => i + 1),
   );
+  const preview = (number: number, ranges: Array<[number, number, number]>) => ({
+    number,
+    available: true,
+    partial: true,
+    previewSurahNumber: ranges[0][0],
+    surahNumbers: ranges.map(([surah]) => surah),
+    ranges: ranges.map(([surah, firstAyah, lastAyah]) => ({ surah, firstAyah, lastAyah })),
+  });
   assert.deepEqual(
     juzCatalog.filter((juz) => juz.available),
     [
-      {
-        number: 1,
-        available: true,
-        partial: true,
-        previewSurahNumber: 1,
-        surahNumbers: [1],
-        ranges: [{ surah: 1, firstAyah: 1, lastAyah: 7 }],
-      },
-      {
-        number: 30,
-        available: true,
-        partial: true,
-        previewSurahNumber: 105,
-        surahNumbers: expectedChapters.slice(1),
-        ranges: expectedChapters
-          .slice(1)
-          .map((surah) => ({ surah, firstAyah: 1, lastAyah: getStudy(surah)!.surah.ayahCount })),
-      },
+      preview(1, [[1, 1, 7]]),
+      preview(15, [[18, 1, 74]]),
+      preview(16, [[18, 75, 110]]),
+      preview(18, [[23, 1, 118]]),
+      preview(21, [[32, 1, 30]]),
+      preview(22, [[36, 1, 27]]),
+      preview(23, [[36, 28, 83]]),
+      preview(27, [[55, 1, 78]]),
+      preview(
+        30,
+        lastTen.map((surah) => [surah, 1, getStudy(surah)!.surah.ayahCount]),
+      ),
     ],
   );
   assert.ok(
@@ -84,27 +88,47 @@ test('navigation catalogs distinguish the available lesson from future content a
           juz.ranges.length === 0,
       ),
   );
-  // The juz shown follows the ayah being read; only available chapters have ranges.
-  assert.equal(getJuzForAyah(1, 7)?.number, 1);
-  assert.equal(getJuzForAyah(105, 1)?.number, 30);
-  assert.equal(getJuzForAyah(114, 6)?.number, 30);
+  // Al-Kahf and Ya-Sin span two juz; the juz shown follows the ayah being read.
+  for (const [surah, ayah, juz] of [
+    [18, 1, 15],
+    [18, 74, 15],
+    [18, 75, 16],
+    [18, 110, 16],
+    [23, 118, 18],
+    [32, 15, 21],
+    [36, 27, 22],
+    [36, 28, 23],
+    [36, 83, 23],
+    [55, 13, 27],
+    [1, 7, 1],
+    [114, 6, 30],
+  ] as const)
+    assert.equal(getJuzForAyah(surah, ayah)?.number, juz, `${surah}:${ayah}`);
   for (const [surah, ayah] of [
-    [1, 8],
-    [114, 7],
+    [18, 111],
+    [36, 0],
     [2, 1],
-    [18, 75],
   ] as const)
     assert.equal(getJuzForAyah(surah, ayah), undefined, `${surah}:${ayah}`);
+  assert.equal(getJuzStartAyah(15, 18), 1);
+  assert.equal(getJuzStartAyah(16, 18), 75);
+  assert.equal(getJuzStartAyah(22, 36), 1);
+  assert.equal(getJuzStartAyah(23, 36), 28);
   assert.equal(getJuzStartAyah(30, 114), 1);
-  assert.equal(getJuzStartAyah(1, 1), 1);
-  assert.equal(getJuzStartAyah(16, 18), 1, 'unavailable chapters fall back to ayah 1');
+  assert.equal(getSurahTitle(18, 'en'), 'Al-Kahf');
+  assert.equal(getSurahTitle(36, 'ur'), 'يس');
   assert.equal(getSurahTitle(114, 'en'), 'An-Nas');
   assert.equal(getSurahTitle(114, 'ur'), 'الناس');
 });
 
-test('all eleven available lessons have complete occurrence, rule and phrase coverage', () => {
+test('all sixteen available lessons have complete occurrence, rule and phrase coverage', () => {
   const counts = new Map([
     [1, [7, 29]],
+    [18, [110, 1579]],
+    [23, [118, 1050]],
+    [32, [30, 372]],
+    [36, [83, 725]],
+    [55, [78, 351]],
     [105, [5, 23]],
     [106, [4, 17]],
     [107, [7, 25]],
@@ -123,14 +147,14 @@ test('all eleven available lessons have complete occurrence, rule and phrase cov
   );
   assert.equal(
     studies.reduce((total, study) => total + study.ayahs.length, 0),
-    55,
+    474,
   );
   assert.equal(
     studies.reduce((total, study) => total + study.words.length, 0),
-    230,
+    4307,
   );
   const occurrences = studies.flatMap((study) => study.words.map((word) => word.id));
-  assert.equal(new Set(occurrences).size, 230);
+  assert.equal(new Set(occurrences).size, 4307);
   for (const study of studies) {
     const chapter = study.surah.number;
     assert.equal(getStudy(chapter), study);
@@ -152,7 +176,48 @@ test('all eleven available lessons have complete occurrence, rule and phrase cov
       'Source links stay in the repository audit',
     );
   }
-  for (const number of [0, 2, 104, 115, 105.5, NaN]) assert.equal(getStudy(number), undefined);
+  for (const number of [0, 2, 17, 104, 115, 105.5, NaN]) assert.equal(getStudy(number), undefined);
+});
+
+test('five new surahs preserve every audited Uthmani word and occurrence boundary verbatim', () => {
+  let total = 0;
+  for (const number of fiveSurahs) {
+    const inventory = JSON.parse(
+      readFileSync(
+        new URL(`../../../docs/source-audits/inventory-${number}.json`, import.meta.url),
+        'utf8',
+      ),
+    ) as {
+      surah: number;
+      ayahCount: number;
+      wordCount: number;
+      words: Array<{ id: string; arabic: string }>;
+      excludedPauseSigns: Array<{ id: string; apiText: string; excludedMark: string }>;
+    };
+    const study = getStudy(number)!;
+    assert.equal(inventory.surah, number);
+    assert.equal(inventory.ayahCount, study.surah.ayahCount);
+    assert.equal(inventory.wordCount, study.surah.wordCount);
+    assert.deepEqual(
+      study.words.map((word) => [word.id, word.arabic]),
+      inventory.words.map(({ id, arabic }) => [id, arabic]),
+    );
+    for (const sign of inventory.excludedPauseSigns) {
+      const word = study.words.find((entry) => entry.id === sign.id)!;
+      assert.ok(sign.apiText.includes(word.arabic), sign.id);
+      assert.ok(!word.arabic.includes(' '), sign.id);
+    }
+    for (const word of study.words) {
+      assert.equal(
+        word.segments.map((segment) => segment.arabic).join(''),
+        word.arabic,
+        `${word.id}: segments are exact slices of the Quranic word`,
+      );
+      if (word.pos === 'verb') assert.ok(study.verbForms[word.id], `${word.id}: verb paradigm`);
+    }
+    total += inventory.words.length;
+  }
+  assert.equal(total, 4077);
 });
 
 test('last ten surahs preserve every audited Uthmani word and occurrence boundary verbatim', () => {

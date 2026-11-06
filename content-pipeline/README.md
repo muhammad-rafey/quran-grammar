@@ -1,5 +1,17 @@
 # Five-Surah expansion — plan, progress and handoff
 
+**Publication update (2026-11-07): the owner explicitly authorized publication while
+scholarly review remains pending.** The five chapters are now integrated as visibly
+labeled educational drafts. `draft-publication.json` records the authorization and
+pins each exact study snapshot. `npm run publish:drafts` reproduces those runtime
+modules without changing their Arabic, explanations or scholarly approval records.
+The runtime edition contains 16 Surahs, 474 ayahs and 4,307 words. The original
+`assemble.py --write` scholarly-approval gate remains intact; this owner-authorized
+draft release is separate from scholarly approval. The earlier hold and private
+verification status below describe the pre-publication review snapshot.
+
+## Historical review handoff before the owner-authorized draft release
+
 **Status (2026-11-06): all 127 chunks authored and AI-reviewed; review bundle complete; scholarly review pending.**
 No new lesson is live. The app still ships Al-Fatihah and Surahs 105–114 (11 Surahs, 55 ayahs,
 230 words). This folder holds the authoring and review records, deterministic tooling,

@@ -1,0 +1,35 @@
+Quran Grammar — open book with magnifying glass
+Generated using the built-in image_gen tool. Standalone design assets.
+
+Lens above
+Files: 09-lens-above-light.png and 09-lens-above-dark.png
+LIGHT PROMPT
+Use case: logo-brand.
+Asset: ONE finished LIGHT MODE app icon for Quran Grammar, an app for analyzing and understanding Quranic Arabic.
+Input image is a reference for the approved open-book logo. KEEP the same angular open book with two filled page silhouettes, softly rounded outer corners and a narrow vertical center gap. REMOVE the diagonal floating dash/pen/accent completely. Replace it with the magnifying-glass treatment specified below. The user wants book + magnifying glass, clean and exceptionally minimal.
+Retain the existing forest green #14654C and warm ivory #F7F8EF identity. Flat vector-style shapes, perfect solid colors, crisp smooth edges, confidently thick details legible at 32px. No interior page lines or folded white slashes. No actual scripture, letters, words, labels, ornamental details, extra symbols, gradient, shadow, texture, glass reflections, 3D or mockup.
+Output a perfectly SQUARE opaque 1024x1024 full-bleed warm ivory canvas. Discard the reference screenshot's black edge and rounded canvas corner; the background must be uniform ivory all the way to every square corner. Center the whole logo within the central 62% of canvas with generous margins. ONE icon only.
+VARIATION A: A small, clearly recognizable forest-green magnifying glass FLOATS ABOVE THE CENTER OF THE OPEN BOOK in place of the original diagonal accent. Use a simple bold circular ring with ivory empty center and a short rounded handle pointing down-right at 45 degrees. Its overall size approximately 24% of book width. Keep it separate from the page edges with a clean air gap, centered as a compact scholarly emblem. The book remains two completely solid green pages.
+
+Lens over page
+Files: 10-lens-overlap-light.png and 10-lens-overlap-dark.png
+LIGHT PROMPT
+Use case: logo-brand.
+Asset: ONE finished LIGHT MODE app icon for Quran Grammar, an app for analyzing and understanding Quranic Arabic.
+Input image is a reference for the approved open-book logo. KEEP the same angular open book with two filled page silhouettes, softly rounded outer corners and a narrow vertical center gap. REMOVE the diagonal floating dash/pen/accent completely. Replace it with the magnifying-glass treatment specified below. The user wants book + magnifying glass, clean and exceptionally minimal.
+Retain the existing forest green #14654C and warm ivory #F7F8EF identity. Flat vector-style shapes, perfect solid colors, crisp smooth edges, confidently thick details legible at 32px. No interior page lines or folded white slashes. No actual scripture, letters, words, labels, ornamental details, extra symbols, gradient, shadow, texture, glass reflections, 3D or mockup.
+Output a perfectly SQUARE opaque 1024x1024 full-bleed warm ivory canvas. Discard the reference screenshot's black edge and rounded canvas corner; the background must be uniform ivory all the way to every square corner. Center the whole logo within the central 62% of canvas with generous margins. ONE icon only.
+VARIATION B: A bold forest-green magnifying glass overlaps the UPPER RIGHT PAGE of the open book, as though inspecting the page. It has an ivory empty circular lens, thick green ring, and a short rounded handle pointing down-right. Use a slim ivory separation around its outer ring where it crosses the green page so the whole magnifier silhouette is immediately readable. Its diameter about 34% of book width. The book is prominent and recognizable underneath. No floating accent above. Balance the overall composite optically in the canvas.
+
+Lens cutout
+Files: 11-lens-cutout-light.png and 11-lens-cutout-dark.png
+LIGHT PROMPT
+Use case: logo-brand.
+Asset: ONE finished LIGHT MODE app icon for Quran Grammar, an app for analyzing and understanding Quranic Arabic.
+Input image is a reference for the approved open-book logo. KEEP the same angular open book with two filled page silhouettes, softly rounded outer corners and a narrow vertical center gap. REMOVE the diagonal floating dash/pen/accent completely. Replace it with the magnifying-glass treatment specified below. The user wants book + magnifying glass, clean and exceptionally minimal.
+Retain the existing forest green #14654C and warm ivory #F7F8EF identity. Flat vector-style shapes, perfect solid colors, crisp smooth edges, confidently thick details legible at 32px. No interior page lines or folded white slashes. No actual scripture, letters, words, labels, ornamental details, extra symbols, gradient, shadow, texture, glass reflections, 3D or mockup.
+Output a perfectly SQUARE opaque 1024x1024 full-bleed warm ivory canvas. Discard the reference screenshot's black edge and rounded canvas corner; the background must be uniform ivory all the way to every square corner. Center the whole logo within the central 62% of canvas with generous margins. ONE icon only.
+VARIATION C: Integrate a very simple magnifying glass INSIDE THE RIGHT SOLID GREEN PAGE as an IVORY NEGATIVE-SPACE SYMBOL: an ivory circular ring cutout with a green center and an ivory short rounded handle pointing diagonally down-right. Keep this small but bold, about 30% of the page width, fully contained in the page, optically centered on that page. Left page stays completely solid. Nothing floating above. Book silhouette and central gap remain unchanged. A compact, highly minimal two-color single emblem, with the magnifier formed only by negative space.
+
+DARK PROMPT (each corresponding light image is the edit target)
+Use case: logo-brand. The input image is the exact edit target, an approved book + magnifying glass app icon. Create ONLY its matching DARK MODE version by swapping the two colors: every ivory background/cutout/separation becomes perfectly flat deep forest green #102D25; every green book/lens/handle foreground becomes perfectly flat warm ivory #F7F8EF. Preserve EXACTLY the shape and placement of the book, magnifier, lens ring and lens interior, handle, central gap, all cutouts and border separations. Keep exact scale, layout, margins, proportions and dimensions. No redesign, no added elements, no text, no glow, no shading, no texture, no gradient, no 3D or mockup. Square opaque full-bleed icon with square corners.

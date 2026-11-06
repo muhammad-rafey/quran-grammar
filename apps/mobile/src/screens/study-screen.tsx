@@ -5,6 +5,7 @@ import { Host, Switch } from '@expo/ui';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   matchesWord,
+  isStudyDraft,
   getJuzForAyah,
   getSurahTitle,
   juzCatalog,
@@ -325,6 +326,14 @@ export default function StudyScreen() {
           alignSelf: 'center',
         }}
       >
+        {view !== 'settings' && isStudyDraft(study.surah.number) && (
+          <View
+            testID="draft-notice"
+            style={{ padding: spacing.md, borderRadius: radius.sm, backgroundColor: colors.amberWash }}
+          >
+            <Label style={{ color: colors.amber, fontSize: 14 }}>{ui.draftNotice}</Label>
+          </View>
+        )}
         {view !== 'settings' && <DataStatus />}
         {study.surah.number === 1 && (
           <View style={{ display: view === 'grammar' ? 'flex' : 'none' }}>

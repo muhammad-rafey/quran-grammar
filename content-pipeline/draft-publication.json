@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "status": "owner-authorized-draft-publication",
+  "authorizedOn": "2026-11-07",
+  "timezone": "Asia/Karachi",
+  "authorization": "The project owner explicitly directed publication and deployment while scholarly review remains pending: publish them, we will review them while published.",
+  "scholarlyReview": "pending",
+  "noticeRequired": true,
+  "scope": [
+    "web",
+    "android",
+    "ios-bundle",
+    "home-server-postgres",
+    "sqlite"
+  ],
+  "surahs": [
+    {
+      "number": 18,
+      "contentSha256": "5ad60c4bdf6cecd3f9434a0941b81e24cb5869d713aeec6b0c9ff20ee84e51e1",
+      "studySha256": "cfb7cb5bbd8f79cf6b6adb9df9626641dd1049c440470ff2035607e12e4f541b"
+    },
+    {
+      "number": 23,
+      "contentSha256": "0f8db13c233d3aa185e06220316b1b469b922d2a68a4b6422f14872fcfc9eade",
+      "studySha256": "b87a2c5f64ae68e2706a1d17f0b3a96f3e06544b24e152447fbfceac86b1b3b2"
+    },
+    {
+      "number": 32,
+      "contentSha256": "ee4c1541dbc42b55dcda280f95ee823ed428dff3b8a5a817df2195a0e8dee494",
+      "studySha256": "08f9667606816391b754ef52221425aeee074428f90b4e86d9dff2c3904d388f"
+    },
+    {
+      "number": 36,
+      "contentSha256": "d7b6a9fec324eb9d40dc68199424042cebb9cd3689f60334fae21b0909f2634f",
+      "studySha256": "730cd1d0d3b177b7e4f79cc73260e5291824f4b9cceb431ccba6796e4f5e3cc7"
+    },
+    {
+      "number": 55,
+      "contentSha256": "fbc3840e939882a75ddf4ed41505aaf5135e8c58a3504ebda5235e549471dd98",
+      "studySha256": "96e37b4cb8f66cd8b6fa6daf62ae39d0dc337a895a63467eec245b55da47fb40"
+    }
+  ]
+}

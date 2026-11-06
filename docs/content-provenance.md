@@ -1,5 +1,16 @@
 # Content provenance
 
+## Owner-authorized draft publication — 2026-11-07
+
+The owner explicitly requested publishing Surahs 18, 23, 32, 36 and 55 while review
+continues. `content-pipeline/draft-publication.json` pins the source-input and study
+hashes for this release. The runtime lessons are exact copies of those held study
+snapshots; no Quranic text, Urdu explanation, root note or paradigm was rewritten.
+Web and native readers display a draft/scholarly-review-pending notice on these
+chapters, in the selected interface language. Settings retains the Corpus credit.
+The earlier hold described below is superseded only for this explicit draft release.
+Scholarly review is still pending; `review-status.json` is not changed to approved.
+
 The initial dataset covers Al-Fatihah, counting the basmalah as 1:1: seven ayahs, 29 word occurrences, 18 roots, four verb paradigms, 14 phrase constructions, and 18 reusable grammar explanations. Stable IDs use surah:ayah:word, and repeated spellings retain their occurrence-specific syntax.
 
 Urdu glosses, translations, dictionary summaries, grammar explanations, and short tafsir summaries were newly authored with AI assistance for the prototype and are teaching drafts awaiting scholarly review. No complete Urdu dictionary, commercial book, or third-party Urdu translation was imported. Root letters identify lexical families; individual glyphs do not have independent lexical meanings. Learner headwords are not a verbatim lemma export.

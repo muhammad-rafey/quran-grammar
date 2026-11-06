@@ -139,6 +139,11 @@ test('production SPA fallback excludes API paths and missing static files', asyn
 test('every published chapter and word detail stays within its own lesson', async () => {
   const expected = [
     [1, 7, 29],
+    [18, 110, 1579],
+    [23, 118, 1050],
+    [32, 30, 372],
+    [36, 83, 725],
+    [55, 78, 351],
     [105, 5, 23],
     [106, 4, 17],
     [107, 7, 25],
@@ -191,6 +196,8 @@ test('chapter-scoped search never returns another chapter and rejects invalid sc
     ['/api/v1/surahs/105/words/1%3A1%3A1', 404],
     ['/api/v1/surahs/1/words/105%3A1%3A1', 404],
     ['/api/v1/surahs/115', 404],
+    ['/api/v1/surahs/17', 404],
+    ['/api/v1/surahs/18/words/36%3A1%3A1', 404],
     ['/api/v1/surahs/0', 400],
     ['/api/v1/search?surah=2', 404],
     ['/api/v1/search?surah=105&surah=106', 400],

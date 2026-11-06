@@ -4,7 +4,7 @@
 
 Use npm workspaces with React/Vite for web, Expo React Native for Android/iOS, and one Express service on Node.js 24. Share typed study content, normalization, searching, schema validation, interface strings and numeral formatting in `@quran-grammar/core`. Keep DOM UI and native UI separate so each uses appropriate layout and accessibility primitives.
 
-The Node service returns a complete chapter from a shared eleven-Surah registry (1 and 105–114). Clients request the selected chapter, validate the chapter number and data relationships, and cancel obsolete requests so content from another chapter cannot appear under the selected title. Search and word inspection run locally after loading, keeping interactions immediate. Stable `surah:ayah:word` IDs preserve contextual differences even when a word is repeated. The native app bundles a clearly labelled copy for offline study; the server remains the source for connected operation.
+The Node service returns a complete chapter from a shared sixteen-Surah registry (1, 18, 23, 32, 36, 55 and 105–114). The owner authorized the five longer chapters as visibly labeled drafts on 2026-11-07; scholarly review remains pending. Clients request the selected chapter, validate the chapter number and data relationships, and cancel obsolete requests so content from another chapter cannot appear under the selected title. Search and word inspection run locally after loading, keeping interactions immediate. Stable `surah:ayah:word` IDs preserve contextual differences even when a word is repeated. The native app bundles the same registry for offline study; the server remains the source for connected operation.
 
 ## Why React/Vite for web
 
