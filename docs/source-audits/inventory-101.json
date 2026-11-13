@@ -1,0 +1,158 @@
+{
+ "retrievedAt": "2026-11-13",
+ "textSource": "Quran.com Content API v4 text_uthmani (end-of-ayah markers excluded); word boundaries and IDs checked against QAC 0.4 morphology",
+ "sources": [
+  "https://api.quran.com/api/v4/verses/by_chapter/101?words=true&word_fields=text_uthmani&per_page=50"
+ ],
+ "surah": 101,
+ "ayahCount": 11,
+ "wordCount": 36,
+ "pauseSignPolicy": "Recitation signs that the API separates from a word by a space (waqf signs, the saktah sign, the sajdah sign and the rub al-hizb marker) are excluded from stored word tokens, following the Surahs 110-114 precedent; each exclusion is listed below.",
+ "words": [
+  {
+   "id": "101:1:1",
+   "arabic": "ٱلْقَارِعَةُ"
+  },
+  {
+   "id": "101:2:1",
+   "arabic": "مَا"
+  },
+  {
+   "id": "101:2:2",
+   "arabic": "ٱلْقَارِعَةُ"
+  },
+  {
+   "id": "101:3:1",
+   "arabic": "وَمَآ"
+  },
+  {
+   "id": "101:3:2",
+   "arabic": "أَدْرَىٰكَ"
+  },
+  {
+   "id": "101:3:3",
+   "arabic": "مَا"
+  },
+  {
+   "id": "101:3:4",
+   "arabic": "ٱلْقَارِعَةُ"
+  },
+  {
+   "id": "101:4:1",
+   "arabic": "يَوْمَ"
+  },
+  {
+   "id": "101:4:2",
+   "arabic": "يَكُونُ"
+  },
+  {
+   "id": "101:4:3",
+   "arabic": "ٱلنَّاسُ"
+  },
+  {
+   "id": "101:4:4",
+   "arabic": "كَٱلْفَرَاشِ"
+  },
+  {
+   "id": "101:4:5",
+   "arabic": "ٱلْمَبْثُوثِ"
+  },
+  {
+   "id": "101:5:1",
+   "arabic": "وَتَكُونُ"
+  },
+  {
+   "id": "101:5:2",
+   "arabic": "ٱلْجِبَالُ"
+  },
+  {
+   "id": "101:5:3",
+   "arabic": "كَٱلْعِهْنِ"
+  },
+  {
+   "id": "101:5:4",
+   "arabic": "ٱلْمَنفُوشِ"
+  },
+  {
+   "id": "101:6:1",
+   "arabic": "فَأَمَّا"
+  },
+  {
+   "id": "101:6:2",
+   "arabic": "مَن"
+  },
+  {
+   "id": "101:6:3",
+   "arabic": "ثَقُلَتْ"
+  },
+  {
+   "id": "101:6:4",
+   "arabic": "مَوَٰزِينُهُۥ"
+  },
+  {
+   "id": "101:7:1",
+   "arabic": "فَهُوَ"
+  },
+  {
+   "id": "101:7:2",
+   "arabic": "فِى"
+  },
+  {
+   "id": "101:7:3",
+   "arabic": "عِيشَةٍۢ"
+  },
+  {
+   "id": "101:7:4",
+   "arabic": "رَّاضِيَةٍۢ"
+  },
+  {
+   "id": "101:8:1",
+   "arabic": "وَأَمَّا"
+  },
+  {
+   "id": "101:8:2",
+   "arabic": "مَنْ"
+  },
+  {
+   "id": "101:8:3",
+   "arabic": "خَفَّتْ"
+  },
+  {
+   "id": "101:8:4",
+   "arabic": "مَوَٰزِينُهُۥ"
+  },
+  {
+   "id": "101:9:1",
+   "arabic": "فَأُمُّهُۥ"
+  },
+  {
+   "id": "101:9:2",
+   "arabic": "هَاوِيَةٌۭ"
+  },
+  {
+   "id": "101:10:1",
+   "arabic": "وَمَآ"
+  },
+  {
+   "id": "101:10:2",
+   "arabic": "أَدْرَىٰكَ"
+  },
+  {
+   "id": "101:10:3",
+   "arabic": "مَا"
+  },
+  {
+   "id": "101:10:4",
+   "arabic": "هِيَهْ"
+  },
+  {
+   "id": "101:11:1",
+   "arabic": "نَارٌ"
+  },
+  {
+   "id": "101:11:2",
+   "arabic": "حَامِيَةٌۢ"
+  }
+ ],
+ "excludedPauseSigns": []
+}

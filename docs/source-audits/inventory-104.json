@@ -1,0 +1,152 @@
+{
+ "retrievedAt": "2026-11-13",
+ "textSource": "Quran.com Content API v4 text_uthmani (end-of-ayah markers excluded); word boundaries and IDs checked against QAC 0.4 morphology",
+ "sources": [
+  "https://api.quran.com/api/v4/verses/by_chapter/104?words=true&word_fields=text_uthmani&per_page=50"
+ ],
+ "surah": 104,
+ "ayahCount": 9,
+ "wordCount": 33,
+ "pauseSignPolicy": "Recitation signs that the API separates from a word by a space (waqf signs, the saktah sign, the sajdah sign and the rub al-hizb marker) are excluded from stored word tokens, following the Surahs 110-114 precedent; each exclusion is listed below.",
+ "words": [
+  {
+   "id": "104:1:1",
+   "arabic": "وَيْلٌۭ"
+  },
+  {
+   "id": "104:1:2",
+   "arabic": "لِّكُلِّ"
+  },
+  {
+   "id": "104:1:3",
+   "arabic": "هُمَزَةٍۢ"
+  },
+  {
+   "id": "104:1:4",
+   "arabic": "لُّمَزَةٍ"
+  },
+  {
+   "id": "104:2:1",
+   "arabic": "ٱلَّذِى"
+  },
+  {
+   "id": "104:2:2",
+   "arabic": "جَمَعَ"
+  },
+  {
+   "id": "104:2:3",
+   "arabic": "مَالًۭا"
+  },
+  {
+   "id": "104:2:4",
+   "arabic": "وَعَدَّدَهُۥ"
+  },
+  {
+   "id": "104:3:1",
+   "arabic": "يَحْسَبُ"
+  },
+  {
+   "id": "104:3:2",
+   "arabic": "أَنَّ"
+  },
+  {
+   "id": "104:3:3",
+   "arabic": "مَالَهُۥٓ"
+  },
+  {
+   "id": "104:3:4",
+   "arabic": "أَخْلَدَهُۥ"
+  },
+  {
+   "id": "104:4:1",
+   "arabic": "كَلَّا"
+  },
+  {
+   "id": "104:4:2",
+   "arabic": "لَيُنۢبَذَنَّ"
+  },
+  {
+   "id": "104:4:3",
+   "arabic": "فِى"
+  },
+  {
+   "id": "104:4:4",
+   "arabic": "ٱلْحُطَمَةِ"
+  },
+  {
+   "id": "104:5:1",
+   "arabic": "وَمَآ"
+  },
+  {
+   "id": "104:5:2",
+   "arabic": "أَدْرَىٰكَ"
+  },
+  {
+   "id": "104:5:3",
+   "arabic": "مَا"
+  },
+  {
+   "id": "104:5:4",
+   "arabic": "ٱلْحُطَمَةُ"
+  },
+  {
+   "id": "104:6:1",
+   "arabic": "نَارُ"
+  },
+  {
+   "id": "104:6:2",
+   "arabic": "ٱللَّهِ"
+  },
+  {
+   "id": "104:6:3",
+   "arabic": "ٱلْمُوقَدَةُ"
+  },
+  {
+   "id": "104:7:1",
+   "arabic": "ٱلَّتِى"
+  },
+  {
+   "id": "104:7:2",
+   "arabic": "تَطَّلِعُ"
+  },
+  {
+   "id": "104:7:3",
+   "arabic": "عَلَى"
+  },
+  {
+   "id": "104:7:4",
+   "arabic": "ٱلْأَفْـِٔدَةِ"
+  },
+  {
+   "id": "104:8:1",
+   "arabic": "إِنَّهَا"
+  },
+  {
+   "id": "104:8:2",
+   "arabic": "عَلَيْهِم"
+  },
+  {
+   "id": "104:8:3",
+   "arabic": "مُّؤْصَدَةٌۭ"
+  },
+  {
+   "id": "104:9:1",
+   "arabic": "فِى"
+  },
+  {
+   "id": "104:9:2",
+   "arabic": "عَمَدٍۢ"
+  },
+  {
+   "id": "104:9:3",
+   "arabic": "مُّمَدَّدَةٍۭ"
+  }
+ ],
+ "excludedPauseSigns": [
+  {
+   "id": "104:4:1",
+   "apiText": "كَلَّا ۖ",
+   "excludedMark": "ۖ"
+  }
+ ]
+}
