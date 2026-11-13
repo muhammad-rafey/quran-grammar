@@ -4,6 +4,8 @@ import { isStudyData } from '../packages/core/src/validate';
 import type { StudyData } from '../packages/core/src/types';
 
 const chapters = [
+  { number: 4, ayahs: 176, words: 3747 },
+  { number: 7, ayahs: 206, words: 3320 },
   { number: 18, ayahs: 110, words: 1579 },
   { number: 23, ayahs: 118, words: 1050 },
   { number: 32, ayahs: 30, words: 372 },
@@ -14,8 +16,14 @@ const chapters = [
 // Exercise the actual published API and UI on localhost or the deployed server.
 // No intercepted availability, mocked responses or scholarly-approval claims.
 test.use({ storageState: { cookies: [], origins: [] } });
+const { surahs: authorizedDrafts } = JSON.parse(
+  readFileSync(new URL('../content-pipeline/draft-publication.json', import.meta.url), 'utf8'),
+) as { surahs: Array<{ number: number; work?: string }> };
 function loadDraft(number: number): StudyData {
-  const wrapper = JSON.parse(readFileSync(new URL('../content-pipeline/drafts/surah-' + number + '.json', import.meta.url), 'utf8'));
+  const entry = authorizedDrafts.find((draft) => draft.number === number);
+  expect(entry, `Surah ${number} has a pinned draft`).toBeDefined();
+  const work = entry?.work ?? 'content-pipeline';
+  const wrapper = JSON.parse(readFileSync(new URL(`../${work}/drafts/surah-${number}.json`, import.meta.url), 'utf8'));
   expect(wrapper.reviewStatus).toBe('scholarly-review-pending');
   expect(isStudyData(wrapper.study)).toBe(true);
   return wrapper.study;
@@ -24,21 +32,21 @@ function loadDraft(number: number): StudyData {
 const ayahSelector = (page: Page) => page.getByRole('combobox', { name: 'Select ayah', exact: true });
 const wordButton = (page: Page, id: string) => page.locator(`[data-word-id="${id}"]`);
 
-async function chooseJuz(page: Page, number: number) {
+async function chooseJuz(page: Page, number: number, surah: number) {
   await page.getByRole('button', { name: 'Select surah', exact: true }).click();
   const catalog = page.getByRole('dialog', { name: 'Select surah', exact: true });
   await catalog.getByRole('button', { name: 'Juz', exact: true }).click();
   const juzCatalog = page.getByRole('dialog', { name: 'Select juz', exact: true });
   await expect(juzCatalog.locator(`[data-juz="${number}"]`)).toBeEnabled();
   await juzCatalog.locator(`[data-juz="${number}"]`).click();
-  // Each selected Juz has exactly one available chapter in this draft edition.
+  if (await juzCatalog.isVisible()) await juzCatalog.locator(`[data-surah="${surah}"]`).click();
   await expect(juzCatalog).not.toBeVisible();
 }
 
 test('published draft APIs contain the exact authorized snapshots', async ({ request }) => {
-  for (const chapter of chapters) {
+  for (const chapter of authorizedDrafts) {
     const response = await request.get('/api/v1/surahs/' + chapter.number);
-    expect(response.status()).toBe(200);
+    expect(response.status(), `Surah ${chapter.number}`).toBe(200);
     expect(await response.json()).toEqual(loadDraft(chapter.number));
   }
 });
@@ -68,6 +76,8 @@ for (const chapter of chapters) {
 }
 
 for (const boundary of [
+  { surah: 4, juz: 5, beforeJuz: 4, start: 24 },
+  { surah: 7, juz: 9, beforeJuz: 8, start: 88 },
   { surah: 18, juz: 16, beforeJuz: 15, start: 75 },
   { surah: 36, juz: 23, beforeJuz: 22, start: 28 },
 ]) {
@@ -76,7 +86,7 @@ for (const boundary of [
     test.setTimeout(60000);
     await page.goto('/');
     await expect(page.locator('.quran-word')).toHaveCount(29);
-    await chooseJuz(page, boundary.juz);
+    await chooseJuz(page, boundary.juz, boundary.surah);
     await expect(page.locator('.quran-word')).toHaveCount(study.surah.wordCount);
     await expect(ayahSelector(page)).toHaveValue(String(boundary.start));
     await expect(page.locator('.collection-trigger')).toContainText(`Juz ${boundary.juz}`);

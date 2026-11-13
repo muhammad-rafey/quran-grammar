@@ -37,8 +37,9 @@ Back up the dedicated `quran_grammar` schema before updating it; other applicati
 schemas must remain untouched. `npm run db:verify` compares both copies against
 the same registry, including the content checksum, roots and verb paradigms.
 
-The owner-authorized draft edition has 16 Surahs, 474 ayahs and 4,307 words.
-The five longer chapters retain their scholarly-review-pending notices.
+The current release has 40 Surahs, 1,281 ayahs and 14,405 words. The 29 owner-authorized
+drafts carry scholarly-review-pending notices. The expanded API loads more content at
+startup, and the Compose service allows 768 MiB for the process and concurrent responses.
 
 ## Remove the deployment
 

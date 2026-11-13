@@ -1,0 +1,151 @@
+{
+ "scholarlyReview": "pending",
+ "changes": [
+  {
+   "ref": "4:6:19",
+   "field": "lexemeKey",
+   "prior": "kabura|I|ACT",
+   "updated": "kabira|I|ACT",
+   "sources": [
+    "https://www.freelaneslexicon.com/root/kbr/",
+    "https://corpus.quran.com/wordmorphology.jsp?location=(4:6:19)"
+   ]
+  },
+  {
+   "key": "ه ن أ",
+   "field": "noteUrdu",
+   "prior": "هَنِيٓـًۭٔا فَعِيل کے وزن پر صفت ہے: ایسی چیز جو خوشگوار ہو اور جس کا انجام نقصان یا ناگواری نہ ہو؛ یہاں بیویاں اپنی خوشی سے مہر کا جو حصہ چھوڑ دیں، اسے بے کھٹک کھانے کا مفہوم ہے۔ مادے کا آخری اصلی حرف ہمزہ ہے جو یہاں یاء کے بعد آیا ہے۔",
+   "updated": "هَنِيٓـًۭٔا فَعِيل کے وزن پر صفت ہے: ایسی چیز جو خوشگوار ہو اور جس کا انجام نقصان یا ناگواری نہ ہو؛ یہاں بیویاں اپنی خوشی سے مہر کا جو حصہ چھوڑ دیں، اسے بے کھٹک کھانے کا مفہوم ہے۔ مادے کا آخری اصلی حرف ہمزہ ہے جو یہاں یاء کے بعد آیا ہے۔",
+   "evidenceEnglish": "Copy the exact Uthmani occurrence at 4:4:13 when identifying its pattern and use."
+  },
+  {
+   "key": "ه ب ط",
+   "field": "noteUrdu",
+   "prior": "فَٱهْبِطْ اور ٱهْبِطُوا۟ فعل هَبَطَ يَهْبِطُ کے امر ہیں، یعنی نیچے اتر جا (واحد) اور نیچے اتر جاؤ (جمع)؛ سیاق کے مطابق اس میں جگہ سے اترنے کے ساتھ مرتبے سے نیچے آنے کا مفہوم بھی ہو سکتا ہے۔ امر کے شروع کا الف ہمزۂ وصل ہے اور فَٱهْبِطْ کا فَ زائد حرف ہے؛ دونوں مادے کا حصہ نہیں۔",
+   "updated": "هَبَطَ يَهْبِطُ کے امر اِهْبِطْ اور اِهْبِطُوا ہیں، یعنی اتر جا اور اتر جاؤ۔ سیاق کے مطابق جگہ یا مرتبے سے نیچے آنا مراد ہو سکتا ہے۔ امر کے شروع میں ہمزۂ وصل ہے۔ «فَٱهْبِطْ» میں فاء کو آیت کے اعراب میں محذوف شرط کے جواب کی فاء کہا گیا ہے۔ یہ مادے کا حصہ نہیں ہے۔",
+   "evidenceEnglish": "At 7:13:2 the word-level i‘rab labels fāʾ supplemental, while the verse-level i‘rab identifies the suppressed condition whose response it introduces. The note attributes the selected verse-level analysis."
+  },
+  {
+   "key": "د ف ع",
+   "field": "noteUrdu",
+   "prior": "اِدْفَعْ، دَفَعَ / يَدْفَعُ کا امر ہے، یعنی کسی چیز کو ہٹانا اور دور کرنا؛ یہاں برائی کو بہتر طریقے سے دور کرنے کا حکم ہے۔ امر کا ابتدائی الف ہمزۂ وصل ہے، مادے کا حرف نہیں۔",
+   "updated": "اِدْفَعْ، دَفَعَ / يَدْفَعُ کا امر ہے۔ یہ فعل ہٹانے اور دور کرنے کے لیے آتا ہے۔ إِلَى کے ساتھ کسی چیز کو کسی کے حوالے کرنے کے معنی بھی دیتا ہے، جیسے مال اس کے حق دار کے سپرد کرنا۔ امر کا ابتدائی ہمزہ ہمزۂ وصل ہے۔",
+   "evidenceEnglish": "The two occurrences in 4:6 involve handing over property. Retain the attested repelling sense and add the separate contextual sense with ilā."
+  },
+  {
+   "key": "waEada|I|PASS",
+   "field": "noteUrdu",
+   "prior": "مثال واوی فعل وَعَدَ کا مجہول ہے: وعدہ کیا جانا؛ جس سے وعدہ کیا جائے وہ نائبِ فاعل بنتا ہے اور وعدہ کی گئی چیز دوسرے مفعول کے طور پر منصوب رہ سکتی ہے۔ معروف يَعِدُ میں واو گرتی ہے، مگر مجہول مضارع يُوعَدُ میں حرفِ مضارع کے پیش کے بعد واو ظاہر رہتی ہے اور عینِ کلمہ پر زبر آتا ہے۔",
+   "updated": "مثال واوی فعل وَعَدَ کا مجہول ہے۔ جس سے وعدہ کیا جائے وہ نائبِ فاعل بنتا ہے اور جس چیز کا وعدہ کیا جائے وہ دوسرے مفعول کے طور پر منصوب رہ سکتی ہے۔ معروف مضارع يَعِدُ میں واو گرتی ہے، مگر مجہول مضارع يُوعَدُ میں حرفِ مضارع کے ضمے کے بعد واو ظاہر رہتی ہے اور عینِ کلمہ پر فتحہ آتا ہے۔",
+   "evidenceEnglish": "Clarify the retained second object in the passive without changing the paradigm or the established grammatical analysis."
+  },
+  {
+   "key": "genitive",
+   "field": "appliesWhenEnglish",
+   "prior": "Tag a noun/adjective in the genitive (QAC GEN) — after a preposition, as muḍāf ilayh, or as a follower of a genitive — when the case or its sign matters; also an attached pronoun or built word in محل جر. Pair with preposition or idafa for the cause of jarr. Do not rely on QAC’s GEN label alone. QAC marks وَٱلْبَـٰقِيَـٰتُ ٱلصَّـٰلِحَـٰتُ (18:46) and وَٱلرَّيْحَانُ (55:12, Ḥafṣ) GEN although they are nominative, and هُدًۭى (32:23) GEN although it is accusative; these do not take this rule. Conversely, it marks the genitive duals and ذَاتِ/ذِى listed under nominative NOM, and the genitives ٱلْحِزْبَيْنِ (18:12) and ٱلْجَنَّتَيْنِ (55:54) ACC; these do take this rule.",
+   "updated": "Tag a noun/adjective in the genitive (QAC GEN) — after a preposition, as muḍāf ilayh, or as a follower of a genitive — when the case or its sign matters; also an attached pronoun or built word in محل جر. Pair with preposition or idafa for the cause of jarr, or with extra-particle when a supplemental preposition causes surface jarr, as in بِٱللَّهِ after كَفَىٰ at 4:6. Do not rely on QAC’s GEN label alone. QAC marks وَٱلْبَـٰقِيَـٰتُ ٱلصَّـٰلِحَـٰتُ (18:46) and وَٱلرَّيْحَانُ (55:12, Ḥafṣ) GEN although they are nominative, and هُدًۭى (32:23) GEN although it is accusative; these do not take this rule. Conversely, it marks the genitive duals and ذَاتِ/ذِى listed under nominative NOM, and the genitives ٱلْحِزْبَيْنِ (18:12) and ٱلْجَنَّتَيْنِ (55:54) ACC; these do take this rule.",
+   "evidenceEnglish": "The verse i‘rab distinguishes the written genitive following supplemental bāʾ from the nominative syntactic position of the subject."
+  },
+  {
+   "key": "number-words",
+   "field": "appliesWhenEnglish",
+   "prior": "Tag cardinal and ordinal numerals that follow the number–counted-noun rules: وَاحِد، ٱثْنَيْن، ثَلَٰثَة … تِسْع، سِتَّة، سَبْع، مِائَة، أَلْف، ثَالِث، رَابِع، سَادِس، ثَامِن. Tag the counted noun with tamyiz if accusative or idafa if it is the muḍāf ilayh (a noun the i‘rab calls badal, e.g. سِنِينَ after ثَلَٰثَ مِا۟ئَةٍ, takes badal). Not for أَحَد used as “anyone”. Not for the noun عَدَد: in 23:112 عَدَدَ سِنِينَ is the tamyīz of كَمْ (tamyiz, idafa), and in 18:11 عَدَدًۭا is an adjective (adjective).",
+   "updated": "Tag cardinal and ordinal numerals that follow the number–counted-noun rules: وَاحِد، ٱثْنَيْن، ثَلَٰثَة … تِسْع، سِتَّة، سَبْع، مِائَة، أَلْف، ثَالِث، رَابِع، سَادِس، ثَامِن. Tag the counted noun with tamyiz when it functions as specification, or idafa if it is the muḍāf ilayh. With وَاحِد or ٱثْنَيْن used as agreeing adjectives, tag the numeral adjective and number-words, and retain the counted noun’s own case and role (a noun the i‘rab calls badal, e.g. سِنِينَ after ثَلَٰثَ مِا۟ئَةٍ, takes badal). Not for أَحَد used as “anyone”. Not for the noun عَدَد: in 23:112 عَدَدَ سِنِينَ is the tamyīz of كَمْ (tamyiz, idafa), and in 18:11 عَدَدًۭا is an adjective (adjective).",
+   "evidenceEnglish": "At 25:14:4–5 the counted noun is a direct object and the numeral follows it as an agreeing adjective. Accusative case alone cannot identify tamyīz."
+  },
+  {
+   "key": "bav~a|I|ACT",
+   "field": "noteUrdu",
+   "prior": "مضاعف (ب ث ث) اور متعدی فعل ہے: پھیلانا، بکھیر دینا؛ دوسرا اور تیسرا حرف ایک ہونے سے مدغم ہو کر بَثَّ، يَبُثُّ بنتے ہیں (اصل: بَثَثَ، يَبْثُثُ)۔ ضمیرِ متحرک سے پہلے ادغام کھل جاتا ہے (بَثَثْتُ)، اور جزم میں ادغام کھول کر لَمْ يَبْثُثْ اور ادغام کے ساتھ لَمْ يَبُثَّ دونوں درست ہیں۔",
+   "updated": "مضاعف (ب ث ث) اور متعدی فعل ہے: پھیلانا، بکھیر دینا؛ دوسرا اور تیسرا حرف ایک ہونے سے مدغم ہو کر بَثَّ، يَبُثُّ بنتے ہیں (اصل: بَثَثَ، يَبْثُثُ)۔ فاعل کی متحرک ضمیر لگے تو ادغام کھل جاتا ہے (بَثَثْتُ)، اور جزم میں ادغام کھول کر لَمْ يَبْثُثْ اور ادغام کے ساتھ لَمْ يَبُثَّ دونوں درست ہیں۔",
+   "evidenceEnglish": "The subject suffix in بَثَثْتُ makes the last stem consonant vowelless and breaks assimilation. An object suffix can attach to the assimilated form, as in بَثَّهُ."
+  },
+  {
+   "key": "ن ظ ر",
+   "field": "noteUrdu",
+   "prior": "نَظَرَ / يَنْظُرُ دیکھنا اور غور کرنا ہے اور براہِ راست مفعول کے ساتھ انتظار کرنا؛ اِنْتَظَرَ اور مُنْتَظِر بابِ افتعال سے انتظار کے لیے ہیں، جبکہ أَنْظَرَ بابِ افعال سے مہلت دینا ہے۔ اسی کا مجہول يُنظَرُونَ (مہلت پاتے ہیں) اور ثلاثی کا يَنظُرُونَ (انتظار کرتے ہیں) صرف حرکات سے الگ ہوتے ہیں۔",
+   "updated": "نَظَرَ / يَنْظُرُ دیکھنے اور غور کرنے کے لیے ہے۔ بعض سیاق میں کسی کا انتظار کرنے کے لیے بھی آتا ہے۔ اس کے بعد سوالیہ جملہ آئے تو اس بات کو دیکھنا یا اس پر غور کرنا مراد ہو سکتا ہے۔ اِنْتَظَرَ بابِ افتعال سے انتظار کرنا، اور أَنْظَرَ بابِ افعال سے مہلت دینا ہے۔",
+   "evidenceEnglish": "At 25:9 the interrogative clause is the object, and the imperative asks the Prophet to consider how the comparisons were made. The construction has a direct object and does not signify waiting."
+  },
+  {
+   "ref": "7:5",
+   "field": "translationUrdu",
+   "prior": "پھر جب ہمارا عذاب ان پر آیا تو ان کی زبان پر بس یہ تھا کہ ہم ہی ظالم تھے۔",
+   "updated": "پھر جب ہمارا عذاب ان پر آیا تو انہوں نے بس یہی کہا کہ بے شک ہم ظالم تھے۔",
+   "evidenceEnglish": "The restriction is on what they said. Inna emphasizes the confession."
+  },
+  {
+   "ref": "25:29:2",
+   "field": "verbNoteUrdu",
+   "prior": "أَضَلَّ / يُضِلُّ (بابِ افعال) کا ماضی معروف، واحد مذکر غائب ہے؛ فاعل ضمیرِ مستتر هُوَ (وہ دوست) ہے۔ اصل أَضْلَلَ میں دونوں لام مدغم ہیں، اور ضمیرِ مفعول (نونِ وقایہ اور یاء) لگنے سے بھی ادغام باقی رہتا ہے۔",
+   "updated": "أَضَلَّ / يُضِلُّ (بابِ افعال) کا ماضی معروف، واحد مذکر غائب ہے۔ فاعل ضمیرِ مستتر هُوَ ہے۔ اصل أَضْلَلَ میں دونوں لام مدغم ہیں۔ نونِ وقایہ اور یائے متکلم کے لگنے پر ادغام باقی ہے۔ یائے متکلم ضمیرِ مفعول ہے۔",
+   "evidenceEnglish": "Distinguish protective nūn from the object pronoun."
+  },
+  {
+   "ref": "25:12:1",
+   "field": "syntaxUrdu",
+   "prior": "شرطیہ ظرف ہے جو اپنے جواب سَمِعُوا۟ سے متعلق ہو کر محلِ نصب میں ہے؛ رَأَتْهُم والا جملہ اس کی طرف مضاف ہے، اور پورا شرطیہ جملہ سَعِيرًا کی صفت ہے۔",
+   "updated": "«إِذَا» اپنے جواب «سَمِعُوا۟» سے متعلق ظرف ہے اور محلِ نصب میں ہے۔ یہ مضاف ہے اور «رَأَتْهُم» سے شروع ہونے والا جملہ محلِ جر میں مضاف الیہ ہے۔ پورا شرطیہ جملہ «سَعِيرًا» کی صفت ہے۔",
+   "evidenceEnglish": "The adverb is the muḍāf and governs the clause."
+  },
+  {
+   "ref": "25:12:2",
+   "field": "syntaxUrdu",
+   "prior": "فعلِ شرط ہے، إِذَا کی طرف مضاف ہو کر محلِ جر میں؛ فاعل پوشیدہ «هِيَ» ہے جو سَعِيرًا کی طرف لوٹتی ہے، اور آخر کی ضمیر مفعول بہ، محلِ نصب میں ہے۔",
+   "updated": "یہ فعلِ شرط ہے۔ اس سے شروع ہونے والا پورا جملہ «إِذَا» کا مضاف الیہ ہو کر محلِ جر میں ہے۔ پوشیدہ فاعل «هِيَ» سے مراد «سَعِيرًا» ہے، اور آخری ضمیر مفعول بہ ہو کر محلِ نصب میں ہے۔",
+   "evidenceEnglish": "The clause occupies the syntactic genitive position."
+  },
+  {
+   "ref": "25:1:3",
+   "field": "syntaxUrdu",
+   "prior": "اسمِ موصول «ٱلَّذِى» کا صلہ ہے؛ اس کا فاعل پوشیدہ ضمیر هُوَ ہے جو اللہ تعالیٰ کی طرف لوٹتی ہے، اور «ٱلْفُرْقَانَ» اس کا مفعول بہ ہے۔",
+   "updated": "«نَزَّلَ» صلے کے جملے کا فعل ہے۔ اس کا پوشیدہ فاعل هُوَ اسمِ موصول «ٱلَّذِى» کی طرف لوٹتا ہے، اور «ٱلْفُرْقَانَ» مفعول بہ ہے۔ پورا جملہ «نَزَّلَ ٱلْفُرْقَانَ عَلَىٰ عَبْدِهِۦ» صلہ ہے۔",
+   "evidenceEnglish": "The whole relative clause is the ṣila."
+  },
+  {
+   "ref": "86:7",
+   "field": "phrases.1.explanationUrdu",
+   "prior": "مِنۢ حرفِ جر، بَيْنِ مجرور اور مضاف، اور اس کے بعد کے دونوں اسم مضاف الیہ ہیں؛ یہ جار و مجرور يَخْرُجُ سے متعلق ہے۔",
+   "updated": "«مِنۢ» حرفِ جر ہے اور «بَيْنِ» اس کا مجرور اور مضاف ہے۔ «ٱلصُّلْبِ» مضاف الیہ ہے اور «وَٱلتَّرَآئِبِ» میں اسم اسی پر معطوف ہے۔ پورا جار و مجرور «يَخْرُجُ» سے متعلق ہے۔",
+   "evidenceEnglish": "Only the first noun is directly governed by the iḍāfa."
+  },
+  {
+   "ref": "4:17:14",
+   "field": "verbNoteUrdu",
+   "prior": "تَابَ يَتُوبُ (بابِ نَصَرَ، ثلاثی مجرد، اجوف واوی) کا مضارع معروف، واحد مذکر غائب ہے؛ ضمہ سے مرفوع ہے اور فاعل اسمِ ظاہر ٱللَّهُ ہے۔ عَلَى کے ساتھ یہ اللہ کی طرف سے توبہ قبول کرنے کا معنی دیتا ہے۔",
+   "updated": "تَابَ يَتُوبُ (بابِ نَصَرَ، ثلاثی مجرد، اجوف واوی) کا مضارع معروف، واحد مذکر غائب ہے۔ ناصب یا جازم نہ ہونے سے ضمہ کے ساتھ مرفوع ہے اور اس کا ظاہر فاعل «ٱللَّهُ» ہے۔ عَلَى کے ساتھ یہ اللہ کی طرف سے توبہ قبول کرنے کا معنی دیتا ہے۔",
+   "evidenceEnglish": "Copy the exact subject from the packet and state the reason for the indicative."
+  },
+  {
+   "ref": "4:17:17",
+   "field": "verbNoteUrdu",
+   "prior": "كَانَ يَكُونُ (بابِ نَصَرَ، ثلاثی مجرد، اجوف واوی) کا ماضی معروف، واحد مذکر غائب ہے؛ فتحہ پر مبنی ہے، اس کا اسم ظاہر لفظ ٱللَّهُ ہے، اور اصل واو یہاں الف بن گئی ہے۔ فعلِ ناقص ہو کر اسم کو رفع اور خبر کو نصب دیتا ہے۔",
+   "updated": "كَانَ يَكُونُ (بابِ نَصَرَ، ثلاثی مجرد، اجوف واوی) کا ماضی معروف، واحد مذکر غائب ہے۔ فتحہ پر مبنی ہے۔ اصل واو یہاں الف بن گئی ہے۔ اس کا ظاہر اسم «ٱللَّهُ» ہے، اور فعلِ ناقص ہو کر یہ اسم کو رفع اور خبر کو نصب دیتا ہے۔",
+   "evidenceEnglish": "Copy the exact subject of kāna from the packet."
+  },
+  {
+   "ref": "4:3:22",
+   "field": "syntaxUrdu",
+   "prior": "وَاحِدَة پر معطوف ہے، اس لیے محلِ نصب میں ہے؛ «مَلَكَتْ أَيْمَـٰنُكُمْ» اس کا صلہ ہے، جس میں لوٹنے والی ضمیر محذوف ہے۔",
+   "updated": "یہ «فَوَٰحِدَةً» میں فاء کے بعد آنے والے اسم پر معطوف ہے، اس لیے محلِ نصب میں ہے۔ «مَلَكَتْ أَيْمَـٰنُكُمْ» اس کا صلہ ہے، جس میں لوٹنے والی ضمیر محذوف ہے۔",
+   "evidenceEnglish": "Quote the exact coordinated antecedent and explain which constituent is coordinated."
+  },
+  {
+   "ref": "4:1:1",
+   "field": "segments.1.meaningUrdu",
+   "prior": "(اے) وہ جو",
+   "updated": "(جسے پکارا جا رہا ہے)",
+   "evidenceEnglish": "Ayya is the vocative addressee rather than a relative pronoun."
+  }
+ ],
+ "addedParadigm": {
+  "key": "kabira|I|ACT",
+  "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+  "formUrdu": "ثلاثی مجرد — اوّل (I)",
+  "past": "كَبِرَ",
+  "present": "يَكْبَرُ",
+  "pattern": "فَعِلَ — يَفْعَلُ",
+  "noteUrdu": "صحیح سالم اور لازم فعل ہے۔ عمر میں بڑا ہونے یا بڑھاپے کو پہنچنے کے لیے آتا ہے۔ مضارع میں باء پر فتحہ ہے۔ آیت میں یتیموں کے بڑے ہونے کا ذکر ہے اور حرفِ نصب کے باعث جمع مذکر غائب کے صیغے کی نون حذف ہے۔",
+  "evidenceEnglish": "Lane, Arabic-English Lexicon, s.v. كبر, lists كَبِرَ with imperfect يَكْبَرُ for becoming full-grown or old and distinguishes كَبُرَ يَكْبُرُ, to be great. The vocalized occurrence يَكْبَرُوا۟ at 4:6:19 and the context of orphans reaching adulthood support the former."
+ }
+}

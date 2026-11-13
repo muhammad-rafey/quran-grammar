@@ -1,9 +1,9 @@
 # Edition 2 — Surahs 4, 7, 25, 29 and 85–104: plan, progress and handoff
 
-**Status (2026-11-13): draft authoring is complete for all 24 Surahs.** All 312 chunks
-passed mechanical validation, and all 807 ayahs and 10,098 words assembled into held
-drafts. Independent grammar and meaning review, scholarly review, and draft publication
-are pending. See `reports/resumption-status.json` for the per-chunk validation snapshot
+**Status (2026-11-13): the owner authorized publishing all 24 Surahs as labeled drafts.**
+All 312 chunks passed mechanical validation, and all 807 ayahs and 10,098 words assembled
+into the pinned draft snapshots. Independent grammar and meaning review remains in progress,
+and scholarly review is pending. See `reports/resumption-status.json` for the per-chunk validation snapshot
 and `reports/codex-*-adjudication.json` for the source checks and corrections from this pass.
 
 To review the assembled lessons locally, run `python3 -I content-pipeline/scripts/assemble.py content-pipeline/edition-2 . --draft`
@@ -34,8 +34,8 @@ server; never store a password.
 | **Total**           | **807** | **10,098** | **312** |
 
 Counts come from `meta/plan.json` and the Arabic inventories (`inventory/inventory-N.json`). The
-app currently ships Al-Fatihah, 18, 23, 32, 36, 55 and 105–114 (16 Surahs, 474 ayahs, 4,307 words).
-With this edition it would ship 40 Surahs, 1,281 ayahs and 14,405 words.
+app before this release shipped Al-Fatihah, 18, 23, 32, 36, 55 and 105–114 (16 Surahs, 474 ayahs, 4,307 words).
+With this edition the combined registry contains 40 Surahs, 1,281 ayahs and 14,405 words.
 
 ## 2. How this edition is organised
 
@@ -115,7 +115,7 @@ agent failed. After the reset, the owner asked to pause and record progress. Wor
 resume inside the same session, so the next session cannot use them. Use `reports/resume-args.json`
 instead.
 
-## 4. What is left (in order)
+## 4. Review and release workflow
 
 1. **Finish independent chunk review.**
    - All 312 drafts are available to review. Select chunk IDs from `meta/plan.json` and
@@ -135,8 +135,8 @@ instead.
 3. **Assemble drafts:** `python3 -I scripts/assemble.py "$PWD" ../.. --draft`. The expected
    `words` counts in `edition.json` have been verified against the plan and the Arabic inventories.
    Then run `gen_audit.py` (writes `docs/source-audits/surah-N.md`).
-4. **Publish as labelled drafts.** This needs the owner's explicit authorization for this
-   edition, as on 2026-11-07. Add entries with `"work": "content-pipeline/edition-2"` and the
+4. **Reproduce the labeled drafts.** The owner authorized Edition 2 publication on
+   2026-11-13. The release adds entries with `"work": "content-pipeline/edition-2"` and the
    wrapper/study hashes to `../draft-publication.json`, then run `npm run publish:drafts`. Then update
    `packages/core/src/registry.ts`, `availability.ts` and `publication.ts` (draft list), the core and
    API tests (counts, juz previews 4–6, 8–9, 18–21, 30), the docs and the source-audit inventories.
@@ -189,10 +189,9 @@ Do not rerun `seed_libs.py` or `make_batches.py`: the libraries are complete. Re
 - **Cost reference:** libraries took 411 agents (about 32M subagent tokens). One chunk takes
   author + 2 reviewers + fixer + 1–3 confirmations (+ fixes), about 6–8 agents. All 312 chunks are
   roughly 2,000 agents.
-- **Publication:** the 2026-11-07 owner authorization covers only Surahs 18, 23, 32, 36 and 55.
-  Publishing this edition as drafts requires an explicit owner authorization recorded in
-  `../draft-publication.json`. AI review is never scholarly approval, and `review-status.json` stays
-  pending.
+- **Publication:** the 2026-11-07 owner authorization covers Surahs 18, 23, 32, 36 and 55.
+  The 2026-11-13 authorization covers all 24 Edition 2 Surahs. Both decisions are recorded in
+  `../draft-publication.json`. Scholarly review remains pending in `review-status.json`.
 - **Mobile size:** the native app bundles every lesson. About 10k more words is roughly 20 MB of
   lesson source, so check `npm run build:mobile` and a real device after integration.
 - **QuranAcademy is a separate project and database; never touch it.**

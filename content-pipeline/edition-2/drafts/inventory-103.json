@@ -1,0 +1,70 @@
+{
+  "retrievedAt": "2026-11-13",
+  "textSource": "Quran.com Content API v4 text_uthmani (end-of-ayah markers excluded); word boundaries and IDs checked against QAC 0.4 morphology",
+  "sources": [
+    "https://api.quran.com/api/v4/verses/by_chapter/103?words=true&word_fields=text_uthmani&per_page=50"
+  ],
+  "surah": 103,
+  "ayahCount": 3,
+  "wordCount": 14,
+  "pauseSignPolicy": "Recitation signs that the API separates from a word by a space (waqf signs, the saktah sign, the sajdah sign and the rub al-hizb marker) are excluded from stored word tokens, following the Surahs 110-114 precedent; each exclusion is listed below.",
+  "words": [
+    {
+      "id": "103:1:1",
+      "arabic": "وَٱلْعَصْرِ"
+    },
+    {
+      "id": "103:2:1",
+      "arabic": "إِنَّ"
+    },
+    {
+      "id": "103:2:2",
+      "arabic": "ٱلْإِنسَـٰنَ"
+    },
+    {
+      "id": "103:2:3",
+      "arabic": "لَفِى"
+    },
+    {
+      "id": "103:2:4",
+      "arabic": "خُسْرٍ"
+    },
+    {
+      "id": "103:3:1",
+      "arabic": "إِلَّا"
+    },
+    {
+      "id": "103:3:2",
+      "arabic": "ٱلَّذِينَ"
+    },
+    {
+      "id": "103:3:3",
+      "arabic": "ءَامَنُوا۟"
+    },
+    {
+      "id": "103:3:4",
+      "arabic": "وَعَمِلُوا۟"
+    },
+    {
+      "id": "103:3:5",
+      "arabic": "ٱلصَّـٰلِحَـٰتِ"
+    },
+    {
+      "id": "103:3:6",
+      "arabic": "وَتَوَاصَوْا۟"
+    },
+    {
+      "id": "103:3:7",
+      "arabic": "بِٱلْحَقِّ"
+    },
+    {
+      "id": "103:3:8",
+      "arabic": "وَتَوَاصَوْا۟"
+    },
+    {
+      "id": "103:3:9",
+      "arabic": "بِٱلصَّبْرِ"
+    }
+  ],
+  "excludedPauseSigns": []
+}

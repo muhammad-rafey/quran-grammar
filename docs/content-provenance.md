@@ -1,5 +1,14 @@
 # Content provenance
 
+## Edition 2 draft publication (2026-11-13)
+
+The owner authorized publishing Surahs 4, 7, 25, 29 and 85–104 as labeled drafts for
+later scholarly review. The 807 ayahs and 10,098 words use the existing study format.
+The [draft publication manifest](../content-pipeline/draft-publication.json) pins the
+release snapshots, and the [Edition 2 handoff](../content-pipeline/edition-2/README.md)
+records the scope, source checks and review status. The web and native readers
+display the scholarly-review-pending notice for every draft.
+
 ## Owner-authorized draft publication — 2026-11-07
 
 The owner explicitly requested publishing Surahs 18, 23, 32, 36 and 55 while review
