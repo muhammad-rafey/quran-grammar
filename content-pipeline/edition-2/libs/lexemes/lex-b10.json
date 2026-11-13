@@ -1,0 +1,94 @@
+{
+ "entries": [
+  {
+   "key": "tadoriY|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "دَرَى",
+   "present": "يَدْرِي",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "ناقص یائی ہے: لام کی یاء ماضی میں الف مقصورہ (دَرَى) اور مضارع میں ساکن یاء (يَدْرِي) بنتی ہے، جمع مذکر میں واو سے پہلے گر جاتی ہے (تَدْرُونَ) اور جزم میں حذف ہوتی ہے (لَمْ يَدْرِ)۔ متعدی ہے: جاننا، خبر رکھنا، مفعول براہِ راست یا بِ کے ساتھ آتا ہے؛ اسے بابِ افعال کے أَدْرَى (خبر دینا، بتانا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC form I, root dry: imperfect تَدْرُونَ (4:11:59) with the 3rd radical y elided before the plural waw; Quran-wide imperfects تَدْرِى (31:34), أَدْرِىٓ (21:109) show kasra on the 2nd radical, and the perfect is دَرَى: a–i, ḍaraba class. Standard lexica (Lisan al-Arab, al-Mu'jam al-Wasit): دَرَى الشيءَ وبِهِ يَدْرِي دِرْيًا ودِرَايَةً. QAC lemma تَدْرِى is an inflected handle; citation form is دَرَى."
+  },
+  {
+   "key": "dal~a|I|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "دَلَّى",
+   "present": "يُدَلِّي",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "بابِ تفعیل کا متعدی دَلَّى ہے، دَلَّ (رہنمائی کرنا) نہیں؛ گردان ناقص جیسی ہے: ماضی میں الف مقصورہ (دَلَّى)، مضارع میں ساکن یاء (يُدَلِّي)، جزم و امر میں حذف۔ لغات اسے دَلْو (ڈول) کے مادہ د ل و سے لیتی ہیں: لٹکانا، نیچے اتارنا، فریب سے پستی میں لانا؛ درج مادہ د ل ل کے مطابق اصل دَلَّلَ (جری بنانا) کی آخری لام یاء بنی۔",
+   "evidenceEnglish": "The only occurrence فَدَلَّىٰهُمَا (7:22:1) has a doubled 2nd radical and final alif maqṣūra, which cannot be Form I دَلَّ (that would give دَلَّهُمَا, 'he guided them'); QAC's own gloss 'made both of them fall' fits دَلَّى. Lexica (Lisan al-Arab, al-Azhari via Lisan; Lane s.v. دلو) treat it as faʿʿala: دَلَّى الدلوَ 'let down the bucket', دَلَّاهما بغرور; al-Azhari also allows a derivation from دَلَّلَ (root د ل ل, boldness) with one lām dissimilated to yāʾ, as in تَظَنَّى. Either way the paradigm is Form II دَلَّى يُدَلِّي. The QAC Form I tag and root dll handle are retained as identifiers only; reviewer should confirm the form override."
+  },
+  {
+   "key": ">a*ohaba|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَذْهَبَ",
+   "present": "يُذْهِبُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ مضارع میں حرفِ مضارع پر پیش اور عینِ کلمہ پر زیر آتی ہے (يُذْهِبُ)، جزم میں آخر ساکن ہوتا ہے (يُذْهِبْ)۔ مجرد ذَهَبَ (جانا، لازم) کا متعدی ہے: لے جانا، دور کر دینا، ختم کر دینا؛ ذَهَبَ بِهِ بھی اسی معنی میں آتا ہے۔",
+   "evidenceEnglish": "QAC tags (IV): jussive يُذْهِبْكُمْ (4:133:3) with prefix damma and kasra on the 2nd radical. Quran-wide: perfect أَذْهَبَ (35:34), أَذْهَبْتُمْ (46:20); imperfect لِيُذْهِبَ (33:33), وَيُذْهِبْ (9:15). af'ala of ذ ه ب, transitive of ذَهَبَ (Lane; Lisan al-Arab; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": ">a*aAEu|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَذَاعَ",
+   "present": "يُذِيعُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "اجوف یائی ہے: درمیانی یاء ماضی میں الف (أَذَاعَ) اور مضارع میں کسرہ کے بعد یاء (يُذِيعُ) بنتی ہے، اور ساکن آخر سے پہلے گر جاتی ہے (أَذَعْتُ، لَمْ يُذِعْ)۔ مجرد ذَاعَ (پھیلنا، لازم) کا متعدی ہے: خبر پھیلانا، مشہور کرنا؛ براہِ راست مفعول یا بِ کے ساتھ آتا ہے (أَذَاعُوا بِهِ)۔",
+   "evidenceEnglish": "QAC tags (IV), root *yE: perfect أَذَاعُوا۟ (4:83:8), followed by بِهِۦ. af'ala of ذ ي ع: أَذْيَعَ > أَذَاعَ, aor. يُذِيعُ, maṣdar إِذَاعَة; Form I ذَاعَ يَذِيعُ 'spread' is intransitive (Lisan al-Arab; al-Mu'jam al-Wasit: أذاع الخبرَ وأذاع به). QAC lemma أَذَاعُ is a truncated handle; citation form is أَذَاعَ."
+  },
+  {
+   "key": "yuraA^'u|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "رَاءَى",
+   "present": "يُرَائِي",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "مہموز العین اور ناقص یائی ہے: ہمزہ ہر صیغے میں باقی رہتا ہے، جبکہ لام کی یاء ماضی میں الف مقصورہ (رَاءَى)، مضارع میں ساکن یاء (يُرَائِي) بنتی ہے اور جمع مذکر میں گر جاتی ہے (يُرَاءُونَ)۔ متعدی ہے: لوگوں کو دکھانے کے لیے عمل کرنا، ریاکاری کرنا؛ مصدر رِئَاء اور مُرَاءَاة ہے۔",
+   "evidenceEnglish": "QAC tags (III), root rAy: imperfect يُرَآءُونَ (4:142:13); Quran-wide يُرَآءُونَ (107:6) and the maṣdar رِئَآءَ (2:264, 4:38, 8:47). fāʿala of ر أ ي: رَاءَى يُرَائِي مُرَاءَاةً ورِئَاءً 'to make a show' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit). QAC lemma يُرَآءُ is an imperfect handle; citation form is رَاءَى."
+  },
+  {
+   "key": "turojiY|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَرْجَى",
+   "present": "يُرْجِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "ناقص واوی ہے: لام کی واو ماضی میں الف مقصورہ (أَرْجَى) اور مضارع میں ساکن یاء (يُرْجِي) بنتی ہے، اور امر و جزم میں حذف ہو جاتی ہے (أَرْجِ)۔ متعدی ہے: مؤخر کرنا، ٹال دینا؛ مجرد رَجَا (امید رکھنا) سے معنی الگ ہے، اور بعض قراءتوں میں اسی معنی کا مہموز فعل أَرْجَأَ يُرْجِئُ (مادہ ر ج أ) آیا ہے۔",
+   "evidenceEnglish": "QAC tags (IV), root rjw: imperative أَرْجِهْ (7:111:2), with the final weak radical dropped; the same in 26:36, and imperfect تُرْجِى (33:51) in the Hafs reading. af'ala: أَرْجَى الأمرَ يُرْجِيهِ 'postponed it', a non-hamzated variant of أَرْجَأَ يُرْجِئُ (root ر ج أ), which other readers have here (أَرْجِئْهُ, تُرْجِئُ) (Lisan al-Arab s.v. رجأ/رجا; Lane). QAC lemma تُرْجِى is an inflected handle; citation form is أَرْجَى."
+  },
+  {
+   "key": ">aroDaEato|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَرْضَعَ",
+   "present": "يُرْضِعُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ مضارع میں حرفِ مضارع پر پیش اور عینِ کلمہ پر زیر آتی ہے (يُرْضِعُ)۔ متعدی ہے: دودھ پلانا، اور دودھ پینے والا بچہ مفعول بنتا ہے؛ اسے مجرد رَضِعَ (خود دودھ پینا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC tags (IV), root rDE: perfect أَرْضَعْنَكُمْ (4:23:14, 3FP). Quran-wide: أَرْضَعَتْ (22:2), أَرْضَعْنَ (65:6); imperfect يُرْضِعْنَ (2:233), فَسَتُرْضِعُ (65:6); imperative أَرْضِعِيهِ (28:7). (أَن تَسْتَرْضِعُوٓا۟ in 2:233 is Form X, not this lexeme.) af'ala of ر ض ع, causative of رَضِعَ 'to suck' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit). QAC lemma أَرْضَعَتْ is an inflected handle; citation form is أَرْضَعَ."
+  },
+  {
+   "key": "tara`Da|VI|ACT",
+   "baabUrdu": "بابِ تَفَاعُل",
+   "formUrdu": "ثلاثی مزید فیہ — ششم (VI)",
+   "past": "تَرَاضَى",
+   "present": "يَتَرَاضَى",
+   "pattern": "تَفَاعَلَ — يَتَفَاعَلُ",
+   "noteUrdu": "ناقص واوی ہے: مزید فیہ میں لام کی واو یاء بن جاتی ہے؛ ماضی و مضارع کے آخر میں الف مقصورہ لکھا جاتا ہے (تَرَاضَى، يَتَرَاضَى، مضارع میں ضمہ مقدر)، ضمیرِ رفع متحرک سے پہلے یاء ظاہر ہوتی ہے (تَرَاضَيْتُمْ) اور واوِ جمع سے پہلے لامِ کلمہ گر جاتا ہے (تَرَاضَوْا)۔ لازم ہے: باہم راضی ہونا؛ بِ یا بَيْنَ کے ساتھ آتا ہے۔",
+   "evidenceEnglish": "QAC tags (VI), root rDw: perfect تَرَٰضَيْتُم (4:24:33) with the 3rd radical surfacing as yāʾ; Quran-wide تَرَٰضَوْا۟ (2:232) and the noun تَرَاضٍ (2:233, 4:29). tafāʿala of ر ض و: تَرَاضَى يَتَرَاضَى تَرَاضِيًا 'to agree mutually' (Lisan al-Arab; al-Mu'jam al-Wasit). QAC lemma تَرَٰضَ is a truncated handle; citation form is تَرَاضَى."
+  },
+  {
+   "key": "ra`Ei|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "رَاعَى",
+   "present": "يُرَاعِي",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "ناقص یائی ہے: لام کی یاء ماضی میں الف مقصورہ (رَاعَى) اور مضارع میں ساکن یاء (يُرَاعِي) بنتی ہے، اور امر و جزم میں حذف ہو جاتی ہے (رَاعِ، لَمْ يُرَاعِ)۔ متعدی ہے: رعایت کرنا، خیال رکھنا، توجہ دینا؛ امر رَاعِ کو مجرد رَعَى کے اسمِ فاعل رَاعٍ (چرواہا) سے نہ ملائیں۔",
+   "evidenceEnglish": "QAC tags (III), root rEy: imperative رَٰعِ + نَا in وَرَٰعِنَا (4:46:14), also رَٰعِنَا (2:104), with the final weak radical dropped in the imperative. fāʿala of ر ع ي: رَاعَى يُرَاعِي مُرَاعَاةً 'to heed, look after' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit). QAC lemma رَٰعِ is an imperative handle; citation form is رَاعَى."
+  }
+ ]
+}

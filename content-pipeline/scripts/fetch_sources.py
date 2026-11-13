@@ -3,9 +3,15 @@
 Usage: python3 -I fetch_sources.py <pipeline-dir>   (writes <pipeline-dir>/sources; about 10 minutes)
 These third-party texts are references only and are git-ignored; never commit them.
 """
-import json, os, re, sys, time, urllib.request, html
+import datetime, json, os, re, sys, time, urllib.request, html
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import edition  # noqa: E402
 SP = sys.argv[1]
-SURAHS = {18: 110, 23: 118, 32: 30, 36: 83, 55: 78}
+SURAHS = dict(edition.ayah_counts(SP))
+if os.environ.get('QG_FETCH_ONLY'):
+    _only = {int(x) for x in os.environ['QG_FETCH_ONLY'].split(',')}
+    SURAHS = {k: v for k, v in SURAHS.items() if k in _only}
+TODAY = '2026-11-06' if edition.is_default(SP) else datetime.date.today().isoformat()
 UA = 'quran-grammar-source-audit/1.0'
 def get(url, binary=False):
     for attempt in range(5):
@@ -38,7 +44,7 @@ for s, n in SURAHS.items():
         page += 1
         time.sleep(0.4)
     assert len(verses) == n, (s, len(verses))
-    json.dump({'retrievedAt': '2026-11-06', 'source': f'https://api.quran.com/api/v4/verses/by_chapter/{s}?language=en&words=true&word_fields=text_uthmani,location&translations=20,84', 'verses': verses}, open(out, 'w'), ensure_ascii=False)
+    json.dump({'retrievedAt': TODAY, 'source': f'https://api.quran.com/api/v4/verses/by_chapter/{s}?language=en&words=true&word_fields=text_uthmani,location&translations=20,84', 'verses': verses}, open(out, 'w'), ensure_ascii=False)
     print('verses', s, len(verses), flush=True)
 # 2) Tafsirs: Ibn Kathir abridged EN (169), Muyassar AR (16), Sa'di AR (91)
 for tid in (169, 16, 91):
@@ -55,7 +61,7 @@ for tid in (169, 16, 91):
             if not pg.get('next_page'): break
             page += 1
             time.sleep(0.4)
-        json.dump({'retrievedAt': '2026-11-06', 'source': f'https://api.quran.com/api/v4/tafsirs/{tid}/by_chapter/{s}', 'tafsirs': items}, open(out, 'w'), ensure_ascii=False)
+        json.dump({'retrievedAt': TODAY, 'source': f'https://api.quran.com/api/v4/tafsirs/{tid}/by_chapter/{s}', 'tafsirs': items}, open(out, 'w'), ensure_ascii=False)
         print('tafsir', tid, s, len(items), flush=True)
 # 3) QAC grammar notes per verse
 def clean(t):
@@ -63,7 +69,7 @@ def clean(t):
     t = re.sub(r'<[^>]+>', '', t)
     return html.unescape(t).strip()
 gdir = os.path.join(SP, 'sources', 'qac-grammar')
-for s, n in SURAHS.items():
+for s, n in ({} if os.environ.get('QG_FETCH_SKIP_GRAMMAR') else SURAHS).items():
     out = os.path.join(gdir, f'grammar-{s}.json')
     data = json.load(open(out)) if os.path.exists(out) else {}
     for v in range(1, n + 1):

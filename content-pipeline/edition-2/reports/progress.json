@@ -1,0 +1,4896 @@
+{
+ "generatedAt": "2026-11-13",
+ "note": "Snapshot after all chunk workflows were stopped (usage limit, then owner pause). Status is derived from workflow journals (private, local to the session) and validate_chunk.py. AI review is not scholarly review.",
+ "counts": {
+  "authored-review-incomplete": 50,
+  "partial-invalid-file": 8,
+  "not-started": 177,
+  "authored-not-reviewed": 71,
+  "ai-reviewed-clean-confirmation": 6
+ },
+ "groups": [
+  {
+   "chunks": [
+    "25-c01",
+    "25-c02",
+    "25-c03",
+    "25-c04",
+    "25-c05",
+    "25-c06",
+    "25-c07",
+    "25-c08",
+    "25-c09",
+    "25-c10",
+    "25-c11",
+    "25-c12"
+   ],
+   "runIds": [
+    "wf_8d95adab-e03"
+   ]
+  },
+  {
+   "chunks": [
+    "25-c13",
+    "25-c14",
+    "25-c15",
+    "25-c16",
+    "25-c17",
+    "25-c18",
+    "25-c19",
+    "25-c20",
+    "25-c21",
+    "25-c22",
+    "25-c23",
+    "25-c24"
+   ],
+   "runIds": [
+    "wf_1f2c9f0a-95b",
+    "wf_8d95adab-e03"
+   ]
+  },
+  {
+   "chunks": [
+    "25-c25",
+    "25-c26",
+    "25-c27",
+    "25-c28",
+    "85-c01",
+    "85-c02",
+    "85-c03",
+    "86-c01",
+    "86-c02",
+    "87-c01",
+    "87-c02",
+    "88-c01"
+   ],
+   "runIds": [
+    "wf_a1cad9ff-e0a"
+   ]
+  },
+  {
+   "chunks": [
+    "88-c02",
+    "88-c03",
+    "89-c01",
+    "89-c02",
+    "89-c03",
+    "89-c04",
+    "90-c01",
+    "90-c02",
+    "90-c03",
+    "91-c01",
+    "91-c02",
+    "92-c01"
+   ],
+   "runIds": [
+    "wf_4101cbb5-0a9"
+   ]
+  },
+  {
+   "chunks": [
+    "92-c02",
+    "93-c01",
+    "94-c01",
+    "95-c01",
+    "96-c01",
+    "96-c02",
+    "97-c01",
+    "98-c01",
+    "98-c02",
+    "98-c03",
+    "99-c01",
+    "100-c01"
+   ],
+   "runIds": [
+    "wf_e1f5ef8c-d11"
+   ]
+  },
+  {
+   "chunks": [
+    "101-c01",
+    "102-c01",
+    "103-c01",
+    "104-c01",
+    "4-c01",
+    "4-c02",
+    "4-c03",
+    "4-c04",
+    "4-c05",
+    "4-c06",
+    "4-c07",
+    "4-c08"
+   ],
+   "runIds": [
+    "wf_6697da1a-8f3",
+    "wf_02fd3359-36d"
+   ]
+  },
+  {
+   "chunks": [
+    "4-c09",
+    "4-c10",
+    "4-c11",
+    "4-c12",
+    "4-c13",
+    "4-c14",
+    "4-c15",
+    "4-c16",
+    "4-c17",
+    "4-c18",
+    "4-c19",
+    "4-c20"
+   ],
+   "runIds": [
+    "wf_5a097c29-fc8",
+    "wf_02fd3359-36d"
+   ]
+  },
+  {
+   "chunks": [
+    "4-c21",
+    "4-c22",
+    "4-c23",
+    "4-c24",
+    "4-c25",
+    "4-c26",
+    "4-c27",
+    "4-c28",
+    "4-c29",
+    "4-c30",
+    "4-c31",
+    "4-c32"
+   ],
+   "runIds": [
+    "wf_6beae914-dc9"
+   ]
+  },
+  {
+   "chunks": [
+    "4-c33",
+    "4-c34",
+    "4-c35",
+    "4-c36",
+    "4-c37",
+    "4-c38",
+    "4-c39",
+    "4-c40",
+    "4-c41",
+    "4-c42",
+    "4-c43",
+    "4-c44"
+   ],
+   "runIds": [
+    "wf_0b3814b1-677"
+   ]
+  },
+  {
+   "chunks": [
+    "4-c45",
+    "4-c46",
+    "4-c47",
+    "4-c48",
+    "4-c49",
+    "4-c50",
+    "4-c51",
+    "4-c52",
+    "4-c53",
+    "4-c54",
+    "4-c55",
+    "4-c56"
+   ],
+   "runIds": [
+    "wf_9719aa9a-2a1"
+   ]
+  },
+  {
+   "chunks": [
+    "4-c57",
+    "4-c58",
+    "4-c59",
+    "4-c60",
+    "4-c61",
+    "4-c62",
+    "4-c63",
+    "4-c64",
+    "4-c65",
+    "4-c66",
+    "4-c67",
+    "4-c68"
+   ],
+   "runIds": [
+    "wf_51e6fa86-5c3"
+   ]
+  },
+  {
+   "chunks": [
+    "4-c69",
+    "4-c70",
+    "4-c71",
+    "4-c72",
+    "4-c73",
+    "4-c74",
+    "4-c75",
+    "4-c76",
+    "4-c77",
+    "4-c78",
+    "4-c79",
+    "4-c80"
+   ],
+   "runIds": [
+    "wf_336b4d26-e68"
+   ]
+  },
+  {
+   "chunks": [
+    "4-c81",
+    "4-c82",
+    "4-c83",
+    "4-c84",
+    "4-c85",
+    "4-c86",
+    "4-c87",
+    "4-c88",
+    "4-c89",
+    "4-c90",
+    "4-c91",
+    "4-c92"
+   ],
+   "runIds": [
+    "wf_3abdd2cd-c41"
+   ]
+  },
+  {
+   "chunks": [
+    "4-c93",
+    "4-c94",
+    "4-c95",
+    "4-c96",
+    "4-c97",
+    "4-c98",
+    "4-c99",
+    "4-c100",
+    "4-c101",
+    "4-c102",
+    "4-c103",
+    "4-c104"
+   ],
+   "runIds": [
+    "wf_3f756f87-3b5"
+   ]
+  },
+  {
+   "chunks": [
+    "4-c105",
+    "4-c106",
+    "4-c107",
+    "4-c108",
+    "4-c109",
+    "4-c110",
+    "4-c111",
+    "4-c112",
+    "4-c113",
+    "7-c01",
+    "7-c02",
+    "7-c03"
+   ],
+   "runIds": [
+    "wf_641114db-b92"
+   ]
+  },
+  {
+   "chunks": [
+    "7-c04",
+    "7-c05",
+    "7-c06",
+    "7-c07",
+    "7-c08",
+    "7-c09",
+    "7-c10",
+    "7-c11",
+    "7-c12",
+    "7-c13",
+    "7-c14",
+    "7-c15"
+   ],
+   "runIds": [
+    "wf_0f53194f-f09"
+   ]
+  },
+  {
+   "chunks": [
+    "7-c16",
+    "7-c17",
+    "7-c18",
+    "7-c19",
+    "7-c20",
+    "7-c21",
+    "7-c22",
+    "7-c23",
+    "7-c24",
+    "7-c25",
+    "7-c26",
+    "7-c27"
+   ],
+   "runIds": [
+    "wf_10513093-229"
+   ]
+  },
+  {
+   "chunks": [
+    "7-c28",
+    "7-c29",
+    "7-c30",
+    "7-c31",
+    "7-c32",
+    "7-c33",
+    "7-c34",
+    "7-c35",
+    "7-c36",
+    "7-c37",
+    "7-c38",
+    "7-c39"
+   ],
+   "runIds": [
+    "wf_681a9c08-476"
+   ]
+  },
+  {
+   "chunks": [
+    "7-c40",
+    "7-c41",
+    "7-c42",
+    "7-c43",
+    "7-c44",
+    "7-c45",
+    "7-c46",
+    "7-c47",
+    "7-c48",
+    "7-c49",
+    "7-c50",
+    "7-c51"
+   ],
+   "runIds": [
+    "wf_8ae6d535-414"
+   ]
+  },
+  {
+   "chunks": [
+    "7-c52",
+    "7-c53",
+    "7-c54",
+    "7-c55",
+    "7-c56",
+    "7-c57",
+    "7-c58",
+    "7-c59",
+    "7-c60",
+    "7-c61",
+    "7-c62",
+    "7-c63"
+   ],
+   "runIds": [
+    "wf_aa422a44-f4c"
+   ]
+  },
+  {
+   "chunks": [
+    "7-c64",
+    "7-c65",
+    "7-c66",
+    "7-c67",
+    "7-c68",
+    "7-c69",
+    "7-c70",
+    "7-c71",
+    "7-c72",
+    "7-c73",
+    "7-c74",
+    "7-c75"
+   ],
+   "runIds": [
+    "wf_56106858-190"
+   ]
+  },
+  {
+   "chunks": [
+    "7-c76",
+    "7-c77",
+    "7-c78",
+    "7-c79",
+    "7-c80",
+    "7-c81",
+    "7-c82",
+    "7-c83",
+    "7-c84",
+    "7-c85",
+    "7-c86",
+    "7-c87"
+   ],
+   "runIds": [
+    "wf_4667cffe-a7b"
+   ]
+  },
+  {
+   "chunks": [
+    "7-c88",
+    "7-c89",
+    "7-c90",
+    "7-c91",
+    "7-c92",
+    "7-c93",
+    "7-c94",
+    "7-c95",
+    "7-c96",
+    "7-c97",
+    "7-c98",
+    "7-c99"
+   ],
+   "runIds": [
+    "wf_b7a51b91-98e"
+   ]
+  },
+  {
+   "chunks": [
+    "7-c100",
+    "7-c101",
+    "7-c102",
+    "7-c103",
+    "7-c104",
+    "7-c105",
+    "29-c01",
+    "29-c02",
+    "29-c03",
+    "29-c04",
+    "29-c05",
+    "29-c06"
+   ],
+   "runIds": [
+    "wf_910b0863-791"
+   ]
+  },
+  {
+   "chunks": [
+    "29-c07",
+    "29-c08",
+    "29-c09",
+    "29-c10",
+    "29-c11",
+    "29-c12",
+    "29-c13",
+    "29-c14",
+    "29-c15",
+    "29-c16",
+    "29-c17",
+    "29-c18"
+   ],
+   "runIds": [
+    "wf_8cd5e35f-a07"
+   ]
+  },
+  {
+   "chunks": [
+    "29-c19",
+    "29-c20",
+    "29-c21",
+    "29-c22",
+    "29-c23",
+    "29-c24",
+    "29-c25",
+    "29-c26",
+    "29-c27",
+    "29-c28",
+    "29-c29",
+    "29-c30"
+   ],
+   "runIds": [
+    "wf_f9db6f3b-b99"
+   ]
+  }
+ ],
+ "chunks": [
+  {
+   "chunk": "4-c01",
+   "surah": 4,
+   "words": 28,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning"
+   ],
+   "runIds": [
+    "wf_02fd3359-36d",
+    "wf_6697da1a-8f3"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ر ح م",
+     "problem": "The root entry's meaning and note cover only mercy words (رَحِمَ، رَحْمَة، رُحْم، رَحْمٰن، رَحِيم). They leave out the womb and kinship sense, رَحِم with its plural أَرْحَام, which appears at 4:1:23 (وَٱلْأَرْحَامَ). The chunk's dictionaryUrdu has to supply this sense without support from the root card.",
+     "fix": "Add to meaningUrdu: «رَحِم (رحمِ مادر)، قرابت اور رشتہ داری». Add to noteUrdu: «رَحِم اصل میں رحمِ مادر ہے اور اسی سے قرابت کا رشتہ مراد ہوتا ہے؛ اس کی جمع أَرْحَام رشتہ داریوں کے لیے آتی ہے».",
+     "kind_detail": ""
+    }
+   ]
+  },
+  {
+   "chunk": "4-c02",
+   "surah": 4,
+   "words": 16,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar",
+    "verify-meaning",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_02fd3359-36d",
+    "wf_6697da1a-8f3"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ط ي ب",
+     "problem": "noteUrdu contains a sentence tied to one ayah, «یہاں رسولوں کو حلال و پاکیزہ رزق کھانے کا حکم ہے» (23:51). The note is shared by every occurrence of the root, so in 4:2 (بِٱلطَّيِّبِ, the good/lawful property set against ٱلْخَبِيثَ) it says something false about the ayah on screen.",
+     "fix": "Remove the sentence that names an ayah, e.g.: «طَيِّبَات، طَيِّبَة کی جمع ہے، یعنی پاکیزہ، حلال اور عمدہ چیزیں؛ طَيِّب اکثر خَبِيث کے مقابل آتا ہے۔ طَيِّب کی مشدد یاء فَيْعِل کے وزن سے ہے؛ اسے بابِ تفعیل کا فعل نہ سمجھیں۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c03",
+   "surah": 4,
+   "words": 28,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_02fd3359-36d",
+    "wf_6697da1a-8f3"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ع و ل",
+     "problem": "The note glosses تَعُولُوا as «تاکہ تم ناانصافی کی طرف نہ جھکو». «تاکہ» is a purpose reading. In 4:3, the only occurrence, the interpreted masdar is منصوب على نزع الخافض (إلى) and depends on أَدْنَىٰٓ, meaning «nearer to your not inclining».",
+     "fix": "Replace «تاکہ تم ناانصافی کی طرف نہ جھکو» with «(اس بات کے زیادہ قریب) کہ تم ناانصافی کی طرف نہ جھکو»."
+    },
+    {
+     "kind": "root",
+     "key": "ط ي ب",
+     "problem": "The note is written for another context: it says «یہاں رسولوں کو حلال و پاکیزہ رزق کھانے کا حکم ہے», which refers to 23:51. This lesson shows the root under طَابَ (4:3:9), where that statement is false. The entry also never mentions the verb طَابَ يَطِيبُ.",
+     "fix": "Remove the context-specific clause and add the general verb sense, e.g. «فعل طَابَ يَطِيبُ اچھا، پاکیزہ یا پسندیدہ ہونا ہے (لِ کے ساتھ: کسی کو پسند آنا)؛ طَيِّبَات، طَيِّبَة کی جمع ہے، یعنی پاکیزہ، حلال اور عمدہ چیزیں۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c04",
+   "surah": 4,
+   "words": 30,
+   "status": "partial-invalid-file",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_02fd3359-36d",
+    "wf_6697da1a-8f3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c05",
+   "surah": 4,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_02fd3359-36d",
+    "wf_6697da1a-8f3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c06",
+   "surah": 4,
+   "words": 32,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_02fd3359-36d",
+    "wf_6697da1a-8f3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c07",
+   "surah": 4,
+   "words": 28,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_02fd3359-36d",
+    "wf_6697da1a-8f3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c08",
+   "surah": 4,
+   "words": 71,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_02fd3359-36d",
+    "wf_6697da1a-8f3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c09",
+   "surah": 4,
+   "words": 88,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_02fd3359-36d",
+    "wf_5a097c29-fc8"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c10",
+   "surah": 4,
+   "words": 31,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_02fd3359-36d",
+    "wf_5a097c29-fc8"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ع ص ي",
+     "problem": "noteUrdu says «یہاں موسیٰ علیہ السلام اپنے ساتھی کے کسی حکم کی نافرمانی نہ کرنے کا وعدہ کرتے ہیں». That only fits 18:69. With Surah 4 in scope this note now shows for 4:14 يَعْصِ, where it is about disobeying Allah and His Messenger, so «یہاں» points to the wrong context.",
+     "fix": "Remove the occurrence-specific sentence, e.g.: «عَصَى اور اس کا مضارع يَعْصِي نافرمانی کرنے اور حکم نہ ماننے کے لیے آتے ہیں۔ یہ ناقص یائی مادہ ہے؛ اسے ع ص و کے عَصًا یعنی لاٹھی سے نہ ملائیں، اگرچہ بعض صورتوں میں املا ملتا جلتا ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ع ظ م",
+     "problem": "noteUrdu says عِظَام «یہاں انسان کی ہڈیوں کے لیے آئی ہے». That is specific to another occurrence. The entry is shown for 4:13:18 ٱلْعَظِيمُ, where no عِظَام occurs.",
+     "fix": "Replace «اور یہاں انسان کی ہڈیوں کے لیے آئی ہے» with a general wording, e.g. «عِظَام، عَظْم یعنی ہڈی کی جمع ہے؛ عَظِيم صفتِ مشبہ ہے جس کا معنی بڑا اور عظمت والا ہے۔ عِظَام کو عَظِيم کی جمع سمجھ کر «بڑے» ترجمہ نہ کریں۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ن و ر",
+     "problem": "noteUrdu says «ان سورتوں میں اس مادے سے صرف نَار آیا ہے». With Surah 4 in scope this is false: نُورًۭا occurs at 4:174.",
+     "fix": "Replace the scope claim with a general statement, e.g. «اس مادے سے نَار یعنی آگ اور نُور یعنی روشنی آتے ہیں؛ معرفہ اَلنَّار عموماً جہنم کی آگ کے لیے ہے، جبکہ نکرہ نَار کبھی جہنم اور کبھی عام آگ کے لیے، اس لیے سیاق سے طے کریں۔ نَار مؤنث ہے اور اس کا الف درمیانی اصلی واو سے بدلا ہوا ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ط و ع",
+     "problem": "noteUrdu says اِسْتَطَاعَ «ان سورتوں میں زیادہ تر یہی دوسرا فعل آیا ہے». This was written for the original five Surahs. Surah 4 uses أَطَاعَ often (4:13, 4:59, 4:69, 4:80), so the claim no longer holds for this edition.",
+     "fix": "Drop the clause «ان سورتوں میں زیادہ تر یہی دوسرا فعل آیا ہے» or make it scope-neutral."
+    }
+   ]
+  },
+  {
+   "chunk": "4-c11",
+   "surah": 4,
+   "words": 36,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_02fd3359-36d",
+    "wf_5a097c29-fc8"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c12",
+   "surah": 4,
+   "words": 20,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1",
+    "confirm-1",
+    "fix-2"
+   ],
+   "runIds": [
+    "wf_02fd3359-36d",
+    "wf_5a097c29-fc8"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ج ه ل",
+     "problem": "The root noteUrdu is written for one specific occurrence: ٱلْجَـٰهِلُونَ, 'here' meaning boorish people who are answered with words of peace. This root card also appears for بِجَهَـٰلَةٍۢ in 4:17, where the word means heedless ignorance of a sin's consequences, so the note's «یہاں» misleads the learner.",
+     "fix": "جَهِلَ کا بنیادی معنی نہ جاننا ہے؛ جَهْل اور جَهَالَة نادانی اور بے سمجھی ہیں، اور جَاهِل اسمِ فاعل ہے (جمع ٱلْجَـٰهِلُونَ)۔ سیاق کے مطابق اس سے علم کی کمی، انجام سے غفلت، یا نادانی اور بدتمیزی کا رویہ مراد ہوتا ہے۔"
+    },
+    {
+     "kind": "root",
+     "key": "ق ر ب",
+     "problem": "The root noteUrdu only describes the comparative أَقْرَب: 'here' nearer in guidance or mercy, and diptote. This root card also appears for قَرِيبٍۢ in 4:17, which is a فَعِيل noun of nearness in time, takes tanwin and is fully declinable, so the note's «یہاں» and its diptote statement mislead the learner.",
+     "fix": "قَرُبَ قریب ہونا ہے؛ قَرِيب (فَعِيل) نزدیک، چاہے جگہ میں ہو یا زمانے میں، اور أَقْرَب اسمِ تفضیل یعنی زیادہ قریب ہے، جو أَفْعَل کے وزن پر وصف ہونے سے غیر منصرف ہے۔ سیاق کے مطابق قربت فاصلے، وقت، رشتے یا ہدایت و مہربانی کی ہو سکتی ہے۔"
+    },
+    {
+     "kind": "root",
+     "key": "ج ه ل",
+     "problem": "The shared noteUrdu describes one specific occurrence as «یہاں»: ٱلْجَـٰهِلُونَ, rude people who are answered with a word of peace. Shown with 4:17 بِجَهَـٰلَةٍۢ, which means heedlessness of a sin's consequences, «یہاں» is wrong and misleading.",
+     "fix": "Make the note general, for example: «جَهْل اور جَهَالَة نہ جاننا اور نادانی ہیں؛ جَاهِل اسمِ فاعل ہے اور ٱلْجَـٰهِلُونَ اس کی جمعِ مذکر سالم۔ سیاق کے مطابق اس سے علم کی کمی، انجام سے غفلت یا نادانی کا رویہ مراد ہوتا ہے۔» Move the occurrence-specific remarks into the relevant chunk."
+    },
+    {
+     "kind": "root",
+     "key": "ق ر ب",
+     "problem": "The noteUrdu only explains أَقْرَب, as an elative meaning 'nearer in guidance or kindness' and a diptote. It uses «یہاں», which suits only one occurrence. Shown with 4:17 قَرِيبٍۢ (فَعِيل, a fully declined noun, nearness in time), it is wrong for this word.",
+     "fix": "Make the note general: «قَرُبَ قریب ہونا ہے؛ قَرِيب فَعِيل کے وزن پر نزدیک (جگہ، وقت یا تعلق میں) کو کہتے ہیں، اور أَقْرَب اسمِ تفضیل یعنی زیادہ قریب ہے، جو أَفْعَل کے وزن پر وصف ہونے سے غیر منصرف ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ت و ب",
+     "problem": "«ان سورتوں میں یہ بندوں کی توبہ کے لیے آیا ہے» was written for the original five Surahs. Shown with Surah 4, where 4:17 has تَابَ عَلَى with Allah as subject, the restriction is inaccurate.",
+     "fix": "Remove «ان سورتوں میں یہ بندوں کی توبہ کے لیے آیا ہے، جبکہ» and say instead: «بندے کے لیے تَابَ (إِلَى کے ساتھ) توبہ کرنا ہے، جبکہ اللہ کے لیے تَابَ عَلَى اور تَوَّاب توبہ قبول فرمانے کا مفہوم دیتے ہیں۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c13",
+   "surah": 4,
+   "words": 24,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_5a097c29-fc8"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c14",
+   "surah": 4,
+   "words": 34,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar"
+   ],
+   "runIds": [
+    "wf_5a097c29-fc8"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c15",
+   "surah": 4,
+   "words": 28,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_5a097c29-fc8"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c16",
+   "surah": 4,
+   "words": 17,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar"
+   ],
+   "runIds": [
+    "wf_5a097c29-fc8"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "noteUrdu contains a context-specific sentence from Surah 18 (the fish making its way into the sea): «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے». This is wrong for 4:22 and for every other occurrence outside 18:61/63.",
+     "fix": "Remove that sentence: «سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے۔ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "م ق ت",
+     "problem": "noteUrdu ties the shared root entry to this one occurrence: «یہاں یہ كَانَ کی خبر پر معطوف ہے اور ایک ممنوع نکاح کو سخت قابلِ نفرت کام قرار دیتا ہے». This is wrong in other places, e.g. 40:10, where مَقْتُ is a mubtada and nothing is coordinated with the khabar of كان.",
+     "fix": "«مَقْت مصدر ہے، یعنی انتہائی درجے کی ناپسندیدگی اور بیزاری؛ قرآن میں یہ کسی کام یا شخص کے سخت قابلِ نفرت ہونے کے بیان میں آتا ہے۔ یہ اسم ہے، فعل نہیں۔»"
+    },
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "The noteUrdu says «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے». That sentence only fits Surah 18 (18:61, 18:63) and is wrong for every other occurrence, including 4:22, where سَبِيلًا is the tamyīz of the blame verb سَآءَ (a way or practice).",
+     "fix": "Make the note context-neutral, e.g.: «سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے؛ سیاق کے مطابق اس سے ظاہری راستہ یا کوئی طرزِ عمل مراد ہوتا ہے۔ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c17",
+   "surah": 4,
+   "words": 54,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_5a097c29-fc8"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c18",
+   "surah": 4,
+   "words": 42,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_5a097c29-fc8"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c19",
+   "surah": 4,
+   "words": 58,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_5a097c29-fc8"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c20",
+   "surah": 4,
+   "words": 35,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_5a097c29-fc8"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c21",
+   "surah": 4,
+   "words": 36,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar"
+   ],
+   "runIds": [
+    "wf_6beae914-dc9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c22",
+   "surah": 4,
+   "words": 39,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_6beae914-dc9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c23",
+   "surah": 4,
+   "words": 19,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning"
+   ],
+   "runIds": [
+    "wf_6beae914-dc9"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ق ر ب",
+     "problem": "The noteUrdu is written for one occurrence and is wrong as a general root note. It says أَقْرَب «یہاں» means nearer in guidance or mercy rather than distance. It also says أَقْرَب is diptote and so takes fatha even in jarr. That does not hold for this lesson's ٱلْأَقْرَبُونَ (sound masculine plural, blood relatives), nor for أَقْرَب with ال or as a mudaf, where it takes kasra.",
+     "fix": "Make the note general, e.g.: «أَقْرَب اسمِ تفضیل ہے، یعنی زیادہ قریب؛ سیاق کے مطابق فاصلے، رشتے، ہدایت یا مہربانی میں قرب مراد ہو سکتا ہے، اور ٱلْأَقْرَبُونَ (جمع) سے نسب میں قریبی رشتہ دار مراد ہیں۔ أَفْعَل کے وزن پر وصف ہونے سے نکرہ اور غیر مضاف حالت میں غیر منصرف ہے، مگر الْ یا اضافت کے ساتھ جر میں کسرہ لیتا ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ن ص ب",
+     "problem": "The root entry covers only نَصَب (fatigue), the grammar term نَصْب and the Urdu «نصب کرنا». It leaves out نَصِيب (share, portion), which occurs in this lesson (4:33:12) and in the previous ayah 4:32. Its meaningUrdu also lacks «حصہ».",
+     "fix": "Add «حصہ» to meaningUrdu and a clause to noteUrdu, e.g.: «نَصِيب (فَعِيل کے وزن پر) کسی کے لیے مقرر حصہ ہے، جیسے میراث یا اجر کا حصہ۔»"
+    },
+    {
+     "kind": "root",
+     "key": "و ل ي",
+     "problem": "The noteUrdu covers وَلِيّ, أَوْلِيَاء, وَلَايَة and وَلَّى but not مَوْلَى or its plural مَوَالِي, which occurs here (4:33:3) in the sense of heirs or kin. Learners get no help with the مَفَاعِل plural, whose final ي is a root letter.",
+     "fix": "Add to noteUrdu: «مَوْلَى (جمع مَوَالِي) قریبی رشتہ دار، حامی یا وارث کو کہتے ہیں؛ مَوَالِي کی آخری یاء مادے کی ہے، علامتِ جمع نہیں۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c24",
+   "surah": 4,
+   "words": 40,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_6beae914-dc9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c25",
+   "surah": 4,
+   "words": 22,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_6beae914-dc9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c26",
+   "surah": 4,
+   "words": 32,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar"
+   ],
+   "runIds": [
+    "wf_6beae914-dc9"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "noteUrdu contains a sentence written for 18:61/63 («یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے»). Shown with ٱلسَّبِيلِ in 4:36 (ابن السبيل, the traveller), it is wrong and misleading.",
+     "fix": "سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے؛ ابْن کی اضافت میں ابْنُ السَّبِيل مسافر کو کہتے ہیں۔ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔"
+    },
+    {
+     "kind": "root",
+     "key": "ق ر ب",
+     "problem": "noteUrdu is specific to one occurrence of أَقْرَب («یہاں یہ فاصلے کے بجائے ہدایت یا مہربانی میں زیادہ قریب...»). It says nothing about قُرْبَى (kinship), the word used here, and its «یہاں» claim does not apply in 4:36.",
+     "fix": "أَقْرَب اسمِ تفضیل ہے، یعنی زیادہ قریب، اور أَفْعَل کے وزن پر وصف ہونے سے غیر منصرف ہے؛ قُرْبَى (الفِ مقصورہ کے ساتھ) رشتے داری اور قرابت ہے، اور ذُو ٱلْقُرْبَى رشتے دار کو کہتے ہیں۔ نزدیکی فاصلے کی بھی ہو سکتی ہے اور مرتبے یا رشتے کی بھی؛ سیاق سے متعین کریں۔"
+    },
+    {
+     "kind": "root",
+     "key": "ج ن ب",
+     "problem": "noteUrdu is specific to 32:16 («جُنُوب یہاں ... بستروں سے الگ ہونے والے پہلو»). In 4:36 it appears with ٱلْجُنُبِ (distant, non-relative neighbour) and بِٱلْجَنۢبِ (at the side), where «یہاں» is wrong.",
+     "fix": "جَنْب پہلو ہے اور جُنُوب اس کی جمع، جسے اردو کے «جنوب» بمعنی سمت نہ سمجھیں؛ جُنُب صفت ہے: ایک طرف رہنے والا، اجنبی یا دور کا، اور حالتِ جنابت والے کے لیے بھی آتا ہے، اس لیے معنی سیاق سے متعین کریں۔"
+    },
+    {
+     "kind": "root",
+     "key": "ق ر ب",
+     "problem": "noteUrdu is tied to another occurrence. It covers only أَقْرَب and says «یہاں» it means nearness in guidance or mercy and is a diptote. For this chunk's قُرْبَىٰ (kinship, 4:36:10 and 4:36:15) the note is irrelevant and misleading.",
+     "fix": "قَرُبَ (قریب ہونا)، قُرْب (نزدیکی)، قُرْبَىٰ (رشتے داری، قرابت) اور أَقْرَب (اسمِ تفضیل: زیادہ قریب، أَفْعَل کے وزن پر غیر منصرف) سب اسی مادے سے ہیں؛ سیاق سے طے کریں کہ نزدیکی فاصلے کی ہے، رشتے کی یا مرتبے کی۔"
+    },
+    {
+     "kind": "root",
+     "key": "ج ن ب",
+     "problem": "noteUrdu is written for 32:16. It says «جُنُوب یہاں ... بستروں سے الگ ہونے والے پہلو». That is wrong for 4:36, where the words are جُنُب (non-relative or distant neighbour) and جَنْب (side).",
+     "fix": "جَنْب پہلو ہے اور جُنُوب اس کی جمع؛ جُنُب ایک طرف اور دور ہونے والا (مثلاً غیر رشتے دار پڑوسی) ہے، اور حالتِ جنابت والے شخص کو بھی جُنُب کہتے ہیں؛ جُنُوب کو اردو کے «جنوب» بمعنی سمت نہ سمجھیں۔"
+    },
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "noteUrdu says «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے» (18:61/63). Shown on the root card for ٱبْنِ ٱلسَّبِيلِ (4:36:21), this is false.",
+     "fix": "سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے؛ ٱبْن ٱلسَّبِيل (راستے کا بیٹا) مسافر کے لیے محاورہ ہے۔ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔"
+    },
+    {
+     "kind": "root",
+     "key": "ف خ ر",
+     "problem": "noteUrdu covers only فَخَّار (fired clay, 55:14). It says the boasting sense is not part of its translation, which is the opposite of this chunk's فَخُورًا (4:36:32).",
+     "fix": "فَخَرَ فخر کرنا اور بڑائی جتانا ہے، اور فَخُور (فَعُول، مبالغہ) بار بار فخر جتانے والا؛ فَخَّار آگ میں پکی ہوئی مٹی یا ٹھیکری ہے، جس کے ترجمے میں فخر کا معنی شامل نہیں۔"
+    },
+    {
+     "kind": "root",
+     "key": "ج و ر",
+     "problem": "noteUrdu covers only يُجِيرُ / يُجَارُ (23:88) and does not mention جَار (neighbour), the word in 4:36:13 and 4:36:16.",
+     "fix": "جَار پڑوسی اور ہمسایہ ہے (درمیانی الف اصل میں واو ہے)؛ أَجَارَ (بابِ افعال) پناہ دینا ہے: يُجِيرُ پناہ دیتا ہے اور يُجَارُ اسی کا مجہول ہے؛ درمیانی واو ان صیغوں میں یاء اور الف کی صورت میں ہے، اس لیے سطحی املا سے نیا مادہ مقرر نہ کریں۔"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c27",
+   "surah": 4,
+   "words": 33,
+   "status": "partial-invalid-file",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_6beae914-dc9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c28",
+   "surah": 4,
+   "words": 30,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_6beae914-dc9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c29",
+   "surah": 4,
+   "words": 26,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author-retry"
+   ],
+   "runIds": [
+    "wf_6beae914-dc9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c30",
+   "surah": 4,
+   "words": 48,
+   "status": "partial-invalid-file",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_6beae914-dc9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c31",
+   "surah": 4,
+   "words": 23,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_6beae914-dc9"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "The noteUrdu says «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے». That fits only Surah 18 (the fish passage). Wherever the entry is shown, including 4:44:14 (ٱلسَّبِيلَ = the right path), it is false.",
+     "fix": "Remove the context-specific clause and keep a general note, e.g.: «سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے؛ ترجمہ سیاق سے طے ہوتا ہے۔ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ن ص ب",
+     "problem": "meaningUrdu and noteUrdu cover only setting up/erecting and fatigue. They leave out نَصِيب 'share, portion', the meaning used at 4:44:6. The chunk has to correct this in its own text.",
+     "fix": "Add «حصہ» to meaningUrdu (e.g. «کھڑا کرنا، گاڑنا، نصب کرنا، تھکن اور مشقت؛ حصہ (نَصِيب)۔») and a clause to noteUrdu: «نَصِيب فَعِيل کے وزن پر کسی چیز میں سے ملنے والا حصہ ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ش ر ي",
+     "problem": "The noteUrdu says «یہاں سیاق سے بیچنا مراد ہے» about يَشْرُونَ, which is context-specific to another ayah. Shown at 4:44:9, where يَشْتَرُونَ means buying, the word «یہاں» is misleading.",
+     "fix": "Replace «یہاں سیاق سے بیچنا مراد ہے» with «اس کا معنی سیاق سے طے ہوتا ہے، اور بعض آیات میں بیچنا مراد ہے».)"
+    },
+    {
+     "kind": "root",
+     "key": "ن ص ب",
+     "problem": "Neither the root's meaningUrdu nor its noteUrdu covers نَصِيب 'share, portion', which is the sense at 4:44:6. The noteUrdu also says «ان سورتوں میں یہ سفر کی تھکاوٹ کے لیے آیا ہے», a line written for Surah 18 that is wrong when the entry is shown for 4:44.",
+     "fix": "Add «حصہ، نصیب» to meaningUrdu, and replace the surah-specific sentence in noteUrdu with a general one, e.g. «نَصِيب (فَعِيل) کسی چیز میں سے ملنے والا حصہ ہے؛ نَصَب (صاد پر زبر) تھکن اور مشقت ہے…»."
+    },
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "noteUrdu says «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے». That refers to the fish story in Surah 18 and is wrong when the entry is shown for ٱلسَّبِيلَ at 4:44:14 (the right way of the believers).",
+     "fix": "Remove the context-specific sentence, or reword it generally: «سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے؛ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔»"
+    },
+    {
+     "kind": "lexeme",
+     "key": "Dal~a|I|ACT",
+     "problem": "noteUrdu calls ضَلَّ simply «لازم». At 4:44:13 (تَضِلُّوا۟ ٱلسَّبِيلَ) the lesson teaches ٱلسَّبِيلَ as its مفعول بہ ('to lose the way'), with منصوب بنزع الخافض as the alternative. So the paradigm card contradicts the occurrence's syntax.",
+     "fix": "Append to noteUrdu: «کبھی مفعول کے ساتھ بھی آتا ہے، جیسے ضَلَّ السَّبِيلَ (راستہ کھو دینا)؛ ایک تجزیے میں یہ منصوب بنزعِ خافض ہے (عَنِ السَّبِيلِ)۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c32",
+   "surah": 4,
+   "words": 38,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_6beae914-dc9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c33",
+   "surah": 4,
+   "words": 28,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_0b3814b1-677"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c34",
+   "surah": 4,
+   "words": 34,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_0b3814b1-677"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c35",
+   "surah": 4,
+   "words": 30,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0b3814b1-677"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c36",
+   "surah": 4,
+   "words": 39,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_0b3814b1-677"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c37",
+   "surah": 4,
+   "words": 31,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_0b3814b1-677"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c38",
+   "surah": 4,
+   "words": 20,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0b3814b1-677"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c39",
+   "surah": 4,
+   "words": 25,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_0b3814b1-677"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c40",
+   "surah": 4,
+   "words": 28,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_0b3814b1-677"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c41",
+   "surah": 4,
+   "words": 30,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_0b3814b1-677"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c42",
+   "surah": 4,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0b3814b1-677"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c43",
+   "surah": 4,
+   "words": 39,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0b3814b1-677"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c44",
+   "surah": 4,
+   "words": 19,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_0b3814b1-677"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c45",
+   "surah": 4,
+   "words": 33,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_9719aa9a-2a1"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c46",
+   "surah": 4,
+   "words": 38,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_9719aa9a-2a1"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c47",
+   "surah": 4,
+   "words": 35,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_9719aa9a-2a1"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c48",
+   "surah": 4,
+   "words": 21,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar",
+    "verify-meaning",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_9719aa9a-2a1"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "The shared root note contains a sentence that only fits another passage: «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے» (18:61/63). Here, and in every other ayah where this root occurs, that statement is wrong.",
+     "fix": "Drop that clause: «سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے۔ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "غ ل ب",
+     "problem": "The root note says «یہاں دونوں جگہ یہ عَلَى کے ساتھ آیا ہے». That only fits some earlier occurrences. In 4:74 يَغْلِبْ has no عَلَى, so the note contradicts this occurrence.",
+     "fix": "Make it general: «غَلَبَ کسی پر غالب آنا یا کسی معاملے پر قابو پا لینا ہے؛ یہ براہِ راست مفعول کے ساتھ بھی آتا ہے اور عَلَى کے ساتھ بھی، جس کے بعد وہ آتا ہے جس پر غلبہ ہو۔ اردو کے «غلبہ» اور «غالب» اسی مادے سے آئے ہیں۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ع ظ م",
+     "problem": "The root note says «یہاں انسان کی ہڈیوں کے لیے آئی ہے» and warns the learner against reading «بڑے». Both only fit an عِظَام passage. Next to عَظِيمًۭا in 4:74 they mislead.",
+     "fix": "Make it general: «عَظْم ہڈی ہے اور عِظَام اس کی جمع؛ عَظِيم صفتِ مشبہ ہے جس کا معنی بڑا اور عظمت والا ہے۔ عِظَام کو عَظِيم کی جمع سمجھ کر «بڑے» ترجمہ نہ کریں۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ش ر ي",
+     "problem": "The phrase «دونوں صیغوں میں» (in both forms) refers to a particular pair of occurrences (يَشْتَرُونَ / يَشْرُونَ) from another passage. Read here it is unclear, but it is not wrong for يَشْرُونَ.",
+     "fix": "Replace «اس کی آخری اصلی یاء دونوں صیغوں میں واوِ جماعت سے پہلے گر گئی ہے» with «اس کی آخری اصلی یاء ایسے صیغوں میں واوِ جماعت سے پہلے گر جاتی ہے»۔"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c49",
+   "surah": 4,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_9719aa9a-2a1"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c50",
+   "surah": 4,
+   "words": 20,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar"
+   ],
+   "runIds": [
+    "wf_9719aa9a-2a1"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ض ع ف",
+     "problem": "The noteUrdu is written for one particular occurrence of يُضَاعَفْ: it says the word is jussive as a substitute for the conditional answer, and it tells the reader «یہاں کمزوری کا ترجمہ نہ کریں». That contradicts 4:76:20, where ضَعِيفًا does mean 'weak'. Wherever this shared root entry appears, it gives occurrence-specific and here misleading guidance.",
+     "fix": "Make it general: «اس مادے میں ضَعُفَ کمزور ہونا، ضَعْف/ضُعْف کمزوری اور ضَعِيف کمزور (صفتِ مشبہ) ہے؛ جبکہ ضِعْف کسی چیز کا دگنا ہے اور بابِ مفاعلہ ضَاعَفَ (مجہول يُضَاعَفُ) بڑھا کر دگنا یا کئی گنا کرنا ہے۔ سیاق سے طے کریں کہ کمزوری مراد ہے یا دگنا ہونا۔»"
+    },
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "The noteUrdu ends with «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے». That only fits the fish passage in Surah 18 and is wrong when the entry is shown for سَبِيلِ ٱللَّهِ / سَبِيلِ ٱلطَّـٰغُوتِ in 4:76.",
+     "fix": "Remove the occurrence-specific clause: «سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے؛ فِي سَبِيلِ اللّٰه کا مطلب اللہ کی راہ میں، یعنی اس کی خاطر ہے۔ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ك ي د",
+     "problem": "The noteUrdu says «یہاں منکرین کی چال اور اس کے مقابلے میں اللہ کی تدبیر دونوں کے لیے آیا ہے». That is specific to another passage. In 4:76 the كَيْد is Satan's plot, and nothing is said about Allah's plan.",
+     "fix": "Make it general: «كَادَ يَكِيدُ اجوف یائی فعل ہے اور كَيْد اس کا مصدر، یعنی خفیہ تدبیر اور چال؛ سیاق کے مطابق یہ دشمن کی چال یا اللہ کی تدبیر کے لیے آتا ہے۔ اسے كَادَ يَكَادُ (قریب ہونا) سے الگ رکھیں جو مادہ ك و د سے ہے؛ دونوں کا ماضی ایک جیسا مگر مضارع مختلف ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ط غ ي",
+     "problem": "The noteUrdu is about تَطْغَوْا۟ in one passage («تَطْغَوْا۟ اسی فعل کا مضارع ہے… اس صیغے میں…»). It does not mention طَاغُوت, the derivative that occurs in 4:76, so here the entry reads as if it were about a different word.",
+     "fix": "Add a general line on طَاغُوت and treat تَطْغَوْا۟ as an example: «طَغَى يَطْغَى حد سے بڑھنا ہے اور طُغْيَان اس کا مصدر؛ طَاغُوت ہر سرکش، باطل معبود یا گمراہ کرنے والا ہے۔ تَطْغَوْا۟ جیسے صیغوں میں مادے کی آخری یاء واوِ جماعت سے پہلے حذف ہو جاتی ہے، اس لیے صرف ظاہری حروف سے مادہ مقرر نہ کریں۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c51",
+   "surah": 4,
+   "words": 48,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_9719aa9a-2a1"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c52",
+   "surah": 4,
+   "words": 36,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_9719aa9a-2a1"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c53",
+   "surah": 4,
+   "words": 30,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_9719aa9a-2a1"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c54",
+   "surah": 4,
+   "words": 37,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_9719aa9a-2a1"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c55",
+   "surah": 4,
+   "words": 30,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_9719aa9a-2a1"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c56",
+   "surah": 4,
+   "words": 22,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_9719aa9a-2a1"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c57",
+   "surah": 4,
+   "words": 37,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_51e6fa86-5c3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c58",
+   "surah": 4,
+   "words": 39,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_51e6fa86-5c3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c59",
+   "surah": 4,
+   "words": 28,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning"
+   ],
+   "runIds": [
+    "wf_51e6fa86-5c3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c60",
+   "surah": 4,
+   "words": 36,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_51e6fa86-5c3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c61",
+   "surah": 4,
+   "words": 32,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_51e6fa86-5c3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c62",
+   "surah": 4,
+   "words": 60,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_51e6fa86-5c3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c63",
+   "surah": 4,
+   "words": 16,
+   "status": "ai-reviewed-clean-confirmation",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1",
+    "confirm-1",
+    "fix-2",
+    "confirm-2"
+   ],
+   "runIds": [
+    "wf_51e6fa86-5c3"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ع ظ م",
+     "problem": "The shared root note says عِظَام «یہاں انسان کی ہڈیوں کے لیے آئی ہے», which only fits one particular ayah. In this chunk the note sits beside عَظِيمًۭا (4:93:16), where no word for bones appears, so «یہاں» points the learner to the wrong place.",
+     "fix": "Change «اور یہاں انسان کی ہڈیوں کے لیے آئی ہے» to «اور قرآن میں انسان کی ہڈیوں کے لیے آئی ہے» (or drop the clause) so the note reads correctly wherever the root appears."
+    }
+   ]
+  },
+  {
+   "chunk": "4-c64",
+   "surah": 4,
+   "words": 39,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_51e6fa86-5c3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c65",
+   "surah": 4,
+   "words": 33,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_51e6fa86-5c3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c66",
+   "surah": 4,
+   "words": 35,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_51e6fa86-5c3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c67",
+   "surah": 4,
+   "words": 22,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_51e6fa86-5c3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c68",
+   "surah": 4,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_51e6fa86-5c3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c69",
+   "surah": 4,
+   "words": 23,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_336b4d26-e68"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ض ر ب",
+     "problem": "noteUrdu says «ان سورتوں میں مارنے کا معنی نہیں آیا؛ ہر جگہ انہی دو استعمالات میں سے ایک ہے» (only giving a parable, or with عَلَى). Edition 2 now covers Surah 4, where this is false. At 4:101, ضَرَبْتُمْ فِى ٱلْأَرْضِ means travelling, a third usage that the root's own meaningUrdu and the ضَرَبَ lexeme note already list. Elsewhere in Surah 4 the verb also has the literal meaning of striking. The note will therefore contradict lessons for Surah 4.",
+     "fix": "Widen the note, e.g.: «ضَرَبَ کا معنی ساتھ آنے والے الفاظ سے متعین ہوتا ہے: مَثَل کے ساتھ مثال بیان کرنا، عَلَى کے ساتھ (پردہ) ڈالنا، اور فِي الْأَرْضِ کے ساتھ زمین میں سفر کرنا؛ بعض جگہ اپنے بنیادی معنی مارنا میں بھی آیا ہے، اس لیے ہر جگہ سیاق دیکھیں۔» Remove the claim that the meaning of striking never occurs."
+    },
+    {
+     "kind": "root",
+     "key": "ض ر ب",
+     "problem": "The noteUrdu says the meaning 'to hit' does not occur in «ان سورتوں» and that every occurrence is one of two usages (giving a parable, or with عَلَى). That is false for Surah 4. In 4:101 the verb means travelling (ضَرَبَ فِي الْأَرْضِ, which the root's own meaningUrdu and the lexeme note list), and Surah 4 also has the literal 'hit' sense (وَٱضْرِبُوهُنَّ, 4:34). The chunk author already logged this in auditNotes.",
+     "fix": "Replace the last sentence with a general one, e.g.: «ضَرَبَ کا معنی ساتھ آنے والے الفاظ سے متعین ہوتا ہے: مَثَل کے ساتھ مثال بیان کرنا، عَلَى کے ساتھ کسی چیز کو اوپر ڈال دینا، اور فِي الْأَرْضِ کے ساتھ زمین میں سفر کرنا؛ بعض جگہ یہ مارنے کے اصل معنی میں بھی آیا ہے، اس لیے ہر جگہ سیاق دیکھیں۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ص ل و",
+     "problem": "The noteUrdu says صَلَاة and صَلَوَات «ان سورتوں میں دونوں ضمیر کے ساتھ ... آئے ہیں». In 4:101 the word is ٱلصَّلَوٰةِ, with the article ال and no pronoun, so the claim does not hold once Surah 4 is in scope.",
+     "fix": "Drop the surah-specific claim, e.g.: «صَلَاة نماز ہے اور صَلَوَات اس کی جمع؛ لغوی درجہ بندی میں آخری اصلی حرف واو ہے، جو جمع صَلَوَات میں ظاہر ہو جاتی ہے؛ اسے ص ل ي (آگ میں داخل ہونا) سے نہ ملائیں۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c70",
+   "surah": 4,
+   "words": 62,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_336b4d26-e68"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c71",
+   "surah": 4,
+   "words": 20,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_336b4d26-e68"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c72",
+   "surah": 4,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_336b4d26-e68"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c73",
+   "surah": 4,
+   "words": 21,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_336b4d26-e68"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c74",
+   "surah": 4,
+   "words": 39,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_336b4d26-e68"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c75",
+   "surah": 4,
+   "words": 38,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_336b4d26-e68"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c76",
+   "surah": 4,
+   "words": 33,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning"
+   ],
+   "runIds": [
+    "wf_336b4d26-e68"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ف ض ل",
+     "problem": "noteUrdu says «عَلَى کے ساتھ یہاں دوسروں پر برتری اور سرداری حاصل کرنے کا مفہوم ہے، احسان کرنے کا نہیں». That «یہاں» refers to one occurrence (تَفَضَّلَ عَلَى in 23:24), but the note is a shared root entry. It is also shown for 4:113, where «فَضْلُ ٱللَّهِ عَلَيْكَ» with عَلَى does mean grace and favour. A learner could read it as contradicting this ayah.",
+     "fix": "فَضْل کا بنیادی مفہوم زائد ہونا اور برتری ہے، اور اسی سے حق سے زیادہ دینے، یعنی عطا اور احسان کا معنی بھی آتا ہے (جیسے فَضْلُ اللّٰهِ عَلَيْهِ)۔ تَفَضَّلَ بابِ تفعّل ہے؛ تَفَضَّلَ عَلَى کا ایک مفہوم دوسروں پر برتری اور سرداری حاصل کرنا ہے، اسے فضل و احسان کے مفہوم سے الگ پہچانیں۔"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c77",
+   "surah": 4,
+   "words": 26,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_336b4d26-e68"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ن ج و",
+     "problem": "The root entry covers only the salvation sense (نجات پانا/دینا, نَجَّى). It is now used for نَجْوَى (secret talk, 4:114:6), and that sense is missing, so a correct dictionaryUrdu cannot be consistent with the entry. The chunk author also flagged this in auditNotes.",
+     "fix": "Add to meaningUrdu: «سرگوشی کرنا، چپکے سے بات کرنا، خفیہ مشورہ (نَجْوَى)»; and add to noteUrdu that نَجْوَى (and the related تَنَاجَى، مُنَاجَاة) means whispered or private talk, kept apart from the نجات sense."
+    },
+    {
+     "kind": "root",
+     "key": "ص د ق",
+     "problem": "meaningUrdu lists only the truthfulness senses. noteUrdu says «اردو کے صدقہ … اسی مادے سے ہیں، مگر یہاں سچائی کا بنیادی معنی ہے», which wrongly tells learners at a صَدَقَة occurrence (4:114:10, charity) to read it as truthfulness.",
+     "fix": "Add «صدقہ، خیرات (صَدَقَة)» to meaningUrdu, and rephrase the note so that صَدَقَة is given as the charity sense of this root, without the blanket «یہاں سچائی کا بنیادی معنی ہے»."
+    },
+    {
+     "kind": "root",
+     "key": "ن ج و",
+     "problem": "The root entry gives only the salvation sense (نجات پانا، نجات دینا), and its note covers only نَجَّى. Surah 4 (4:114 نَجْوَىٰهُمْ) uses the secret-conversation sense: نَجْوَى, سرگوشی, خفیہ مشورہ. Learners who open the root card from this word get a meaning that does not fit.",
+     "fix": "Add the sense to meaningUrdu, e.g. «نجات پانا، بچ نکلنا، نجات دینا؛ سرگوشی کرنا، چپکے سے بات کرنا۔», and add one note sentence: «نَجْوَى الگ ہو کر چپکے سے کی جانے والی بات، یعنی سرگوشی اور خفیہ مشورہ ہے؛ یہ نجات والے معنی سے الگ استعمال ہے۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c78",
+   "surah": 4,
+   "words": 40,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_336b4d26-e68"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c79",
+   "surah": 4,
+   "words": 40,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_336b4d26-e68"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c80",
+   "surah": 4,
+   "words": 35,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_336b4d26-e68"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c81",
+   "surah": 4,
+   "words": 36,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3abdd2cd-c41"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c82",
+   "surah": 4,
+   "words": 29,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author-retry",
+    "verify-meaning"
+   ],
+   "runIds": [
+    "wf_3abdd2cd-c41"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "د ي ن",
+     "problem": "noteUrdu says «ان سورتوں میں صرف دِين آیا ہے». That was true for Surahs 18/23/32/36/55, but edition-2 now covers Surah 4, where دَيْن (debt) occurs, for example أَوْ دَيْنٍ in the inheritance ayahs 4:11–12. The note is now factually wrong for this edition.",
+     "fix": "دِين کے دو بڑے مفہوم ہیں: جزا و حساب، اور اللہ کی اطاعت و بندگی یا دین و مذہب؛ ترجمہ سیاق دیکھ کر کریں۔ دال پر زبر والا دَيْن (قرض) اسی مادے سے ہے مگر الگ لفظ ہے؛ دونوں کو حرکت سے پہچانیں۔"
+    },
+    {
+     "kind": "root",
+     "key": "م ل ل",
+     "problem": "noteUrdu says «زیرِ مطالعہ سورتوں میں یہ ایک مشرک قوم کے دین کے لیے آیا ہے». In 4:125 مِلَّةَ إِبْرَٰهِيمَ is the religion of Ibrahim, so a learner reading the root card on this word gets a contradictory statement.",
+     "fix": "مِلَّة دین، عقیدے اور عمل کا طریقہ ہے؛ قرآن میں یہ حق دین (جیسے مِلَّةَ إِبْرَاهِيمَ) کے لیے بھی آیا ہے اور باطل قوموں کے دین کے لیے بھی۔ اردو میں «ملت» قوم یا امت کے معنی میں بھی بولا جاتا ہے، مگر قرآن میں اس کا ترجمہ دین یا مذہب ہے۔"
+    },
+    {
+     "kind": "root",
+     "key": "خ ل ل",
+     "problem": "noteUrdu explains the single occurrence خِلَـٰلَهُمَا (18:33) and ends «مگر یہاں اس میں دوستی کا نہیں بلکہ جگہ کا مفہوم ہے». Shown on 4:125:17 خَلِيلًا, where the meaning is exactly close friendship, the word «یہاں» is misleading.",
+     "fix": "مادہ مضاعف ہے اور اس کے دو بڑے مفہوم ہیں: دو چیزوں کے بیچ کا خلا یا درمیان، جیسے خِلَال (بیچ میں)؛ اور گہری دوستی، جیسے خَلِيل (گہرا اور خاص دوست) اور خُلَّة (محبت کا سب سے اونچا درجہ)۔ سیاق سے طے کریں کہ کون سا مفہوم مراد ہے۔"
+    },
+    {
+     "kind": "root",
+     "key": "ح ن ف",
+     "problem": "noteUrdu says «حُنَفَآءَ اس کی جمعِ تکسیر ہے اور یہاں عبادت کرنے والوں کی حالت بیان کرتی ہے». The «یہاں» refers to one occurrence elsewhere. In 4:125 the singular حَنِيفًا describes Ibrahim, so the statement does not fit this word.",
+     "fix": "حَنِيف وہ ہے جو شرک سے کنارہ کش ہو کر صرف اللہ کی طرف یکسو ہو جائے؛ حُنَفَآءَ اس کی جمعِ تکسیر ہے۔ قرآن میں یہ لفظ اکثر حال ہو کر کسی شخص یا گروہ کی یکسوئی کی حالت بتاتا ہے۔"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c83",
+   "surah": 4,
+   "words": 40,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_3abdd2cd-c41"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c84",
+   "surah": 4,
+   "words": 29,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3abdd2cd-c41"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c85",
+   "surah": 4,
+   "words": 33,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3abdd2cd-c41"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c86",
+   "surah": 4,
+   "words": 32,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_3abdd2cd-c41"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c87",
+   "surah": 4,
+   "words": 36,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3abdd2cd-c41"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c88",
+   "surah": 4,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3abdd2cd-c41"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c89",
+   "surah": 4,
+   "words": 28,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar"
+   ],
+   "runIds": [
+    "wf_3abdd2cd-c41"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c90",
+   "surah": 4,
+   "words": 40,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3abdd2cd-c41"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c91",
+   "surah": 4,
+   "words": 33,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar"
+   ],
+   "runIds": [
+    "wf_3abdd2cd-c41"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c92",
+   "surah": 4,
+   "words": 36,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3abdd2cd-c41"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c93",
+   "surah": 4,
+   "words": 35,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3f756f87-3b5"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c94",
+   "surah": 4,
+   "words": 28,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3f756f87-3b5"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c95",
+   "surah": 4,
+   "words": 29,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3f756f87-3b5"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c96",
+   "surah": 4,
+   "words": 28,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_3f756f87-3b5"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c97",
+   "surah": 4,
+   "words": 30,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author-retry",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_3f756f87-3b5"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "noteUrdu contains a clause written for Surah 18 («یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے»). Wherever the shared entry is shown it is wrong, including 4:150, where سَبِيلًا is a way between belief and disbelief. The author already logged this in auditNotes.",
+     "fix": "سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے؛ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔"
+    }
+   ]
+  },
+  {
+   "chunk": "4-c98",
+   "surah": 4,
+   "words": 17,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3f756f87-3b5"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c99",
+   "surah": 4,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3f756f87-3b5"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c100",
+   "surah": 4,
+   "words": 19,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3f756f87-3b5"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c101",
+   "surah": 4,
+   "words": 28,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3f756f87-3b5"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c102",
+   "surah": 4,
+   "words": 34,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_3f756f87-3b5"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c103",
+   "surah": 4,
+   "words": 36,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3f756f87-3b5"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c104",
+   "surah": 4,
+   "words": 40,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_3f756f87-3b5"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c105",
+   "surah": 4,
+   "words": 39,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_641114db-b92"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c106",
+   "surah": 4,
+   "words": 39,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_641114db-b92"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c107",
+   "surah": 4,
+   "words": 23,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_641114db-b92"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c108",
+   "surah": 4,
+   "words": 23,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_641114db-b92"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c109",
+   "surah": 4,
+   "words": 53,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_641114db-b92"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c110",
+   "surah": 4,
+   "words": 18,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_641114db-b92"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c111",
+   "surah": 4,
+   "words": 37,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_641114db-b92"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c112",
+   "surah": 4,
+   "words": 15,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_641114db-b92"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "4-c113",
+   "surah": 4,
+   "words": 50,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_641114db-b92"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c01",
+   "surah": 7,
+   "words": 38,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_641114db-b92"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c02",
+   "surah": 7,
+   "words": 33,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_641114db-b92"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c03",
+   "surah": 7,
+   "words": 38,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_641114db-b92"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c04",
+   "surah": 7,
+   "words": 30,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0f53194f-f09"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c05",
+   "surah": 7,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0f53194f-f09"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c06",
+   "surah": 7,
+   "words": 28,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0f53194f-f09"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c07",
+   "surah": 7,
+   "words": 30,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0f53194f-f09"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c08",
+   "surah": 7,
+   "words": 40,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0f53194f-f09"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c09",
+   "surah": 7,
+   "words": 38,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0f53194f-f09"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c10",
+   "surah": 7,
+   "words": 30,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0f53194f-f09"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c11",
+   "surah": 7,
+   "words": 38,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0f53194f-f09"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c12",
+   "surah": 7,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0f53194f-f09"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c13",
+   "surah": 7,
+   "words": 26,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author-retry"
+   ],
+   "runIds": [
+    "wf_0f53194f-f09"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c14",
+   "surah": 7,
+   "words": 40,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_0f53194f-f09"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c15",
+   "surah": 7,
+   "words": 29,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author-retry"
+   ],
+   "runIds": [
+    "wf_0f53194f-f09"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c16",
+   "surah": 7,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_10513093-229"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c17",
+   "surah": 7,
+   "words": 40,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_10513093-229"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c18",
+   "surah": 7,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_10513093-229"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c19",
+   "surah": 7,
+   "words": 25,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_10513093-229"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c20",
+   "surah": 7,
+   "words": 36,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_10513093-229"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c21",
+   "surah": 7,
+   "words": 38,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_10513093-229"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c22",
+   "surah": 7,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_10513093-229"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c23",
+   "surah": 7,
+   "words": 29,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_10513093-229"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c24",
+   "surah": 7,
+   "words": 39,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_10513093-229"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c25",
+   "surah": 7,
+   "words": 10,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_10513093-229"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c26",
+   "surah": 7,
+   "words": 38,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_10513093-229"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c27",
+   "surah": 7,
+   "words": 32,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_10513093-229"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c28",
+   "surah": 7,
+   "words": 23,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_681a9c08-476"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c29",
+   "surah": 7,
+   "words": 29,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_681a9c08-476"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c30",
+   "surah": 7,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_681a9c08-476"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c31",
+   "surah": 7,
+   "words": 30,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_681a9c08-476"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c32",
+   "surah": 7,
+   "words": 27,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_681a9c08-476"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c33",
+   "surah": 7,
+   "words": 39,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_681a9c08-476"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c34",
+   "surah": 7,
+   "words": 34,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_681a9c08-476"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c35",
+   "surah": 7,
+   "words": 17,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_681a9c08-476"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c36",
+   "surah": 7,
+   "words": 38,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_681a9c08-476"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c37",
+   "surah": 7,
+   "words": 34,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_681a9c08-476"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c38",
+   "surah": 7,
+   "words": 25,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_681a9c08-476"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c39",
+   "surah": 7,
+   "words": 31,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning"
+   ],
+   "runIds": [
+    "wf_681a9c08-476"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ض ع ف",
+     "problem": "The noteUrdu was written for يُضَاعَفْ in the original five Surahs («ان سورتوں میں يُضَاعَفْ آیا ہے») and ends «اس لیے یہاں کمزوری کا ترجمہ نہ کریں». This card is now shown for 7:75:8 ٱسْتُضْعِفُوا۟ (Form X passive, 'were deemed weak'), where 'weakness' is exactly the right meaning. A learner would get contradictory advice, and the 'these Surahs' scope no longer holds once Surah 7 is included.",
+     "fix": "Rewrite the note so it covers the whole root and has no local instruction, for example: «اس مادے میں ضَعْف کمزوری اور ضِعْف دگنا ہے۔ بابِ استفعال کا اِسْتَضْعَفَ (کمزور سمجھ کر دبانا) اور اس کا مجہول اُسْتُضْعِفَ کمزوری کے معنی میں ہیں، جبکہ بابِ مفاعلہ کا ضَاعَفَ اور اس کا مجہول يُضَاعَفُ دگنا یا کئی گنا کرنے کے معنی میں؛ ہر جگہ سیاق سے معنی طے کریں۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "7-c40",
+   "surah": 7,
+   "words": 35,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author-retry"
+   ],
+   "runIds": [
+    "wf_8ae6d535-414"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c41",
+   "surah": 7,
+   "words": 37,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar"
+   ],
+   "runIds": [
+    "wf_8ae6d535-414"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c42",
+   "surah": 7,
+   "words": 15,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_8ae6d535-414"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "م ط ر",
+     "problem": "The shared root note ends with «یہاں بھی «بری بارش» کی ترکیب سے یہی عذاب مراد ہے». That points to the phrase مَطَرَ ٱلسَّوْءِ (25:40), which is not in 7:84. When the card is shown for 7:84:1 or 7:84:3, «یہاں» wrongly suggests the phrase «بری بارش» is in this ayah.",
+     "fix": "Make the note occurrence-neutral, e.g. end it with: «قرآن میں یہ فعل زیادہ تر عذاب کی بارش، جیسے پتھروں کی بارش، کے لیے آیا ہے۔» and drop the «یہاں بھی «بری بارش»…» clause."
+    },
+    {
+     "kind": "root",
+     "key": "ن ج و",
+     "problem": "The shared root note is tied to another occurrence (Form II نَجَّىٰنَا, where نَا is the object and the subject is a hidden هُوَ) and says «اس لیے یہاں الفِ مقصورہ لکھا گیا ہے». At 7:83:1 the verb is Form IV أَنجَيْنَـٰهُ, where نَا is the subject and هُ the object. Read on this card, the note contradicts the word's analysis.",
+     "fix": "Make the note general, e.g.: «نَجَا (ثلاثی) نجات پانا، أَنْجَى (بابِ افعال) اور نَجَّى (بابِ تفعیل) کسی کو نجات دینا ہے؛ مادہ ناقص واوی ہے، اور تین سے زیادہ حروف والے فعل میں آخری واو یاء/الفِ مقصورہ بن جاتی ہے، جبکہ مجرد نَجَا لمبے الف سے لکھا جاتا ہے۔» Move the occurrence-specific remark about نَجَّىٰنَا into that occurrence's own lesson."
+    }
+   ]
+  },
+  {
+   "chunk": "7-c43",
+   "surah": 7,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8ae6d535-414"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c44",
+   "surah": 7,
+   "words": 24,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8ae6d535-414"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c45",
+   "surah": 7,
+   "words": 40,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8ae6d535-414"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c46",
+   "surah": 7,
+   "words": 42,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8ae6d535-414"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c47",
+   "surah": 7,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8ae6d535-414"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c48",
+   "surah": 7,
+   "words": 28,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8ae6d535-414"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c49",
+   "surah": 7,
+   "words": 36,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8ae6d535-414"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c50",
+   "surah": 7,
+   "words": 28,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8ae6d535-414"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c51",
+   "surah": 7,
+   "words": 19,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_8ae6d535-414"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c52",
+   "surah": 7,
+   "words": 32,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_aa422a44-f4c"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c53",
+   "surah": 7,
+   "words": 24,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_aa422a44-f4c"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c54",
+   "surah": 7,
+   "words": 35,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_aa422a44-f4c"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c55",
+   "surah": 7,
+   "words": 33,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_aa422a44-f4c"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c56",
+   "surah": 7,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_aa422a44-f4c"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c57",
+   "surah": 7,
+   "words": 31,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_aa422a44-f4c"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c58",
+   "surah": 7,
+   "words": 32,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author-retry"
+   ],
+   "runIds": [
+    "wf_aa422a44-f4c"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c59",
+   "surah": 7,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_aa422a44-f4c"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c60",
+   "surah": 7,
+   "words": 38,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_aa422a44-f4c"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c61",
+   "surah": 7,
+   "words": 32,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_aa422a44-f4c"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c62",
+   "surah": 7,
+   "words": 25,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_aa422a44-f4c"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c63",
+   "surah": 7,
+   "words": 33,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_aa422a44-f4c"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c64",
+   "surah": 7,
+   "words": 40,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_56106858-190"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c65",
+   "surah": 7,
+   "words": 33,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_56106858-190"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c66",
+   "surah": 7,
+   "words": 27,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_56106858-190"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c67",
+   "surah": 7,
+   "words": 23,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar"
+   ],
+   "runIds": [
+    "wf_56106858-190"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ع ش ر",
+     "problem": "noteUrdu carries context from another ayah (55:33, مَعْشَر): «یہاں جنوں اور انسانوں کو ایک جماعت کہہ کر پکارا گیا ہے … مگر یہاں گنتی کا معنی نہیں». In 7:142 (بِعَشْرٍۢ) the word is exactly the number ten, so in this lesson the shared note contradicts the word.",
+     "fix": "Make the note context-free, e.g.: «عَشْر (دس، مؤنث معدود کے ساتھ) اور عَشَرَة (دس، مذکر معدود کے ساتھ) گنتی کے الفاظ ہیں؛ مَعْشَر ایسی جماعت ہے جس کے افراد کسی مشترک وصف میں ساتھ ہوں، اور عَشِيرَة کنبہ ہے۔ معنی سیاق سے طے کریں۔»"
+    },
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "noteUrdu carries context from Surah 18 (18:61/63): «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے». This is wrong when shown with 7:142 سَبِيلَ ٱلْمُفْسِدِينَ (the way of the corrupters).",
+     "fix": "Remove the context-specific clause: «سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے، روش یا ذریعے کے لیے بھی آتا ہے۔ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ع ش ر",
+     "problem": "noteUrdu is written for one ayah (55:33, مَعْشَر) and states «یہاں جنوں اور انسانوں کو ایک جماعت کہہ کر پکارا گیا ہے ... مگر یہاں گنتی کا معنی نہیں». In 7:142 the root's word is the numeral عَشْر, so the shared entry contradicts this occurrence.",
+     "fix": "Make the note general, for example: «عَشْر اور عَشَرَة دس کا عدد ہیں (تین سے دس تک عدد جنس میں معدود کے الٹ آتا ہے)؛ مَعْشَر ایسی جماعت ہے جس کے افراد کسی مشترک وصف میں ساتھ ہوں، اور عَشِيرَة کنبہ ہے۔ معنی سیاق سے طے کریں۔»"
+    },
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "noteUrdu says «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے», which applies only to 18:61 and 18:63. In 7:142 سَبِيل means the way or conduct of the corrupters.",
+     "fix": "Remove the occurrence-specific clause: «سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے، روش یا ذریعے کے لیے بھی آتا ہے۔ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "7-c68",
+   "surah": 7,
+   "words": 41,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_56106858-190"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c69",
+   "surah": 7,
+   "words": 34,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_56106858-190"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c70",
+   "surah": 7,
+   "words": 36,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_56106858-190"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c71",
+   "surah": 7,
+   "words": 35,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_56106858-190"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c72",
+   "surah": 7,
+   "words": 18,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_56106858-190"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c73",
+   "surah": 7,
+   "words": 39,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_56106858-190"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c74",
+   "surah": 7,
+   "words": 40,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_56106858-190"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c75",
+   "surah": 7,
+   "words": 15,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author-retry",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1",
+    "confirm-1",
+    "fix-2"
+   ],
+   "runIds": [
+    "wf_56106858-190"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "rule",
+     "key": "extra-particle",
+     "problem": "The rule's example list describes the strengthening lām (لام التقوية) only 'before the object of a participle'. The fronted-object rule likewise mentions only 'objects of participles fronted with a strengthening lām'. The lām also strengthens a finite verb weakened by its object being fronted, as in 7:154 لِرَبِّهِمْ يَرْهَبُونَ, where the ayah i‘rab says «اللام زائدة للتقوية حيث ضعف العامل بتأخره». The wording could lead authors or reviewers to think the rule does not apply there.",
+     "fix": "Extend the lām al-taqwiya clause in extra-particle to read: 'the strengthening lām (لام التقوية) before the object of a participle, or before an object fronted ahead of its verb (لِرَبِّهِمْ يَرْهَبُونَ 7:154)'. Make the matching addition to fronted-object."
+    }
+   ]
+  },
+  {
+   "chunk": "7-c76",
+   "surah": 7,
+   "words": 41,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4667cffe-a7b"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c77",
+   "surah": 7,
+   "words": 30,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4667cffe-a7b"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c78",
+   "surah": 7,
+   "words": 43,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4667cffe-a7b"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c79",
+   "surah": 7,
+   "words": 31,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_4667cffe-a7b"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c80",
+   "surah": 7,
+   "words": 8,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4667cffe-a7b"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c81",
+   "surah": 7,
+   "words": 43,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4667cffe-a7b"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c82",
+   "surah": 7,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4667cffe-a7b"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c83",
+   "surah": 7,
+   "words": 27,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4667cffe-a7b"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c84",
+   "surah": 7,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4667cffe-a7b"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c85",
+   "surah": 7,
+   "words": 30,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4667cffe-a7b"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c86",
+   "surah": 7,
+   "words": 14,
+   "status": "ai-reviewed-clean-confirmation",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1",
+    "confirm-1"
+   ],
+   "runIds": [
+    "wf_4667cffe-a7b"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c87",
+   "surah": 7,
+   "words": 40,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4667cffe-a7b"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c88",
+   "surah": 7,
+   "words": 29,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar"
+   ],
+   "runIds": [
+    "wf_b7a51b91-98e"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ظ ل ل",
+     "problem": "The root noteUrdu says «یہاں جنت والوں کے آرام دہ سایوں کا بیان ہے». That describes ظِلَال in another surah. In this chunk the root appears as ظُلَّة (7:171:6), the canopy-like mountain over Banu Isra'il, so «یہاں» is wrong here.",
+     "fix": "Replace the context-specific clause with a general one, for example: «ظِلّ سایہ ہے اور ظِلَال اس کی جمع؛ ظُلَّة اوپر سے سایہ ڈالنے والی چیز، جیسے سائبان یا بادل۔ اسے ض ل ل کے ضَلَال یعنی گمراہی سے نہ ملائیں؛ اردو تلفظ ملتا جلتا ہے مگر پہلا حرف ظاء ہے۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "7-c89",
+   "surah": 7,
+   "words": 26,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_b7a51b91-98e"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c90",
+   "surah": 7,
+   "words": 33,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_b7a51b91-98e"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c91",
+   "surah": 7,
+   "words": 30,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_b7a51b91-98e"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c92",
+   "surah": 7,
+   "words": 19,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar",
+    "verify-meaning"
+   ],
+   "runIds": [
+    "wf_b7a51b91-98e"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ه د ي",
+     "problem": "This shared root note describes one occurrence as if it applied everywhere. It says «مرفوع ٱلْمُهْتَدِ ... مگر یہاں رسمِ عثمانی اور روایتِ حفص میں یاء نہ لکھی جاتی ہے نہ پڑھی». That is true of 18:17 (and 17:97), but wrong for 7:178, where the word is written ٱلْمُهْتَدِى with the yāʾ and is read with it. Because «یہاں» means 'here', a learner viewing 7:178 sees a statement that contradicts the word on the screen. The author also flagged this in auditNotes.",
+     "fix": "Replace the clause with: «بعض مقامات پر (جیسے سورۂ کہف میں) مرفوع ٱلْمُهْتَدِ قاعدے کے مطابق یاء کے ساتھ ہوتا، مگر رسمِ عثمانی اور روایتِ حفص میں وہاں یاء نہ لکھی جاتی ہے نہ پڑھی؛ جبکہ سورۂ اعراف میں ٱلْمُهْتَدِى یاء کے ساتھ لکھا اور پڑھا جاتا ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ه د ي",
+     "problem": "The root noteUrdu says «مرفوع ٱلْمُهْتَدِ قاعدے سے یاء کے ساتھ ہوتا، مگر یہاں رسمِ عثمانی اور روایتِ حفص میں یاء نہ لکھی جاتی ہے نہ پڑھی». The note is shared, and «یہاں» presents this as a general fact. That is wrong for 7:178:5 ٱلْمُهْتَدِى, where the yā’ is written and read in Hafs. It is only true of other occurrences, such as 18:17 and 17:97.",
+     "fix": "Replace the sentence with: «مرفوع ٱلْمُهْتَدِي قاعدے سے یاء کے ساتھ ہے، جیسے سورۂ اعراف میں؛ مگر بعض مقامات (مثلاً سورۂ کہف و سورۂ اسراء) میں رسمِ عثمانی اور روایتِ حفص میں یاء نہ لکھی جاتی ہے نہ پڑھی»، or make the remark occurrence-specific in the 18:17 lesson instead of the shared root entry."
+    }
+   ]
+  },
+  {
+   "chunk": "7-c93",
+   "surah": 7,
+   "words": 30,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning"
+   ],
+   "runIds": [
+    "wf_b7a51b91-98e"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c94",
+   "surah": 7,
+   "words": 34,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_b7a51b91-98e"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c95",
+   "surah": 7,
+   "words": 33,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_b7a51b91-98e"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c96",
+   "surah": 7,
+   "words": 10,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_b7a51b91-98e"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c97",
+   "surah": 7,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_b7a51b91-98e"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c98",
+   "surah": 7,
+   "words": 28,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_b7a51b91-98e"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c99",
+   "surah": 7,
+   "words": 29,
+   "status": "partial-invalid-file",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_b7a51b91-98e"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c100",
+   "surah": 7,
+   "words": 38,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_910b0863-791"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c101",
+   "surah": 7,
+   "words": 40,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_910b0863-791"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c102",
+   "surah": 7,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_910b0863-791"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c103",
+   "surah": 7,
+   "words": 36,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_910b0863-791"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c104",
+   "surah": 7,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_910b0863-791"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "7-c105",
+   "surah": 7,
+   "words": 27,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_910b0863-791"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c01",
+   "surah": 25,
+   "words": 28,
+   "status": "ai-reviewed-clean-confirmation",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar",
+    "verify-meaning",
+    "fix-1",
+    "confirm-1",
+    "fix-2",
+    "confirm-2"
+   ],
+   "runIds": [
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c02",
+   "surah": 25,
+   "words": 38,
+   "status": "ai-reviewed-clean-confirmation",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1",
+    "confirm-1"
+   ],
+   "runIds": [
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ع و ن",
+     "problem": "The noteUrdu is written only for 18:95. It says «یہاں اس کا امر جمع مخاطب سے مدد مانگنے کے لیے آیا ہے» and «اصل واو اعلال کے بعد یاء کی صورت میں نظر آتی ہے». Both statements are wrong for the 25:4 occurrence وَأَعَانَهُۥ, which is a perfect, not a request for help, and whose hollow wāw shows as alif, not yāʾ. The shared root card will mislead learners on this word.",
+     "fix": "بابِ افعال کا أَعَانَ (مضارع يُعِينُ) کسی کی مدد کرنا ہے، اور جس کام میں مدد کی جائے اس پر عَلَى آتا ہے؛ اسی سے امر أَعِينُونِي (میری مدد کرو) بھی آیا ہے۔ اصل واو اعلال سے ماضی أَعَانَ میں الف اور مضارع يُعِينُ میں یاء بنتی ہے؛ اسے آنکھ اور چشمے کے معنی والے مادے ع ي ن کا لفظ نہ سمجھیں۔"
+    },
+    {
+     "kind": "root",
+     "key": "ز و ر",
+     "problem": "The noteUrdu covers only تَزَاوَرُ (the sun turning aside, 18:17) and its spelling. It says nothing about the noun زُور (falsehood, lie), which occurs at 25:4:16. A learner who opens the root card for وَزُورًۭا gets no help connecting the noun to the root, although meaningUrdu does list «جھوٹ».",
+     "fix": "Add a sentence such as: «اسی مادے سے زُور ہے، یعنی حق سے ہٹی ہوئی بات: جھوٹ اور باطل، جیسے ظُلْمًا وَزُورًا میں۔» (keep the existing تَزَاوَرُ explanation)."
+    }
+   ]
+  },
+  {
+   "chunk": "25-c03",
+   "surah": 25,
+   "words": 37,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1",
+    "confirm-1"
+   ],
+   "runIds": [
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c04",
+   "surah": 25,
+   "words": 26,
+   "status": "ai-reviewed-clean-confirmation",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar",
+    "verify-meaning",
+    "fix-1",
+    "confirm-1",
+    "fix-2",
+    "confirm-2"
+   ],
+   "runIds": [
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "The noteUrdu says «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے». That only fits the two Surah 18 occurrences (18:61, 18:63). The shared root entry is also shown for 25:9:9 سَبِيلًۭا, where it means a way to the truth, so the note is wrong there.",
+     "fix": "Remove the occurrence-specific clause, e.g.: «سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے؛ کہیں ظاہری راستہ مراد ہوتا ہے اور کہیں حق یا ہدایت تک پہنچنے کی راہ۔ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ك ن ز",
+     "problem": "The noteUrdu says that «ان سورتوں میں» كَنْز is used only for the two orphans' buried treasure under the wall (Surah 18). That is no longer true now that Surah 25 is in scope: in 25:8:4 كَنزٌ is the treasure the deniers demanded be sent down to the Prophet ﷺ.",
+     "fix": "Generalize the note, e.g.: «كَنْز جمع کر کے محفوظ یا زمین میں دبایا ہوا مال ہے؛ سورۂ کہف میں یہ دو یتیم لڑکوں کے دبے ہوئے خزانے کے لیے آیا ہے (كَنزَهُمَا میں تثنیہ کی ضمیر انہی کی طرف ہے)، اور سورۂ فرقان میں منکرین کے اس مطالبے میں کہ رسول پر خزانہ اتارا جائے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ل ق ي",
+     "problem": "The root's meaningUrdu and noteUrdu list only the meeting senses (لَقِيَ، لِقَاء، ٱلْتَقَى). They omit form IV أَلْقَى (to throw, cast), which this root carries in 25:8:2 يُلْقَىٰٓ and 25:13 أُلْقُوا۟ (according to the lexeme entry). The chunk's dictionaryUrdu has to supply this sense, and the root card does not support it.",
+     "fix": "Add to meaningUrdu «ڈالنا، پھینکنا (بابِ افعال)», and to noteUrdu: «بابِ افعال کا أَلْقَى (ڈالنا، پھینکنا) اور اس کا مجہول أُلْقِيَ / يُلْقَى (ڈالا جانا) بھی اسی مادے سے ہیں۔»"
+    },
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "The shared root note is tied to one passage: «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے» (Surah 18:61/63). The same root entry now appears with 25:9:9 «سَبِيلًۭا», where the meaning is a way to the truth. A learner reading the root card at 25:9 would be told the word refers to the fish's path.",
+     "fix": "Remove the passage-specific clause so the note stays general, for example: «سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے؛ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔» Mention the fish's path only in the 18:61/18:63 word notes."
+    },
+    {
+     "kind": "root",
+     "key": "ك ن ز",
+     "problem": "The root note says «ان سورتوں میں یہ دو یتیم لڑکوں کے اس خزانے کے لیے آیا ہے جو دیوار کے نیچے دبا تھا». This is no longer true now that 25:8:4 «كَنزٌ» (the disbelievers' demand for a treasure sent to the Messenger) uses this entry. At 25:8 the note points the learner to the wrong treasure.",
+     "fix": "Make the note general, for example: «كَنْز جمع کر کے محفوظ یا زمین میں دبایا ہوا مال ہے؛ سورۂ کہف میں یہ دو یتیم لڑکوں کے دبے ہوئے خزانے کے لیے آیا ہے (كَنزَهُمَا میں تثنیہ کی ضمیر انہی کی طرف ہے)، اور سورۂ فرقان میں منکرین کے اس مطالبے میں کہ رسول کو بغیر محنت کا خزانہ دیا جاتا۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "25-c05",
+   "surah": 25,
+   "words": 34,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1",
+    "confirm-1",
+    "fix-2"
+   ],
+   "runIds": [
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ق ص ر",
+     "problem": "The root entry's meaningUrdu (روکنا، محدود رکھنا، چھوٹا اور کم ہونا) and its note cover only قَاصِرَات and مَقْصُورَات. They omit the palace sense of قَصْر / قُصُور, which this chunk uses at 25:10:17. As a result, the lesson's dictionaryUrdu has no lexical sense in the root entry to match.",
+     "fix": "Add the palace sense to meaningUrdu, e.g. «روکنا، محدود رکھنا، چھوٹا اور کم ہونا؛ قَصْر: محل (جمع قُصُور)۔», and add a sentence to noteUrdu: «قَصْر بلند اور مضبوط عمارت یعنی محل ہے اور اس کی جمع قُصُور ہے۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "25-c06",
+   "surah": 25,
+   "words": 30,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1",
+    "confirm-1",
+    "fix-2"
+   ],
+   "runIds": [
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c07",
+   "surah": 25,
+   "words": 26,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar",
+    "verify-meaning",
+    "fix-1",
+    "confirm-1",
+    "fix-2"
+   ],
+   "runIds": [
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "The shared root note contains a sentence that only fits 18:61/18:63: «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے». Every other occurrence of سَبِيل, including ٱلسَّبِيلَ in 25:17 (the way of truth), inherits this sentence, and there it is wrong.",
+     "fix": "Remove that sentence. Generic note: «سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے؛ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "The shared root note includes a sentence that only fits Surah 18 (18:61/18:63): «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے». Shown under any other occurrence, such as ٱلسَّبِيلَ in 25:17:16, it is wrong. The author also flagged this in auditNotes.",
+     "fix": "سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے، جیسے اللہ کی راہ یا حق کا راستہ؛ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔"
+    },
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "The shared root note includes a sentence tied to one passage: «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے». It refers to 18:61/18:63 and is wrong wherever else the root is shown, for example ٱلسَّبِيلَ in 25:17 (the way of truth). The chunk's existing auditNote already records this.",
+     "fix": "Remove the passage-specific sentence. For example: «سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے، جیسے سَبِيلِ ٱللَّه (اللہ کی راہ)؛ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "25-c08",
+   "surah": 25,
+   "words": 36,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning"
+   ],
+   "runIds": [
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c09",
+   "surah": 25,
+   "words": 39,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning"
+   ],
+   "runIds": [
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c10",
+   "surah": 25,
+   "words": 33,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1",
+    "confirm-1"
+   ],
+   "runIds": [
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ش ق ق",
+     "problem": "The root note only describes اِنْشَقَّ (form VII). It says this is how the root appears for the sky splitting «ان سورتوں میں», and that the initial hamzat al-wasl and nūn are the form's added letters. In 25:25 the root appears as تَشَقَّقُ (form V, with one tāʾ dropped), so the root card shown for 25:25:2 describes added letters this word does not have and may confuse learners.",
+     "fix": "Extend the note to cover form V: e.g. add «تَشَقَّقَ يَتَشَقَّقُ (بابِ تَفَعُّل) بھی پھٹ جانا ہے؛ مضارع تَتَشَقَّقُ کی ایک تاء گر کر تَشَقَّقُ رہ جاتی ہے، اور اس باب میں دونوں قاف الگ رہتے ہیں۔» and make the form VII sentence apply only to اِنْشَقَّ."
+    }
+   ]
+  },
+  {
+   "chunk": "25-c11",
+   "surah": 25,
+   "words": 37,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar",
+    "verify-meaning",
+    "fix-1",
+    "confirm-1",
+    "fix-2"
+   ],
+   "runIds": [
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ع س ر",
+     "problem": "The shared noteUrdu has text tied to one occurrence (18:73): «یہاں درخواست ہے کہ معاملے میں مشقت اور سختی نہ ڈالی جائے». When the entry is shown for 25:26:9 (عَسِيرًۭا, a difficult Day), «یہاں» describes the wrong context.",
+     "fix": "Remove that clause, e.g.: «عُسْر سختی اور دشواری ہے اور يُسْر یعنی آسانی کا مقابل ہے؛ عَسِير اسی سے سخت اور دشوار کے معنی میں صفت ہے۔ اسے ع س ي کے عَسَى یعنی شاید سے نہ ملائیں؛ تیسرا حرف راء ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "س ب ل",
+     "problem": "The shared noteUrdu says «یہاں دونوں جگہ مچھلی کا سمندر میں اپنی راہ بنا لینا مراد ہے», which applies only to 18:61/18:63. Shown for 25:27:11 (a path with the Messenger), it gives a false contextual meaning.",
+     "fix": "Remove that sentence, e.g.: «سَبِيل فَعِيل کے وزن پر راستے کو کہتے ہیں اور مجازاً طریقے یا ذریعے کے لیے بھی آتا ہے؛ یہ لفظ مذکر اور مؤنث دونوں طرح استعمال ہوتا ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "خ ل ل",
+     "problem": "The shared noteUrdu is built around خِلَال in 18:33 and ends «مگر یہاں اس میں دوستی کا نہیں بلکہ جگہ کا مفہوم ہے». Shown for 25:28:6 خَلِيلًۭا, where the meaning is exactly close friendship, it contradicts the occurrence.",
+     "fix": "Make it neutral to occurrence, e.g.: «مادہ مضاعف ہے؛ خِلَال «بیچ، درمیان» کے معنی میں اسم ہے (اور لغت میں باہمی دوستی کے معنی میں بھی)، اور اسی سے خَلِيل یعنی گہرا اور مخلص دوست ہے؛ ہر جگہ سیاق سے طے کریں کہ جگہ کا مفہوم ہے یا دوستی کا۔»"
+    }
+   ]
+  },
+  {
+   "chunk": "25-c12",
+   "surah": 25,
+   "words": 35,
+   "status": "ai-reviewed-clean-confirmation",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1",
+    "confirm-1"
+   ],
+   "runIds": [
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c13",
+   "surah": 25,
+   "words": 37,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_1f2c9f0a-95b",
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c14",
+   "surah": 25,
+   "words": 28,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_1f2c9f0a-95b",
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c15",
+   "surah": 25,
+   "words": 27,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_1f2c9f0a-95b",
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c16",
+   "surah": 25,
+   "words": 26,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_1f2c9f0a-95b",
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c17",
+   "surah": 25,
+   "words": 31,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_1f2c9f0a-95b",
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c18",
+   "surah": 25,
+   "words": 39,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning"
+   ],
+   "runIds": [
+    "wf_1f2c9f0a-95b",
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c19",
+   "surah": 25,
+   "words": 38,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_1f2c9f0a-95b",
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c20",
+   "surah": 25,
+   "words": 31,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_1f2c9f0a-95b",
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c21",
+   "surah": 25,
+   "words": 27,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_1f2c9f0a-95b",
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c22",
+   "surah": 25,
+   "words": 30,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_1f2c9f0a-95b",
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c23",
+   "surah": 25,
+   "words": 36,
+   "status": "partial-invalid-file",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_1f2c9f0a-95b",
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c24",
+   "surah": 25,
+   "words": 31,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_1f2c9f0a-95b",
+    "wf_8d95adab-e03"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c25",
+   "surah": 25,
+   "words": 30,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_a1cad9ff-e0a"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c26",
+   "surah": 25,
+   "words": 34,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_a1cad9ff-e0a"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c27",
+   "surah": 25,
+   "words": 32,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_a1cad9ff-e0a"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "25-c28",
+   "surah": 25,
+   "words": 17,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar"
+   ],
+   "runIds": [
+    "wf_a1cad9ff-e0a"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "rule",
+     "key": "law-condition",
+     "problem": "law-condition says «Not for لَوْلَا (exhortation)», and exhortation covers only لَوْلَا of urging before a verb (QAC EXH, حرف تحضيض). That leaves no rule for لَوْلَا as حرف امتناع لوجود (QAC COND) followed by a mubtada with an elided khabar, as in 25:77:6 «لَوْلَا دُعَآؤُكُمْ». The current wording sends authors to exhortation, which is wrong for this لَوْلَا. Authors fall back on elision + condition-answer.",
+     "fix": "Add a rule (e.g. id \"lawla-imtina\") for لَوْلَا (QAC COND), i‘rab حرف امتناع لوجود: the following noun is a mubtada whose khabar (موجود) is elided, and the answer is either expressed (often with لَ) or elided. Then change law-condition's exclusion to: «Not for لَوْلَا: use lawla-imtina for حرف امتناع لوجود (QAC COND) or exhortation for حرف تحضيض (QAC EXH).»"
+    }
+   ]
+  },
+  {
+   "chunk": "29-c01",
+   "surah": 29,
+   "words": 32,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_910b0863-791"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c02",
+   "surah": 29,
+   "words": 34,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_910b0863-791"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c03",
+   "surah": 29,
+   "words": 28,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_910b0863-791"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c04",
+   "surah": 29,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_910b0863-791"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c05",
+   "surah": 29,
+   "words": 35,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_910b0863-791"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c06",
+   "surah": 29,
+   "words": 35,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_910b0863-791"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c07",
+   "surah": 29,
+   "words": 40,
+   "status": "partial-invalid-file",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8cd5e35f-a07"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c08",
+   "surah": 29,
+   "words": 32,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8cd5e35f-a07"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c09",
+   "surah": 29,
+   "words": 38,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8cd5e35f-a07"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c10",
+   "surah": 29,
+   "words": 20,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author-retry",
+    "verify-grammar",
+    "verify-meaning",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_8cd5e35f-a07"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "root",
+     "key": "ن و ر",
+     "problem": "noteUrdu says the definite اَلنَّار in these surahs refers to the fire of Hell. In 29:24:14 ٱلنَّارِ is definite but means the fire Ibrahim's people threw him into (the tafsir and the lesson both say so). The note contradicts this occurrence and could mislead learners.",
+     "fix": "Change the clause to: «معرفہ اَلنَّار عموماً جہنم کی آگ کے لیے آتا ہے، مگر کبھی سیاق میں مذکور کسی خاص آگ کے لیے بھی، جیسے وہ آگ جس سے ابراہیم علیہ السلام کو نجات ملی؛ نکرہ نَار کبھی جہنم اور کبھی عام آگ کے لیے ہے، اس لیے سیاق سے طے کریں۔» Also recheck the claim «ان سورتوں میں اس مادے سے صرف نَار آیا ہے» now that the set includes Surah 29."
+    },
+    {
+     "kind": "root",
+     "key": "ح ر ق",
+     "problem": "noteUrdu is tied to one other occurrence: it says «ٱلْحَرِيقِ یہاں مضاف الیہ...». In this chunk the root shows up as the Form II verb حَرِّقُوهُ, which the note never mentions, and «یہاں» points learners to a phrase that is not in the ayah.",
+     "fix": "Make the note general, for example: «حَرَّقَ (بابِ تفعیل) آگ میں خوب جلا ڈالنا ہے، جیسے امر حَرِّقُوهُ؛ حَرِيق فَعِيل کے وزن پر اسم ہے، یعنی جلانے والی آگ یا جلنا، اور عَذَاب کی طرف اضافت میں عذاب کی نوعیت بتاتا ہے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ن ج و",
+     "problem": "noteUrdu is tied to other occurrences: it says «اس لیے یہاں الفِ مقصورہ لکھا گیا ہے» and explains نَجَّىٰنَا. In this chunk the word is the Form IV أَنجَىٰهُ, so «یہاں» and the explanation of نَا do not fit this occurrence.",
+     "fix": "Remove «یہاں» and the specific نَجَّىٰنَا sentence, or make them general: «تین سے زیادہ حروف والے فعل (نَجَّى، أَنْجَى) میں آخری واو یاء بن جاتی ہے، اس لیے ماضی الفِ مقصورہ سے لکھا جاتا ہے، جبکہ مجرد نَجَا لمبے الف سے۔»"
+    },
+    {
+     "kind": "root",
+     "key": "ن و ر",
+     "problem": "The shared note says «ان سورتوں میں اس مادے سے صرف نَار آیا ہے… معرفہ اَلنَّار ان میں جہنم کی آگ کے لیے ہے». It is shown for 29:24:14 ٱلنَّارِ, where the definite word means the fire Ibrahim (AS) was thrown into, not Hell. The note's 'these surahs' scope no longer fits the edition, and its general rule contradicts this occurrence. The chunk's dictionaryUrdu correctly overrides it.",
+     "fix": "نَار یعنی آگ؛ معرفہ اَلنَّار قرآن میں اکثر جہنم کی آگ کے لیے آتا ہے، مگر کبھی کسی خاص آگ کے لیے بھی، جیسے وہ آگ جس میں ابراہیم علیہ السلام کو ڈالا گیا، اس لیے سیاق سے طے کریں۔ نَار مؤنث ہے اور اس کا الف درمیانی اصلی واو سے بدلا ہوا ہے؛ نُور (روشنی) اسی مادے کا الگ لفظ ہے۔"
+    },
+    {
+     "kind": "root",
+     "key": "ح ر ق",
+     "problem": "The note is about one occurrence only: «ٱلْحَرِيقِ یہاں مضاف الیہ بن کر عذاب کی نوعیت بتاتا ہے». When the entry is shown for 29:24:10 حَرِّقُوهُ, «یہاں» points to a word that is not in this ayah, and the note does not mention the Form II verb حَرَّقَ.",
+     "fix": "حَرَّقَ (بابِ تفعیل) آگ میں خوب جلا ڈالنا ہے، اور حَرِيق فَعِيل کے وزن پر اسم ہے، یعنی جلانے والی آگ یا جلنا؛ عَذَابُ ٱلْحَرِيقِ جیسی ترکیب میں یہ عذاب کی نوعیت بتاتا ہے۔"
+    },
+    {
+     "kind": "root",
+     "key": "ن ج و",
+     "problem": "The note covers only one occurrence (نَجَّىٰنَا, with its object نَا and hidden subject هُوَ) and names only Form II نَجَّى. When it is shown for 29:24:11 فَأَنجَىٰهُ (Form IV, explicit subject ٱللَّهُ, object هُ), the remarks about the hidden subject and «ہمیں» do not apply.",
+     "fix": "نَجَا (مجرد) نجات پانا ہے؛ أَنْجَى (بابِ افعال) اور نَجَّى (بابِ تفعیل) دونوں کسی کو مصیبت سے بچا کر نجات دینا ہیں۔ مادہ ناقص واوی ہے، مگر تین سے زیادہ حروف والے فعل میں آخری واو یاء بن جاتی ہے، اس لیے أَنْجَى اور نَجَّى الفِ مقصورہ سے لکھے جاتے ہیں، جبکہ مجرد نَجَا لمبے الف سے لکھا جاتا ہے۔"
+    }
+   ]
+  },
+  {
+   "chunk": "29-c11",
+   "surah": 29,
+   "words": 39,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8cd5e35f-a07"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c12",
+   "surah": 29,
+   "words": 32,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8cd5e35f-a07"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c13",
+   "surah": 29,
+   "words": 29,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8cd5e35f-a07"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c14",
+   "surah": 29,
+   "words": 31,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning"
+   ],
+   "runIds": [
+    "wf_8cd5e35f-a07"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c15",
+   "surah": 29,
+   "words": 35,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8cd5e35f-a07"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c16",
+   "surah": 29,
+   "words": 30,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_8cd5e35f-a07"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c17",
+   "surah": 29,
+   "words": 29,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author-retry"
+   ],
+   "runIds": [
+    "wf_8cd5e35f-a07"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c18",
+   "surah": 29,
+   "words": 28,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar"
+   ],
+   "runIds": [
+    "wf_8cd5e35f-a07"
+   ],
+   "libraryIssues": [
+    {
+     "kind": "rule",
+     "key": "purpose-lam / subjunctive",
+     "problem": "No rule in libs/rules.json covers لامِ جحود (the lām after a negated كَانَ: مَا كَانَ / لَمْ يَكُنْ + لِـ + subjunctive, with an implied أَنْ). QAC tags this lām PRP, so a literal reading of purpose-lam ('QAC PRP') would apply a purpose card that teaches the wrong function. The subjunctive rule's governor list (أَنْ، لَنْ، كَيْ، إِذَنْ، lām of purpose, حَتَّىٰ، فَ/أَوْ) also leaves it out and says to pair subjunctive with a governing-particle rule. This leaves 29:40:24 لِيَظْلِمَهُمْ, where the ayah i‘rab says اللام للجحود, with no correct governor rule.",
+     "fix": "Add a rule such as 'lam-juhud' (لامِ جحود): 'Tag an imperfect verb carrying the lām that follows a negated كَانَ (مَا كَانَ، لَمْ يَكُنْ) and that the i‘rab calls لام الجحود. The verb is subjunctive by an implied أَنْ, the interpreted masdar is genitive and attaches to the elided khabar of كان, and the construction strengthens the negation. QAC tags this lām PRP. Also tag subjunctive.' Add to purpose-lam: 'Not for لام الجحود after a negated كان (lam-juhud), even when QAC tags it PRP.' Add 'lām al-juḥūd (implied أَنْ)' to the subjunctive rule's governor list and pairing list."
+    }
+   ]
+  },
+  {
+   "chunk": "29-c19",
+   "surah": 29,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_f9db6f3b-b99"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c20",
+   "surah": 29,
+   "words": 39,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_f9db6f3b-b99"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c21",
+   "surah": 29,
+   "words": 25,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_f9db6f3b-b99"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c22",
+   "surah": 29,
+   "words": 32,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_f9db6f3b-b99"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c23",
+   "surah": 29,
+   "words": 30,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_f9db6f3b-b99"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c24",
+   "surah": 29,
+   "words": 34,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_f9db6f3b-b99"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c25",
+   "surah": 29,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_f9db6f3b-b99"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c26",
+   "surah": 29,
+   "words": 32,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_f9db6f3b-b99"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c27",
+   "surah": 29,
+   "words": 30,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_f9db6f3b-b99"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c28",
+   "surah": 29,
+   "words": 36,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_f9db6f3b-b99"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c29",
+   "surah": 29,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_f9db6f3b-b99"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "29-c30",
+   "surah": 29,
+   "words": 47,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_f9db6f3b-b99"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "85-c01",
+   "surah": 85,
+   "words": 32,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_a1cad9ff-e0a"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "85-c02",
+   "surah": 85,
+   "words": 38,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_a1cad9ff-e0a"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "85-c03",
+   "surah": 85,
+   "words": 39,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_a1cad9ff-e0a"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "86-c01",
+   "surah": 86,
+   "words": 31,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_a1cad9ff-e0a"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "86-c02",
+   "surah": 86,
+   "words": 30,
+   "status": "partial-invalid-file",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_a1cad9ff-e0a"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "87-c01",
+   "surah": 87,
+   "words": 30,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_a1cad9ff-e0a"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "87-c02",
+   "surah": 87,
+   "words": 42,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_a1cad9ff-e0a"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "88-c01",
+   "surah": 88,
+   "words": 31,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_a1cad9ff-e0a"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "88-c02",
+   "surah": 88,
+   "words": 31,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author-retry"
+   ],
+   "runIds": [
+    "wf_4101cbb5-0a9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "88-c03",
+   "surah": 88,
+   "words": 30,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_4101cbb5-0a9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "89-c01",
+   "surah": 89,
+   "words": 34,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4101cbb5-0a9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "89-c02",
+   "surah": 89,
+   "words": 39,
+   "status": "partial-invalid-file",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4101cbb5-0a9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "89-c03",
+   "surah": 89,
+   "words": 38,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_4101cbb5-0a9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "89-c04",
+   "surah": 89,
+   "words": 26,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning"
+   ],
+   "runIds": [
+    "wf_4101cbb5-0a9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "90-c01",
+   "surah": 90,
+   "words": 31,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_4101cbb5-0a9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "90-c02",
+   "surah": 90,
+   "words": 30,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_4101cbb5-0a9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "90-c03",
+   "surah": 90,
+   "words": 21,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_4101cbb5-0a9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "91-c01",
+   "surah": 91,
+   "words": 31,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_4101cbb5-0a9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "91-c02",
+   "surah": 91,
+   "words": 23,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4101cbb5-0a9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "92-c01",
+   "surah": 92,
+   "words": 35,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_4101cbb5-0a9"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "92-c02",
+   "surah": 92,
+   "words": 36,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_e1f5ef8c-d11"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "93-c01",
+   "surah": 93,
+   "words": 40,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_e1f5ef8c-d11"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "94-c01",
+   "surah": 94,
+   "words": 27,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_e1f5ef8c-d11"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "95-c01",
+   "surah": 95,
+   "words": 34,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_e1f5ef8c-d11"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "96-c01",
+   "surah": 96,
+   "words": 31,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_e1f5ef8c-d11"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "96-c02",
+   "surah": 96,
+   "words": 41,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_e1f5ef8c-d11"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "97-c01",
+   "surah": 97,
+   "words": 30,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_e1f5ef8c-d11"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "98-c01",
+   "surah": 98,
+   "words": 32,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_e1f5ef8c-d11"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "98-c02",
+   "surah": 98,
+   "words": 32,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-meaning",
+    "verify-grammar",
+    "fix-1"
+   ],
+   "runIds": [
+    "wf_e1f5ef8c-d11"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "98-c03",
+   "surah": 98,
+   "words": 30,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar"
+   ],
+   "runIds": [
+    "wf_e1f5ef8c-d11"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "99-c01",
+   "surah": 99,
+   "words": 36,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [
+    "author"
+   ],
+   "runIds": [
+    "wf_e1f5ef8c-d11"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "100-c01",
+   "surah": 100,
+   "words": 40,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_e1f5ef8c-d11"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "101-c01",
+   "surah": 101,
+   "words": 36,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_6697da1a-8f3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "102-c01",
+   "surah": 102,
+   "words": 28,
+   "status": "authored-not-reviewed",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_6697da1a-8f3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "103-c01",
+   "surah": 103,
+   "words": 14,
+   "status": "authored-review-incomplete",
+   "stagesCompleted": [
+    "author",
+    "verify-grammar",
+    "verify-meaning",
+    "fix-1",
+    "confirm-1",
+    "fix-2"
+   ],
+   "runIds": [
+    "wf_6697da1a-8f3"
+   ],
+   "libraryIssues": []
+  },
+  {
+   "chunk": "104-c01",
+   "surah": 104,
+   "words": 33,
+   "status": "not-started",
+   "stagesCompleted": [],
+   "runIds": [
+    "wf_6697da1a-8f3"
+   ],
+   "libraryIssues": []
+  }
+ ]
+}

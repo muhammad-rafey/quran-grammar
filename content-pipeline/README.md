@@ -1,5 +1,13 @@
 # Five-Surah expansion — plan, progress and handoff
 
+> **Second expansion in progress (paused 2026-11-13):** Surahs 4, 7, 25, 29 and 85–104 (807 ayahs,
+> 10,098 words) live in their own work directory, [`edition-2/`](edition-2/README.md). Its libraries
+> and tag corrections are complete; 6 of 312 chunks are fully AI-reviewed and 121 more are authored.
+> Nothing from it is published. Read `edition-2/README.md` before resuming. Edits to shared scripts
+> keep this folder's five-Surah defaults; `workflows/chunks.js` stays byte-identical (pinned by the
+> review manifest). Editing `scripts/assemble.py` changes this folder's release-gate digests, as for
+> any input change.
+
 **Publication update (2026-11-07): the owner explicitly authorized publication while
 scholarly review remains pending.** The five chapters are now integrated as visibly
 labeled educational drafts. `draft-publication.json` records the authorization and

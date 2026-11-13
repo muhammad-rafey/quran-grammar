@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": ">arokasa|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَرْكَسَ",
+   "present": "يُرْكِسُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے: الٹا پھیر دینا، اوندھا کر کے پہلی حالت کی طرف لوٹا دینا؛ مجرد رَكَسَ بھی تقریباً اسی معنی میں آتا ہے۔ ماضی کا ہمزہ بابِ افعال کا زائد ہمزۂ قطع ہے جو مضارع يُرْكِسُ میں گر جاتا ہے اور علامتِ مضارع پر ضمہ آتا ہے۔",
+   "evidenceEnglish": "QAC tags 4:88:7 أَرْكَسَهُم as PERF (IV) active, LEM >arokasa, root rks, with an object pronoun. Only perfects occur in the Quran (active 4:88, passive 4:91); the imperfect يُرْكِسُ is the regular af'ala/yuf'ilu form. Lisan al-Arab and Lane s.v. ركس: رَكَسَهُ وأَرْكَسَهُ 'he turned it upside down, returned it to its former state'."
+  },
+  {
+   "key": ">arokasa|IV|PASS",
+   "baabUrdu": "بابِ اِفْعَال — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)، مجہول",
+   "past": "أُرْكِسَ",
+   "present": "يُرْكَسُ",
+   "pattern": "أُفْعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل أَرْكَسَ (الٹا پھیر دینا) کا مجہول ہے: اوندھا کر کے لوٹا دیا جانا؛ جسے لوٹایا جائے وہ نائبِ فاعل بنتا ہے۔ ماضی مجہول میں ہمزہ پر ضمہ اور راء کے بعد کاف پر کسرہ ہے، اور مضارع مجہول يُرْكَسُ میں کاف کا فتحہ اسے معروف يُرْكِسُ سے جدا کرتا ہے۔",
+   "evidenceEnglish": "QAC tags 4:91:13 أُرْكِسُوا۟ as PERF PASS (IV), 3MP, LEM >arokasa; the i'rab reads فعل ماض مبني للمجهول with the waw as نائب فاعل. Damma on the hamza and kasra on the second radical give the passive perfect أُفْعِلَ; the passive imperfect يُرْكَسُ is regular (not attested in the Quran). Lexica: Lisan al-Arab, Lane s.v. ركس."
+  },
+  {
+   "key": "ramaY`|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "رَمَى",
+   "present": "يَرْمِي",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "ناقص یائی فعل ہے (مادہ ر م ي)؛ آخری یاء ماضی رَمَى میں الفِ مقصورہ لکھی جاتی ہے، رَمَيْتَ میں ظاہر ہوتی ہے؛ مضارع يَرْمِي میں رفع میں ساکن، نصب میں مفتوح (لَنْ يَرْمِيَ) اور جزم میں حذف (لَمْ يَرْمِ)۔ متعدی ہے: پھینکنا، تیر مارنا، تہمت لگانا؛ نشانہ یا متہم مفعول ہو تو پھینکی چیز یا الزام بِ سے آتا ہے (رَمَاهُ بِكَذَا)۔",
+   "evidenceEnglish": "QAC 4:112:7 يَرْمِ is IMPF 3MS jussive (final yaa elided; i'rab فعل مضارع مجزوم). Quran-wide: perfects رَمَيْتَ / رَمَىٰ (8:17); imperfect تَرْمِيهِم (105:4) shows kasra on the middle radical, while يَرْمُونَ (24:4, 24:6, 24:23) has damma on the mim only because the final yaa drops before the plural waw (underlying yarmiyuna): a-i, daraba class. Lane and Lisan al-Arab s.v. رمي: رَمَى يَرْمِي رَمْيًا."
+  },
+  {
+   "key": "{sotarohabu|X|ACT",
+   "baabUrdu": "بابِ اِسْتِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — دہم (X)",
+   "past": "اِسْتَرْهَبَ",
+   "present": "يَسْتَرْهِبُ",
+   "pattern": "اِسْتَفْعَلَ — يَسْتَفْعِلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے: کسی کو سخت خوف زدہ کرنا، اس کے دل میں ڈر بٹھانا؛ اس فعل میں بابِ استفعال مبالغے کا مفہوم دیتا ہے، گویا پوری کوشش سے خوف پیدا کیا جائے۔ ماضی کا ہمزہ ہمزۂ وصل ہے جو ملا کر پڑھنے میں نہیں بولا جاتا؛ یہ فعل مجرد رَهِبَ (خود ڈرنا) سے الگ ہے۔",
+   "evidenceEnglish": "QAC tags 7:116:8 وَٱسْتَرْهَبُوهُمْ as PERF (X) active, 3MP with object pronoun, root rhb; QAC's identifier ٱسْتَرْهَبُ is a truncated stem, the citation form is اِسْتَرْهَبَ. Only occurrence in the Quran; imperfect يَسْتَرْهِبُ is the regular istaf'ala/yastaf'ilu form. Lane and Lisan al-Arab s.v. رهب: اسْتَرْهَبَهُ = أَرْهَبَهُ 'he frightened him' (tafsir: 'they caused them great fear')."
+  },
+  {
+   "key": "yarohabu|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "رَهِبَ",
+   "present": "يَرْهَبُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم فعل ہے؛ ماضی میں عینِ کلمہ پر زیر اور مضارع میں زبر ہے، اسی لیے بابِ سَمِعَ ہے اور امر اِرْهَبْ آتا ہے۔ معنی ڈرنا، ہیبت رکھنا ہے؛ جس سے ڈرا جائے وہ مفعول بنتا ہے، اور مفعول فعل سے پہلے آئے تو اس پر لِ بھی آ سکتا ہے (لامِ تقویت)؛ بابِ افعال أَرْهَبَ (ڈرانا) الگ ہے۔",
+   "evidenceEnglish": "QAC 7:154:15 يَرْهَبُونَ is IMPF 3MP form I (QAC identifier is the imperfect يَرْهَبُ); Quran-wide imperative فَٱرْهَبُونِ (2:40, 16:51) also has fatha on the second radical. Perfect رَهِبَ with kasra per Lane, Lisan al-Arab and al-Mu'jam al-Wasit (رَهِبَ يَرْهَبُ رَهْبَةً ورَهَبًا): i-a, sami'a class."
+  },
+  {
+   "key": "{rotaAba|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِرْتَابَ",
+   "present": "يَرْتَابُ",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "اجوف یائی فعل ہے (مادہ ر ي ب)؛ اصل اِرْتَيَبَ — يَرْتَيِبُ میں درمیانی یاء ماضی اور مضارع دونوں میں الف بن جاتی ہے (اِرْتَابَ، يَرْتَابُ)، اور جب لامِ کلمہ ساکن ہو تو یہ الف گر جاتا ہے (اِرْتَبْتُمْ، لَمْ يَرْتَبْ)۔ لازم ہے: شک میں پڑنا؛ ماضی کا ہمزہ ہمزۂ وصل ہے اور تاء بابِ افتعال کی زائد تاء ہے۔",
+   "evidenceEnglish": "QAC tags 29:48:12 لَّٱرْتَابَ as PERF (VIII) 3MS, root ryb. Quran-wide: perfects وَٱرْتَابَتْ (9:45), ٱرْتَبْتُمْ (5:106, 65:4); imperfects يَرْتَابَ (74:31), لَمْ يَرْتَابُوا۟ (49:15) show the alif of the hollow ifta'ala/yafta'ilu (underlying irtayaba/yartayibu). Lane and Lisan al-Arab s.v. ريب: ارْتَابَ 'he doubted'."
+  },
+  {
+   "key": "zay~ana|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "زَيَّنَ",
+   "present": "يُزَيِّنُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "مادہ ز ي ن اجوف یائی ہے، مگر بابِ تفعیل میں درمیانی یاء مشدد ہو کر صحیح حرف کی طرح رہتی ہے اور نہیں بدلتی (زَيَّنَ، يُزَيِّنُ)۔ متعدی ہے: آراستہ کرنا، خوشنما بنا کر دکھانا؛ جس کے لیے خوشنما بنایا جائے وہ لِ کے ساتھ آتا ہے، اور مجہول زُيِّنَ قرآن میں کثرت سے آیا ہے۔",
+   "evidenceEnglish": "QAC tags 29:38:8 وَزَيَّنَ as PERF (II) 3MS, root zyn. Quran-wide: perfect زَيَّنَّا (6:108, 15:16), imperfect لَأُزَيِّنَنَّ (15:39), passive زُيِّنَ (2:212 etc.): fa''ala/yufa''ilu with geminated yaa. Lane and Lisan al-Arab s.v. زين: زَيَّنَهُ تَزْيِينًا 'he adorned it, made it seem fair'."
+  },
+  {
+   "key": "yasobitu|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَبَتَ",
+   "present": "يَسْبِتُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے: سبت (ہفتے کا دن) منانا، اس دن کام سے رک کر آرام کرنا۔ قرآنی قراءت يَسْبِتُونَ میں عینِ کلمہ پر زیر ہے، اس لیے بابِ ضَرَبَ درج ہے؛ لغت میں مضارع يَسْبُتُ (بابِ نَصَرَ) بھی منقول ہے۔",
+   "evidenceEnglish": "QAC 7:163:20 يَسْبِتُونَ is IMPF 3MP form I (QAC identifier is the imperfect يَسْبِتُ); the only Quranic verb occurrence, with kasra on the second radical, so daraba (a-i) is adopted. Lisan al-Arab and Lane s.v. سبت give سَبَتَ يَسْبِتُ ويَسْبُتُ 'to keep the Sabbath / rest'; the nasara alternative is recorded but not the Quranic reading."
+  },
+  {
+   "key": "saHaru|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَحَرَ",
+   "present": "يَسْحَرُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے: جادو کرنا، سحر کر کے حقیقت سے پھیر دینا؛ ماضی اور مضارع دونوں میں عینِ کلمہ (ح) پر زبر ہے، اس لیے بابِ فَتَحَ ہے۔ اس باب میں عموماً عین یا لامِ کلمہ حرفِ حلق ہوتا ہے، مگر ہر حلقی فعل اس باب کا نہیں (جیسے دَخَلَ يَدْخُلُ)۔ اسی مادے کا اسم سَحَر (رات کا آخری پہر) فعل نہیں۔",
+   "evidenceEnglish": "QAC tags 7:116:5 سَحَرُوٓا۟ PERF 3MP and 7:132:7 لِّتَسْحَرَنَا IMPF 2MS subjunctive, form I, root sHr (QAC identifier saHaru is an inflected stem). Perfect fatha and attested imperfect fatha (تَسْحَرَ): a-a, fataha class with guttural second radical. Lane and Lisan al-Arab s.v. سحر: سَحَرَهُ يَسْحَرُهُ سِحْرًا."
+  },
+  {
+   "key": "sax~ara|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "سَخَّرَ",
+   "present": "يُسَخِّرُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے: کسی چیز کو تابع اور کام میں لگا دینا، مسخر کرنا؛ جس کے فائدے کے لیے ہو وہ لِ کے ساتھ آتا ہے۔ اسے مجرد سَخِرَ مِنْ (مذاق اڑانا، بابِ سَمِعَ) سے الگ رکھیں، جو اسی مادے کا مختلف معنی ہے۔",
+   "evidenceEnglish": "QAC tags 29:61:7 وَسَخَّرَ as PERF (II) 3MS, root sxr. Quran-wide perfects سَخَّرَ (13:2, 14:32), سَخَّرْنَا (21:79), سَخَّرَهَا (69:7); fa''ala/yufa''ilu, imperfect يُسَخِّرُ regular (not attested). Lane and Lisan al-Arab s.v. سخر: سَخَّرَهُ تَسْخِيرًا 'he subjected it'; سَخِرَ مِنْهُ يَسْخَرُ 'he mocked him' is the distinct Form I."
+  }
+ ]
+}

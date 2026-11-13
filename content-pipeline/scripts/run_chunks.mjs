@@ -131,7 +131,7 @@ function parseOptions(argv) {
   if (!inside(join(options.work, 'runs'), options.runDir)) throw new Error('--run-dir must be inside content-pipeline/runs (private, ignored logs)');
   if (options.agentBin.includes(sep)) options.agentBin = resolve(options.agentBin);
   if (options.chunks.length === 0 && !options.help) throw new Error('Specify --chunks with comma-separated chunk IDs');
-  if (new Set(options.chunks).size !== options.chunks.length || options.chunks.some((chunk) => !/^(18|23|32|36|55)-c\d{2}$/.test(chunk))) throw new Error('Invalid or duplicate chunk IDs');
+  if (new Set(options.chunks).size !== options.chunks.length || options.chunks.some((chunk) => !/^\d{1,3}-c\d{2,3}$/.test(chunk))) throw new Error('Invalid or duplicate chunk IDs');
   return options;
 }
 

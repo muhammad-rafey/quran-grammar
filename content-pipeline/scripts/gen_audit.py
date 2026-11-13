@@ -11,10 +11,18 @@ import tempfile
 from collections import Counter, defaultdict
 from pathlib import Path
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import edition  # noqa: E402
+
 WORK, REPO = sys.argv[1], sys.argv[2]
 RESULTS = sys.argv[3] if len(sys.argv) > 3 else None
-NAMES = {18: 'Al-Kahf', 23: "Al-Mu'minun", 32: 'As-Sajdah', 36: 'Ya-Sin', 55: 'Ar-Rahman'}
-SLUGS = {18: 'al-kahf', 23: 'al-muminun', 32: 'as-sajdah', 36: 'ya-sin', 55: 'ar-rahman'}
+NAMES = {s['number']: s['nameEnglish'] for s in edition.load(WORK)}
+SLUGS = {s['number']: s['slug'] for s in edition.load(WORK)}
+RETRIEVED = '2026-11-06'
+_vfile = os.path.join(WORK, 'sources', 'qurancom', f'verses-{min(NAMES)}.json')
+if os.path.exists(_vfile):
+    RETRIEVED = json.load(open(_vfile)).get('retrievedAt', RETRIEVED)
+EDITION_LABEL = 'the five new lessons' if edition.is_default(WORK) else 'this expansion edition'
 QAC_SHA = '910b721a8f04f4334ac5d4c62b19e858f5d720c525bb975f2e750ea2c6bb532d'
 
 meta = os.path.join(WORK, 'meta')
@@ -123,7 +131,7 @@ def load_results(path):
         blocked('result snapshot must be a list or an object containing a results list')
     expected = {spec['chunk']: spec for spec in plan}
     if len(expected) != len(plan) or {spec['surah'] for spec in plan} != set(NAMES):
-        blocked('plan must contain unique chunks for all five Surahs')
+        blocked('plan must contain unique chunks for every Surah of the edition')
     found = {}
     for row in supplied:
         if not isinstance(row, dict):
@@ -221,7 +229,7 @@ for surah, name in NAMES.items():
     out(f'# Surah {surah} — {name}: source audit')
     out('')
     out(
-        f"Researched 2026-11-06. This lesson contains **{len(surah_ayahs)} ayahs and {len(surah_words):,} word occurrences**. "
+        f"Researched {RETRIEVED}. This lesson contains **{len(surah_ayahs)} ayahs and {len(surah_words):,} word occurrences**. "
         'All Urdu word glosses, translations, grammatical explanations, dictionary summaries, verb-paradigm notes and concise tafsir notes are original AI-assisted editorial drafts. '
         'They are **not scholar-reviewed** and are not attributed to a named Urdu translator. No third-party Urdu book, dictionary, translation or tafsir was imported.'
     )
@@ -230,7 +238,7 @@ for surah, name in NAMES.items():
     out('')
     out(
         f'`inventory-{surah}.json` records the Quran.com Content API v4 `text_uthmani` word strings '
-        f'([source](https://api.quran.com/api/v4/verses/by_chapter/{surah}?words=true&word_fields=text_uthmani&per_page=50)), retrieved 2026-11-06, excluding end-of-ayah markers. '
+        f'([source](https://api.quran.com/api/v4/verses/by_chapter/{surah}?words=true&word_fields=text_uthmani&per_page=50)), retrieved ' + RETRIEVED + ', excluding end-of-ayah markers. '
         'Recitation signs that the API separates from a word by a space — waqf signs, the saktah sign, the sajdah sign and the rub al-hizb marker — are not part of the stored word token, following the Surahs 110–114 precedent. '
         f"The inventory lists all {len(inv['excludedPauseSigns'])} such exclusions with the original API text; no other character was changed. "
         'The unnumbered opening basmalah is not inserted as a numbered occurrence. Automated tests compare every stored word, its id and its segments with this inventory.'
@@ -253,11 +261,11 @@ for surah, name in NAMES.items():
         'A preposition with an attached pronoun (لَهُ، بِهِ، عَلَيْهِمْ) is a particle, following Surahs 1, 105 and 112. Words without a Corpus root, such as proper names, keep no root.'
     )
     out(
-        '- **Syntax:** the Corpus word-by-word pages (English morphology and Arabic i‘rab for every word) and verse grammar pages (Arabic i‘rab notes adapted from the Quran Printing Complex), retrieved 2026-11-06. '
+        '- **Syntax:** the Corpus word-by-word pages (English morphology and Arabic i‘rab for every word) and verse grammar pages (Arabic i‘rab notes adapted from the Quran Printing Complex), retrieved ' + RETRIEVED + '. '
         + (f"{len(empty_notes)} of {len(surah_ayahs)} verse pages carry no grammar note: {', '.join(str(n) for n in empty_notes)}." if empty_notes else f'All {len(surah_ayahs)} verse pages carry a grammar note.')
     )
     out(
-        f'- **Verb paradigms** (باب، ماضی، مضارع، وزن) for all {len(verbs)} verb occurrences come from a shared library of {len(reviewed_lexemes)} verb lexemes for the five new lessons. '
+        f'- **Verb paradigms** (باب، ماضی، مضارع، وزن) for all {len(verbs)} verb occurrences come from a shared library of {len(reviewed_lexemes)} verb lexemes for ' + EDITION_LABEL + '. '
         'Form I vowel classes were decided from imperfects attested across the whole Corpus and standard lexica (Lane, Lisan al-Arab, al-Mu‘jam al-Wasit), and every entry was independently reviewed.'
     )
     out(

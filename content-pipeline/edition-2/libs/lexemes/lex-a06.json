@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "zulozilu|I|PASS",
+   "baabUrdu": "بابِ فَعْلَلَة — مجہول",
+   "formUrdu": "رباعی مجرد — اوّل (QI)، مجہول",
+   "past": "زُلْزِلَ",
+   "present": "يُزَلْزَلُ",
+   "pattern": "فُعْلِلَ — يُفَعْلَلُ",
+   "noteUrdu": "رباعی مجرد مضاعف (ز ل ز ل) کے متعدی فعل زَلْزَلَ يُزَلْزِلُ (ہلا دینا، جھنجھوڑ دینا) کا مجہول ہے: زور سے ہلایا جانا؛ جسے ہلایا جائے وہ نائبِ فاعل بنتا ہے۔ ماضی مجہول زُلْزِلَ میں پہلا حرف مضموم اور تیسرا حرف (دوسرا ز) مکسور ہے، اور مضارع مجہول يُزَلْزَلُ میں یہی تیسرا حرف مفتوح ہے، جبکہ معروف يُزَلْزِلُ میں مکسور۔",
+   "evidenceEnglish": "QAC 0.4 tags 99:1:2 زُلْزِلَتِ PERF|PASS with form I and root zlzl (i'rab: فعل ماض مبني للمجهول); the root is quadriliteral, so the true form is the bare quadriliteral faʿlala (QI), passive. QAC's lemma id زُلْزِلُ is not a citation form. Quran-wide passive perfects also وَزُلْزِلُوا۟ (2:214, 33:11); the active and the passive imperfect are not attested and follow the regular QI pattern: active زَلْزَلَ يُزَلْزِلُ زِلْزَالًا (Lane, Lisan al-Arab s.v. زلل/زلزل; cf. the verbal noun زِلْزَالَهَا 99:1, زَلْزَلَةَ 22:1), passive زُلْزِلَ — يُزَلْزَلُ (fuʿlila — yufaʿlalu)."
+  },
+  {
+   "key": "yazonu|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "زَنَى",
+   "present": "يَزْنِي",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "ناقص یائی اور لازم فعل ہے: زنا کرنا۔ آخری یاء ماضی زَنَى میں الفِ مقصورہ کی صورت میں لکھی جاتی ہے اور مضارع يَزْنِي میں ساکن رہتی ہے؛ جمع مذکر کی واو سے پہلے یاء گر جاتی ہے اور نون مضموم ہو جاتا ہے (يَزْنُونَ)، جبکہ جمع مؤنث میں باقی رہتی ہے (يَزْنِينَ)۔",
+   "evidenceEnglish": "QAC form I active, root زني; 25:68:17 يَزْنُونَ (3MP indicative, from *yazniyūna, with the yāʾ dropped before the plural wāw). Quran-wide the 3FP imperfect وَلَا يَزْنِينَ (60:12) shows kasra before the final yāʾ, i.e. an i-imperfect; the perfect is not attested in the Quran. Lexica (Lane, Lisan al-Arab, al-Mu'jam al-Wasit s.v. زني): زَنَى يَزْنِي زِنًى وزِنَاءً -> a–i, bab daraba, final-yāʾ defective, intransitive (construed with بِ). QAC's lemma id يَزْنُ is not a citation form."
+  },
+  {
+   "key": "zuro|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "زَارَ",
+   "present": "يَزُورُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "اجوف واوی اور متعدی فعل ہے: زیارت کرنا، ملنے جانا؛ اصل زَوَرَ اور يَزْوُرُ سے زَارَ اور يَزُورُ بنے۔ متحرک ضمیرِ فاعل (تُ، تُمْ، نَا) لگنے پر درمیانی الف گر جاتا ہے اور پہلا حرف مضموم ہو جاتا ہے (زُرْتُمْ)، جو واوی اور بابِ نَصَرَ ہونے کی علامت ہے۔",
+   "evidenceEnglish": "QAC form I active, root زور; sole occurrence 102:2:2 زُرْتُمُ (2MP perfect), whose damma on the first radical after the dropped middle letter marks a hollow-wāw verb with u-imperfect (cf. قُلْتُ / يَقُولُ). The imperfect is not attested in the Quran; lexica (Lane, Lisan al-Arab, al-Mu'jam al-Wasit s.v. زور): زَارَهُ يَزُورُهُ زِيَارَةً وزَوْرًا -> a–u, bab nasara, transitive. QAC's lemma id زُرْ is a stem, not the citation form. Distinct from Form VI تَزَاوَرُ (18:17)."
+  },
+  {
+   "key": "zaAda|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "زَادَ",
+   "present": "يَزِيدُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "اجوف یائی فعل ہے؛ اصل زَيَدَ اور يَزْيِدُ سے زَادَ اور يَزِيدُ بنے، اور متحرک ضمیرِ فاعل یا جزم و امر میں درمیانی حرف گر جاتا ہے (زِدْنَا، لَمْ يَزِدْ، زِدْ)۔ لازم بھی ہے (بڑھنا) اور متعدی بھی، کبھی دو مفعولوں کے ساتھ (زَادَهُ مَالًا: اسے مال میں بڑھا دیا)۔",
+   "evidenceEnglish": "QAC form I active, root زيد; 25:60:12 وَزَادَهُمْ (3MS perfect with object pronoun). Quran-wide QAC imperfects have long ī: يَزِيدُ (35:1), نَزِيدُ (2:58), وَيَزِيدُهُمْ خُشُوعًا (17:109, with two objects); perfect with subject suffix زِدْنَٰهُمْ (16:88) has kasra on the first radical; imperative زِدْنِى (20:114). -> hollow-yāʾ, a–i, bab daraba (Lane, Lisan al-Arab: زَادَ يَزِيدُ زِيَادَةً). Used intransitively and transitively, including with two objects."
+  },
+  {
+   "key": "sajaY`|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَجَا",
+   "present": "يَسْجُو",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "ناقص واوی اور لازم فعل ہے: (رات کا) چھا جانا، پرسکون اور تاریک ہو جانا۔ آخری واو ماضی سَجَا میں الف بنتی ہے اور مضارع يَسْجُو میں ساکن رہتی ہے؛ قرآنی رسم میں اس کا ماضی یاء کی صورت میں «سَجَىٰ» لکھا گیا ہے، مگر مادہ واوی ہی ہے۔",
+   "evidenceEnglish": "QAC form I active, root سجو; sole Quranic occurrence 93:2:3 سَجَىٰ (3MS perfect). The Uthmani spelling with yāʾ (alif maqsura) matches the yāʾ-written rhyme words of Surat al-Ḍuḥā (الضُّحَىٰ، قَلَىٰ); the root is final-wāw. Imperfect not attested in the Quran; lexica (Lane, Lisan al-Arab, al-Mu'jam al-Wasit s.v. سجو): سَجَا اللَّيْلُ يَسْجُو سَجْوًا 'became still/dark' -> a–u, bab nasara, intransitive. Citation past written سَجَا; QAC's lemma id uses the Uthmani spelling."
+  },
+  {
+   "key": ">asorafa|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَسْرَفَ",
+   "present": "يُسْرِفُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے (س ر ف): حد سے بڑھنا، فضول خرچی کرنا؛ جس معاملے میں زیادتی ہو وہ فِي کے ساتھ اور جس کے خلاف ہو وہ عَلَى کے ساتھ آتا ہے۔ ماضی أَسْرَفَ میں ہمزۂ قطع مفتوح ہے؛ مضارع میں یہ ہمزہ گر جاتا ہے، علامتِ مضارع پر ضمہ آتا ہے اور عینِ کلمہ مکسور ہو جاتا ہے (يُسْرِفُ)۔",
+   "evidenceEnglish": "QAC tags 25:67:5 يُسْرِفُوا۟ as IMPF|(IV)|MOOD:JUS (after لَمْ), LEM:>asorafa. Quran-wide QAC Form IV: perfects أَسْرَفَ (20:127), أَسْرَفُوا۟ (39:53); imperfects/jussives تُسْرِفُوٓا۟ (6:141, 7:31), فَلَا يُسْرِف (17:33, with فِى). Regular sound afʿala — yufʿilu (Lane, Lisan al-Arab s.v. سرف: أَسْرَفَ في الشيء، أَسْرَفَ على نفسه); intransitive."
+  },
+  {
+   "key": "yasori|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَرَى",
+   "present": "يَسْرِي",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "ناقص یائی اور لازم فعل ہے: رات کو چلنا یا گزرنا؛ کسی کو رات میں لے جانا بِ کے ساتھ آتا ہے (سَرَى بِهِ)، اور بابِ افعال أَسْرَى بھی انہی معنوں میں ہے (أَسْرَى بِهِ)۔ آخری یاء ماضی سَرَى میں الفِ مقصورہ ہے، مضارع يَسْرِي میں ساکن رہتی ہے اور جزم میں گرتی ہے؛ آیت کے آخر پر قرآنی رسم میں اس یاء کا حذف جزم کی علامت نہیں۔",
+   "evidenceEnglish": "QAC form I active, root سري; sole occurrence 89:4:3 يَسْرِ, tagged IMPF with no mood feature (indicative; i'rab فعل مضارع). The final yāʾ is omitted in the Uthmani rasm at the verse end (some readers, e.g. Ibn Kathīr and Yaʿqūb, pronounce يَسْرِي), so the short form is not jussive. Lexica (Lane, Lisan al-Arab, al-Mu'jam al-Wasit s.v. سري): سَرَى يَسْرِي سُرًى وسَرْيًا 'travel/pass by night' -> a–i, bab daraba, intransitive; Form IV أَسْرَى (17:1) is largely synonymous with Form I; 'take someone by night' is construed with بِ in both (سَرَى بِهِ / أَسْرَى بِهِ; cf. the qirāʾāt فَاسْرِ / فَأَسْرِ بِأَهْلِكَ, 11:81). QAC's lemma id يَسْرِ is not a citation form."
+  },
+  {
+   "key": "suTiHato|I|PASS",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "سُطِحَ",
+   "present": "يُسْطَحُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل سَطَحَ يَسْطَحُ (پھیلانا، ہموار بچھانا) کا مجہول ہے: ہموار بچھایا جانا؛ جو چیز بچھائی جائے وہ نائبِ فاعل بنتی ہے۔ ماضی سُطِحَ میں پہلا حرف مضموم اور عینِ کلمہ مکسور ہے؛ معروف بابِ فَتَحَ سے ہے، اس لیے مضارع مجہول يُسْطَحُ اور معروف يَسْطَحُ میں فرق صرف علامتِ مضارع کی حرکت کا ہے۔",
+   "evidenceEnglish": "QAC tags 88:20:4 سُطِحَتْ PERF|PASS form I, root سطح (i'rab: فعل ماض مبني للمجهول); QAC's lemma id سُطِحَتْ is the inflected form. Sole Quranic occurrence; neither the active nor the passive imperfect is attested. Lexica: سَطَحَهُ يَسْطَحُهُ سَطْحًا 'spread it out flat' (Lisan al-Arab s.v. سطح; al-Qamus: كمَنَعَهُ; Lane: aor. ـَ) -> a–a, bab fataha, transitive; passive سُطِحَ — يُسْطَحُ (fuʿila — yufʿalu). Form II سَطَّحَ (intensive) also exists in the lexica but the Quranic form is unambiguously Form I (no shadda)."
+  },
+  {
+   "key": "nasofaEF[|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَفَعَ",
+   "present": "يَسْفَعُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: پکڑ کر سختی سے کھینچنا، گھسیٹنا؛ جس حصے سے پکڑا جائے وہ بِ کے ساتھ آتا ہے (سَفَعَ بِنَاصِيَتِهِ: اس کی پیشانی کے بال پکڑ کر گھسیٹا)۔ ماضی اور مضارع دونوں میں عینِ کلمہ مفتوح ہے، اور بابِ فَتَحَ کے قاعدے کے مطابق لامِ کلمہ حرفِ حلق (ع) ہے۔",
+   "evidenceEnglish": "QAC form I active, root سفع; sole occurrence 96:15:5 لَنَسْفَعًۢا (1P imperfect + light energetic nūn written as alif with tanwīn; i'rab: فعل مضارع ونون التوكيد رسمت ألفًا). QAC's lemma id نَسْفَعًۢ is the inflected form. Perfect not attested; the attested imperfect has fatḥa on the second radical (nasfaʿ-), and lexica give سَفَعَ بِنَاصِيَتِهِ يَسْفَعُ سَفْعًا 'seized and dragged' (Lisan al-Arab s.v. سفع; al-Qamus: كمَنَعَ; Lane) -> a–a, bab fataha; construed with بِ."
+  },
+  {
+   "key": "saqaY`|I|PASS",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "سُقِيَ",
+   "present": "يُسْقَى",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "ناقص یائی فعل سَقَى يَسْقِي (پلانا) کا مجہول ہے: پلایا جانا؛ جسے پلایا جائے وہ نائبِ فاعل بنتا ہے اور پلائی جانے والی چیز دوسرے مفعول کے طور پر منصوب رہ سکتی ہے۔ آخری یاء ماضی سُقِيَ میں مفتوح اور مضارع يُسْقَى میں الفِ مقصورہ ہے؛ بابِ افعال أَسْقَى کا مضارع مجہول بھی يُسْقَى ہی ہوتا ہے۔",
+   "evidenceEnglish": "QAC tags 88:5:1 تُسْقَىٰ IMPF|PASS form I, LEM:saqaY` (i'rab: فعل مضارع مبني للمجهول). Quran-wide also passive يُسْقَىٰ (13:4) and passive perfect وَسُقُوا۟ مَآءً (47:15, with retained second object), which is unambiguously Form I. Active سَقَى يَسْقِي: فَسَقَىٰ (28:24), يَسْقِينِ (26:79) -> a–i, bab daraba, final-yāʾ defective (Lane, Lisan al-Arab s.v. سقي). Caution: the Form IV أَسْقَى has the identical passive imperfect يُسْقَى; QAC's Form I tag is followed."
+  }
+ ]
+}

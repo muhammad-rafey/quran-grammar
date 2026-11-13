@@ -1,0 +1,27 @@
+{"part": "09",
+ "overrides": {
+  "29:56:1": {"case": "ACC", "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. يَـٰعِبَادِىَ: an annexed vocative (منادیٰ مضاف) is accusative; the kasra before the first-person ya means the nasb is implied."},
+  "29:56:5": {"case": "ACC", "noteEnglish": "QAC tags أَرْضِى nominative, but in إِنَّ أَرْضِى وَٰسِعَةٌ it is the noun (ism) of إِنَّ, with وَٰسِعَةٌ as its predicate: accusative, the nasb implied before the first-person ya (the generated i'rab line's مرفوع is wrong here)."}
+ },
+ "rejected": [
+  {"id": "29:58:9", "reason": "تَجْرِى is in a descriptive clause with no jazm particle; indicative with implied damma on the retained ya."},
+  {"id": "85:11:8", "reason": "تَجْرِى is in a descriptive clause with no jazm particle; indicative with implied damma on the retained ya."},
+  {"id": "86:9:2", "reason": "تُبْلَى follows the adverb يَوْمَ, no jazm particle; indicative passive with implied damma on the alif maqsura."},
+  {"id": "87:6:3", "reason": "لَا in فَلَا تَنسَىٰٓ is negative (نافية, per the verse i'rab), not prohibitive; the alif is retained, so indicative."},
+  {"id": "87:7:9", "reason": "يَخْفَىٰ is in the relative clause of مَا; no governor, alif retained: indicative."},
+  {"id": "87:10:3", "reason": "مَن is relative (subject of سَيَذَّكَّرُ), not conditional; يَخْشَىٰ keeps its alif: indicative."},
+  {"id": "87:12:2", "reason": "يَصْلَى is in the relative clause of ٱلَّذِى; no governor, alif retained: indicative."},
+  {"id": "87:13:6", "reason": "لَا here is negative, parallel to لَا يَمُوتُ (indicative, damma); يَحْيَىٰ keeps its alif: indicative."},
+  {"id": "88:4:1", "reason": "تَصْلَىٰ is the predicate of وُجُوهٌ with no governor; alif retained: indicative."},
+  {"id": "88:5:1", "reason": "تُسْقَىٰ is a second predicate of وُجُوهٌ with no governor; alif retained: indicative passive."},
+  {"id": "88:7:4", "reason": "Negative لَا does not govern jazm; يُغْنِى keeps its ya: indicative, parallel to لَا يُسْمِنُ."},
+  {"id": "89:6:2", "reason": "After أَلَمْ, تَرَ is jussive with its final alif dropped; QAC's JUS is correct."},
+  {"id": "89:15:10", "reason": "رَبِّىٓ is the subject (mubtada) of أَكْرَمَنِ in quoted speech, not a vocative; nominative implied before the ya."},
+  {"id": "89:16:9", "reason": "رَبِّىٓ is the subject (mubtada) of أَهَـٰنَنِ in quoted speech, not a vocative; nominative implied before the ya."},
+  {"id": "89:23:1", "reason": "وَجِا۟ىٓءَ is the passive of the hollow verb جَاءَ (jī'a, kasra replaces the u-pattern); بِجَهَنَّمَ is na'ib al-fa'il per the verse i'rab."},
+  {"id": "90:7:4", "reason": "After لَمْ, يَرَهُۥٓ is jussive with its final alif dropped; QAC's JUS is correct."},
+  {"id": "91:4:3", "reason": "After temporal إِذَا (no jazm), يَغْشَىٰهَا keeps its alif: indicative."},
+  {"id": "92:1:3", "reason": "After temporal إِذَا (no jazm), يَغْشَىٰ keeps its alif: indicative."},
+  {"id": "92:11:2", "reason": "مَا is negative (or interrogative), not a jazm particle; يُغْنِى keeps its ya: indicative."}
+ ]
+}

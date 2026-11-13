@@ -1,0 +1,93 @@
+{
+ "part": "01",
+ "overrides": {
+  "4:3:28": {
+   "mood": "SUBJ",
+   "noteEnglish": "QAC tags تَعُولُوا۟ jussive, but أَلَّا is أَنْ (masdariyya, nasb particle) + negative لَا; the dropped nun is the sign of nasb, and the ayah note itself treats «ألا تعولوا» as an interpreted masdar: subjunctive."
+  },
+  "4:12:22": {
+   "verbForm": "IV",
+   "lexemeKey": ">awoSa`|IV|ACT",
+   "noteEnglish": "QAC gives يُوصِينَ the pseudo-lemma yuwSiy as Form I; the active prefix vowel u with kasra before the final radical is the Form IV imperfect of أَوْصَى (as يُوصِيكُمُ 4:11 and يُوصِى 4:11). Active, mabni on sukun with the feminine nun as subject."
+  },
+  "4:42:8": {
+   "verbForm": "II",
+   "lexemeKey": "saw~aY`|II|PASS",
+   "noteEnglish": "QAC gives تُسَوَّىٰ the pseudo-lemma tusaw~aY` as Form I; the doubled waw (shadda) makes it the Form II passive of سَوَّى (Form I passive would be تُسْوَى). Indicative with implied damma after لَوْ, ٱلْأَرْضُ its na'ib al-fa'il."
+  }
+ },
+ "rejected": [
+  {
+   "id": "4:9:1",
+   "reason": "Jussive after lam of command; final alif of يخشى dropped as the sign of jazm (i'rab: مجزوم)."
+  },
+  {
+   "id": "4:11:1",
+   "reason": "No governing particle; indicative with implied damma on the ya of a defective Form IV verb."
+  },
+  {
+   "id": "4:11:10",
+   "reason": "كُنَّ is the active perfect of hollow كَانَ with feminine nun; initial u is from the hollow root, not passive."
+  },
+  {
+   "id": "4:11:52",
+   "reason": "No nasb/jazm governor; indicative with implied damma on the ya."
+  },
+  {
+   "id": "4:12:77",
+   "reason": "Passive Form IV with no governing particle; indicative with implied damma on the alif maqsura."
+  },
+  {
+   "id": "4:13:9",
+   "reason": "Sound feminine plural object of يُدْخِلْهُ; accusative is marked by kasra (tanwin)."
+  },
+  {
+   "id": "4:13:10",
+   "reason": "Adjectival clause after جَنَّـٰتٍ with no governor; indicative with implied damma on the ya."
+  },
+  {
+   "id": "4:14:5",
+   "reason": "Coordinated with conditional jussive يَعْصِ; final alif of يتعدّى dropped for jazm."
+  },
+  {
+   "id": "4:15:2",
+   "reason": "Feminine-plural nun makes it mabni on sukun; no governor, so no jussive."
+  },
+  {
+   "id": "4:15:16",
+   "reason": "After حَتَّىٰ (implied أَنْ) the verb is subjunctive with implied fatha on the alif; QAC SUBJ is correct."
+  },
+  {
+   "id": "4:16:2",
+   "reason": "Dual verb with nun retained; indicative (one of the five verbs), no governor."
+  },
+  {
+   "id": "4:18:13",
+   "reason": "تُبْتُ is the active perfect of hollow تَابَ; initial u comes from the hollow root, not passive."
+  },
+  {
+   "id": "4:19:19",
+   "reason": "Feminine-plural nun makes it mabni on sukun (in position of nasb after أَنْ); not jussive, QAC's unmarked mood is correct."
+  },
+  {
+   "id": "4:25:29",
+   "reason": "Hal, sound feminine plural; accusative is marked by kasra (i'rab: اسم منصوب)."
+  },
+  {
+   "id": "4:30:7",
+   "reason": "After فَسَوْفَ with no governor; indicative with implied damma on the ya."
+  },
+  {
+   "id": "4:40:8",
+   "reason": "Jussive verb of conditional إِن; تَكُ with nun deleted (and the hollow waw elided) for jazm."
+  },
+  {
+   "id": "4:43:21",
+   "reason": "كُنتُم is the active perfect of hollow كَانَ; initial u is from the hollow root, not passive."
+  },
+  {
+   "id": "4:44:2",
+   "reason": "Jussive after أَلَمْ; final alif of ترى dropped as the sign of jazm."
+  }
+ ]
+}

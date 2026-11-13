@@ -1,0 +1,94 @@
+{
+ "entries": [
+  {
+   "key": "haAjara|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "هَاجَرَ",
+   "present": "يُهَاجِرُ",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے: ہجرت کرنا، یعنی وطن چھوڑ کر (عموماً اللہ کی راہ میں) دوسری جگہ چلے جانا؛ منزل إِلَى سے اور مقصد فِي سَبِيلِ ٱللَّهِ سے آتا ہے۔ پہلے حرف کے بعد کا الف اس باب کی علامت ہے، مادے کا حصہ نہیں (مادہ ه ج ر)؛ مضارع میں علامتِ مضارع پر ضمہ اور عینِ کلمہ پر کسرہ ہوتا ہے۔",
+   "evidenceEnglish": "QAC tags all three occurrences Form III active (LEM haAjara, root hjr), with attested imperfects يُهَاجِرُوا۟ (4:89:13, subjunctive), فَتُهَاجِرُوا۟ (4:97:21, jussive) and يُهَاجِرْ (4:100:2, jussive), all with damma on the prefix and kasra on the jīm: regular Form III هَاجَرَ يُهَاجِرُ (fāʿala / yufāʿilu). Lane and al-Muʿjam al-Wasīṭ s.v. هجر: هَاجَرَ 'emigrated, left one's land'; verbal nouns مُهَاجَرَة and the noun هِجْرَة. Intransitive, construed with إِلَى / فِي سَبِيلِ ٱللَّهِ."
+  },
+  {
+   "key": "{sotuhozi}a|X|PASS",
+   "baabUrdu": "بابِ اِسْتِفْعَال — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — دہم (X)، مجہول",
+   "past": "اُسْتُهْزِئَ",
+   "present": "يُسْتَهْزَأُ",
+   "pattern": "اُسْتُفْعِلَ — يُسْتَفْعَلُ",
+   "noteUrdu": "مہموز اللام فعل اِسْتَهْزَأَ (مذاق اڑانا) کا مجہول ہے: مذاق اڑایا جانا؛ یہ بِ کے ذریعے متعدی ہے، اس لیے مجہول میں بِ والا جار و مجرور نائبِ فاعل کے مقام پر ہوتا ہے۔ ہمزہ کی کرسی ماقبل حرکت سے بدلتی ہے (اُسْتُهْزِئَ، يُسْتَهْزَأُ)؛ معروف يَسْتَهْزِئُ سے فرق علامتِ مضارع کے ضمہ اور زاء کے فتحہ کا ہے۔",
+   "evidenceEnglish": "QAC 4:140:13 وَيُسْتَهْزَأُ is tagged IMPF|PASS|(X), LEM {sotuhozi}a (QAC's passive-perfect lemma), root hzA; i'rab: فعل مضارع مبني للمجهول. Active Form X اِسْتَهْزَأَ يَسْتَهْزِئُ بِـ (e.g. يَسْتَهْزِءُونَ, ٱسْتُهْزِئَ at 6:10 / 13:32 for the passive perfect). Regular Form X passive ustufʿila / yustafʿalu; hamzated third radical whose seat follows the preceding vowel (Lane s.v. هزأ)."
+  },
+  {
+   "key": "halaka|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "هَلَكَ",
+   "present": "يَهْلِكُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے: ہلاک ہونا، مر جانا یا برباد ہو جانا؛ مضارع میں لام پر کسرہ ہے (يَهْلِكُ)۔ کسی کو ہلاک کرنا اس سے نہیں بلکہ بابِ افعال کے أَهْلَكَ يُهْلِكُ سے آتا ہے۔",
+   "evidenceEnglish": "QAC 4:176:9 هَلَكَ: PERF 3MS, Form I active (LEM halaka, root hlk); i'rab فعل ماض. The Form I imperfect is attested elsewhere in QAC: لِّيَهْلِكَ مَنْ هَلَكَ (8:42) with kasra on the lām, giving هَلَكَ يَهْلِكُ (a–i, ḍaraba). Lane and Lisān al-ʿArab s.v. هلك give هَلَكَ يَهْلِكُ هَلَاكًا as the standard form (هَلِكَ يَهْلَكُ is a minor dialectal variant). Intransitive; the causative is Form IV أَهْلَكَ."
+  },
+  {
+   "key": "ham~a|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "هَمَّ",
+   "present": "يَهُمُّ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "مضاعف فعل ہے: کسی کام کا ارادہ یا قصد کرنا، اور جس چیز کا ارادہ ہو وہ بِ کے ساتھ آتی ہے (هَمَّ بِهِ) یا أَنْ والا جملہ ہوتا ہے۔ دونوں میم ادغام سے ایک مشدد میم بنتے ہیں، مگر ضمیرِ فاعل متحرک (تُ، نَا، نَ) لگنے پر ادغام کھل جاتا ہے (هَمَمْتُ)؛ تاءِ تانیث ساکن ہوتی ہے، اس لیے هَمَّتْ میں ادغام باقی رہتا ہے۔",
+   "evidenceEnglish": "QAC 4:113:6 لَهَمَّت: PERF 3FS, Form I active (LEM ham~a, root hmm). The Form I imperfect is not attested in the Quran; Lane and Lisān al-ʿArab s.v. همم give هَمَّ بِالأَمْرِ يَهُمُّ هَمًّا 'he purposed / resolved upon the thing', a–u (naṣara), the usual class for transitive doubled verbs. Quranic usage هَمَّتْ بِهِۦ وَهَمَّ بِهَا (12:24), وَهَمُّوا۟ بِمَا (9:74) shows the بِ construction. Vowel class from lexica, not from a Quranic imperfect."
+  },
+  {
+   "key": "haAdu|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "هَادَ",
+   "present": "يَهُودُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "اجوف واوی اور لازم فعل ہے: لوٹنا، توبہ کر کے رجوع کرنا (إِلَى کے ساتھ)، اور یہودی ہونا یا یہودیت اختیار کرنا (جیسے جمع کا صیغہ هَادُوا: وہ یہودی ہوئے)۔ اصل هَوَدَ ہے: ماضی میں واو الف بنتی ہے اور ضمیرِ فاعل متحرک کے ساتھ گر جاتی ہے، تب ہاء پر ضمہ آتا ہے (هُدْنَا)؛ مضارع يَهُودُ میں واو مدّ ہے۔",
+   "evidenceEnglish": "QAC tags هَادُوا۟ (4:46:3, 4:160:4) and هُدْنَآ (7:156:10) as Form I active PERF, root hwd; QAC's lemma هَادُ is a truncated stem, the citation form is هَادَ. The damma in هُدْنَا (not *هِدْنَا) shows a hollow-wāw a–u verb, هَادَ يَهُودُ (naṣara). Lane and Lisān al-ʿArab s.v. هود: هَادَ يَهُودُ هَوْدًا 'returned, repented', and هَادَ 'became a Jew'; tafsir glosses إِنَّا هُدْنَا إِلَيْكَ as تُبْنَا وَرَجَعْنَا. The imperfect is not attested in the Quran."
+  },
+  {
+   "key": "wad~a|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "وَدَّ",
+   "present": "يَوَدُّ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "مثال واوی بھی ہے اور مضاعف بھی (و د د)؛ متعدی ہے: چاہنا، تمنا کرنا یا محبت کرنا، اور اکثر لَوْ یا أَنْ والا جملہ اس کا مفعول بنتا ہے۔ اصل وَدِدَ يَوْدَدُ ہے: دونوں دال مدغم ہوتے ہیں اور متحرک ضمیرِ فاعل پر کھل جاتے ہیں (وَدِدْتُ)؛ اس فعل کے مضارع میں واو حذف نہیں ہوتی (يَوَدُّ؛ وَعَدَ يَعِدُ کی طرح نہیں)۔",
+   "evidenceEnglish": "QAC: three Form I active occurrences (LEM wad~a, root wdd): imperfect يَوَدُّ (4:42:2) with fatḥa on the wāw and on the prefix, perfects وَدُّوا۟ (4:89:1) and وَدَّ (4:102:28). The underlying form is وَدِدَ يَوْدَدُ, i–a (samiʿa), per Lane and Lisān al-ʿArab s.v. ودد (وَدِدْتُ; وَدَدْتُ is a rare variant). Assimilated-and-doubled; the initial wāw is retained in the imperfect, unlike a–i assimilated verbs such as وَعَدَ يَعِدُ. Transitive, often with a لَوْ / أَنْ clause."
+  },
+  {
+   "key": "wariva|I|PASS",
+   "baabUrdu": "بابِ حَسِبَ يَحْسِبُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "وُرِثَ",
+   "present": "يُورَثُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "مثال واوی فعل وَرِثَ يَرِثُ کا مجہول ہے: کسی کا ترکہ یا مال ورثے میں لیا جانا؛ نائبِ فاعل وہ شخص بھی ہو سکتا ہے جس کی میراث لی جائے اور خود مال بھی۔ معروف يَرِثُ میں واو گر جاتی ہے، مگر مجہول يُورَثُ میں ضمہ کے بعد واو مدّ بن کر لوٹ آتی ہے؛ بابِ افعال کا مجہول مضارع بھی يُورَثُ ہے، اس لیے فرق معنی اور ترکیب سے کریں۔",
+   "evidenceEnglish": "QAC 4:12:53 يُورَثُ: IMPF|PASS, Form I (LEM wariva, root wrv); i'rab فعل مضارع مبني للمجهول; context وَإِن كَانَ رَجُلٌ يُورَثُ كَلَٰلَةً, the man whose estate is inherited. Active Form I is وَرِثَ يَرِثُ (i–i, ḥasiba), as in the shared lex-00 entry; its passive is regular وُرِثَ يُورَثُ (fuʿila / yufʿalu), the wāw reappearing as a long vowel after the passive prefix's damma (Lane s.v. ورث). The passive perfect is not attested in the Quran. Same surface shape as the Form IV passive imperfect; QAC distinguishes them by form tag."
+  },
+  {
+   "key": ">aworava|IV|PASS",
+   "baabUrdu": "بابِ اِفْعَال — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)، مجہول",
+   "past": "أُورِثَ",
+   "present": "يُورَثُ",
+   "pattern": "أُفْعِلَ — يُفْعَلُ",
+   "noteUrdu": "مثال واوی فعل أَوْرَثَ (وارث بنانا) کا مجہول ہے: وارث بنایا جانا؛ پہلا مفعول (وارث) نائبِ فاعل بنتا ہے اور دوسرا (میراث) منصوب رہتا ہے۔ ماضی أُورِثَ میں ہمزۂ قطع کے ضمہ کے بعد واو مدّ بن جاتی ہے؛ مضارع يُورَثُ ثلاثی مجرد کے مجہول جیسا ہے، اس لیے فرق معنی اور ترکیب سے کریں (یہاں معنی وارث بنایا جانا ہے)۔",
+   "evidenceEnglish": "QAC 7:43:33 أُورِثْتُمُوهَا: PERF|PASS|(IV), LEM >aworava, root wrv, 2MP; i'rab gives the تُم as نائب فاعل and ها as مفعول به, showing the doubly transitive أَوْرَثَ whose second object stays accusative in the passive. Regular Form IV passive أُورِثَ يُورَثُ (ufʿila / yufʿalu), wāw as long vowel after damma. The passive imperfect is not attested in the Quran; it is homographic with the Form I passive يُورَثُ (4:12)."
+  },
+  {
+   "key": ">aworava|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَوْرَثَ",
+   "present": "يُورِثُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "مثال واوی اور دو مفعولوں والا متعدی فعل ہے: کسی کو کسی چیز کا وارث بنانا (أَوْرَثَهُ ٱلْأَرْضَ)۔ ماضی أَوْرَثَ میں واو ساکن حرفِ صحیح کی طرح ہے، اور مضارع يُورِثُ میں علامتِ مضارع کے ضمہ کے بعد مدّ بن جاتی ہے، حذف نہیں ہوتی؛ ہمزہ بابِ افعال کا ہمزۂ قطع ہے۔",
+   "evidenceEnglish": "QAC: two Form IV active occurrences (LEM >aworava, root wrv): imperfect يُورِثُهَا (7:128:10) with kasra on the rāʾ and damma on the prefix, and perfect وَأَوْرَثْنَا (7:137:1). Regular Form IV أَوْرَثَ يُورِثُ إِيرَاثًا (afʿala / yufʿilu), assimilated wāw retained as a long vowel in the imperfect (Lane, Lisān al-ʿArab s.v. ورث). Doubly transitive: وَأَوْرَثْنَا ٱلْقَوْمَ ... مَشَٰرِقَ ٱلْأَرْضِ (7:137)."
+  }
+ ]
+}

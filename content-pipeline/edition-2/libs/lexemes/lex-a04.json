@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "yaxofaY`|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "خَفِيَ",
+   "present": "يَخْفَى",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "ناقص یائی اور لازم فعل ہے: چھپا رہنا، پوشیدہ ہونا؛ جس سے کوئی چیز چھپی ہو وہ عَلَى کے ساتھ آتا ہے۔ آخری یاء ماضی خَفِيَ میں زیر کے بعد ظاہر ہے، مضارع يَخْفَى میں الفِ مقصورہ بن جاتی ہے اور جزم میں گر جاتی ہے (لَمْ يَخْفَ)؛ متعدی أَخْفَى (چھپانا) بابِ افعال کا الگ فعل ہے۔",
+   "evidenceEnglish": "QAC Form I active, root xfy; QAC's lemma ID yaxofaY` is the inflected 3MS imperfect at 87:7:9 (يَخْفَىٰ, 'is hidden'). Form I is attested in the Quran only in the imperfect, always with final alif maqsura after fatha: يَخْفَىٰ (3:5, 14:38, 40:16), تَخْفَىٰ (69:18), يَخْفَوْنَ (41:40). Lane and Lisan al-Arab: خَفِيَ, aor. يَخْفَى, inf. n. خَفَاءٌ 'was hidden', i.e. i–a (samiʿa), defective in yāʾ, intransitive (with عَلَى). The rare a–i verb خَفَى يَخْفِي ('to bring to light / conceal', a ḍidd) is a different lexeme and not the sense here."
+  },
+  {
+   "key": "yaxoludo|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "خَلَدَ",
+   "present": "يَخْلُدُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے: ہمیشہ رہنا، دیر تک باقی رہنا؛ جگہ فِي کے ساتھ آتی ہے۔ مضارع میں عینِ کلمہ مضموم ہے (يَخْلُدُ، جزم میں يَخْلُدْ)؛ اسی مادے کا أَخْلَدَ (بابِ افعال) الگ فعل ہے، اور خَالِدٌ / خَالِدِينَ اسمِ فاعل ہیں، فعل نہیں۔",
+   "evidenceEnglish": "QAC Form I active, root xld; QAC's lemma ID yaxoludo is the inflected 3MS jussive at 25:69:6 (وَيَخْلُدْ), its only occurrence in this batch; Quran-wide Form I also occurs as تَخْلُدُونَ (26:129, indicative). The damma on the 2nd radical in both gives an u-imperfect, so a–u (naṣara). Lane: خَلَدَ, aor. يَخْلُدُ, inf. n. خُلْدٌ and خُلُودٌ 'remained, lasted forever'; Lisan al-Arab: خَلَدَ يَخْلُدُ خُلْدًا وخُلُودًا: بقي وأقام. Intransitive. Participles خَٰلِدِينَ etc. are nouns."
+  },
+  {
+   "key": ">axolada|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَخْلَدَ",
+   "present": "يُخْلِدُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح سالم فعل، بابِ افعال: متعدی ہو تو ہمیشہ باقی رکھنا، ہمیشگی دینا (أَخْلَدَهُ)؛ إِلَى کے ساتھ کسی چیز کی طرف جھک جانا اور اسی پر ٹک جانا۔ ماضی کا ہمزہ باب کا ہمزۂ قطع ہے، اور مضارع يُخْلِدُ میں حرفِ مضارع پر پیش اور عینِ کلمہ پر زیر ہے۔",
+   "evidenceEnglish": "QAC (IV), root xld: perfect أَخْلَدَهُۥ (104:3:4) with object pronoun; elsewhere أَخْلَدَ إِلَى ٱلْأَرْضِ (7:176). No Form IV imperfect occurs in the Quran; regular afʿala — yufʿilu. Lane: أَخْلَدَهُ 'made him/it to remain forever'; أَخْلَدَ إِلَيْهِ 'inclined to it, rested on it' (Lisan al-Arab: أخلد إلى الأرض: ركن إليها)."
+  },
+  {
+   "key": "xalaqa|I|PASS",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "خُلِقَ",
+   "present": "يُخْلَقُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل خَلَقَ (پیدا کرنا) کا مجہول ہے: پیدا کیا جانا؛ جو پیدا کیا جائے وہ نائبِ فاعل بنتا ہے اور جس چیز سے بنایا جائے وہ مِنْ کے ساتھ آتی ہے۔ ماضی مجہول خُلِقَ میں پہلے حرف پر پیش اور عین پر زیر ہے، اور مضارع مجہول يُخْلَقُ میں لام کا زبر اسے معروف يَخْلُقُ سے جدا کرتا ہے۔",
+   "evidenceEnglish": "QAC Form I passive, root xlq: perfects خُلِقَ (86:5:4, 86:6:1), خُلِقَتْ (88:17:6); imperfects يُخْلَقُونَ (25:3:9, indicative) and jussive يُخْلَقْ (89:8:3). Passive of خَلَقَ يَخْلُقُ (a–u, naṣara; entry xalaqa|I|ACT in lex-00): fuʿila — yufʿalu, both attested here."
+  },
+  {
+   "key": "xaAba|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "خَابَ",
+   "present": "يَخِيبُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "اجوف یائی اور لازم فعل ہے: ناکام و نامراد ہونا، امید پوری نہ ہونا۔ درمیانی یاء ماضی خَابَ میں الف اور مضارع يَخِيبُ میں لمبی یاء کی صورت میں آتی ہے، اور ساکن لامِ کلمہ سے پہلے گر جاتی ہے (خِبْتُ، لَمْ يَخِبْ)۔",
+   "evidenceEnglish": "QAC Form I active, root xyb. Only the perfect خَابَ occurs in the Quran (14:15, 20:61, 20:111, 91:10:2); خَآئِبِينَ (3:127) is a participle. With no Quranic imperfect, the class rests on the lexica: خَابَ يَخِيبُ خَيْبَةً (Lane, Lisan al-Arab, al-Muʿjam al-Wasit), underlying خَيَبَ يَخْيِبُ, the regular a–i (ḍaraba) type of yāʾ-medial hollow verbs (cf. بَاعَ يَبِيعُ). Intransitive."
+  },
+  {
+   "key": ">adoraY`|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَدْرَى",
+   "present": "يُدْرِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "ناقص یائی فعل، بابِ افعال: کسی کو کسی بات سے آگاہ کرنا، بتانا۔ آخری یاء ماضی أَدْرَى میں الفِ مقصورہ ہے (ضمیر کے ساتھ أَدْرَاكَ) اور مضارع يُدْرِي میں ساکن یاء؛ متعدی ہے: جسے بتایا جائے وہ مفعول بنتا ہے اور بات بِ کے ساتھ یا استفہامی جملے کی صورت میں آتی ہے۔",
+   "evidenceEnglish": "QAC (IV), root dry: perfect أَدْرَىٰكَ at 86:2:2, 90:12:2, 97:2:2, 101:3:2, 101:10:2, 104:5:2 (also 69:3, 82:17); Quran-wide imperfect يُدْرِيكَ (33:63, 42:17, 80:3) and أَدْرَىٰكُم بِهِۦ (10:16). Regular afʿala — yufʿilu of the yāʾ-final root (دَرَى يَدْرِي دِرَايَةً 'to know'). Lane: أَدْرَاهُ بِهِ 'made him to know it'; the person is the direct object and the thing known takes بِ, or an interrogative clause (مَا …) stands in the remaining object slot (taʿlīq)."
+  },
+  {
+   "key": "das~aY`|I|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "دَسَّى",
+   "present": "يُدَسِّي",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "ناقص واوی اور متعدی فعل ہے (مادہ د س و): دبا دینا، چھپا دینا، پستی میں گرا دینا۔ اس باب میں لام کی واو یاء بن جاتی ہے: ماضی دَسَّى الفِ مقصورہ پر ختم ہوتا ہے (دَسَّاهَا، مگر دَسَّيْتُ) اور مضارع يُدَسِّي ہے، جس کی یاء جزم میں گرتی ہے؛ کئی اہلِ لغت اسے دَسَّسَ (مضاعف مادہ د س س) مانتے ہیں جس کا آخری سین یاء سے بدلا گیا۔",
+   "evidenceEnglish": "QAC 91:10:4 دَسَّىٰهَا: ROOT:dsw with no form marker, so the handle defaults to Form I; but the stem das~aY` has a doubled 2nd radical and is faʿʿala, exactly like its counterpart زَكَّىٰهَا (91:9:4), which QAC tags (II). Hence Form II دَسَّى يُدَسِّي تَدْسِيَةً (regular faʿʿala — yufaʿʿilu; no imperfect in the Quran). Lisan al-Arab (دسا): دَسَا يَدْسُو, the opposite of زَكَا, and دَسَّى نَفْسَهُ 'debased/concealed himself'; Lane and al-Farrāʾ also explain دَسَّاهَا as دَسَّسَهَا with the final sīn replaced by yāʾ, which is still Form II. Reviewer: form corrected from the raw QAC default."
+  },
+  {
+   "key": "duk~ati|I|PASS",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "دُكَّ",
+   "present": "يُدَكُّ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "مضاعف اور متعدی فعل دَكَّ يَدُكُّ (کوٹ کر ریزہ ریزہ کرنا، ہموار کر دینا) کا مجہول ہے: کوٹا جانا، ہموار کر دیا جانا۔ دونوں کاف مدغم ہیں (اصل دُكِكَ، يُدْكَكُ)؛ مؤنث نائبِ فاعل کے ساتھ دُكَّتْ آتا ہے، جس کی تاء علامتِ تانیث ہے اور اگلے ساکن سے ملتے وقت کسرہ لیتی ہے (دُكَّتِ)۔",
+   "evidenceEnglish": "QAC Form I passive, root dkk; QAC's lemma ID duk~ati is the inflected 3FS perfect at 89:21:3 (دُكَّتِ, kasra on the feminine tāʾ before the following hamzat al-waṣl); also فَدُكَّتَا (69:14). Active دَكَّ, aor. يَدُكُّ, inf. n. دَكٌّ 'pounded, crushed, levelled' (Lane; Lisan al-Arab: دَكَّهُ يَدُكُّهُ دَكًّا), a–u (naṣara) doubled verb, so passive دُكَّ — يُدَكُّ (fuʿila — yufʿalu with idghām). The passive imperfect is not attested in the Quran."
+  },
+  {
+   "key": "damodama|I|ACT",
+   "baabUrdu": "بابِ فَعْلَلَة",
+   "formUrdu": "رباعی مجرد — اوّل (QI)",
+   "past": "دَمْدَمَ",
+   "present": "يُدَمْدِمُ",
+   "pattern": "فَعْلَلَ — يُفَعْلِلُ",
+   "noteUrdu": "رباعی مجرد فعل ہے جس کے چار اصلی حروف د م د م ہیں (مضاعفِ رباعی)؛ اسے ثلاثی مجرد (اوّل) کا فعل نہ سمجھیں۔ عَلَى کے ساتھ آتا ہے: کسی پر عذاب ڈال کر سب کو ڈھانپ کر ہلاک کر دینا؛ مضارع يُدَمْدِمُ میں حرفِ مضارع پر پیش اور تیسرے اصلی حرف پر زیر ہے۔",
+   "evidenceEnglish": "QAC 91:14:3 فَدَمْدَمَ عَلَيْهِمْ: ROOT:dmdm (four radicals) with no form marker, so the handle reads Form I; the verb is a quadriliteral faʿlala (QI), its only Quranic occurrence. No imperfect in the Quran; regular QI يُفَعْلِلُ as in وَسْوَسَ — يُوَسْوِسُ (114:5). Lane and Lisan al-Arab: دَمْدَمَ عَلَيْهِمْ 'destroyed them', i.e. أهلكهم وأطبق عليهم العذاب; construed with عَلَى."
+  },
+  {
+   "key": "dam~ara|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "دَمَّرَ",
+   "present": "يُدَمِّرُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے: پوری طرح ہلاک اور برباد کر دینا؛ کبھی عَلَى کے ساتھ بھی آتا ہے (دَمَّرَ عَلَيْهِمْ)۔ میم کی تشدید بابِ تفعیل کی علامت ہے؛ متحرک ضمیرِ فاعل سے پہلے راء ساکن ہو جاتی ہے، جیسے دَمَّرْنَا۔",
+   "evidenceEnglish": "QAC (II), root dmr: فَدَمَّرْنَـٰهُمْ (25:36:8, 1P perfect + object). Quran-wide perfects دَمَّرْنَا (7:137, 26:172, 37:136), فَدَمَّرْنَٰهَا (17:16), دَمَّرَ ٱللَّهُ عَلَيْهِمْ (47:10) and imperfect تُدَمِّرُ (46:25) confirm faʿʿala — yufaʿʿilu. Lane: دَمَّرَهُ and دَمَّرَ عَلَيْهِ 'destroyed him utterly'."
+  }
+ ]
+}

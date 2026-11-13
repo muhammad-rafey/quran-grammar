@@ -15,7 +15,29 @@ lexemes = json.load(open(os.path.join(meta, 'lexemes.json')))
 roots = json.load(open(os.path.join(meta, 'roots.json')))
 words = json.load(open(os.path.join(meta, 'words.json')))
 overrides = json.load(open(os.path.join(meta, 'overrides.json')))
-LEX_BATCH, ROOT_BATCH = 30, 45
+LEX_BATCH, ROOT_BATCH = int(os.environ.get("QG_LEX_BATCH", 30)), int(os.environ.get("QG_ROOT_BATCH", 45))
+# Optional batch-name tag for staged further editions (--tag a gives lex-a01, root-a01).
+TAG = sys.argv[sys.argv.index('--tag') + 1] if '--tag' in sys.argv else ''
+ALL_LEXEME_KEYS = set(lexemes)
+if '--missing-only' in sys.argv[2:]:
+    # Further editions: entries already present in libs/ (seeded from reviewed libraries)
+    # are not re-authored; only the missing ones are batched after them.
+    import glob
+    have_lex, have_roots = set(), set()
+    for path in glob.glob(os.path.join(WORK, 'libs', 'lexemes', '*.json')):
+        have_lex.update(e['key'] for e in json.load(open(path))['entries'])
+    for path in glob.glob(os.path.join(WORK, 'libs', 'roots', '*.json')):
+        have_roots.update(e['root'] for e in json.load(open(path))['entries'])
+    if TAG:
+        # Keys already assigned to another stage's batch are being authored there.
+        for name, other in (('lexeme-batches.json', have_lex), ('root-batches.json', have_roots)):
+            path = os.path.join(meta, name)
+            if os.path.exists(path):
+                for batch, keys in json.load(open(path)).items():
+                    if not batch.startswith(f'lex-{TAG}') and not batch.startswith(f'root-{TAG}'):
+                        other.update(keys)
+    lexemes = {k: v for k, v in lexemes.items() if k not in have_lex}
+    roots = {k: v for k, v in roots.items() if k not in have_roots}
 
 # Keep every lexeme of one root in the same batch so forms of a family stay consistent.
 by_root = {}
@@ -25,11 +47,11 @@ lex_batches, current = {}, []
 for root in sorted(by_root):
     group = by_root[root]
     if current and len(current) + len(group) > LEX_BATCH:
-        lex_batches[f'lex-{len(lex_batches) + 1:02d}'] = current
+        lex_batches[f'lex-{TAG}{len(lex_batches) + 1:02d}'] = current
         current = []
     current.extend(group)
 if current:
-    lex_batches[f'lex-{len(lex_batches) + 1:02d}'] = current
+    lex_batches[f'lex-{TAG}{len(lex_batches) + 1:02d}'] = current
 
 # Route every occurrence through the adjudicated key without changing raw meta.
 # This also removes a split occurrence from the original, incorrect paradigm.
@@ -52,21 +74,31 @@ for raw_key, lex in lexemes.items():
 extra_occurrences = {}
 for wid, fix in overrides.items():
     key = fix.get('lexemeKey') if isinstance(fix, dict) else None
-    if key and key not in lexemes:
+    if key and key not in ALL_LEXEME_KEYS and key not in globals().get('have_lex', set()):
         extra_occurrences.setdefault(key, []).append(wid)
 if extra_occurrences:
-    lex_batches['lex-extra'] = sorted(extra_occurrences)
+    lex_batches[f'lex-{TAG}extra' if TAG else 'lex-extra'] = sorted(extra_occurrences)
 
 root_keys = sorted(roots)
-count = -(-len(root_keys) // ROOT_BATCH)
-size = -(-len(root_keys) // count)
+count = max(1, -(-len(root_keys) // ROOT_BATCH))
+size = max(1, -(-len(root_keys) // count))
 root_batches = {
-    f'root-{i // size + 1:02d}': root_keys[i : i + size]
+    f'root-{TAG}{i // size + 1:02d}': root_keys[i : i + size]
     for i in range(0, len(root_keys), size)
 }
 
-dump(os.path.join(meta, 'lexeme-batches.json'), lex_batches)
-dump(os.path.join(meta, 'root-batches.json'), root_batches)
+def _merged(name, batches):
+    # Tagged (staged) batches are added to the existing batch map, never replacing earlier stages.
+    path = os.path.join(meta, name)
+    if TAG and os.path.exists(path):
+        merged = json.load(open(path))
+        merged.update(batches)
+        return merged
+    return batches
+
+
+dump(os.path.join(meta, 'lexeme-batches.json'), _merged('lexeme-batches.json', lex_batches))
+dump(os.path.join(meta, 'root-batches.json'), _merged('root-batches.json', root_batches))
 os.makedirs(os.path.join(WORK, 'inputs', 'lexemes'), exist_ok=True)
 os.makedirs(os.path.join(WORK, 'inputs', 'roots'), exist_ok=True)
 for name, keys in lex_batches.items():

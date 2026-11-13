@@ -1,0 +1,80 @@
+{
+ "part": "10",
+ "overrides": {
+  "92:14:3": {
+   "verbForm": "V",
+   "lexemeKey": "talaZ~aY`|V|ACT",
+   "noteEnglish": "QAC gives تَلَظَّىٰ no form tag (Form I); it is Form V تَلَظَّى (tafaʿʿala, ta prefix + doubled middle radical) with one of the two ta's elided from تَتَلَظَّى. Its mood is correctly indicative (hidden damma on the alif; nothing governs it), the sentence being an adjective of نَارًا."
+  }
+ },
+ "rejected": [
+  {
+   "id": "92:15:2",
+   "reason": "Defective verb after negative لَا (not lam of command): indicative with hidden damma on the alif; adjective clause of نَارًا."
+  },
+  {
+   "id": "92:18:2",
+   "reason": "يُؤْتِى is indicative with hidden damma on the ya; no governing particle (sila of ٱلَّذِى)."
+  },
+  {
+   "id": "92:18:4",
+   "reason": "يَتَزَكَّىٰ is indicative with hidden damma on the alif; ungoverned hal clause."
+  },
+  {
+   "id": "92:19:6",
+   "reason": "Passive تُجْزَىٰٓ is indicative with hidden damma on the alif; ungoverned adjective clause of نِعْمَةٍ."
+  },
+  {
+   "id": "92:21:2",
+   "reason": "After لَسَوْفَ the verb is indicative; final alif maqsura retained (hidden damma)."
+  },
+  {
+   "id": "93:5:2",
+   "reason": "After لَسَوْفَ يُعْطِيكَ is indicative; ya retained with hidden damma."
+  },
+  {
+   "id": "93:5:4",
+   "reason": "Joined by fa to indicative يُعْطِيكَ; alif retained, hidden damma: indicative."
+  },
+  {
+   "id": "96:6:4",
+   "reason": "Emphatic lam (in khabar of إِنَّ) does not govern; alif retained, indicative."
+  },
+  {
+   "id": "96:9:3",
+   "reason": "Sila of ٱلَّذِى, ungoverned; alif retained with hidden damma: indicative."
+  },
+  {
+   "id": "96:14:5",
+   "reason": "Khabar of أَنَّ, ungoverned; alif retained: indicative. لَمْ governs only يَعْلَم."
+  },
+  {
+   "id": "96:15:5",
+   "reason": "No five-verbs nun is dropped: the tanwin-alif is the light nun of emphasis (نَسْفَعَنْ), the verb is mabni on fatha, not subjunctive or jussive; QAC's mood tag is a non-issue."
+  },
+  {
+   "id": "96:17:1",
+   "reason": "Correct: after lam of command يَدْعُ is jussive, its final waw dropped."
+  },
+  {
+   "id": "98:2:4",
+   "reason": "Singular يَتْلُو with orthographic alif after the root waw (not a plural waw); indicative with hidden damma; adjective clause of رَسُولٌ."
+  },
+  {
+   "id": "98:8:6",
+   "reason": "تَجْرِى is indicative with hidden damma on the ya; ungoverned hal clause."
+  },
+  {
+   "id": "99:7:6",
+   "reason": "Correct: jussive answer of the conditional مَن يَعْمَلْ; the final alif of يَرَى is dropped for jazm."
+  },
+  {
+   "id": "99:8:6",
+   "reason": "Correct: jussive answer of the conditional مَن يَعْمَلْ; the final alif of يَرَى is dropped for jazm."
+  },
+  {
+   "id": "102:2:2",
+   "reason": "Hollow verb زَارَ: the 2MP perfect active is زُرْتُمْ (damma for the waw-medial root); the i'rab gives a fa'il, and ٱلْمَقَابِرَ is its object, so active is correct."
+  }
+ ]
+}

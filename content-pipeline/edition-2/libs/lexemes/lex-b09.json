@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "{sotaxolafa|X|ACT",
+   "baabUrdu": "بابِ اِسْتِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — دہم (X)",
+   "past": "اِسْتَخْلَفَ",
+   "present": "يَسْتَخْلِفُ",
+   "pattern": "اِسْتَفْعَلَ — يَسْتَفْعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی کو جانشین یا خلیفہ بنانا، ایک قوم کے بعد دوسری کو اس کی جگہ لانا؛ جگہ عموماً فِي کے ساتھ آتی ہے۔ ابتدائی ہمزۂ وصل اور س، ت بابِ استفعال کے زائد حروف ہیں؛ مادہ خ ل ف ہے، اور اسے اِخْتَلَفَ (اختلاف کرنا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC 7:129:17 وَيَسْتَخْلِفَكُمْ: IMPF (X), subjunctive, LEM {sotaxolafa, root xlf, object pronoun كُمْ; the kasra on the lam gives يَسْتَخْلِفُ. Quran-wide QAC: perfect ٱسْتَخْلَفَ (24:55), imperfects يَسْتَخْلِفُ (11:57), لَيَسْتَخْلِفَنَّهُمْ (24:55), passive participle مُّسْتَخْلَفِينَ (57:7). Lane s.v. خلف: اِسْتَخْلَفَهُ = he made him his successor/vicegerent. Regular sound form X, transitive."
+  },
+  {
+   "key": "xalafa|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "خَلَفَ",
+   "present": "يَخْلُفُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی میں عینِ کلمہ پر زبر اور مضارع میں پیش ہے، اسی لیے امر اُخْلُفْ آتا ہے۔ معنی کسی کے بعد آنا یا کسی کی جگہ لینا ہے؛ عموماً متعدی ہے (خَلَفَهُ: اس کی جگہ لی) مگر مِنْ بَعْدِ کے ساتھ مفعول کے بغیر بھی آتا ہے، اور بابِ افعال کے أَخْلَفَ (وعدہ خلافی کرنا) اور بابِ افتعال کے اِخْتَلَفَ سے الگ ہے۔",
+   "evidenceEnglish": "QAC form I, root xlf: imperative ٱخْلُفْنِى (7:142:16) has damma on the 2nd radical; perfects خَلَفْتُمُونِى (7:150:10) and فَخَلَفَ (7:169:1) have fatha; Quran-wide imperfect يَخْلُفُونَ (43:60). Hence a–u, nasara class. Lane and Lisan al-Arab s.v. خلف: خَلَفَهُ يَخْلُفُهُ خِلَافَةً = came after him / took his place. Transitive (object suffixes in 7:142, 7:150); used without an object with min ba'di in 7:169 (subject خَلْفٌ)."
+  },
+  {
+   "key": "xalaA|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "خَلَا",
+   "present": "يَخْلُو",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "ناقص واوی اور لازم فعل ہے: (زمانہ یا قومیں) گزر جانا، اور إِلَى کے ساتھ کسی سے تنہائی میں ملنا؛ آخری واو ماضی خَلَا میں الف بنتی ہے اور تاءِ تانیث ساکنہ سے پہلے گر جاتی ہے (خَلَتْ)، مضارع يَخْلُو میں واوِ مدہ رہتی ہے (رفع مقدر، نصب میں فتحہ ظاہر: يَخْلُوَ) اور جزم میں حذف ہوتی ہے (يَخْلُ)۔",
+   "evidenceEnglish": "QAC 7:38:6 خَلَتْ: PERF 3FS form I, LEM xalaA, root xlw (final waw); the alif drops before the feminine ta. Quran-wide QAC: perfects خَلَا (2:76), خَلَوْا۟ (2:14), خَلَتْ (2:134); jussive يَخْلُ (12:9) shows damma on the 2nd radical. Lane and Lisan al-Arab s.v. خلو: خَلَا يَخْلُو خُلُوًّا = became empty / passed away; خَلَا إِلَيْهِ = was alone with him. Hence a–u, nasara class, defective waw, intransitive."
+  },
+  {
+   "key": "xaADu|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "خَاضَ",
+   "present": "يَخُوضُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "اجوف واوی فعل ہے (اصل خَوَضَ يَخْوُضُ): درمیانی واو ماضی میں الف اور مضارع میں واوِ مدہ بنتی ہے، اور ساکن آخر سے پہلے گر کر پہلے حرف پر ضمہ چھوڑتی ہے (خُضْتُمْ)۔ اصل معنی پانی میں گھسنا ہے؛ قرآن میں عموماً فِي کے ساتھ بے ہودہ یا باطل باتوں میں پڑ جانے کے لیے آتا ہے۔",
+   "evidenceEnglish": "QAC 4:140:19 يَخُوضُوا۟: IMPF form I, subjunctive, LEM xaADu (an imperfect-stem identifier; citation خَاضَ), root xwD. The long u of the imperfect marks a hollow-waw verb of the a–u (nasara) class; Quran-wide also يَخُوضُونَ (6:68), perfects خَاضُوا۟ and خُضْتُمْ (9:69) with damma on the 1st radical. Lane and Lisan al-Arab s.v. خوض: خَاضَ الْمَاءَ يَخُوضُهُ خَوْضًا; خَاضَ فِي الْحَدِيثِ = engaged in idle talk."
+  },
+  {
+   "key": "yaxotaAnu|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِخْتَانَ",
+   "present": "يَخْتَانُ",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "اجوف واوی فعل ہے (مادہ خ و ن)؛ اصل اِخْتَوَنَ اور يَخْتَوِنُ میں درمیانی واو ماضی و مضارع دونوں میں الف بن جاتی ہے، اور ساکن آخر سے پہلے گر جاتی ہے (لَمْ يَخْتَنْ)۔ متعدی ہے: خیانت کرنا؛ اِخْتَانَ نَفْسَهُ یعنی گناہ کر کے خود اپنے ساتھ خیانت کرنا۔",
+   "evidenceEnglish": "QAC 4:107:5 يَخْتَانُونَ: IMPF 3MP form VIII, LEM yaxotaAnu (the identifier is the imperfect stem; citation اِخْتَانَ), root xwn. Quran-wide also تَخْتَانُونَ أَنفُسَكُمْ (2:187), with a direct object as in 4:107. Hollow form VIII keeps alif in both perfect and imperfect (like اِزْدَادَ / يَزْدَادُ in lex-00). Lisan al-Arab and Lane s.v. خون: اِخْتَانَهُ = خَانَهُ, betrayed him."
+  },
+  {
+   "key": "{xotaAra|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِخْتَارَ",
+   "present": "يَخْتَارُ",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "اجوف یائی فعل ہے (مادہ خ ي ر)؛ اصل اِخْتَيَرَ اور يَخْتَيِرُ میں درمیانی یاء دونوں میں الف بنتی ہے اور متحرک ضمیرِ فاعل سے پہلے گر جاتی ہے (اِخْتَرْتُ)۔ متعدی ہے: چُننا، پسند کرنا؛ کبھی مِنْ حذف ہو کر دو مفعول لیتا ہے، اور احتیاط رہے کہ مُخْتَار اسمِ فاعل اور اسمِ مفعول دونوں کی صورت ہے۔",
+   "evidenceEnglish": "QAC 7:155:1 وَٱخْتَارَ: PERF 3MS form VIII, LEM {xotaAra, root xyr. Quran-wide: perfects ٱخْتَرْتُكَ (20:13), ٱخْتَرْنَٰهُمْ (44:32), imperfect وَيَخْتَارُ (28:68). Hollow form VIII with alif in both aspects (cf. اِزْدَادَ in lex-00). Lane s.v. خير: اِخْتَارَهُ = chose him; the construction اِخْتَارَ قَوْمَهُ سَبْعِينَ رَجُلًا is the standard example of a dropped مِنْ giving two objects."
+  },
+  {
+   "key": ">udoxila|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَدْخَلَ",
+   "present": "يُدْخِلُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: دَخَلَ (داخل ہونا) سے بنا ہے اور اس کا معنی داخل کرنا ہے؛ جس جگہ داخل کیا جائے وہ عموماً دوسرا منصوب ہوتا ہے (أَدْخَلَهُ الْجَنَّةَ)۔ ماضی اور امر (أَدْخِلْ) میں ہمزۂ قطع ہے، جبکہ مضارع میں ہمزہ حذف ہو کر علامتِ مضارع پر پیش آتا ہے (يُدْخِلُ)۔",
+   "evidenceEnglish": "QAC form IV active, root dxl, 9 occurrences; LEM >udoxila is a passive-spelled identifier, but all samples are active: jussives يُدْخِلْهُ (4:13, 4:14), وَنُدْخِلْكُم (4:31), indicatives سَنُدْخِلُهُمْ (4:57, 4:122), فَسَيُدْخِلُهُمْ (4:175), imperative وَأَدْخِلْنَا (7:151) with hamzat al-qat'. Citation أَدْخَلَ يُدْخِلُ إِدْخَالًا (Lane s.v. دخل; al-Mu'jam al-Wasit). Doubly transitive with the place as second accusative."
+  },
+  {
+   "key": "nasotadoriju|X|ACT",
+   "baabUrdu": "بابِ اِسْتِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — دہم (X)",
+   "past": "اِسْتَدْرَجَ",
+   "present": "يَسْتَدْرِجُ",
+   "pattern": "اِسْتَفْعَلَ — يَسْتَفْعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی کو درجہ بدرجہ، آہستہ آہستہ کسی انجام کی طرف لے جانا کہ اسے پتا نہ چلے؛ مادہ د ر ج (سیڑھی، درجہ) ہے۔ ابتدائی ہمزۂ وصل اور س، ت بابِ استفعال کے زائد حروف ہیں۔",
+   "evidenceEnglish": "QAC 7:182:4 سَنَسْتَدْرِجُهُم: IMPF 1P form X, LEM nasotadoriju (the identifier is the inflected imperfect; citation اِسْتَدْرَجَ), root drj; kasra on the ra gives يَسْتَدْرِجُ. Same phrase at 68:44. The perfect is not attested in the Quran; standard per Lane and Lisan al-Arab s.v. درج: اِسْتَدْرَجَهُ = led him on step by step. Regular sound form X, transitive."
+  },
+  {
+   "key": "darasu|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "دَرَسَ",
+   "present": "يَدْرُسُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی میں عینِ کلمہ پر زبر اور مضارع میں پیش ہے، اسی لیے بابِ نَصَرَ ہے۔ کتاب کے لیے متعدی ہو کر بار بار پڑھنے اور سیکھنے کے معنی دیتا ہے، اور لازم ہو کر نشان کے مٹ جانے کا معنی بھی دیتا ہے۔",
+   "evidenceEnglish": "QAC 7:169:31 وَدَرَسُوا۟: PERF 3MP form I, LEM darasu (stem identifier; citation دَرَسَ), root drs; i'rab: فعل ماض. Quran-wide imperfects all have damma on the 2nd radical: تَدْرُسُونَ (3:79, 68:37), يَدْرُسُونَهَا (34:44). Lisan al-Arab and Lane s.v. درس: دَرَسَ الْكِتَابَ يَدْرُسُهُ دَرْسًا وَدِرَاسَةً; دَرَسَ الْأَثَرُ = became effaced. Hence a–u, nasara class."
+  },
+  {
+   "key": "{d~a`raka|VI|ACT",
+   "baabUrdu": "بابِ تَفَاعُل",
+   "formUrdu": "ثلاثی مزید فیہ — ششم (VI)",
+   "past": "اِدَّارَكَ",
+   "present": "يَدَّارَكُ",
+   "pattern": "تَفَاعَلَ — يَتَفَاعَلُ",
+   "noteUrdu": "اصل تَدَارَكَ / يَتَدَارَكُ ہے: بابِ تفاعل کی تاء فاءِ کلمہ د میں مدغم ہوئی، اور ماضی میں ساکن ابتدا کی وجہ سے ہمزۂ وصل آیا، یوں اِدَّارَكَ / يَدَّارَكُ بنا۔ لازم ہے: ایک دوسرے کو آ ملنا، پے در پے پہنچ جانا؛ مادہ د ر ك ہے۔",
+   "evidenceEnglish": "QAC 7:38:21 ٱدَّارَكُوا۟: form VI, LEM {d~a`raka, root drk. QAC tags it IMPV 2MP (and the generated i'rab says فعل أمر), but after حَتَّىٰٓ إِذَا it is the perfect 3MP 'they had all overtaken one another' (QAC gloss; conditional إِذَا with a past-time clause), so the tag is a QAC error; the paradigm is unaffected. Assimilated form of تَدَارَكَ (ta of tafa'ul into the dal fa', with hamzat al-wasl), like اِثَّاقَلَ (9:38); also بَلِ ٱدَّٰرَكَ (27:66). Lane s.v. درك: تَدَارَكُوا / اِدَّارَكُوا = they overtook one another. Imperfect يَدَّارَكُ by rule (يَتَدَارَكُ)."
+  }
+ ]
+}

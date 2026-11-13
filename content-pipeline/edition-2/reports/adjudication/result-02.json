@@ -1,0 +1,34 @@
+{
+ "part": "02",
+ "overrides": {
+  "4:49:13": {
+   "mood": "IND",
+   "noteEnglish": "QAC tags يُظْلَمُونَ jussive (and the generated i'rab line repeats مجزوم), but the retained nun of the five verbs shows it is indicative; لَا here is plain negation of a third-person passive statement, not prohibition (which would drop the nun). The verse note coordinates وَلَا يُظْلَمُونَ as a statement with بَلِ ٱللَّهُ يُزَكِّى."
+  },
+  "4:77:47": {
+   "mood": "IND",
+   "noteEnglish": "QAC tags تُظْلَمُونَ jussive (and the generated i'rab line repeats مجزوم), but the retained nun shows it is indicative; وَلَا is negation in a promise (injustice will not be done to you), not prohibition, which would read تُظْلَمُوا۟. The verse note coordinates it with the nominal sentence وَٱلْـَٔاخِرَةُ خَيْرٌ."
+  }
+ },
+ "rejected": [
+  {"id": "4:49:2", "reason": "تَرَ after أَلَمْ is jussive; the final alif of the defective verb is dropped as the sign of jazm (the fatha is the stem vowel), as the i'rab says."},
+  {"id": "4:49:9", "reason": "يُزَكِّى has no governing particle; indicative with an implied damma on the final ya."},
+  {"id": "4:51:2", "reason": "تَرَ after أَلَمْ is jussive by dropping the final weak letter; the fatha is not a subjunctive ending."},
+  {"id": "4:56:6", "reason": "نُصْلِيهِمْ after سَوْفَ is indicative with an implied damma on the ya; no jazm governor."},
+  {"id": "4:57:6", "reason": "جَنَّـٰتٍ is the second object of سَنُدْخِلُهُمْ; a sound feminine plural is accusative with kasra, so ACC is correct."},
+  {"id": "4:57:7", "reason": "تَجْرِى is an ungoverned indicative (adjectival clause of جَنَّـٰتٍ) with an implied damma on the ya."},
+  {"id": "4:59:20", "reason": "كُنتُمْ is the active perfect of the hollow verb كَانَ (kāna > kuntum); the damma is not a passive marker."},
+  {"id": "4:60:2", "reason": "تَرَ after أَلَمْ is jussive by dropping the final weak letter, as the i'rab says."},
+  {"id": "4:61:2", "reason": "قِيلَ is the regular passive perfect of the hollow verb قَالَ (kasra + ya), as the i'rab says مبني للمجهول."},
+  {"id": "4:71:7", "reason": "ثُبَاتٍ is a circumstantial accusative (حال); the sound feminine plural takes kasra in the accusative, as the verse note states."},
+  {"id": "4:73:14", "reason": "كُنتُ is the active perfect of hollow كَانَ; the damma is not a passive marker."},
+  {"id": "4:74:19", "reason": "نُؤْتِيهِ after فَسَوْفَ in the answer clause is itself indicative (implied damma on the ya); only the whole clause stands in the jussive position."},
+  {"id": "4:77:2", "reason": "تَرَ after أَلَمْ is jussive by dropping the final weak letter, as the i'rab says."},
+  {"id": "4:77:5", "reason": "قِيلَ is the passive perfect of hollow قَالَ; the verse note confirms فعل ماض مبني للمجهول."},
+  {"id": "4:78:6", "reason": "كُنتُمْ is the active perfect of hollow كَانَ after لَوْ; the damma is not a passive marker."},
+  {"id": "4:94:27", "reason": "كُنتُم is the active perfect of hollow كَانَ; the damma is not a passive marker."},
+  {"id": "4:95:2", "reason": "يَسْتَوِى after negative لَا is indicative with an implied damma on the ya; لَا does not govern jazm here."},
+  {"id": "4:96:1", "reason": "دَرَجَـٰتٍ is a substitute (بدل) of accusative أَجْرًا; the sound feminine plural is accusative with kasra."},
+  {"id": "4:97:9", "reason": "كُنتُمْ is the active perfect of hollow كَانَ; the damma is not a passive marker."}
+ ]
+}

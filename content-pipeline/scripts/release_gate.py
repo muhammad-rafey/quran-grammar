@@ -9,10 +9,18 @@ from datetime import date
 import hashlib
 import json
 from pathlib import Path
+import os
 import re
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import edition  # noqa: E402
+
+SURAH_NUMBERS = (18, 23, 32, 36, 55)  # default (five-Surah) work directory
 
 
-SURAH_NUMBERS = (18, 23, 32, 36, 55)
+def surah_numbers(work):
+    return edition.numbers(str(work))
 SHARED_INPUTS = (
     'meta/plan.json',
     'meta/words.json',
@@ -45,7 +53,7 @@ def input_paths(work, surah):
     timestamps, approvals themselves and generated output do not affect the digest.
     """
     work = Path(work)
-    if surah not in SURAH_NUMBERS:
+    if surah not in surah_numbers(work):
         raise ReleaseBlocked(f'Unsupported expansion Surah: {surah}')
     plan = _read_json(work / 'meta/plan.json')
     if not isinstance(plan, list):
@@ -100,7 +108,7 @@ def _approval_metadata(work, surahs):
     approved = {}
     errors = []
     for surah in surahs:
-        if surah not in SURAH_NUMBERS:
+        if surah not in surah_numbers(work):
             errors.append(f'Unsupported expansion Surah: {surah}')
             continue
         record = records.get(str(surah))
@@ -150,7 +158,7 @@ def require_approvals(work, surahs):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('work_dir', type=Path)
-    parser.add_argument('--surah', nargs='+', type=int, choices=SURAH_NUMBERS, required=True)
+    parser.add_argument('--surah', nargs='+', type=int, required=True)
     parser.add_argument('--digest', action='store_true', help='compute fingerprints only; does not approve content')
     args = parser.parse_args()
     try:

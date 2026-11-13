@@ -1,0 +1,94 @@
+{
+ "entries": [
+  {
+   "key": "wu,riYa|III|PASS",
+   "baabUrdu": "بابِ مُفَاعَلَة — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)، مجہول",
+   "past": "وُورِيَ",
+   "present": "يُوَارَى",
+   "pattern": "فُوعِلَ — يُفَاعَلُ",
+   "noteUrdu": "متعدی فعل وَارَى يُوَارِي (چھپانا، ڈھانپنا) کا مجہول ہے: چھپایا جانا؛ چھپائی گئی چیز نائبِ فاعل بنتی ہے۔ مادہ و ر ي لفیف مفروق ہے؛ ماضی مجہول میں بابِ مفاعلہ کا الف ضمہ کے بعد واو بن جاتا ہے (وُورِيَ، رسمِ عثمانی میں دوسری واو چھوٹی لکھی جاتی ہے)، اور مضارع مجہول يُوَارَى کی آخری یاء الفِ مقصورہ ہے۔",
+   "evidenceEnglish": "QAC tags 7:20:7 وُۥرِىَ as PERF|PASS (III), LEM wu,riYa, root wry; i'rab: فعل ماض مبني للمجهول. Passive of Form III وَارَى يُوَارِي مُوَارَاةً 'to conceal, cover' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit). Form III passive fā'ala > fū'ila: the long ā becomes ū (وُورِيَ, written in the Uthmani rasm with one full and one small waw). Passive imperfect not attested in the Quran; regular yufā'alu with final yā' as alif maqsura: يُوَارَى. QAC's lemma id is this passive perfect, not the active citation form (see wu,riYa|III|ACT)."
+  },
+  {
+   "key": "wu,riYa|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "وَارَى",
+   "present": "يُوَارِي",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "لفیف مفروق (و ر ي) اور متعدی فعل ہے: چھپانا، ڈھانپنا۔ پہلی واو ہر صیغے میں باقی رہتی ہے؛ آخری یاء ماضی وَارَى میں الفِ مقصورہ اور مضارع يُوَارِي میں ساکن یاء ہے جو جزم میں حذف ہو جاتی ہے؛ اسی مادے کا تَوَارَى (چھپ جانا، بابِ تفاعل) لازم اور الگ فعل ہے۔",
+   "evidenceEnglish": "QAC tags 7:26:7 يُوَٰرِى as IMPF (III), 3MS, LEM wu,riYa (QAC's lemma id is the passive perfect وُورِيَ), root wry; the active prefix vowel u with ā after the first radical and i before the last is Form III yufā'ilu. Quran-wide also يُوَٰرِى سَوْءَةَ أَخِيهِ and فَأُوَٰرِىَ (5:31). Citation form وَارَى يُوَارِي مُوَارَاةً 'to hide, cover' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit). Form VI تَوَارَى (38:32) is a separate verb."
+  },
+  {
+   "key": "wasiEa|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "وَسِعَ",
+   "present": "يَسَعُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "مثال واوی اور متعدی فعل ہے: کسی چیز کو سمو لینا، اس پر حاوی ہونا، اس کی گنجائش رکھنا۔ احتیاط: بابِ سمع کے مثال میں واو عموماً باقی رہتی ہے (وَجِلَ يَوْجَلُ)، مگر يَسَعُ میں حذف ہو جاتی ہے؛ صرفیوں کے نزدیک اصل يَوْسِعُ تھی اور حرفِ حلق ع کی وجہ سے عینِ کلمہ س پر فتحہ آیا۔",
+   "evidenceEnglish": "QAC tags 7:89:26 وَسِعَ (3MS) and 7:156:19 وَسِعَتْ (3FS) as Form I active perfects, LEM wasiEa, root wsE; also وَسِعَ كُرْسِيُّهُ (2:255), وَسِعْتَ (40:7). Perfect vowel i is attested; no imperfect occurs in the Quran. Lane, Lisan al-Arab and al-Mu'jam al-Wasit give وَسِعَ يَسَعُ سَعَةً (i–a), with the waw dropped as in وَطِئَ يَطَأُ; grammarians explain it as originally يَوْسِعُ (i–i) with a imposed by the guttural ع. Classed by its actual vowels as the samiʿa pattern."
+  },
+  {
+   "key": "wasowasa|I|ACT",
+   "baabUrdu": "بابِ فَعْلَلَة",
+   "formUrdu": "رباعی مجرد — اوّل (QI)",
+   "past": "وَسْوَسَ",
+   "present": "يُوَسْوِسُ",
+   "pattern": "فَعْلَلَ — يُفَعْلِلُ",
+   "noteUrdu": "رباعی مجرد مضاعف فعل ہے (اصلی حروف و س و س)؛ اسے ثلاثی کی صورت اوّل نہ سمجھیں، اور مثال واوی (وَعَدَ يَعِدُ) کے برعکس اس کی پہلی واو مضارع يُوَسْوِسُ میں بھی حذف نہیں ہوتی۔ لازم ہے: وسوسہ ڈالنا؛ جس کے دل میں خیال ڈالا جائے وہ لِ یا إِلَى کے ساتھ آتا ہے، اور مضارع میں حرفِ مضارع پر پیش اور تیسرے اصلی حرف پر زیر ہے۔",
+   "evidenceEnglish": "QAC tags 7:20:1 فَوَسْوَسَ as PERF with no form marker (hence the I in the handle) under the four-letter root wsws; QAC labels quadriliteral verbs as form I, so it is treated as QI faʿlala, as in lex-a04 damodama. Quran-wide: وَسْوَسَ لَهُمَا (7:20), فَوَسْوَسَ إِلَيْهِ (20:120), imperfects تُوَسْوِسُ (50:16) and يُوَسْوِسُ (114:5) confirm yufaʿlilu. وَسْوَسَ يُوَسْوِسُ وَسْوَسَةً وَوِسْوَاسًا, construed with لَ / إِلَى (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": "yaSilu|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "وَصَلَ",
+   "present": "يَصِلُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "مثال واوی ہے: مضارع يَصِلُ اور امر صِلْ میں پہلی واو حذف ہو جاتی ہے، اس لیے صیغے میں مادے کی واو دکھائی نہیں دیتی۔ متعدی بھی ہے (وَصَلَهُ: جوڑنا، ملانا) اور إِلَى کے ساتھ لازم بھی (کسی تک پہنچنا، کسی سے جا ملنا)۔",
+   "evidenceEnglish": "QAC tags 4:90:3 يَصِلُونَ as Form I active IMPF 3MP, root wSl, with the imperfect lemma id yaSilu; the citation form is the perfect وَصَلَ. The attested imperfect vowel i (يَصِلُونَ; also يَصِلُونَ مَآ أَمَرَ ٱللَّهُ بِهِۦٓ 13:21, لَن يَصِلُوٓا۟ إِلَيْكَ 11:81) with waw elided is the a–i class: وَصَلَ يَصِلُ صِلَةً وَوُصُولًا (Lane; Lisan al-Arab; al-Mu'jam al-Wasit). Here construed with إِلَى 'to join, be allied to'."
+  },
+  {
+   "key": ">awoSa`|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَوْصَى",
+   "present": "يُوصِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "لفیف مفروق (و ص ي) اور متعدی فعل ہے: کسی کو تاکیدی حکم دینا یا وصیت کرنا (أَوْصَى بِكَذَا)؛ مضارع يُوصِي میں واو پیش کے بعد مد ہے، اور آخری یاء أَوْصَى میں الفِ مقصورہ ہے جبکہ مضارع میں جمع کی واو سے پہلے (تُوصُونَ) اور جزم (لَمْ يُوصِ) میں گر جاتی ہے۔ احتیاط: حرفِ مضارع کا پیش بابِ افعال کی علامت ہے، مجہول کی نہیں۔",
+   "evidenceEnglish": "QAC tags 4:11:1 يُوصِيكُمُ, 4:11:52 يُوصِى (3MS) and 4:12:46 تُوصُونَ (2MP) as Form IV active imperfects, LEM >awoSa`, root wSy. Quran-wide perfect وَأَوْصَٰنِى (19:31). أَوْصَى يُوصِي إِيصَاءً 'to enjoin; to bequeath', with بِ for the thing (Lane; Lisan al-Arab; al-Mu'jam al-Wasit). af'ala of و ص ي: يُوْصِي > يُوصِي. QAC's lemma spelling أَوْصَٰ is truncated; citation form أَوْصَى."
+  },
+  {
+   "key": "yuwSiy|I|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَوْصَى",
+   "present": "يُوصِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "لفیف مفروق (و ص ي) اور متعدی فعل ہے: کسی کو تاکیدی حکم دینا یا وصیت کرنا (أَوْصَى بِكَذَا)؛ مضارع يُوصِي میں واو پیش کے بعد مد ہے، اور آخری یاء أَوْصَى میں الفِ مقصورہ ہے جبکہ مضارع میں جمع کی واو سے پہلے (تُوصُونَ) اور جزم (لَمْ يُوصِ) میں گر جاتی ہے۔ احتیاط: حرفِ مضارع کا پیش بابِ افعال کی علامت ہے، مجہول کی نہیں۔",
+   "evidenceEnglish": "QAC gives 4:12:22 يُوصِينَ (IMPF 3FP, root wSy) the pseudo-lemma yuwSiy with no form marker, hence the I in this handle. The active prefix vowel u with i before the final radical is the Form IV imperfect of أَوْصَى (cf. يُوصِيكُمُ, يُوصِى 4:11); meta/overrides.json remaps 4:12:22 to >awoSa`|IV|ACT. Same verb, so the paradigm fields are identical to >awoSa`|IV|ACT. Form I وَصَى يَصِي (to join) is a different, rare verb and not this word (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": ">awoSa`|IV|PASS",
+   "baabUrdu": "بابِ اِفْعَال — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)، مجہول",
+   "past": "أُوصِيَ",
+   "present": "يُوصَى",
+   "pattern": "أُفْعِلَ — يُفْعَلُ",
+   "noteUrdu": "أَوْصَى کا مجہول ہے: وصیت کیا جانا؛ أُوصِيَ اور يُوصَى میں واو پیش کے بعد مد ہے اور مضارع کی آخری یاء الفِ مقصورہ ہے۔ احتیاط: رسمِ عثمانی میں معروف يُوصِي اور مجہول يُوصَى دونوں ى پر ختم ہوتے ہیں، انہیں ص کی حرکت سے پہچانیں: معروف میں زیر، مجہول میں زبر (اور ى پر کھڑا زبر)؛ بِ کے ساتھ جار و مجرور نائبِ فاعل بنتا ہے۔",
+   "evidenceEnglish": "QAC tags 4:12:77 يُوصَىٰ as IMPF|PASS (IV), 3MS, LEM >awoSa`, root wSy; i'rab: فعل مضارع مبني للمجهول. The fatha on ص with the dagger alif over the final ى (vs kasra on ص in active يُوصِى 4:11:52, which is also written with final ى) marks yufʿalu. Passive of أَوْصَى يُوصِي (Lane; Lisan al-Arab): perfect أُوصِيَ (uf'ila, not attested in the Quran, regular) / imperfect يُوصَى. Consistent with the active entry >awoSa`|IV|ACT."
+  },
+  {
+   "key": "waS~aY`|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "وَصَّى",
+   "present": "يُوَصِّي",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "لفیف مفروق (و ص ي)، ناقص یائی اور متعدی فعل ہے: تاکید سے حکم دینا، نصیحت کرنا؛ جسے حکم دیا جائے وہ مفعول ہوتا ہے اور جس بات کا حکم ہو وہ بِ کے ساتھ آتی ہے۔ پہلی واو باقی رہتی ہے؛ آخری یاء ماضی وَصَّى میں الفِ مقصورہ ہے اور متکلم و مخاطب کی ضمیر سے پہلے ظاہر ہوتی ہے (وَصَّيْنَا)۔",
+   "evidenceEnglish": "QAC tags 4:131:9 وَصَّيْنَا and 29:8:1 وَوَصَّيْنَا as PERF (II) 1P, LEM waS~aY`, root wSy; the doubled ص is faʿʿala. Quran-wide also وَوَصَّىٰ بِهَآ (2:132), وَصَّىٰكُم بِهِۦ (6:151). No imperfect in the Quran; regular Form II defective يُوَصِّي (masdar تَوْصِيَة), 'to enjoin, charge' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit)."
+  }
+ ]
+}

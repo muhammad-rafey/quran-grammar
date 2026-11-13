@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "qa`tala|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "قَاتَلَ",
+   "present": "يُقَاتِلُ",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی سے لڑنا، جنگ کرنا؛ جس سے لڑا جائے وہ مفعول بہ بنتا ہے۔ بابِ مفاعلہ میں فاء کے بعد الف آتا ہے اور مضارع میں علامتِ مضارع مضموم اور عینِ کلمہ مکسور ہوتا ہے؛ مجرد قَتَلَ يَقْتُلُ (قتل کرنا) اس سے الگ فعل ہے۔",
+   "evidenceEnglish": "QAC tags all sample occurrences as form III, root qtl, LEM qa`tala: jussive فَلْيُقَـٰتِلْ / يُقَـٰتِلْ (4:74), indicative تُقَـٰتِلُونَ (4:75), يُقَـٰتِلُونَ (4:76), subjunctive يُقَـٰتِلُوكُمْ (4:90), imperatives فَقَـٰتِلُوٓا۟ (4:76), فَقَـٰتِلْ (4:84); Quran-wide perfect قَـٰتَلَ (3:146). Prefix damma + kasra on the 2nd radical: faa'ala – yufaa'ilu, قَاتَلَهُ يُقَاتِلُهُ مُقَاتَلَةً وَقِتَالًا (Lane; Lisan al-Arab). Transitive (object pronoun in 4:90). Consistent with qatala|I|ACT in lex-00, which notes قَاتَلَ is a separate lemma."
+  },
+  {
+   "key": "qut~ilu|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "قَتَّلَ",
+   "present": "يُقَتِّلُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کثرت سے قتل کرنا، چن چن کر مارنا؛ عینِ کلمہ کی تشدید یہاں کثرت اور مبالغہ بتاتی ہے۔ مجرد قَتَلَ يَقْتُلُ اور بابِ مفاعلہ کا قَاتَلَ يُقَاتِلُ (لڑنا) اس سے الگ افعال ہیں؛ مشدد تاء سے پہچانیں۔",
+   "evidenceEnglish": "QAC tags 7:127 سَنُقَتِّلُ (1P) and 7:141 يُقَتِّلُونَ (3MP) as form II active imperfects, root qtl; both show prefix damma, fatha on ق and shadda+kasra on ت: fa''ala – yufa''ilu. QAC lemma label قُتِّلُ (qut~ilu) is a passive-looking handle (cf. passive قُتِّلُوا۟ 33:61); the active citation form is قَتَّلَ يُقَتِّلُ تَقْتِيلًا 'killed much/many' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit). Transitive (object أَبْنَاءَ in both ayahs)."
+  },
+  {
+   "key": "yasotaqodimu|X|ACT",
+   "baabUrdu": "بابِ اِسْتِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — دہم (X)",
+   "past": "اِسْتَقْدَمَ",
+   "present": "يَسْتَقْدِمُ",
+   "pattern": "اِسْتَفْعَلَ — يَسْتَفْعِلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے: آگے ہونا، مقررہ وقت سے پہلے آ جانا؛ یہاں بابِ استفعال کا معنی طلب کے بجائے تَقَدَّمَ کے قریب ہے۔ ماضی کا ہمزہ وصلی ہے اور مضارع يَسْتَقْدِمُ میں علامتِ مضارع مفتوح اور عینِ کلمہ مکسور ہے؛ قرآن میں یہ اکثر اپنے مقابل اِسْتَأْخَرَ کے ساتھ آتا ہے۔",
+   "evidenceEnglish": "QAC tags 7:34 يَسْتَقْدِمُونَ as form X active imperfect 3MP, root qdm (LEM label يَسْتَقْدِمُ is the imperfect handle). Prefix fatha + kasra on the 2nd radical: istaf'ala – yastaf'ilu. No Quranic perfect; citation form اِسْتَقْدَمَ يَسْتَقْدِمُ 'to come forward, be advanced' (= تَقَدَّمَ; Lane; Lisan al-Arab; al-Mu'jam al-Wasit). Intransitive; paired with يَسْتَأْخِرُونَ (7:34, 10:49, 16:61, 34:30), cf. yasota>oxiru|X|ACT."
+  },
+  {
+   "key": "qara>a|I|PASS",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "قُرِئَ",
+   "present": "يُقْرَأُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "متعدی فعل قَرَأَ يَقْرَأُ (پڑھنا) کا مجہول ہے: پڑھا جانا، تلاوت کیا جانا؛ جو چیز پڑھی جائے وہ نائبِ فاعل بنتی ہے۔ مہموز اللام ہے: ماضی قُرِئَ میں کسرہ کے بعد ہمزہ یاء کی کرسی پر اور مضارع يُقْرَأُ میں فتحہ کے بعد الف پر لکھا جاتا ہے۔",
+   "evidenceEnglish": "QAC tags 7:204 قُرِئَ as form I passive perfect 3MS (LEM qara>a, root qrA); i'rab فعل ماض مبني للمجهول. Passive fu'ila – yuf'alu of قَرَأَ يَقْرَأُ (a–a, bab fataha; Lane; Lisan al-Arab), matching qara>a|I|ACT in lex-a09. The passive imperfect يُقْرَأُ is not attested in the Quran; it follows the regular passive pattern."
+  },
+  {
+   "key": "yaqorabu|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "قَرِبَ",
+   "present": "يَقْرَبُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی چیز کے قریب جانا، اس کے پاس پھٹکنا؛ مفعول بغیر حرفِ جر کے آتا ہے اور قرآن میں یہ زیادہ تر نہی (لَا + مضارع مجزوم) کی صورت میں آتا ہے۔ اسے قَرُبَ يَقْرُبُ (خود قریب ہونا، لازم) سے الگ رکھیں؛ اس کے مضارع يَقْرَبُ میں راء پر زبر ہے۔",
+   "evidenceEnglish": "QAC tags 4:43 تَقْرَبُوا۟ and 7:19 تَقْرَبَا as form I active jussives (LEM label يَقْرَبُ is the imperfect handle, root qrb), both with fatha on the 2nd radical (ر). The Quran attests only the imperfect (e.g. 6:151, 9:28, 17:32); the perfect is from the lexica: قَرِبَهُ يَقْرَبُهُ قُرْبَانًا 'he approached it', i–a, bab sami'a, distinct from intransitive قَرُبَ يَقْرُبُ قُرْبًا 'to be near' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit). Transitive with direct object (ٱلصَّلَوٰةَ 4:43, هَـٰذِهِ ٱلشَّجَرَةَ 7:19)."
+  },
+  {
+   "key": "{sotaqar~a|X|ACT",
+   "baabUrdu": "بابِ اِسْتِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — دہم (X)",
+   "past": "اِسْتَقَرَّ",
+   "present": "يَسْتَقِرُّ",
+   "pattern": "اِسْتَفْعَلَ — يَسْتَفْعِلُ",
+   "noteUrdu": "مضاعف اور لازم فعل ہے: ٹھہر جانا، اپنی جگہ قائم اور برقرار رہنا۔ دونوں راء ادغام سے ایک مشدد راء بنتی ہیں (اِسْتَقَرَّ، يَسْتَقِرُّ)، مگر ضمیرِ رفع متحرک سے پہلے الگ ہو جاتی ہیں (اِسْتَقْرَرْتُ)؛ ماضی کا ہمزہ وصلی ہے۔",
+   "evidenceEnglish": "QAC tags 7:143 ٱسْتَقَرَّ as form X active perfect 3MS, root qrr (doubled), LEM {sotaqar~a. No Quranic imperfect; standard paradigm اِسْتَقَرَّ يَسْتَقِرُّ اِسْتِقْرَارًا 'to settle, remain firm in place' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit), istaf'ala – yastaf'ilu with assimilation of the doubled radicals (cf. participle مُسْتَقِرًّا 27:40). Intransitive (مَكَانَهُۥ in 7:143 is commonly parsed as an adverb of place, not an object)."
+  },
+  {
+   "key": "tuqosiTu|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَقْسَطَ",
+   "present": "يُقْسِطُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے: انصاف کرنا، عدل سے کام لینا؛ جس معاملے میں انصاف کیا جائے وہ فِي کے ساتھ اور جس کے ساتھ انصاف کیا جائے وہ إِلَى کے ساتھ آتا ہے۔ اہم احتیاط: مجرد قَسَطَ يَقْسِطُ کا معنی ظلم کرنا اور حق سے ہٹنا ہے، یہاں بابِ افعال کا ہمزہ معنی کو الٹ کر انصاف کا مفہوم دیتا ہے۔",
+   "evidenceEnglish": "QAC tags 4:3 تُقْسِطُوا۟ as form IV active imperfect, subjunctive 2MP, root qsT (LEM label تُقْسِطُ is an imperfect handle): prefix damma + kasra on the 2nd radical, af'ala – yuf'ilu. Quran-wide imperative وَأَقْسِطُوٓا۟ (49:9), تُقْسِطُوٓا۟ إِلَيْهِمْ (60:8), participle ٱلْمُقْسِطِينَ (5:42). أَقْسَطَ 'acted justly' vs form I قَسَطَ يَقْسِطُ 'acted unjustly' (ٱلْقَـٰسِطُونَ 72:14-15) per Lane, Lisan al-Arab and al-Mu'jam al-Wasit. Intransitive (فِى ٱلْيَتَـٰمَىٰ 4:3)."
+  },
+  {
+   "key": "qaAsama|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "قَاسَمَ",
+   "present": "يُقَاسِمُ",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی کے سامنے قسم کھانا؛ جس کے آگے قسم کھائی جائے وہ مفعول بہ بنتا ہے۔ ایک قول کے مطابق بابِ مفاعلہ اس فعل میں قسم کے زور اور اصرار کا مفہوم دیتا ہے، اور بعض کے نزدیک اس سے دونوں طرف سے قسمیں مراد ہیں؛ آپس میں قسمیں کھانے کے لیے بابِ تفاعل کا تَقَاسَمَ آتا ہے۔",
+   "evidenceEnglish": "QAC tags 7:21 وَقَاسَمَهُمَآ as form III active perfect 3MS with a 3D object pronoun (LEM qaAsama, root qsm). No Quranic imperfect; regular faa'ala – yufaa'ilu: قَاسَمَهُ يُقَاسِمُهُ 'swore to him' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit). Exegetes note the mufaa'ala here conveys emphatic swearing (some explain it as an exchange of oaths); form VI تَقَاسَمُوا۟ (27:49) is a separate lemma."
+  },
+  {
+   "key": "taqoSuru|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "قَصَرَ",
+   "present": "يَقْصُرُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی چیز کو مختصر کرنا، گھٹانا، اور کسی کو ایک جگہ روک رکھنا؛ نماز کے قصر میں مفعول براہِ راست بھی آتا ہے اور مِنْ کے ساتھ بھی (قَصَرَ الصَّلَاةَ، قَصَرَ مِنَ الصَّلَاةِ)؛ قرآن میں مِنْ کے ساتھ آیا ہے۔ اسے قَصُرَ يَقْصُرُ (خود چھوٹا ہونا، لازم) اور بابِ افعال کے أَقْصَرَ (باز آنا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC tags 4:101 تَقْصُرُوا۟ مِنَ ٱلصَّلَوٰةِ as form I active imperfect, subjunctive 2MP (LEM label تَقْصُرُ is the imperfect handle, root qSr), with damma on the 2nd radical (ص). Perfect قَصَرَ with fatha per the lexica: قَصَرَ الصَّلَاةَ وَمِنَ الصَّلَاةِ يَقْصُرُ قَصْرًا 'shortened the prayer', a–u, bab nasara (Lane; Lisan al-Arab; al-Mu'jam al-Wasit); cf. passive participle مَّقْصُورَٰتٌ 'confined' (55:72). Intransitive قَصُرَ 'to be short' is a separate class."
+  },
+  {
+   "key": "yuqoSiru|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَقْصَرَ",
+   "present": "يُقْصِرُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے: کسی کام سے رک جانا، باز آنا اور کمی کرنا؛ جس سے رکا جائے وہ عَنْ کے ساتھ آتا ہے۔ بابِ افعال کا ہمزہ مضارع میں حذف ہو جاتا ہے اور علامتِ مضارع مضموم ہوتی ہے (يُقْصِرُ)؛ اسے مجرد قَصَرَ يَقْصُرُ (مختصر کرنا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC tags 7:202 يُقْصِرُونَ as form IV active imperfect 3MP, root qSr (LEM label يُقْصِرُ is the imperfect handle; sole Quranic occurrence): prefix damma + kasra on the 2nd radical, af'ala – yuf'ilu. Lexica: أَقْصَرَ عَنِ الشَّيْءِ 'desisted from it, ceased' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit); tafsir explains ثُمَّ لَا يُقْصِرُونَ as 'they do not cease (from leading them astray)'. Intransitive."
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "part": "07",
+ "overrides": {
+  "7:189:13": {
+   "noteEnglish": "QAC 0.4 tags تَغَشَّىٰهَا as a 3MS imperfect (indicative by default), but it follows فَلَمَّا and a 3MS imperfect of Form V would be يَتَغَشَّىٰ: it is the Form V perfect taghashshā (3MS, active, no mood), with هَا as object. It is not jussive; treat it as a perfect verb (aspect PERF)."
+  },
+  "7:190:2": {
+   "png": "3MS",
+   "noteEnglish": "QAC 0.4 tags ءَاتَىٰهُمَا as a 1st person singular imperfect, but after فَلَمَّا it is the Form IV perfect ātā (aspect PERF, no mood) with Allah as its hidden 3MS subject: 'He gave them'; هُمَا is the first object and صَـٰلِحًا the second."
+  },
+  "7:190:8": {
+   "png": "3MS",
+   "noteEnglish": "QAC 0.4 tags ءَاتَىٰهُمَا as a 1st person singular imperfect, but in فِيمَآ ءَاتَىٰهُمَا it is the Form IV perfect ātā (aspect PERF, no mood) in the relative clause, with Allah as hidden 3MS subject: 'what He gave them'."
+  },
+  "7:203:12": {
+   "mood": "IND",
+   "noteEnglish": "QAC tags يُوحَىٰٓ subjunctive, but no particle of nasb precedes it (it is the verb of the relative clause after مَا); it is indicative with an implied damma on the alif (للتعذر), passive Form IV."
+  },
+  "25:17:11": {
+   "case": "ACC",
+   "noteEnglish": "QAC tags عِبَادِى nominative, but in ءَأَنتُمْ أَضْلَلْتُمْ عِبَادِى it is the direct object of أَضْلَلْتُمْ (whose subject is the تُمْ suffix): accusative with the fatha implied before the 1S ya, هَـٰٓؤُلَآءِ following as its descriptor."
+  },
+  "25:30:5": {
+   "case": "ACC",
+   "noteEnglish": "QAC tags قَوْمِى nominative, but in إِنَّ قَوْمِى ٱتَّخَذُوا۟ it is the noun (ism) of إِنَّ: accusative with the fatha implied before the 1S ya; the predicate is the clause ٱتَّخَذُوا۟."
+  },
+  "25:45:2": {
+   "png": "2MS",
+   "noteEnglish": "QAC tags تَرَ 3rd person feminine singular; in أَلَمْ تَرَ إِلَىٰ رَبِّكَ it addresses the Prophet (رَبِّكَ), so it is 2nd person masculine singular. The jussive after لَمْ (final alif dropped) is correct."
+  }
+ },
+ "rejected": [
+  {"id": "7:187:12", "reason": "يُجَلِّيهَا follows negating لَا, not a jazm particle; indicative with implied damma on the ya (weak final). QAC IND is correct."},
+  {"id": "7:187:21", "reason": "تَأْتِيكُمْ follows negating لَا (exception with إِلَّا); indicative with implied damma on the ya. QAC IND is correct."},
+  {"id": "7:188:13", "reason": "كُنتُ is the active perfect of hollow كَانَ (kun- before a consonant suffix), not a passive."},
+  {"id": "7:194:13", "reason": "كُنتُمْ is the active perfect of hollow كَانَ (kun- before a consonant suffix), not a passive."},
+  {"id": "7:195:7", "reason": "أَيْدٍ is a manqus plural, delayed mubtada' after لَهُمْ: nominative with the damma implied on the elided ya. QAC NOM is correct."},
+  {"id": "7:196:8", "reason": "يَتَوَلَّى has no governing jazm particle (predicate of هُوَ); indicative with implied damma on the final alif."},
+  {"id": "7:198:7", "reason": "وَتَرَىٰهُمْ begins a new clause (waw isti'nafiyya); the final alif is retained, so it is indicative, not jussive تَرَ."},
+  {"id": "25:5:6", "reason": "تُمْلَىٰ is predicate of فَهِىَ with no jazm particle; indicative with implied damma on the alif. Passive Form IV is correct."},
+  {"id": "25:7:7", "reason": "وَيَمْشِى is coordinated with indicative يَأْكُلُ; indicative with implied damma on the ya."},
+  {"id": "25:8:2", "reason": "يُلْقَىٰٓ follows أَوْ in the تحضيض series (parallel with indicative تَكُونُ); no jazm governor, alif retained: indicative."},
+  {"id": "25:10:11", "reason": "تَجْرِى is a descriptive clause for جَنَّـٰتٍ, not the jussive answer; indicative with implied damma on the ya."},
+  {"id": "25:18:5", "reason": "يَنۢبَغِى follows مَا كَانَ with no jazm particle; indicative with implied damma on the ya."},
+  {"id": "25:21:11", "reason": "نَرَىٰ follows أَوْ after تحضيض لَوْلَآ, coordinated with أُنزِلَ; no jazm governor and the alif is retained: indicative."},
+  {"id": "25:36:1", "reason": "فَقُلْنَا is the active perfect of hollow قَالَ (qul- before a consonant suffix) with نَا as subject, not a passive."}
+ ]
+}

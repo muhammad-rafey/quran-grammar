@@ -1,0 +1,94 @@
+{
+ "entries": [
+  {
+   "key": "A^taY|IV|PASS",
+   "baabUrdu": "بابِ اِفْعَال — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)، مجہول",
+   "past": "أُوتِيَ",
+   "present": "يُؤْتَى",
+   "pattern": "أُفْعِلَ — يُفْعَلُ",
+   "noteUrdu": "متعدی فعل آتَى (دینا) کا مجہول ہے: دیا جانا؛ مہموز الفاء اور ناقص یائی ہے۔ أُأْتِيَ میں ضمہ کے بعد ساکن ہمزہ واو بن کر أُوتِيَ ہوا، جمع أُوتُوا میں آخری یاء حذف ہے، اور مضارع يُؤْتَى الف مقصورہ پر ختم ہوتا ہے؛ جسے دیا جائے وہ نائبِ فاعل بنتا ہے اور دی گئی چیز منصوب رہتی ہے۔",
+   "evidenceEnglish": "QAC tags 98:4:4 أُوتُوا۟ as Form IV passive perfect 3MP (LEM A^taY, root Aty). Quran-wide passive perfects أُوتِىَ (28:79), أُوتِيتُم (3:73) and passive imperfect يُؤْتَىٰٓ (3:73) give the paradigm أُوتِيَ / يُؤْتَى (uf'ila / yuf'alu). Passive of آتَى يُؤْتِي 'to give' (Lane; Lisan al-Arab), consistent with the active entry A^taY|IV|ACT in lex-00."
+  },
+  {
+   "key": "A^vara|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "آثَرَ",
+   "present": "يُؤْثِرُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "مہموز الفاء ہے: باب کا ہمزہ اور مادے کا ہمزہ مل کر آثَرَ میں آ (مد) بنتے ہیں، اور مضارع يُؤْثِرُ میں ہمزہ واو کی کرسی پر ہے۔ متعدی ہے: «ترجیح دینا»؛ جس پر ترجیح دی جائے وہ عَلَى کے ساتھ آتا ہے (آثَرَهُ عَلَى غَيْرِهِ)۔",
+   "evidenceEnglish": "QAC tags 87:16:2 تُؤْثِرُونَ as Form IV imperfect (LEM A^vara, root Avr). Quran-wide: perfect وَءَاثَرَ (79:38), imperfects وَيُؤْثِرُونَ عَلَىٰٓ (59:9), subjunctive نُّؤْثِرَكَ (20:72). af'ala of أ ث ر: أَأْثَرَ > آثَرَ, aor. يُؤْثِرُ 'to prefer, choose' (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": ">amara|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "أَمَرَ",
+   "present": "يَأْمُرُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "مہموز الفاء ہے؛ ماضی میں عین پر زبر اور مضارع میں پیش ہے۔ متعدی ہے: جسے حکم دیا جائے وہ مفعول بنتا ہے اور جس بات کا حکم ہو وہ اکثر بِ کے ساتھ آتی ہے؛ امر عموماً مُرْ ہے مگر و/ف کے بعد ہمزہ لوٹ آتا ہے (وَأْمُرْ)۔",
+   "evidenceEnglish": "QAC form I: perfect أَمَرَ (96:12:2), imperfect تَأْمُرُنَا (25:60:11) with damma on the 2nd radical; Quran-wide يَأْمُرُ (16:90), يَأْمُرُونَ (3:104), imperative وَأْمُرْ (7:199, 20:132). a–u, nasara class: أَمَرَ يَأْمُرُ أَمْرًا (Lane; Lisan al-Arab; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": ">amara|I|PASS",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "أُمِرَ",
+   "present": "يُؤْمَرُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "متعدی فعل أَمَرَ (حکم دینا) کا مجہول ہے: حکم دیا جانا؛ جسے حکم دیا جائے وہ نائبِ فاعل بنتا ہے اور حکم کی بات بِ، أَنْ یا لامِ تعلیل + مضارع منصوب کے ساتھ آتی ہے۔ مہموز الفاء ہے: ماضی أُمِرَ میں ہمزہ الف پر اور مضارع يُؤْمَرُ میں پیش کے بعد ساکن ہمزہ واو کی کرسی پر لکھا جاتا ہے۔",
+   "evidenceEnglish": "QAC tags 98:5:2 أُمِرُوٓا۟ as passive perfect 3MP (LEM >amara, root Amr). Quran-wide passive perfect أُمِرْتُ (6:14) and passive imperfects تُؤْمَرُ (37:102), يُؤْمَرُونَ (16:50, 66:6) give أُمِرَ / يُؤْمَرُ (fu'ila / yuf'alu). Passive of أَمَرَ يَأْمُرُ, nasara class (Lane; Lisan al-Arab), matching >amara|I|ACT."
+  },
+  {
+   "key": "baxila|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بَخِلَ",
+   "present": "يَبْخَلُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی میں عین پر زیر اور مضارع میں زبر ہے، اسی لیے بابِ سَمِعَ ہے۔ لازم ہے: «بخل کرنا»؛ جس چیز میں بخل ہو وہ بِ کے ساتھ اور جس سے روکا جائے وہ عموماً عَلَى (اور کبھی عَنْ) کے ساتھ آتا ہے۔",
+   "evidenceEnglish": "QAC form I: perfect بَخِلَ (92:8:3) with kasra on the 2nd radical; Quran-wide imperfects with fatha يَبْخَلْ / يَبْخَلُ (47:38), يَبْخَلُونَ (3:180, 4:37): i–a, sami'a class. Lexica (Lane; Lisan al-Arab) also record a variant بَخُلَ يَبْخُلُ (karuma); the Quranic imperfect supports بَخِلَ يَبْخَلُ."
+  },
+  {
+   "key": "yubodi}u|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَبْدَأَ",
+   "present": "يُبْدِئُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "مہموز اللام ہے: آخری ہمزہ ماضی أَبْدَأَ میں الف پر اور مضارع يُبْدِئُ میں کسرہ کی وجہ سے یاء کی کرسی پر لکھا جاتا ہے۔ متعدی ہے: «پہلی بار پیدا کرنا، آغاز کرنا»، مجرد بَدَأَ کا ہم معنی؛ قرآن میں اکثر يُعِيدُ کے مقابل آتا ہے۔",
+   "evidenceEnglish": "QAC tags 85:13:3 يُبْدِئُ as Form IV imperfect (LEM yubodi}u, root bdA); QAC's lemma is the imperfect, the citation perfect is أَبْدَأَ. Also يُبْدِئُ (34:49). Lexica (Lisan al-Arab; Lane) give بَدَأَ and أَبْدَأَ in the same sense 'to originate, begin'; af'ala aor. يُفْعِلُ."
+  },
+  {
+   "key": "bad~ala|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "بَدَّلَ",
+   "present": "يُبَدِّلُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے؛ درمیانی دال کی تشدید بابِ تفعیل کی ساخت ہے۔ معنی «بدل دینا، ایک چیز کی جگہ دوسری لانا»؛ کبھی دو مفعول لیتا ہے اور کبھی ہٹائی جانے والی چیز بِ کے ساتھ آتی ہے؛ اسے بابِ افعال أَبْدَلَ اور بابِ تفعل تَبَدَّلَ سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC tags 25:70:9 يُبَدِّلُ as Form II imperfect (LEM bad~ala, root bdl); two objects there (سَيِّـَٔاتِهِمْ حَسَنَـٰتٍ). Quran-wide perfect فَبَدَّلَ (2:59), بَدَّلُوا۟ (14:28). fa''ala / yufa''ilu 'to change, replace' (Lane; Lisan al-Arab), distinct from Form IV أَبْدَلَ (18:81) and Form V تَبَدَّلَ."
+  },
+  {
+   "key": "{n[baEava|VII|ACT",
+   "baabUrdu": "بابِ اِنْفِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہفتم (VII)",
+   "past": "اِنْبَعَثَ",
+   "present": "يَنْبَعِثُ",
+   "pattern": "اِنْفَعَلَ — يَنْفَعِلُ",
+   "noteUrdu": "صحیح فعل ہے اور بَعَثَ (اٹھانا، بھیجنا) کا مطاوع ہونے کی وجہ سے لازم ہے: «اٹھ کھڑا ہونا، تیزی سے نکل پڑنا»۔ شروع کا ہمزہ ہمزۂ وصل ہے جو ملا کر پڑھنے میں گر جاتا ہے، اور نونِ ساکن باء سے پہلے میم کی آواز (اقلاب) سے پڑھا جاتا ہے۔",
+   "evidenceEnglish": "QAC tags 91:12:2 ٱنۢبَعَثَ as Form VII perfect (LEM {n[baEava, root bEv); the small meem marks iqlab of nun before ba. Verbal noun ٱنۢبِعَاثَهُمْ (9:46). The imperfect is not attested in the Quran and follows the regular infa'ala / yanfa'ilu pattern: اِنْبَعَثَ يَنْبَعِثُ 'to rise, be roused, go forth' (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": "buEovira|I|PASS",
+   "baabUrdu": "بابِ فَعْلَلَة — مجہول",
+   "formUrdu": "رباعی مجرد — اوّل (QI)، مجہول",
+   "past": "بُعْثِرَ",
+   "present": "يُبَعْثَرُ",
+   "pattern": "فُعْلِلَ — يُفَعْلَلُ",
+   "noteUrdu": "رباعی مجرد متعدی فعل بَعْثَرَ يُبَعْثِرُ (الٹ پلٹ کرنا، اندر کی چیز باہر نکال کر بکھیر دینا) کا مجہول ہے؛ ب ع ث ر چاروں اصلی حروف ہیں، اس لیے یہ ثلاثی کی صورت اوّل نہیں۔ ماضی مجہول بُعْثِرَ میں پہلے حرف پر ضمہ اور ث پر کسرہ، اور مضارع مجہول يُبَعْثَرُ میں ث پر فتحہ ہے؛ جو چیز الٹی یا بکھیری جائے وہ نائبِ فاعل بنتی ہے۔",
+   "evidenceEnglish": "QAC lists 100:9:4 بُعْثِرَ as a passive perfect with no derived-form tag (LEM buEovira) under the four-letter root bEvr; QAC labels quadriliteral verbs as form I, so it is treated here as QI fa'lala, passive fu'lila / yufa'lalu. Also بُعْثِرَتْ (82:4). Active بَعْثَرَ 'to overturn, scatter, bring out what is inside' (Lane; Lisan al-Arab). The passive imperfect is not attested in the Quran and follows the regular pattern."
+  }
+ ]
+}

@@ -19,6 +19,7 @@ from collections import Counter, OrderedDict, defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from emit_ts import emit_lesson  # noqa: E402
 from release_gate import ReleaseBlocked, content_digest, require_approvals  # noqa: E402
+import edition  # noqa: E402
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('work_dir')
@@ -26,20 +27,15 @@ parser.add_argument('repo_dir')
 mode = parser.add_mutually_exclusive_group()
 mode.add_argument('--write', action='store_true')
 mode.add_argument('--draft', action='store_true')
-parser.add_argument('--surah', type=int, nargs='+', choices=(18, 23, 32, 36, 55))
+parser.add_argument('--surah', type=int, nargs='+')
 args = parser.parse_args()
 WORK, REPO = args.work_dir, args.repo_dir
 WRITE, DRAFT, only = args.write, args.draft, args.surah
-SURAH_META = OrderedDict(
-    [
-        (18, ('سورۃ الکہف', 'سُورَةُ الْكَهْفِ')),
-        (23, ('سورۃ المؤمنون', 'سُورَةُ الْمُؤْمِنُونَ')),
-        (32, ('سورۃ السجدہ', 'سُورَةُ السَّجْدَةِ')),
-        (36, ('سورۃ یٰسٓ', 'سُورَةُ يسٓ')),
-        (55, ('سورۃ الرحمٰن', 'سُورَةُ الرَّحْمٰنِ')),
-    ]
-)
-EXPECTED_COUNTS = {18: (110, 1579), 23: (118, 1050), 32: (30, 372), 36: (83, 725), 55: (78, 351)}
+_EDITION = edition.load(WORK)
+SURAH_META = OrderedDict((s['number'], (s['nameUrdu'], s['nameArabic'])) for s in _EDITION)
+EXPECTED_COUNTS = {s['number']: (s['ayahs'], s['words']) for s in _EDITION}
+if only and set(only) - set(SURAH_META):
+    parser.error(f'--surah must be among {list(SURAH_META)}')
 EXAMPLE_SUFFIX = 'اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔'
 
 surahs = [s for s in SURAH_META if not only or s in only]

@@ -1,0 +1,90 @@
+{
+ "part": "05",
+ "overrides": {},
+ "rejected": [
+  {
+   "id": "7:53:6",
+   "reason": "Indicative: defective verb يَأْتِى keeps its ya with hidden (muqaddara) damma; يَوْمَ is a temporal adverb, not a jussive particle, and no jazm-governor precedes."
+  },
+  {
+   "id": "7:53:29",
+   "reason": "كُنَّا is the active perfect of hollow كَانَ (kun- before a consonant suffix), not a passive form."
+  },
+  {
+   "id": "7:54:15",
+   "reason": "Indicative: defective form IV يُغْشِى keeps its ya with hidden damma; no governor precedes (hal clause per the i'rab)."
+  },
+  {
+   "id": "7:54:23",
+   "reason": "Accusative is correct in Hafs: مُسَخَّرَٰتٍ is a hal (i'rab: اسم منصوب); a sound feminine plural takes kasra in the accusative."
+  },
+  {
+   "id": "7:57:14",
+   "reason": "سُقْنَـٰهُ is the active perfect of hollow سَاقَ (suq- before a consonant suffix); نَا is the subject per the i'rab."
+  },
+  {
+   "id": "7:60:6",
+   "reason": "Indicative: لَ is the emphatic lam after إِنَّا, not lam of command; defective نَرَىٰ ends in alif with hidden damma."
+  },
+  {
+   "id": "7:66:8",
+   "reason": "Indicative: لَ is the emphatic lam after إِنَّا; defective نَرَىٰ carries hidden damma on its final alif."
+  },
+  {
+   "id": "7:70:15",
+   "reason": "كُنتَ is the active perfect of hollow كَانَ; the initial u-vowel comes from the shortened hollow stem, not the passive."
+  },
+  {
+   "id": "7:77:13",
+   "reason": "كُنتَ is the active perfect of hollow كَانَ; its tāʾ is the ism of kana per the i'rab."
+  },
+  {
+   "id": "7:85:36",
+   "reason": "كُنتُم is the active perfect of hollow كَانَ; not passive."
+  },
+  {
+   "id": "7:86:17",
+   "reason": "كُنتُمْ is the active perfect of hollow كَانَ (when you were few); not passive."
+  },
+  {
+   "id": "7:88:20",
+   "reason": "كُنَّا is the active perfect of hollow كَانَ; not passive."
+  },
+  {
+   "id": "7:89:7",
+   "reason": "عُدْنَا is the active perfect of hollow عَادَ (we returned); نَا is the faʿil per the i'rab."
+  },
+  {
+   "id": "7:93:12",
+   "reason": "Indicative: ءَاسَىٰ ends in alif maqsura with hidden damma; كَيْفَ is an interrogative, not a jussive governor."
+  },
+  {
+   "id": "7:96:9",
+   "reason": "Accusative is correct: بَرَكَـٰتٍ is the object of فَتَحْنَا (i'rab: اسم منصوب); sound feminine plurals take kasra in the accusative."
+  },
+  {
+   "id": "7:106:3",
+   "reason": "كُنتَ is the active perfect of hollow كَانَ after conditional إِن; not passive."
+  },
+  {
+   "id": "7:106:9",
+   "reason": "كُنتَ is the active perfect of hollow كَانَ after conditional إِن; not passive."
+  },
+  {
+   "id": "7:113:9",
+   "reason": "كُنَّا is the active perfect of hollow كَانَ after conditional إِن; not passive."
+  },
+  {
+   "id": "7:133:8",
+   "reason": "Accusative is correct: ءَايَـٰتٍ is a hal, explicitly منصوبة بالكسرة in the verse i'rab (sound feminine plural)."
+  },
+  {
+   "id": "7:133:9",
+   "reason": "Accusative is correct: مُّفَصَّلَـٰتٍ is an adjective agreeing with accusative ءَايَـٰتٍ (i'rab: صفة منصوبة); sound feminine plural with kasra."
+  },
+  {
+   "id": "7:140:4",
+   "reason": "Indicative: defective أَبْغِى keeps its ya with hidden damma; the verse i'rab states مضارع مرفوع بالضمة المقدرة."
+  }
+ ]
+}

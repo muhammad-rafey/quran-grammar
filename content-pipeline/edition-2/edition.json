@@ -1,0 +1,246 @@
+{
+ "name": "edition-2",
+ "description": "Second expansion: Surahs 4, 7, 25, 29 and 85-104 (completing the last 30 Surahs with the existing 105-114).",
+ "surahs": [
+  {
+   "number": 4,
+   "ayahs": 176,
+   "words": null,
+   "nameEnglish": "An-Nisa",
+   "nameArabicShort": "النساء",
+   "nameUrdu": "سورۃ النساء",
+   "nameArabic": "سُورَةُ النِّسَاءِ",
+   "slug": "an-nisa"
+  },
+  {
+   "number": 7,
+   "ayahs": 206,
+   "words": null,
+   "nameEnglish": "Al-A'raf",
+   "nameArabicShort": "الأعراف",
+   "nameUrdu": "سورۃ الاعراف",
+   "nameArabic": "سُورَةُ الْأَعْرَافِ",
+   "slug": "al-araf"
+  },
+  {
+   "number": 25,
+   "ayahs": 77,
+   "words": null,
+   "nameEnglish": "Al-Furqan",
+   "nameArabicShort": "الفرقان",
+   "nameUrdu": "سورۃ الفرقان",
+   "nameArabic": "سُورَةُ الْفُرْقَانِ",
+   "slug": "al-furqan"
+  },
+  {
+   "number": 29,
+   "ayahs": 69,
+   "words": null,
+   "nameEnglish": "Al-'Ankabut",
+   "nameArabicShort": "العنكبوت",
+   "nameUrdu": "سورۃ العنکبوت",
+   "nameArabic": "سُورَةُ الْعَنْكَبُوتِ",
+   "slug": "al-ankabut"
+  },
+  {
+   "number": 85,
+   "ayahs": 22,
+   "words": null,
+   "nameEnglish": "Al-Buruj",
+   "nameArabicShort": "البروج",
+   "nameUrdu": "سورۃ البروج",
+   "nameArabic": "سُورَةُ الْبُرُوجِ",
+   "slug": "al-buruj"
+  },
+  {
+   "number": 86,
+   "ayahs": 17,
+   "words": null,
+   "nameEnglish": "At-Tariq",
+   "nameArabicShort": "الطارق",
+   "nameUrdu": "سورۃ الطارق",
+   "nameArabic": "سُورَةُ الطَّارِقِ",
+   "slug": "at-tariq"
+  },
+  {
+   "number": 87,
+   "ayahs": 19,
+   "words": null,
+   "nameEnglish": "Al-A'la",
+   "nameArabicShort": "الأعلى",
+   "nameUrdu": "سورۃ الاعلیٰ",
+   "nameArabic": "سُورَةُ الْأَعْلَىٰ",
+   "slug": "al-ala"
+  },
+  {
+   "number": 88,
+   "ayahs": 26,
+   "words": null,
+   "nameEnglish": "Al-Ghashiyah",
+   "nameArabicShort": "الغاشية",
+   "nameUrdu": "سورۃ الغاشیہ",
+   "nameArabic": "سُورَةُ الْغَاشِيَةِ",
+   "slug": "al-ghashiyah"
+  },
+  {
+   "number": 89,
+   "ayahs": 30,
+   "words": null,
+   "nameEnglish": "Al-Fajr",
+   "nameArabicShort": "الفجر",
+   "nameUrdu": "سورۃ الفجر",
+   "nameArabic": "سُورَةُ الْفَجْرِ",
+   "slug": "al-fajr"
+  },
+  {
+   "number": 90,
+   "ayahs": 20,
+   "words": null,
+   "nameEnglish": "Al-Balad",
+   "nameArabicShort": "البلد",
+   "nameUrdu": "سورۃ البلد",
+   "nameArabic": "سُورَةُ الْبَلَدِ",
+   "slug": "al-balad"
+  },
+  {
+   "number": 91,
+   "ayahs": 15,
+   "words": null,
+   "nameEnglish": "Ash-Shams",
+   "nameArabicShort": "الشمس",
+   "nameUrdu": "سورۃ الشمس",
+   "nameArabic": "سُورَةُ الشَّمْسِ",
+   "slug": "ash-shams"
+  },
+  {
+   "number": 92,
+   "ayahs": 21,
+   "words": null,
+   "nameEnglish": "Al-Layl",
+   "nameArabicShort": "الليل",
+   "nameUrdu": "سورۃ اللیل",
+   "nameArabic": "سُورَةُ اللَّيْلِ",
+   "slug": "al-layl"
+  },
+  {
+   "number": 93,
+   "ayahs": 11,
+   "words": null,
+   "nameEnglish": "Ad-Duhaa",
+   "nameArabicShort": "الضحى",
+   "nameUrdu": "سورۃ الضحیٰ",
+   "nameArabic": "سُورَةُ الضُّحَىٰ",
+   "slug": "ad-duhaa"
+  },
+  {
+   "number": 94,
+   "ayahs": 8,
+   "words": null,
+   "nameEnglish": "Ash-Sharh",
+   "nameArabicShort": "الشرح",
+   "nameUrdu": "سورۃ الشرح",
+   "nameArabic": "سُورَةُ الشَّرْحِ",
+   "slug": "ash-sharh"
+  },
+  {
+   "number": 95,
+   "ayahs": 8,
+   "words": null,
+   "nameEnglish": "At-Tin",
+   "nameArabicShort": "التين",
+   "nameUrdu": "سورۃ التین",
+   "nameArabic": "سُورَةُ التِّينِ",
+   "slug": "at-tin"
+  },
+  {
+   "number": 96,
+   "ayahs": 19,
+   "words": null,
+   "nameEnglish": "Al-'Alaq",
+   "nameArabicShort": "العلق",
+   "nameUrdu": "سورۃ العلق",
+   "nameArabic": "سُورَةُ الْعَلَقِ",
+   "slug": "al-alaq"
+  },
+  {
+   "number": 97,
+   "ayahs": 5,
+   "words": null,
+   "nameEnglish": "Al-Qadr",
+   "nameArabicShort": "القدر",
+   "nameUrdu": "سورۃ القدر",
+   "nameArabic": "سُورَةُ الْقَدْرِ",
+   "slug": "al-qadr"
+  },
+  {
+   "number": 98,
+   "ayahs": 8,
+   "words": null,
+   "nameEnglish": "Al-Bayyinah",
+   "nameArabicShort": "البينة",
+   "nameUrdu": "سورۃ البینہ",
+   "nameArabic": "سُورَةُ الْبَيِّنَةِ",
+   "slug": "al-bayyinah"
+  },
+  {
+   "number": 99,
+   "ayahs": 8,
+   "words": null,
+   "nameEnglish": "Az-Zalzalah",
+   "nameArabicShort": "الزلزلة",
+   "nameUrdu": "سورۃ الزلزال",
+   "nameArabic": "سُورَةُ الزَّلْزَلَةِ",
+   "slug": "az-zalzalah"
+  },
+  {
+   "number": 100,
+   "ayahs": 11,
+   "words": null,
+   "nameEnglish": "Al-'Adiyat",
+   "nameArabicShort": "العاديات",
+   "nameUrdu": "سورۃ العادیات",
+   "nameArabic": "سُورَةُ الْعَادِيَاتِ",
+   "slug": "al-adiyat"
+  },
+  {
+   "number": 101,
+   "ayahs": 11,
+   "words": null,
+   "nameEnglish": "Al-Qari'ah",
+   "nameArabicShort": "القارعة",
+   "nameUrdu": "سورۃ القارعہ",
+   "nameArabic": "سُورَةُ الْقَارِعَةِ",
+   "slug": "al-qariah"
+  },
+  {
+   "number": 102,
+   "ayahs": 8,
+   "words": null,
+   "nameEnglish": "At-Takathur",
+   "nameArabicShort": "التكاثر",
+   "nameUrdu": "سورۃ التکاثر",
+   "nameArabic": "سُورَةُ التَّكَاثُرِ",
+   "slug": "at-takathur"
+  },
+  {
+   "number": 103,
+   "ayahs": 3,
+   "words": null,
+   "nameEnglish": "Al-'Asr",
+   "nameArabicShort": "العصر",
+   "nameUrdu": "سورۃ العصر",
+   "nameArabic": "سُورَةُ الْعَصْرِ",
+   "slug": "al-asr"
+  },
+  {
+   "number": 104,
+   "ayahs": 9,
+   "words": null,
+   "nameEnglish": "Al-Humazah",
+   "nameArabicShort": "الهمزة",
+   "nameUrdu": "سورۃ الہمزہ",
+   "nameArabic": "سُورَةُ الْهُمَزَةِ",
+   "slug": "al-humazah"
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "part": "06",
+ "overrides": {},
+ "rejected": [
+  {
+   "id": "7:143:14",
+   "reason": "Defective verb after لَن: the fatha is implied on the alif maqsura (منصوب بفتحة مقدرة); SUBJ is correct."
+  },
+  {
+   "id": "7:143:23",
+   "reason": "After فَسَوْفَ with no nasb/jazm particle: indicative with implied damma on the alif; IND is correct."
+  },
+  {
+   "id": "7:143:37",
+   "reason": "تُبْتُ is the active perfect of hollow تَابَ (u-vowel from the waw with the 1S suffix); i'rab: التاء فاعل."
+  },
+  {
+   "id": "7:145:18",
+   "reason": "سَ + Form IV أُرِى: future indicative, the damma on the ya is implied (ثقل); no jazm particle."
+  },
+  {
+   "id": "7:148:18",
+   "reason": "Negated by non-governing لَا in a predicate clause (أَنَّهُۥ لَا يُكَلِّمُهُمْ وَلَا يَهْدِيهِمْ); the ya is retained, so indicative is correct."
+  },
+  {
+   "id": "7:152:14",
+   "reason": "No governing particle; defective verb with retained ya and implied damma: indicative."
+  },
+  {
+   "id": "7:155:31",
+   "reason": "Coordinated with indicative تُضِلُّ; the ya is retained and the damma implied: indicative."
+  },
+  {
+   "id": "7:156:10",
+   "reason": "هُدْنَآ is the active perfect of hollow هَادَ يَهُودُ (we have turned back); i'rab: نا فاعل."
+  },
+  {
+   "id": "7:156:13",
+   "reason": "عَذَابِىٓ is the mubtada' (predicate أُصِيبُ بِهِۦ); its damma is implied before the 1S ya, so NOM is correct."
+  },
+  {
+   "id": "7:156:18",
+   "reason": "وَرَحْمَتِى is a mubtada' (predicate وَسِعَتْ); the kasra is for the 1S ya with damma implied: NOM is correct."
+  },
+  {
+   "id": "7:157:15",
+   "reason": "Coordinated with indicative يَأْمُرُهُم; the damma is implied on the alif: indicative."
+  },
+  {
+   "id": "7:161:2",
+   "reason": "قِيلَ is the standard passive of hollow قَالَ (kasra replaces initial u); i'rab: مبني للمجهول."
+  },
+  {
+   "id": "7:162:8",
+   "reason": "قِيلَ is the standard passive of hollow قَالَ; i'rab: مبني للمجهول."
+  },
+  {
+   "id": "7:163:13",
+   "reason": "After temporal إِذْ (no governing particle); the ya is retained with implied damma: indicative."
+  },
+  {
+   "id": "7:163:22",
+   "reason": "Here لَا is negative (they did not come), not prohibitive; the ya is retained, so indicative is correct."
+  },
+  {
+   "id": "7:163:24",
+   "reason": "No governing particle; the final waw is retained with implied damma: indicative."
+  },
+  {
+   "id": "7:166:7",
+   "reason": "قُلْنَا is the active perfect of hollow قَالَ (We said); i'rab: نا فاعل."
+  },
+  {
+   "id": "7:169:26",
+   "reason": "After ميثاق, أَن is read as explanatory (مفسرة) with prohibitive لَا, so the verb is jussive; the i'rab line agrees (مجزوم). The masdari/subjunctive reading is also possible, so the tag is defensible."
+  },
+  {
+   "id": "7:172:23",
+   "reason": "كُنَّا is the active perfect of hollow كَانَ; نا is its ism."
+  },
+  {
+   "id": "7:173:8",
+   "reason": "كُنَّا is the active perfect of hollow كَانَ; نا is its ism."
+  },
+  {
+   "id": "7:183:1",
+   "reason": "Form IV أُمْلِى with no governing particle; the ya is retained with implied damma: indicative."
+  }
+ ]
+}

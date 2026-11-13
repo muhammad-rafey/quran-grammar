@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "taga$~aY`|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَغَشَّى",
+   "present": "يَتَغَشَّى",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "ناقص اور متعدی فعل ہے: ڈھانپ لینا، چھا جانا؛ لامِ کلمہ (غ ش و) یاء بن جاتا ہے: ماضی تَغَشَّى میں الفِ مقصورہ، تَغَشَّيْتُ میں یاء، مضارع يَتَغَشَّى میں رفع مقدر اور جزم میں حذف۔ احتیاط: واحد مؤنث غائب و واحد مذکر حاضر کا مضارع تَتَغَشَّى ایک تاء گرنے سے تَغَشَّى بھی ہو سکتا ہے، جو ماضی کا ہم شکل ہے؛ فیصلہ سیاق سے کریں۔",
+   "evidenceEnglish": "QAC 7:189:13 تَغَشَّىٰهَا, LEM taga$~aY`, form V, ROOT g$w (Lane and Lisan al-Arab treat the verb under غشي/غشو), the only Quranic occurrence, a euphemism for marital union. QAC tags it IMPF 3MS and the generated i'rab says فعل مضارع, but after فَلَمَّا the vocalised form is the 3MS perfect تَغَشَّى (a 3MS imperfect would be يَتَغَشَّى); standard i'rab: فعل ماض مبني على الفتح المقدر. tafa''ala/yatafa''alu of a final-weak root: تَغَشَّى يَتَغَشَّى تَغَشِّيًا (Lisan al-Arab, al-Mu'jam al-Wasit). The imperfect is not attested in the Quran and follows the regular pattern."
+  },
+  {
+   "key": "gaDiba|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "غَضِبَ",
+   "present": "يَغْضَبُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے: غصے ہونا، ناراض ہونا؛ ماضی میں عینِ کلمہ مکسور اور مضارع يَغْضَبُ میں مفتوح ہے۔ جس پر غصہ ہو وہ عَلَى کے ساتھ آتا ہے (غَضِبَ عَلَيْهِ)؛ مصدر غَضَب ہے۔",
+   "evidenceEnglish": "QAC 4:93:9 وَغَضِبَ: PERF 3MS, form I, LEM gaDiba, ROOT gDb, with ٱللَّهُ عَلَيْهِ. Quran-wide perfects غَضِبَ (58:14, 60:13), غَضِبُوا (42:37); the imperfect is not attested in the Quran. Lane, Lisan al-Arab and al-Mu'jam al-Wasit: غَضِبَ عَلَيْهِ يَغْضَبُ غَضَبًا, i–a (sami'a class)."
+  },
+  {
+   "key": "gafara|I|PASS",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "غُفِرَ",
+   "present": "يُغْفَرُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل غَفَرَ يَغْفِرُ (معاف کرنا) کا مجہول ہے: معاف کیا جانا؛ نائبِ فاعل گناہ ہو سکتا ہے، اور جسے معافی ملے وہ لِ کے ساتھ آتا ہے، جیسے يُغْفَرُ لَهُ۔ مضارع مجہول يُغْفَرُ میں حرفِ مضارعت پر ضمہ اور عینِ کلمہ (ف) پر فتحہ ہے، جو اسے معروف يَغْفِرُ سے جدا کرتا ہے۔",
+   "evidenceEnglish": "QAC 7:169:12 سَيُغْفَرُ: IMPF PASS 3MS, form I, LEM gafara, ROOT gfr (with سَ, followed by لَنَا); i'rab فعل مضارع مبني للمجهول. Quran-wide passive imperfect also يُغْفَرْ (8:38, jussive). Active غَفَرَ يَغْفِرُ (a–i, daraba), consistent with the reviewed active entry gafara|I|ACT in lex-00 and with Lane / Lisan al-Arab. Passive pattern fu'ila/yuf'alu: غُفِرَ / يُغْفَرُ."
+  },
+  {
+   "key": "tagofulu|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "غَفَلَ",
+   "present": "يَغْفُلُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے: غافل ہونا، بے دھیان رہنا؛ ماضی میں عینِ کلمہ مفتوح اور مضارع يَغْفُلُ میں مضموم ہے۔ جس چیز سے غفلت ہو وہ عَنْ کے ساتھ آتی ہے؛ متعدی أَغْفَلَ (بابِ افعال: غافل کر دینا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC 4:102:32 تَغْفُلُونَ: IMPF 2MP, form I, LEM tagofulu (an imperfect identifier), ROOT gfl, followed by عَنْ; the attested imperfect has damma on the second radical. Lane, Lisan al-Arab and al-Mu'jam al-Wasit: غَفَلَ عَنْهُ يَغْفُلُ غُفُولًا وَغَفْلَةً, a–u (nasara class). Citation perfect غَفَلَ is not attested in the Quran."
+  },
+  {
+   "key": "galabu|I|PASS",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "غُلِبَ",
+   "present": "يُغْلَبُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل غَلَبَ يَغْلِبُ (غالب آنا) کا مجہول ہے: مغلوب کیا جانا، ہار جانا؛ جو ہارا وہ نائبِ فاعل بنتا ہے۔ مضارع مجہول يُغْلَبُ میں حرفِ مضارعت پر ضمہ اور عینِ کلمہ (ل) پر فتحہ ہے، جو اسے معروف يَغْلِبُ سے جدا کرتا ہے۔",
+   "evidenceEnglish": "QAC 7:119:1 فَغُلِبُوا۟: PERF PASS 3MP, form I, LEM galabu (identifier), ROOT glb; i'rab فعل ماض مبني للمجهول والواو نائب فاعل. Quran-wide passive perfect غُلِبَتِ (30:2) and passive imperfects سَتُغْلَبُونَ (3:12) and يُغْلَبُونَ (8:36) (contrast active سَيَغْلِبُونَ 30:3). Active غَلَبَ يَغْلِبُ (a–i, daraba), consistent with the reviewed active entry galabu|I|ACT in lex-00 and with Lane / Lisan al-Arab. Passive pattern fu'ila/yuf'alu."
+  },
+  {
+   "key": "tagoluw|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "غَلَا",
+   "present": "يَغْلُو",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "ناقص واوی اور لازم فعل ہے: حد سے بڑھنا؛ لامِ کلمہ واو ماضی غَلَا میں الف بنتا ہے اور مضارع يَغْلُو میں ظاہر رہتا ہے (رفع مقدر)، جزم میں حذف ہو جاتا ہے (لَا تَغْلُ)۔ جمع مذکر میں یہ واو گر کر واوِ جماعت رہ جاتی ہے (تَغْلُوا)؛ جس معاملے میں زیادتی ہو وہ فِي کے ساتھ آتا ہے۔",
+   "evidenceEnglish": "QAC 4:171:4 تَغْلُوا۟ after لَا (prohibition), LEM tagoluw (imperfect identifier), ROOT glw; the attested imperfect has the u-vowel of a final-waw verb (also 5:77). QAC tags png 2D and the generated i'rab says الألف ضمير, but the context (يَـٰٓأَهْلَ ٱلْكِتَـٰبِ) and the Uthmani ا۟ (alif al-fariqa) show 2MP: jussive with nun deleted and wāw al-jamā'a as subject. Lane, Lisan al-Arab, al-Mu'jam al-Wasit: غَلَا فِي الْأَمْرِ يَغْلُو غُلُوًّا, a–u (nasara)."
+  },
+  {
+   "key": ">agowayo|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَغْوَى",
+   "present": "يُغْوِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "لفیف مقرون (غ و ي) اور متعدی فعل ہے: گمراہ کرنا، بہکانا؛ عینِ کلمہ کی واو بغیر تعلیل کے متحرک رہتی ہے (أَغْوَى میں مفتوح، يُغْوِي میں مکسور)، جبکہ لامِ کلمہ کی یاء ماضی أَغْوَى میں الفِ مقصورہ، أَغْوَيْتَ میں یاء اور مضارع يُغْوِي میں باقی رہتی ہے۔ مجرد غَوَى يَغْوِي (خود گمراہ ہونا، لازم) سے الگ پہچانیں۔",
+   "evidenceEnglish": "QAC 7:16:3 أَغْوَيْتَنِى: PERF 2MS (IV), LEM >agowayo (stem identifier), ROOT gwy, with object suffix ي. Quran-wide Form IV perfects أَغْوَيْنَا / أَغْوَيْنَاهُمْ (28:63), imperfects يُغْوِيَكُمْ (11:34) and لَأُغْوِيَنَّهُمْ (15:39, 38:82) with kasra on و. af'ala/yuf'ilu: أَغْوَى يُغْوِي إِغْوَاءً 'to lead astray' (Lane, Lisan al-Arab)."
+  },
+  {
+   "key": "yugay~iru|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "غَيَّرَ",
+   "present": "يُغَيِّرُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "متعدی فعل ہے: بدل دینا، حالت تبدیل کرنا؛ مادہ اجوف یائی (غ ي ر) ہے، مگر اس باب میں عینِ کلمہ کی یاء مشدد ہو کر صحیح حرف کی طرح ہر صیغے میں باقی رہتی ہے، کوئی تعلیل نہیں ہوتی۔ مضارع يُغَيِّرُ میں یاء کا کسرہ اور مجہول يُغَيَّرُ میں فتحہ ہے۔",
+   "evidenceEnglish": "QAC 4:119:8 فَلَيُغَيِّرُنَّ: IMPF 3MP (II) with lām and energetic nūn, LEM yugay~iru (imperfect identifier), ROOT gyr. Quran-wide imperfects لَا يُغَيِّرُ (13:11), يُغَيِّرُوا (13:11, 8:53) and participle مُغَيِّرًا (8:53). fa''ala/yufa''ilu: غَيَّرَ يُغَيِّرُ تَغْيِيرًا (Lane, Lisan al-Arab). Citation perfect غَيَّرَ is not attested in the Quran."
+  },
+  {
+   "key": "tufat~aHu|II|PASS",
+   "baabUrdu": "بابِ تَفْعِيل — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)، مجہول",
+   "past": "فُتِّحَ",
+   "present": "يُفَتَّحُ",
+   "pattern": "فُعِّلَ — يُفَعَّلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل فَتَّحَ (کثرت یا تاکید سے کھولنا) کا مجہول ہے: کھولا جانا، خاص طور پر بہت سے دروازوں کے لیے؛ جو کھولا جائے وہ نائبِ فاعل ہے۔ مضارع مجہول يُفَتَّحُ میں مشدد عینِ کلمہ (ت) کا فتحہ اسے معروف يُفَتِّحُ سے جدا کرتا ہے؛ مجرد فَتَحَ يَفْتَحُ سے بھی الگ رکھیں۔",
+   "evidenceEnglish": "QAC 7:40:8 لَا تُفَتَّحُ: IMPF PASS 3FS (II), LEM tufat~aHu (inflected identifier), ROOT ftH, with أَبْوَٰبُ as naa'ib al-faa'il; i'rab فعل مضارع مبني للمجهول. Quran-wide Form II also in the participle مُّفَتَّحَةً (38:50); the passive perfect فُتِّحَ is not attested in the Hafs text (39:71, 39:73, 78:19 read Form I فُتِحَتْ) and follows the regular pattern. Passive of fa''ala: فُتِّحَ / يُفَتَّحُ, fu''ila/yufa''alu; Form II conveys multiplicity (Lane, Lisan al-Arab s.v. فتح)."
+  },
+  {
+   "key": "fatanu|I|PASS",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "فُتِنَ",
+   "present": "يُفْتَنُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل فَتَنَ يَفْتِنُ (آزمائش میں ڈالنا) کا مجہول ہے: آزمایا جانا، آزمائش یا ایذا میں ڈالا جانا؛ جسے آزمایا جائے وہ نائبِ فاعل بنتا ہے۔ مضارع مجہول يُفْتَنُ میں حرفِ مضارعت پر ضمہ اور عینِ کلمہ (ت) پر فتحہ ہے، جو اسے معروف يَفْتِنُ سے جدا کرتا ہے۔",
+   "evidenceEnglish": "QAC 29:2:10 يُفْتَنُونَ: IMPF PASS 3MP, form I, LEM fatanu (identifier), ROOT ftn; i'rab فعل مضارع مبني للمجهول والواو نائب فاعل. Quran-wide also يُفْتَنُونَ (9:126) and passive perfect فُتِنُوا (16:110). Active فَتَنَ يَفْتِنُ (a–i, daraba), consistent with the reviewed active entry fatanu|I|ACT in lex-a09 and with Lane / Lisan al-Arab. Passive pattern fu'ila/yuf'alu."
+  }
+ ]
+}

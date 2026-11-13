@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "ya$ofaEu|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "شَفَعَ",
+   "present": "يَشْفَعُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی اور مضارع دونوں میں عینِ کلمہ پر زبر ہے (شَفَعَ، يَشْفَعُ)، اس لیے یہ بابِ فَتَحَ ہے؛ لامِ کلمہ ع کا حرفِ حلق ہونا اس باب کی عام شرط ہے، سبب نہیں۔ سفارش کے معنی میں لازم ہے: جس کے حق میں سفارش ہو اس پر لِ اور جس کے ہاں ہو اس پر عِنْدَ آتا ہے؛ اصل معنی کسی چیز کو جفت بنانا ہے۔",
+   "evidenceEnglish": "QAC form I, ROOT $fE (lemma identifier يَشْفَعُ is the imperfect). Imperfects يَشْفَعْ (4:85:2, 4:85:10, jussive in a conditional) and فَيَشْفَعُوا (7:53:22, subjunctive after causal fa) have fatha on the second radical: yaf'alu; the guttural third radical ع permits fa'ala/yaf'alu. Quran-wide imperfects يَشْفَعُ (2:255) and يَشْفَعُونَ (21:28, with لِ); no Form I perfect is attested in the Quran. Lane, Lisan al-Arab and al-Mu'jam al-Wasit: شَفَعَ لَهُ / فِيهِ, aor. يَشْفَعُ, inf. n. شَفَاعَة; شَفَعَ الشَّيْءَ = made it a pair, aor. likewise يَشْفَعُ."
+  },
+  {
+   "key": "$aA^q~u|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "شَاقَّ",
+   "present": "يُشَاقُّ",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "مضاعف (ش ق ق) اور متعدی فعل ہے: مخالفت کرنا، دشمنی میں دوسری جانب کھڑے ہونا۔ دونوں قاف مدغم ہو کر شَاقَّ، يُشَاقُّ بنتے ہیں؛ جزم میں ادغام کھول کر يُشَاقِقْ بھی آتا ہے اور مدغم صورت بھی، اور اگلے ساکن سے ملنے پر آخر میں کسرہ آ جاتا ہے۔",
+   "evidenceEnglish": "QAC 4:115:2 يُشَاقِقِ: IMPF 3MS (III), jussive after conditional مَنْ, ROOT $qq; unassimilated jussive with kasra to avoid two sukuns before ٱلرَّسُولَ. QAC's lemma identifier شَآقُّ is not a vocalised citation form. Quran-wide perfect شَآقُّوا (8:13, 59:4) and jussives يُشَاقِقِ (8:13) / يُشَآقِّ (59:4) show both the open and assimilated forms. Form III fa'ala/yufa'ilu of a doubled root: شَاقَقَ > شَاقَّ, يُشَاقِقُ > يُشَاقُّ (Lane, Lisan al-Arab: شَاقَّهُ مُشَاقَّةً وَشِقَاقًا = opposed him, took the opposite side)."
+  },
+  {
+   "key": "tu$omito|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَشْمَتَ",
+   "present": "يُشْمِتُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی کو (دوسرے کی مصیبت پر) خوش ہونے کا موقع دینا؛ خوش ہونے والے مفعول بنتے ہیں اور جس پر خوشی منائی جائے اس پر بِ آتا ہے۔ یہ ثلاثی شَمِتَ يَشْمَتُ بِهِ (کسی کی تکلیف پر خوش ہونا) سے بابِ افعال ہے؛ ماضی میں ہمزۂ قطع اور مضارع کے حرفِ مضارع پر پیش ہے۔",
+   "evidenceEnglish": "QAC 7:150:32 تُشْمِتْ: IMPF (IV) jussive after prohibitive لَا, ROOT $mt, lemma identifier tu$omito (an inflected form); the only Quranic occurrence. Citation أَشْمَتَ يُشْمِتُ (af'ala/yuf'ilu). Caution: QAC tags the person as 3FS, but the accusative ٱلْأَعْدَآءَ is the object, so the subject is the addressee (2MS, Harun to Musa); flagged for lesson authors. Lane and Lisan al-Arab: شَمِتَ بِهِ, aor. يَشْمَتُ (i–a), = rejoiced at his affliction; أَشْمَتَهُ / أَشْمَتَ بِهِ الْعَدُوَّ = caused the enemy to rejoice at him."
+  },
+  {
+   "key": "{sota$ohidu|X|ACT",
+   "baabUrdu": "بابِ اِسْتِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — دہم (X)",
+   "past": "اِسْتَشْهَدَ",
+   "present": "يَسْتَشْهِدُ",
+   "pattern": "اِسْتَفْعَلَ — يَسْتَفْعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: گواہ طلب کرنا، کسی کو گواہ بنانا؛ بابِ استفعال یہاں طلب کے معنی میں ہے اور جن کے خلاف گواہی ہو ان پر عَلَى آتا ہے۔ ماضی، امر اور مصدر میں ہمزۂ وصل ہے؛ مجہول اُسْتُشْهِدَ «شہید ہونا» کے الگ معنی میں بھی آتا ہے، مگر قرآن میں یہ فعل صرف امر کی صورت میں آیا ہے۔",
+   "evidenceEnglish": "QAC 4:15:6 فَٱسْتَشْهِدُوا: IMPV 2MP (X), ROOT $hd, lemma identifier {sota$ohidu (imperative stem); followed by عَلَيْهِنَّ and the object أَرْبَعَةً. Quran-wide also وَٱسْتَشْهِدُوا۟ شَهِيدَيْنِ (2:282). Perfect and imperfect are not attested in the Quran; the verb follows the regular sound Form X istaf'ala/yastaf'ilu: اِسْتَشْهَدَ يَسْتَشْهِدُ اِسْتِشْهَادًا = asked to bear witness (Lane, Lisan al-Arab, al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "Sad~a|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "صَدَّ",
+   "present": "يَصُدُّ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "مضاعف (ص د د) فعل ہے: دونوں دال مدغم ہو کر صَدَّ، يَصُدُّ بنتے ہیں، اور ضمیرِ متحرک سے پہلے ادغام کھل جاتا ہے (صَدَدْتُ)۔ لازم بھی ہے اور متعدی بھی: صَدَّ عَنْ — خود رک جانا، منہ موڑنا؛ صَدَّهُ عَنْ — کسی کو روکنا؛ مضارع کی اصل يَصْدُدُ میں عینِ کلمہ پر پیش ہے جو ادغام سے صاد پر منتقل ہوا، اس لیے بابِ نَصَرَ ہے۔",
+   "evidenceEnglish": "QAC form I, ROOT Sdd. Imperfects يَصُدُّونَ (4:61:13, 7:45:2) and وَتَصُدُّونَ (7:86:6) have damma on the first radical: underlying yasdudu, a–u, nasara class; perfects صَدَّ (4:55:7, intransitive with عَنْهُ) and فَصَدَّهُمْ (29:38:12, transitive with object) show both valencies. Quran-wide صَدَدْنَٰكُمْ (34:32) shows the unassimilated perfect. Lane, Lisan al-Arab: صَدَّ عَنْهُ, aor. يَصُدُّ, inf. n. صُدُود (turned away); صَدَّهُ عَنْهُ, aor. يَصُدُّ, inf. n. صَدّ (hindered). Note: Hafs يَصِدُّونَ (43:57, i-imperfect, 'clamour') is a distinct sense, not in these occurrences."
+  },
+  {
+   "key": "taSad~aqa|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَصَدَّقَ",
+   "present": "يَتَصَدَّقُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے: صدقہ دینا؛ جو چیز دی جائے اس پر بِ اور جسے دی جائے اس پر عَلَى آتا ہے۔ احتیاط: بابِ تفعل کی تاء اکثر صاد میں مدغم ہو جاتی ہے، اس لیے مضارع میں يَتَصَدَّقُ کی جگہ يَصَّدَّقُ اور اسمِ فاعل میں مُتَصَدِّق کی جگہ مُصَّدِّق بھی ملتا ہے؛ یہ الگ باب نہیں۔",
+   "evidenceEnglish": "QAC 4:92:22 يَصَّدَّقُوا: IMPF 3MP (V), subjunctive after أَنْ, ROOT Sdq: the tā' of yatafa''alu is assimilated to ṣād (yatasaddaqū > yassaddaqū). Quran-wide unassimilated imperative وَتَصَدَّقْ عَلَيْنَآ (12:88) and participle ٱلْمُتَصَدِّقِينَ (33:35); assimilated فَأَصَّدَّقَ (63:10) and ٱلْمُصَّدِّقِينَ (57:18); Hafs وَأَن تَصَدَّقُوا (2:280) is the imperfect with one tā' elided. Citation tafa''ala/yatafa''alu: تَصَدَّقَ يَتَصَدَّقُ (Lisan al-Arab, al-Mu'jam al-Wasit: تَصَدَّقَ عَلَيْهِ بِكَذَا)."
+  },
+  {
+   "key": "Sarafa|I|PASS",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "صُرِفَ",
+   "present": "يُصْرَفُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل صَرَفَ يَصْرِفُ (پھیرنا) کا مجہول ہے: پھیرا جانا؛ جسے پھیرا جائے وہ نائبِ فاعل بنتا ہے اور جس سے ہٹایا جائے اس پر عَنْ آتا ہے۔ مجہول ماضی میں پہلے حرف پر پیش اور عین پر زیر، مضارع میں حرفِ مضارع پر پیش اور عین پر زبر ہوتا ہے۔",
+   "evidenceEnglish": "QAC 7:47:2 صُرِفَتْ: PERF PASS 3FS (form I), ROOT Srf; i'rab فعل ماض مبني للمجهول, with أَبْصَٰرُهُمْ as naa'ib al-faa'il. Quran-wide passive imperfects يُصْرَفْ (6:16, Hafs), تُصْرَفُونَ (10:32) and يُصْرَفُونَ (40:69) confirm yuf'alu. Active صَرَفَ يَصْرِفُ is a–i (daraba), as in lex-a07 Sarafa|I|ACT (Lane s.v. صرف). Passive paradigm fu'ila/yuf'alu."
+  },
+  {
+   "key": "{SoTafaY`|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِصْطَفَى",
+   "present": "يَصْطَفِي",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "ناقص واوی (ص ف و) اور متعدی فعل ہے: چن لینا، برگزیدہ کرنا؛ جن پر فوقیت دی جائے ان پر عَلَى آتا ہے۔ بابِ افتعال کی تاء صاد کے بعد طاء بن جاتی ہے، اور آخری واو یاء بن جاتی ہے جو ماضی کے آخر میں الفِ مقصورہ (اِصْطَفَى) اور دوسرے صیغوں میں یاء (اِصْطَفَيْتُ، يَصْطَفِي) کی صورت میں آتی ہے؛ جزم اور امر میں یہ حرف گر جاتا ہے۔",
+   "evidenceEnglish": "QAC 7:144:4 ٱصْطَفَيْتُكَ: PERF 1S (VIII), ROOT Sfw, with object كَ and عَلَى ٱلنَّاسِ. Quran-wide perfect ٱصْطَفَىٰ (2:132, 3:33) and imperfect يَصْطَفِى (22:75). Iftaʿala of a final-wāw root: the infixed tā' becomes ṭā' after ṣād (*iṣtafawa > iṣṭafā), and the final wāw becomes yā' in a stem of more than three letters (اِصْطَفَيْتُ, يَصْطَفِي). Lane, Lisan al-Arab s.v. صفو: اِصْطَفَاهُ = chose him, preferred him."
+  },
+  {
+   "key": "Salabu|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "صَلَبَ",
+   "present": "يَصْلِبُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: سولی دینا؛ ماضی میں عینِ کلمہ پر زبر اور مضارع میں زیر ہے، اس لیے بابِ ضَرَبَ ہے۔ بابِ تفعیل کا صَلَّبَ کثرت اور شدت کے لیے ہے، اور صَلُبَ يَصْلُبُ (سخت ہونا) الگ فعل ہے؛ دونوں کو اس سے نہ ملائیں۔",
+   "evidenceEnglish": "QAC 4:157:13 صَلَبُوهُ: PERF 3MP, form I (no form tag), ROOT Slb; the lemma identifier صَلَبُ (Salabu) is truncated, citation صَلَبَ. The only active Form I attestation; the passive imperfect فَيُصْلَبُ (12:41) does not reveal the active vowel. Imperfect vowel taken from the lexica: Lisan al-Arab صَلَبَهُ يَصْلِبُهُ صَلْبًا; al-Misbah al-Munir 'min bab daraba'; Hans Wehr ṣalaba i: a–i, daraba class. Vowel class rests on lexica, not Quranic evidence."
+  },
+  {
+   "key": "yuSal~abu|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "صَلَّبَ",
+   "present": "يُصَلِّبُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: سولی پر چڑھانا؛ بابِ تفعیل میں عینِ کلمہ کی تشدید یہاں کثرت اور شدت کا مفہوم دیتی ہے۔ معروف مضارع يُصَلِّبُ میں لام پر زیر ہے، جبکہ يُصَلَّبُ (لام پر زبر) مجہول ہے؛ دونوں کو آپس میں نہ ملائیں۔",
+   "evidenceEnglish": "QAC 7:124:7 لَأُصَلِّبَنَّكُمْ: IMPF 1S (II) with emphatic lām and nūn, ROOT Slb, active (kasra on lām). QAC's lemma identifier يُصَلَّبُ (yuSal~abu) has the passive-imperfect shape (cf. passive يُصَلَّبُوٓا۟ 5:33), but voice and occurrence are active, so the citation is صَلَّبَ يُصَلِّبُ (fa''ala/yufa''ilu). Quran-wide also وَلَأُصَلِّبَنَّكُمْ (20:71, 26:49). Lane: صَلَّبَهُ, intensive of صَلَبَهُ."
+  }
+ ]
+}

@@ -179,7 +179,7 @@ export async function exportReviews({ work = DEFAULT_WORK, runDir } = {}) {
   const ids = plan.map((spec) => spec?.chunk);
   if (new Set(ids).size !== plan.length) throw new Error('The chunk plan contains duplicate chunks');
   for (const spec of plan) {
-    if (!spec || !/^(18|23|32|36|55)-c\d{2}$/.test(spec.chunk) || spec.surah !== Number(spec.chunk.split('-')[0]) || !Array.isArray(spec.wordIds) || !spec.wordIds.length || !Array.isArray(spec.ayahs) || !spec.ayahs.length) throw new Error('The chunk plan contains an invalid entry');
+    if (!spec || !/^\d{1,3}-c\d{2,3}$/.test(spec.chunk) || spec.surah !== Number(spec.chunk.split('-')[0]) || !Array.isArray(spec.wordIds) || !spec.wordIds.length || !Array.isArray(spec.ayahs) || !spec.ayahs.length) throw new Error('The chunk plan contains an invalid entry');
   }
   const sourceFilesSha256 = await reviewSourceFilesSha256(work);
   if (sourceFilesSha256['meta/plan.json'] !== sha(planRecord.bytes)) throw new Error('Chunk plan changed during review export');

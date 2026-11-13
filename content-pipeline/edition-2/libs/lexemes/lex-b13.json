@@ -1,0 +1,102 @@
+{"entries": [
+ {
+  "key": "sam~aY`|II|ACT",
+  "baabUrdu": "بابِ تَفْعِيل",
+  "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+  "past": "سَمَّى",
+  "present": "يُسَمِّي",
+  "pattern": "فَعَّلَ — يُفَعِّلُ",
+  "noteUrdu": "ناقص واوی مادہ (س م و) ہے، مگر بابِ تفعیل میں آخری واو یاء بن جاتی ہے: ماضی سَمَّى الفِ مقصورہ پر ختم ہوتا ہے، متحرک ضمیرِ فاعل کے ساتھ سَمَّيْتُ اور مضارع يُسَمِّي آتا ہے۔ دو مفعولوں کی طرف متعدی ہے: کسی کا کوئی نام رکھنا (سَمَّاهُ زَيْدًا)۔",
+  "evidenceEnglish": "QAC tags 7:71:12 سَمَّيْتُمُوهَآ as Form II active perfect 2MP (LEM sam~aY`, root smw), with i'rab فعل ماض ... و«ها» مفعول به. Quran-wide: سَمَّيْتُهَا (3:36), سَمَّىٰكُمُ (22:78), imperfect لَيُسَمُّونَ (53:27), imperative سَمُّوهُمْ (13:33). faʿʿala — yufaʿʿilu with final wāw > yāʾ; سَمَّاهُ كَذَا / بِكَذَا 'he named him so' (Lane s.v. سمو; Lisan al-Arab)."
+ },
+ {
+  "key": "saA^'a|I|PASS",
+  "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+  "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+  "past": "سِيءَ",
+  "present": "يُسَاءُ",
+  "pattern": "فُعِلَ — يُفْعَلُ",
+  "noteUrdu": "سَاءَ يَسُوءُ (رنجیدہ کرنا، برا لگنا) کا مجہول ہے: رنجیدہ ہونا یا چہرہ بگڑ جانا۔ اجوف واوی اور مہموز اللام ہے: اصل سُوِئَ میں واو کا کسرہ سین کو ملا اور واو یاء بنی (سِيءَ)، اور مضارع يُسْوَأُ میں واو الف بن کر يُسَاءُ ہوا؛ پہلے حرف پر کسرہ دیکھ کر اسے معروف نہ سمجھیں۔",
+  "evidenceEnglish": "QAC tags 29:33:6 سِىٓءَ as Form I passive perfect 3MS (LEM saA^'a, root swA); i'rab فعل ماض مبني للمجهول. The pipeline flag 'perfect does not start with u' is expected for a hollow passive (cf. قِيلَ). Quran-wide also سِيٓءَ بِهِمْ (11:77) and سِيٓـَٔتْ وُجُوهُ (67:27). Passive of the nasara verb سَاءَ يَسُوءُ (saA^'a|I|ACT in lex-00): سِيءَ / يُسَاءُ (Lane s.v. سوأ); the passive imperfect is not attested in the Quran and follows the regular hollow pattern."
+ },
+ {
+  "key": "yasuwmu|I|ACT",
+  "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+  "formUrdu": "ثلاثی مجرد — اوّل (I)",
+  "past": "سَامَ",
+  "present": "يَسُومُ",
+  "pattern": "فَعَلَ — يَفْعُلُ",
+  "noteUrdu": "اجوف واوی فعل ہے: واو ماضی سَامَ میں الف اور مضارع يَسُومُ میں واوِ مدہ بنتی ہے، اور جزم یا امر میں ساکن سے پہلے گر جاتی ہے (لَمْ يَسُمْ)۔ دو مفعولوں کی طرف متعدی ہے: کسی کو کوئی تکلیف دینا یا اس پر کوئی سختی مسلط کرنا (سَامَهُ سُوءَ الْعَذَابِ)۔",
+  "evidenceEnglish": "QAC lists the lexeme by the imperfect يَسُومُ (LEM yasuwmu, root swm), Form I: يَسُومُونَكُمْ (7:141) and يَسُومُهُمْ (7:167), both with damma-wāw on the 2nd radical; also يَسُومُونَكُمْ (2:49, 14:6). The i'rab of 7:141 gives the كم suffix as مفعول به and سُوٓءَ ٱلْعَذَابِ follows as second object. Citation perfect سَامَ: سَامَهُ الأَمْرَ يَسُومُهُ سَوْمًا 'he imposed the thing on him' (Lane; Lisan al-Arab) -> a–u, nasara class, hollow wāw."
+ },
+ {
+  "key": "tusaw~aY`|I|PASS",
+  "baabUrdu": "بابِ تَفْعِيل — مجہول",
+  "formUrdu": "ثلاثی مزید فیہ — دوم (II)، مجہول",
+  "past": "سُوِّيَ",
+  "present": "يُسَوَّى",
+  "pattern": "فُعِّلَ — يُفَعَّلُ",
+  "noteUrdu": "سَوَّى يُسَوِّي (برابر کرنا) کا مجہول ہے: برابر یا ہموار کیا جانا۔ مادہ س و ي لفیف مقرون ہے؛ مشدد واو صحیح حرف کی طرح رہتی ہے، ماضی سُوِّيَ میں آخری یاء ظاہر ہے اور مضارع يُسَوَّى میں الفِ مقصورہ بنتی ہے؛ واو کی تشدید اسے بابِ تفعیل بتاتی ہے، ثلاثی مجرد نہیں۔",
+  "evidenceEnglish": "QAC tags 4:42:8 تُسَوَّىٰ as IMPF PASS 3FS with no form marker (i.e. Form I; LEM tusaw~aY`, root swy), but the vocalised word has shadda on the wāw after a damma prefix: tusawwā = yufaʿʿalu, the Form II passive imperfect of سَوَّى يُسَوِّي (saw~aY`|II|ACT in lex-00). A Form I passive would be تُسْوَى. Entry therefore gives Form II passive سُوِّيَ / يُسَوَّى (fuʿʿila — yufaʿʿalu). Hafs reading; other canonical readings have تَسَّوَّىٰ / تَسَوَّىٰ (Form V active). Lexica: سَوَّى الشَّيْءَ 'made it even, level' (Lane s.v. سوي). Reviewer: QAC form tag should be noted in auditNotes for 4:42:8."
+ },
+ {
+  "key": "saAra|I|ACT",
+  "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+  "formUrdu": "ثلاثی مجرد — اوّل (I)",
+  "past": "سَارَ",
+  "present": "يَسِيرُ",
+  "pattern": "فَعَلَ — يَفْعِلُ",
+  "noteUrdu": "اجوف یائی اور لازم فعل ہے: چلنا، سفر کرنا۔ یاء ماضی سَارَ میں الف اور مضارع يَسِيرُ میں یاءِ مدہ بنتی ہے، متحرک ضمیر سے پہلے ماضی میں گرتی ہے (سِرْتُ) اور امر واحد سِرْ میں بھی حذف ہوتی ہے، مگر جمع سِيرُوا میں لوٹ آتی ہے۔",
+  "evidenceEnglish": "QAC tags 29:20:2 سِيرُوا۟ as Form I imperative 2MP (LEM saAra, root syr); the kasra-yāʾ of the imperative points to an i-imperfect. Quran-wide imperfects أَفَلَمْ يَسِيرُوا۟ (12:109, 22:46), وَتَسِيرُ ٱلْجِبَالُ (52:10), perfect وَسَارَ (28:29). سَارَ يَسِيرُ سَيْرًا 'to go, travel' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit) -> a–i, daraba class, hollow yāʾ, intransitive."
+ },
+ {
+  "key": "$ub~iha|II|PASS",
+  "baabUrdu": "بابِ تَفْعِيل — مجہول",
+  "formUrdu": "ثلاثی مزید فیہ — دوم (II)، مجہول",
+  "past": "شُبِّهَ",
+  "present": "يُشَبَّهُ",
+  "pattern": "فُعِّلَ — يُفَعَّلُ",
+  "noteUrdu": "صحیح فعل شَبَّهَ يُشَبِّهُ (ایک چیز کو دوسری کے مشابہ بنانا یا ٹھہرانا) کا مجہول ہے: مشابہ بنا دیا جانا، کسی کے لیے معاملہ مشتبہ کر دیا جانا۔ ماضی مجہول میں پہلا حرف مضموم اور مشدد باء مکسور ہے، اور مضارع مجہول يُشَبَّهُ میں باء کا فتحہ اسے معروف يُشَبِّهُ سے جدا کرتا ہے۔",
+  "evidenceEnglish": "QAC tags 4:157:15 شُبِّهَ as Form II passive perfect 3MS (LEM $ub~iha, root $bh); i'rab فعل ماض مبني للمجهول. This is the only Quranic occurrence of the verb. Passive of شَبَّهَ الشَّيْءَ بِالشَّيْءِ 'he likened / made one thing resemble another'; شُبِّهَ عَلَيْهِ الأَمْرُ 'the matter was made obscure to him' (Lane s.v. شبه; Lisan al-Arab). Regular fuʿʿila — yufaʿʿalu; the passive imperfect is not attested in the Quran."
+ },
+ {
+  "key": "$ajara|I|ACT",
+  "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+  "formUrdu": "ثلاثی مجرد — اوّل (I)",
+  "past": "شَجَرَ",
+  "present": "يَشْجُرُ",
+  "pattern": "فَعَلَ — يَفْعُلُ",
+  "noteUrdu": "صحیح فعل ہے اور اس معنی میں لازم ہے: معاملے کا لوگوں کے درمیان الجھ جانا اور اس میں جھگڑا ہونا (شَجَرَ الأَمْرُ بَيْنَهُمْ)؛ جس معاملے میں اختلاف ہو وہی فاعل ہوتا ہے، لوگ نہیں۔ اسے اسمِ شَجَر (درخت) سے الگ پہچانیں۔",
+  "evidenceEnglish": "QAC tags 4:65:8 شَجَرَ as Form I active perfect 3MS (LEM $ajara, root $jr); it is the only verbal occurrence in the Quran, so no imperfect is attested there. Lexica: شَجَرَ الأَمْرُ بَيْنَهُمْ يَشْجُرُ شُجُورًا 'the affair became confused/disputed between them' (Lisan al-Arab s.v. شجر; Lane; al-Mu'jam al-Wasit) -> a–u, nasara class. Vowel class rests on the lexica only."
+ },
+ {
+  "key": ">a$oraka|IV|PASS",
+  "baabUrdu": "بابِ اِفْعَال — مجہول",
+  "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)، مجہول",
+  "past": "أُشْرِكَ",
+  "present": "يُشْرَكُ",
+  "pattern": "أُفْعِلَ — يُفْعَلُ",
+  "noteUrdu": "صحیح فعل أَشْرَكَ (شریک ٹھہرانا) کا مجہول ہے: شریک ٹھہرایا جانا۔ معروف میں جس کے ساتھ شریک ٹھہرایا جائے وہ بِ کے ساتھ آتا ہے، اس لیے مجہول میں اکثر جار و مجرور (بِهِ) نائبِ فاعل کے محل میں ہوتا ہے؛ مضارع مجہول يُشْرَكُ میں راء کا فتحہ اسے معروف يُشْرِكُ سے جدا کرتا ہے۔",
+  "evidenceEnglish": "QAC tags both occurrences 4:48:6 and 4:116:6 يُشْرَكَ as Form IV passive imperfect 3MS, subjunctive (LEM >a$oraka, root $rk); i'rab فعل مضارع مبني للمجهول منصوب. The lemma is the active citation form; the entry voice is passive, so the paradigm is أُشْرِكَ / يُشْرَكُ (ufʿila — yufʿalu). Active أَشْرَكَ بِاللَّهِ يُشْرِكُ 'to associate partners with God' (Lane s.v. شرك; Lisan al-Arab). The passive perfect is not attested in the Quran and follows the regular pattern."
+ },
+ {
+  "key": "{$otaraY`|VIII|ACT",
+  "baabUrdu": "بابِ اِفْتِعَال",
+  "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+  "past": "اِشْتَرَى",
+  "present": "يَشْتَرِي",
+  "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+  "noteUrdu": "ناقص یائی فعل ہے: آخری یاء ماضی اِشْتَرَى میں الفِ مقصورہ، مضارع يَشْتَرِي میں یاء ہے، اور واوِ جمع سے پہلے گر جاتی ہے (اِشْتَرَوْا، يَشْتَرُونَ)۔ متعدی ہے: خریدنا، کسی چیز کے بدلے لے لینا؛ حاصل کی گئی چیز مفعول بہ بنتی ہے اور دی گئی قیمت بِ کے ساتھ آتی ہے۔",
+  "evidenceEnglish": "QAC tags 4:44:9 يَشْتَرُونَ as Form VIII imperfect 3MP (LEM {$otaraY`, root $ry). Quran-wide: perfects ٱشْتَرَوُا۟ ٱلضَّلَـٰلَةَ بِٱلْهُدَىٰ (2:16), ٱشْتَرَىٰ (9:111), imperfect يَشْتَرِى (31:6). iftaʿala — yaftaʿilu of ش ر ي: اِشْتَرَى يَشْتَرِي 'to buy, take in exchange' (Lane s.v. شرى; Lisan al-Arab)."
+ },
+ {
+  "key": "$ara|I|ACT",
+  "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+  "formUrdu": "ثلاثی مجرد — اوّل (I)",
+  "past": "شَرَى",
+  "present": "يَشْرِي",
+  "pattern": "فَعَلَ — يَفْعِلُ",
+  "noteUrdu": "ناقص یائی اور متعدی فعل ہے؛ آخری یاء ماضی شَرَى میں الفِ مقصورہ، مضارع يَشْرِي میں یاء ہے اور واوِ جمع سے پہلے گر جاتی ہے (شَرَوْا، يَشْرُونَ)۔ احتیاط: یہ اضداد میں سے ہے، بیچنا اور خریدنا دونوں؛ قرآن میں عموماً بیچنا مراد ہے، جبکہ اِشْتَرَى خریدنے کے لیے ہے۔",
+  "evidenceEnglish": "QAC tags 4:74:6 يَشْرُونَ as Form I imperfect 3MP (LEM $ara — a truncated lemma for شَرَى, root $ry). Quran-wide: perfect وَشَرَوْهُ (12:20), شَرَوْا۟ (2:102), imperfect يَشْرِى نَفْسَهُ (2:207) with kasra on the 2nd radical. شَرَى يَشْرِي شِرًى 'to sell; also to buy' (a word of contrary meanings, Lane s.v. شرى; Lisan al-Arab) -> a–i, daraba class, final yāʾ."
+ }
+]}
