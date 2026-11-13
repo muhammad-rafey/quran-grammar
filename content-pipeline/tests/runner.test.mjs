@@ -61,7 +61,7 @@ process.stdin.on('end', () => {
   if (mode === 'bad-schema') delete value.validatorOk;
   if (role === 'review' && mode === 'bad-coverage') value.checkedWords--;
   if (role === 'author' && mode === 'bad-author-coverage') value.ayahs--;
-  if (role === 'review' && mode === 'library-issue') value.libraryIssues.push({kind: 'rule', key: 'example', problem: 'unresolved library finding', fix: 'needs adjudication'});
+  if (role === 'review' && (mode === 'library-issue' || (mode === 'first-library-issue' && chunk === '18-c01'))) value.libraryIssues.push({kind: 'rule', key: 'example', problem: 'unresolved library finding', fix: 'needs adjudication'});
   if (role === 'review' && mode === 'dirty-confirm' && prompt.includes('CONFIRMING REVIEWER')) value.issues.push({ref: '18:1:1', field: 'syntaxUrdu', severity: 'minor', problem: 'still unresolved', fix: 'a correction'});
   fs.writeFileSync(get('--output-last-message'), JSON.stringify(value));
   process.stdout.write(JSON.stringify({type: 'mock.result', secret: 'SECRET_MUST_STAY_PRIVATE'}) + '\\n');
@@ -72,7 +72,7 @@ process.stdin.on('end', () => {
 async function fixture(context) {
   const work = await mkdtemp(join(tmpdir(), 'quran-grammar-runner-test-'));
   context.after(() => rm(work, { recursive: true, force: true }));
-  for (const path of ['guide/authoring-guide.md', 'libs/rules.json', 'scripts/validate_chunk.py', 'workflows/chunks.js']) {
+  for (const path of ['guide/authoring-guide.md', 'libs/rules.json', 'scripts/validate_chunk.py', 'workflows/chunks.js', 'workflows/chunks-reuse.js']) {
     await mkdir(dirname(join(work, path)), { recursive: true });
     await copyFile(join(ROOT, path), join(work, path));
   }
@@ -161,6 +161,19 @@ test('successful workflow imports a validated draft, preserves private logs and 
   result = await setup.command('success', ['--resume']);
   assert.equal(result.code, 0, result.stderr);
   assert.equal((await setup.calls()).length, 16, 'packet hash mismatch forces review');
+});
+
+test('author-only saves a validated draft without certifying it as reviewed', async (context) => {
+  const setup = await fixture(context);
+  const authored = await setup.command('success', ['--author-only']);
+  assert.equal(authored.code, 0, authored.stderr);
+  assert.equal((await setup.checkpoint()).status, 'authored');
+  assert.deepEqual((await setup.calls()).map(({ role }) => role), ['author']);
+
+  const reviewed = await setup.command('success', ['--resume', '--reuse-authored']);
+  assert.equal(reviewed.code, 0, reviewed.stderr);
+  assert.equal((await setup.checkpoint()).status, 'ai-reviewed');
+  assert.deepEqual((await setup.calls()).map(({ role }) => role), ['author', 'review', 'review', 'review']);
 });
 
 test('reuse-authored preserves valid authorship and runs three fresh review agents', async (context) => {
@@ -303,6 +316,20 @@ test('blocked candidates stay private and are reused only with matching hashes',
   assert.deepEqual((await setup.calls()).filter((call) => call.role === 'author').map((call) => call.hadCandidate), [false, true]);
   await assert.rejects(readFile(join(setup.work, 'runs', 'codex', `${CHUNK}.candidate.json`)));
   assert.equal((await setup.checkpoint()).status, 'ai-reviewed');
+});
+
+test('a chunk awaiting adjudication does not prevent independent chunks from finishing', async (context) => {
+  const setup = await fixture(context);
+  const second = '18-c02';
+  await writeFile(join(setup.work, 'meta', 'plan.json'), JSON.stringify([spec, { ...spec, chunk: second }]));
+  const packet = JSON.parse(await readFile(join(setup.work, 'packets', '18', `${CHUNK}.json`), 'utf8'));
+  await writeFile(join(setup.work, 'packets', '18', `${second}.json`), JSON.stringify({ ...packet, chunk: second }));
+
+  const result = await setup.command('first-library-issue', ['--chunks', `${CHUNK},${second}`, '--chunk-concurrency', '1']);
+  assert.equal(result.code, 1);
+  assert.equal((await setup.checkpoint()).status, 'blocked');
+  const completed = JSON.parse(await readFile(join(setup.work, 'runs', 'codex', `${second}.json`), 'utf8'));
+  assert.equal(completed.status, 'ai-reviewed');
 });
 
 test('tampered blocked candidate is discarded on resume', async (context) => {

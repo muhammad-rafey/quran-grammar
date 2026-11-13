@@ -1,8 +1,8 @@
 # Edition 2 — Surahs 4, 7, 25, 29 and 85–104: plan, progress and handoff
 
-**Status (2026-11-13): paused by the owner mid-authoring. Nothing from this edition is in the app,
-the registry or either content database.** Read this file, then `../README.md` (the first
-expansion's method, which this edition follows exactly) and `../guide/authoring-guide.md`.
+**Status (2026-11-13): authoring and review resumed on PR #3. Edition 2 remains held for review.**
+The status counts below describe the original handoff. Read this file, then `../README.md`
+and `../guide/authoring-guide.md` for the shared workflow and source conventions.
 
 ## 1. Goal (owner request, 2026-11-13)
 
@@ -38,7 +38,7 @@ This is a **second pipeline work directory**, so the first edition's pinned revi
 - `edition.json` declares the Surahs. `../scripts/edition.py` reads it. Without an
   `edition.json` (the original `content-pipeline/`), every script keeps its five-Surah defaults, so all
   185 Node and 46 Python pipeline tests still pass.
-- `scripts`, `guide` and `qac` are symlinks to the shared folders. `sources/`, `packets/`, `inputs/`,
+- `scripts`, `guide`, `workflows` and `qac` are symlinks to the shared folders. `sources/`, `packets/`, `inputs/`,
   `runs/`, the adjudication inputs and the bulk `meta/` files (`words`, `ayahs`, `lexemes`, `roots`,
   `tag-inventory`, `verb-flags`, `case-flags`) are git-ignored, as before, because they contain
   third-party text. Regenerate them before resuming (§5). Tracked: `edition.json`, `meta/plan.json`,
@@ -118,13 +118,16 @@ instead.
      account usage limit. A chunk costs about 6–8 agents.
    - Re-validate every `reuseAuthored` file first: drop any that no longer pass, and let partial or invalid files go through the
      author-retry path.
-   - The owner-approved Codex runner (`scripts/run_chunks.mjs --work … --reuse-authored`) is an
-     alternative lane. Never run both on the same chunk.
+   - From the repository root, run `node content-pipeline/scripts/run_chunks.mjs --work content-pipeline/edition-2 --chunks CHUNK_IDS --resume --reuse-authored`
+     with comma-separated chunk IDs. Add `--author-only` to save validated drafts for a later
+     independent review run. The review pass uses fresh grammar and meaning reviewers plus final
+     confirmation. Use separate run directories for simultaneous, disjoint batches. Do not run
+     overlapping batches on the same chunk.
 2. **Adjudicate shared-library findings** from the chunk reviews. If a library entry changes, rebuild the packets of the
    chunks that use it and re-review the affected chunks.
-3. **Assemble drafts:** `python3 -I scripts/assemble.py "$PWD" ../.. --draft`. This needs every
-   `words` count in `edition.json`; fill them from `inventory/inventory-N.json` `wordCount` (they
-   are currently `null`). Then run `gen_audit.py` (writes `docs/source-audits/surah-N.md`).
+3. **Assemble drafts:** `python3 -I scripts/assemble.py "$PWD" ../.. --draft`. The expected
+   `words` counts in `edition.json` have been verified against the plan and the Arabic inventories.
+   Then run `gen_audit.py` (writes `docs/source-audits/surah-N.md`).
 4. **Publish as labelled drafts.** This needs the owner's explicit authorization for this
    edition, as on 2026-11-07. Add entries with `"work": "content-pipeline/edition-2"` and the
    wrapper/study hashes to `../draft-publication.json`, then run `npm run publish:drafts`. Then update

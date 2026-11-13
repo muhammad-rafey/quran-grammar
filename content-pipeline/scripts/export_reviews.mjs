@@ -28,6 +28,7 @@ const fail = (chunk, message) => { throw new Error(`${chunk}: ${message}`); };
 export async function reviewSourceFilesSha256(work) {
   const paths = ['guide/authoring-guide.md', 'workflows/chunks.js', 'scripts/validate_chunk.py',
     'meta/plan.json', 'meta/overrides.json', 'libs/rules.json'];
+  if (await exists(join(work, 'edition.json'))) paths.push('edition.json');
   for (const directory of ['libs/lexemes', 'libs/roots']) {
     if (!(await lstat(join(work, directory))).isDirectory()) throw new Error('Review source library directory must be a regular directory');
     for (const entry of await readdir(join(work, directory), { withFileTypes: true })) {

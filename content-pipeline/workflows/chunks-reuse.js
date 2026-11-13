@@ -202,6 +202,9 @@ async function runChunk(chunk) {
     blockingReasons.push('Author did not produce a validated chunk')
     return result(authored, null, null)
   }
+  if (args?.authorOnly) {
+    return { chunk, status: 'authored', scholarlyReview: 'pending', authored }
+  }
   const reviews = await parallel([
     () => agent(grammarReview(p), { label: `${chunk}:verify-grammar`, phase: 'Verify', schema: ISSUES }),
     () => agent(meaningReview(p), { label: `${chunk}:verify-meaning`, phase: 'Verify', schema: ISSUES }),

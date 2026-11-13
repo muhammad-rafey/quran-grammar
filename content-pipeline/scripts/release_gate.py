@@ -67,6 +67,8 @@ def input_paths(work, surah):
     if len(names) != len(set(names)):
         raise ReleaseBlocked(f'Surah {surah} has duplicate planned chunks')
     paths = set(SHARED_INPUTS)
+    if not edition.is_default(work):
+        paths.add('edition.json')
     paths.add(f'inventory/inventory-{surah}.json')
     paths.update(f'chunks/{surah}/{name}.json' for name in names)
     for kind in ('lexemes', 'roots'):
