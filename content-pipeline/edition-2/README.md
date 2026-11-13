@@ -82,6 +82,10 @@ This is a **second pipeline work directory**, so the first edition's pinned revi
    - 14 verb-form records follow the reviewed paradigms (`reports/adjudication/form-mismatches.json`),
      for example quadriliteral زُلْزِلَتِ / بُعْثِرَ / وَسْوَسَ / دَمْدَمَ, Form II دَسَّىٰهَا, and Form III
      لَـٰمَسْتُمُ in Hafs.
+   - One record, 4:171:4 لَا تَغْلُوا۟ (`png` 2MP rather than QAC's dual), was written directly into
+     `meta/overrides.json` by a library-stage agent instead of being escalated. Its analysis is
+     correct: it addresses أَهْلَ ٱلْكِتَـٰبِ, and the unpronounced alif is alif al-fāriqa. It is kept but
+     should be confirmed during adjudication. Total: 27 + 2 + 14 + 1 = 44.
    - Four new paradigm keys created by the corrections were authored in `lex-xextra`. The old keys
      `tusaw~aY|I|PASS` and `talaZ~aY|I|ACT` remain as unused duplicates.
 4. **Packets:** all 312 were built with absolute paths. Six Stage A packets were rebuilt after the form overrides.
