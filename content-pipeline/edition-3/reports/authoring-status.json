@@ -1,0 +1,538 @@
+{
+  "scholarlyReview": "pending",
+  "independentReview": "pending",
+  "plannedChunks": 53,
+  "authoredChunks": 53,
+  "chunks": [
+    {
+      "chunk": "22-c01",
+      "surah": 22,
+      "words": 31,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "f077eeec6f473334da01046390a80ed2bb6540f29188dac36266dd85a62a1c32",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c02",
+      "surah": 22,
+      "words": 23,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "cd8f1dcd1cbd0681243bd72632e3f125c32e0520e821d77db1c0eda9f6faba26",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c03",
+      "surah": 22,
+      "words": 69,
+      "ayahs": 1,
+      "status": "authored-review-pending",
+      "contentSha256": "213ea4e63c331c1a45a282722d4613fe44d08677b6212ac2050a31ae83a72ace",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c04",
+      "surah": 22,
+      "words": 38,
+      "ayahs": 3,
+      "status": "authored-review-pending",
+      "contentSha256": "043e18f01607acad9d20cc9cec50b47c3fe0fea62fba99f8a2efaec0620585fd",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c05",
+      "surah": 22,
+      "words": 24,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "30c59214caa324c4b497e8efbc79c14c8046c3520da3d34cb15fb1558e63c856",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c06",
+      "surah": 22,
+      "words": 39,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "ea50488c16de0a9231f893054b6cbcdc23147ba0b04108eb74b5f37ad61c54ce",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c07",
+      "surah": 22,
+      "words": 27,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "a228e03297ca1c7006e75c1cc800a44e6140e494f9f27207874b465bb055699a",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c08",
+      "surah": 22,
+      "words": 31,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "329883f6cc99173a6961444ed8dc825c10fde7ee2c00a2b9742794290e949ec7",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c09",
+      "surah": 22,
+      "words": 22,
+      "ayahs": 1,
+      "status": "authored-review-pending",
+      "contentSha256": "4e0c2c9fed87cf4137c3c5223ad75ba173291a814583c0efc5130b40b398d24e",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c10",
+      "surah": 22,
+      "words": 37,
+      "ayahs": 1,
+      "status": "authored-review-pending",
+      "contentSha256": "cc16d6f3d55da9d76212e9ee36232225e8029fcc947d5ab4088f58700bc998e7",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c11",
+      "surah": 22,
+      "words": 39,
+      "ayahs": 4,
+      "status": "authored-review-pending",
+      "contentSha256": "5ecc4a6c33e6e3e622da90a422579358ca28098306c6e982416d11751ae9cf01",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c12",
+      "surah": 22,
+      "words": 31,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "6d25cad36657c35fd201f021aaf586fb01444cf892b0d0f196ddd9490eb6c9f6",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c13",
+      "surah": 22,
+      "words": 25,
+      "ayahs": 1,
+      "status": "authored-review-pending",
+      "contentSha256": "26c95ef5c8c9a678326483dc93c3353e24f5965ea8c8afbabab223091a69307d",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c14",
+      "surah": 22,
+      "words": 30,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "c5f21e7fa92e290ca636722d014c45a45079697a15ed1b7afceb3c5f39702013",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c15",
+      "surah": 22,
+      "words": 28,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "899dc86fc3161c1301c0e1e023d3437791317e3634eb3a4e857eadb9c8aa748b",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c16",
+      "surah": 22,
+      "words": 24,
+      "ayahs": 1,
+      "status": "authored-review-pending",
+      "contentSha256": "e6b27083a7f48e605408773044b3b4743c70df95cc57c088bec09603e749271a",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c17",
+      "surah": 22,
+      "words": 30,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "1be40e4e5b2af12a82b4b9a203e1caadd182fa1d8ac868ca039ca1ce6fbb3bf2",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c18",
+      "surah": 22,
+      "words": 31,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "6c45847cb0fc74772d6a2aac78654a51c2778822ef627bba61f76a6dcb479c33",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c19",
+      "surah": 22,
+      "words": 15,
+      "ayahs": 1,
+      "status": "authored-review-pending",
+      "contentSha256": "50dc5aad35da4b5ea49698c6e07dcf40db137c940f5bdb0ca7711a285c56353f",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c20",
+      "surah": 22,
+      "words": 27,
+      "ayahs": 1,
+      "status": "authored-review-pending",
+      "contentSha256": "453031c74e3719031e9472e748c2264e09dfac308bcef03f61d00fb9d695f1fd",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c21",
+      "surah": 22,
+      "words": 33,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "491857760a705a3bb6ec7ac5de2378b7f098cc0f20e392b76eae0f7d8bbc8b49",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c22",
+      "surah": 22,
+      "words": 10,
+      "ayahs": 1,
+      "status": "authored-review-pending",
+      "contentSha256": "210d25cdd93bdf3bf666b497197c35d33668b019c869a2b691e7a47c1f7dc1b9",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c23",
+      "surah": 22,
+      "words": 35,
+      "ayahs": 1,
+      "status": "authored-review-pending",
+      "contentSha256": "5e561b85d8b776aa89761fe7fb24affd41438a4ea8cee10d6b1a90e807e2ba56",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c24",
+      "surah": 22,
+      "words": 30,
+      "ayahs": 3,
+      "status": "authored-review-pending",
+      "contentSha256": "5d52346aeddb92a601e6010aefae35c146c04b9d3d47ed182742b2c922af53a9",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c25",
+      "surah": 22,
+      "words": 25,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "9e927f1163e52e4f41cedaab7d8c8884e12122515313e43ca38887bd4d769fd5",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c26",
+      "surah": 22,
+      "words": 37,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "8d7c30483f41074743685eec02a860ec587effa455089b46d633eae202551f01",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c27",
+      "surah": 22,
+      "words": 35,
+      "ayahs": 4,
+      "status": "authored-review-pending",
+      "contentSha256": "28d4cd82be56dcc9deffe94e6e014a1cba611a972b2d1df9b89c047bfe1ac63a",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c28",
+      "surah": 22,
+      "words": 27,
+      "ayahs": 1,
+      "status": "authored-review-pending",
+      "contentSha256": "1971dd8140c0db3f0d014cfeaa27ff2596790674056a334f7afee5eeacee6753",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c29",
+      "surah": 22,
+      "words": 37,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "400ef490b815589a61eb853983da897a353817bc418496e5c6bf6599ecdf56c8",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c30",
+      "surah": 22,
+      "words": 36,
+      "ayahs": 3,
+      "status": "authored-review-pending",
+      "contentSha256": "4c628a0f67ba27fd4e123f5da9026b7387419c0159d4170f1c537e62e8156cfc",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c31",
+      "surah": 22,
+      "words": 25,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "4d99022cf2673265ff22be619a99fac6d5be1e22ed7e43caba8a00d84bd9d921",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c32",
+      "surah": 22,
+      "words": 31,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "cbd439aa4c892b56e556644208fb251700dd0527ce1d0f2e9c2106707ce0c492",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c33",
+      "surah": 22,
+      "words": 32,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "6af16c74bbf9288ee66df7c64485bf41a329c06969a5e8d04b1328fcaa25d441",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c34",
+      "surah": 22,
+      "words": 39,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "c051ad3f69b83905fb35ccabc62e15c337acd4088ba6a9041de5bff1b1dce991",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c35",
+      "surah": 22,
+      "words": 34,
+      "ayahs": 3,
+      "status": "authored-review-pending",
+      "contentSha256": "972e83a4c5c919c0b8f544c01a1692f80563b3c4dbe87edb4e2ae515f7671228",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c36",
+      "surah": 22,
+      "words": 27,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "977a212acdf16eb3f990ef336ee294282a7abcc29b0cb284992ae68dfd3baf44",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c37",
+      "surah": 22,
+      "words": 18,
+      "ayahs": 1,
+      "status": "authored-review-pending",
+      "contentSha256": "0a831d8c1833572e2501b2c3f165324e5be962a8f2c3692ae4482559a9924298",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c38",
+      "surah": 22,
+      "words": 29,
+      "ayahs": 1,
+      "status": "authored-review-pending",
+      "contentSha256": "3edf51c973f9d39b067bed01e5526a8e32ee909840f1e556812b2f3b997062bb",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c39",
+      "surah": 22,
+      "words": 37,
+      "ayahs": 2,
+      "status": "authored-review-pending",
+      "contentSha256": "afb2f207d61fd3b03c54743963fea0c412ebc5db4b638d3af0811ad0a889fd0e",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c40",
+      "surah": 22,
+      "words": 32,
+      "ayahs": 3,
+      "status": "authored-review-pending",
+      "contentSha256": "1e6f0ca95a9b8215a9f4d02ca0dd310e52a50f029e90fd83ebea9e14c99e9100",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "22-c41",
+      "surah": 22,
+      "words": 44,
+      "ayahs": 1,
+      "status": "authored-review-pending",
+      "contentSha256": "7b035813094abd10200318cc081052ae2821426bcfcac0725302877edca9c3d2",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "56-c01",
+      "surah": 56,
+      "words": 31,
+      "ayahs": 9,
+      "status": "authored-review-pending",
+      "contentSha256": "3fc493fd2014e0511839b211d87df80c378d52adfbf955dd2bd4a3dfa96a6b07",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "56-c02",
+      "surah": 56,
+      "words": 33,
+      "ayahs": 10,
+      "status": "authored-review-pending",
+      "contentSha256": "7729faef73fd042c1d106bd40c745400e21153fc2525ec3fd20b083c0945c1b8",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "56-c03",
+      "surah": 56,
+      "words": 31,
+      "ayahs": 8,
+      "status": "authored-review-pending",
+      "contentSha256": "ab920ea555ba8ca254a66fb1021e5f9073bb7b51097cc5993ef5efeb814614ca",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "56-c04",
+      "surah": 56,
+      "words": 32,
+      "ayahs": 13,
+      "status": "authored-review-pending",
+      "contentSha256": "53650ea1f8cc102adc074c772e8ef4294f4f066488544fce5f1c7a1a65647d1e",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "56-c05",
+      "surah": 56,
+      "words": 34,
+      "ayahs": 7,
+      "status": "authored-review-pending",
+      "contentSha256": "b7c0eeec54e25c3e8150587f33d61a7c290d0c5a74b137b602138953b746e3b9",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "56-c06",
+      "surah": 56,
+      "words": 31,
+      "ayahs": 8,
+      "status": "authored-review-pending",
+      "contentSha256": "83a33babd5cac06c6fa268f740013d6bf501de53f9a2182224173a510a531504",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "56-c07",
+      "surah": 56,
+      "words": 32,
+      "ayahs": 6,
+      "status": "authored-review-pending",
+      "contentSha256": "92ef5d40b5e20f4a2e87b3c66b674e375f578a2dd9af1318c590b12dd5d3d7ca",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "56-c08",
+      "surah": 56,
+      "words": 36,
+      "ayahs": 8,
+      "status": "authored-review-pending",
+      "contentSha256": "e79bb4d5babdb708f3ed575c8141f77711c32762b4c164085770dc04fdb60239",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "56-c09",
+      "surah": 56,
+      "words": 34,
+      "ayahs": 7,
+      "status": "authored-review-pending",
+      "contentSha256": "06435cd216f1ef1b20c31a343edbea238bd246cfa0dfb1f3ed4c1a0794a53dc2",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "56-c10",
+      "surah": 56,
+      "words": 36,
+      "ayahs": 9,
+      "status": "authored-review-pending",
+      "contentSha256": "ebce02bbb6ace0c3ad4e7e6e5d97848e63fa4a5acf29b557b1520ccc2642996a",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "56-c11",
+      "surah": 56,
+      "words": 35,
+      "ayahs": 7,
+      "status": "authored-review-pending",
+      "contentSha256": "546f55bcb0460bdee95c85734c5caf4d2a363a8c4929162c71838319e907e4d8",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "chunk": "56-c12",
+      "surah": 56,
+      "words": 14,
+      "ayahs": 4,
+      "status": "authored-review-pending",
+      "contentSha256": "c07ee099914ff3fb9cf1bd2bf50f83413dd69b79c3afd0c30903feab17be63ea",
+      "warnings": [],
+      "errors": []
+    }
+  ]
+}

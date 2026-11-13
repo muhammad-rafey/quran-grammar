@@ -2,7 +2,7 @@
 
 ## Current edition — 2026-11-13
 
-The native app bundles all 40 Surahs, 1,281 ayahs and 14,405 words. The APK
+The native app bundles all 42 Surahs, 1,455 ayahs and 16,058 words. The APK
 command synchronizes app config and icons before compiling. Earlier native
 verification records below describe their original snapshots.
 
@@ -49,7 +49,7 @@ cancelled requests cannot replace the newly selected lesson.
 - Choose Surah or Juz in the native catalog sheet, then use the chapter's own
   ayah picker. The catalog lists all 114 surahs and 30 juz; unavailable entries
   are disabled and labelled Coming soon. Available chapters come from the shared
-  registry of Surahs 1, 4, 7, 18, 23, 25, 29, 32, 36, 55 and 85–114. The catalog
+  registry of Surahs 1, 4, 7, 18, 22, 23, 25, 29, 32, 36, 55, 56 and 85–114. The catalog
   identifies partial Juz ranges. Juz 16 opens Al-Kahf at ayah 75 and Juz 23 opens Ya-Sin at
   ayah 28. Expand a Juz to choose one of its available surahs.
 - The compact Filter button reveals part-of-speech filters and the word-meaning

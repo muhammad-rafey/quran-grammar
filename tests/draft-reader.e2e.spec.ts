@@ -7,10 +7,12 @@ const chapters = [
   { number: 4, ayahs: 176, words: 3747 },
   { number: 7, ayahs: 206, words: 3320 },
   { number: 18, ayahs: 110, words: 1579 },
+  { number: 22, ayahs: 78, words: 1274 },
   { number: 23, ayahs: 118, words: 1050 },
   { number: 32, ayahs: 30, words: 372 },
   { number: 36, ayahs: 83, words: 725 },
   { number: 55, ayahs: 78, words: 351 },
+  { number: 56, ayahs: 96, words: 379 },
 ] as const;
 
 // Exercise the actual published API and UI on localhost or the deployed server.
@@ -44,7 +46,7 @@ async function chooseJuz(page: Page, number: number, surah: number) {
   await expect(juzCatalog).not.toBeVisible();
 }
 
-test('published draft APIs contain the exact authorized snapshots', async ({ request }) => {
+test('published lesson APIs contain the exact authorized snapshots', async ({ request }) => {
   test.setTimeout(120_000);
   for (const chapter of authorizedDrafts) {
     const response = await request.get('/api/v1/surahs/' + chapter.number);
@@ -54,7 +56,7 @@ test('published draft APIs contain the exact authorized snapshots', async ({ req
 });
 
 for (const chapter of chapters) {
-  test(`published draft Surah ${chapter.number}: complete reader counts and exact first/last Arabic`, async ({ page }) => {
+  test(`published Surah ${chapter.number}: complete reader counts and exact first/last Arabic`, async ({ page }) => {
     const study = loadDraft(chapter.number);
     test.setTimeout(60000);
     expect(study.surah.wordCount).toBe(chapter.words);
@@ -83,7 +85,7 @@ for (const boundary of [
   { surah: 18, juz: 16, beforeJuz: 15, start: 75 },
   { surah: 36, juz: 23, beforeJuz: 22, start: 28 },
 ]) {
-  test(`published draft Surah ${boundary.surah}: Juz ${boundary.juz} opens at ayah ${boundary.start} and follows the boundary`, async ({ page }) => {
+  test(`published Surah ${boundary.surah}: Juz ${boundary.juz} opens at ayah ${boundary.start} and follows the boundary`, async ({ page }) => {
     const study = loadDraft(boundary.surah);
     test.setTimeout(60000);
     await page.goto('/');

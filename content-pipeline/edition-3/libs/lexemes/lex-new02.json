@@ -1,0 +1,94 @@
+{
+ "entries": [
+  {
+   "key": "xaTifa|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "خَطِفَ",
+   "present": "يَخْطَفُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے، یعنی اچک لینا۔ ماضی میں طاء پر زیر اور مضارع میں زبر ہے۔ آیت میں پرندے فاعل ہیں اور آخری ہاء اس شخص کی طرف لوٹتی ہے جسے وہ اچک لیتے ہیں۔",
+   "evidenceEnglish": "خَطِفَ (37:10) attests kasra on ṭāʾ in the perfect, and يَخْطَفُ (2:20) and فَتَخْطَفُهُ (22:31:13) attest fatḥa on ṭāʾ in the imperfect. At 22:31 the feminine singular imperfect agrees with the collective subject ٱلطَّيْرُ, and the attached هُ is the object."
+  },
+  {
+   "key": ">axolafu|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَخْلَفَ",
+   "present": "يُخْلِفُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے، یعنی وعدہ خلافی کرنا۔ ماضی کا ابتدائی ہمزہ بابِ افعال کا زائد ہمزہ ہے۔ مضارع میں یہ ہمزہ گر جاتا ہے اور لام مکسور ہوتا ہے۔ آیت میں لَنْ کی وجہ سے فاء پر فتحہ ہے۔",
+   "evidenceEnglish": "أَخْلَفُوا۟ (9:77) attests the Form IV perfect and يُخْلِفُ (3:9) the indicative imperfect. At 22:47:4, يُخْلِفَ is subjunctive after لَنْ, with Allah as subject and His promise as direct object. The raw QAC lemma أَخْلَفُ has a noncitation ending. The perfect is أَخْلَفَ."
+  },
+  {
+   "key": "yataxay~aru|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَخَيَّرَ",
+   "present": "يَتَخَيَّرُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "مادہ خ ي ر اجوف یائی ہے۔ بابِ تفعّل میں عینِ کلمہ یاء مشدد رہتی ہے۔ یہ متعدی فعل ہے، یعنی چن لینا۔ آیت میں واوِ جماعت فاعل ہے اور نون کا باقی رہنا رفع کی علامت ہے۔",
+   "evidenceEnglish": "The active indicative plural يَتَخَيَّرُونَ (56:20:3) has the Form V تَ and doubled medial yāʾ, yielding تَخَيَّرَ — يَتَخَيَّرُ. The QAC lookup lemma is an imperfect stem. Its suffix segment bundles subject wāw with the indicative nūn, which marks mood."
+  },
+  {
+   "key": "yuda`fiEu|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "دَافَعَ",
+   "present": "يُدَافِعُ",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "صحیح سالم مادہ د ف ع ہے۔ دال کے بعد الف بابِ مفاعلہ کی علامت ہے اور مضارع میں فاء پر زیر ہے۔ عَنْ کے ساتھ معنی ہیں کسی کی طرف سے ضرر دفع کرنا یا اس کا دفاع کرنا۔",
+   "evidenceEnglish": "يُدَٰفِعُ (22:38:3) is active Form III: the small alif marks long ā after dāl, and fāʾ has kasra. The indicative clause is the predicate of إِنَّ, with Allah as the understood subject and عَنْ introducing those defended. The regular citation pair is دَافَعَ — يُدَافِعُ."
+  },
+  {
+   "key": "*akara|I|PASS",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "ذُكِرَ",
+   "present": "يُذْكَرُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "یہ صحیح سالم فعل ذَكَرَ يَذْكُرُ کا مجہول ہے، یعنی ذکر کیا جانا۔ مجہول ماضی میں کاف پر زیر اور مجہول مضارع میں زبر ہے۔ جس کا ذکر کیا جائے وہ نائبِ فاعل ہوتا ہے۔",
+   "evidenceEnglish": "ذُكِرَ (22:35:3) and يُذْكَرُ (22:40:23) directly attest the passive pair. Allah is the deputy subject in 22:35, and His name is the deputy subject in 22:40. The active ذَكَرَ — يَذْكُرُ follows the seeded entry, with the imperative ٱذْكُرُوا۟ (2:40) confirming ḍamma on kāf."
+  },
+  {
+   "key": "ta*ohalu|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "ذَهِلَ",
+   "present": "يَذْهَلُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم فعل ہے۔ عَنْ کے ساتھ معنی ہیں کسی بات یا چیز سے غافل ہو جانا۔ آیت میں ہاء پر زبر ہے اور مضارع مؤنث واحد ہے۔ ماضی ذَهِلَ کے ساتھ ذَهَلَ بھی اہلِ لغت سے منقول ہے۔",
+   "evidenceEnglish": "تَذْهَلُ (22:2:3) fixes imperfect fatḥa on hāʾ. The feminine singular verb has كُلُّ مُرْضِعَةٍ as subject and an عَنْ complement. Lisān al-ʿArab (ذ-ه-ل) records both ذَهِلَ and ذَهَلَ for being distracted or heedless. The entry adopts the attested ذَهِلَ — يَذْهَلُ class. The Quranic imperfect alone leaves the perfect vowel open."
+  },
+  {
+   "key": "rabato|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "رَبَا",
+   "present": "يَرْبُو",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "ناقص واوی اور لازم فعل ہے، یعنی بڑھنا یا پھول اٹھنا۔ آخری واو ماضی رَبَا میں الف بن جاتی ہے اور تائے تانیث سے پہلے یہ الف حذف ہو جاتا ہے۔ مضارع يَرْبُو میں واو باقی ہے۔",
+   "evidenceEnglish": "وَرَبَتْ (22:5:64 and 41:39) is the active feminine singular perfect with the earth as subject. The subjunctive stem يَرْبُوَ (30:39, normalized spelling) shows ḍamma on bāʾ and final wāw, supporting رَبَا — يَرْبُو. The raw lemma رَبَتْ is the feminine inflection."
+  },
+  {
+   "key": "ruj~ati|I|PASS",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "رُجَّ",
+   "present": "يُرَجُّ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "مضاعف فعل رَجَّ يَرُجُّ کا مجہول ہے، یعنی جھنجھوڑا جانا۔ دونوں جیم مدغم ہیں۔ آیت میں زمین نائبِ فاعل ہے اور تائے تانیث کی زیر وصل میں دو ساکن جمع ہونے سے بچاتی ہے۔",
+   "evidenceEnglish": "رُجَّتِ (56:4:2) is the doubled Form I passive perfect, with ٱلْأَرْضُ as deputy subject and the final kasra on feminine tāʾ for liaison. Lisān al-ʿArab (ر-ج-ج) gives the transitive active رَجَّ — يَرُجُّ ‘shake’, yielding passive رُجَّ — يُرَجُّ after gemination. The raw QAC lemma retains the feminine suffix."
+  },
+  {
+   "key": "yarokaEu|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "رَكَعَ",
+   "present": "يَرْكَعُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے، یعنی جھکنا یا رکوع کرنا۔ ماضی اور مضارع دونوں میں کاف پر زبر ہے۔ آیت میں صیغۂ امر جمع مذکر ہے اور واوِ جماعت فاعل ہے۔",
+   "evidenceEnglish": "Lisān al-ʿArab (ر-ك-ع) gives رَكَعَ — يَرْكَعُ ‘bow’. The fatḥa on kāf is attested in يَرْكَعُونَ (77:48) and in the plural imperative ٱرْكَعُوا۟ (22:77:4), whose subject is the plural wāw. The QAC lookup lemma is the imperfect."
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+  "entries": [
+    {
+      "key": "mata-yamatu|I|ACT",
+      "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "مَاتَ",
+      "present": "يَمَاتُ",
+      "pattern": "فَعِلَ — يَفْعَلُ",
+      "noteUrdu": "اجوف واوی اور لازم فعل ہے، یعنی مرنا۔ مِتْنَا کی میم کا کسرہ ایک منقول لغوی صورت ہے۔ عام مضارع يَمُوتُ بھی مستعمل ہے۔ نَا فاعل کی ضمیر ہے۔",
+      "evidenceEnglish": "Al-Naḥḥās, Iʿrāb al-Qurʾān, on 56:47, attests مَاتَ يَمَاتُ like خَافَ يَخَافُ for the kasra in مِتْنَا and also records an alternative analysis. The occurrence means we died and is active."
+    },
+    {
+      "key": "kadhdhaba|II|PASS",
+      "baabUrdu": "بابِ تَفْعِيل — مجہول",
+      "formUrdu": "ثلاثی مزید فیہ — دوم (II)، مجہول",
+      "past": "كُذِّبَ",
+      "present": "يُكَذَّبُ",
+      "pattern": "فُعِّلَ — يُفَعَّلُ",
+      "noteUrdu": "بابِ تفعیل کا مجہول ہے۔ کسی کو جھٹلایا جانا یا اس کی بات رد کی جانا مراد ہے۔ ماضی میں پہلے حرف پر پیش اور دوسرے مشدد حرف پر زیر آتی ہے۔ جسے جھٹلایا جائے وہ نائبِ فاعل ہوتا ہے۔",
+      "evidenceEnglish": "At 22:44:3, وَكُذِّبَ contains ḍamma on kāf and kasra on doubled dhāl. Both vocalization and word-level iʿrāb identify a Form II passive, and following مُوسَىٰ is its nāʾib al-fāʿil. The active paradigm stored under the inherited QAC handle concerns 29:18:2, a different occurrence."
+    }
+  ]
+}

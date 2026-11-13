@@ -1,0 +1,94 @@
+{
+ "entries": [
+  {
+   "key": "yuSoharu|I|PASS",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "صُهِرَ",
+   "present": "يُصْهَرُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "پگھلانے کے معنی میں معروف صَهَرَ يَصْهَرُ کا مجہول ہے۔ ماضی میں صاد پر پیش اور ہاء پر زیر، جبکہ مضارع میں یاء پر پیش اور ہاء پر زبر ہے۔ جو چیز پگھلائی جائے وہ نائبِ فاعل بنتی ہے۔",
+   "evidenceEnglish": "22:20:1 يُصْهَرُ directly attests the passive indicative imperfect. The relative مَا is the deputy subject and the skins are coordinated with it. The regular passive perfect is صُهِرَ. Lisān al-ʿArab, s.v. صهر, gives صَهَرَ الشَّحْمَ يَصْهَرُهُ in the sense 'to melt fat', establishing the active a–a class independently of the passive imperfect used as the QAC lookup lemma."
+  },
+  {
+   "key": "Daraba|I|PASS",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "ضُرِبَ",
+   "present": "يُضْرَبُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "معروف ضَرَبَ يَضْرِبُ کا مجہول ہے۔ مثال بیان کرنے کے معنی میں مثال نائبِ فاعل بنتی ہے۔ مجہول ماضی میں راء پر زیر اور مجہول مضارع میں راء پر زبر ہوتی ہے۔",
+   "evidenceEnglish": "22:73:3 ضُرِبَ is the 3ms passive perfect with مَثَلٌ as deputy subject. The active sense 'to set forth a likeness' is attested with ضَرَبَ at 14:24 and with يَضْرِبُ at 14:25, establishing a–i. The corresponding regular passive imperfect is يُضْرَبُ."
+  },
+  {
+   "key": "DaEufa|I|ACT",
+   "baabUrdu": "بابِ كَرُمَ يَكْرُمُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "ضَعُفَ",
+   "present": "يَضْعُفُ",
+   "pattern": "فَعُلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے، یعنی کمزور ہونا۔ ماضی اور مضارع دونوں میں عینِ کلمہ، یعنی حرفِ عین، پر پیش ہے۔ اسی مادے کا ضَاعَفَ دگنا یا کئی گنا کرنے کے معنی دیتا ہے۔",
+   "evidenceEnglish": "22:73:26 ضَعُفَ is the 3ms active perfect with damma on ʿayn, predicated of the seeker and the sought. It is the intransitive 'be weak' of Lisān al-ʿArab, s.v. ضعف, ضَعُفَ يَضْعُفُ, the u–u class."
+  },
+  {
+   "key": ">aToEama|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَطْعَمَ",
+   "present": "يُطْعِمُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "یہ متعدی فعل کھلانے کے معنی دیتا ہے۔ امر أَطْعِمُوا میں باب کا ہمزۂ قطع باقی رہتا ہے اور واو فاعل ہے۔ مضارع يُطْعِمُ میں علامتِ مضارع پر پیش اور عینِ کلمہ پر زیر ہے۔",
+   "evidenceEnglish": "The active 2mp imperative وَأَطْعِمُوا۟ at 22:28:18 and 22:36:20 governs the person to be fed. Its initial hamza and kasra on ʿayn match Form IV. The active perfect stem أَطْعَمَ before an object suffix at 36:47 and the imperfect يُطْعِمُ at 6:14 attest both citation stems."
+  },
+  {
+   "key": "Tah~ara|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "طَهَّرَ",
+   "present": "يُطَهِّرُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "پاک کرنے کے معنی میں متعدی فعل ہے۔ بابِ تفعیل کی تشدید ہاء پر ہے۔ امر طَهِّرْ اور مضارع يُطَهِّرُ میں اس حرف پر زیر، جبکہ ماضی طَهَّرَ میں زبر ہے۔",
+   "evidenceEnglish": "22:26:11 وَطَهِّرْ is the active 2ms imperative of Form II, with the House as its direct object. The perfect طَهَّرَ is attested with an object suffix at 3:42 and the corresponding subjunctive stem يُطَهِّرَ before an object suffix at 5:6."
+  },
+  {
+   "key": "yaT~aw~afa|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَطَوَّفَ",
+   "present": "يَتَطَوَّفُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "طواف کرنے کے معنی میں بِ کے ساتھ آتا ہے۔ مضارع کی صورت يَطَّوَّفُ میں باب کی تاء طاء میں مدغم ہے اور واو پر باب کی تشدید برقرار ہے۔ لامِ امر کے بعد جمع کے صیغے میں نون حذف ہو جاتا ہے۔",
+   "evidenceEnglish": "22:29:6 وَلْيَطَّوَّفُوا۟ is active Form V, 3mp jussive after the lām of command. The added tāʾ assimilates to ṭāʾ, leaving both ṭāʾ and wāw doubled. The same assimilation is attested in يَطَّوَّفَ at 2:158. Lisān al-ʿArab, s.v. طوف, records تَطَوَّفَ for circumambulation. The raw QAC handle represents an assimilated imperfect, and the citation pair uses the regular unassimilated stems."
+  },
+  {
+   "key": "TaAfa|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "طَافَ",
+   "present": "يَطُوفُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "اجوف واوی فعل ہے، یعنی چکر لگانا یا گرد پھرنا۔ درمیانی واو ماضی میں الف بن جاتی ہے اور مضارع میں واو باقی رہتی ہے۔ عَلَى کے ساتھ کسی کے گرد آنے جانے کا مفہوم دیتا ہے۔",
+   "evidenceEnglish": "56:17:1 يَطُوفُ is the 3ms indicative before its overt plural subject وِلْدَٰنٌۭ. The long ū identifies the hollow-wāw imperfect of the a–u class, paired with the attested perfect طَافَ at 68:19."
+  },
+  {
+   "key": "Zal~a|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "ظَلَّ",
+   "present": "يَظَلُّ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "مضاعف فعل ہے، اصل ماضی ظَلِلَ ہے۔ ماضیِ جمع کی مختصر صورت ظَلْتُمْ میں ایک لام تخفیف کے لیے حذف ہے۔ یہ فعلِ ناقص تسلسل بتاتا ہے، یہاں تاء اس کا اسم ہے، میم جمع کی علامت ہے اور تَفَكَّهُونَ کا جملہ اس کی خبر ہے۔",
+   "evidenceEnglish": "56:65:5 فَظَلْتُمْ is an active 2mp perfect with one lām dropped. Lisān al-ʿArab, s.v. ظلل, gives ظَلِلْتُ and the shortened ظَلْتُ. The fatha of the imperfect is explicit in نَظَلُّ at 26:71 and in the unassimilated يَظْلَلْنَ at 42:33, giving i–a. The word-level iʿrab calls the suffix fāʿil. The verse-level analysis identifies the verb as defective, with the tāʾ of تُمْ as its ism and the following clause as its khabar."
+  },
+  {
+   "key": "Ead~a|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "عَدَّ",
+   "present": "يَعُدُّ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "گننے کے معنی میں متعدی اور مضاعف فعل ہے۔ دونوں دالیں عَدَّ اور يَعُدُّ میں مدغم ہیں۔ مضارع کی اصل يَعْدُدُ میں پہلی دال کی پیش ادغام سے پہلے عین کو ملتی ہے۔ جمع کے صیغے تَعُدُّونَ میں واو فاعل ہے۔",
+   "evidenceEnglish": "22:47:14 تَعُدُّونَ is an active 2mp indicative in the clause introduced by مِمَّا. Damma on ʿayn reflects the underlying damma of the first dāl in يَعْدُدُ. The perfect stem is attested with its object suffix at 19:94, وَعَدَّهُمْ, supporting the a–u paradigm for 'count'."
+  }
+ ]
+}

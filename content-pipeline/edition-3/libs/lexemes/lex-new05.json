@@ -1,0 +1,94 @@
+{
+ "entries": [
+  {
+   "key": "yuEaZ~imo|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "عَظَّمَ",
+   "present": "يُعَظِّمُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "متعدی فعل ہے، یعنی تعظیم کرنا یا حرمت کا لحاظ رکھنا۔ ظاء پر تشدید بابِ تفعیل کی علامت ہے۔ شرطیہ مَنْ کے بعد يُعَظِّمْ کے آخر میں جزم کا سکون ہے۔",
+   "evidenceEnglish": "يُعَظِّمْ at 22:30:3 and 22:32:3 is active Form II with doubled ظ and kasra on that radical. Both occurrences are jussive in the condition introduced by مَنْ. The raw QAC key reflects this jussive stem. The citation pair is عَظَّمَ — يُعَظِّمُ."
+  },
+  {
+   "key": "EaAqaba|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "عَاقَبَ",
+   "present": "يُعَاقِبُ",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "متعدی فعل ہے، یعنی سزا دینا یا بدلہ لینا۔ باء کے صلے سے بدلے کی نوعیت بتائی جا سکتی ہے۔ مضارع معروف يُعَاقِبُ میں قاف پر زیر آتی ہے۔",
+   "evidenceEnglish": "عَاقَبَ at 22:60:3 is the active third-person masculine singular perfect in the clause about retaliating in kind. The Form III imperative at 16:126:3 has kasra on ق, supporting the active imperfect يُعَاقِبُ."
+  },
+  {
+   "key": "EaAqaba|III|PASS",
+   "baabUrdu": "بابِ مُفَاعَلَة — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)، مجہول",
+   "past": "عُوقِبَ",
+   "present": "يُعَاقَبُ",
+   "pattern": "فُوعِلَ — يُفَاعَلُ",
+   "noteUrdu": "یہ عَاقَبَ کا مجہول ہے، یعنی سزا دیا جانا یا بدلے کی کارروائی کا نشانہ بننا۔ ماضی مجہول میں باب کا الف واو بن جاتا ہے، اور مضارع مجہول میں الف برقرار رہتا ہے اور قاف پر زبر آتی ہے۔",
+   "evidenceEnglish": "عُوقِبَ at 22:60:6 is the passive perfect in the relative clause of مَا, paired with active عَاقَبَ earlier in the verse. The key retains the active lemma with a passive tag. يُعَاقَبُ is the regular Form III passive imperfect."
+  },
+  {
+   "key": "EamiYa|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "عَمِيَ",
+   "present": "يَعْمَى",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "ناقص یائی اور لازم فعل ہے، یعنی نابینا ہونا۔ یہ بصارت اور بصیرت دونوں کے لیے آتا ہے۔ ماضی میں میم پر زیر ہے اور مضارع میں میم پر زبر کے بعد آخری یاء الفِ مقصورہ بن جاتی ہے۔",
+   "evidenceEnglish": "عَمِيَ at 6:104:10 has kasra on م, while تَعْمَى at 22:46:16 and 22:46:19 has fatha there, giving the samiʿa class. Both are active feminine singular indicatives with the nonhuman plural subjects eyes and hearts. QAC's jussive tag at 22:46:16 is erroneous. The preceding لَا negates and the final ى is retained."
+  },
+  {
+   "key": ">uEiydu|IV|PASS",
+   "baabUrdu": "بابِ اِفْعَال — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)، مجہول",
+   "past": "أُعِيدَ",
+   "present": "يُعَادُ",
+   "pattern": "أُفْعِلَ — يُفْعَلُ",
+   "noteUrdu": "اجوف واوی فعل أَعَادَ کا مجہول ہے، یعنی لوٹایا جانا۔ درمیانی واو ماضی مجہول میں یاء اور مضارع مجہول میں الف بن جاتی ہے۔ أُعِيدُوا میں واوِ جماعت نائبِ فاعل ہے۔",
+   "evidenceEnglish": "أُعِيدُوا۟ at 22:22:8 is a Form IV passive perfect with the plural wāw as the passive subject. The same passive perfect recurs at 32:20:11. The raw QAC key preserves the plural stem before the suffix. The hollow Form IV passive citation pair is أُعِيدَ — يُعَادُ, as in the earlier shared paradigm."
+  },
+  {
+   "key": "yagiyZu|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "غَاظَ",
+   "present": "يَغِيظُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "اجوف یائی اور متعدی فعل ہے، یعنی کسی کو غصہ دلانا۔ درمیانی یاء ماضی میں الف اور مضارع میں لمبی یاء کی صورت میں آتی ہے۔",
+   "evidenceEnglish": "يَغِيظُ at 22:15:22 is the active indicative in the relative clause of مَا. The same transitive verb has an explicit object at 48:29:42. Lane, under غيظ, gives غَاظَهُ with the imperfect يَغِيظُ, confirming the hollow a–i paradigm and the sense 'to enrage'."
+  },
+  {
+   "key": "faSala|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "فَصَلَ",
+   "present": "يَفْصِلُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے، یعنی جدا کرنا۔ بَيْنَ کے ساتھ دو یا زیادہ فریقوں کے درمیان فیصلہ کرنے کے معنی دیتا ہے۔ ماضی میں صاد پر زبر اور مضارع میں زیر ہے۔",
+   "evidenceEnglish": "يَفْصِلُ at 22:17:13 has kasra on ص, and the same indicative occurs with بَيْنَ in the sense 'judge between' at 32:25:4 and 60:3:8. The perfect فَصَلَ at 2:249:2 shows fatha on ص in the intransitive sense 'set out'. Lane, under فصل, gives the a–i pair for separating and deciding."
+  },
+  {
+   "key": "tafak~ahu|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَفَكَّهَ",
+   "present": "يَتَفَكَّهُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "بابِ تفعّل کا لازم فعل ہے۔ کھیتی برباد ہونے کے سیاق میں حیرت یا حسرت ظاہر کرنے کا مفہوم ہے۔ جمع مخاطب تَفَكَّهُونَ کی اصل تَتَفَكَّهُونَ ہے، جس میں ابتدا کی دو تاؤں میں سے ایک تخفیف کے لیے حذف ہوئی ہے۔",
+   "evidenceEnglish": "تَفَكَّهُونَ at 56:65:6 is an active second-person plural indicative. Its clause is the predicate of ظَلَّ. One of the two initial tāʾs of تَتَفَكَّهُونَ is omitted. The doubled ك and the regular Form V pattern yield تَفَكَّهَ — يَتَفَكَّهُ. Al-Saʿdi glosses the occurrence as expressing regret at the ruined crop."
+  },
+  {
+   "key": "qa`tala|III|PASS",
+   "baabUrdu": "بابِ مُفَاعَلَة — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)، مجہول",
+   "past": "قُوتِلَ",
+   "present": "يُقَاتَلُ",
+   "pattern": "فُوعِلَ — يُفَاعَلُ",
+   "noteUrdu": "یہ قَاتَلَ کا مجہول ہے، یعنی کسی کے خلاف لڑا جانا۔ ماضی مجہول میں باب کا الف واو بن جاتا ہے۔ مضارع مجہول میں تاء پر زبر ہے اور يُقَاتَلُونَ میں واوِ جماعت نائبِ فاعل ہے۔",
+   "evidenceEnglish": "يُقَـٰتَلُونَ at 22:39:3 has fatha on ت, confirming the Form III passive imperfect in the supplied reading. The plural wāw is its passive subject. The passive perfect plural at 59:12:7 confirms the long ū and kasra on ت of قُوتِلَ. QAC's key retains the active lemma with a passive tag."
+  }
+ ]
+}

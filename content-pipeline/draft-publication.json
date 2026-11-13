@@ -184,6 +184,18 @@
       "contentSha256": "1d8ddf9080630fd56b23a4ada880ea318cef7589a85eb91e82659f0bd2ef7ae2",
       "studySha256": "134c5d406a46d1087375ee30750f6de12bff838e478135d11e9eff05aa47e43d",
       "work": "content-pipeline/edition-2"
+    },
+    {
+      "number": 22,
+      "contentSha256": "768a96253aef337330ce4cc0cad10a4d3d5586174734a80bb164ef3856f74b22",
+      "studySha256": "4e9d9b3dbce13cb7344321c3c92bc51c042c45d2f8f420c4abd9d2fe3d76a5d1",
+      "work": "content-pipeline/edition-3"
+    },
+    {
+      "number": 56,
+      "contentSha256": "530a5a3df4a3ce8f2b175bd62c4232de4f5a8e20f7052fe17d2fe7f4468dfc9c",
+      "studySha256": "d39eda38f37bdd0f90f2f66c776bcc3a6733764b6d85b01f1dcd7b5028461fba",
+      "work": "content-pipeline/edition-3"
     }
   ],
   "additionalAuthorizations": [
@@ -191,6 +203,18 @@
       "work": "content-pipeline/edition-2",
       "authorizedOn": "2026-11-13",
       "authorization": "The project owner explicitly authorized publishing all Edition 2 lessons as labeled drafts for later scholarly review and syncing SQLite and home-server Supabase.",
+      "scope": [
+        "web",
+        "android-bundle",
+        "ios-bundle",
+        "home-server-postgres",
+        "sqlite"
+      ]
+    },
+    {
+      "work": "content-pipeline/edition-3",
+      "authorizedOn": "2026-11-13",
+      "authorization": "The owner requested adding the complete grammar lessons for Al-Hajj and Al-Waqi’ah to the app and keeping the web, mobile, SQLite and home-server Supabase copies synchronized.",
       "scope": [
         "web",
         "android-bundle",
