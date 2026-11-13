@@ -1,8 +1,15 @@
 # Edition 2 — Surahs 4, 7, 25, 29 and 85–104: plan, progress and handoff
 
-**Status (2026-11-13): authoring and review resumed on PR #3. Edition 2 remains held for review.**
-The status counts below describe the original handoff. Read this file, then `../README.md`
-and `../guide/authoring-guide.md` for the shared workflow and source conventions.
+**Status (2026-11-13): draft authoring is complete for all 24 Surahs.** All 312 chunks
+passed mechanical validation, and all 807 ayahs and 10,098 words assembled into held
+drafts. Independent grammar and meaning review, scholarly review, and draft publication
+are pending. See `reports/resumption-status.json` for the per-chunk validation snapshot
+and `reports/codex-*-adjudication.json` for the source checks and corrections from this pass.
+
+To review the assembled lessons locally, run `python3 -I content-pipeline/scripts/assemble.py content-pipeline/edition-2 . --draft`
+from the repository root after rebuilding the ignored inputs in §5. The generated lessons and
+inventories appear in `drafts/`. The status counts in §3 describe the original handoff.
+Read `../README.md` and `../guide/authoring-guide.md` for the shared workflow and source conventions.
 
 ## 1. Goal (owner request, 2026-11-13)
 
@@ -58,7 +65,7 @@ This is a **second pipeline work directory**, so the first edition's pinned revi
   byte for byte.
 - `review-status.json`: every Surah is `pending`.
 
-## 3. Done
+## 3. Original handoff
 
 1. **Sources** (retrieved 2026-11-13): Quran.com verses, translations and three tafsirs, and QAC grammar and
    word-by-word pages for all 807 ayahs. A final gap-filling pass confirmed complete coverage.
@@ -110,10 +117,10 @@ instead.
 
 ## 4. What is left (in order)
 
-1. **Finish the chunks.**
-   - Run `workflows/chunks-reuse.js` with `work` set to this folder, `chunks` = the remaining chunk
-     ids from `reports/resume-args.json` (`remainingChunks`, 306) and `reuseAuthored` from the same
-     file (121 validated drafts are reviewed without re-authoring).
+1. **Finish independent chunk review.**
+   - All 312 drafts are available to review. Select chunk IDs from `meta/plan.json` and
+     skip only checkpoints whose source and lesson hashes still match. The lists in
+     `reports/resume-args.json` describe the original handoff.
    - Split them into groups of 12, one workflow each, for maximum parallelism, but expect the
      account usage limit. A chunk costs about 6–8 agents.
    - Re-validate every `reuseAuthored` file first: drop any that no longer pass, and let partial or invalid files go through the

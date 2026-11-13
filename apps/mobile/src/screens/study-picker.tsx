@@ -15,14 +15,16 @@ import { colors, radius, spacing, type } from '@/theme/tokens';
 
 export type BrowseMode = 'surah' | 'juz';
 export type PickerKind = 'chapter' | 'ayah' | null;
-type PickerEntry = {
+type PickerEntryBase = {
   number: number;
   title: string;
   arabic: string;
   available: boolean;
-  kind: 'surah' | 'juz' | 'ayah';
-  parentJuz?: number;
 };
+type PickerEntry = PickerEntryBase & (
+  | { kind: 'surah' | 'ayah'; parentJuz?: number }
+  | { kind: 'juz'; partial: boolean; parentJuz?: never }
+);
 
 type StudyPickerProps = {
   kind: PickerKind;
@@ -99,6 +101,7 @@ function PickerContent({
               {
                 number: item.number,
                 available: item.available,
+                partial: item.partial,
                 title: `${ui.juz} ${count(item.number)}`,
                 arabic: '',
                 kind: 'juz',
@@ -200,11 +203,16 @@ function PickerContent({
                 ? item.number === ayah
                 : item.kind === 'surah' && item.number === surah;
             const groupExpanded = item.kind === 'juz' && expandedJuz === item.number;
+            const availability = !item.available
+              ? ui.comingSoon
+              : item.kind === 'juz' && item.partial
+                ? ui.partialPreview
+                : ui.available;
             return (
               <Pressable
                 testID={`choose-${item.kind}-${item.number}`}
                 accessibilityRole="button"
-                accessibilityLabel={`${item.title}${!item.available ? `, ${ui.comingSoon}` : item.kind === 'juz' ? `, ${ui.partialPreview}` : ''}`}
+                accessibilityLabel={`${item.title}${!item.available || item.kind === 'juz' ? `, ${availability}` : ''}`}
                 accessibilityState={{
                   disabled: !item.available,
                   selected,
@@ -266,13 +274,9 @@ function PickerContent({
                   </Text>
                   {kind === 'chapter' && (
                     <Label muted style={{ fontSize: 12 }}>
-                      {item.available
-                        ? item.kind === 'juz'
-                          ? ui.partialPreview
-                          : item.parentJuz
-                            ? `${ui.surah} ${count(item.number)} · ${ui.available}`
-                            : ui.available
-                        : ui.comingSoon}
+                      {item.available && item.parentJuz
+                        ? `${ui.surah} ${count(item.number)} · ${availability}`
+                        : availability}
                     </Label>
                   )}
                 </View>

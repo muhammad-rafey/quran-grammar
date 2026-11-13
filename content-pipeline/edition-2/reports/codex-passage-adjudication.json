@@ -1,0 +1,70 @@
+{
+  "status": "source-checked corrections; scholarly review pending",
+  "findings": [
+    {
+      "ref": "85:4",
+      "field": "translationUrdu",
+      "evidenceEnglish": "Both source translations and al-Sa‘di include the curse sense."
+    },
+    {
+      "ref": "85:4:1",
+      "field": "meaningUrdu",
+      "evidenceEnglish": "Teach the contextual curse sense in the occurrence and segment glosses."
+    },
+    {
+      "ref": "85:4:1",
+      "field": "segments.0.meaningUrdu",
+      "evidenceEnglish": "Match the occurrence gloss to the contextual sense."
+    },
+    {
+      "ref": "86:7",
+      "field": "phrases.2.explanationUrdu",
+      "evidenceEnglish": "Only the second noun is coordinated onto the first."
+    },
+    {
+      "ref": "87:7",
+      "field": "tafsirUrdu",
+      "evidenceEnglish": "Al-Muyassar and al-Sa‘di specify the Prophet as the person whom God causes to forget."
+    },
+    {
+      "ref": "89:2:1",
+      "field": "dictionaryUrdu",
+      "evidenceEnglish": "The lexical plural carries no restriction to nights counted one at a time."
+    },
+    {
+      "ref": "89:23:9",
+      "field": "dictionaryUrdu",
+      "evidenceEnglish": "Repentance is a related tafsir point, outside the lexical sense of the noun."
+    },
+    {
+      "ref": "90:2",
+      "field": "translationUrdu",
+      "evidenceEnglish": "Translate the permission granted to the Prophet, as in the Taqi Usmani interpretation."
+    },
+    {
+      "ref": "90:2:2",
+      "field": "meaningUrdu",
+      "evidenceEnglish": "Express the primary interpretation as granted permission."
+    },
+    {
+      "ref": "90:2:2",
+      "field": "segments.0.meaningUrdu",
+      "evidenceEnglish": "Match the occurrence gloss."
+    },
+    {
+      "ref": "90:16:2",
+      "field": "dictionaryUrdu",
+      "evidenceEnglish": "The following qualifier conveys destitution."
+    },
+    {
+      "ref": "90:16:4",
+      "field": "dictionaryUrdu",
+      "evidenceEnglish": "The noun denotes destitution, while the entire phrase describes a person."
+    },
+    {
+      "ref": "96:6",
+      "field": "tafsirUrdu",
+      "evidenceEnglish": "Use the exact occurrence and preserve the narrator’s uncertainty in Ibn Kathir."
+    }
+  ]
+}

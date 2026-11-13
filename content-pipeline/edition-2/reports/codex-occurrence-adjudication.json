@@ -1,0 +1,175 @@
+{
+  "scholarlyReview": "pending",
+  "confirmedExisting": {
+    "4:171:4": {
+      "finding": "Second person masculine plural is supported by دِينِكُمْ and the plural wāw followed by unpronounced alif. Dual is incompatible with the vocalized suffix.",
+      "source": "https://corpus.quran.com/wordmorphology.jsp?location=(4:171:4)"
+    }
+  },
+  "changes": [
+    {
+      "ref": "4:115:6",
+      "prior": null,
+      "effective": {
+        "pos": "particle",
+        "noteEnglish": "QAC labels mā relative. The verse i‘rab explicitly treats it as a masdar particle. The interpreted masdar is the genitive complement of the preceding adverb."
+      }
+    },
+    {
+      "ref": "7:16:2",
+      "prior": null,
+      "effective": {
+        "pos": "particle",
+        "noteEnglish": "QAC tags the mā of فَبِمَآ relative. The verse i‘rab explicitly reads it as a masdar particle after causal bāʾ. The interpreted masdar is genitive and attaches to the ensuing verb of ambush."
+      }
+    },
+    {
+      "ref": "7:27:14",
+      "prior": null,
+      "effective": {
+        "passive": false,
+        "lexemeKey": ">arayo|IV|ACT",
+        "noteEnglish": "QAC tags لِيُرِيَهُمَا passive. The vocalized يُرِيَ is active Form IV of أَرَى, subjunctive after purpose lām. The subject refers to Satan, the dual pronoun is the first object, and the following noun is the second object. Use the active paradigm."
+      }
+    },
+    {
+      "ref": "7:38:21",
+      "prior": null,
+      "effective": {
+        "aspect": "PERF",
+        "png": "3MP",
+        "noteEnglish": "QAC tags ٱدَّارَكُوا۟ as a second-person plural imperative. It follows حَتَّىٰٓ إِذَا and describes successive groups entering together. It is a third-person masculine plural perfect of assimilated Form VI, as recognized by the supplied paradigm."
+      }
+    },
+    {
+      "ref": "7:48:12",
+      "prior": null,
+      "effective": {
+        "pos": "particle",
+        "noteEnglish": "QAC tags the mā in وَمَا as relative. The verse i‘rab makes it a masdar particle and coordinates the interpreted masdar with the preceding subject of أَغْنَى. The lesson follows that reading."
+      }
+    },
+    {
+      "ref": "7:51:16",
+      "prior": null,
+      "effective": {
+        "pos": "particle",
+        "noteEnglish": "QAC tags the mā in وَمَا as relative. The verse i‘rab treats it as a masdar particle and coordinates the interpreted masdar with the preceding interpreted masdar after the kāf. The lesson follows the verse analysis."
+      }
+    },
+    {
+      "ref": "7:92:6",
+      "prior": {
+        "verbForm": "IV",
+        "noteEnglish": "QAC tags يَغْنَوْا۟ as Form I; the vocalised Hafs word belongs to أَغْنَى (Form IV), as decided and double-reviewed in the edition-2 verb-paradigm library entry (>agonaY`|I|ACT). The lexeme handle is kept; follow the reviewed paradigm."
+      },
+      "effective": {
+        "verbForm": "I",
+        "lexemeKey": "ganiya|I|ACT",
+        "noteEnglish": "The inherited override wrongly assigned أَغْنَى Form IV. The open nūn in يَغْنَوْا۟, the intransitive construction with فِيهَا and the sense of dwelling support غَنِيَ يَغْنَى Form I. QAC correctly tags Form I but gives the wrong lemma handle. The preceding لَمْ makes this plural jussive with omitted nūn."
+      }
+    },
+    {
+      "ref": "7:163:25",
+      "prior": null,
+      "effective": {
+        "pos": "particle",
+        "noteEnglish": "The verse i‘rab reads the mā after bāʾ as a masdar particle. The interpreted masdar is genitive and depends on the verb of testing. QAC tags the raw segment as relative."
+      }
+    },
+    {
+      "ref": "25:52:2",
+      "prior": null,
+      "effective": {
+        "png": "2MS",
+        "noteEnglish": "QAC tags تُطِعِ third person feminine singular. The paired singular imperatives address the Prophet, so this is second person masculine singular after prohibitive lā. Its final kasra is for joining to the next word."
+      }
+    },
+    {
+      "ref": "25:59:3",
+      "prior": null,
+      "effective": {
+        "case": "ACC",
+        "noteEnglish": "QAC tags ٱلسَّمَـٰوَٰتِ genitive. It is an object of خَلَقَ and takes kasra in the accusative because it is a sound feminine plural."
+      }
+    },
+    {
+      "ref": "25:60:10",
+      "prior": null,
+      "effective": {
+        "pos": "particle",
+        "noteEnglish": "QAC tags mā in لِمَا as relative. The verse i‘rab takes the lām as causal and mā as a masdar particle, with a relative reading possible as an alternative. The lesson follows the verse i‘rab."
+      }
+    },
+    {
+      "ref": "29:8:15",
+      "prior": null,
+      "effective": {
+        "png": "2MS",
+        "noteEnglish": "QAC tags تُطِعْهُمَآ third person feminine singular. The nearby singular addressee and the instruction to the person whose parents exert pressure require second person masculine singular, jussive after prohibitive lā."
+      }
+    },
+    {
+      "ref": "98:4:9",
+      "prior": null,
+      "effective": {
+        "pos": "particle",
+        "noteEnglish": "The verse i‘rab explicitly reads mā as a masdar particle. The interpreted masdar is the complement of بَعْد, rather than the nominal relative in the raw word tag."
+      }
+    },
+    {
+      "ref": "29:9:4",
+      "prior": null,
+      "effective": {
+        "case": "ACC",
+        "noteEnglish": "QAC tags ٱلصَّـٰلِحَـٰتِ genitive. The word is the direct object of عَمِلُوا and takes accusative kasra as a sound feminine plural."
+      }
+    },
+    {
+      "ref": "7:35:18",
+      "prior": null,
+      "effective": {
+        "lexemeKey": "Hazina|I|ACT",
+        "noteEnglish": "QAC groups this occurrence under the transitive lemma حَزَنَ يَحْزُنُ. The fatḥa on zāy and the intransitive sense of feeling sorrow establish حَزِنَ يَحْزَنُ (Form I, samiʿa class). Preserve the occurrence mood and person."
+      }
+    },
+    {
+      "ref": "7:49:15",
+      "prior": null,
+      "effective": {
+        "lexemeKey": "Hazina|I|ACT",
+        "noteEnglish": "QAC groups this occurrence under the transitive lemma حَزَنَ يَحْزُنُ. The fatḥa on zāy and the intransitive sense of feeling sorrow establish حَزِنَ يَحْزَنُ (Form I, samiʿa class). Preserve the occurrence mood and person."
+      }
+    },
+    {
+      "ref": "29:33:15",
+      "prior": null,
+      "effective": {
+        "lexemeKey": "Hazina|I|ACT",
+        "noteEnglish": "QAC groups this occurrence under the transitive lemma حَزَنَ يَحْزُنُ. The fatḥa on zāy and the intransitive sense of feeling sorrow establish حَزِنَ يَحْزَنُ (Form I, samiʿa class). Preserve the occurrence mood and person."
+      }
+    }
+  ],
+  "paradigms": [
+    {
+      "key": "ganiya|I|ACT",
+      "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "غَنِيَ",
+      "present": "يَغْنَى",
+      "pattern": "فَعِلَ — يَفْعَلُ",
+      "noteUrdu": "ناقص یائی اور لازم ہے۔ فِي کے ساتھ رہنا یا آباد ہونا مراد ہے۔ واحد مضارع میں آخری یاء الفِ مقصورہ ہے۔ جمع مذکر کی واو سے پہلے الف حذف ہے اور نون جزم سے حذف ہوتی ہے۔ بابِ افعال کے يُغْنِي کا معنی کسی کو غنی کرنا یا فائدہ دینا ہے۔",
+      "evidenceEnglish": "Lane, Arabic-English Lexicon, s.v. غنى, gives غَنِيَ يَغْنَى and records the intransitive sense of dwelling. The open nūn in 7:92:6 يَغْنَوْا۟ and فِيهَا corroborate it, as do 11:68 and 11:95. QAC classifies the occurrence as Form I but groups it under the Form IV citation أَغْنَى. The Form IV plural imperfect would have prefix ḍamma and kasra before the final radical."
+    },
+    {
+      "key": "Hazina|I|ACT",
+      "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "حَزِنَ",
+      "present": "يَحْزَنُ",
+      "pattern": "فَعِلَ — يَفْعَلُ",
+      "noteUrdu": "صحیح سالم اور لازم فعل ہے، یعنی غمگین ہونا۔ مضارع میں زاء پر زبر آتی ہے، جیسے يَحْزَنُ۔ حَزَنَ يَحْزُنُ میں مضارع کی زاء پر پیش ہے اور اس کا معنی کسی کو غمگین کرنا ہے۔",
+      "evidenceEnglish": "Al-Azhari, Tahdhib al-Lugha, s.v. حزن, distinguishes intransitive حَزِنَ يَحْزَنُ from transitive حَزَنَهُ يَحْزُنُهُ. Lane, s.v. حزن, records the same distinction. The active imperfect with fatḥa on zāy and no direct object occurs at 7:35:18, 7:49:15 and 29:33:15. QAC groups these under an inflected identifier used for the transitive paradigm."
+    }
+  ]
+}

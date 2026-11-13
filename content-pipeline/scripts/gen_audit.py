@@ -266,7 +266,9 @@ for surah, name in NAMES.items():
     )
     out(
         f'- **Verb paradigms** (باب، ماضی، مضارع، وزن) for all {len(verbs)} verb occurrences come from a shared library of {len(reviewed_lexemes)} verb lexemes for ' + EDITION_LABEL + '. '
-        'Form I vowel classes were decided from imperfects attested across the whole Corpus and standard lexica (Lane, Lisan al-Arab, al-Mu‘jam al-Wasit), and every entry was independently reviewed.'
+        'Form I vowel classes were decided from imperfects attested across the whole Corpus and standard lexica (Lane, Lisan al-Arab, al-Mu‘jam al-Wasit). '
+        + ('Every entry was independently reviewed.' if edition.is_default(WORK) else
+           'The edition’s library review and subsequent corrections are recorded in its handoff and adjudication reports.')
     )
     out(
         '- **Tafsir consulted** through the Quran.com API: Tafsir al-Muyassar (Arabic), Tafsir al-Sa‘di (Arabic) and Ibn Kathir (abridged, English). '

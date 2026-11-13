@@ -13,7 +13,7 @@ Word boundaries and counts match the Quranic Arabic Corpus morphology for every 
 - **Morphology:** Quranic Arabic Corpus morphology 0.4 (Kais Dukes, GNU GPL with the Corpus terms of use), a verbatim distribution checked by SHA-256 `910b721a8f04f4334ac5d4c62b19e858f5d720c525bb975f2e750ea2c6bb532d`. It was consulted locally for segmentation, part of speech, root, lemma, verb form, voice, mood and case; it is not bundled or redistributed.
 - **Word types and roots** are derived deterministically from the Corpus stem tags with the mapping that reproduces root assignments for all 230 word occurrences of the existing lessons, including words with no root. A preposition with an attached pronoun (لَهُ، بِهِ، عَلَيْهِمْ) is a particle, following Surahs 1, 105 and 112. Words without a Corpus root, such as proper names, keep no root.
 - **Syntax:** the Corpus word-by-word pages (English morphology and Arabic i‘rab for every word) and verse grammar pages (Arabic i‘rab notes adapted from the Quran Printing Complex), retrieved 2026-11-13. All 8 verse pages carry a grammar note.
-- **Verb paradigms** (باب، ماضی، مضارع، وزن) for all 18 verb occurrences come from a shared library of 657 verb lexemes for this expansion edition. Form I vowel classes were decided from imperfects attested across the whole Corpus and standard lexica (Lane, Lisan al-Arab, al-Mu‘jam al-Wasit), and every entry was independently reviewed.
+- **Verb paradigms** (باب، ماضی، مضارع، وزن) for all 18 verb occurrences come from a shared library of 657 verb lexemes for this expansion edition. Form I vowel classes were decided from imperfects attested across the whole Corpus and standard lexica (Lane, Lisan al-Arab, al-Mu‘jam al-Wasit). The edition’s library review and subsequent corrections are recorded in its handoff and adjudication reports.
 - **Tafsir consulted** through the Quran.com API: Tafsir al-Muyassar (Arabic), Tafsir al-Sa‘di (Arabic) and Ibn Kathir (abridged, English). Translations consulted for meaning only: Saheeh International and Mufti Taqi Usmani. The Urdu wording is original and concise; it is not a translation of these works.
 
 Word-type, verb-form and passive-voice counts below apply the adjudicated occurrence overrides; they are not uncorrected Corpus tag counts.
@@ -23,8 +23,8 @@ Word-type, verb-form and passive-voice counts below apply the adjudicated occurr
 | Nouns | 42 |
 | Adjectives | 2 |
 | Verbs | 18 |
-| Particles | 20 |
-| Pronouns | 12 |
+| Particles | 21 |
+| Pronouns | 11 |
 | Passive verb occurrences | 2 |
 | Distinct roots | 42 |
 | Verb form I | 13 |
@@ -37,6 +37,12 @@ The lesson is organized into 3 chunks of whole ayahs. No review-result snapshot 
 The chunk validator checks the exact Arabic word, segments that rejoin to the exact word, ids and order, rule references, verb-note presence, phrase coverage of every word, and the absence of URLs or Latin text. AI review and automated checks are not scholarly review.
 
 Nouns without a Corpus root (root left empty): جَهَنَّمَ، عَدْنٍۢ.
+
+## Corrections to Corpus tags
+
+These occurrences carry an adjudicated correction or a documented source/analysis disagreement. The lessons follow the recorded contextual analysis; the raw Corpus data itself is unchanged.
+
+- **98:4:9** مَا: The verse i‘rab explicitly reads mā as a masdar particle. The interpreted masdar is the complement of بَعْد, rather than the nominal relative in the raw word tag.
 
 ## Analysis decisions and cautions
 

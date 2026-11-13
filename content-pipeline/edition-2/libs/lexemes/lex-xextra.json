@@ -39,6 +39,26 @@
    "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
    "noteUrdu": "ناقص یائی اور لازم فعل ہے: آگ کا بھڑکنا، شعلے مارنا۔ آخری یاء ماضی اور مضارع دونوں میں الفِ مقصورہ کی صورت میں ہے (تَلَظَّى، يَتَلَظَّى)۔ احتیاط: مؤنث مضارع تَتَلَظَّى میں دو تاء جمع ہونے پر ایک تاء حذف ہو کر تَلَظَّى رہ جاتا ہے، جو ماضی کا ہم شکل ہے۔",
    "evidenceEnglish": "Sample 92:14:3 تَلَظَّىٰ (the only Quranic occurrence), QAC IMPF 3FS with no form marker; qacCorrection adjudicates Form V: ta- prefix plus doubled ẓā' (tafaʿʿala), the imperfect 3FS تَتَلَظَّى with one of the two ta's elided, indicative (implied damma on the alif), describing نَارًا. al-Bazzi reads تَّلَظَّى with assimilated ta'. Form I لَظِيَ is not this word. Lane / Lisan al-Arab s.v. لظي: تَلَظَّتِ النَّارُ 'the fire blazed', intransitive. Paradigm fields identical to lex-a10 talaZ~aY`|I|ACT (same verb, older handle)."
+  },
+  {
+   "key": "ganiya|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "غَنِيَ",
+   "present": "يَغْنَى",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "ناقص یائی اور لازم ہے۔ فِي کے ساتھ رہنا یا آباد ہونا مراد ہے۔ واحد مضارع میں آخری یاء الفِ مقصورہ ہے۔ جمع مذکر کی واو سے پہلے الف حذف ہے اور نون جزم سے حذف ہوتی ہے۔ بابِ افعال کے يُغْنِي کا معنی کسی کو غنی کرنا یا فائدہ دینا ہے۔",
+   "evidenceEnglish": "Lane, Arabic-English Lexicon, s.v. غنى, gives غَنِيَ يَغْنَى and records the intransitive sense of dwelling. The open nūn in 7:92:6 يَغْنَوْا۟ and فِيهَا corroborate it, as do 11:68 and 11:95. QAC classifies the occurrence as Form I but groups it under the Form IV citation أَغْنَى. The Form IV plural imperfect would have prefix ḍamma and kasra before the final radical."
+  },
+  {
+   "key": "Hazina|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "حَزِنَ",
+   "present": "يَحْزَنُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے، یعنی غمگین ہونا۔ مضارع میں زاء پر زبر آتی ہے، جیسے يَحْزَنُ۔ حَزَنَ يَحْزُنُ میں مضارع کی زاء پر پیش ہے اور اس کا معنی کسی کو غمگین کرنا ہے۔",
+   "evidenceEnglish": "Al-Azhari, Tahdhib al-Lugha, s.v. حزن, distinguishes intransitive حَزِنَ يَحْزَنُ from transitive حَزَنَهُ يَحْزُنُهُ. Lane, s.v. حزن, records the same distinction. The active imperfect with fatḥa on zāy and no direct object occurs at 7:35:18, 7:49:15 and 29:33:15. QAC groups these under an inflected identifier used for the transitive paradigm."
   }
  ]
 }

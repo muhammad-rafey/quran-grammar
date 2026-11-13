@@ -1,0 +1,1040 @@
+# Surah 7 — Al-A'raf: source audit
+
+Researched 2026-11-13. This lesson contains **206 ayahs and 3,320 word occurrences**. All Urdu word glosses, translations, grammatical explanations, dictionary summaries, verb-paradigm notes and concise tafsir notes are original AI-assisted editorial drafts. They are **not scholar-reviewed** and are not attributed to a named Urdu translator. No third-party Urdu book, dictionary, translation or tafsir was imported.
+
+## Arabic inventory
+
+`inventory-7.json` records the Quran.com Content API v4 `text_uthmani` word strings ([source](https://api.quran.com/api/v4/verses/by_chapter/7?words=true&word_fields=text_uthmani&per_page=50)), retrieved 2026-11-13, excluding end-of-ayah markers. Recitation signs that the API separates from a word by a space — waqf signs, the saktah sign, the sajdah sign and the rub al-hizb marker — are not part of the stored word token, following the Surahs 110–114 precedent. The inventory lists all 210 such exclusions with the original API text; no other character was changed. The unnumbered opening basmalah is not inserted as a numbered occurrence. Automated tests compare every stored word, its id and its segments with this inventory.
+
+Word boundaries and counts match the Quranic Arabic Corpus morphology for every ayah. Per-ayah word counts: 1, 13, 14, 10, 12, 6, 6, 9, 11, 11, 16, 17, 13, 5, 4, 7, 15, 12, 16, 25, 5, 28, 12, 12, 7, 19, 30, 22, 16, 16, 15, 26, 29, 11, 18, 11, 37, 40, 14, 23, 10, 15, 36, 28, 10, 18, 13, 14, 15, 20, 19, 10, 38, 32, 8, 15, 29, 17, 20, 9, 10, 11, 13, 14, 15, 14, 10, 7, 27, 17, 25, 13, 34, 25, 23, 8, 15, 6, 14, 13, 11, 13, 7, 8, 37, 24, 19, 21, 42, 12, 6, 13, 15, 13, 18, 18, 9, 9, 10, 19, 23, 9, 16, 8, 18, 11, 6, 6, 9, 7, 7, 4, 11, 5, 10, 11, 11, 6, 4, 3, 4, 3, 19, 8, 5, 16, 21, 16, 22, 10, 22, 12, 13, 22, 11, 11, 29, 23, 10, 9, 18, 23, 41, 14, 20, 36, 13, 22, 18, 39, 11, 15, 14, 15, 41, 30, 43, 31, 8, 43, 20, 17, 27, 19, 18, 11, 19, 14, 40, 10, 19, 26, 15, 5, 13, 30, 9, 10, 30, 14, 7, 8, 5, 11, 22, 10, 37, 28, 29, 12, 7, 7, 12, 14, 26, 9, 10, 12, 7, 10, 12, 7, 23, 8, 16, 11.
+
+## Sources and method
+
+- **Morphology:** Quranic Arabic Corpus morphology 0.4 (Kais Dukes, GNU GPL with the Corpus terms of use), a verbatim distribution checked by SHA-256 `910b721a8f04f4334ac5d4c62b19e858f5d720c525bb975f2e750ea2c6bb532d`. It was consulted locally for segmentation, part of speech, root, lemma, verb form, voice, mood and case; it is not bundled or redistributed.
+- **Word types and roots** are derived deterministically from the Corpus stem tags with the mapping that reproduces root assignments for all 230 word occurrences of the existing lessons, including words with no root. A preposition with an attached pronoun (لَهُ، بِهِ، عَلَيْهِمْ) is a particle, following Surahs 1, 105 and 112. Words without a Corpus root, such as proper names, keep no root.
+- **Syntax:** the Corpus word-by-word pages (English morphology and Arabic i‘rab for every word) and verse grammar pages (Arabic i‘rab notes adapted from the Quran Printing Complex), retrieved 2026-11-13. 13 of 206 verse pages carry no grammar note: 1, 15, 25, 31, 67, 78, 91, 104, 122, 125, 131, 144, 199.
+- **Verb paradigms** (باب، ماضی، مضارع، وزن) for all 971 verb occurrences come from a shared library of 657 verb lexemes for this expansion edition. Form I vowel classes were decided from imperfects attested across the whole Corpus and standard lexica (Lane, Lisan al-Arab, al-Mu‘jam al-Wasit). The edition’s library review and subsequent corrections are recorded in its handoff and adjudication reports.
+- **Tafsir consulted** through the Quran.com API: Tafsir al-Muyassar (Arabic), Tafsir al-Sa‘di (Arabic) and Ibn Kathir (abridged, English). Translations consulted for meaning only: Saheeh International and Mufti Taqi Usmani. The Urdu wording is original and concise; it is not a translation of these works.
+
+Word-type, verb-form and passive-voice counts below apply the adjudicated occurrence overrides; they are not uncorrected Corpus tag counts.
+
+| Measure | Count |
+| --- | ---: |
+| Nouns | 1,264 |
+| Adjectives | 40 |
+| Verbs | 971 |
+| Particles | 825 |
+| Pronouns | 220 |
+| Passive verb occurrences | 33 |
+| Distinct roots | 477 |
+| Verb form I | 654 |
+| Verb form II | 57 |
+| Verb form III | 13 |
+| Verb form IV | 153 |
+| Verb form V | 21 |
+| Verb form VI | 3 |
+| Verb form VII | 3 |
+| Verb form VIII | 40 |
+| Verb form X | 26 |
+| Verb form QI | 1 |
+
+## Editorial checks
+
+The lesson is organized into 105 chunks of whole ayahs. No review-result snapshot was supplied. This source audit therefore does not certify completion of independent reviews, fixes or final confirmations. The intended workflow requires independent grammar and meaning/tafsir reviews and a clean final confirmation after every correction, including minor findings.
+The chunk validator checks the exact Arabic word, segments that rejoin to the exact word, ids and order, rule references, verb-note presence, phrase coverage of every word, and the absence of URLs or Latin text. AI review and automated checks are not scholarly review.
+
+Nouns without a Corpus root (root left empty): ءَادَمَ، أَيَّانَ، أَيْنَ، إِبْلِيسَ، إِذَا، إِذَآ، إِذِ، إِذْ، إِسْرَٰٓءِيلَ، بِمُوسَىٰ، ثَمُودَ، جَهَنَّمَ، شُعَيْبًا، شُعَيْبًۭا، فَإِذَا، فَبِأَىِّ، فَلَمَّا، فَلَمَّآ، فَمَاذَا، فَمَن، فَمَنِ، فَمَنْ، فِرْعَوْنَ، فِرْعَوْنُ، لَمَّا، لِجَهَنَّمَ، لِـَٔادَمَ، لِمَ، لَّمَن، مَا، مَدْيَنَ، مَعَ، مَعَكَ، مَعَكُم، مَعَهُۥ، مَعَهُۥٓ، مَعِىَ، مَن، مَنْ، مُوسَىٰ، مُوسَىٰٓ، مَّعَهُۥٓ، مُّوسَى، مُّوسَىٰ، نُوحًا، نُوحٍۢ، هَـٰرُونَ، هُنَالِكَ، وَإِذَا، وَإِذْ، وَكَم، وَلَمَّا، وَلُوطًا، وَمَن، وَمَنْ، وَهَـٰرُونَ، وَيَـٰٓـَٔادَمُ، وَٱلْإِنجِيلِ، يَـٰشُعَيْبُ، يَـٰفِرْعَوْنُ، يَـٰمُوسَى، يَـٰمُوسَىٰٓ، يَـٰٓأَيُّهَا، يَوْمَئِذٍ، ٱلتَّوْرَىٰةِ.
+
+## Corrections to Corpus tags
+
+These occurrences carry an adjudicated correction or a documented source/analysis disagreement. The lessons follow the recorded contextual analysis; the raw Corpus data itself is unchanged.
+
+- **7:16:2** فَبِمَآ: QAC tags the mā of فَبِمَآ relative. The verse i‘rab explicitly reads it as a masdar particle after causal bāʾ. The interpreted masdar is genitive and attaches to the ensuing verb of ambush.
+- **7:17:2** لَـَٔاتِيَنَّهُم: QAC tags لَـَٔاتِيَنَّهُم 2nd person masculine singular, but its prefix is hamza (أَ), the 1st person singular marker: Iblis says 'I will surely come to them'. Its mood stays as tagged: the fatha comes from the energetic nun of the oath answer (mabni), not from subjunctive nasb.
+- **7:20:1** فَوَسْوَسَ: QAC tags فَوَسْوَسَ as Form I; the vocalised Hafs word belongs to وَسْوَسَ (Form QI), as decided and double-reviewed in the edition-2 verb-paradigm library entry (wasowasa|I|ACT). The lexeme handle is kept; follow the reviewed paradigm.
+- **7:22:1** فَدَلَّىٰهُمَا: QAC tags فَدَلَّىٰهُمَا as Form I; the vocalised Hafs word belongs to دَلَّى (Form II), as decided and double-reviewed in the edition-2 verb-paradigm library entry (dal~a|I|ACT). The lexeme handle is kept; follow the reviewed paradigm.
+- **7:27:14** لِيُرِيَهُمَا: QAC tags لِيُرِيَهُمَا passive. The vocalized يُرِيَ is active Form IV of أَرَى, subjunctive after purpose lām. The subject refers to Satan, the dual pronoun is the first object, and the following noun is the second object. Use the active paradigm.
+- **7:35:18** يَحْزَنُونَ: QAC groups this occurrence under the transitive lemma حَزَنَ يَحْزُنُ. The fatḥa on zāy and the intransitive sense of feeling sorrow establish حَزِنَ يَحْزَنُ (Form I, samiʿa class). Preserve the occurrence mood and person.
+- **7:38:21** ٱدَّارَكُوا۟: QAC tags ٱدَّارَكُوا۟ as a second-person plural imperative. It follows حَتَّىٰٓ إِذَا and describes successive groups entering together. It is a third-person masculine plural perfect of assimilated Form VI, as recognized by the supplied paradigm.
+- **7:48:9** أَغْنَىٰ: QAC tags أَغْنَىٰ as Form I; the vocalised Hafs word belongs to أَغْنَى (Form IV), as decided and double-reviewed in the edition-2 verb-paradigm library entry (>agonaY`|I|ACT). The lexeme handle is kept; follow the reviewed paradigm.
+- **7:48:12** وَمَا: QAC tags the mā in وَمَا as relative. The verse i‘rab makes it a masdar particle and coordinates the interpreted masdar with the preceding subject of أَغْنَى. The lesson follows that reading.
+- **7:49:15** تَحْزَنُونَ: QAC groups this occurrence under the transitive lemma حَزَنَ يَحْزُنُ. The fatḥa on zāy and the intransitive sense of feeling sorrow establish حَزِنَ يَحْزَنُ (Form I, samiʿa class). Preserve the occurrence mood and person.
+- **7:51:16** وَمَا: QAC tags the mā in وَمَا as relative. The verse i‘rab treats it as a masdar particle and coordinates the interpreted masdar with the preceding interpreted masdar after the kāf. The lesson follows the verse analysis.
+- **7:92:6** يَغْنَوْا۟: The inherited override wrongly assigned أَغْنَى Form IV. The open nūn in يَغْنَوْا۟, the intransitive construction with فِيهَا and the sense of dwelling support غَنِيَ يَغْنَى Form I. QAC correctly tags Form I but gives the wrong lemma handle. The preceding لَمْ makes this plural jussive with omitted nūn.
+- **7:143:25** تَجَلَّىٰ: QAC tags تَجَلَّىٰ as Form I, but the ta- prefix and doubled middle radical (tafaʿʿala) make it Form V of ج ل و (the Form I verb is جَلَا يَجْلُو). The reviewed paradigm entry under this lexeme handle is written as Form V; raised by the lex-a02 library review.
+- **7:163:25** بِمَا: The verse i‘rab reads the mā after bāʾ as a masdar particle. The interpreted masdar is genitive and depends on the verb of testing. QAC tags the raw segment as relative.
+- **7:189:13** تَغَشَّىٰهَا: QAC 0.4 tags تَغَشَّىٰهَا as a 3MS imperfect (indicative by default), but it follows فَلَمَّا and a 3MS imperfect of Form V would be يَتَغَشَّىٰ: it is the Form V perfect taghashshā (3MS, active, no mood), with هَا as object. It is not jussive; treat it as a perfect verb (aspect PERF).
+- **7:190:2** ءَاتَىٰهُمَا: QAC 0.4 tags ءَاتَىٰهُمَا as a 1st person singular imperfect, but after فَلَمَّا it is the Form IV perfect ātā (aspect PERF, no mood) with Allah as its hidden 3MS subject: 'He gave them'; هُمَا is the first object and صَـٰلِحًا the second.
+- **7:190:8** ءَاتَىٰهُمَا: QAC 0.4 tags ءَاتَىٰهُمَا as a 1st person singular imperfect, but in فِيمَآ ءَاتَىٰهُمَا it is the Form IV perfect ātā (aspect PERF, no mood) in the relative clause, with Allah as hidden 3MS subject: 'what He gave them'.
+- **7:190:9** فَتَعَـٰلَى: QAC tags فَتَعَـٰلَى as Form I; the vocalised Hafs word belongs to تَعَالَى (Form VI), as decided and double-reviewed in the edition-2 verb-paradigm library entry (taEa`laY`|I|ACT). The lexeme handle is kept; follow the reviewed paradigm.
+- **7:203:12** يُوحَىٰٓ: QAC tags يُوحَىٰٓ subjunctive, but no particle of nasb precedes it (it is the verb of the relative clause after مَا); it is indicative with an implied damma on the alif (للتعذر), passive Form IV.
+
+## Analysis decisions and cautions
+
+Notes recorded by the authors and reviewers for scholarly review; they mark alternative analyses, source disagreements and editorial choices.
+
+- **7:1:1:** QAC gives no i'rab beyond "huruf muqatta'a"; no syntactic role assigned. Some grammarians make the initials a mubtada with kitabun its khabar; QAC instead makes kitabun the khabar of an implied hadha, which is followed. Rule muqattaat applied by its QAC INL condition although its examples list only 32:1 and 36:1.
+- **7:2:2:** The clause unzila ilayka is taught as a sifa of kitabun (standard i'rab); the QAC ayah note does not state this role explicitly.
+- **7:2:4:** Word-level i'rab calls the fa' isti'nafiyya (QAC REM); the ayah note calls the fa' and its clause mu'tarida between unzila and li-tundhira. Followed the ayah note (rule parenthetical, not resumption) and mentioned the word-level label.
+- **7:2:5:** yakun taught as naqisa (ism haraj delayed, khabar fi sadrika fronted), the common analysis; QAC word i'rab only says jussive imperfect. Alternative: kana tamma with fi sadrika attached to it; mentioned briefly.
+- **7:2:9:** minhu attached to haraj; alternative: attached to an implied sifa of haraj (mentioned). Causal/relational sense of min follows the translations (because of it / about it).
+- **7:2:12:** dhikra taught as genitive, coordinated with the interpreted masdar of li-tundhira, per QAC GEN and the ayah note (taqdir lil-indhar wat-tadhkir). Other known analyses not used: nominative (khabar of implied huwa) or accusative (coordinated on the mahall / maf'ul li-ajlih). Case is implied on the alif maqsura.
+- **7:3:10:** Pronoun of dunihi referred to Allah, following Muyassar (min duni Allah) and Ibn Kathir (besides Him). Some exegetes refer it to ma unzila; not in the provided sources, not taught.
+- **7:3:12:** Word-level i'rab: sifa mansuba; ayah note: na'ib maf'ul mutlaq (adjective of an omitted masdar, i.e. tadhakkuran qalilan), fronted before tadhakkaruna. Both stated. Other analyses (zarf: zamanan qalilan; ma masdariyya) not taught.
+- **7:3:13:** ma taught as za'ida for emphasis per QAC SUP and the ayah note; some grammarians read it as masdariyya. Not taught.
+- **7:3:14:** tadhakkaruna: Form V imperfect with one ta' elided (from tatadhakkaruna), per lexeme entry and root note; tagged assimilation as the rule lists this form (23:85).
+- **7:4:2:** Per the ayah note, min qaryatin attaches to an implied na't of kam (rule kam: tag preposition, not tamyiz). The common analysis (tamyiz of kam khabariyya, majrur by min) is mentioned as an alternative.
+- **7:4:5:** The order "We destroyed it, then Our punishment came" is classically explained (e.g. "We willed its destruction", or a fa' of detailing); the provided sources do not discuss it, so it is not taught. Reviewer may wish to add a note.
+- **7:4:7:** bayatan: QAC N ACC; ayah note calls it a masdar in the position of a hal (ba'itina). Root library entry b-y-t carries a note specific to yabituna (night prayer, another surah); dictionaryUrdu kept to the general meaning. Shared-data observation for the library maintainers.
+- **7:4:9:** hum qa'iluna: nominal clause coordinated by aw on the single-word hal bayatan (ayah note), in mahall nasb; no waw al-haal appears. Tagged conjunction rather than haal since the note calls it ma'tufa.
+- **7:4:10:** QAC lemma is the plural qa'iluna; lemma given as the singular qa'il (lemmaFork). Active participle of qala yaqilu (midday rest), root q-y-l, not q-w-l. Root library entry q-y-l has a note specific to maqil (another surah); dictionaryUrdu kept general.
+- **7:5:3:** The word-level QAC tag and iʿrab give nominative. The verse iʿrab treats دَعْوَىٰهُمْ as the fronted khabar of كَانَ with implied fatḥa, and the interpreted masdar beginning أَن as its delayed ism. The draft follows the verse note.
+- **7:5:10:** In the exact written token إِنَّا, the particle's final nūn and the pronoun's first nūn are represented together by the shadda. The second visible slice is the alif of the first-person plural suffix.
+- **7:6:3:** The sending clause has no overt sent entity. The tafsirs and Taqi Usmani understand the messengers as the supplied referent, while Sahih International supplies the message. The draft gives the former reading and explains the prepositional attachment.
+- **7:7:4:** Word-level QAC tags the wāw resumptive. The verse iʿrab coordinates the negative clause with the omitted ḥāl underlying بِعِلْمٍۢ; the draft follows the verse analysis.
+- **7:8:1:** Word-level QAC tags wāw coordinating. The verse iʿrab calls it resumptive, followed here.
+- **7:8:4:** Word-level QAC tags fāʾ resumptive, while the verse iʿrab coordinates the conditional sentence with the preceding resumptive sentence. The draft follows the clause-level analysis.
+- **7:8:8:** The short word iʿrab identifies an independent pronoun without assigning a specific role. Read here as ḍamīr al-faṣl before the definite predicate; an embedded second mubtada with the following predicate is also possible.
+- **7:9:8:** QAC morphology tags مَا relative, but the verse iʿrab analyses it as a masdar particle. The Urdu preserves the app's effective pronoun category in the short label and explicitly teaches the contextual masdar analysis; no relative rule is assigned.
+- **7:10:2:** The raw lexeme handle and lemma are truncated at مَكَّ. The supplied reviewed paradigm and visible doubled nūn support مَكَّنَ with the last radical merged into the subject nūn; the text follows that paradigm.
+- **7:10:9:** Word-level iʿrab gives accusative adjective. Verse iʿrab identifies it more precisely as substitute for the omitted cognate object, with the adjective modifying the understood masdar شُكْرًا. The meaning and rule follow the verse iʿrab.
+- **7:10:10:** The initial written shadda is read in connection with the tanwin of the preceding word; مَا is supplemental in the verse iʿrab.
+- **7:11:4:** The supplied ص و ر root card focuses on the horn and on distinguishing it from shape; the reviewed paradigm establishes the occurrence sense of forming or fashioning, retained here.
+- **7:11:12:** The verse iʿrab makes Iblis the accusative exception. The Urdu keeps the stated scope of the prostration and avoids treating the grammatical exception as a statement about Iblis's species.
+- **7:12:4:** QAC word morphology glosses lā as negation, while the ayah iʿrab calls it supplemental for emphasis, so the translated question asks what prevented prostration. The ayah iʿrab treats the interpreted masdar as accusative after an omitted مِنْ.
+- **7:12:6:** The ayah iʿrab attaches the time adverb to تَسْجُدَ, followed here.
+- **7:12:10:** Khayr here is an elative followed by the comparator مِنْهُ, not the generic noun goodness.
+- **7:13:2:** The QAC word-level tag calls fāʾ supplemental, and the supplied ه ب ط root note repeats that reading. The verse iʿrab instead takes it as linking the answer to an implicit condition, followed here. This is a contextual syntax disagreement rather than a paradigm error.
+- **7:13:4:** QAC word-level analysis calls fāʾ resumptive; the ayah note coordinates the clause with the preceding imperative. The draft follows the clause analysis.
+- **7:13:5:** The ayah iʿrab explicitly treats يَكُونُ as complete, with the interpreted masdar as subject; the shared kana rule is not applied.
+- **7:14:2:** The packet uses a passive-looking raw lemma for this active Form IV imperative. The supplied reviewed paradigm correctly gives أَنْظَرَ and يُنْظِرُ. The suffix is segmented into protective nūn and first-person yāʾ.
+- **7:16:2:** QAC marks مَا relative and the fā resumptive, while the verse iʿrab explicitly gives masdar particle and a response to an understood condition. The effective app pronoun type is left unchanged.
+- **7:16:6:** The verse iʿrab selects accusative through omitted عَلَىٰ and discusses the weaker alternative that treats the noun as an adverb. The lesson follows the selected analysis.
+- **7:17:2:** Adjudicated correction: the hamza is the first-person singular imperfect prefix, so Iblis is the speaker and subject. Raw QAC 2MS is incorrect. The visible fatḥa comes from building the imperfect with the heavy emphatic nūn, not from subjunctive mood.
+- **7:18:6:** The word iʿrab labels an emphatic lām generally. The verse iʿrab specifically calls it preparatory to an oath.
+- **7:18:9:** The raw lemma مُلِئَتْ is an inflected passive form, while the occurrence is active first-person singular. The reviewed paradigm gives the correct active citation forms.
+- **7:19:1:** QAC gives NOM and the word iʿrab calls the name nominative. The overt ḍamma is the built ending of a singular definite vocative in محل نصب.
+- **7:19:8:** The packet labels the noun GEN. The verse iʿrab explains that its ḍamma is the built ending and the genitive applies to its position after مِنْ.
+- **7:19:14:** The verse iʿrab loosely calls the dual alif a subject; the word iʿrab specifies that it is the ism of the incomplete verb كَانَ. The lesson follows the latter and keeps the explicitly analyzed subjunctive.
+- **7:20:1:** Adjudicated correction: the verb is Form QI, quadriliteral mujarrad, and follows the supplied reviewed وَسْوَسَ paradigm. The opaque key retains the raw QAC Form I tag.
+- **7:20:19:** The verse iʿrab assigns the interpreted masdar the role of purpose, with understood خشية. The Urdu translation expresses the preventive sense of Satan’s allegation.
+- **7:22:1:** Followed the packet qacCorrection: QAC tags the verb Form I (lemma dal~a), but the vocalised word is Form II dallā / yudallī per the reviewed paradigm entry; lemma written as dallā. Root kept as QAC d-l-l; the lexeme note records the lexica derivation from d-l-w (lowering a bucket). weak-verb and doubled not tagged because of this unsettled root.
+- **7:22:2:** Per the ayah i'rab note, bi-ghurūr attaches to an implied hal of the subject pronoun (mulṭabisan bi-ghurūr). An alternative reading takes the bā as causal, attached directly to the verb.
+- **7:22:9:** The word-level QAC i'rab calls the dual alif of ṭafiqā the fā'il, but the ayah grammar note treats ṭafiqa as an incomplete verb whose ism is the pronoun and whose khabar is the clause yakhṣifān; followed the ayah note. The rule library has no card for verbs of commencement (kada-asa covers only kāda/asā), so the word takes perfect/subject-pronoun/dual/conjunction only.
+- **7:22:12:** min taken as partitive and attached to yakhṣifān, matching Muyassar (ba'ḍ waraq al-janna); it could also be read as describing an implied object.
+- **7:22:17:** The interrogative hamza is explained as taqrīr / rebuke, following Sa'di (muwabbikhan wa-mu'atiban).
+- **7:22:20:** QAC lemma is tilkum; lemma written as the base demonstrative tilka, with -kumā explained as the dual address particle (ḥarf khiṭāb), not a pronoun.
+- **7:22:21:** QAC i'rab gives only ism majrūr; analysed as badal of the demonstrative (conventional), with ʿaṭf bayān or ṣifa noted as alternatives.
+- **7:22:22:** aqul is jussive by coordination on anhakumā under lam; the sukūn is not written because the lām is assimilated into the following lām of lakumā.
+- **7:23:2:** QAC i'rab says only ism manṣūb; analysed as munādā muḍāf with elided yā, the standard reading.
+- **7:23:5:** Per the ayah i'rab note: an implied lām al-tawṭi'a precedes in, the conditional answer is elided, and la-nakūnanna is the answer to an implied oath.
+- **7:23:9:** QAC tags tarḥamnā as 3rd person feminine singular; the verb is coordinated on taghfir and addresses Allah, so it is 2nd person masculine singular (hidden anta), jussive by lam. Written as 2MS; QAC tag appears to be an error.
+- **7:24:9:** QAC labels mustaqarr a Form X passive participle by form. The occurrence denotes a place of settlement and is taught as an ism makan, in agreement with the reviewed root entry.
+- **7:24:2:** Muyassar identifies Adam, his wife, and Iblis as the addressees. Ibn Kathir records an additional report about a serpent, then qualifies it. The draft summarizes the shared point about descent and enmity.
+- **7:26:1:** The raw QAC lemma is bunayya. The occurrence is bani, the annexed plural of ibn, treated like a sound masculine plural for case, as in the reviewed root entry.
+- **7:26:7:** The raw QAC handle is inflected and passive-looking. This occurrence is an active Form III imperfect of wara, following the reviewed paradigm.
+- **7:26:10:** The word-level source calls the waw resumptive. The verse iʿrab coordinates its nominal clause with the answer to the address. The lesson follows the verse-level coordination.
+- **7:26:11:** QAC tags taqwa as masculine. The lesson identifies it as a verbal noun and avoids inferring gender from the raw tag. Its genitive case is marked by implicit kasra on the final alif in this definite form.
+- **7:26:12:** The lesson follows the verse iʿrab making dhalika khayr the full predicate of libas al-taqwa. The demonstrative points back to that opening subject.
+- **7:27:1:** As at 7:26:1, the annexed plural bani has singular lemma ibn. The raw QAC diminutive-looking lemma is not taught.
+- **7:27:3:** QAC calls la a negative particle. The warning is prohibitive la; the following imperfect is built on fatha by direct heavy emphatic nun, in the jussive syntactic position.
+- **7:27:10:** QAC classifies al-janna as a named entity in this context. The lesson teaches its genitive case as the referential definite noun for the specific Garden.
+- **7:27:14:** Raw QAC and generated iʿrab incorrectly label this active Form IV subjunctive passive. The stem yuriy(a), with kasra on the ra and visible final ya, and its two objects establish the active form. Huma is the first object and sawʾatihima the second. The corresponding reviewed active key is >arayo|IV|ACT (ʾara/yuri); the original packet mapped the passive key.
+- **7:27:18:** The verse iʿrab explicitly treats huwa as emphasis for the ha of innahu and the separator that permits qabiluhu to be conjoined to the hidden subject of yarakum. The lesson follows that analysis.
+- **7:27:19:** The contextual sense of qabil is company, tribe, or group. The shared root note currently covers temporal qabl and facing qubul without this sense.
+- **7:27:24:** The exact written segmentation follows the source. Inna plus the na pronoun share the single geminated written nun, so the final alif is the remainder of the pronoun in the written split.
+- **7:27:26:** QAC marks al-shayatin as proper. It is a generic definite broken plural here, unlike the specifically referential singular al-shaytan earlier in the verse. The effective noun and root are preserved.
+- **7:28:1:** The QAC word analysis calls waw resumptive. The verse iʿrab explicitly coordinates this conditional sentence with the previous verse’s relative clause la yuʾminun. The lesson follows the verse-level coordination.
+- **7:28:5:** The lesson treats ʿalayha as attached to the implied second object in the wajada construction, “found our ancestors following it.” A one-object construction with the phrase as a circumstantial modifier gives the same contextual sense.
+- **7:28:8:** The word-level source calls waw resumptive, but the verse iʿrab coordinates this claim with the preceding quoted speech. The lesson follows the verse-level coordination.
+- **7:29:5:** The verse iʿrab coordinates the imperative with the implied command underlying bi-l-qist, “act justly,” preserving the switch from a reported command to direct address.
+- **7:29:9:** The translation uses the place of prostration. English references and tafsir also give the occasion of prostration or each setting of worship. The lesson mentions the contextual range.
+- **7:29:16:** The verse iʿrab treats taʿudun as resumptive. The tafsir primarily explains resurrection after death, and the grouped Ibn Kathir passage also records an interpretation linking the return to the groups mentioned in the following ayah.
+- **7:30:3:** Follows verse iʿrab on ishtighal: the second group is the object of an omitted verb, with حَقَّ and its clause explaining it.
+- **7:30:9:** QAC calls the noun PN; here the definite plural denotes a class of devils, as supported by both English translations and the root note. The draft retains the packet noun type and avoids treating this plural as a personal name.
+- **7:30:16:** The shadda on initial mīm reflects connected recitation after final mīm of أَنَّهُم. The dictionary base is مُهْتَدٍ.
+- **7:31:1:** The word-level lemma بُنَىّ suggests a diminutive; the context and root card give the plural بَنِي in construct with Adam. The singular teaching lemma is اِبْن.
+- **7:31:7:** Both translations retain mosque. The provided tafsirs connect the instruction to each performance of prayer; the draft uses that contextual sense in translation and retains the place sense in the word entry.
+- **7:31:12:** The third-person pronoun is understood as referring to Allah here, as in the two Arabic tafsirs.
+- **7:32:19:** QAC grammar note makes khaalisatan a haal of al-tayyibaat (the referent of hiya). Other i'rab works make it a haal of the pronoun latent in the elided khabar of li-lladhina, governed by the implied istiqrar. Followed QAC; alternative mentioned briefly in syntaxUrdu.
+- **7:32:16:** Attachment of fi al-hayati al-dunya: taken with the elided khabar (they are for the believers in this life, shared by others), matching Muyassar and Ibn Kathir. Some i'rab works attach it to aamanu; mentioned as an alternative.
+- **7:32:22:** QAC tags the ka of kadhalika as a preposition; the QAC grammar note calls the kaf naa'ib maf'ul mutlaq (i.e. noun-like, 'like that detailing'). posUrdu keeps the preposition label; syntaxUrdu follows the grammar note.
+- **7:32:14:** QAC word i'rab says only jar wa majrur; the khabar role (attached to an elided predicate) follows the standard i'rab of the clause hiya li-lladhina.
+- **7:32:7:** The resumptive object pronoun of the sila (akhrajaha) is treated as elided, per standard i'rab; not stated in the QAC note.
+- **7:32:10:** min al-rizq taken as attached to an elided haal of al-tayyibaat per the QAC grammar note; min explained as explicative of genus, partitive given as an alternative.
+- **7:32:** Tafsir: Sa'di explains khaalisatan yawm al-qiyamah as 'no accountability on them for it', while Muyassar and Ibn Kathir explain it as exclusively theirs; both reflected, the first with a 'some exegetes' hedge.
+- **7:33:2:** The raw ACC+PREV labels represent the restriction construction: supplemental mā prevents ordinary accusative government of إِنَّ.
+- **7:33:6:** The ayah iʿrab explicitly calls the first relative expression badal ishtimāl of the shameful deeds; the second is coordinated.
+- **7:33:13:** The ayah iʿrab makes the prepositional phrase the attachment of an implied ḥāl of the transgression.
+- **7:33:18:** The relative pronoun denotes what is associated with Allah; the pronoun in بِهِۦ resumes it within the relative clause.
+- **7:34:4:** QAC word-level tag calls fāʾ resumptive; the verse note coordinates the conditional sentence with the first sentence, followed here. Both negative clauses together are the conditional response.
+- **7:35:18:** Lexeme entry yaHozun|I|ACT describes transitive حَزَنَ يَحْزُنُ (bab nasara, damma on ز). This occurrence يَحْزَنُونَ has fatha on ز, i.e. intransitive حَزِنَ يَحْزَنُ (bab sami'a), as the entry's own evidence note warns. The lesson writes lemma حَزِنَ and an intransitive verbNote; the occurrence should be mapped to a separate intransitive paradigm entry.
+- **7:35:1:** QAC lemma for بَنِى is bunaY~ (بُنَىّ, the diminutive). The lesson gives ابْن (plural بَنُون, treated like a sound masculine plural) as the lemma, matching the root entry; QAC here correctly marks ACC.
+- **7:35:4:** QAC gives no mood: the verb is built on fatha because of the emphatic nūn and is in محل جزم as the condition verb of إِمَّا (ayah i'rab). Masculine singular verb with the broken plural subject رُسُلٌ.
+- **7:35:6:** Word i'rab only says جار ومجرور; the lesson follows the usual analysis that it attaches to an omitted adjective of رُسُلٌ (first sifa), with يَقُصُّونَ the second sifa per the ayah note.
+- **7:35:10:** Ayah note: مَن is a second conditional noun (mubtada) and its conditional sentence answers إِمَّا. The khabar of a conditional mubtada is disputed (condition clause, answer, or both); the lesson says only that مَن is mubtada. A minority reading takes مَن as relative with فَ in the khabar.
+- **7:35:13:** Following the ayah note, the first لا is عاملة عمل ليس (خَوْفٌ its ism, عَلَيْهِمْ its khabar in محل نصب). Many i'rab works instead treat a repeated لا before an indefinite as مهملة with خَوْفٌ a mubtada; this is an alternative. Rule negation is used as the closest card; la-generic does not apply (the noun is nominative with tanwin).
+- **7:36:1:** QAC marks the wāw REM (استئنافية); some grammarians take it as عاطفة, contrasting this sentence with فَمَنِ ٱتَّقَىٰ in 7:35.
+- **7:36:7:** Lemma written as the singular صَاحِب per the guide; QAC lemma is the plural أَصْحَٰب.
+- **7:36:9:** Ayah note: the clause هُمْ فِيهَا خَالِدُونَ is حال from أَصْحَابُ. Alternatives in i'rab works: a second khabar of أُولَٰئِكَ, or a new (مستأنفة) sentence.
+- **7:37:3:** The written stem combines مِنْ with relative مَنْ; the preposition’s nūn assimilates to the following mīm, while the final nūn receives a connecting kasra. The effective app type is particle.
+- **7:37:13:** The supplied ن ص ب root note covers fatigue (نَصَب) and setting up, and omits the clearly attested noun نَصِيب here, meaning allotted share. The Urdu teaches the contextual sense.
+- **7:37:15:** Al-Muyassar specifies a written portion of punishment. Al-Saʿdi and Taqi Usmani explain the worldly allotment already decreed. The Urdu keeps the shared expression of an allotted portion of the decree.
+- **7:37:20:** The clause is read as circumstantial from the arriving messengers, whose function is to take the souls. The active reviewed Form V paradigm is retained.
+- **7:37:22:** The verse iʿrab attaches أَيْنَ to the omitted predicate, with relative مَا as subject. The جار ومجرور at 37:26–28 attaches to an implied circumstance of the omitted relative resumptive object.
+- **7:37:35:** The verse iʿrab identifies the interpreted masdar as accusative by naẓʿ al-khāfiḍ, after the omitted preposition bāʾ.
+- **7:38:1:** Muyassar attributes the command directly to Allah, while Saʿdi describes angels conveying it. The translation follows the supplied translations and Muyassar.
+- **7:38:6:** The verse iʿrab places the built fatḥa on the deleted alif. The Qur’anic Arabic is unchanged.
+- **7:38:21:** The raw word-level QAC tag and iʿrab label this 2MP imperative. It is active Form VI 3MP perfect in the context after إِذَا; the indicative narrative and reviewed paradigm support this reading. The tāʾ is assimilated to dāl.
+- **7:38:25:** The feminine أُخْرَى here refers to the later group in contrast with the earlier one; the packet uses a masculine QAC citation handle.
+- **7:38:38:** The word-level iʿrab labels the wāw resumptive; the verse iʿrab describes the clause as coordinated in the reported speech, which this lesson follows.
+- **7:39:4:** The word iʿrab labels the fā coordinating. The verse iʿrab makes it the linker of the answer to an implied condition, which the lesson follows.
+- **7:39:8:** QAC P is compatible with an extra preposition. The verse iʿrab calls مِنْ extra for emphasis after negation and makes فَضْل the delayed ism of كَانَ, genitive in surface form only.
+- **7:39:10:** The word iʿrab labels the fā resumptive. The verse iʿrab calls the imperative clause coordinated with the reported speech, which the lesson follows.
+- **7:40:21:** The verse iʿrab analyzes the kāf phrase as a substitute for an omitted cognate object. The effective app type stays pronoun.
+- **7:41:7:** The QAC FP tag is grammatical gender/number, not the sound feminine plural pattern. غَوَاشِي is a broken plural with an omitted final yāʾ and an estimated ḍamma, as the verse iʿrab explicitly states.
+- **7:41:8:** The cognate-object reading follows the syntactically parallel preceding statement at 7:40, where the verse iʿrab expressly specifies it.
+- **7:42:8:** The packet labels إِلَّا an exception particle. The construction after an incomplete negation has no stated category from which to except a member; the lesson uses restriction and makes وُسْعَهَا the second object of نُكَلِّفُ.
+- **7:43:6:** The reviewed root note distinguishes ghill (resentment) from ghull (shackle), but its final context-bound sentence says resentment is not meant “here.” At this occurrence ghill expressly means resentment; the lesson gives that sense.
+- **7:43:19:** Raw QAC calls this a purpose lam. The ayah iʿrab identifies lam al-juhud after negated kana, with obligatorily implied an and a masdar attached to the omitted predicate. The lesson uses the subjunctive card; the library has no dedicated lam al-juhud card.
+- **7:43:20:** Lawla is counterfactual conditional here, with an implied predicate for the interpreted masdar and an omitted response inferable from the preceding clause. The existing law-condition card is scoped to law, and the exhortation card is inapplicable.
+- **7:43:25:** Jaʾat precedes the broken plural rusul and has feminine singular agreement. The ta is the feminine marker, not a subject pronoun.
+- **7:43:30:** An is explanatory before a nominal sentence, following the verse iʿrab. Its following clause gives the content of the call.
+- **7:43:34:** The lesson follows QAC relative ma and supplies an understood object pronoun in the relative clause; a masdariyya reading, “because of your deeds,” also yields the same meaning.
+- **7:44:6:** The explanatory an opens a clause headed by qad and a perfect verb. This occurrence follows the verse iʿrab although the shared card’s examples use commands.
+- **7:44:14:** The shadda on ta reflects connected recitation assimilating the stem-final dal into the following subject ta. The stem is wajada.
+- **7:44:24:** The explanatory an opens a nominal sentence; the verse iʿrab expressly identifies it as mufassira.
+- **7:45:6:** The effective QAC and verse grammar retain ha as the object, referring to sabil, which may be treated as feminine.
+- **7:45:7:** The verse iʿrab attaches ʿiwajan as a hal to the plural waw. A common semantic alternative takes the masdar as a state of the road or the crookedness they desire in it, which accords with the tafsir glosses. The main grammar follows the supplied iʿrab and the translation follows the tafsir sense.
+- **7:45:8:** Word-level QAC calls the waw resumptive, but the verse iʿrab explicitly coordinates the clause with yabghunaha. The lesson follows that analysis.
+- **7:46:7:** QAC marks the accusative noun indefinite. Its tanwin is analyzed as compensation for an omitted complement, understood as each of the two groups.
+- **7:46:8:** The effective root is س و م. The root entry also records the lexical analysis of سِيمَا as a metathesized form from و س م.
+- **7:46:9:** The occurrence and lesson use the packet root ن د و and the reviewed form III paradigm. Some lexica and the morphology fork associate the word with ن د ي.
+- **7:46:14:** QAC morphology uses the generic label “object pronoun” for the suffix. In the supplied i‘rab it belongs to a prepositional phrase, so its syntactic position is genitive.
+- **7:46:16:** The supplied i‘rab parses the attached feminine pronoun as the direct object. The lexeme notes a broader grammatical disagreement about the transitivity of دَخَلَ with a place complement.
+- **7:47:10:** The supplied ayah i‘rab attaches the accompaniment adverb directly to the verb. The lesson follows that attachment and does not assign the phrase a second-object slot.
+- **7:48:3:** The shared ʿ-r-f root note omits the contextual noun sense heights; al-aʿraf is the plural of ʿurf, a raised part. The lesson supplies that lexical sense.
+- **7:48:9:** The packet’s adjudicated correction identifies Form IV aghna, although the raw QAC tag and the opaque reviewed key retain Form I. The lesson follows the corrected voice/form analysis and Form IV paradigm.
+- **7:48:12:** Raw QAC tags ma as relative. The ayah iʿrab explicitly paraphrases an interpreted masdar meaning your being arrogant and coordinates it with jamʿukum. The lesson follows the verse-level masdariyya analysis and retains the effective app pronoun category with the alternative noted.
+- **7:49:** Muyassar and the report in Ibn Kathir include an address to the people of Aʿraf to enter Paradise. Saʿdi also gives the reading that the words are said to believers whom the arrogant regarded as weak. The translation leaves the addressee implicit.
+- **7:49:9:** The short iʿrab gives accusative. The lesson teaches the entered place in the dakhala construction; the reviewed verb note records a recognized debate about its transitivity.
+- **7:49:10:** Hafs has khawfun with nominative tanwin. The lesson reads la as non-governing negation and does not teach a built accusative generic-la construction.
+- **7:49:15:** The Hafs occurrence tahzanuna has fatha on zay and means to grieve, the intransitive hazina/yahzanu class. QAC maps it to the shared yaHozun|I|ACT entry hazana/yahzunu (to cause grief), which is valid for other occurrences but incompatible with this one. No separate intransitive card was found in the edition-2 library.
+- **7:51:16:** QAC word analysis labels مَا relative and the effective app type is pronoun. The verse iʿrab explicitly identifies the source construction coordinated with the preceding interpreted maṣdar. The teaching label follows the verse analysis.
+- **7:53:12:** The QAC GEN tag records the syntactic position after مِنْ. The overt ḍamma of قَبْلُ is its built ending when the omitted genitive complement is intended in meaning.
+- **7:53:18:** The word iʿrab labels the fā resumptive. The verse iʿrab coordinates the question with the preceding reported admission; the explanation follows that analysis.
+- **7:53:21:** The QAC GEN tag records surface case after extra مِنْ. The verse iʿrab makes شُفَعَاءَ the subject in a nominative slot. The diptote plural shows genitive by fatḥa.
+- **7:53:25:** The conjunction introduces a second question with an understood interrogative particle. The passive نُرَدُّ is indicative, whereas the following result verb is subjunctive after causative fā.
+- **7:54:12:** The teaching follows the supplied lexeme and Arabic tafsirs on Form VIII and an istiwāʾ befitting Allah’s majesty.
+- **7:54:15:** The raw lemma identifier resembles a passive perfect; the reviewed supplied entry gives active Form IV أَغْشَى يُغْشِي and agrees with the vocalised active occurrence. Taqi Usmani and both Arabic tafsirs support night as the covering over day here, unlike the initial direction of the Sahih International wording. The two accusative nouns are objects.
+- **7:54:16:** The written single lām with shadda represents both the article's lām and the stem's first lām. The article and noun are kept as one segment.
+- **7:54:19:** The ayah iʿrab treats حَثِيثًۭا as deputy of an omitted absolute object: a swift pursuit.
+- **7:54:20:** The Urdu follows the translations’ supplied sense of creation. The three accusative nouns can be read as coordinated with the earlier objects of creation.
+- **7:54:25:** The packet treats أَلَا as an introductory attention particle. There is no generic attention-particle card; resumption is used for its introductory function.
+- **7:54:32:** The supplied root card clarifies that عَالَمِين here means worlds rather than the similarly shaped plural of عَالِم.
+- **7:55:3:** The ayah iʿrab explicitly gives the masdar as ḥāl. The coordinated خُفْيَةً shares its accusative circumstantial function.
+- **7:55:8:** QAC tags a plain plural noun. The reviewed root and regular Form VIII morphology of اِعْتَدَى support the active participle مُعْتَدٍ, with final root yāʾ dropped before the sound masculine plural ending.
+- **7:56:2:** Raw lemma has a final damma; the reviewed paradigm supplies the active citation form أَفْسَدَ.
+- **7:56:8:** Follows the ayah iʿrab: خَوْفًۭا is a masdar in place of ḥāl, i.e. while possessing fear. The coordinated وَطَمَعًا follows that case and function.
+- **7:56:11:** The muṣḥaf has the open tāʾ in رَحْمَتَ even in this construct before a noun. The dictionary lemma is رَحْمَة.
+- **7:56:13:** The QAC morphology and visible ending show masculine singular قَرِيبٌ as the predicate of feminine رَحْمَتَ. The draft identifies the actual form without presenting one of the classical explanations for its masculine agreement as definitive.
+- **7:57:1:** The word-level QAC label calls wāw resumptive. The verse iʿrab coordinates this clause with the main clause of 7:54 and treats intervening verses as parenthetical. The draft follows the verse analysis.
+- **7:57:5:** The ayah iʿrab gives بُشْرًۢا as ḥāl of the winds. The standard reading and both tafsirs support bearing good news of rain.
+- **7:57:12:** The supplied root entry calls سَحَاب a collective generic noun, singular سَحَابَة. The plural adjective follows the collective meaning, while the singular object suffix on سُقْنَـٰهُ follows its form.
+- **7:57:14:** The raw QAC lemma handle resembles the passive سِيقَ, but the occurrence and reviewed active paradigm support سَاقَ يَسُوقُ. The Urdu follows the active paradigm.
+- **7:57:18:** The English word gloss says from it. This draft follows the Saʿdi’s explicit attachment to the dead land, consistent with Taqi Usmani’s there; the next بِهِۦ resumes the water as the means of producing fruit.
+- **7:57:25:** The ayah iʿrab calls the kāf a deputy of the omitted cognate object, meaning an emergence like that described. The app still treats the whole form as a demonstrative.
+- **7:57:29:** The supplied paradigm and root card explain the form as تَتَذَكَّرُونَ with one tāʾ dropped for ease, not a different form of the verb.
+- **7:58:1:** The reused b-l-d entry contains a context-specific claim that definite al-balad means Makkah in the studied surahs. This occurrence is generic good land, as both the ayah and tafsir show.
+- **7:58:4:** QAC labels nabat feminine even though the explicit preceding verb is masculine. The lesson avoids teaching the unsupported gender tag and follows the syntactic subject relationship.
+- **7:59:7:** The possessive first-person ya is elided. The remaining kasra is not a genitive sign on the vocative noun; its accusative is implied.
+- **7:59:14:** The ayah iʿrab reads ghayruhu as adjective of the syntactic nominative position of ilahin, whose genitive surface ending comes from extra min.
+- **7:60:3:** QAC gives no attachment for the phrase مِن قَوْمِهِۦٓ. The lesson follows the common analysis: partitive مِن, phrase attached to an implied ḥāl of ٱلْمَلَأُ (some make it an implied ṣifa).
+- **7:60:6:** The QAC ayah note attaches فِى ضَلَـٰلٍۢ to the verb, so رأى is treated with a single object and zanna is not tagged. Muyassar glosses it as opinion (نعتقد); a two-object (ra'y qalbī) reading with the phrase as second object is possible but not adopted.
+- **7:61:4:** QAC word i‘rab gives only جار ومجرور. The lesson follows the standard analysis: بِى attached to an implied fronted khabar of لَيْسَ, with ضَلَـٰلَةٌۭ as its delayed ism. Masculine لَيْسَ with a feminine ism is explained by the intervening phrase and non-real feminine.
+- **7:61:6:** Word i‘rab (and QAC REM) calls the wāw استئنافية, but the ayah note says the clause وَلَـٰكِنِّى رَسُولٌۭ is معطوفة on the answer of the vocative. The lesson follows the ayah note (conjunction) and mentions the other label; either way the clause has no محل.
+- **7:61:8:** QAC does not state the attachment of مِّن رَّبِّ ٱلْعَـٰلَمِينَ; the lesson uses the common analysis as an implied ṣifa of رَسُولٌۭ.
+- **7:62:1:** Following the QAC ayah note, the clause أُبَلِّغُكُمْ is a ṣifa of رَسُولٌۭ (first-person verb describing the noun by sense). A common alternative takes it as a new (مستأنفة) clause explaining the mission. Hafs reading followed (Abu ‘Amr reads Form IV أُبْلِغُكُمْ, per the lexeme evidence).
+- **7:62:6:** QAC tags وَأَعْلَمُ as REM + imperfect verb (not the elative noun); the lesson follows it. Some grammarians take the wāw as conjunction on أَنصَحُ.
+- **7:62:11:** The resumptive object pronoun of the ṣila is elided (understood تَعْلَمُونَهُ); tagged elision.
+- **7:63:1:** The sources label the initial waw conjunctive. The hamza of the question has precedence over it, so the printed beginning is hamza followed by waw.
+- **7:63:2:** The verse iʿrab explicitly supplies the elided governor min before the interpreted masdar and analyzes it as accusative by removal of the preposition.
+- **7:63:12:** Word-level QAC calls waw resumptive, while the ayah iʿrab coordinates the whole laʿalla clause with the preceding interpreted masdar. The lesson follows the ayah analysis.
+- **7:64:11:** The verse iʿrab gives the whole inna clause circumstantial force from the preceding relative expression. Urdu still uses a natural sentence break.
+- **7:65:1:** The verse iʿrab supplies the omitted sending verb, which also governs akhahum.
+- **7:65:2:** The Corpus associates the proper name ʿAd with ʿ-w-d. The name is preserved as supplied; the shared return-related gloss is not the meaning of this occurrence.
+- **7:65:14:** The word iʿrab classifies fa as extra after the interrogative hamza. Another analysis reads it as a conjunction linking the question to the preceding appeal.
+- **7:66:7:** As at 7:27:24, the single written geminated nun spans the particle/pronoun boundary. The final alif is the remainder of na in the packet’s exact surface segmentation. This also applies to 7:66:11.
+- **7:66:8:** The verse iʿrab attaches fi safahatin to nara directly. A cognitive two-object reading is also possible, with the phrase filling the predicate complement. The draft retains the verse attachment and contextual sense of judgment.
+- **7:67:4:** Bi is the ordinary preposition of the predicative phrase “in me.” The construction differs from cases where extra bi is prefixed to an accusative nominal predicate of laysa.
+- **7:68:4:** The word analysis calls the wāw resumptive. The verse iʿrab makes the clause a ḥāl from the hidden subject of أُبَلِّغُكُمْ, which the lesson follows.
+- **7:68:7:** The word analysis calls أَمِينٌ an adjective. The verse iʿrab specifically parses it as a second predicate; its effective adjective type remains intact.
+- **7:69:1:** The word analysis calls the wāw coordinating, while the verse iʿrab makes it resumptive after the interrogative hamza.
+- **7:69:22:** The spelling with ṣād and the small sīn is kept exactly. The teaching lemma uses بَسْطَة under the supplied ب س ط root. The feminine tāʾ marbūṭa supports feminine lexical gender despite the raw M tag.
+- **7:70:8:** The note takes kāna with a hidden pronoun of matter and the following verbal clause with its explicit subject as predicate; a common alternative assigns the delayed آباؤنا to kāna, with the preceding imperfect clause as predicate. The verse-level note specifically identifies the omitted returning object of يعبد.
+- **7:70:11:** The verse iʿrab gives two linked conditional constructions: the fā clause answers an implied condition, and the expressed condition has an omitted answer recoverable from the preceding demand.
+- **7:71:3:** Muyassar glosses qad waqa'a as 'has befallen you'; Sa'di reads it as certainty of imminent punishment (its causes are complete). Lesson translates as perfect 'has fallen' and mentions the inevitability in the tafsir.
+- **7:71:7:** rijs rendered as 'punishment' (Muyassar: 'adhab; QAC gloss 'punishment'); Sahih International has 'defilement'. Basic meaning impurity noted in dictionaryUrdu.
+- **7:71:12:** QAC i'rab names only the pronoun ha as maf'ul bihi. Sammā takes two objects; following Muyassar ('sammaytumuha alihatan') the lesson notes that the second object (gods/ma'bud) is implied. The waw after -tum is treated as ishba', per the subject-pronoun rule, although QAC segments -tumu as one pronoun.
+- **7:71:19:** QAC word i'rab says only 'harf jarr' and calls sultan 'ism majrur'. Lesson follows the standard analysis: min za'ida after negation before an indefinite; sultan is majrur in form and mansub in position as maf'ul bihi of nazzala.
+- **7:71:22:** The khabar of inna is analysed per the ayah note as an elided predicate to which min al-muntazirin attaches; ma'akum attaches to al-muntazirin (ayah note).
+- **7:72:1:** Word i'rab: al-fa' isti'nafiyya (QAC REM); ayah note: fa' 'atifa on an implied resumptive clause (fa-'aqabnahum). Lesson presents both and tags resumption.
+- **7:72:3:** ma'ahu as sila of alladhina via an implied verb (istaqarra) is the standard analysis; QAC gives only 'zarf makan mansub'.
+- **7:72:5:** minna analysed as attached to an implied adjective of rahmatin (standard); QAC gives only 'jarr wa majrur'.
+- **7:72:6:** Lemma written as active qata'a per the verified lexeme entry; the raw QAC lemma label is passive-looking quti'a while the occurrence is active.
+- **7:72:11:** QAC word i'rab calls the waw isti'nafiyya; the ayah note says the clause wa-ma kanu mu'minin is coordinated with the sila (no i'rab position). Lesson follows the ayah note (conjunction) and mentions the word label. Some grammarians also allow a hal reading.
+- **7:71:14:** Lemma given as singular ab per the guide (singular base); QAC lemma is the plural aba'.
+- **7:71:25:** Lemma given as singular muntazir; QAC lemma is plural muntazirun.
+- **7:71:** Ibn Kathir abridged text not supplied for 7:71-72 (covered by grouped commentary at 7:70); tafsir summaries rely on Muyassar and Sa'di. Sa'di quotes 'ma anzala' while the Hafs text is nazzala; lesson quotes only the packet text.
+- **7:73:12:** The word-level GEN tag records the surface case after extra مِنْ. The verse iʿrab makes إِلَـٰهٍ a subject in a nominative slot and غَيْرُهُۥ its modifier following that slot.
+- **7:73:19:** QAC uses the masculine lemma handle for the feminine demonstrative. The teaching lemma follows the occurrence’s actual gender.
+- **7:73:24:** Word-level iʿrab calls the fā resumptive, while the verse iʿrab describes the imperative clause as coordinated with the preceding nominal statement.
+- **7:73:25:** The verse iʿrab explicitly treats the jussive as the answer to the condition implied by the preceding imperative.
+- **7:74:2:** The word-level i‘rab labels this a time adverb. The ayah-level note specifies that the temporal noun is the direct object of the stated imperative; its following clause is in iḍāfa to it.
+- **7:74:5:** The temporal prepositional phrase is attached to the act of appointing in this lesson. It can also be understood as modifying “successors”; the supplied word-level i‘rab does not specify the attachment.
+- **7:74:7:** QAC marks the proper name as INDEF. It is definite as a proper name and triptote in this occurrence; the visible kasratān does not make it indefinite. The packet root is retained as an index, without an etymological claim about the name.
+- **7:74:11:** The occurrence and lesson follow the reviewed Form VIII paradigm and QAC root with initial hamza assimilated to the infixed tāʾ after substitution. The lexeme also records a derivation from t-kh-d.
+- **7:74:17:** The word-level line only gives the accusative. The ayah-level i‘rab identifies a ḥāl of “the mountains,” understood here as the resultant state. A second-object reading is possible if the carving verb is understood to include the sense of making into.
+- **7:74:19:** The packet root entry records two singulars for the plural meaning “bounties.” The lesson uses the first, أَلًى; إِلًى is also reported.
+- **7:74:22:** The reviewed imperfect yaʿthā gives the attested plural with fatḥa before the subject wāw. The synonymous ʿathā yaʿthū does not give this vocalization. The packet keeps the w-final root; some lexica also list this under a y-final root.
+- **7:74:** The packet supplies Muyassar and Saʿdi for this ayah. Its Ibn Kathir field points to grouped commentary beginning at 7:73, whose text is absent from the supplied context.
+- **7:75:5:** QAC grammar notes do not state the attachment of مِن قَوْمِهِۦ. Written as attached to an elided ḥāl (of ٱلْمَلَأُ / the subject of ٱسْتَكْبَرُوا۟), the common i'rab; it can also be read as explanatory (bayāniyya) min.
+- **7:75:3:** QAC i'rab gives only 'relative pronoun'; analysed as naʿt of ٱلْمَلَأُ in maḥall rafʿ, per the standard i'rab.
+- **7:75:9:** QAC note: لِمَنْ is badal of لِلَّذِينَ with the preposition repeated. If the pronoun of مِنْهُمْ refers to the oppressed (as Sa'di's comment implies: not all the oppressed were believers) it is badal baʿḍ min kull; if it refers to قَوْمِهِۦ, the oppressed are the believers and it is badal kull. The lesson follows Sa'di without naming the subtype.
+- **7:75:11:** Attachment of مِنْهُمْ not stated in QAC notes; written as attached to an elided ḥāl of مَن (or of the hidden subject of ءَامَنَ).
+- **7:75:8:** QAC lemma ٱسْتَضْعَفُ is truncated (final ḍamma); lesson lemma uses the active perfect اِسْتَضْعَفَ per the guide, while the verb note follows the passive paradigm entry اُسْتُضْعِفَ — يُسْتَضْعَفُ.
+- **7:75:12:** Following the QAC note, the interpreted maṣdar of أَنَّ صَـٰلِحًۭا مُّرْسَلٌۭ fills both objects of عَلِمَ (سدّ مسدّ المفعولين); tagged zanna accordingly.
+- **7:75:21:** Nāʾib fāʿil of أُرْسِلَ taken as a hidden هُوَ referring to Ṣāliḥ, with بِهِۦ (ʿāʾid to مَا) attached to the verb; QAC gives no explicit nāʾib fāʿil.
+- **7:75:18:** The clause قَالُوٓا۟ … is treated as a new (istiʾnāfiyya) sentence giving the believers' reply; QAC notes are silent on its status.
+- **7:76:8:** QAC lemma is the plural كَٰفِرُون; lesson lemma uses the singular base كَافِر per the guide.
+- **7:77:8:** QAC tags the proper noun ACC; the vowelled word ends in damma: it is a munada mufrad 'alam, built on damma in the position of nasb. Written as such; vocative + proper-noun only (no case rule). Root ص ل ح kept as the packet's lexical index; the name is not treated as the adjective.
+- **7:77:10:** ما taken as a relative pronoun (QAC REL) with the resumptive pronoun elided (تعدناه / تعدنا به, cf. Muyassar). A masdariyya reading ('bring us your promise') is grammatically possible but not followed.
+- **7:77:11:** وعد can take two objects; here only نا is expressed and the second object/resumptive is elided, so two-objects was not tagged. Word glossed as 'promise (threaten)': the promised thing is the punishment (Taqi Usmani: 'threaten').
+- **7:77:12:** Per the ayah note the answer of إن is elided and indicated by the preceding imperative ٱئْتِنَا; elision tagged on إن.
+- **7:77:7:** quoted-speech not tagged on وَقَالُوا۟ (or 7:79:3 وَقَالَ) because the packet i'rab does not label the following clause مقول القول; the syntax text still says the vocative clause is what was said. A reviewer may add quoted-speech.
+- **7:78:1:** QAC calls the فاء in فَأَخَذَتْهُمُ and فَأَصْبَحُوا۟ (7:78:3) استئنافية; many i'rab works treat them as عاطفة (sequence/consequence). Followed QAC (resumption).
+- **7:78:4:** The packet does not state the attachment of فِى دَارِهِمْ; attached to the khabar جَـٰثِمِينَ (common analysis). Alternative: attached to أصبحوا or to an implied khabar.
+- **7:79:4:** يَـٰقَوْمِ: munada mudaf to an elided first-person yaa, accusative with implied fatha (kasra of the yaa's harmony on the mim). QAC ACC agrees; tagged elision + implied-case.
+- **7:79:6:** QAC word i'rab names only كم as object; رِسَالَةَ is 'اسم منصوب'. Following the lexeme entry (أبلغه الرسالة, double object), رِسَالَةَ is described as the second object.
+- **7:79:10:** لَكُمْ after نَصَحْتُ treated as an ordinary preposition (نصح له). Some grammarians describe this lam as strengthening/extra for the object; not followed.
+- **7:79:11:** Conflict in the packet: the word i'rab calls the واو استئنافية (QAC REM), while the ayah note says the clause «ولكن لا تحبون» is معطوفة على جملة «نصحت». Followed the ayah note (conjunction + lightened-particle) and mentioned the word-level label in syntaxUrdu.
+- **7:79:1:** Timing: Sa'di and Ibn Kathir place Salih's address after the destruction (Ibn Kathir compares it with the Prophet's address to slain disbelieving leaders, whom the excerpt names; names were not added to the summary). Muyassar says 'when they hamstrung the camel and destruction befell them'. The tafsir summary follows the after-destruction reading.
+- **7:79:5:** Per the ayah note, «لقد أبلغتكم» is the answer of an implied oath, and the oath + answer is the answer of the vocative; tagged qad, emphatic-lam, oath.
+- **7:80:1:** Word i'rab calls the wa عاطفة (QAC CONJ) while the ayah note calls it مستأنفة. Followed the ayah note's analysis that لوطا is the object of an implied اذكر (also Muyassar). Ibn Kathir instead supplies 'We sent' (أرسلنا, continuing the earlier prophet narratives); not used as the primary analysis.
+- **7:80:2:** إذ treated as badal from لوطا per the ayah note; under the 'We sent' reading it would be a time adverb attached to the implied verb.
+- **7:80:7:** The clause ما سبقكم بها من أحد من العالمين is ḥāl from the subject of تأتون per the QAC ayah note. The English translations render it as qualifying الفاحشة ('such immorality as…'); that reading is not adopted in the syntax fields.
+- **7:80:13:** QAC lemma is عَٰلَمِين; lemma written as the singular base عَالَم (lemmaFork) per the guide's singular-base rule.
+- **7:81:3:** QAC lemma is رِجَال; lemma written as the singular رَجُل per the guide's singular-base rule.
+- **7:81:4:** شهوة is مفعول لأجله per the ayah note; a common alternative takes it as a masdar in the position of ḥāl (مشتهين). Mentioned briefly in syntaxUrdu. QAC tags it N, not VN, so the verbal-noun rule was not used.
+- **7:81:5:** The ayah note makes من دون النساء ḥāl from الرجال, but glosses it 'متجاوزين', which reads more naturally as describing the subject of تأتون. Followed the note's wording (ḥāl of الرجال); the subject-ḥāl reading is a reviewer-worthy alternative.
+- **7:81:7:** نساء not tagged broken-plural: per the root entry it is a plural with no singular from its own letters (often classed اسم جمع).
+- **7:82:12:** QAC lemmatizes أُنَاس under إِنسَٰن (MP); lemma kept as إِنْسَان to match QAC. Not tagged broken-plural because it is usually classed as a collective/اسم جمع like ناس.
+- **7:82:13:** Translations differ: Sahih 'keep themselves pure', Taqi Usmani 'pretend too much purity'. Urdu follows the tafsir (Muyassar يتنزهون; Ibn Kathir 'want to be pure') and notes the mocking tone; the 'pretending' nuance of form V is not asserted. QAC lemma shown as تَطَهَّرْ; lemma written as the perfect تَطَهَّرَ per the lexeme entry.
+- **7:83:1:** The word-level i'rab calls the fa' isti'nafiyya (QAC REM); the ayah grammar note analyses it as 'atifa on an implied resumed clause ('they intended evil against him, so We saved him'). The lesson follows the word-level reading and mentions the alternative.
+- **7:83:4:** Lemma given as the dictionary form imra'a with ta' marbuta; QAC's lemma label ends in open ta', which is the spelling before the attached pronoun.
+- **7:83:7:** Tafsir glosses al-ghabirin both as 'those who remained' and 'those destroyed' (Muyassar combines them: al-halikin al-baqin). The lesson teaches the lexical sense 'remaining behind' and states that they perished. Masculine plural for a group that includes the wife is explained as taghlib, following the root entry.
+- **7:83:** Ibn Kathir reports that some said the wife left with them and looked back, but considers it more apparent that she stayed in the town; the tafsir summary presents both without naming sources.
+- **7:84:1:** QAC's lemma label for this word is the passive umtirat; the lesson uses the active citation form amtara per the verified paradigm entry, matching QAC's active PERF 1P tag for this occurrence.
+- **7:84:3:** The indefinite matar read as conveying the terrifying nature of the rain (tahwil) is a rhetorical interpretation not stated in the provided tafsir or QAC i'rab; it is presented as one view.
+- **7:84:4:** Addressee of the imperative taken as the Prophet (Muyassar: ayyuha al-rasul; Ibn Kathir: O Muhammad), hence the honorific Urdu form. A general addressee (every listener) is also possible but not stated in the provided tafsir.
+- **7:84:6:** Masculine kana with the feminine noun 'aqiba is explained as permissible because 'aqiba is figuratively (non-real) feminine; another common explanation reads 'aqiba in the sense of the masculine ma'al/masir.
+- **7:85:1:** The ayah iʿrab supplies the omitted verb أرسلنا. The brother noun is its object, and Shuʿayb is an accusative badal.
+- **7:85:6:** The first-person yāʾ has no written segment; the preceding kasra remains. The accusative fatḥa of the annexed vocative is implied.
+- **7:85:12:** The ayah iʿrab calls مِن extra after negation. The following indefinite noun is visibly genitive but is the nominative-position mubtada; its modifier غَيْرُ follows that syntactic position.
+- **7:85:19:** The word iʿrab calls fāʾ resumptive, while the ayah iʿrab coordinates this command clause with the preceding statement. The draft follows the ayah iʿrab.
+- **7:85:22:** The word iʿrab and effective tag call wāw resumptive here, unlike the coordinating wāw of 85:26.
+- **7:85:23:** The raw QAC lemma is an inflected imperfect. The reviewed citation form is بَخَسَ; the ayah iʿrab identifies the people and their belongings as its two objects.
+- **7:85:35:** The ayah iʿrab calls the conditional clause independent and identifies the preceding assertion as the indicator of its omitted answer.
+- **7:86:5:** The vocalised active Form IV threatens, as both translations and the reviewed paradigm support. A quotation embedded in the Saʿdi packet shows a passive-looking vowel; the exact supplied muṣḥaf token governs the lesson.
+- **7:86:8:** The inherited س ب ل root note gives a fish passage as its only contextual example; the current occurrence means Allah’s path. This is a scope issue in the supplied card.
+- **7:86:14:** The verse iʿrab gives the verbal noun as a ḥāl. The inherited ع و ج card discusses denial of crookedness in a book, whereas this occurrence concerns trying to make the way appear crooked.
+- **7:86:16:** The verse iʿrab explicitly calls the adverbial word a direct object of the imperative, not merely a time adjunct.
+- **7:86:21:** The verse iʿrab takes كَيْفَ as fronted khabar of كَانَ and the whole interrogative clause as the object of looking; the reviewed نَظَرَ paradigm supports this construction.
+- **7:87:3:** The verse iʿrab gives the indefinite طَائِفَة as ism of كَانَ, licensed because it is qualified by مِنْكُمْ. It treats the two group nouns and the two predicate clauses as pairs of coordinated elements. The plural verbs follow the group meaning.
+- **7:87:3:** The supplied ط و ف note discusses circling and ṭawāf and does not mention the attested sense طَائِفَة as a group. The Urdu follows the packet glosses and tafsirs.
+- **7:87:13:** The word iʿrab gives a preposition of limit, governing an interpreted masdar; يَحْكُمَ is subjunctive after implicit أَنْ.
+- **7:88:8:** QAC describes the proper noun as accusative. It is a bare proper vocative, built on damma in an accusative syntactic position, as the vocalised word shows. The ayah iʿrab treats the vocative as parenthetical.
+- **7:88:9:** The verse iʿrab coordinates this relative noun with the object kāf in the preceding emphatic verb.
+- **7:88:15:** The verse iʿrab specifies indicative with underlying rafʿ nūn dropped to avoid repeated nūns. The plural subject wāw is elided before the heavy emphatic nūn, with damma pointing to it. The stem’s internal wāw is retained.
+- **7:88:19:** The ayah iʿrab supplies a question about expulsion and an elided answer to لَوْ. The provided Arabic tafsirs supply a question about following their religion instead. The Urdu preserves the expressed concessive question without inserting either specific omitted predicate into the translation.
+- **7:89:** The packet has a grouped-commentary pointer in place of Ibn Kathir text for this ayah. The Urdu tafsir uses the supplied Muyassar and Saadi passages.
+- **7:89:5:** The word i‘rab gives only the accusative case. The lesson reads the noun as the direct object of fabrication. A synonymous cognate accusative is another possible analysis.
+- **7:89:12:** The shared root note for ن ج و calls the subject of this form hidden. Here the following divine name at 7:89:13 is the overt subject, as the occurrence and its i‘rab show.
+- **7:89:15:** Word i‘rab and QAC morphology mark the waw as resumptive. Ayah i‘rab coordinates the negative clause with the opening clause, so the lesson follows clause-level coordination.
+- **7:89:21:** Ayah i‘rab treats the interpreted masdar as a connected exception from general circumstances. Those circumstances are implicit, so the rule tag follows the library criterion for an incomplete negated construction.
+- **7:89:25:** The word i‘rab gives only nominative. The lesson treats the expression as an appositive to the preceding divine name, with badal and explanatory apposition both possible.
+- **7:89:40:** Word i‘rab and QAC morphology mark the waw as coordinating. Ayah i‘rab treats the closing nominal clause as resumptive and without syntactic position.
+- **7:90:5:** The word iʿrab identifies the preposition without naming its attachment. The lesson reads the phrase as specifying the chiefs’ membership in Shuʿayb’s people, without choosing between a circumstantial attachment to the chiefs and one to the subject of kafarū.
+- **7:90:7:** The word iʿrab calls the first lām emphatic. The ayah note identifies the later clause as the oath answer and the conditional answer as elided, so the lesson specifies the lām as introducing an implied oath.
+- **7:91:3:** The word iʿrab labels this fāʾ causal; the lesson follows its resultative sense before a perfect verb. It can also be described as coordination conveying sequence and consequence.
+- **7:91:4:** The word iʿrab gives only the preposition label. The lesson attaches the locative phrase to the following participial predicate.
+- **7:92:** The ayah iʿrab treats the first statement as an insertion between 7:91 and 7:93 and the second statement as a fresh sentence within that insertion.
+- **7:92:4:** The word-level QAC segmentation gives prepositional kāf plus subordinating an. The ayah iʿrab instead treats kaʾan as a single lightened particle with an omitted pronoun of matter, which the lesson follows.
+- **7:92:12:** The word iʿrab identifies a separate pronoun without assigning its role. The lesson takes it as a separating pronoun; emphasis of the attached wāw of kānū is also possible.
+- **7:92:6:** The inherited override wrongly assigned Form IV. The open nūn, the construction with فِيهَا, and the lexical sense of dwelling establish intransitive غَنِيَ يَغْنَى, Form I. The app now supplies its own paradigm.
+- **7:93:11:** The token tag and generated i‘rab call the fa resumptive. The ayah i‘rab coordinates the interrogative clause with the conveyance clause, which the lesson follows.
+- **7:93:** Al-Sa‘di places the address after the people perished, while al-Muyassar ties the turning away to Shu‘ayb’s certainty that punishment had come upon them. The summary leaves the precise timing open.
+- **7:94:5:** The generated word i‘rab gives only “preposition”. In this negative clause min is the reinforcing preposition of generality, so nabiyy is genitive in wording and accusative as the direct object.
+- **7:94:10:** The supplied tafsirs explain the two afflictions together with examples of illness and poverty. Ibn Kathir specifically assigns physical illness to ba’sa’ and poverty and humiliation to darra’. The lesson uses broad glosses and gives examples jointly.
+- **7:95:3:** The ayah iʿrab takes this as the second object placed before the first. A locative-adverb analysis is also possible. The packet’s k-w-n root is retained.
+- **7:95:13:** QAC tags the noun as masculine. Its feminine alif mamdūda marks the noun as feminine, parallel to the preceding noun.
+- **7:95:16:** The ayah grammar note assigns the circumstantial clause to nā, the subject of “We seized them.” The clause describes the people seized, so hum, the object pronoun, is taken as the antecedent.
+- **7:95:18:** The reviewed paradigm uses shaʿara as the citation form. Its evidence also records the lexical variant shaʿura with the same imperfect.
+- **7:96:2:** The ayah iʿrab takes the interpreted verbal noun after law as the subject of an implied thabata. Another analysis takes it as a subject with an omitted predicate.
+- **7:96:10:** The packet does not specify the attachment of min al-samāʾ. The lesson reads the phrase as qualifying barakāt; attachment to the opening verb is also possible.
+- **7:96:13:** The ayah-level iʿrab coordinates the clause with the predicate ʾāmanū in nominative position. The word-level iʿrab calls the wāw resumptive. The lesson follows the ayah-level analysis and treats lākin as non-governing.
+- **7:96:16:** QAC tags mā as relative. The lesson follows that analysis with an elided object resumption in yaksibūna. A maṣdariyya reading gives “because of their earning.”
+- **7:97:4:** QAC treats the interpreted masdar as the direct object of amina in both 7:97 and 7:98. An alternative explains the complement with an implicit min, matching the Urdu idiom. The lesson follows QAC's object analysis.
+- **7:98:1:** QAC segments the opening as interrogative hamza plus coordinating waw. The English gloss ‘Or’ links the two questions idiomatically and does not represent the separate conjunction aw.
+- **7:98:7:** The packet indexes the root under ḍ-ḥ-w. Its root note records ḍ-ḥ-y as an alternative dictionary classification.
+- **7:98:9:** The raw QAC lemma is the jussive form yalʿab from another occurrence. The lesson uses the verified citation form laʿiba and treats this occurrence as indicative, marked by retained nun.
+- **7:99:10:** The packet labels this word a nominative active participle and the supplied iʿrab line says only nominative noun. The lesson reads it as a naʿt of al-qawm, with plural agreement by sense.
+- **7:100:9:** QAC word tag is SUB (حرف مصدري), while the ayah i'rab note calls أَن مخففة من الثقيلة with an elided ḍamīr al-shaʾn as its ism and the law-clause as its khabar, the interpreted masdar being fāʿil of يَهْدِ. The lesson follows the ayah note (lightened-particle + pronoun-of-matter); the clause is still masdar-like in effect.
+- **7:100:2:** Fāʿil of يَهْدِ taken as the interpreted masdar (QAC note). Alternative: a hidden fāʿil (Allah, cf. Ibn Abbas's paraphrase 'did We not make clear') with the أَن-clause as object. Meaning rendered as 'become clear' per Muyassar and Sa'di (يتبين).
+- **7:100:14:** Word-level i'rab calls the wāw عاطفة (QAC CONJ), but the ayah note says جملة ونطبع مستأنفة; the lesson follows the ayah note and tags resumption. Muyassar paraphrases it inside the question (ونختم على قلوبهم), and coordination with أَصَبْنَـٰهُم or an implied clause is discussed by some grammarians; reviewer may wish to confirm.
+- **7:100:17:** QAC tags فَ as REM (الفاء استئنافية) while the ayah note says the sentence فهم لا يسمعون is معطوفة on ونطبع; both are mentioned in the lesson, with the فَ explained as introducing the result.
+- **7:100:12:** Answer of لَوْ is a positive perfect without the answer lām; noted as permissible. Perfect with hypothetical sense after لَوْ.
+- **7:100:16:** QAC tags قُلُوب as FP (feminine plural); explained as a broken plural treated as feminine for agreement, not a sound feminine plural.
+- **7:101:1:** QAC uses the shared demonstrative lemma ذَٰلِكَ. The lesson gives the feminine citation form تِلْكَ, with the distance lām and address kāf.
+- **7:101:11:** The token morphology and word iʿrāb mark the fāʾ as resumptive. The ayah iʿrāb explicitly coordinates the negative kāna clause with the messengers’ arrival, so the lesson follows coordination.
+- **7:101:13:** QAC morphology and word iʿrāb label the lām as purpose. The ayah iʿrāb identifies lām al-juḥūd after negated kāna, with implied أَنْ and the interpreted masdar linked to an omitted predicate. The library has no dedicated juḥūd rule, so the lesson tags the subjunctive and its elision.
+- **7:101:17:** QAC lists the token as genitive. The visible ḍamma is the building vowel of قَبْلُ with the annexed term omitted but intended in sense. Its syntactic position after the preposition is genitive.
+- **7:101:18:** The word iʿrāb gives a prepositional phrase. The ayah iʿrāb assigns the kāf the function of a substitute for a cognate accusative, which the lesson teaches while retaining the packet’s demonstrative type.
+- **7:101:19:** The English word glosses suggest a passive reading for the sealing. The vocalized Arabic and QAC morphology have an active imperfect, with the nominative divine name as its subject.
+- **7:101:22:** QAC gives قُلُوبِ a feminine-plural feature. The form is a broken plural of قَلْب, so the lesson uses the broken-plural card.
+- **7:102:1:** The token and word iʿrāb label the wāw resumptive. The ayah iʿrāb explicitly coordinates this clause with فَمَا كَانُوا۟ in 7:101, with the sealing clause parenthetical between them.
+- **7:102:4:** The word-level iʿrāb calls مِنْ a preposition and عَهْدٍۢ genitive. The ayah-level iʿrāb specifies extra مِنْ after negation and عَهْدٍۢ as the object, genitive in form and accusative in syntactic position.
+- **7:102:6:** QAC token morphology and word iʿrāb label إِنْ conditional. The ayah iʿrāb instead treats it as lightened, non-governing إِنْ, with distinguishing lām on the second object.
+- **7:102:** Ibn Kathir identifies the covenant with the primordial covenant and fitrah. Muyassar and Saʿdi foreground failure to honor the covenant and heed divine commands. The lesson attributes the more specific interpretation to Ibn Kathir.
+- **7:103:10:** The QAC gloss gives the literal injustice; the translation states its contextual form, wrongful rejection of the signs, as explained by all three supplied tafsirs.
+- **7:103:12:** The shadda in the raw QAC lemma is an assimilation artifact. The reviewed paradigm and displayed lemma are نَظَرَ / يَنْظُرُ.
+- **7:103:13:** The ayah grammar note treats the interrogative clause as the object of the suspended verb of looking, with كَيْفَ locally accusative as the fronted predicate of كَانَ.
+- **7:104:3:** QAC marks ACC and the per-word iʿrab says منصوب. The proper-name vocative is built on the visible ḍamma in an accusative syntactic position.
+- **7:104:4:** QAC English calls the suffix an object pronoun. The Arabic iʿrab identifies it as the ism of إِنَّ in an accusative syntactic position.
+- **7:104:6:** The supplied ayah-level QAC grammar note is blank. The prepositional phrase is read as an adjectival modifier of the indefinite رَسُولٌۭ, specifying the sender.
+- **7:105:1:** Follows the ayah i‘rab in taking this as the second predicate of inna in 7:104. The translation reflects the obligation conveyed by the supplied tafsirs.
+- **7:105:13:** The word i‘rab specifies the prepositional construction. Its adjectival attachment to the indefinite bayyina is inferred from context.
+- **7:105:15:** The word i‘rab and QAC morphology label fa as causal. The ayah i‘rab describes the imperative clause as coordinated with the preceding clause. The lesson follows the ayah-level coordination and explains the consequential sense.
+- **7:105:16:** The packet’s adverb is treated as accusative with estimated fatḥa before the first-person yāʾ. The visible kasra is the vowel of accommodation.
+- **7:105:17:** The QAC lemma is the diminutive bunayya, but this is banī, the construct accusative plural of ibn. The yāʾ marks accusative and the plural nūn is absent in construct.
+- **7:106:8:** The ayah i‘rab describes the resumed second conditional with an elided answer, supplied in sense by the previous imperative. The first imperative is the expressed answer to the first conditional.
+- **7:107:2:** The raw QAC gloss line tags ʿaṣā as masculine. The feminine pronoun in 7:107:4 refers to the staff and supports feminine agreement here.
+- **7:107:3:** The packet and i‘rab classify this idhā as a surprise particle. Other grammatical analyses treat surprise idhā as an adverb.
+- **7:107:5:** The translation uses the general sense “large serpent.” The supplied Ibn Kathir abridgment also reports the more specific interpretation “male snake.”
+- **7:109:1:** The ayah expressly attributes the statement to the chiefs. Ibn Kathir describes Pharaoh making the accusation and his chiefs agreeing with him.
+- **7:109:9:** The ayah-level iʿrab makes this the second predicate of inna. The generated word-level line instead gives the grammatically possible reading as a nominative modifier of sāḥir.
+- **7:110:6:** The ayah notes parse mā as an interrogative mubtada and dhā as its relative predicate, while the morphology treats mādhā as one interrogative unit. The ayah notes and Muyassar attribute the question to Pharaoh via an implied saying verb; Saʿdi describes the leaders consulting among themselves.
+- **7:111:2:** The QAC lemma field has the imperfect turjī; the reviewed active-perfect headword is arjā. The lesson follows the non-hamzated reading in the packet. The lexeme records the hamzated arjaʾa in other readings, and the ayah iʿrab treats the sukun on object hāʾ as a usage variant.
+- **7:111:6:** QAC and the root library group madāʾin under m-d-n; the root entry also records a lexical derivation from d-y-n. The app grouping is retained.
+- **7:112:1:** QAC parses the jussive as an answer to an implied condition supplied by the preceding imperative. The translation renders it as a consequence. The purpose nuance is also reflected in Muyassar.
+- **7:113:** The Uthmani reading has no overt interrogative hamza before the emphatic statement. The Urdu renders it as a question seeking assurance, as indicated by Muyassar and Sa‘di, while retaining the emphatic syntax.
+- **7:113:10:** Followed the ayah i‘rab in taking the detached pronoun as emphasis of the attached ism of kāna. A separating-pronoun analysis is also grammatically possible before the definite predicate.
+- **7:114:3:** QAC's English label ‘object pronoun’ for the suffix is positional shorthand here. The Arabic i‘rab identifies it as the ism of inna, and the lesson follows that analysis.
+- **7:114:5:** The packet's QAC lemma is a plural form. The dictionary field uses the singular passive participle, as the guide requires.
+- **7:115:2:** QAC labels the proper name accusative. As a singular proper-name vocative, it is in an accusative position and built on an implied damma on the final alif.
+- **7:115:3:** The word-level i‘rab calls this detailing. The ayah i‘rab specifies choice and makes the interpreted verbal noun the object of an implied verb of choosing.
+- **7:115:8:** The initial shadda is recitational idghām of the preceding final nūn into the imperfect person prefix. The verb is subjunctive with a visible final fatḥa after the masdar particle.
+- **7:115:9:** Followed the ayah i‘rab in taking the detached pronoun as emphasis of the hidden ism of kāna. A separating-pronoun analysis is also grammatically possible before the definite predicate.
+- **7:115:10:** The packet's QAC lemma gives the plural with an initial shadda. The dictionary field gives the unmarked indefinite singular active participle.
+- **7:116:3:** The word-level i‘rab and QAC tag the fāʾ as resumptive. The ayah-level i‘rab coordinates the lammā construction with the preceding speech clause. The lesson follows the ayah-level coordination.
+- **7:116:7:** The lesson retains the packet's lexical root index n-w-s and describes nās as a collective noun, while preserving QAC's masculine plural treatment. The root library records a competing derivation from unās (ʾ-n-s).
+- **7:117:6:** QAC tags عَصَاكَ NOM and its word i'rab says اسم مرفوع, but it is the direct object of the imperative أَلْقِ and therefore accusative, with fatḥa implied on the final alif (maqṣūr). Written as accusative; QAC tag treated as an error.
+- **7:117:7:** QAC prefix tag is REM and the word i'rab says الفاء استئنافية, but the ayah i'rab note says the فاء is عاطفة, joining فإذا هي تلقف to an elided فألقاها. Followed the ayah note (conjunction + elision). إذا is tagged SUR (particle) by QAC and kept as a particle; some grammarians treat surprise إذا as an adverb of place or time.
+- **7:117:10:** Followed QAC: مَا is a relative pronoun, object of تَلْقَفُ, with an elided resumptive pronoun (يأفكونه). An alternative analysis takes مَا as maṣdariyya (their fabrication, i.e. the fabricated thing); mentioned briefly.
+- **7:117:3:** QAC i'rab says only اسم علم مجرور. The lesson adds that مُوسَى is maqṣūr and a diptote, so its jarr sign is an implied fatḥa on the alif (standard i'rab); same for 7:122:2.
+- **7:118:1:** QAC prefix tag is REM and the word i'rab says الفاء استئنافية, while the ayah i'rab note says جملة فوقع الحق معطوفة على جملة هي تلقف. Followed the ayah note and treated the فاء as conjunctive.
+- **7:118:4:** Followed the ayah note: مَا is a relative pronoun and the fāʿil of بَطَلَ. Alternative: maṣdariyya (their work became void); mentioned briefly.
+- **7:119:1:** QAC lemma label is غَلَبُ (galabu); the lemma field gives the active citation form غَلَبَ per the guide, consistent with the reviewed passive paradigm (غُلِبَ — يُغْلَبُ). Referent of the pronoun: Sahih International says Pharaoh and his people; al-Muyassar says the magicians were defeated and Pharaoh and his people returned humiliated. The lesson names the defeated party generally and records al-Muyassar's view with بعض مفسرین.
+- **7:119:2:** QAC tags هُنَالِكَ T (time adverb) and the word i'rab says ظرف زمان, while the ayah i'rab note calls it اسم إشارة ظرف مكان attached to غُلِبُوا. The lesson presents the place reading of the ayah note and mentions the time reading; segmented as هُنَا + lām of distance + kāf of address, as the ayah note describes.
+- **7:119:4:** Ayah i'rab note: صاغرين حال من الواو في غلبوا. Followed that; a common alternative makes it ḥāl of the wāw of ٱنقَلَبُوا (same referent). Some also read انقلبوا as 'became' (صاروا), making صاغرين its predicate; not adopted, following the QAC i'rab (فاعل).
+- **7:120:1:** Passive أُلْقِيَ with nāʾib fāʿil السحرة: translated literally ('were cast down') with an explanatory parenthesis ('fell in prostration'), as al-Muyassar glosses it with خرّ.
+- **7:121:1:** Followed the ayah note: the clause قالوا is a ḥāl from the implied pronoun in ساجدين. An alternative takes it as a new (resumptive) sentence.
+- **7:122:1:** The packet has no ayah grammar note for 7:122. رَبِّ is analysed as badal from رَبِّ in 7:121:3 (genitive); common alternatives are عطف بيان or نعت, mentioned briefly.
+- **7:121:4:** QAC lemma is عَٰلَمِين; the lemma field gives the singular base عَالَم per the guide, with the lesson noting عالمين is declined like a sound masculine plural.
+- **7:123:3:** Hafs reads ءَامَنتُم with no written interrogative hamza and QAC tags no INTG; Muyassar paraphrases it as a question. Taught as a rebuking statement; the rhetorical-question reading is mentioned as an alternative.
+- **7:123:4:** Referent of the pronoun in بِهِۦ: Musa (Ibn Kathir, both English translations) vs Allah (Muyassar: آمنتم بالله). Lesson gives Musa as the usual reading and notes the other.
+- **7:123:12:** QAC grammar note: the wāw of مكرتموه is للإشباع; QAC folds it into the subject-pronoun segment تُمُو, which the lesson keeps. The pronoun هُ refers back to مَكْرٌ.
+- **7:123:15:** QAC i‘rab says only فعل مضارع منصوب after لام التعليل; the lesson states the standard analysis of an implied أَنْ after the lām.
+- **7:123:19:** Elided object of تَعْلَمُونَ (what will befall you) is inferred from Sa‘di/Muyassar and the Taqi Usmani gloss; QAC i‘rab does not state it.
+- **7:124:1:** QAC i‘rab labels the lām لام التوكيد and the verb with nūn al-tawkīd; the ayah note says القسم وجوابه explain the threat, so the lām is taught as the emphatic lām of an implied oath’s answer. With the nūn directly attached the verb is built on fatḥa (QAC gives no mood).
+- **7:124:2:** QAC labels أَيْدِيَ and أَرْجُلَ (7:124:3) “feminine plural”; both are broken plurals (of يَد and رِجْل), taught as جمع تکسیر.
+- **7:124:5:** Per QAC note, مِّنْ خِلَـٰفٍۢ attaches to an implied ḥāl of the hands and feet; tagged haal accordingly.
+- **7:124:7:** QAC lemma identifier يُصَلَّبُ has the passive-imperfect shape; occurrence is active (kasra on lām). Lemma written صَلَّبَ per the reviewed paradigm entry (صَلَّبَ — يُصَلِّبُ).
+- **7:124:8:** QAC lemma is أَجْمَعِين; lesson lemma gives the singular base أَجْمَع. Treated as ملحق بجمع المذكر السالم; QAC note: توكيد للكاف (the object pronoun of لَأُصَلِّبَنَّكُمْ).
+- **7:125:4:** The fronting of إِلَىٰ رَبِّنَا before مُنقَلِبُونَ for specification (اختصاص) is a rhetorical reading not stated in the QAC i‘rab (the ayah has no grammar note).
+- **7:124:7:** Shared root entry ص ل ب says only the noun صُلْب occurs in the studied surahs; Surah 7 now includes the verb لَأُصَلِّبَنَّكُمْ, so that library note needs updating (not changed here).
+- **7:126:3:** QAC’s English “object pronoun” is genitive after مِنْ, as required by the i‘rab. The two nūns share one written letter.
+- **7:126:4:** The word i‘rab labels the particle exceptive. With negation and no stated excluded set, the exception is unqualified (مفرّغ), and the ayah notes make the interpreted maṣdar the verb’s direct object.
+- **7:126:9:** Following the packet’s temporal-adverb tag and the ayah notes, the answer to لَمَّا is elided and understood from the preceding statement of faith. A particle analysis of temporal لَمَّا is also recognized.
+- **7:126:13:** QAC’s English “object pronoun” is genitive after عَلَى, as required by the i‘rab.
+- **7:127:6:** The lesson follows the reviewed paradigm’s theoretical وَذَرَ, باب فتح. The same entry records وَذِرَ, باب سمع, as an alternative reconstruction of the disused perfect. Both analyses give the attested imperfect يَذَرُ.
+- **7:127:12:** The ayah notes coordinate the singular subjunctive with 7:127:9. The lesson takes the singular subject to be Moses, while the earlier plural subject includes his people.
+- **7:127:18:** The collective plural نِسَاء is kept as the lookup lemma because it has no singular of the same stem. اِمْرَأَة supplies the singular in usage.
+- **7:127:19:** The word-level QAC labels the wāw circumstantial, but the ayah notes explicitly coordinate the clause with the preceding verbal clause. The lesson follows the ayah notes. The pronoun is the ism of إِنَّ, as the Arabic i‘rab states.
+- **7:127:20:** Following the ayah notes, the adverb attaches to an implied second predicate of إِنَّ. Another possible attachment is directly to the participle.
+- **7:128:4:** The shared ع و ن root note calls this occurrence a Form IV imperative. The QAC segments and the reviewed paradigm identify it as the Form X imperative of اِسْتَعَانَ, which the lesson follows.
+- **7:128:10:** Following the ayah-level iʿrab, the land pronoun is labelled first object and the relative referring to the heir is labelled second object in this occurrence.
+- **7:128:12:** The omitted complement of the verb of willing is understood as making the selected servant inherit the land. The relative resumptive is understood within that complement.
+- **7:129:20:** The prefixed fāʾ is coordinating according to QAC and the verb shares the preceding subjunctive. The reviewed citation form is نَظَرَ, with no initial shadda.
+- **7:129:22:** The ayah-level QAC grammar note prints تعلمون where the Quranic text and word morphology have تَعْمَلُونَ. The analysis still treats the full interrogative clause as the object of the suspended verb of seeing.
+- **7:130:1:** The word i‘rab calls the lām emphatic. It can also be analyzed as marking the answer to an implied oath.
+- **7:130:3:** QAC indexes āl under ʾ-w-l. The shared root note does not discuss this lexeme, so the lesson gives its contextual sense without asserting a derivation.
+- **7:130:5:** The root entry indexes the singular under a final wāw and records a final hāʾ analysis as well. The lesson teaches the attested plural ending without deriving the singular.
+- **7:130:9:** QAC’s English label calls the suffix an object pronoun. The Arabic i‘rab identifies it as the accusative ism of laʿalla.
+- **7:131:1:** The clause-level grammar note filed under 7:130 covers 7:131. It coordinates the initial conditional construction with the preceding akhadhnā clause. The lesson follows the word i‘rab in labeling the initial fāʾ resumptive.
+- **7:131:6:** QAC uses the masculine demonstrative as its common lookup lemma and tags the surface form feminine singular. The lesson gives the feminine dictionary form.
+- **7:131:10:** The lesson cites the reviewed, unassimilated Form V paradigm. The occurrence is the assimilated jussive plural and QAC uses an assimilated lookup lemma.
+- **7:131:14:** The library has no dedicated rule for inceptive alerting alā. Resumption is used for its clause-opening function as the closest available rule.
+- **7:131:19:** The word i‘rab calls the wāw resumptive, which the lesson follows. The clause-level note filed under 7:130 analyzes the full clause as coordinated with the preceding independent restriction clause.
+- **7:132:2:** The QAC word tag COND and word i‘rab classify this as a conditional particle. The ayah i‘rab parses it as a conditional noun and mubtada. The syntax follows the ayah note and the packet app type remains particle.
+- **7:132:12:** The word i‘rab gives a generic prepositional parse. The ayah i‘rab specifies reinforcing bāʾ and a predicate of negative mā, genitive in form and accusative in position.
+- **7:133:3:** The translation gives flood, as in Muyassar and Sa‘di. The grouped Ibn Kathir passage also records mass death and plague-bearing water as interpretations.
+- **7:133:5:** Lice is the main gloss. Sa‘di and the grouped Ibn Kathir passage also give young locusts, and Ibn Kathir reports grain pests and other small insects.
+- **7:133:7:** Sa‘di records nosebleeding and water turning to blood as interpretive alternatives. The packet indexes the noun under D-M-W, and the root note records the competing final-yāʾ analysis.
+- **7:133:10:** The QAC segment and word i‘rab mark the prefixed fāʾ as resumptive. The ayah i‘rab coordinates the clause with the sending clause, so the lesson treats the fāʾ as a conjunction.
+- **7:134:6:** QAC tags مُوسَى ACC and the word i'rab says اسم علم منصوب. Standard analysis: munada mufrad 'alam, built on implied damma (on the alif) in mahall nasb; the lesson follows that and does not call it a visible accusative.
+- **7:134:10:** QAC tags ما as SUB (masdariyya); the lesson follows that (bi-'ahdihi 'indaka). Muyassar's paraphrase (بما أوحى به إليك) fits a relative ما; this is mentioned as an alternative. Some i'rab works also take the ba' as causal/by-right-of or as an oath particle; not used in the lesson.
+- **7:134:13:** Word i'rab calls the lam لام التوكيد; the ayah note specifies موطئة للقسم with لنؤمنن as the oath's answer. Lesson follows the note: the condition's answer is elided, indicated by the oath's answer.
+- **7:134:21:** QAC lemma is بُنَىّ; lesson gives the dictionary singular ٱبْن and treats بَنِي as mulhaq bi-jam' al-mudhakkar al-salim (accusative by ya', nun dropped for idafa), consistent with the root entry ب ن ي.
+- **7:135:1:** The ayah note calls لما حرف وجوب لوجوب while QAC tags it T (time adverb); the lesson follows the packet pos (noun/zarf) and describes it as a conditional time adverb whose clause is mudaf ilayh.
+- **7:135:9:** إذا is QAC SUR (surprise particle) and packet pos is particle, unlike conditional إذا which the app treats as a noun; kept as حرف فجائية. Some grammarians treat surprise إذا as an adverb of time/place.
+- **7:135:11:** QAC lemma label نَّكَثَ carries a stray shadda; lesson lemma is نَكَثَ per the reviewed lexeme entry. The elided object (the covenant) follows Sa'di and Muyassar.
+- **7:134:** Pharaoh's people's address to Musa is rendered with تم (not آپ); a reviewer may prefer آپ. Ibn Kathir text for 7:134-135 is grouped under 7:132 and not provided; tafsir summaries rest on Muyassar and Sa'di.
+- **7:136:1:** The word-level source marks causal fa, while the ayah note describes the whole clause as coordinated with the preceding lammā clause. The lesson preserves both levels.
+- **7:136:6:** QAC English calls the suffix an object pronoun. The Arabic i‘rab assigns it to the ism of anna in the accusative position.
+- **7:136:9:** QAC English labels the plural waaw a subject pronoun. The Arabic i‘rab specifies the ism of incomplete kāna here and at 7:137:4 and 7:137:28.
+- **7:137:** Muyassar and the Ibn Kathir commentary grouped under 7:136 identify the land as al-Shām. Sa‘di identifies it as Egypt. The translation leaves the land unnamed and the tafsir records both readings.
+- **7:137:5:** The waaw is the passive subject (nāʾib fāʿil), as the word i‘rab specifies. The root entry’s caution about doubling concerns its example yuḍāʿaf, whereas this Form X occurrence concerns weakness and subjugation.
+- **7:137:19:** The ayah i‘rab explicitly treats mā as maṣdariyya, distinct from the two later relative mā forms. The interpreted verbal noun is governed by the causal bāʾ.
+- **7:137:23:** The ayah i‘rab takes the hidden ism of kāna as resuming the relative mā. Firʿawn is the explicit subject of yaṣnaʿu, which has an omitted object pronoun also resuming mā.
+- **7:138:2:** QAC's lemma is a form resembling the diminutive. The noun here is the construct plural of اِبْن, annexed to the sound masculine plural for declension.
+- **7:138:8:** The verified lexeme records a kasra reading on the middle radical. The lesson follows the packet's Hafs vocalization with damma.
+- **7:138:13:** QAC gives an undifferentiated accusative label for Musa. As a singular proper-name vocative, it is built on an implied damma in an accusative position.
+- **7:138:17:** The word tag treats kaf as a preposition. The ayah-level i'rab treats it as an accusative adjectival noun meaning mithl, with a masdar clause in genitive annexation. It supplies thabata, reads 7:138:18 as linked to an implied hal, and makes 7:138:19 the subject of thabata.
+- **7:138:21:** QAC's English 'object pronoun' is a morphological label here. The Arabic i'rab makes the suffix the ism of inna.
+- **7:139:2:** The corpus indexes this plural demonstrative under singular hadha. The teaching lemma gives the plural demonstrative itself.
+- **7:139:6:** QAC's English 'object pronoun' labels the suffix after fi. It is in a genitive position and resumes the first relative ma.
+- **7:139:9:** The QAC English 'subject pronoun' corresponds here to the ism of incomplete kana, as specified by the word i'rab.
+- **7:139:10:** The second relative clause is read with an omitted object resumptive, understood as ya'malunahu.
+- **7:140:4:** The word-level i‘rab calls the suffix a direct object. The fuller ayah i‘rab treats it as accusative after omission of li-, and identifies ghayr as the fronted object. The lesson follows the ayah analysis.
+- **7:141:9:** The raw QAC lemma looks passive. The occurrence is Form II active imperfect as tagged, and the lesson uses the verified active citation form.
+- **7:141:12:** Nisāʾ is retained as the lexical lemma because its semantic singular, imraʾah, is supplied from a different stem.
+- **7:141:15:** Al-Sa‘di records both the deliverance as a great blessing and the persecution as a great trial. Al-Muyassar mentions the ordeal and deliverance together.
+- **7:141:16:** The lesson attaches min rabbikum to an understood adjectival modifier of balāʾ, specifying the source of the trial.
+- **7:142:1:** Hafs reads Form III wa-wa'adna (dagger alif); the lexeme evidence records that Abu 'Amr and others read Form I wa'adna in 2:51, 7:142, 20:80. Lesson follows Hafs.
+- **7:142:3:** QAC i'rab: thalathina is the second object of wa'adna with an elided mudaf (tamama thalathina). Some i'rab works treat thalathina laylatan as a time adverb instead; not used. Lemma written as the decade word thalathuna; QAC lemma is thalath.
+- **7:142:6:** Counted noun (layalin) is elided after 'ashr; the form without ta' agrees in reverse with the feminine counted noun. QAC tags the word M (form), which is consistent.
+- **7:142:7:** QAC calls the fa' resumptive (isti'nafiyya); some i'rab works call it 'atifa. Lesson follows QAC.
+- **7:142:10:** QAC i'rab: arba'ina is maf'ul bihi on tadmin of tamma with the sense of balagha. Well-known alternative: hal (balighan arba'ina laylatan). Lesson follows QAC and mentions the hal reading. Lemma written as arba'una; QAC lemma is arba'.
+- **7:142:12:** Word i'rab calls the waw 'atifa while the ayah note calls the clause wa-qala musa musta'nafa; lesson keeps waw as a conjunction and describes the clause as a new independent sentence.
+- **7:142:15:** QAC i'rab gives only the case (genitive with fatha, diptote). Role badal (or 'atf bayan) of li-akhihi is from standard i'rab.
+- **7:142:18:** QAC says ism majrur; lesson states the jarr is implied (muqaddar) because the kasra before the first-person ya' is for harmony, per the implied-case convention.
+- **7:142:19:** Object of aslih is unexpressed. Muyassar reads it as leading the people to obedience (reform them); Sa'di as following the way of righteousness. Lesson mentions both.
+- **7:143:1:** QAC morphology and word-level i‘rab label lammā a temporal adverb at words 1, 24, and 33. The verse note calls it a non-jussive conditional particle (ḥarf wujūb li-wujūb). The lesson retains the app's noun type and uses the verse-level conditional analysis.
+- **7:143:4:** The glosses prefer an appointed place, while both translations, the preceding verse and al-Muyassar support an appointed time here. The noun permits both senses.
+- **7:143:10:** The verse i‘rab supplies an implicit condition governing the jussive. This is also described as a jussive answer to a request.
+- **7:143:15:** The word morphology and local i‘rab call the wāw resumptive. The verse-level note coordinates the whole command with the preceding negation, which the lesson follows.
+- **7:143:19:** The word morphology and local i‘rab call the fāʾ resumptive. The verse-level note coordinates the conditional sentence with the preceding command, which the lesson follows.
+- **7:143:25:** The packet correction identifies Form V of ج ل و. The raw QAC default Form I label is overridden. The reviewed paradigm is تَجَلَّى يَتَجَلَّى.
+- **7:143:29:** The local i‘rab gives only the accusative. The lesson takes the verbal noun as the second object of resultative jaʿala, with the force of a resulting state.
+- **7:143:33:** The word morphology and local i‘rab label the fāʾ resumptive. The verse-level note coordinates the clause with the one describing Mūsā's fall, which the lesson follows.
+- **7:143:36:** The verse note's cited form has a third-person suffix, but the packet's exact word and local i‘rab have the second-person kāf. The lesson keeps the verse note's substitute cognate-object analysis and follows the occurrence for the suffix.
+- **7:143:39:** The verse note gives the final coordinated clause a rafʿ position without identifying a nominative slot. The lesson follows its coordination with the preceding verbal clause within the quotation and states rafʿ only for the internal mubtadaʾ and khabar.
+- **7:143:40:** Ibn Kathir records two readings of what Mūsā was first to believe: faith among his people, or affirmation that Allah cannot be seen in this life. The translation leaves the expression open and the tafsir records both interpretations.
+- **7:144:2:** QAC labels the proper name accusative. As a singular proper-name vocative, it is built on an implied damma on the final alif and occupies an accusative position.
+- **7:144:3:** The QAC English label calls the suffix an object pronoun. The Arabic i‘rab identifies it as the ism of inna, so the lesson does not treat it as a verb object.
+- **7:144:6:** The packet indexes nas under n-w-s and tags it plural. The lesson treats it as collective in meaning and leaves the disputed etymology open.
+- **7:144:7:** QAC identifies the stem as feminine. The surface stem is the sound feminine plural of the singular dictionary lemma.
+- **7:144:11:** The word i‘rab identifies the expressed object kaf. The relative construction also implies an omitted resumptive second object referring to ma.
+- **7:145:16:** The lesson follows the ayah i‘rab and explains the jussive as the answer to an implicit condition. It can also be described as a jussive answer to the command.
+- **7:145:** Muyassar identifies the abode with Hell, Sa‘di with the surviving sites of destroyed peoples, and Ibn Kathir emphasizes the punishment they suffer. The tafsir summary presents the two specific identifications as interpretations.
+- **7:145:** The abridged Ibn Kathir passage under 7:144 records two views about whether the tablets contained the Torah or preceded it. It also cites a stricter-duties reading of the elative, which the lesson translates as the best guidance in the tablets.
+- **7:146:3:** The genitive on the noun before possessive yāʾ is analysed as an implied kasra at the same position occupied by the matching kasra. The root note records different views on the historical pattern of āyah, so no single pattern is taught.
+- **7:146:8:** The ayah iʿrab attaches bi-ghayri to an implied ḥāl of the subject wāw of yatakabbarūna. Ghayr remains a genitive noun inside the prepositional phrase.
+- **7:146:14:** Both lā particles (14 and 21) are ordinary non-governing negation. The following verbs are jussive because they are the verbs of the conditional answers.
+- **7:146:19:** The shared s-b-l root note includes an unrelated sentence about a fish making its way through the sea. This verse contrasts the paths of guidance and error.
+- **7:146:22:** The two occurrences of ittakhadha (22 and 28) follow the verified Form VIII analysis from ʾ-kh-dh with assimilation. The packet lexeme also records the alternative derivation from t-kh-dh. In both occurrences the object hāʾ is the first object and the following sabīlan is the second.
+- **7:146:31:** QAC English calls hum an object pronoun and uses the same label for hā at 35. The Arabic iʿrab makes hum the ism of anna, while hā at 35 is governed by ʿan. The interpreted masdar governed by bi attaches to the implied predicate of dhālika.
+- **7:146:34:** QAC English calls the wāw a subject pronoun. Here kāna is incomplete and the Arabic iʿrab makes the wāw its ism.
+- **7:146:** The supplied Ibn Kathir excerpt discusses a possible reading tied to this ummah and favors a warning that applies across communities. The summary leaves the addressee general.
+- **7:147:4:** QAC tags liqa as the form III verbal noun. The root library also recognizes the same verbal noun for form I laqiya.
+- **7:147:9:** The lemma field uses the active dictionary headword, as the guide requires. The occurrence and paradigm card use the passive.
+- **7:148:1:** The QAC analysis is taught with one stated object and jasadan as badal. The verb can also carry a two-object adoption sense with an understood object meaning deity. The reviewed lexeme records an alternative derivation from t-kh-dh for both occurrences, while the lesson follows QAC a-kh-dh.
+- **7:148:8:** The shared root gloss for ayn-jim-lam covers haste and omits the lexical sense calf. The lesson retains the packet root and follows the occurrence gloss for this noun.
+- **7:148:13:** The QAC ayah note calls the interpreted masdar the object of seeing. In the cognitive reading of raa, the same clause can be analyzed as filling both object slots.
+- **7:148:14:** The QAC English tag calls the suffix an object pronoun. The Arabic i‘rab identifies it as the ism of anna, and the lesson uses that role and reads the suffix as referring to the calf.
+- **7:148:20:** The QAC word i‘rab identifies the attached ha as the object. Adoption for worship is understood in context and can be expressed in a two-object analysis with an elided second object meaning deity.
+- **7:148:** The supplied Ibn Kathir abridgment records both a living calf and a gold figure sounded by air. Muyassar describes a lifeless body, and the lesson reports both explanations of the sound.
+- **7:148:19:** The shared root note for s-b-l uses a fish passage to illustrate the root. The sense here is a path the calf could not show its worshippers.
+- **7:149:1:** QAC treats temporal lammā as a time adverb, as taught here. An alternative traditional analysis treats it as a non-governing particle linking the two events.
+- **7:149:5:** Following the ayah i‘rab, raʾā is cognitive here. The interpreted masdar headed by anna fills both object slots.
+- **7:149:6:** QAC English calls the suffix an object pronoun. The Arabic i‘rab identifies it as ism anna in the accusative position.
+- **7:149:10:** The generic QAC label “emphatic lām” is specified here as the lām that introduces an implied oath before the condition.
+- **7:149:12:** The raw QAC lemma has an initial shadda. The reviewed paradigm gives the citation form without it.
+- **7:149:16:** The ayah i‘rab identifies this clause as the answer to the oath. It supplies the sense of the elided conditional answer. The directly attached heavy emphatic nūn makes the imperfect built on fatḥ.
+- **7:149:** The packet gives only a grouped-commentary pointer for Ibn Kathir. The tafsir summary draws on the supplied Muyassar and Sa‘di texts.
+- **7:150:7:** The ayah i‘rab takes this as a second circumstantial qualifier of Moses alongside word 6. The vocalized form is the adjective ʾasif, distinct from the verbal noun ʾasaf.
+- **7:150:9:** The ayah i‘rab analyzes relative mā as the explicit subject of the fixed blame verb and supplies khilāfatukum as the omitted specified target of blame. The shared verb note lists other subject patterns without covering this one.
+- **7:150:10:** On the ayah i‘rab’s relative reading, the clause has an understood resumptive referring to the manner of succession. Al-Saʿdi’s paraphrase supplies bihā after a feminine antecedent.
+- **7:150:14:** The packet translations and tafsirs vary in emphasis between acting prematurely over God’s command and wanting Moses to return before the divinely appointed time. The translation keeps the broader sense of amr, and the syntax uses the direct object permitted by the reviewed lexeme.
+- **7:150:25:** The ayah i‘rab treats the noun as genitive with an implied kasra and derives the visible fatḥa from the first-person yāʾ changed to an alif and then omitted. The empty QAC suffix is explained in prose.
+- **7:150:31:** The word-level QAC line calls the fāʾ resumptive. The ayah i‘rab coordinates the prohibition clause with the response to the vocative and gives it no case position. The lesson follows the ayah-level coordination.
+- **7:150:32:** QAC tags the verb 3FS. In context it is active form IV, 2MS jussive after prohibitive lā. Moses is the implicit addressee and subject, and the visibly accusative enemies are the object. The reviewed form IV lexeme supports this argument structure.
+- **7:150:35:** The raw NEG tag and word i‘rab label this lā negative. The coordinated request and the following jussive establish prohibitive lā, parallel to the first prohibition.
+- **7:150:37:** The packet explicitly identifies maʿa as an accusative place adverb. In the sense of counting someone among a group, its phrase is attached to an implied second-object complement of jaʿala. In the literal sense of putting someone with a group, the same phrase can be attached directly to the verb with a single object.
+- **7:151:6:** The raw QAC segment lemma has passive perfect vocalization. The occurrence is an active Form IV imperative, and the lesson uses the reviewed active citation form.
+- **7:151:9:** Word-level QAC labels the waw resumptive, whereas the ayah annotation parses the clause as a circumstantial qualifier of the implicit subject of the second imperative. The lesson follows the ayah annotation.
+- **7:152:3:** The word-level iʿrab does not enumerate the objects. Muyassar, Saʿdi and both translations supply “as a god”; the lesson takes this as an omitted second object. The lexeme also records derivation from ت خ ذ as a lexical alternative to QAC’s أ خ ذ.
+- **7:152:4:** The shared root entry for ع ج ل describes only the haste sense. The separate noun sense “calf” is established by both glosses, the translations and the tafsirs. The QAC root is retained.
+- **7:152:13:** The word note parses the comparison as جار ومجرور, while the ayah note identifies the kāf as نائب مفعول مطلق. The lesson uses the ayah-level account of its function. An alternative takes the prepositional phrase as qualifying an omitted cognate accusative.
+- **7:152:15:** The raw QAC lemma is in plural shape. The lesson gives the singular citation form of the active participle, consistent with the occurrence vocalization and QAC derivation tags.
+- **7:153:12:** The first هَا refers to the misdeeds. The second is taught as referring to the state of repentance and faith, following Saʿdi and the repentance-based explanations in Muyassar and Ibn Kathir. A reference back to the misdeeds is also grammatically possible.
+- **7:153:14:** The lesson follows QAC’s word-level analysis as an adjective. A second predicate of إِنَّ is also grammatically possible.
+- **7:154:14:** QAC morphology tags the lām as an ordinary prefixed preposition; the ayah i'rab note calls it زائدة للتقوية with ربهم as a fronted object (مفعول مقدم) of يرهبون. Followed the note (extra-particle + fronted-object). An alternative reading takes the lām as causal (for the sake of their Lord) with an elided object; not used.
+- **7:154:12:** QAC i'rab gives only جار ومجرور. Lesson attaches للذين to رحمة (and هدى); the alternative attachment to an implied adjective (صفة) of رحمة is mentioned briefly.
+- **7:154:6:** أخذ is treated as the answer of لمّا (no linking فاء), with the لمّا clause as an adverbial time clause; standard i'rab, not spelled out in the QAC word i'rab.
+- **7:154:4:** موسى is diptote (foreign proper name); its genitive sign is fatha in place of kasra, implied on the alif. Tagged diptote + implied-case.
+- **7:154:9:** QAC lemma is written نُسْخَت; the lesson lemma uses the dictionary spelling نُسْخَة with tāʾ marbūṭa.
+- **7:154:** Ibn Kathir reports from some mufassirun that the tablets broke and part of the law was lost, adding that only Allah knows if this is true; omitted from the Urdu tafsir as unverified.
+- **7:155:3:** The ayah i‘rab supplies omitted مِنْ and treats the noun as accusative by preposition deletion. The lexeme describes the resulting surface construction as two objects. The lesson follows the ayah i‘rab and identifies the numeral as the direct object.
+- **7:155:7:** QAC morphology and word i‘rab label the fāʾ resumptive. The ayah i‘rab coordinates the whole لَمَّا construction with the selection clause, which is the analysis taught here.
+- **7:155:16:** QAC GEN is the syntactic position after مِنْ. The visible ḍamma is the fixed ending of قَبْلُ with its complement omitted and understood.
+- **7:155:17:** The ayah i‘rab treats إِيَّا as the pronoun and the final yāʾ as a speaker marker. Other analyses treat the whole expression as the pronoun.
+- **7:155:19:** The word i‘rab gives only a prepositional phrase. The lesson follows QAC REL and supplies the omitted object resumptive. A maṣdariyya reading of مَا would yield an interpreted verbal noun meaning “because of their doing.”
+- **7:155:22:** The QAC English ‘object pronoun’ label refers here to a pronoun governed by the preposition, in محل جر. In the fused Uthmani spelling, the doubled nūn is shared across the morpheme boundary.
+- **7:155:36:** QAC morphology and word i‘rab label the fāʾ resumptive. The ayah i‘rab coordinates the supplication with the preceding nominal clause within the reported speech. The lesson follows the ayah i‘rab.
+- **7:155:** Muyassar and Sa‘di foreground the demand to see Allah. Ibn Kathir also reports failure to oppose calf worship and a report of an objectionable supplication. The tafsir summarizes the first two explanations.
+- **7:156:3:** The verse note attaches the first prepositional phrase to a circumstantial qualifier of the following ḥasana, and explicitly attaches the coordinated Hereafter phrase to the imperative. The lesson preserves those distinct attachments as given.
+- **7:156:5:** The word i‘rab identifies the noun as genitive. It is taught as a dependent specifying the demonstrative, commonly parsed as explicative apposition or badal.
+- **7:156:9:** The QAC English label ‘object pronoun’ is generic here. The Arabic i‘rab makes nā the ism of inna. The surface segmentation leaves only the alif as a separate slice because no separate nūn for nā is visible.
+- **7:156:10:** The QAC lemma هَادُ is a truncated citation stem. The verified paradigm gives هَادَ يَهُودُ.
+- **7:156:17:** The relative clause has an understood object link. The exact expansion may be expressed as willing to afflict that person. The verb follows the library’s samiʿa classification, whose evidence also mentions a possible underlying faʿala analysis.
+- **7:156:22:** The verse-level note treats the clause as coordinated with the preceding predicate clause, hence in a nominative predicate position. Word-level i‘rab and the raw prefix tag instead treat the fāʾ as resumptive. The lesson follows the verse-level note.
+- **7:156:26:** Zakāh is the expressed object of giving. A ditransitive expansion can supply the recipients as an unexpressed first object, with zakāh as the second.
+- **7:156:** The Ibn Kathir field is a pointer to grouped commentary. The packet supplies no text for that commentary, so the tafsir summary draws on Muyassar and Sa‘di.
+- **7:157:1:** QAC reads the opening relative as a genitive badal of the preceding relative in 7:156. The Urdu translation supplies the mercy clause in parentheses from that context.
+- **7:157:4:** The ayah note makes al-nabiyy a badal of al-rasul, with both subsequent qualifiers modifying al-nabiyy. QAC indexes nabiyy under n-b-hamza. The derivation from n-b-w, associated with elevation, is another lexical analysis.
+- **7:157:5:** Muyassar and Ibn Kathir explain ummi as unlettered. Sa‘di relates the epithet to the unlettered Arab community. The translation retains the epithet, and the word gloss gives its contextual sense.
+- **7:157:8:** The ayah i‘rab specifies a second object of wajada and attaches both the locative and the scripture phrase to maktuban. A one-object reading of wajada can give maktuban a circumstantial role.
+- **7:157:23:** QAC tags khaba’ith as masculine plural. The lesson teaches its fa‘a’il broken plural pattern and its feminine singular base khabithah.
+- **7:157:27:** The QAC segment lemma ghill (resentment) conflicts with the packet root note and the fetters sense. Use ghull (fetter), the singular identified by the root note.
+- **7:157:37:** Muyassar and Sa‘di identify the light as the Quran. Ibn Kathir also includes revealed Sunnah in the scope of the light.
+- **7:157:42:** The ayah i‘rab treats hum as a separating pronoun. An alternative analysis treats hum as a second mubtada with al-muflihun as its khabar.
+- **7:158:2:** QAC tags أَيُّهَا NOM; per the rule library it is a vocative built on ḍamma in محل نصب, with هَا of tanbīh. Written that way; nominative rule not used.
+- **7:158:3:** Grammar note calls ٱلنَّاسُ عطف بيان of أي (tagged badal, which covers عطف بيان); some i'rab call it نعت/بدل. QAC tags MP; treated as a collective noun (اسم جمع), not a broken plural.
+- **7:158:7:** QAC i'rab only says جار ومجرور; attachment to رَسُولُ (sense of being sent) is the standard i'rab analysis, stated without a source line in the packet.
+- **7:158:9:** The packet i'rab does not state the role of ٱلَّذِى. Written as نعت of ٱللَّهِ in محل جر; alternatives (منصوب على المدح, or خبر of an elided مبتدأ هو) mentioned briefly.
+- **7:158:14:** Following the grammar note, the clause لَآ إِلَـٰهَ إِلَّا هُوَ is بدل of the ṣila clause; badal tagged on its head لَآ. Elided khabar (e.g. موجود/حق) per the note on هُوَ.
+- **7:158:17:** Grammar note: هُوَ is بدل of the pronoun hidden in the elided khabar. Tagged badal + elision; independent-pronoun not used because its listed roles do not include badal.
+- **7:158:18:** The syntactic position of يُحْىِۦ وَيُمِيتُ is not given in the packet i'rab; described as a continuation of the description of Allah, with options (new sentence / further بدل) mentioned. Final yāʾ written as small yāʾ; indicative with implied ḍamma, not jussive, consistent with the lexeme note.
+- **7:158:20:** Whether فَـَٔامِنُوا۟ onward is still part of the Prophet's quoted speech (Muyassar, Taqi Usmani) or Allah's direct address (Sahih International punctuation; Ibn Kathir's wording) differs; the Urdu translation leaves this unmarked.
+- **7:158:23:** QAC i'rab gives ٱلنَّبِىِّ as plain اسم مجرور (not صفة, unlike ٱلْأُمِّىِّ), so written as بدل of رَسُولِهِ; the نعت analysis is mentioned as an alternative.
+- **7:158:25:** Role of the second ٱلَّذِى not stated in the packet i'rab; written as نعت of the Messenger (رَسُولِهِ ٱلنَّبِىِّ ٱلْأُمِّىِّ) in محل جر.
+- **7:158:31:** Grammar note: the clause لعلكم تهتدون is استئنافية لا محل لها; تَهْتَدُونَ is the khabar of لَعَلَّ (محل رفع), so inna-sisters is tagged on the verb as well.
+- **7:159:1:** The packet gives the local preposition and noun cases. The opening phrase supplies the fronted predicate of the delayed subject at 7:159:4, with an implicit governor in the traditional analysis.
+- **7:159:3:** QAC gives the genitive case. The lesson specifies the estimated fatḥa on the final alif because the proper name is a diptote.
+- **7:159:5:** QAC tags the whole wāw–nūn ending as a subject-pronoun segment. The learner split separates the subject wāw from the indicative nūn in both verbs. Both plural subjects refer to the members of the singular collective noun at 7:159:4.
+- **7:159:8:** The shared lexeme's Urdu note generalizes bi- as an equating complement. Its English evidence and the root note give the correct sense here: the fronted phrase states the standard for doing justice.
+- **7:160:2:** The detailed ayah iʿrab treats the compound number as a ḥāl with an omitted singular feminine tamyīz, then takes the two plural nouns at words 4–5 as successive badals.
+- **7:160:3:** QAC and the generated word iʿrab mark words 3 and 19 accusative. The detailed ayah iʿrab treats the second component in both numerals as built on fatḥa with no independent case.
+- **7:160:12:** The word-level SUB tag and generated maṣdar-particle iʿrab differ from the detailed ayah note, which explicitly treats this as explanatory an and the imperative as its explanatory clause.
+- **7:160:14:** QAC tags the noun as masculine. The lesson leaves gender unstated because the ordinary lexical treatment of the noun for a staff is feminine.
+- **7:160:18:** QAC tags this as ACC and the generated line calls it accusative. The written alif and detailed ayah iʿrab establish nominative as the subject of the gushing verb.
+- **7:160:21:** The detailed ayah iʿrab makes the knowledge clause a modifier of the nominative compound numeral, with an omitted link meaning from among them.
+- **7:160:24:** The lesson follows the QAC singular lemma for the plural or collective occurrence.
+- **7:160:37:** The relative reading follows QAC. The verified paradigm supports an omitted resumptive pronoun as second object, while the addressee pronoun is first object.
+- **7:160:41:** QAC labels the suffix a subject pronoun. The word iʿrab specifies its syntactic role as the ism of incomplete kāna.
+- **7:160:** Saʿdi allows either a particular stone or a generic reference to any stone. The Ibn Kathir field points to grouped commentary at the preceding ayah and contains no commentary text in this packet.
+- **7:161:1:** The word i‘rab calls the prefixed waw coordinating and the ayah note describes the overall sentence as resumptive. The lesson uses the word-level label for the waw and follows the ayah note in taking idh as the object of an implied “remember”.
+- **7:161:2:** The ayah i‘rab takes the deputy subject as a hidden pronoun referring to the verbal noun of ‘say’. Another analysis takes the quoted speech itself as the deputy subject.
+- **7:161:10:** The verb note follows the verified lexeme’s bab Sami‘a classification. The lexeme evidence notes that the surface forms alone cannot rule out a fa‘ala analysis with a guttural final radical.
+- **7:161:14:** The packet marks ‘the gate’ accusative without specifying a subtype. The lesson teaches it as a direct object. An alternative analysis of dakhala explains a following place accusative by omission of the preposition fi.
+- **7:161:16:** The ayah note analyzes the jussive as the answer to an implied condition. The same construction is also described as the answer to the preceding commands.
+- **7:162:15:** QAC morphology tags ma as REL and the effective app type is pronoun. The ayah i‘rab instead takes the following construction as an interpreted verbal noun governed by bi. The lesson follows that syntax and records the relative reading in the word analysis.
+- **7:162:** The supplied Ibn Kathir fields for both verses point to commentary grouped under 7:159. The packet does not include that text. The tafsir summaries use the supplied Muyassar and Sa‘di entries, retaining Sa‘di’s plague identification as a possibility.
+- **7:163:1:** The QAC segment and word i‘rab label the opening waw resumptive. The ayah i‘rab coordinates the imperative with an understood command to remember at the start of 7:161. The lesson follows the ayah-level coordination.
+- **7:163:20:** The lesson uses the reviewed daraba paradigm, matching the kasra in this occurrence. The lexeme also records a nasara-class imperfect as a lexical variant.
+- **7:163:23:** Word i‘rab describes the internal prepositional construction. Ayah i‘rab assigns the kaf construction the clause-level role of a substitute for the cognate accusative, specifying the kind of trial.
+- **7:163:25:** QAC tags ma REL and the packet derives pronoun from that tag. The ayah i‘rab analyzes ma as a masdar particle. The lesson follows that analysis and treats the interpreted verbal noun as genitive after causal bi. The effective pronoun type therefore produces a validator warning and should be reviewed in the shared data.
+- **7:164:12:** The ayah i‘rab makes this a substitute for a cognate accusative governed by the active participle, corresponding in sense to the form II masdar تَعْذِيب.
+- **7:164:15:** The ayah i‘rab takes this as a cognate accusative governed by an implied verb. The purposive Urdu gloss conveys the reason for the admonition.
+- **7:164:18:** The token morphology and word i‘rab mark the wāw as resumptive. The ayah i‘rab coordinates the whole clause with the reported reply, which the lesson follows.
+- **7:165:1:** The packet classifies the token as a noun from QAC’s time-adverb tag. The ayah i‘rab treats lammā as a temporal conditional particle (حرف وجوب لوجوب), which the lesson follows for the construction.
+- **7:165:16:** The packet classifies the token as a pronoun from QAC’s relative mā tag. The ayah i‘rab instead analyzes mā plus the following clause as a source construction governed by causal bi and attached to the verb of seizure. The lesson follows the ayah i‘rab.
+- **7:165:** The ayah states the fates of the forbidders and the wrongdoers. The supplied tafsir discusses differing views on the questioning group’s fate, including the view that they were saved.
+- **7:166:1:** The word-level line and QAC segment mark fa as resumptive. The ayah-level analysis coordinates the full lamma construction with the preceding one at 7:165, which this lesson follows.
+- **7:166:11:** The generated word-level line calls this an accusative adjective. The ayah-level i‘rab prefers a second predicate of kāna and considers adjective agreement with “apes” weaker because the masculine sound plural ordinarily describes rational beings.
+- **7:167:1:** The word-level line and QAC segment mark waw as resumptive. The ayah-level i‘rab marks it as coordinating and makes idh the object of implied “remember”; the lesson follows that reading.
+- **7:167:2:** Muyassar and Sa‘di explain the verb as an explicit announcement. Ibn Kathir also records the sense “ordained,” which is noted in the tafsir.
+- **7:167:4:** QAC supplies no mood tag. The visible fatḥa is due to direct attachment of emphatic nūn and is a building vowel; the verb is in محل رفع.
+- **7:167:10:** QAC supplies no explicit mood tag. The visible ḍamma and the absence of a governing subjunctive or jussive particle give the indicative.
+- **7:168:4:** Followed the ayah i'rab: أُمَمًا is a hal of the object pronoun of قَطَّعْنَاهُمْ. Some grammarians alternatively read قَطَّعَ as implying صَيَّرَ, making أُمَمًا a second object ("We made them into nations"); not used here.
+- **7:168:8:** Per the ayah i'rab, مِنْهُمْ is khabar of an elided mubtada (ناس) and دُونَ ذَٰلِكَ attaches to an elided adjective of that mubtada; the whole clause is coordinated to مِنْهُمُ الصَّالِحُونَ, adjective of أُمَمًا. ذَٰلِكَ is taken to refer to righteousness (Sa'di: دون الصلاح).
+- **7:168:11:** QAC lemma is the plural form حَسَنَات (and سَيِّئَات for 7:168:12); the singular حَسَنَة / سَيِّئَة (packet lemmaFork) is used as the dictionary lemma. Both are glossed as times of ease and hardship following Muyassar and Sa'di, not good and bad deeds.
+- **7:168:10:** QAC lemma بَلَوْ is only the stem before نا; the paradigm entry بَلَا / يَبْلُو (Form I, bab nasara) is used as the lemma.
+- **7:169:21:** QAC's English morphology calls the suffix an object pronoun. Here it is governed by the preposition and is in the genitive position.
+- **7:169:26:** QAC morphology and word i'rab label the verb jussive. The packet treats the preceding an as a masdar particle, la as negation, and the resulting masdar as badal of the covenant. This requires the subjunctive with deletion of nun. A jussive would require a different parse, with explanatory an and prohibitive la.
+- **7:169:31:** The citation form follows the verified paradigm (darasa), since the raw QAC lemma is an inflected stem.
+- **7:169:33:** QAC's English morphology calls the suffix an object pronoun. It is governed by the preposition and refers to the Book. In the understood existential clause the implicit subject supplies the link back to the relative ma.
+- **7:169:40:** The citation form follows the verified paradigm ('aqala), since the raw QAC lemma is an inflected stem.
+- **7:170:1:** Followed the packet i'rab: الذين is mubtada and the إنّا clause is its khabar, linked by restating the mubtada (المصلحين). A known alternative in the i'rab literature (not in the packet) makes والذين genitive, coordinated with للذين يتقون in 7:169; not used.
+- **7:170:2:** Hafs Form II يُمَسِّكُونَ per the lexeme entry; the lexeme evidence notes a reported Form IV reading (يُمْسِكُونَ) attributed to Shu'ba, not mentioned in the lesson.
+- **7:170:3:** Which Book is meant is left general (Muyassar/Sa'di: الكتاب). Sahih International glosses it as the Qur'an, while the context (Banu Isra'il, 7:169) suggests the Torah; the lesson says only 'Allah's revealed Book'.
+- **7:171:1:** QAC word i'rab only says ظرف زمان; the lesson follows the common analysis (and Muyassar's paraphrase واذكر) that إذ is the object of an implied اذكر. Translation addresses the Prophet with آپ, following Muyassar (أيها الرسول).
+- **7:171:2:** QAC lemma نَتَقْ is the stem; lemma given as نَتَقَ. Lexeme lists aorist يَنْتُقُ (nasara); يَنْتِقُ is equally attested, as the lexeme evidence notes.
+- **7:171:7:** QAC labels this wa REM (استئنافية) and the lesson follows it; some i'rab works treat it as عاطفة on نتقنا or as حالية (with implied قد). ظنّ is rendered 'became certain' following Muyassar (أيقنوا) and Sahih; Taqi Usmani has 'thought'.
+- **7:171:11:** Per the ayah notes, خذوا is مقول القول of an implied قول (وقلنا) coordinated with نتقنا; Sa'di paraphrases with passive قيل لهم. The tafsir summary uses the passive to avoid choosing.
+- **7:171:14:** QAC gives only جار ومجرور; attachment to خذوا is given as primary and attachment to an implied ḥāl of the subject as an alternative.
+- **7:171:17:** فيه analysed as a prepositional phrase attached to an implied verb forming the ṣila of ما; the pronoun refers to the given Book.
+- **7:171:19:** Object of تتقون is elided; Muyassar supplies ربكم. Ayah notes call the لعلكم clause مستأنفة; Muyassar paraphrases لعل with كي (purpose).
+- **7:172:1:** The word iʿrab identifies a temporal adverb. The lesson supplies an understood imperative of remembering, as in the translations and Muyassar.
+- **7:172:2:** Both interlinear glosses suggest a passive reading. The vocalized verb, QAC morphology and both verse translations support active voice, with the following noun as its explicit subject.
+- **7:172:5:** The QAC lemma is a diminutive-like form. Here the genitive plural construct means children and the singular dictionary headword is ibn, as supported by the packet root entry. The root entry also notes disagreement about its historical derivation.
+- **7:172:9:** The lesson retains the packet root dh-r-r. Its root note also records proposed derivations from dh-r-hamza and dh-r-w.
+- **7:172:14:** The generated iʿrab gives a generic preposition phrase. This is the emphatic extra bi on the predicate of laysa, with surface genitive and syntactic accusative. The preceding word iʿrab also abbreviates the verb name.
+- **7:172:17:** The verse iʿrab calls the testimony a fresh clause. Both supplied translations and the tafsir context read it with the respondents’ speech. The translation preserves the human speakers and the syntax note preserves the clause boundary.
+- **7:172:18:** The verse iʿrab gives the purpose analysis with an understood karāhata. The negative purpose in Urdu follows that interpretation.
+- **7:172:22:** QAC English labels the suffix an object pronoun. The Arabic iʿrab identifies it as the accusative ism of inna.
+- **7:172:23:** QAC English calls the attached pronoun a subject pronoun. Its specific syntactic role is the nominative ism of incomplete kāna, as in the word iʿrab.
+- **7:172:** Muyassar and Saʿdi emphasize acknowledgment through fitrah. Ibn Kathir also describes verbal testimony alongside testimony by circumstance.
+- **7:173:4:** Both glosses use passive English wording. The vocalized verb and QAC morphology are active, with the following nominative noun as explicit subject.
+- **7:173:7:** QAC labels the word genitive. It is built on damma after the complement is omitted with its meaning retained, and is in genitive position after min.
+- **7:173:9:** The root index uses dh-r-r for dhurriyyah and records alternative derivations from dh-r-hamza and dh-r-w.
+- **7:173:10:** The phrase is taught as modifying the indefinite predicate dhurriyyatan. A second predicate of kana is also possible.
+- **7:173:12:** The word iʿrab treats fa as supplemental. The ayah iʿrab coordinates the question with the kana clause. A connective fa is another analysis of the particle.
+- **7:173:13:** The lesson follows the QAC relative reading of ma, with an omitted object resumptive in faʿala. The masdariyya alternative gives “because of their doing”.
+- **7:174:1:** The word iʿrab gives the prepositional construction; the ayah iʿrab additionally gives ka the role of a cognate-object substitute.
+- **7:174:4:** The REM tag and word iʿrab label waw resumptive. The ayah iʿrab coordinates the laʿalla clause with an implied independent clause about reflection; the lesson follows that analysis.
+- **7:175:** The abridged Ibn Kathir gives differing reports about the man’s identity. The summary gives the shared account and attributes the Israelite identification to some commentators.
+- **7:175:1:** QAC tags waw as a conjunction and the word iʿrab calls it ʿatifa. The ayah iʿrab treats the clause as independent, followed here for waw. The lemma uses the verified standard spelling tala with final alif.
+- **7:175:7:** QAC and the word iʿrab treat fa as resumptive. The ayah iʿrab explicitly coordinates the clause with ataynahu and gives it no syntactic position. The lesson follows the ayah analysis.
+- **7:175:10:** The root index places shaytan under sh-t-n while leaving its disputed etymology open.
+- **7:176:2:** The shaa paradigm adopts the sami'a class. Its evidence notes that the surface forms alone do not exclude a fa'ala analysis.
+- **7:176:3:** Shared root note is scoped to the passage about raising the sky. This occurrence refers to elevating a person's rank.
+- **7:176:5:** The word i'rab and morphology label the waw resumptive. The ayah i'rab coordinates the clause with the willing clause, which the lesson follows. The ha is the ism of lakinna, despite the English object-pronoun label.
+- **7:176:11:** The word i'rab and morphology label the fa resumptive. The ayah i'rab coordinates the simile clause with the preceding following-desire clause, which the lesson follows.
+- **7:176:13:** Shared root note describes only the Cave dog examples with possessive suffixes. Here the definite noun is the genitive complement of the noun for likeness.
+- **7:176:16:** QAC English labels the ha an object pronoun. The word i'rab correctly identifies a prepositional phrase, so the pronoun is in the genitive position.
+- **7:176:17:** The lexeme uses the more common past lahatha. It also records lahitha as a lexical variant with the same imperfect yalhathu.
+- **7:176:20:** The second panting verb is jussive by coordination. Its final tha has no written sukun in this Uthmani text because it assimilates into the next word's dhal in connected recitation.
+- **7:176:24:** The packet identifies the relative pronoun without specifying its attachment. The lesson takes it as a genitive modifier of the preceding group noun.
+- **7:176:27:** The imperative is built on sukun. The final kasra in connected recitation avoids two successive vowelless consonants.
+- **7:176:28:** The ayah i'rab explicitly assigns a direct object. The lesson treats qasas as the narrated material, consistent with a lexical reading as a verbal noun used for what is narrated.
+- **7:176:29:** The English object-pronoun label describes the attached form. The word i'rab assigns it the accusative position as the ism of la'alla.
+- **7:176:** The Ibn Kathir field points to grouped commentary at 7:175. The supplied context contains only that ayah's text and translation, so the tafsir summary is based on the supplied Muyassar and Sa'di texts.
+- **7:177:3:** Followed QAC i‘rab: الْقَوْمُ is khabar of an elided mubtada (هم القوم), the makhsus bi-l-dhamm explaining the blame clause; the fa‘il of سَاءَ is a hidden pronoun explained by the tamyiz مَثَلًا. Meaningfully an elided mudaf is understood (مَثَلُ القوم), as the Muyassar paraphrase shows. Alternative analysis (not used): الْقَوْمُ as delayed mubtada with the blame clause as its fronted khabar.
+- **7:177:4:** QAC i‘rab gives only «اسم موصول»; the lesson treats الَّذِينَ as na‘t of الْقَوْمُ in محل رفع (standard analysis) and the clause كانوا يظلمون as part of its sila via ‘atf on كذبوا, per the ayah note.
+- **7:177:7:** QAC labels أَنفُسَ “feminine plural”; it is a broken plural (أَفْعُل of نَفْس), tagged broken-plural. The remark that the fronting of the object stresses that they wronged only themselves is a standard rhetorical reading, not stated in the provided tafsir.
+- **7:178:1:** QAC ayah note: «من» اسم شرط مفعول به (object of يَهْدِ). The second مَن (7:178:6) is analysed in parallel as fronted object of يُضْلِلْ; the ayah note does not state this explicitly.
+- **7:178:2:** QAC/Quran.com gloss “(is) guided” is misleading: يَهْدِ is active (Allah guides), with ٱللَّهُ as fa‘il; QAC morphology confirms active jussive. Lesson follows the morphology.
+- **7:178:5:** Root entry ه د ي notes that ٱلْمُهْتَدِ is written and read without yā’ in Hafs; that applies to other ayahs (e.g. 18:17). Here (7:178) the yā’ is written and read; the lesson says so and tags implied-case for the implied damma on the manqus yā’. The shared root note may need clarification so it does not appear to describe this occurrence.
+- **7:178:9:** Followed QAC: هُمُ is ضمير فصل with no syntactic position. Alternative: هُمْ as a second mubtada with الخاسرون its khabar and the clause khabar of أولئك.
+- **7:178:8:** Singular فَهُوَ (first answer) versus plural فَأُو۟لَـٰٓئِكَ (second answer) explained as regard for the wording vs. the general meaning of مَنْ; this is a standard grammatical explanation, not taken from the provided tafsir.
+- **7:178:** Tafsir summary includes the hadith wording that Ibn Kathir cites (من يهده الله فلا مضل له ومن يضلل فلا هادي له), described only as “a hadith” as in the provided source.
+- **7:179:1:** QAC i'rab calls the lam simply لام التوكيد; the ayah grammar note calls «لقد ذرأنا» جواب القسم, so the lam is presented as the lam of an implied oath's answer.
+- **7:179:3:** The lam of لِجَهَنَّمَ is glossed as 'for' and attached to ذرأنا per the i'rab. Some grammarians/mufassirun read it as lam al-'aqiba (outcome); the provided tafsir explains it by Allah's foreknowledge of their deeds (Ibn Kathir) and by their deeds of the people of the Fire (Sa'di). The diptote reason (proper name + feminine) is the standard one; QAC gives no gender for this PN.
+- **7:179:4:** Followed QAC (object, اسم منصوب). Some i'rab works treat كثيرا as the adjective of an elided object (خلقا كثيرا); meaning unchanged.
+- **7:179:9:** QAC labels قلوب, أعين and آذان 'feminine plural'; they are broken plurals (non-human plurals treated as feminine singular, hence the pronoun ها), so broken-plural is used rather than feminine-plural.
+- **7:179:24:** Followed QAC (كَ preposition; jar-majrur attached to an elided khabar). Some i'rab works also allow the kaf to be a noun meaning مثل serving directly as khabar.
+- **7:179:27:** أضل is an elative noun (QAC N) with the compared term (منها / من الأنعام, per Muyassar and Sa'di) elided; it is diptote (af'al pattern) with merged doubled lam.
+- **7:179:29:** QAC i'rab says only ضمير منفصل. Presented as ضمير فصل (no syntactic position) between the mubtada أولئك and the definite khabar الغافلون; the alternative (second mubtada with الغافلون as its khabar, the clause being khabar of أولئك) is mentioned in syntaxUrdu.
+- **7:179:** The tafsir summary omits Ibn Kathir's cited hadith on the decree (fifty thousand years) for length; it keeps his point that Allah knew their deeds beforehand and Sa'di/Muyassar's points on the senses and the comparison with cattle.
+- **7:180:2:** The shared root library indexes اِسْم under س م و and also records the traditional alternative association with و س م. The packet root is retained.
+- **7:180:4:** QAC morphology and word i‘rab call the prefixed fāʾ resumptive, while the ayah grammar note explicitly coordinates the imperative clause with the preceding nominal clause. The lesson follows the ayah-level analysis.
+- **7:180:6:** The lexeme uses the reconstructed perfect وَذَرَ (a–a) and records the alternative reconstruction وَذِرَ (i–a). The attested imperative is unaffected by that choice.
+- **7:180:8:** The supplied lexeme records the Form I variant يَلْحَدُونَ in another reading. The lesson follows the packet’s Form IV reading.
+- **7:180:11:** QAC morphology labels the wāw generically as a subject pronoun. In this passive it is the نائب الفاعل, as specified by the word i‘rab. The lemma is the active citation form, while the verb note gives the reviewed passive paradigm.
+- **7:180:13:** QAC morphology labels the wāw generically as a subject pronoun. The word i‘rab identifies it specifically as the ism of incomplete kāna.
+- **7:181:** The tafsir states the description generally, while Ibn Kathir reports an application to the Ummah of Muhammad. The Urdu summary presents that application as an attributed view.
+- **7:182:6:** The word-level QAC gloss of the analysis says genitive. The ayah i‘rab specifies the distinction: حَيْثُ is built on ḍamma and occupies a genitive position after مِنْ.
+- **7:184:1:** QAC treats the wāw after interrogative hamza as supplemental here and at 7:185:1. Coordination with the preceding discourse is an alternative.
+- **7:184:2:** The QAC ayah note gives the following negative clause direct-object status through semantic inclusion of knowing in the verb of reflection. It explicitly rejects treating the clause as governed by an elided preposition.
+- **7:184:6:** The word-level genitive is the overt case after supplemental min. The QAC ayah note supplies the underlying nominative position as delayed mubtada.
+- **7:185:8:** The English word-by-word gloss uses a passive rendering across words 8–9. The Arabic verb and QAC morphology are active, with Allah as the overt subject.
+- **7:185:12:** The word-level SUB label is broad. The QAC ayah note specifies lightened anna, with an implicit pronoun of matter, distinct from the subjunctive-governing an at 7:185:14.
+- **7:185:15:** QAC prefers an implicit pronoun of matter as the ism of yakūna and the full qad-clause as its khabar. It considers the alternative with the overt ajal as a delayed ism and the preceding verbal clause as khabar weaker.
+- **7:185:19:** The word-specific i‘rab and QAC REM label give resumptive fāʾ. An alternative supplies an implied condition, ‘if they do not believe in this Quran,’ and reads the fāʾ as its answer marker.
+- **7:186:2:** The English glosses sound passive, but the QAC morphology and vocalization give an active Form IV verb with Allah as the nominative subject. The final kasra is for liaison, while the conditional verb remains jussive.
+- **7:186:4:** The word-level i'rab writes أن in its shorthand description of the negative particle. Read this as إنّ-type government by generic lā, consistent with the QAC SP feature.
+- **7:186:5:** QAC labels the participle accusative. More precisely, as the simple ism of generic lā it is built on the visible fatḥa in the accusative position.
+- **7:186:7:** The lesson follows the reviewed reconstructed past وَذَرَ (fataḥa pattern). Al-Jawhari's وَذِرَ (samiʿa pattern) is the alternative recorded in the lexeme; the attested present is the same.
+- **7:186:8:** The supplied i'rab does not specify the attachment of the second prepositional phrase. The lesson attaches it to the verb of wandering; attachment to the verb of leaving is also possible.
+- **7:186:10:** The lesson uses the reviewed past عَمِهَ. Some lexica also give عَمَهَ, with the same present يَعْمَهُ.
+- **7:187:5:** QAC tags a form-IV passive participle. The lesson retains that derivational shape and teaches the contextual time-noun reading supported by the packet root entry and glosses. An event reading as a mīm-prefixed verbal noun, its coming to rest, also yields a question about when it will occur.
+- **7:187:16:** Muyassar emphasizes the concealed timing. Sa'di includes both concealment and the gravity of the Hour, and Ibn Kathir transmits explanations emphasizing either. The tafsir summary preserves both emphases.
+- **7:187:24:** The ayah note groups the repeated question with the resumed clauses. Both supplied translations place it outside the first direct quotation, consistent with the return to addressing the Prophet. The word lesson describes it as a new clause without assigning quotation scope.
+- **7:187:25:** QAC's generic object-pronoun gloss for the suffix is overridden syntactically by its own word i'rab, which makes the suffix the ism of ka'anna.
+- **7:187:26:** The gloss follows the well-informed reading favored by Ibn Kathir and both translations. Muyassar and Sa'di stress diligent inquiry, and Ibn Kathir also reports a reading about familiarity or friendship with the questioners.
+- **7:187:27:** QAC's generic object-pronoun gloss describes a suffix governed here by the preposition, hence in a genitive position. The lesson attaches the phrase to the preceding adjective on the well-informed reading.
+- **7:187:33:** QAC morphology and word i'rab label the waw resumptive. The ayah-level i'rab calls the whole clause coordinated with the quoted statement. The prefix label follows the word analysis and the syntax notes the ayah-level coordination.
+- **7:188:8:** The ayah i'rab explicitly reads the first illa as a connected exception from the stated benefit and harm. The later illa at word 24 is restrictive and leaves the predicate nominative.
+- **7:188:12:** QAC tags the prefixed waw REM and the word i'rab calls it resumptive, whereas the ayah i'rab coordinates the conditional with the preceding reported speech. The lesson follows the ayah-level analysis and keeps the conditional inside the quotation.
+- **7:188:14:** The shared ayn-lam-mim note describes the af'alu shape as an elative in the guide's original surah set. At 7:188:14 it is the first-person singular imperfect of alima and takes an explicit direct object. Keep the shared generalization scoped to its original examples.
+- **7:188:18:** The tafsir summary preserves the broad reading of good as benefits and the narrower interpretation as wealth reported by Ibn Kathir.
+- **7:188:27:** The packet i'rab identifies a prepositional phrase without specifying its attachment. The lesson attaches it to the nearer predicate, bashir, while preserving the tafsir's point that believers benefit from both warning and glad tidings.
+- **7:189:12:** The ayah i‘rab coordinates the first lamma conditional construction with the clause of jaʿala. The word i‘rab and raw QAC tag instead treat its prefixed fa as resumptive. The lesson follows the ayah-level attachment here and the word i‘rab on the second fa (7:189:19).
+- **7:189:13:** Applied the packet correction: raw QAC and the generated i‘rab call this imperfect, but the vocalized Form V occurrence is active 3MS perfect, built on an implied fatha, with ha as direct object. The 3MS imperfect would have prefixed ya.
+- **7:189:15:** The ayah i‘rab explicitly takes hamlan as direct object, denoting the burden carried. A cognate-accusative reading takes it as the verbal noun describing the manner of carrying.
+- **7:189:18:** The translation follows the reading in both translations and the supplied tafsir that she went about with the light pregnancy. Ibn Kathir also transmits explanations stressing its continuation, its initially unnoticed state, or its eventual becoming apparent.
+- **7:189:23:** The short word i‘rab supplies the accusative and the possessive relation. The lesson reads rabbahuma as badal of the divine name; explanatory apposition (ʿatf bayan) is also possible.
+- **7:189:26:** The ayah i‘rab assigns salihan the second-object slot. The translation makes the understood child explicit and follows Muyassar and Sa‘di on soundness of form; Ibn Kathir also records the narrower reading of a boy.
+- **7:189:27:** The ayah i‘rab assigns the clause to the oath; its sense supplies the omitted conditional answer. The imperfect is built on fatha because the heavy emphatic nun is attached directly.
+- **7:190:2:** Applied the packet correction: QAC and generated i‘rab read first-person singular imperfect. The vocalized Form IV verb is third-person masculine singular active perfect with Allah as its hidden subject, the dual pronoun as first object and the following participle as second object.
+- **7:190:4:** Raw QAC tags third-person masculine singular. The final alif in the vocalized perfect is the dual subject pronoun, so the form is third-person masculine dual.
+- **7:190:7:** The wording treats the phrase as specifying the matter of the ascription. The ayah-level QAC note specifies the attachment of the earlier lam phrase, without giving a separate attachment for this phrase.
+- **7:190:8:** Applied the packet correction: the relative clause contains the Form IV third-person masculine singular active perfect, despite the raw imperfect tag and generated i‘rab. The dual pronoun is the first object and the resumptive second object is elided.
+- **7:190:9:** Applied the packet correction and reviewed lexeme paradigm: Form VI rather than raw QAC Form I. The lexeme key remains unchanged.
+- **7:190:11:** Followed QAC’s relative analysis with an elided resumptive object. A masdariyya reading would yield the sense ‘above their ascribing partners’.
+- **7:190:** The translation follows the third-person singular Arabic in the opening verb and preserves the shift from dual to plural. The tafsir follows Sa‘di’s explanation of the shift to the descendants in the discussion of shirk. Ibn Kathir’s excerpt for this ayah is a grouped-commentary pointer.
+- **7:193:1:** The word-level QAC tag and generated i‘rab call the waw resumptive, but the ayah-level i‘rab explicitly coordinates this conditional with the preceding clause. The lesson follows the ayah-level note.
+- **7:193:2:** The surface waw is the plural subject marker. The radical waw has dropped in forming the plural stem, and the indicative nun is separately removed by conditional jussive.
+- **7:193:8:** QAC’s English ‘object pronoun’ label is generic for this suffix. The governing preposition puts the pronoun in the genitive position.
+- **7:193:9:** QAC describes the equalization clause as independently opened and its nominal counterpart as coordinated, with no independent clause-level case. In the higher construction their nominalized sense is the delayed subject. The waw after the plural subject suffix is lengthening, not an additional pronoun.
+- **7:193:12:** The QAC lemma is plural. The lesson uses the singular dictionary form given in the root entry.
+- **7:193:** The tafsir follows Muyassar, Sa‘di and the grouped Ibn Kathir excerpt in taking the referents as idols and the addressees as their worshippers. Sahih International supplies ‘believers’ as an interpretive gloss. The translation leaves the addressees implicit and follows the Arabic second-person form in ‘for you’ where Taqi Usmani has ‘for them’.
+- **7:194:8:** QAC lemmatizes the plural as مَثَل. The contextual sense “like, counterpart” supports مِثْل, whose plural is also أَمْثَال. The ayah note makes it an indefinite adjective despite the pronominal idafa.
+- **7:194:9:** The word-level QAC tag and i‘rab call the fa resumptive. The ayah-level i‘rab coordinates this imperative clause with the opening independent sentence, so the lesson treats the fa as conjunctive.
+- **7:194:10:** The word-level QAC tag and i‘rab call the fa resumptive. The ayah-level i‘rab coordinates this clause with the preceding imperative. The lam governs the jussive independently of the later condition.
+- **7:194:12:** The final conditional has an understood answer indicated by the preceding challenge. The preceding imperatives retain the coordination described in the ayah-level i‘rab.
+- **7:195:3:** The QAC lemma carries a shadda from assimilation in another context. The verified Form I citation form is مَشَى.
+- **7:195:5:** The word-level QAC tag and i‘rab mark all three occurrences of أَمْ (5, 10, 15) as conjunctions. The ayah-level i‘rab treats them as disconnected particles with the force of بَلْ plus a question hamza, each introducing a fresh question.
+- **7:195:7:** The kasratan does not indicate genitive here. The ayah i‘rab explicitly gives an implied nominative damma on the omitted final ya.
+- **7:195:8:** The lesson uses the verified Hafs pattern بَطَشَ / يَبْطِشُ. The lexeme also records the alternative u-vowel imperfect in the lexica and Abu Ja‘far’s reading.
+- **7:195:24:** The ayah i‘rab distinguishes the written protective nun from the elided first-person object ya represented by the final QAC suffix tag. The citation form كَادَ / يَكِيدُ follows the verified lexeme.
+- **7:195:25:** The word-level QAC tag and i‘rab label the fa resumptive. The ayah-level i‘rab calls it conjunctive, coordinating the prohibition with the preceding command.
+- **7:195:26:** The raw lemma label looks passive. The vocalized occurrence and verified Form IV paradigm are active. The nun of the five verbs drops after prohibitive لا, while the protective nun remains before the elided object ya.
+- **7:196:4:** The word-level i‘rab only identifies the relative. The lesson reads it as a nominative modifier of the divine name.
+- **7:196:7:** The lesson follows the verse-level QAC i‘rab in coordinating the nominal clause with the relative clause. Both clauses have no syntactic position.
+- **7:197:2:** The word-level i‘rab gives the overt subject but does not spell out the elided direct-object resumptive pronoun, understood as هُمْ in the relative clause.
+- **7:197:9:** The short i‘rab identifies the accusative noun. Its governor is the following verb, so the lesson treats it as a fronted direct object.
+- **7:198:7:** Muyassar and Sa‘di’s first reading take the pronouns in the looking and seeing clause as referring to the idols. Sa‘di also reports a reading in which they refer to the deniers, who look at the Prophet without recognizing his truthfulness.
+- **7:198:8:** QAC prints a leading shadda in the lemma. The reviewed lexeme identifies it as an assimilation artifact and gives the citation form نَظَرَ.
+- **7:198:9:** QAC English uses ‘object pronoun’ for the suffix. The Arabic i‘rab makes it the complement of the preposition, in the genitive position.
+- **7:199:2:** The translation uses pardon and forbearance, foregrounded by Taqi Usmani and several reports in Ibn Kathir. The tafsir also gives the reading emphasized by Muyassar and Sa'di, accepting what people willingly offer.
+- **7:200:1:** The word-level QAC tags and generated i'rab call the waw resumptive. The ayah-level i'rab treats it as coordinating this conditional with the preceding command to turn away, which the lesson follows.
+- **7:200:2:** The QAC occurrence leaves mood untagged and its lemma displays an anomalous initial shadda. The lesson follows the ayah i'rab for fatha with direct emphatic nun and local jussive under conditional in, and the verified paradigm for the dictionary lemma.
+- **7:200:8:** QAC's English label 'object pronoun' is generic here. The word i'rab identifies the attached ha as the ism of inna, in the accusative position.
+- **7:200:10:** The lesson follows the word i'rab and QAC adjective tag by teaching this as an adjective of the first predicate. A second-predicate analysis is also possible.
+- **7:201:10:** The word-level QAC tags and generated i'rab call the fa resumptive. The ayah-level i'rab coordinates the nominal clause with the conditional answer, which the lesson follows.
+- **7:202:7:** The primary explanation takes the subject to be the devils, who persist in incitement. The tafsir also records a reading that includes both the devils and their human followers, each persisting in its own action.
+- **7:203:7:** The contextual gloss follows the 'devise it yourself' reading. Sa‘di also gives 'choose the requested sign'; Ibn Kathir records the alternative of seeking a sign from Allah.
+- **7:203:12:** Applied the packet correction: raw QAC and the generated i‘rab mark the Form IV passive imperfect as subjunctive. With no governor of naṣb in the relative clause it is indicative, with a ḍamma implied on the final alif.
+- **7:203:13:** QAC lists a first-person suffix with an empty surface string. The two yāʾs are represented by one written letter with shadda, so the preposition and pronoun share one learner segment.
+- **7:203:16:** Following the ayah i‘rab, the new nominal sentence remains within the scope of the commanded speech.
+- **7:203:17:** QAC gives an MP tag. The lesson identifies the noun as the nonhuman broken plural of بَصِيرَة on the diptote pattern فَعَائِل.
+- **7:204:1:** QAC labels this occurrence a conditional noun (COND), whereas the parallel word at 7:203:1 is tagged T. Both are taught as non-jussive conditional time adverbs.
+- **7:204:3:** The packet groups the proper name under ق ر أ. The lesson preserves the root entry's caution that the name's derivation is disputed.
+- **7:204:6:** The QAC stem lemma reflects an inflected form. The dictionary lemma follows the verified Form IV paradigm أَنْصَتَ يُنْصِتُ.
+- **7:205:5:** The ayah i‘rab takes the verbal noun as maf‘ūl li-ajlih, with the following fear noun coordinated to it. The Urdu renders the circumstances idiomatically, which can also be expressed by a ḥāl paraphrase.
+- **7:205:11:** QAC gives a masculine noun without an explicit number tag for ghuduww. The lesson treats it as a morning time expression and avoids assigning a specific singular or plural analysis.
+- **7:206:8:** The packet lemma ends in open tāʾ. The lesson uses the standalone dictionary form with tāʾ marbūṭa and preserves the open tāʾ of the suffixed Quranic occurrence.
+- **7:206:9:** QAC morphology and word i‘rab take the wāw of glorification as resumptive. The ayah i‘rab coordinates the final prostration clause directly to the negated predicate, placing that final clause in the nominative syntactic slot.
+
+## Per-ayah sources
+
+- **7:1:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=1); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=1); [Quran.com](https://quran.com/7/1).
+- **7:2:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=2); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=2); [Quran.com](https://quran.com/7/2).
+- **7:3:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=3); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=3); [Quran.com](https://quran.com/7/3).
+- **7:4:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=4); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=4); [Quran.com](https://quran.com/7/4).
+- **7:5:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=5); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=5); [Quran.com](https://quran.com/7/5).
+- **7:6:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=6); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=6); [Quran.com](https://quran.com/7/6).
+- **7:7:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=7); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=7); [Quran.com](https://quran.com/7/7).
+- **7:8:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=8); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=8); [Quran.com](https://quran.com/7/8).
+- **7:9:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=9); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=9); [Quran.com](https://quran.com/7/9).
+- **7:10:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=10); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=10); [Quran.com](https://quran.com/7/10).
+- **7:11:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=11); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=11); [Quran.com](https://quran.com/7/11).
+- **7:12:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=12); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=12); [Quran.com](https://quran.com/7/12).
+- **7:13:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=13); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=13); [Quran.com](https://quran.com/7/13).
+- **7:14:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=14); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=14); [Quran.com](https://quran.com/7/14).
+- **7:15:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=15); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=15); [Quran.com](https://quran.com/7/15).
+- **7:16:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=16); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=16); [Quran.com](https://quran.com/7/16).
+- **7:17:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=17); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=17); [Quran.com](https://quran.com/7/17).
+- **7:18:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=18); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=18); [Quran.com](https://quran.com/7/18).
+- **7:19:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=19); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=19); [Quran.com](https://quran.com/7/19).
+- **7:20:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=20); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=20); [Quran.com](https://quran.com/7/20).
+- **7:21:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=21); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=21); [Quran.com](https://quran.com/7/21).
+- **7:22:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=22); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=22); [Quran.com](https://quran.com/7/22).
+- **7:23:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=23); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=23); [Quran.com](https://quran.com/7/23).
+- **7:24:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=24); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=24); [Quran.com](https://quran.com/7/24).
+- **7:25:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=25); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=25); [Quran.com](https://quran.com/7/25).
+- **7:26:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=26); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=26); [Quran.com](https://quran.com/7/26).
+- **7:27:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=27); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=27); [Quran.com](https://quran.com/7/27).
+- **7:28:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=28); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=28); [Quran.com](https://quran.com/7/28).
+- **7:29:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=29); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=29); [Quran.com](https://quran.com/7/29).
+- **7:30:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=30); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=30); [Quran.com](https://quran.com/7/30).
+- **7:31:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=31); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=31); [Quran.com](https://quran.com/7/31).
+- **7:32:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=32); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=32); [Quran.com](https://quran.com/7/32).
+- **7:33:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=33); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=33); [Quran.com](https://quran.com/7/33).
+- **7:34:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=34); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=34); [Quran.com](https://quran.com/7/34).
+- **7:35:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=35); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=35); [Quran.com](https://quran.com/7/35).
+- **7:36:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=36); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=36); [Quran.com](https://quran.com/7/36).
+- **7:37:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=37); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=37); [Quran.com](https://quran.com/7/37).
+- **7:38:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=38); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=38); [Quran.com](https://quran.com/7/38).
+- **7:39:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=39); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=39); [Quran.com](https://quran.com/7/39).
+- **7:40:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=40); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=40); [Quran.com](https://quran.com/7/40).
+- **7:41:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=41); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=41); [Quran.com](https://quran.com/7/41).
+- **7:42:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=42); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=42); [Quran.com](https://quran.com/7/42).
+- **7:43:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=43); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=43); [Quran.com](https://quran.com/7/43).
+- **7:44:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=44); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=44); [Quran.com](https://quran.com/7/44).
+- **7:45:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=45); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=45); [Quran.com](https://quran.com/7/45).
+- **7:46:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=46); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=46); [Quran.com](https://quran.com/7/46).
+- **7:47:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=47); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=47); [Quran.com](https://quran.com/7/47).
+- **7:48:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=48); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=48); [Quran.com](https://quran.com/7/48).
+- **7:49:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=49); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=49); [Quran.com](https://quran.com/7/49).
+- **7:50:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=50); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=50); [Quran.com](https://quran.com/7/50).
+- **7:51:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=51); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=51); [Quran.com](https://quran.com/7/51).
+- **7:52:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=52); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=52); [Quran.com](https://quran.com/7/52).
+- **7:53:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=53); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=53); [Quran.com](https://quran.com/7/53).
+- **7:54:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=54); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=54); [Quran.com](https://quran.com/7/54).
+- **7:55:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=55); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=55); [Quran.com](https://quran.com/7/55).
+- **7:56:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=56); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=56); [Quran.com](https://quran.com/7/56).
+- **7:57:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=57); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=57); [Quran.com](https://quran.com/7/57).
+- **7:58:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=58); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=58); [Quran.com](https://quran.com/7/58).
+- **7:59:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=59); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=59); [Quran.com](https://quran.com/7/59).
+- **7:60:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=60); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=60); [Quran.com](https://quran.com/7/60).
+- **7:61:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=61); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=61); [Quran.com](https://quran.com/7/61).
+- **7:62:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=62); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=62); [Quran.com](https://quran.com/7/62).
+- **7:63:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=63); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=63); [Quran.com](https://quran.com/7/63).
+- **7:64:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=64); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=64); [Quran.com](https://quran.com/7/64).
+- **7:65:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=65); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=65); [Quran.com](https://quran.com/7/65).
+- **7:66:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=66); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=66); [Quran.com](https://quran.com/7/66).
+- **7:67:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=67); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=67); [Quran.com](https://quran.com/7/67).
+- **7:68:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=68); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=68); [Quran.com](https://quran.com/7/68).
+- **7:69:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=69); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=69); [Quran.com](https://quran.com/7/69).
+- **7:70:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=70); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=70); [Quran.com](https://quran.com/7/70).
+- **7:71:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=71); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=71); [Quran.com](https://quran.com/7/71).
+- **7:72:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=72); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=72); [Quran.com](https://quran.com/7/72).
+- **7:73:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=73); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=73); [Quran.com](https://quran.com/7/73).
+- **7:74:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=74); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=74); [Quran.com](https://quran.com/7/74).
+- **7:75:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=75); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=75); [Quran.com](https://quran.com/7/75).
+- **7:76:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=76); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=76); [Quran.com](https://quran.com/7/76).
+- **7:77:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=77); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=77); [Quran.com](https://quran.com/7/77).
+- **7:78:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=78); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=78); [Quran.com](https://quran.com/7/78).
+- **7:79:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=79); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=79); [Quran.com](https://quran.com/7/79).
+- **7:80:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=80); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=80); [Quran.com](https://quran.com/7/80).
+- **7:81:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=81); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=81); [Quran.com](https://quran.com/7/81).
+- **7:82:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=82); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=82); [Quran.com](https://quran.com/7/82).
+- **7:83:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=83); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=83); [Quran.com](https://quran.com/7/83).
+- **7:84:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=84); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=84); [Quran.com](https://quran.com/7/84).
+- **7:85:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=85); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=85); [Quran.com](https://quran.com/7/85).
+- **7:86:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=86); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=86); [Quran.com](https://quran.com/7/86).
+- **7:87:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=87); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=87); [Quran.com](https://quran.com/7/87).
+- **7:88:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=88); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=88); [Quran.com](https://quran.com/7/88).
+- **7:89:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=89); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=89); [Quran.com](https://quran.com/7/89).
+- **7:90:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=90); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=90); [Quran.com](https://quran.com/7/90).
+- **7:91:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=91); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=91); [Quran.com](https://quran.com/7/91).
+- **7:92:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=92); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=92); [Quran.com](https://quran.com/7/92).
+- **7:93:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=93); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=93); [Quran.com](https://quran.com/7/93).
+- **7:94:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=94); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=94); [Quran.com](https://quran.com/7/94).
+- **7:95:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=95); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=95); [Quran.com](https://quran.com/7/95).
+- **7:96:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=96); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=96); [Quran.com](https://quran.com/7/96).
+- **7:97:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=97); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=97); [Quran.com](https://quran.com/7/97).
+- **7:98:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=98); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=98); [Quran.com](https://quran.com/7/98).
+- **7:99:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=99); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=99); [Quran.com](https://quran.com/7/99).
+- **7:100:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=100); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=100); [Quran.com](https://quran.com/7/100).
+- **7:101:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=101); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=101); [Quran.com](https://quran.com/7/101).
+- **7:102:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=102); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=102); [Quran.com](https://quran.com/7/102).
+- **7:103:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=103); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=103); [Quran.com](https://quran.com/7/103).
+- **7:104:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=104); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=104); [Quran.com](https://quran.com/7/104).
+- **7:105:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=105); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=105); [Quran.com](https://quran.com/7/105).
+- **7:106:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=106); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=106); [Quran.com](https://quran.com/7/106).
+- **7:107:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=107); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=107); [Quran.com](https://quran.com/7/107).
+- **7:108:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=108); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=108); [Quran.com](https://quran.com/7/108).
+- **7:109:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=109); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=109); [Quran.com](https://quran.com/7/109).
+- **7:110:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=110); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=110); [Quran.com](https://quran.com/7/110).
+- **7:111:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=111); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=111); [Quran.com](https://quran.com/7/111).
+- **7:112:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=112); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=112); [Quran.com](https://quran.com/7/112).
+- **7:113:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=113); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=113); [Quran.com](https://quran.com/7/113).
+- **7:114:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=114); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=114); [Quran.com](https://quran.com/7/114).
+- **7:115:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=115); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=115); [Quran.com](https://quran.com/7/115).
+- **7:116:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=116); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=116); [Quran.com](https://quran.com/7/116).
+- **7:117:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=117); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=117); [Quran.com](https://quran.com/7/117).
+- **7:118:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=118); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=118); [Quran.com](https://quran.com/7/118).
+- **7:119:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=119); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=119); [Quran.com](https://quran.com/7/119).
+- **7:120:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=120); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=120); [Quran.com](https://quran.com/7/120).
+- **7:121:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=121); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=121); [Quran.com](https://quran.com/7/121).
+- **7:122:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=122); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=122); [Quran.com](https://quran.com/7/122).
+- **7:123:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=123); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=123); [Quran.com](https://quran.com/7/123).
+- **7:124:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=124); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=124); [Quran.com](https://quran.com/7/124).
+- **7:125:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=125); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=125); [Quran.com](https://quran.com/7/125).
+- **7:126:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=126); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=126); [Quran.com](https://quran.com/7/126).
+- **7:127:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=127); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=127); [Quran.com](https://quran.com/7/127).
+- **7:128:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=128); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=128); [Quran.com](https://quran.com/7/128).
+- **7:129:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=129); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=129); [Quran.com](https://quran.com/7/129).
+- **7:130:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=130); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=130); [Quran.com](https://quran.com/7/130).
+- **7:131:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=131); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=131); [Quran.com](https://quran.com/7/131).
+- **7:132:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=132); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=132); [Quran.com](https://quran.com/7/132).
+- **7:133:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=133); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=133); [Quran.com](https://quran.com/7/133).
+- **7:134:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=134); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=134); [Quran.com](https://quran.com/7/134).
+- **7:135:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=135); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=135); [Quran.com](https://quran.com/7/135).
+- **7:136:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=136); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=136); [Quran.com](https://quran.com/7/136).
+- **7:137:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=137); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=137); [Quran.com](https://quran.com/7/137).
+- **7:138:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=138); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=138); [Quran.com](https://quran.com/7/138).
+- **7:139:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=139); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=139); [Quran.com](https://quran.com/7/139).
+- **7:140:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=140); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=140); [Quran.com](https://quran.com/7/140).
+- **7:141:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=141); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=141); [Quran.com](https://quran.com/7/141).
+- **7:142:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=142); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=142); [Quran.com](https://quran.com/7/142).
+- **7:143:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=143); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=143); [Quran.com](https://quran.com/7/143).
+- **7:144:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=144); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=144); [Quran.com](https://quran.com/7/144).
+- **7:145:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=145); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=145); [Quran.com](https://quran.com/7/145).
+- **7:146:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=146); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=146); [Quran.com](https://quran.com/7/146).
+- **7:147:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=147); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=147); [Quran.com](https://quran.com/7/147).
+- **7:148:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=148); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=148); [Quran.com](https://quran.com/7/148).
+- **7:149:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=149); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=149); [Quran.com](https://quran.com/7/149).
+- **7:150:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=150); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=150); [Quran.com](https://quran.com/7/150).
+- **7:151:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=151); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=151); [Quran.com](https://quran.com/7/151).
+- **7:152:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=152); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=152); [Quran.com](https://quran.com/7/152).
+- **7:153:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=153); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=153); [Quran.com](https://quran.com/7/153).
+- **7:154:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=154); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=154); [Quran.com](https://quran.com/7/154).
+- **7:155:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=155); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=155); [Quran.com](https://quran.com/7/155).
+- **7:156:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=156); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=156); [Quran.com](https://quran.com/7/156).
+- **7:157:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=157); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=157); [Quran.com](https://quran.com/7/157).
+- **7:158:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=158); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=158); [Quran.com](https://quran.com/7/158).
+- **7:159:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=159); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=159); [Quran.com](https://quran.com/7/159).
+- **7:160:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=160); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=160); [Quran.com](https://quran.com/7/160).
+- **7:161:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=161); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=161); [Quran.com](https://quran.com/7/161).
+- **7:162:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=162); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=162); [Quran.com](https://quran.com/7/162).
+- **7:163:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=163); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=163); [Quran.com](https://quran.com/7/163).
+- **7:164:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=164); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=164); [Quran.com](https://quran.com/7/164).
+- **7:165:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=165); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=165); [Quran.com](https://quran.com/7/165).
+- **7:166:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=166); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=166); [Quran.com](https://quran.com/7/166).
+- **7:167:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=167); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=167); [Quran.com](https://quran.com/7/167).
+- **7:168:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=168); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=168); [Quran.com](https://quran.com/7/168).
+- **7:169:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=169); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=169); [Quran.com](https://quran.com/7/169).
+- **7:170:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=170); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=170); [Quran.com](https://quran.com/7/170).
+- **7:171:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=171); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=171); [Quran.com](https://quran.com/7/171).
+- **7:172:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=172); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=172); [Quran.com](https://quran.com/7/172).
+- **7:173:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=173); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=173); [Quran.com](https://quran.com/7/173).
+- **7:174:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=174); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=174); [Quran.com](https://quran.com/7/174).
+- **7:175:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=175); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=175); [Quran.com](https://quran.com/7/175).
+- **7:176:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=176); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=176); [Quran.com](https://quran.com/7/176).
+- **7:177:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=177); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=177); [Quran.com](https://quran.com/7/177).
+- **7:178:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=178); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=178); [Quran.com](https://quran.com/7/178).
+- **7:179:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=179); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=179); [Quran.com](https://quran.com/7/179).
+- **7:180:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=180); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=180); [Quran.com](https://quran.com/7/180).
+- **7:181:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=181); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=181); [Quran.com](https://quran.com/7/181).
+- **7:182:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=182); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=182); [Quran.com](https://quran.com/7/182).
+- **7:183:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=183); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=183); [Quran.com](https://quran.com/7/183).
+- **7:184:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=184); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=184); [Quran.com](https://quran.com/7/184).
+- **7:185:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=185); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=185); [Quran.com](https://quran.com/7/185).
+- **7:186:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=186); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=186); [Quran.com](https://quran.com/7/186).
+- **7:187:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=187); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=187); [Quran.com](https://quran.com/7/187).
+- **7:188:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=188); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=188); [Quran.com](https://quran.com/7/188).
+- **7:189:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=189); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=189); [Quran.com](https://quran.com/7/189).
+- **7:190:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=190); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=190); [Quran.com](https://quran.com/7/190).
+- **7:191:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=191); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=191); [Quran.com](https://quran.com/7/191).
+- **7:192:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=192); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=192); [Quran.com](https://quran.com/7/192).
+- **7:193:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=193); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=193); [Quran.com](https://quran.com/7/193).
+- **7:194:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=194); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=194); [Quran.com](https://quran.com/7/194).
+- **7:195:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=195); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=195); [Quran.com](https://quran.com/7/195).
+- **7:196:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=196); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=196); [Quran.com](https://quran.com/7/196).
+- **7:197:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=197); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=197); [Quran.com](https://quran.com/7/197).
+- **7:198:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=198); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=198); [Quran.com](https://quran.com/7/198).
+- **7:199:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=199); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=199); [Quran.com](https://quran.com/7/199).
+- **7:200:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=200); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=200); [Quran.com](https://quran.com/7/200).
+- **7:201:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=201); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=201); [Quran.com](https://quran.com/7/201).
+- **7:202:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=202); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=202); [Quran.com](https://quran.com/7/202).
+- **7:203:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=203); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=203); [Quran.com](https://quran.com/7/203).
+- **7:204:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=204); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=204); [Quran.com](https://quran.com/7/204).
+- **7:205:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=205); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=205); [Quran.com](https://quran.com/7/205).
+- **7:206:** [Corpus i‘rab](https://corpus.quran.com/grammar.jsp?chapter=7&verse=206); [word morphology](https://corpus.quran.com/wordbyword.jsp?chapter=7&verse=206); [Quran.com](https://quran.com/7/206).

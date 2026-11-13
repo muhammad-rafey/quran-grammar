@@ -50,6 +50,10 @@
   "mood": "IND",
   "noteEnglish": "QAC tags يَرْضَىٰ subjunctive, but in مَا لَا يَرْضَىٰ the لَا is plain negation inside a relative clause and nothing governs nasb; it is indicative with an implied damma on the alif maqsura."
  },
+ "4:115:6": {
+  "pos": "particle",
+  "noteEnglish": "QAC labels mā relative. The verse i‘rab explicitly treats it as a masdar particle. The interpreted masdar is the genitive complement of the preceding adverb."
+ },
  "4:124:15": {
   "mood": "IND",
   "noteEnglish": "QAC tags يُظْلَمُونَ jussive, but its nun is retained (sign of raf') after negative لَا; it is joined to the nominal answer فَأُو۟لَـٰٓئِكَ يَدْخُلُونَ, which is not in jazm, so it is indicative."
@@ -67,6 +71,10 @@
   "png": "2MP",
   "noteEnglish": "QAC 0.4 tags لَا تَغْلُوا۟ 2nd person dual (the generated i'rab calls the suffix الألف), but it addresses يَـٰٓأَهْلَ ٱلْكِتَـٰبِ (cf. دِينِكُمْ) and the Uthmani unpronounced ا۟ is alif al-fariqa after wāw al-jamā'a: 2MP jussive after prohibitive لَا, nun deleted, the wāw is the subject."
  },
+ "7:16:2": {
+  "pos": "particle",
+  "noteEnglish": "QAC tags the mā of فَبِمَآ relative. The verse i‘rab explicitly reads it as a masdar particle after causal bāʾ. The interpreted masdar is genitive and attaches to the ensuing verb of ambush."
+ },
  "7:17:2": {
   "png": "1S",
   "noteEnglish": "QAC tags لَـَٔاتِيَنَّهُم 2nd person masculine singular, but its prefix is hamza (أَ), the 1st person singular marker: Iblis says 'I will surely come to them'. Its mood stays as tagged: the fatha comes from the energetic nun of the oath answer (mabni), not from subjunctive nasb."
@@ -79,17 +87,48 @@
   "verbForm": "II",
   "noteEnglish": "QAC tags فَدَلَّىٰهُمَا as Form I; the vocalised Hafs word belongs to دَلَّى (Form II), as decided and double-reviewed in the edition-2 verb-paradigm library entry (dal~a|I|ACT). The lexeme handle is kept; follow the reviewed paradigm."
  },
+ "7:27:14": {
+  "passive": false,
+  "lexemeKey": ">arayo|IV|ACT",
+  "noteEnglish": "QAC tags لِيُرِيَهُمَا passive. The vocalized يُرِيَ is active Form IV of أَرَى, subjunctive after purpose lām. The subject refers to Satan, the dual pronoun is the first object, and the following noun is the second object. Use the active paradigm."
+ },
+ "7:35:18": {
+  "lexemeKey": "Hazina|I|ACT",
+  "noteEnglish": "QAC groups this occurrence under the transitive lemma حَزَنَ يَحْزُنُ. The fatḥa on zāy and the intransitive sense of feeling sorrow establish حَزِنَ يَحْزَنُ (Form I, samiʿa class). Preserve the occurrence mood and person."
+ },
+ "7:38:21": {
+  "aspect": "PERF",
+  "png": "3MP",
+  "noteEnglish": "QAC tags ٱدَّارَكُوا۟ as a second-person plural imperative. It follows حَتَّىٰٓ إِذَا and describes successive groups entering together. It is a third-person masculine plural perfect of assimilated Form VI, as recognized by the supplied paradigm."
+ },
  "7:48:9": {
   "verbForm": "IV",
   "noteEnglish": "QAC tags أَغْنَىٰ as Form I; the vocalised Hafs word belongs to أَغْنَى (Form IV), as decided and double-reviewed in the edition-2 verb-paradigm library entry (>agonaY`|I|ACT). The lexeme handle is kept; follow the reviewed paradigm."
  },
+ "7:48:12": {
+  "pos": "particle",
+  "noteEnglish": "QAC tags the mā in وَمَا as relative. The verse i‘rab makes it a masdar particle and coordinates the interpreted masdar with the preceding subject of أَغْنَى. The lesson follows that reading."
+ },
+ "7:49:15": {
+  "lexemeKey": "Hazina|I|ACT",
+  "noteEnglish": "QAC groups this occurrence under the transitive lemma حَزَنَ يَحْزُنُ. The fatḥa on zāy and the intransitive sense of feeling sorrow establish حَزِنَ يَحْزَنُ (Form I, samiʿa class). Preserve the occurrence mood and person."
+ },
+ "7:51:16": {
+  "pos": "particle",
+  "noteEnglish": "QAC tags the mā in وَمَا as relative. The verse i‘rab treats it as a masdar particle and coordinates the interpreted masdar with the preceding interpreted masdar after the kāf. The lesson follows the verse analysis."
+ },
  "7:92:6": {
-  "verbForm": "IV",
-  "noteEnglish": "QAC tags يَغْنَوْا۟ as Form I; the vocalised Hafs word belongs to أَغْنَى (Form IV), as decided and double-reviewed in the edition-2 verb-paradigm library entry (>agonaY`|I|ACT). The lexeme handle is kept; follow the reviewed paradigm."
+  "verbForm": "I",
+  "lexemeKey": "ganiya|I|ACT",
+  "noteEnglish": "The inherited override wrongly assigned أَغْنَى Form IV. The open nūn in يَغْنَوْا۟, the intransitive construction with فِيهَا and the sense of dwelling support غَنِيَ يَغْنَى Form I. QAC correctly tags Form I but gives the wrong lemma handle. The preceding لَمْ makes this plural jussive with omitted nūn."
  },
  "7:143:25": {
   "verbForm": "V",
   "noteEnglish": "QAC tags تَجَلَّىٰ as Form I, but the ta- prefix and doubled middle radical (tafaʿʿala) make it Form V of ج ل و (the Form I verb is جَلَا يَجْلُو). The reviewed paradigm entry under this lexeme handle is written as Form V; raised by the lex-a02 library review."
+ },
+ "7:163:25": {
+  "pos": "particle",
+  "noteEnglish": "The verse i‘rab reads the mā after bāʾ as a masdar particle. The interpreted masdar is genitive and depends on the verb of testing. QAC tags the raw segment as relative."
  },
  "7:189:13": {
   "noteEnglish": "QAC 0.4 tags تَغَشَّىٰهَا as a 3MS imperfect (indicative by default), but it follows فَلَمَّا and a 3MS imperfect of Form V would be يَتَغَشَّىٰ: it is the Form V perfect taghashshā (3MS, active, no mood), with هَا as object. It is not jussive; treat it as a perfect verb (aspect PERF).",
@@ -128,9 +167,29 @@
   "png": "2MS",
   "noteEnglish": "QAC tags تَرَ 3rd person feminine singular; in أَلَمْ تَرَ إِلَىٰ رَبِّكَ it addresses the Prophet (رَبِّكَ), so it is 2nd person masculine singular. The jussive after لَمْ (final alif dropped) is correct."
  },
+ "25:52:2": {
+  "png": "2MS",
+  "noteEnglish": "QAC tags تُطِعِ third person feminine singular. The paired singular imperatives address the Prophet, so this is second person masculine singular after prohibitive lā. Its final kasra is for joining to the next word."
+ },
  "25:53:4": {
   "case": "ACC",
   "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ٱلْبَحْرَيْنِ is the object of مَرَجَ (He released the two seas); the dual ya ending marks the accusative."
+ },
+ "25:59:3": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags ٱلسَّمَـٰوَٰتِ genitive. It is an object of خَلَقَ and takes kasra in the accusative because it is a sound feminine plural."
+ },
+ "25:60:10": {
+  "pos": "particle",
+  "noteEnglish": "QAC tags mā in لِمَا as relative. The verse i‘rab takes the lām as causal and mā as a masdar particle, with a relative reading possible as an alternative. The lesson follows the verse i‘rab."
+ },
+ "29:8:15": {
+  "png": "2MS",
+  "noteEnglish": "QAC tags تُطِعْهُمَآ third person feminine singular. The nearby singular addressee and the instruction to the person whose parents exert pressure require second person masculine singular, jussive after prohibitive lā."
+ },
+ "29:9:4": {
+  "case": "ACC",
+  "noteEnglish": "QAC tags ٱلصَّـٰلِحَـٰتِ genitive. The word is the direct object of عَمِلُوا and takes accusative kasra as a sound feminine plural."
  },
  "29:18:2": {
   "passive": false,
@@ -141,6 +200,10 @@
  "29:30:2": {
   "case": "ACC",
   "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَبِّ (يا محذوفة): an annexed vocative (منادیٰ مضاف) is accusative; the visible kasra signals the first-person ya, so the nasb is implied."
+ },
+ "29:33:15": {
+  "lexemeKey": "Hazina|I|ACT",
+  "noteEnglish": "QAC groups this occurrence under the transitive lemma حَزَنَ يَحْزُنُ. The fatḥa on zāy and the intransitive sense of feeling sorrow establish حَزِنَ يَحْزَنُ (Form I, samiʿa class). Preserve the occurrence mood and person."
  },
  "29:36:6": {
   "case": "ACC",
@@ -182,6 +245,10 @@
  "93:8:3": {
   "verbForm": "IV",
   "noteEnglish": "QAC tags فَأَغْنَىٰ as Form I; the vocalised Hafs word belongs to أَغْنَى (Form IV), as decided and double-reviewed in the edition-2 verb-paradigm library entry (>agonaY`|I|ACT). The lexeme handle is kept; follow the reviewed paradigm."
+ },
+ "98:4:9": {
+  "pos": "particle",
+  "noteEnglish": "The verse i‘rab explicitly reads mā as a masdar particle. The interpreted masdar is the complement of بَعْد, rather than the nominal relative in the raw word tag."
  },
  "99:1:2": {
   "verbForm": "QI",
