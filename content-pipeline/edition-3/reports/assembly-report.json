@@ -1,0 +1,572 @@
+{
+ "errors": [],
+ "warnings": [],
+ "surahs": {
+  "22": {
+   "status": "ok",
+   "words": 1274,
+   "ayahs": 78,
+   "rules": 93,
+   "roots": 328,
+   "verbForms": 280,
+   "phrases": 364,
+   "lemmaVariants": {
+    ">ay~uhaA|None|noun": {
+     "يَا + أَيّ + هَا": 3,
+     "يَا + أَيُّ + هَا": 1,
+     "يَا + أَيّ": 1
+    },
+    "n~aAs|ن و س|noun": {
+     "نَاس": 10,
+     "نَاسٌ": 4,
+     "بِ + نَاس": 1
+    },
+    "rab~|ر ب ب|noun": {
+     "رَبّ": 6,
+     "رَبٌّ": 2
+    },
+    "<in~|None|particle": {
+     "إِنَّ": 26,
+     "فَ + إِنَّ + نَا": 1,
+     "إِنَّ + هَا": 2,
+     "وَ + إِنَّ": 2,
+     "إِنَّ + مَا": 1,
+     "إِنَّ + كَ": 1
+    },
+    "kul~|ك ل ل|noun": {
+     "كُلّ": 10,
+     "كُلٌّ": 1
+    },
+    "Ean|None|particle": {
+     "عَنْ + مَا": 1,
+     "عَنْ": 4
+    },
+    "suka`raY`|س ك ر|noun": {
+     "سَكْرَان": 1,
+     "بِ + سَكْرَان": 1
+    },
+    "maA|None|particle": {
+     "وَ + مَا": 3,
+     "فَ + مَا": 1,
+     "مَا": 2
+    },
+    "None|None|pronoun": {
+     "هُمْ": 2,
+     "هُوَ": 12,
+     "هِيَ": 3,
+     "أَنَا": 1,
+     "لَ + هُوَ": 1
+    },
+    "Ea*aAb|ع ذ ب|noun": {
+     "عَذَاب": 6,
+     "عَذَابٌ": 3
+    },
+    "{ll~ah|أ ل ه|noun": {
+     "اللَّه": 45,
+     "اللَّهُ": 21,
+     "ٱللَّهُ": 1,
+     "ٱللَّه": 3,
+     "اللّٰه": 2,
+     "وَ + اللّٰه": 1,
+     "لِ + اللّٰه": 1,
+     "بِ + اللَّهُ": 1
+    },
+    "min|None|particle": {
+     "مِنْ": 46,
+     "وَ + مِنْ + كُمْ": 2,
+     "مِنْ + هَا": 3,
+     "مِنْ + مَا": 2,
+     "مِنْ + كُمْ": 1,
+     "مِنْ + هُ": 2,
+     "وَ + مِنْ": 1
+    },
+    "man|None|pronoun": {
+     "مَنْ": 14,
+     "مَن": 2,
+     "لَ + مَنْ": 1,
+     "وَ + مَنْ": 2
+    },
+    "fiY|None|particle": {
+     "فِي": 37,
+     "فِي + هَا": 6,
+     "فِي + هُ": 2,
+     "لَ + فِي": 1,
+     "فِي + مَا": 1,
+     "وَ + فِي": 1
+    },
+    "gayor|غ ي ر|noun": {
+     "غَيْر": 4,
+     "غَيْرٌ": 1
+    },
+    "EalaY`|None|particle": {
+     "عَلَى": 9,
+     "عَلَى + هَا": 1,
+     "عَلَىٰ": 9,
+     "عَلَىٰ + هُ": 1,
+     "عَلَى + كُمْ": 1,
+     "عَلَىٰ + هَا": 1,
+     "عَلَى + هُ": 1,
+     "عَلَىٰ + كُمْ": 2
+    },
+    ">an~|None|particle": {
+     "أَنَّ": 11,
+     "بِ + أَنَّ": 3,
+     "أَنَّ + هُ": 3,
+     "بِ + أَنَّ + هُمْ": 1,
+     "وَ + أَنَّ": 2
+    },
+    "<ilaY`|None|particle": {
+     "إِلَى": 9,
+     "إِلَىٰ": 1,
+     "إِلَى + يَ": 1,
+     "وَ + إِلَى": 1
+    },
+    "<in|None|particle": {
+     "إِنْ": 5,
+     "وَ + إِنْ": 2
+    },
+    "kaAna|ك و ن|verb": {
+     "كَانَ": 6,
+     "لِ + كَانَ": 1
+    },
+    "None|None|particle": {
+     "لِ + كُمْ": 9,
+     "لِ + هُ": 9,
+     "بِ + هُ": 8,
+     "لِ + هُمْ": 7,
+     "بِ + ي": 1,
+     "بِ + هَا": 2,
+     "لِ + هَا": 1
+    },
+    "maA|None|pronoun": {
+     "مَا": 23,
+     "بِ + مَا": 1,
+     "وَ + مَا": 2
+    },
+    ">aroD|أ ر ض|noun": {
+     "أَرْض": 8,
+     "أَرْضٌ": 1
+    },
+    "<i*aA|None|noun": {
+     "فَ + إِذَا": 1,
+     "إِذَا": 4
+    },
+    "*a`lik|None|pronoun": {
+     "ذَٰلِكَ": 12,
+     "ذَلِكَ": 1,
+     "كَ + ذَٰلِكَ": 1,
+     "كَ + ذَلِكَ": 1
+    },
+    "Haq~|ح ق ق|noun": {
+     "حَقّ": 4,
+     "حَقٌّ": 2
+    },
+    "laA|None|particle": {
+     "لَا": 11,
+     "وَ + لَا": 2
+    },
+    "sabiyl|س ب ل|noun": {
+     "سَبِيل": 2,
+     "سَبِيلٌ": 1
+    },
+    "Hariyq|ح ر ق|noun": {
+     "حَرِيق": 1,
+     "حَرِيقٌ": 1
+    },
+    "mawolaY`|و ل ي|noun": {
+     "مَوْلَى": 1,
+     "مَوْلَىٰ": 2
+    },
+    "{l~a*iY|None|pronoun": {
+     "الَّذِي": 18,
+     "الَّذِينَ": 4,
+     "ٱلَّذِينَ": 1,
+     "اَلَّذِينَ": 1,
+     "اَلَّذِي": 1,
+     "الَّتِي": 1,
+     "ٱلَّذِي": 2,
+     "لِ + الَّذِي": 1
+    },
+    "S~a`liHa`t|ص ل ح|noun": {
+     "صَالِحٌ": 1,
+     "صَالِحَة": 2,
+     "صَالِح": 1
+    },
+    "jan~ap|ج ن ن|noun": {
+     "جَنَّةٌ": 1,
+     "جَنَّة": 2
+    },
+    "nahar|ن ه ر|noun": {
+     "نَهَرٌ": 1,
+     "نَهَر": 1
+    },
+    "samaA^'|س م و|noun": {
+     "سَمَاء": 6,
+     "سَمَاءٌ": 1
+    },
+    "$ahiyd|ش ه د|adjective": {
+     "شَهِيد": 1,
+     "شَهِيدٌ": 1
+    },
+    "lam|None|particle": {
+     "أَ + لَمْ": 4,
+     "لَمْ": 2
+    },
+    "naAr|ن و ر|noun": {
+     "نَارٌ": 1,
+     "نَار": 1
+    },
+    "<iboraAhiym|None|noun": {
+     "إِبْرَاهِيم": 2,
+     "إِبْرَاهِيمُ": 1
+    },
+    "{som|س م و|noun": {
+     "اِسْم": 3,
+     "اِسْمٌ": 1
+    },
+    "<ila`h|أ ل ه|noun": {
+     "إِلَٰه + كُمْ": 1,
+     "إِلَٰه": 1
+    },
+    "Salaw`p|ص ل و|noun": {
+     "صَلَاة": 2,
+     "صَلَاةٌ": 2
+    },
+    "la`kin|None|particle": {
+     "وَ + لَكِنْ": 1,
+     "لَكِنْ": 1
+    },
+    "qawiY~|ق و ي|noun": {
+     "قَوِيٌّ": 1,
+     "قَوِيّ": 1
+    },
+    "Eaziyz|ع ز ز|adjective": {
+     "عَزِيزٌ": 1,
+     "عَزِيز": 1
+    },
+    "zakaw`p|ز ك و|noun": {
+     "زَكَاة": 1,
+     "زَكَاةٌ": 1
+    },
+    ">amor|أ م ر|noun": {
+     "أَمْر": 3,
+     "بِ + أَمْر + هِ": 1
+    },
+    "qabol|ق ب ل|noun": {
+     "قَبْل": 2,
+     "قَبْلُ": 1
+    },
+    "ZaAlimap|ظ ل م|noun": {
+     "ظَالِم": 1,
+     "ظَالِمَة": 1
+    },
+    "rasuwl|ر س ل|noun": {
+     "رَسُول": 2,
+     "رَسُولٌ": 1
+    },
+    "samiyE|س م ع|adjective": {
+     "سَمِيعٌ": 1,
+     "سَمِيع": 1
+    },
+    "baSiyr|ب ص ر|adjective": {
+     "بَصِيرٌ": 1,
+     "بَصِير": 1
+    },
+    "naSiyr|ن ص ر|noun": {
+     "نَصِير": 1,
+     "نَصِيرٌ": 1
+    }
+   },
+   "verbLemmaNotActivePast": [
+    [
+     "22:65:15",
+     "وَ + أَمْسَكَ",
+     "أَمْسَكَ"
+    ],
+    [
+     "22:78:25",
+     "لِ + كَانَ",
+     "كَانَ"
+    ]
+   ],
+   "ruleUse": {
+    "genitive": 336,
+    "preposition": 303,
+    "subject-pronoun": 205,
+    "idafa": 201,
+    "nominative": 178,
+    "conjunction": 173,
+    "nominal": 156,
+    "accusative": 151,
+    "derived-form": 146,
+    "imperfect": 142,
+    "definite": 137,
+    "pronoun": 136,
+    "relative": 126,
+    "weak-verb": 106,
+    "perfect": 105,
+    "object": 96,
+    "inna": 91,
+    "proper-noun": 90,
+    "elision": 80,
+    "feminine-marker": 65,
+    "broken-plural": 61,
+    "adjective": 60,
+    "indefinite": 59,
+    "inna-sisters": 59,
+    "participle": 56,
+    "fronting": 51,
+    "haal": 50,
+    "object-pronoun": 47,
+    "subject": 44,
+    "implied-case": 42,
+    "passive": 40,
+    "resumption": 39,
+    "two-objects": 39,
+    "five-verbs": 38,
+    "hamzated": 31,
+    "doubled": 30,
+    "kana": 29,
+    "masdar-particle": 28,
+    "conditional-jazm": 28,
+    "imperative": 27,
+    "jussive": 26,
+    "verbal-sentence": 25,
+    "subjunctive": 25,
+    "condition-answer": 22,
+    "resembling-adjective": 21,
+    "diptote": 20,
+    "negation": 20,
+    "emphatic-lam": 20,
+    "feminine-plural": 20,
+    "demonstrative": 19,
+    "zanna": 16,
+    "adverb": 15,
+    "extra-particle": 15,
+    "sound-plural": 15,
+    "independent-pronoun": 14,
+    "verbal-noun": 14,
+    "intensive": 14,
+    "lam-jussive": 12,
+    "badal": 10,
+    "purpose-lam": 10,
+    "condition": 10,
+    "praise-blame": 10,
+    "interrogative": 9,
+    "quoted-speech": 8,
+    "lan-negation": 8,
+    "exception": 7,
+    "comparative": 6,
+    "imperative-lam": 6,
+    "emphatic-nun": 6,
+    "cognate-object": 6,
+    "vocative": 5,
+    "separating-pronoun": 5,
+    "oath": 5,
+    "noun-of-place-time": 5,
+    "assimilation": 4,
+    "prohibition": 4,
+    "dual": 3,
+    "lightened-particle": 3,
+    "lawla-condition": 3,
+    "restriction": 3,
+    "hatta": 3,
+    "quadriliteral": 2,
+    "pronoun-of-matter": 2,
+    "la-generic": 2,
+    "idh": 2,
+    "number-words": 2,
+    "ishtighal": 2,
+    "qad": 2,
+    "kada-asa": 2,
+    "law-condition": 2,
+    "explanatory-an": 1,
+    "purpose-object": 1,
+    "five-nouns": 1
+   }
+  },
+  "56": {
+   "status": "ok",
+   "words": 379,
+   "ayahs": 96,
+   "rules": 79,
+   "roots": 141,
+   "verbForms": 68,
+   "phrases": 187,
+   "lemmaVariants": {
+    "<i*aA|None|noun": {
+     "إِذَا": 3,
+     "أَ + إِذَا": 1
+    },
+    "fiY|None|particle": {
+     "فِي": 5,
+     "فِي + هَا": 1
+    },
+    "min|None|particle": {
+     "مِنْ": 16,
+     "مِنْ + مَا": 2,
+     "مِنْ + هَا": 1,
+     "مِنْ + كُمْ": 1
+    },
+    ">aw~al|أ و ل|noun": {
+     "أَوَّل": 2,
+     "أَوَّلُ": 1,
+     "أُولَىٰ": 1
+    },
+    "A^xir|أ خ ر|noun": {
+     "آخِر": 2,
+     "آخِرٌ": 1
+    },
+    "EalaY`|None|particle": {
+     "عَلَىٰ": 3,
+     "عَلَىٰ + هَا": 1,
+     "عَلَىٰ + هُمْ": 1,
+     "عَلَىٰ + هُ": 1
+    },
+    "laA|None|particle": {
+     "لَا": 8,
+     "وَ + لَا": 4
+    },
+    "maval|م ث ل|noun": {
+     "مَثَل": 1,
+     "مِثْل": 1
+    },
+    "maA|None|pronoun": {
+     "بِ + مَا": 1,
+     "مَا": 3
+    },
+    "<in~|None|particle": {
+     "إِنَّ + نَا": 2,
+     "إِنَّ + هُمْ": 1,
+     "أَ + إِنَّ + نَا": 1,
+     "إِنَّ": 2,
+     "إِنَّ + كُمْ": 1,
+     "إِنَّ + هُ": 2
+    },
+    "Hamiym|ح م م|noun": {
+     "حَمِيم": 2,
+     "حَمِيمٌ": 1
+    },
+    "EaZiym|ع ظ م|noun": {
+     "عَظْم": 1,
+     "عَظِيم": 1
+    },
+    "<ilaY`|None|particle": {
+     "إِلَىٰ": 1,
+     "إِلَىٰ + هِ": 1
+    },
+    "yawom|ي و م|noun": {
+     "يَوْمٌ": 1,
+     "يَوْم": 1
+    },
+    "m~uka*~ibiyn|ك ذ ب|noun": {
+     "مُكَذِّبٌ": 1,
+     "مُكَذِّب": 1
+    },
+    "None|None|pronoun": {
+     "نَحْنُ": 10,
+     "أَ + أَنْتُمْ": 1,
+     "أَنْتُمْ": 5,
+     "هُوَ": 1
+    },
+    "lawolaA^|None|particle": {
+     "فَ + لَوْلَا": 2,
+     "لَوْلَا": 3
+    },
+    "{l~a*iY|None|pronoun": {
+     "ٱلَّذِي": 1,
+     "الَّتِي": 1
+    }
+   },
+   "verbLemmaNotActivePast": [],
+   "ruleUse": {
+    "genitive": 105,
+    "idafa": 64,
+    "nominative": 63,
+    "subject-pronoun": 61,
+    "preposition": 57,
+    "nominal": 57,
+    "conjunction": 56,
+    "definite": 48,
+    "participle": 47,
+    "adjective": 47,
+    "accusative": 44,
+    "derived-form": 41,
+    "elision": 37,
+    "sound-plural": 37,
+    "perfect": 33,
+    "imperfect": 32,
+    "broken-plural": 31,
+    "weak-verb": 29,
+    "indefinite": 27,
+    "kana": 25,
+    "pronoun": 25,
+    "five-verbs": 25,
+    "two-objects": 23,
+    "object": 20,
+    "feminine-marker": 19,
+    "inna": 19,
+    "independent-pronoun": 17,
+    "negation": 16,
+    "doubled": 16,
+    "interrogative": 16,
+    "relative": 16,
+    "object-pronoun": 12,
+    "resumption": 11,
+    "conditional-jazm": 10,
+    "haal": 9,
+    "hamzated": 9,
+    "emphatic-lam": 9,
+    "exhortation": 9,
+    "verbal-noun": 8,
+    "extra-particle": 8,
+    "law-condition": 7,
+    "condition-answer": 7,
+    "verbal-sentence": 6,
+    "adverb": 6,
+    "detailing": 6,
+    "passive": 5,
+    "demonstrative": 5,
+    "resembling-adjective": 5,
+    "quoted-speech": 5,
+    "condition": 4,
+    "cognate-object": 4,
+    "masdar-particle": 4,
+    "subject": 3,
+    "badal": 3,
+    "tawkid": 3,
+    "assimilation": 3,
+    "exception": 3,
+    "imperative": 3,
+    "parenthetical": 3,
+    "fronting": 2,
+    "diptote": 2,
+    "noun-of-place-time": 2,
+    "proper-noun": 2,
+    "subjunctive": 2,
+    "qad": 2,
+    "oath": 2,
+    "comparative": 2,
+    "inna-sisters": 2,
+    "number-words": 1,
+    "feminine-plural": 1,
+    "quadriliteral": 1,
+    "purpose-object": 1,
+    "vocative": 1,
+    "implied-case": 1,
+    "zanna": 1,
+    "retraction": 1,
+    "restriction": 1,
+    "idh": 1,
+    "lightened-particle": 1
+   }
+  }
+ },
+ "outputMode": "scholarly-review-draft",
+ "writtenFiles": [
+  "content-pipeline/edition-3/drafts/surah-22.json",
+  "content-pipeline/edition-3/drafts/inventory-22.json",
+  "content-pipeline/edition-3/drafts/surah-56.json",
+  "content-pipeline/edition-3/drafts/inventory-56.json"
+ ]
+}

@@ -1,6 +1,6 @@
 # Quran Grammar · قرآن گرامر
 
-A grammar-focused Quran study app with Urdu explanations, covering Surahs 1, 4, 7, 18, 23, 25, 29, 32, 36, 55 and 85–114. The content is awaiting scholarly review. The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
+A grammar-focused Quran study app with Urdu explanations, covering Surahs 1, 4, 7, 18, 22, 23, 25, 29, 32, 36, 55, 56 and 85–114. The content is awaiting scholarly review. The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
 
 ## Project
 
@@ -15,7 +15,7 @@ The web app uses React with Vite because the current product is an interactive s
 
 ## Features
 
-- All 14,405 word occurrences across 1,281 ayahs in 40 Surahs, with contextual Urdu meanings and grammatical segments.
+- All 16,058 word occurrences across 1,455 ayahs in 42 Surahs, with contextual Urdu meanings and grammatical segments.
 - Root-family meanings and a paradigm for every finite verb, including باب، ماضی، مضارع and patterns.
 - Occurrence-specific morphology, syntax, dictionary explanations, grammar rules, and related-root navigation.
 - Phrase constructions and concise tafsir notes for every ayah, using the same data format as Al-Fatihah.
@@ -61,7 +61,7 @@ cp apps/mobile/.env.example apps/mobile/.env
 npm run dev:mobile
 ```
 
-Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app uses its bundled 40-Surah edition. See [native setup](apps/mobile/README.md).
+Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app uses its bundled 42-Surah edition. See [native setup](apps/mobile/README.md).
 
 The APK command builds locally with JDK 17+, Android SDK Platform 36 and Build-Tools 36. It bundles JavaScript and fonts, so the installed APK does not require Metro or Expo Go. It uses Expo's debug signing key for local testing, **not a Play Store release**. Each build applies the current app config and launcher icons through incremental Expo Prebuild, retaining the native directory and build caches. See [APK build setup and options](docs/android-build.md).
 
@@ -96,7 +96,7 @@ The production Node process serves both the web app and `/api` on localhost port
 
 **Current release (2026-11-13):** the owner authorized publishing all 24 Edition 2
 lessons. The app, PostgreSQL copy and SQLite copy use the same
-40-Surah registry. See
+42-Surah registry. See
 [`draft-publication.json`](content-pipeline/draft-publication.json) for exact hashes
 and authorization, and `npm run publish:drafts` to reproduce the runtime modules.
 Scholarly approvals remain pending. The following paragraphs record the earlier

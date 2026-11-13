@@ -3,12 +3,14 @@ import type { StudyData } from './types';
 import { study4 } from './lessons/surah-4';
 import { study7 } from './lessons/surah-7';
 import { study18 } from './lessons/surah-18';
+import { study22 } from './lessons/surah-22';
 import { study23 } from './lessons/surah-23';
 import { study25 } from './lessons/surah-25';
 import { study29 } from './lessons/surah-29';
 import { study32 } from './lessons/surah-32';
 import { study36 } from './lessons/surah-36';
 import { study55 } from './lessons/surah-55';
+import { study56 } from './lessons/surah-56';
 import { study85 } from './lessons/surah-85';
 import { study86 } from './lessons/surah-86';
 import { study87 } from './lessons/surah-87';
@@ -46,12 +48,14 @@ export const studies: readonly StudyData[] = [
   study4,
   study7,
   study18,
+  study22,
   study23,
   study25,
   study29,
   study32,
   study36,
   study55,
+  study56,
   study85,
   study86,
   study87,

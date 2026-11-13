@@ -55,14 +55,14 @@ test('surah and juz catalogs expose available lessons and preserve picker focus'
   const catalog = page.getByRole('dialog', { name: 'Select surah', exact: true });
   await expect(catalog).toBeVisible();
   await expect(catalog.locator('[data-surah]')).toHaveCount(114);
-  await expect(catalog.locator('[data-surah]:disabled')).toHaveCount(74);
+  await expect(catalog.locator('[data-surah]:disabled')).toHaveCount(72);
   expect(
     await catalog
       .locator('[data-surah]')
       .evaluateAll((nodes) =>
-        nodes.slice(0, 40).map((node) => Number(node.getAttribute('data-surah'))),
+        nodes.slice(0, 42).map((node) => Number(node.getAttribute('data-surah'))),
       ),
-  ).toEqual([1, 4, 7, 18, 23, 25, 29, 32, 36, 55, ...Array.from({ length: 30 }, (_, index) => 85 + index)]);
+  ).toEqual([1, 4, 7, 18, 22, 23, 25, 29, 32, 36, 55, 56, ...Array.from({ length: 30 }, (_, index) => 85 + index)]);
   await expect(catalog.locator('[data-surah="1"]')).toBeEnabled();
   await expect(catalog.locator('[data-surah="2"]')).toContainText('Coming soon');
   await expect(catalog.locator('[data-surah="114"]')).toContainText('An-Nas');
@@ -89,14 +89,14 @@ test('surah and juz catalogs expose available lessons and preserve picker focus'
   await page.getByRole('dialog').getByRole('button', { name: 'Juz', exact: true }).click();
   const juz = page.getByRole('dialog', { name: 'Select juz', exact: true });
   await expect(juz.locator('[data-juz]')).toHaveCount(30);
-  await expect(juz.locator('[data-juz]:disabled')).toHaveCount(14);
+  await expect(juz.locator('[data-juz]:disabled')).toHaveCount(13);
   expect(
     await juz
       .locator('[data-juz]')
       .evaluateAll((nodes) =>
-        nodes.slice(0, 16).map((node) => Number(node.getAttribute('data-juz'))),
+        nodes.slice(0, 17).map((node) => Number(node.getAttribute('data-juz'))),
       ),
-  ).toEqual([1, 4, 5, 6, 8, 9, 15, 16, 18, 19, 20, 21, 22, 23, 27, 30]);
+  ).toEqual([1, 4, 5, 6, 8, 9, 15, 16, 17, 18, 19, 20, 21, 22, 23, 27, 30]);
   await expect(juz.locator('[data-juz="1"]')).toContainText('Al-Fatihah only');
   await juz.locator('[data-juz="29"]').evaluate((node: HTMLButtonElement) => node.click());
   await expect(juz).toBeVisible();
