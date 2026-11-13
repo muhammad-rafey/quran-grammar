@@ -149,12 +149,8 @@ export function InitialDataState({ pending = false }: { pending?: boolean }) {
 }
 
 export function StudyFooter() {
-  const { ui } = useInterface();
   return (
-    <View style={{ gap: 4, paddingTop: 10, paddingBottom: 16 }}>
-      <Label muted style={{ textAlign: 'center', fontSize: 12 }}>
-        {ui.educationalDraft}
-      </Label>
+    <View style={{ paddingTop: 10, paddingBottom: 16 }}>
       <Text
         onPress={() => void Linking.openURL('https://corpus.quran.com')}
         accessibilityRole="link"

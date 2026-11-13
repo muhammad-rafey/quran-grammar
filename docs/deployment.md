@@ -37,9 +37,9 @@ Back up the dedicated `quran_grammar` schema before updating it; other applicati
 schemas must remain untouched. `npm run db:verify` compares both copies against
 the same registry, including the content checksum, roots and verb paradigms.
 
-The current release has 40 Surahs, 1,281 ayahs and 14,405 words. The 29 owner-authorized
-drafts carry scholarly-review-pending notices. The expanded API loads more content at
-startup, and the Compose service allows 768 MiB for the process and concurrent responses.
+The current release has 40 Surahs, 1,281 ayahs and 14,405 words.
+The expanded API loads more content at startup, and the Compose service allows 768 MiB
+for the process and concurrent responses.
 
 ## Remove the deployment
 

@@ -1,13 +1,16 @@
 # Content provenance
 
+On 2026-11-13 the owner removed review labels from the web and native interfaces
+because scholarly review is pending across the collection. Settings retains the
+Quranic Arabic Corpus credit and link.
+
 ## Edition 2 draft publication (2026-11-13)
 
 The owner authorized publishing Surahs 4, 7, 25, 29 and 85–104 as labeled drafts for
 later scholarly review. The 807 ayahs and 10,098 words use the existing study format.
 The [draft publication manifest](../content-pipeline/draft-publication.json) pins the
 release snapshots, and the [Edition 2 handoff](../content-pipeline/edition-2/README.md)
-records the scope, source checks and review status. The web and native readers
-display the scholarly-review-pending notice for every draft.
+records the scope, source checks and review status.
 
 ## Owner-authorized draft publication — 2026-11-07
 
@@ -15,8 +18,6 @@ The owner explicitly requested publishing Surahs 18, 23, 32, 36 and 55 while rev
 continues. `content-pipeline/draft-publication.json` pins the source-input and study
 hashes for this release. The runtime lessons are exact copies of those held study
 snapshots; no Quranic text, Urdu explanation, root note or paradigm was rewritten.
-Web and native readers display a draft/scholarly-review-pending notice on these
-chapters, in the selected interface language. Settings retains the Corpus credit.
 The earlier hold described below is superseded only for this explicit draft release.
 Scholarly review is still pending; `review-status.json` is not changed to approved.
 

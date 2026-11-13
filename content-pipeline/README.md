@@ -13,10 +13,13 @@ scholarly review remains pending.** The five chapters are now integrated as visi
 labeled educational drafts. `draft-publication.json` records the authorization and
 pins each exact study snapshot. `npm run publish:drafts` reproduces those runtime
 modules without changing their Arabic, explanations or scholarly approval records.
-The runtime edition contains 16 Surahs, 474 ayahs and 4,307 words. The original
+That release contained 16 Surahs, 474 ayahs and 4,307 words. The original
 `assemble.py --write` scholarly-approval gate remains intact; this owner-authorized
 draft release is separate from scholarly approval. The earlier hold and private
 verification status below describe the pre-publication review snapshot.
+
+The owner removed review labels from the web and native apps on 2026-11-13.
+The publication manifest records that interface decision and the release hashes.
 
 ## Historical review handoff before the owner-authorized draft release
 
@@ -296,7 +299,7 @@ Its persistent English/Urdu banner identifies every page as an AI draft awaiting
   compression). Check performance on a real device.
 - **Licensing:** tafsir texts, translations and bulk Corpus data are references only and are
   git-ignored (`.gitignore`). The committed libraries and chunks are original AI-assisted Urdu.
-  AI review is not scholarly review; every new lesson stays labelled as a draft awaiting it.
+  Track scholarly review in the pipeline's review status records.
 - **Home-server route repaired:** `https://quran-grammar.39.36.246.28.sslip.io` is the current
   verified Quran Grammar address. The old `.252.180` address is obsolete. Only this project’s
   route and allowed origin were updated; other services and QuranAcademy were preserved.

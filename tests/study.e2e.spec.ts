@@ -750,8 +750,11 @@ test('Juz 30 exposes its thirty available chapters without claiming the entire J
   await expectNoOverflow(page);
   await page.getByRole('button', { name: 'Close', exact: true }).click();
   await page.getByRole('button', { name: 'Settings', exact: true }).click();
-  await expect(page.locator('.about-card')).toContainText('AI-assisted Urdu');
+  await expect(page.locator('.about-card').getByRole('link', { name: 'Quranic Arabic Corpus' }))
+    .toHaveAttribute('href', 'https://corpus.quran.com');
+  await expect(page.locator('.about-card')).not.toContainText(/draft|scholar(?:ly)? review pending/i);
   await page.getByRole('button', { name: 'اردو', exact: true }).click();
+  await expect(page.locator('.about-card')).not.toContainText(/مسودہ|نظرِ ثانی باقی/);
   await page.getByRole('button', { name: 'مطالعہ', exact: true }).click();
   await expect(page.locator('.ayah-number')).toHaveText(['۱', '۲', '۳', '۴', '۵', '۶']);
   await expectNoOverflow(page);

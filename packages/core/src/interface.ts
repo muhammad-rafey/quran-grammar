@@ -60,9 +60,6 @@ const english = {
   about: 'About',
   useOffline: 'Use saved lesson',
   preferenceError: 'Language could not be saved. Try again.',
-  educationalDraft:
-    'Source-checked study data with AI-assisted Urdu explanations. Scholar review pending.',
-  draftNotice: 'Published draft · Scholarly review pending. Explanations may be corrected.',
   surahTitle: 'Al-Fatihah',
   noRoot: 'No root is assigned in this analysis.',
   notFound: 'Word not found',
@@ -157,9 +154,6 @@ const urdu: UiStrings = {
   about: 'تعارف',
   useOffline: 'محفوظ سبق استعمال کریں',
   preferenceError: 'زبان کی ترتیب محفوظ نہیں ہو سکی۔ دوبارہ کوشش کریں۔',
-  educationalDraft:
-    'ماخذ سے جانچا گیا مطالعاتی مواد؛ اردو وضاحتیں مصنوعی ذہانت کی مدد سے تیار کردہ ہیں۔ اہلِ علم کی نظرِ ثانی باقی ہے۔',
-  draftNotice: 'شائع شدہ مسودہ · اہلِ علم کی نظرِ ثانی باقی ہے۔ وضاحتوں میں اصلاح ہو سکتی ہے۔',
   surahTitle: 'سورۃ الفاتحہ',
   noRoot: 'اس تجزیے میں کوئی مادہ درج نہیں ہے۔',
   notFound: 'لفظ نہیں ملا',

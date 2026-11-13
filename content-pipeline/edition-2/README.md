@@ -1,6 +1,6 @@
 # Edition 2 — Surahs 4, 7, 25, 29 and 85–104: plan, progress and handoff
 
-**Status (2026-11-13): the owner authorized publishing all 24 Surahs as labeled drafts.**
+**Status (2026-11-13): the owner authorized publishing all 24 Surahs and removed in-app review labels.**
 All 312 chunks passed mechanical validation, and all 807 ayahs and 10,098 words assembled
 into the pinned draft snapshots. Independent grammar and meaning review remains in progress,
 and scholarly review is pending. See `reports/resumption-status.json` for the per-chunk validation snapshot
@@ -135,10 +135,10 @@ instead.
 3. **Assemble drafts:** `python3 -I scripts/assemble.py "$PWD" ../.. --draft`. The expected
    `words` counts in `edition.json` have been verified against the plan and the Arabic inventories.
    Then run `gen_audit.py` (writes `docs/source-audits/surah-N.md`).
-4. **Reproduce the labeled drafts.** The owner authorized Edition 2 publication on
+4. **Reproduce the published lessons.** The owner authorized Edition 2 publication on
    2026-11-13. The release adds entries with `"work": "content-pipeline/edition-2"` and the
    wrapper/study hashes to `../draft-publication.json`, then run `npm run publish:drafts`. Then update
-   `packages/core/src/registry.ts`, `availability.ts` and `publication.ts` (draft list), the core and
+   `packages/core/src/registry.ts`, `availability.ts`, the core and
    API tests (counts, juz previews 4–6, 8–9, 18–21, 30), the docs and the source-audit inventories.
 5. **Verify:** `npm run verify`, `npm run test:e2e`, `npm run build:mobile`. Check mobile bundle
    size: about 10k more words is roughly 2.5× the first expansion.
