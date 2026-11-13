@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "bay~ata|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "بَيَّتَ",
+   "present": "يُبَيِّتُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "مادہ ب ي ت اجوف یائی ہے، مگر بابِ تفعیل میں درمیانی یاء مشدد ہو کر ہر صیغے میں صحیح حرف کی طرح باقی رہتی ہے (بَيَّتَ، يُبَيِّتُ)۔ متعدی ہے: رات کو کسی بات کی تدبیر یا سازش کرنا، یا رات کو کسی پر حملہ کرنا (بَيَّتَهُ)۔",
+   "evidenceEnglish": "QAC tags all 3 occurrences form II, root byt: perfect بَيَّتَ (4:81:7); imperfects يُبَيِّتُونَ (4:81:16, 4:108:11) with prefix damma and kasra on the doubled 2nd radical. Regular faʿʿala–yufaʿʿilu. Lane and Lisan al-Arab: بَيَّتَ الأَمْرَ 'devised/plotted the affair by night', بَيَّتَ العَدُوَّ 'attacked the enemy by night'."
+  },
+  {
+   "key": "bay~anu|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "بَيَّنَ",
+   "present": "يُبَيِّنُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "مادہ ب ي ن اجوف یائی ہے، مگر بابِ تفعیل میں درمیانی یاء مشدد ہو کر صحیح حرف کی طرح برقرار رہتی ہے (بَيَّنَ، يُبَيِّنُ)۔ عموماً متعدی ہے: واضح کرنا، کھول کر بیان کرنا؛ اسے بابِ تفعّل کے تَبَيَّنَ (واضح ہونا، تحقیق کرنا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC lemma label بَيَّنُ is an inflected stem; the citation form is the Form II perfect بَيَّنَ (attested e.g. 2:187 كَذَٰلِكَ يُبَيِّنُ, perfect بَيَّنَّا 2:118, 2:159). Occurrences: subjunctive لِيُبَيِّنَ (4:26:3), indicative يُبَيِّنُ (4:176:42), prefix damma and kasra on the doubled 2nd radical. Regular faʿʿala–yufaʿʿilu; Lane, Lisan al-Arab: بَيَّنَهُ 'made it clear, explained it' (also occasionally intransitive = تَبَيَّنَ)."
+  },
+  {
+   "key": "tabay~ana|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَبَيَّنَ",
+   "present": "يَتَبَيَّنُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "مادہ ب ي ن اجوف یائی ہے، مگر بابِ تفعّل میں درمیانی یاء مشدد ہو کر صحیح رہتی ہے؛ لازم ہو تو «واضح ہونا» (تَبَيَّنَ لَهُ الْحَقُّ) اور متعدی ہو تو «تحقیق کر کے یقینی طور پر جان لینا»۔ احتیاط: امر جمع اور ماضی جمع دونوں تَبَيَّنُوا ہیں، فرق سیاق سے ہوتا ہے؛ مضارع میں ایک تاء کبھی حذف ہوتی ہے (تَبَيَّنُ = تَتَبَيَّنُ)۔",
+   "evidenceEnglish": "QAC tags all 4 occurrences form V, root byn: perfects تَبَيَّنَ (4:115:7) and تَّبَيَّنَ (29:38:4, initial tāʾ doubled by assimilation of the preceding قَد); imperatives فَتَبَيَّنُوا (4:94:9, 4:94:33). Imperfect يَتَبَيَّنَ is attested at 2:187 (حَتَّىٰ يَتَبَيَّنَ). Regular tafaʿʿala–yatafaʿʿalu; Lane, Lisan al-Arab: تَبَيَّنَ الشَّيْءُ 'became clear' (intransitive) and تَبَيَّنْتُهُ 'I ascertained it' (transitive)."
+  },
+  {
+   "key": "tabiEa|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "تَبِعَ",
+   "present": "يَتْبَعُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی میں عینِ کلمہ پر زیر اور مضارع میں زبر ہے، اسی لیے بابِ سَمِعَ ہے۔ متعدی ہے: پیچھے چلنا، پیروی کرنا (تَبِعَهُ)؛ اسے بابِ افتعال کے اِتَّبَعَ يَتَّبِعُ اور بابِ افعال کے أَتْبَعَ يُتْبِعُ (پیچھے لگا دینا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC form I, root tbE: perfect تَبِعَكَ (7:18:7) with kasra on the 2nd radical. Quran-wide Form I imperfects يَتْبَعُهَآ (2:263) and تَتْبَعُهَا (79:7) have fatha: i–a, samiʿa class. Lane, Lisan al-Arab, al-Muʿjam al-Wasit: تَبِعَهُ يَتْبَعُهُ تَبَعًا وتَبَاعَةً."
+  },
+  {
+   "key": "taraka|I|PASS",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "تُرِكَ",
+   "present": "يُتْرَكُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل تَرَكَ يَتْرُكُ (چھوڑنا) کا مجہول ہے: چھوڑ دیا جانا؛ جسے چھوڑا جائے وہ نائبِ فاعل بنتا ہے۔ ماضی مجہول میں پہلے حرف پر پیش اور دوسرے پر زیر، اور مضارع مجہول يُتْرَكُ میں علامتِ مضارع پر پیش اور راء پر زبر ہے۔",
+   "evidenceEnglish": "QAC: 1 occurrence, Form I imperfect passive subjunctive يُتْرَكُوٓا (29:2:4), i'rab 'مبني للمجهول ... نائب فاعل'; also passive يُتْرَكَ (75:36). Active base is a–u: perfect تَرَكْنَا (18:99), imperfects نَّتْرُكَ (11:87), تَتْرُكْهُ (7:176). Lane, Lisan al-Arab: تَرَكَهُ يَتْرُكُهُ تَرْكًا. Passive forms follow the regular fuʿila–yufʿalu."
+  },
+  {
+   "key": "tam~a|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "تَمَّ",
+   "present": "يَتِمُّ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "مضاعف فعل ہے (مادہ ت م م)؛ دونوں میم عموماً مدغم رہتے ہیں (تَمَّ، يَتِمُّ)، مگر متحرک ضمیرِ فاعل سے پہلے الگ ہو جاتے ہیں (تَمَمْتُ)۔ لازم ہے: پورا ہونا، مکمل ہونا؛ اسے متعدی بابِ افعال أَتَمَّ (پورا کرنا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC form I, root tmm: perfects وَتَمَّتْ (7:137:12), فَتَمَّ (7:142:7). No Form I imperfect occurs in the Quran; the class rests on the lexica: Lisan al-Arab and al-Muʿjam al-Wasit give تَمَّ الشَّيْءُ يَتِمُّ تَمًّا وتَمَامًا (underlying تَمَمَ يَتْمِمُ), i.e. a–i, ḍaraba class, like حَقَّ يَحِقُّ and خَرَّ يَخِرُّ in lex-00."
+  },
+  {
+   "key": ">atam~a|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَتَمَّ",
+   "present": "يُتِمُّ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "مضاعف فعل ہے (مادہ ت م م)؛ دونوں میم عموماً مدغم رہتے ہیں (أَتَمَّ، يُتِمُّ)، مگر متحرک ضمیرِ فاعل سے پہلے الگ ہو جاتے ہیں (أَتْمَمْنَا) اور امر میں بھی الگ آ سکتے ہیں (أَتْمِمْ)۔ متعدی ہے: پورا کرنا، مکمل کرنا؛ اسے لازم مجرد تَمَّ (پورا ہونا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC form IV, root tmm: perfect وَأَتْمَمْنَـٰهَا (7:142:5), unassimilated before the subject pronoun. Quran-wide: imperfect وَيُتِمُّ (12:6), subjunctive أَن يُتِمَّ (2:233), imperatives وَأَتِمُّوا (2:196) and أَتْمِمْ (66:8). Regular afʿala–yufʿilu with idgham: أَتَمَّ < أَتْمَمَ, يُتِمُّ < يُتْمِمُ (Lane, Lisan al-Arab)."
+  },
+  {
+   "key": "vuqifu|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "ثَقِفَ",
+   "present": "يَثْقَفُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی میں عینِ کلمہ پر زیر اور مضارع میں زبر ہے، اسی لیے بابِ سَمِعَ ہے۔ متعدی ہے: کسی کو پا لینا، قابو میں لے آنا؛ اسے ثَقُفَ يَثْقُفُ (بابِ كَرُمَ: ہوشیار و ماہر ہونا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC lemma label ثُقِفُ (vuqifu) resembles a passive stem, but this entry is active: ثَقِفْتُمُوهُمْ (4:91:26), active perfect with kasra on the 2nd radical and subject تُم. Quran-wide Form I imperfects يَثْقَفُوكُمْ (60:2) and تَثْقَفَنَّهُمْ (8:57) have fatha: i–a, samiʿa class. Lane, Lisan al-Arab: ثَقِفَهُ يَثْقَفُهُ ثَقْفًا 'found/overtook him'; distinct from ثَقُفَ يَثْقُفُ 'was skilful'."
+  },
+  {
+   "key": ">avoqalat|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَثْقَلَ",
+   "present": "يُثْقِلُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ بابِ افعال کا ہمزہ مضارع میں حذف ہو کر علامتِ مضارع پر پیش آتا ہے (يُثْقِلُ)۔ متعدی ہو تو «بوجھل کرنا، بوجھ ڈالنا» (أَثْقَلَهُ)، اور لازم ہو تو «بوجھل ہو جانا»، جیسے حاملہ کا حمل بھاری ہو جانا (أَثْقَلَتِ الْمَرْأَةُ)۔",
+   "evidenceEnglish": "QAC lemma label أَثْقَلَت is the inflected 3FS form; citation is the Form IV perfect أَثْقَلَ. Occurrence أَثْقَلَت (7:189:20) is intransitive ('she grew heavy' in pregnancy). No Form IV imperfect occurs in the Quran (passive participle مُّثْقَلُونَ 52:40, 68:46); the paradigm is the regular afʿala–yufʿilu. Lane, Lisan al-Arab: أَثْقَلَتِ المَرْأَةُ 'her pregnancy became heavy'; أَثْقَلَهُ 'burdened him'."
+  },
+  {
+   "key": "{jotabaY`|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِجْتَبَى",
+   "present": "يَجْتَبِي",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "ناقص یائی فعل (ج ب ي)؛ آخری یاء ماضی واحد مذکر غائب میں الف مقصورہ (اِجْتَبَى) بنتی ہے، واحد مؤنث غائب میں گر جاتی ہے (اِجْتَبَتْ) اور متحرک ضمیر سے پہلے ظاہر ہوتی ہے (اِجْتَبَيْتَ)؛ مضارع کے رفع میں ساکن (يَجْتَبِي)، نصب میں مفتوح (يَجْتَبِيَ) اور جزم میں محذوف ہوتی ہے۔ متعدی: چن لینا، منتخب کرنا؛ کبھی «خود گھڑ لینا»۔",
+   "evidenceEnglish": "QAC form VIII, root jby: perfect ٱجْتَبَيْتَهَا (7:203:7), 'devised/chose it'. Quran-wide: perfects ٱجْتَبَىٰهُ (16:121, 68:50), ٱجْتَبَىٰكُمْ (22:78); imperfects يَجْتَبِي (3:179, 42:13), يَجْتَبِيكَ (12:6). Regular iftaʿala–yaftaʿilu of a final-yāʾ root. Lane, Lisan al-Arab: اِجْتَبَاهُ 'chose/selected him'; in 7:203 commentators gloss لَوْلَا ٱجْتَبَيْتَهَا as 'why have you not invented/chosen it yourself'."
+  }
+ ]
+}

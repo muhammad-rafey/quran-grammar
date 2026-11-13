@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "yusominu|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَسْمَنَ",
+   "present": "يُسْمِنُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح سالم فعل، بابِ افعال: موٹا کرنا، فربہ کر دینا؛ متعدی ہے مگر مفعول کبھی محذوف رہتا ہے اور سیاق سے سمجھا جاتا ہے۔ ماضی أَسْمَنَ کا ہمزہ باب کا زائد ہمزہ ہے جو مضارع میں گر جاتا ہے اور علامتِ مضارع مضموم ہوتی ہے (يُسْمِنُ)؛ اسے مجرد سَمِنَ (خود موٹا ہونا، لازم) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC Form IV active, ROOT smn; LEM yusominu is an imperfect identifier. Sole Quranic occurrence يُسْمِنُ (88:7:2), 3MS indicative with damma on the prefix and kasra on م: the af'ala/yuf'ilu imperfect. Citation أَسْمَنَ يُسْمِنُ إِسْمَانًا 'to fatten' (Lane s.v. سمن; al-Mu'jam al-Wasit), causative of Form I سَمِنَ يَسْمَنُ 'to become fat'. The perfect is the regular Form IV past; it is not among the supplied occurrences."
+  },
+  {
+   "key": "$araHa|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "شَرَحَ",
+   "present": "يَشْرَحُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے: کھولنا، کشادہ کرنا (شَرَحَ صَدْرَهُ: سینہ کھول دینا)؛ لامِ کلمہ حلقی حرف «ح» ہے اور مضارع میں عین پر زبر ہے، اس لیے بابِ فَتَحَ ہے۔ جزم میں آخری حرف ساکن ہوتا ہے (لَمْ نَشْرَحْ) اور امر ٱشْرَحْ ہمزۂ وصل سے آتا ہے۔",
+   "evidenceEnglish": "QAC Form I active, ROOT $rH: jussive نَشْرَحْ (94:1:2) after لَمْ, with fatha on ر. Quran-wide: perfect شَرَحَ (16:106, 39:22), jussive يَشْرَحْ (6:125) and imperative ٱشْرَحْ (20:25), all with fatha on the middle radical: fa'ala/yaf'alu with guttural third radical. Lane s.v. شرح: شَرَحَ, aor. يَشْرَحُ."
+  },
+  {
+   "key": "ya$~aq~aqu|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَشَقَّقَ",
+   "present": "يَتَشَقَّقُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "مضاعف مادے (ش ق ق) سے لازم فعل ہے: پھٹ جانا، شق ہو جانا؛ باب کی تشدید عینِ کلمہ پر ہے، اس لیے دونوں قاف الگ رہتے ہیں۔ مضارع کے شروع میں دو تاء جمع ہوں تو ایک گر سکتی ہے (تَتَشَقَّقُ کی جگہ تَشَقَّقُ)، اور باب کی تاء شین میں مدغم بھی ہو سکتی ہے (يَتَشَقَّقُ سے يَشَّقَّقُ)؛ ایسا تَشَقَّقُ ماضی نہیں بلکہ مضارع ہے۔",
+   "evidenceEnglish": "QAC Form V active, ROOT $qq; LEM ya$~aq~aqu is an imperfect identifier with the ta assimilated (cf. يَشَّقَّقُ 2:74). Sample تَشَقَّقُ (25:25:2) is tagged 3FS imperfect, i.e. تَتَشَقَّقُ with one ta elided (likewise 50:44). Regular tafa''ala/yatafa''alu; citation تَشَقَّقَ يَتَشَقَّقُ تَشَقُّقًا 'to split, burst open', the intransitive counterpart of شَقَّقَ (Lane s.v. شق; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "Sab~a|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "صَبَّ",
+   "present": "يَصُبُّ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "مضاعف اور متعدی فعل ہے: انڈیلنا، اوپر سے بہا دینا؛ عَلَى کے ساتھ کسی پر برسانا۔ دونوں باء مدغم رہتی ہیں (صَبَّ، يَصُبُّ) مگر متحرک ضمیرِ فاعل سے پہلے الگ ہو جاتی ہیں (صَبَبْنَا)؛ مضارع میں صاد پر پیش ہے، اس لیے بابِ نَصَرَ ہے۔",
+   "evidenceEnglish": "QAC Form I active, ROOT Sbb: perfect صَبَّ (89:13:1). Quran-wide: صَبَبْنَا (80:25, unassimilated before the subject suffix), imperative صُبُّوا۟ (44:48) and passive imperfect يُصَبُّ (22:19). The damma of the imperative صُبُّوا confirms the imperfect يَصُبُّ: fa'ala/yaf'ulu (Lane s.v. صب: صَبَّهُ, aor. يَصُبُّ)."
+  },
+  {
+   "key": "yaSoduru|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "صَدَرَ",
+   "present": "يَصْدُرُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے: لوٹنا، (پانی وغیرہ سے) واپس نکلنا، کسی جگہ سے نکل کر آنا؛ جہاں سے نکلے وہ عموماً عَنْ کے ساتھ آتا ہے۔ مضارع میں دال پر پیش ہے، اس لیے بابِ نَصَرَ ہے؛ لوٹانے کا متعدی معنی بابِ افعال أَصْدَرَ يُصْدِرُ میں ہے۔",
+   "evidenceEnglish": "QAC Form I active, ROOT Sdr; LEM yaSoduru is an imperfect identifier. Sole Form I occurrence يَصْدُرُ (99:6:2) with damma on د: fa'ala/yaf'ulu. Lane and Lisan al-Arab (s.v. صدر) give صَدَرَ عَنْهُ, aor. يَصْدُرُ; some lexica also allow يَصْدِرُ, but the attested Quranic vowel u decides nasara. Form IV يُصْدِرَ (28:23, Hafs) is a separate lexeme."
+  },
+  {
+   "key": "Sad~aqa|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "صَدَّقَ",
+   "present": "يُصَدِّقُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: سچا ماننا، تصدیق کرنا؛ مفعول براہِ راست (صَدَّقَهُ) یا بِ کے ساتھ (صَدَّقَ بِهِ) آتا ہے۔ دال کی تشدید بابِ تفعیل کی علامت ہے؛ اسے مجرد صَدَقَ (سچ بولنا) اور بابِ تفعّل کے تَصَدَّقَ (صدقہ دینا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC Form II active, ROOT Sdq: perfect صَدَّقَ (92:6:1); Quran-wide صَدَّقَ (37:37, 75:31), صَدَّقْتَ (37:105) and imperfect يُصَدِّقُنِىٓ (28:34) with damma prefix and kasra on the doubled د: fa''ala/yufa''ilu. Lane s.v. صدق: صَدَّقَهُ 'he held him truthful', صَدَّقَ بِهِ 'he believed it'."
+  },
+  {
+   "key": "Sarafa|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "صَرَفَ",
+   "present": "يَصْرِفُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے: پھیر دینا، ہٹا دینا؛ جس سے ہٹایا جائے وہ عَنْ کے ساتھ آتا ہے۔ مضارع میں راء پر زیر ہے، اس لیے بابِ ضَرَبَ ہے اور امر ٱصْرِفْ کا ہمزۂ وصل مکسور پڑھا جاتا ہے؛ اسے بابِ تفعیل کے صَرَّفَ (بار بار پھیرنا، طرح طرح سے بیان کرنا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC Form I active, ROOT Srf: imperfect سَأَصْرِفُ (7:146:1) and imperative ٱصْرِفْ (25:65:4), both with kasra on ر; Quran-wide perfects صَرَفَ (9:127), صَرَفْنَآ (46:29) and imperfect يَصْرِفُهُ (24:43): fa'ala/yaf'ilu. Lane s.v. صرف: صَرَفَهُ, aor. يَصْرِفُ."
+  },
+  {
+   "key": "Sal~aY`|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "صَلَّى",
+   "present": "يُصَلِّي",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "ناقص واوی مادے (ص ل و) سے بابِ تفعیل ہے: آخری واو ماضی میں الفِ مقصورہ (صَلَّى) اور صَلَّيْتُ و مضارع يُصَلِّي میں یاء بنتی ہے، جو جزم میں (لَمْ يُصَلِّ) اور جمع کی واو سے پہلے (يُصَلُّوا) گر جاتی ہے۔ عموماً لازم ہے: نماز پڑھنا؛ عَلَى کے ساتھ رحمت بھیجنا یا دعا کرنا۔",
+   "evidenceEnglish": "QAC Form II active, ROOT Slw: perfects صَلَّىٰ (87:15:4, 96:10:3; also 75:31); jussive يُصَلُّوا۟ / فَلْيُصَلُّوا۟ (4:102) with the final weak letter dropped before the plural waw; Quran-wide imperfect يُصَلُّونَ and imperative صَلُّوا۟ (33:56), imperative صَلِّ (9:103). Regular fa''ala/yufa''ilu of a defective root: صَلَّى يُصَلِّي (Lane s.v. صلو; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "yaDur~a|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "ضَرَّ",
+   "present": "يَضُرُّ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "مضاعف اور متعدی فعل ہے: نقصان پہنچانا؛ مفعول براہِ راست آتا ہے (يَضُرُّهُمْ)۔ دونوں راء مدغم رہتی ہیں مگر متحرک ضمیرِ فاعل سے پہلے الگ ہو جاتی ہیں (ضَرَرْتُ)؛ مضارع میں ضاد پر پیش ہے، اس لیے بابِ نَصَرَ ہے۔ جزم میں بھی ادغام باقی رہ کر آخر پر ضمہ آ سکتا ہے (لَا يَضُرُّكُمْ)، اس لیے صرف آخری حرکت سے مرفوع نہ سمجھیں۔",
+   "evidenceEnglish": "QAC Form I active, ROOT Drr; LEM yaDur~a is an imperfect identifier. Imperfects يَضُرُّهُمْ (25:55:9) and يَضُرُّونَكَ (4:113) have damma on ض: fa'ala/yaf'ulu. Lane s.v. ضر: ضَرَّهُ, aor. يَضُرُّ. Jussive with retained idgham and final damma: لَا يَضُرُّكُمْ (3:120, apodosis of وَإِن تَصْبِرُوا۟)."
+  },
+  {
+   "key": "yuDa`Eifu|III|PASS",
+   "baabUrdu": "بابِ مُفَاعَلَة — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)، مجہول",
+   "past": "ضُوعِفَ",
+   "present": "يُضَاعَفُ",
+   "pattern": "فُوعِلَ — يُفَاعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ضَاعَفَ (دگنا کرنا، کئی گنا بڑھانا) کا مجہول ہے: دگنا کیا جانا؛ جو چیز بڑھائی جائے (مثلاً عذاب) وہ نائبِ فاعل بنتی ہے۔ ماضی مجہول میں باب کا الف ضمہ کے بعد واو بن جاتا ہے (ضُوعِفَ)، اور مضارع مجہول يُضَاعَفُ میں عین کا فتحہ اسے معروف يُضَاعِفُ سے جدا کرتا ہے۔",
+   "evidenceEnglish": "QAC Form III passive, ROOT DEf: jussive يُضَـٰعَفْ (25:69:1), tagged PASS, with fatha on ع (the active would be يُضَاعِفْ). Quran-wide passive imperfects يُضَاعَفُ (11:20, 57:18) and jussive يُضَاعَفْ (33:30). QAC's identifier يُضَٰعِفُ is the active imperfect of the same Form III verb ضَاعَفَ يُضَاعِفُ. Passive of fā'ala is فُوعِلَ — يُفَاعَلُ (Wright, Grammar of the Arabic Language); ضُوعِفَ is the standard paradigm perfect, not drawn from the supplied occurrences."
+  }
+ ]
+}

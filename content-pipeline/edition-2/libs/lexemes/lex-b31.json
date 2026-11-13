@@ -1,0 +1,24 @@
+{
+ "entries": [
+  {
+   "key": "ya}isa|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "يَئِسَ",
+   "present": "يَيْأَسُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "مثال یائی اور مہموز العین ہے: پہلا حرف یاء مضارع میں بھی باقی رہتا ہے (يَيْأَسُ)، گرتا نہیں؛ اور ہمزہ کی کرسی حرکت کے مطابق بدلتی ہے (يَئِسَ میں یاء کی کرسی پر، يَيْأَسُ میں الف پر)۔ لازم ہے: ناامید ہونا؛ جس چیز سے ناامیدی ہو اس پر مِنْ آتا ہے۔",
+   "evidenceEnglish": "QAC: Form I active, LEM ya}isa, root yAs; the one listed occurrence is the perfect يَئِسُوا (29:23:7) with kasra on the 2nd radical. Quranic imperfects have fatha: يَيْأَسُ and the prohibition لَا تَيْأَسُوا (12:87), jussive يَيْأَسِ (13:31) — these may sit under a separate QAC lexeme handle. Vowel class i–a (samiʿa), the standard form in the lexica (Lane, Lisan al-Arab, al-Muʿjam al-Wasit: يَئِسَ يَيْأَسُ يَأْسًا). Lane also records a rare variant aorist يَيْئِسُ (i–i) and the metathesised أَيِسَ; neither is used in the Quran, so samiʿa is adopted."
+  },
+  {
+   "key": "tayam~amu|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَيَمَّمَ",
+   "present": "يَتَيَمَّمُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "مادہ ي م م ہے (مثال یائی اور مضاعف)؛ اس باب میں یاء حرفِ صحیح کی طرح باقی رہتی ہے، عینِ کلمہ میم پر باب کی تشدید آتی ہے، اور یہ متعدی ہے: کسی چیز کا قصد کرنا، فقہی تیمم اسی سے ہے۔ احتیاط: امر تَيَمَّمُوا اور وہ مضارع جس کی ایک تاء حذف ہو (تَتَيَمَّمُوا سے تَيَمَّمُوا، جیسے لا نہی کے بعد) ہم شکل ہیں؛ سیاق سے فرق کریں۔",
+   "evidenceEnglish": "QAC: Form V active, LEM tayam~amu (a stem identifier taken from the imperative; citation form تَيَمَّمَ), root ymm; occurrence فَتَيَمَّمُوا (4:43:38) tagged IMPV 2MP. Regular tafaʿʿala/yatafaʿʿalu with initial radical ya retained as a consonant. Lexica (Lane, Lisan al-Arab, al-Muʿjam al-Wasit): تَيَمَّمَهُ = aimed at / betook himself to it, and تَيَمَّمَ لِلصَّلَاةِ = performed tayammum; transitive (object صَعِيدًا in 4:43, 5:6). The same verb appears as an imperfect with one ta elided in وَلَا تَيَمَّمُوا (2:267), a standard Form V phenomenon."
+  }
+ ]
+}

@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "yuloHidu|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَلْحَدَ",
+   "present": "يُلْحِدُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح سالم فعل ہے: حق سے ہٹنا، کج روی اختیار کرنا؛ عموماً فِي کے ساتھ آتا ہے (أَلْحَدَ فِي…)، اس لیے حرفِ جر کے واسطے سے متعدی ہوتا ہے۔ ماضی کا ہمزۂ قطع مضارع میں گر جاتا ہے اور حرفِ مضارع پر ضمہ آتا ہے: يُلْحِدُ۔",
+   "evidenceEnglish": "QAC 7:180:8 يُلْحِدُونَ: IMPF 3MP form IV active, LEM yuloHidu (QAC's lemma is the imperfect; citation form أَلْحَدَ), ROOT lHd. Prefix ḍamma and kasra on the second radical confirm af'ala — yuf'ilu. Quran-wide also يُلْحِدُونَ (16:103, 41:40) and the verbal noun بِإِلْحَادٍ (22:25). Lane and Lisan al-Arab: أَلْحَدَ = deviated from the right course (also لَحَدَ). Hafs reads Form IV; Hamza (and al-Kisa'i in 16:103) reads يَلْحَدُونَ (Form I); not followed here."
+  },
+  {
+   "key": "yaloEabo|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "لَعِبَ",
+   "present": "يَلْعَبُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے: کھیلنا، بے مقصد مشغلے میں لگے رہنا۔ ماضی میں عین کلمہ مکسور (لَعِبَ) اور مضارع میں مفتوح (يَلْعَبُ) ہے؛ مصدر لَعِب قرآن میں اکثر لَهْو کے ساتھ آتا ہے۔",
+   "evidenceEnglish": "QAC 7:98:9 يَلْعَبُونَ: IMPF 3MP form I active, ROOT lEb; QAC's lemma يَلْعَبْ is the jussive of 12:12 (citation form لَعِبَ). Attested imperfects يَلْعَبُونَ (7:98) and يَلْعَبْ (12:12) have fatḥa on the second radical. Lisan al-Arab and al-Mu'jam al-Wasit: لَعِبَ يَلْعَبُ لَعِبًا (i–a, samiʿa class); Lane s.v. لعب likewise."
+  },
+  {
+   "key": "laEana|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "لَعَنَ",
+   "present": "يَلْعَنُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے: لعنت کرنا، یعنی رحمت سے دور کر دینا۔ بابِ فتح کے افعال میں عین یا لام کلمہ عموماً حرفِ حلقی ہوتا ہے، مگر اس سے باب طے نہیں ہوتا؛ یہ فعل سماعاً اسی باب سے ہے (لَعَنَ يَلْعَنُ)۔ لَعَنَّا میں لامِ کلمہ نون اور ضمیر نَا کا نون مدغم ہو گئے ہیں۔",
+   "evidenceEnglish": "QAC: Form I active, ROOT lEn, LEM laEana. Batch imperfects نَلْعَنَهُمْ (4:47, subjunctive) and يَلْعَنِ (4:52, jussive after مَن, kasra to break the sukun clash) show fatḥa on the second radical; Quran-wide يَلْعَنُهُمُ (2:159). Perfects لَعَنَهُ، لَعَنَتْ، لَعَنَّا. Lane, Lisan al-Arab and al-Mu'jam al-Wasit: لَعَنَهُ يَلْعَنُهُ لَعْنًا (a–a, fataḥa class, guttural ʿayn)."
+  },
+  {
+   "key": "taloqafu|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "لَقِفَ",
+   "present": "يَلْقَفُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے: تیزی سے نگل لینا، جھپٹ کر پکڑ لینا۔ تَلْقَفُ کی تاء حرفِ مضارع ہے (واحد مؤنث غائب یا واحد مذکر حاضر)، بابِ تفعّل کی تاء نہیں؛ لام کا ساکن ہونا اور قاف پر تشدید نہ ہونا اس کی دلیل ہے، کیونکہ بابِ تفعّل میں عین کلمہ مشدد ہوتا ہے۔",
+   "evidenceEnglish": "QAC 7:117:9 تَلْقَفُ: IMPF 3FS form I active, ROOT lqf, LEM taloqafu (the imperfect; citation form لَقِفَ). Quran-wide also تَلْقَفْ (20:69, jussive) and تَلْقَفُ (26:45), all with fatḥa on the second radical. Lisan al-Arab and al-Mu'jam al-Wasit: لَقِفَ الشيءَ يَلْقَفُه لَقْفًا (i–a); Lane: لَقِفَهُ aor. يَلْقَفُ. Lisan also records a variant past لَقَفَ; the i–a citation is the standard one. Hafs reads Form I تَلْقَفُ; other readers have Form V تَلَقَّفُ (not followed here)."
+  },
+  {
+   "key": ">aloqaY`^|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَلْقَى",
+   "present": "يُلْقِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "ناقص یائی اور متعدی فعل ہے: ڈالنا، پھینکنا، پیش کرنا۔ لامِ کلمہ یاء ماضی میں الفِ مقصورہ بنتی ہے (أَلْقَى) اور أَلْقَيْتُ میں ظاہر رہتی ہے؛ مضارع يُلْقِي میں ساکن اور نصب میں مفتوح رہتی ہے (تُلْقِيَ)؛ آخری حرف ہو تو جزم و امر میں حذف ہوتی ہے (يُلْقِ، أَلْقِ)، اور واوِ جمع سے پہلے گر جاتی ہے (أَلْقَوْا، يُلْقُونَ)۔",
+   "evidenceEnglish": "QAC: Form IV active, ROOT lqy, LEM >aloqaY`^ (the 3MS perfect أَلْقَىٰٓ with maddah/hamza marks; citation form أَلْقَى). Batch forms: perfects أَلْقَىٰ (7:107, 4:171), أَلْقَوْا (4:90, 7:116); subjunctive تُلْقِىَ (7:115) with kasra on qāf; jussive يُلْقُوا (4:91); imperative أَلْقُوا (7:116). These give af'ala — yuf'ilu with defective final yāʾ. Lane and al-Mu'jam al-Wasit: أَلْقَى الشيءَ = threw it; also أَلْقَى إِلَيْهِ السَّلَمَ = offered submission/peace."
+  },
+  {
+   "key": "lamasu|I|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "لَامَسَ",
+   "present": "يُلَامِسُ",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے: چھونا، باہم مس کرنا۔ فاء کلمہ کے بعد کا الف بابِ مفاعلہ کی علامت ہے، جو مصحف میں بعض جگہ کھڑے زبر کی صورت میں لکھا جاتا ہے (لَـٰمَسْتُمُ)؛ اسے ثلاثی مجرد لَمَسَ نہ سمجھیں، جو الگ فعل ہے۔",
+   "evidenceEnglish": "QAC tags 4:43:33 as form I (LEM lamasu, ROOT lms), but the Hafs Uthmani word لَـٰمَسْتُمُ carries a dagger alif after the lām (lāmastumu), i.e. Form III لَامَسَ يُلَامِسُ مُلَامَسَةً; the identical word occurs in 5:6. Form I لَمَسْتُمُ is the reading of Hamza, al-Kisa'i and Khalaf, not the Hafs text shown. Lane and Lisan al-Arab: لَامَسَهُ مُلَامَسَةً = touched/had contact with. The paradigm follows the vocalised Hafs word; scholar review should confirm the override of QAC's form tag. Form I لَمَسَ (6:7, 72:8) is a separate lexeme."
+  },
+  {
+   "key": "yalohavo|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "لَهَثَ",
+   "present": "يَلْهَثُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے: ہانپنا، زبان نکال کر تیز سانس لینا۔ بابِ فتح کے افعال میں عین یا لام کلمہ عموماً حرفِ حلقی ہوتا ہے، مگر اس سے باب طے نہیں ہوتا؛ یہ فعل سماعاً اسی باب سے ہے (لَهَثَ يَلْهَثُ)۔ بعض اہلِ لغت ماضی لَهِثَ بھی بتاتے ہیں، مگر مضارع دونوں صورتوں میں يَلْهَثُ ہی ہے۔",
+   "evidenceEnglish": "QAC 7:176:17 and 7:176:20 يَلْهَثْ / يَلْهَث: IMPF 3MS JUS form I active, ROOT lhv, LEM yalohavo (the jussive; citation form لَهَثَ); fatḥa on the hāʾ confirms the a-imperfect. The second occurrence has no sukun mark because its thāʾ assimilates into the following ذَّٰلِكَ. Al-Mu'jam al-Wasit: لَهَثَ الكلبُ يَلْهَثُ لَهْثًا ولُهَاثًا; Lisan al-Arab and Lane give لَهَثَ and also لَهِثَ with the same aorist يَلْهَثُ. The a–a (fataḥa) past is chosen as the more common headword."
+  },
+  {
+   "key": "yalo|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "لَوَى",
+   "present": "يَلْوِي",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "لفیف مقرون اور متعدی فعل ہے: موڑنا، مروڑنا؛ زبان کے ساتھ: بات کو گھما دینا۔ عین کلمہ واو صحیح حرف کی طرح باقی رہتی ہے، لامِ کلمہ یاء ماضی میں الف (لَوَى) اور مضارع میں ساکن یاء (يَلْوِي) بنتی ہے اور واوِ جمع سے پہلے گر جاتی ہے: تَلْوُوا، يَلْوُونَ۔",
+   "evidenceEnglish": "QAC 4:135:29 تَلْوُۥٓا۟: IMPF 2MP JUS form I active, ROOT lwy; QAC's lemma يَلْ is a truncated stem (citation form لَوَى). In تَلْوُوا the first wāw is the ʿayn radical and the second the plural subject; the final yāʾ drops before it. Quran-wide يَلْوُونَ (3:78) and تَلْوُونَ (3:153). Lane, Lisan al-Arab and al-Mu'jam al-Wasit: لَوَى الشيءَ يَلْوِيهِ لَيًّا (a–i, ḍaraba class). Ibn Amir and Hamza read تَلُوا (from وَلِيَ) in 4:135; Hafs is followed here."
+  },
+  {
+   "key": "{sotamotaEa|X|ACT",
+   "baabUrdu": "بابِ اِسْتِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — دہم (X)",
+   "past": "اِسْتَمْتَعَ",
+   "present": "يَسْتَمْتِعُ",
+   "pattern": "اِسْتَفْعَلَ — يَسْتَفْعِلُ",
+   "noteUrdu": "صحیح سالم فعل ہے: فائدہ اٹھانا، لطف اندوز ہونا؛ جس چیز سے فائدہ اٹھایا جائے اس پر بِ آتا ہے (اِسْتَمْتَعَ بِهِ)۔ شروع کا ہمزہ ہمزۂ وصل ہے جو ملا کر پڑھنے میں نہیں پڑھا جاتا؛ مضارع میں حرفِ مضارع مفتوح ہے۔",
+   "evidenceEnglish": "QAC 4:24:23 ٱسْتَمْتَعْتُم: PERF 2MP form X active, ROOT mtE, LEM {sotamotaEa. Quran-wide perfects ٱسْتَمْتَعَ (6:128), فَٱسْتَمْتَعُوا۟ (9:69), وَٱسْتَمْتَعْتُم (46:20). Regular istafʿala — yastafʿilu: اِسْتَمْتَعَ بِهِ يَسْتَمْتِعُ اِسْتِمْتَاعًا (Lane; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "tamat~aEa|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَمَتَّعَ",
+   "present": "يَتَمَتَّعُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "صحیح سالم فعل ہے: فائدہ اٹھانا، دنیا کے سامان سے لطف لینا؛ جس چیز سے فائدہ ہو اس پر بِ آتا ہے۔ یہ مَتَّعَ (فائدہ دینا) کا مطاوع ہے؛ مضارع يَتَمَتَّعُ میں حرفِ مضارع اور عین کلمہ دونوں مفتوح ہیں، اس لیے اسے بابِ تفعیل کا يُمَتِّعُ نہ سمجھیں۔",
+   "evidenceEnglish": "QAC 29:66:4 وَلِيَتَمَتَّعُوا۟: IMPF 3MP SUBJ form V active, ROOT mtE, LEM tamat~aEa. Quran-wide imperatives تَمَتَّعُوا۟ (11:65, 51:43) and تَمَتَّعْ (39:8), imperfect يَتَمَتَّعُونَ (47:12). Regular tafaʿʿala — yatafaʿʿalu, reflexive of مَتَّعَ: تَمَتَّعَ بِهِ يَتَمَتَّعُ تَمَتُّعًا (Lane; al-Mu'jam al-Wasit)."
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "entries": [
+  {
+   "key": "kafara|I|PASS",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "كُفِرَ",
+   "present": "يُكْفَرُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح فعل كَفَرَ يَكْفُرُ (انکار کرنا، ناشکری کرنا) کا مجہول ہے: انکار کیا جانا یا ناشکری ہونا۔ معروف جب بِ کے ساتھ آئے (كَفَرَ بِـ) تو مجہول میں جار و مجرور نائبِ فاعل بنتا ہے، ورنہ جس کا انکار یا ناشکری ہو وہی نائبِ فاعل ہوتا ہے؛ يُكْفَرُ کو معروف يَكْفُرُ اور بابِ تفعیل کے يُكَفِّرُ (گناہ مٹانا) سے الگ پہچانیں۔",
+   "evidenceEnglish": "Sample 4:140:11 يُكْفَرُ: QAC omits PASS, but the vocalisation yukfaru (damma prefix, sukun on kaf, fatha on fa) is the Form I passive imperfect yufʿalu, adjudicated in qacCorrection, with بِهَا as na'ib al-fa'il (parallel وَيُسْتَهْزَأُ بِهَا). Active كَفَرَ يَكْفُرُ is a–u, bab nasara (reviewed lex-00 entry kafara|I|ACT: فَلْيَكْفُرْ 18:29, imperative ٱكْفُرْ 59:16). Quran-wide passive forms of the same verb: perfect كُفِرَ (54:14 لِّمَن كَانَ كُفِرَ) and imperfect فَلَن يُكْفَرُوهُ (3:115). Lexica (Lane, Lisan al-Arab s.v. كفر): كَفَرَ يَكْفُرُ كُفْرًا وكُفْرَانًا."
+  },
+  {
+   "key": "ra'aA|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَرَى",
+   "present": "يُرِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "رَأَى کا بابِ افعال ہے: دکھانا؛ متعدی ہے اور عموماً دو مفعول لیتا ہے۔ مادہ مہموز العین اور ناقص یائی ہے، مگر ماضی و مضارع میں ہمزہ کا گر جانا (أَرَى، يُرِي) رَأَى ہی کی خصوصیت ہے، ہر مہموز العین کا قاعدہ نہیں (نَأَى، يَنْأَى میں ہمزہ باقی ہے)؛ حرفِ مضارعت کا ضمہ اور راء کا کسرہ اسے يَرَى (دیکھتا ہے) سے جدا کرتے ہیں۔",
+   "evidenceEnglish": "Sample 4:105:10 أَرَىٰكَ in بِمَآ أَرَىٰكَ ٱللَّهُ: QAC tags it IMPF 1S subjunctive of Form I ra'aA, but the nominative ٱللَّهُ is its subject and no naṣb particle precedes; qacCorrection adjudicates it as the Form IV perfect أَرَى (He showed you), 3MS, with the 2MS object pronoun. Same verb as the reviewed lex-00 entry >arayo|IV|ACT (QAC 37 Form IV occurrences: يُرِي / نُرِي, أَرِنِي, أَرَيْنَاكَ 17:60); the 3MS perfect أَرَى also occurs at 3:152 and 8:43, which QAC 0.4 likewise files under ra'aA. Form IV of رأى regularly drops the hamza: أَرَى / يُرِي, afʿala/yufʿilu (Lane, Wright). Paradigm fields copied from >arayo|IV|ACT for consistency."
+  },
+  {
+   "key": "saw~aY`|II|PASS",
+   "baabUrdu": "بابِ تَفْعِيل — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)، مجہول",
+   "past": "سُوِّيَ",
+   "present": "يُسَوَّى",
+   "pattern": "فُعِّلَ — يُفَعَّلُ",
+   "noteUrdu": "سَوَّى يُسَوِّي (برابر کرنا) کا مجہول ہے: برابر یا ہموار کیا جانا۔ مادہ س و ي لفیف مقرون ہے؛ مشدد واو صحیح حرف کی طرح رہتی ہے، ماضی سُوِّيَ میں آخری یاء ظاہر ہے اور مضارع يُسَوَّى میں الفِ مقصورہ بنتی ہے؛ واو پر شدّہ اسے بابِ تفعیل بتاتی ہے، ثلاثی مجرد نہیں۔",
+   "evidenceEnglish": "Sample 4:42:8 تُسَوَّىٰ: QAC tags IMPF PASS 3FS with the pseudo-lemma tusaw~aY` and no form marker (Form I), but the shadda on the waw after a damma prefix gives tusawwā = yufaʿʿalu, the Form II passive of سَوَّى يُسَوِّي (reviewed lex-00 entry saw~aY`|II|ACT; QAC Form II imperfects نُسَوِّيكُم 26:98, نُسَوِّيَ 75:4). A Form I passive would be تُسْوَى. Hence passive سُوِّيَ / يُسَوَّى (fuʿʿila — yufaʿʿalu); indicative with implied damma after لَوْ, ٱلْأَرْضُ its na'ib al-fa'il. Hafs reading; other canonical readings تَسَّوَّىٰ / تَسَوَّىٰ are Form V active. Lane s.v. سوي. Paradigm fields identical to lex-b13 tusaw~aY`|I|PASS (same occurrence, older handle)."
+  },
+  {
+   "key": "talaZ~aY`|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَلَظَّى",
+   "present": "يَتَلَظَّى",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "ناقص یائی اور لازم فعل ہے: آگ کا بھڑکنا، شعلے مارنا۔ آخری یاء ماضی اور مضارع دونوں میں الفِ مقصورہ کی صورت میں ہے (تَلَظَّى، يَتَلَظَّى)۔ احتیاط: مؤنث مضارع تَتَلَظَّى میں دو تاء جمع ہونے پر ایک تاء حذف ہو کر تَلَظَّى رہ جاتا ہے، جو ماضی کا ہم شکل ہے۔",
+   "evidenceEnglish": "Sample 92:14:3 تَلَظَّىٰ (the only Quranic occurrence), QAC IMPF 3FS with no form marker; qacCorrection adjudicates Form V: ta- prefix plus doubled ẓā' (tafaʿʿala), the imperfect 3FS تَتَلَظَّى with one of the two ta's elided, indicative (implied damma on the alif), describing نَارًا. al-Bazzi reads تَّلَظَّى with assimilated ta'. Form I لَظِيَ is not this word. Lane / Lisan al-Arab s.v. لظي: تَلَظَّتِ النَّارُ 'the fire blazed', intransitive. Paradigm fields identical to lex-a10 talaZ~aY`|I|ACT (same verb, older handle)."
+  },
+  {
+   "key": "ganiya|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "غَنِيَ",
+   "present": "يَغْنَى",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "ناقص یائی اور لازم ہے۔ فِي کے ساتھ رہنا یا آباد ہونا مراد ہے۔ واحد مضارع میں آخری یاء الفِ مقصورہ ہے۔ جمع مذکر کی واو سے پہلے الف حذف ہے اور نون جزم سے حذف ہوتی ہے۔ بابِ افعال کے يُغْنِي کا معنی کسی کو غنی کرنا یا فائدہ دینا ہے۔",
+   "evidenceEnglish": "Lane, Arabic-English Lexicon, s.v. غنى, gives غَنِيَ يَغْنَى and records the intransitive sense of dwelling. The open nūn in 7:92:6 يَغْنَوْا۟ and فِيهَا corroborate it, as do 11:68 and 11:95. QAC classifies the occurrence as Form I but groups it under the Form IV citation أَغْنَى. The Form IV plural imperfect would have prefix ḍamma and kasra before the final radical."
+  },
+  {
+   "key": "Hazina|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "حَزِنَ",
+   "present": "يَحْزَنُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے، یعنی غمگین ہونا۔ مضارع میں زاء پر زبر آتی ہے، جیسے يَحْزَنُ۔ حَزَنَ يَحْزُنُ میں مضارع کی زاء پر پیش ہے اور اس کا معنی کسی کو غمگین کرنا ہے۔",
+   "evidenceEnglish": "Al-Azhari, Tahdhib al-Lugha, s.v. حزن, distinguishes intransitive حَزِنَ يَحْزَنُ from transitive حَزَنَهُ يَحْزُنُهُ. Lane, s.v. حزن, records the same distinction. The active imperfect with fatḥa on zāy and no direct object occurs at 7:35:18, 7:49:15 and 29:33:15. QAC groups these under an inflected identifier used for the transitive paradigm."
+  },
+  {
+   "key": "kabira|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "كَبِرَ",
+   "present": "يَكْبَرُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے۔ عمر میں بڑا ہونے یا بڑھاپے کو پہنچنے کے لیے آتا ہے۔ مضارع میں باء پر فتحہ ہے۔ آیت میں یتیموں کے بڑے ہونے کا ذکر ہے اور حرفِ نصب کے باعث جمع مذکر غائب کے صیغے کی نون حذف ہے۔",
+   "evidenceEnglish": "Lane, Arabic-English Lexicon, s.v. كبر, lists كَبِرَ with imperfect يَكْبَرُ for becoming full-grown or old and distinguishes كَبُرَ يَكْبُرُ, to be great. The vocalized occurrence يَكْبَرُوا۟ at 4:6:19 and the context of orphans reaching adulthood support the former."
+  }
+ ]
+}

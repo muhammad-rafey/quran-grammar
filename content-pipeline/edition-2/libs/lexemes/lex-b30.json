@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "tuwEidu|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَوْعَدَ",
+   "present": "يُوعِدُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "مثال واوی اور متعدی فعل ہے: دھمکی دینا، ڈرانا (وعید)؛ جس بات کی دھمکی ہو وہ عموماً بِ کے ساتھ آتی ہے اور مفعول کبھی محذوف ہوتا ہے۔ بابِ افعال میں واو حذف نہیں ہوتی: ماضی میں ساکن (أَوْعَدَ) اور مضارع میں پیش کے بعد مدّ (يُوعِدُ)؛ اسے ثلاثی مجرد وَعَدَ يَعِدُ (وعدہ کرنا) سے الگ پہچانیں۔",
+   "evidenceEnglish": "QAC tags 7:86:5 تُوعِدُونَ as IMPF 2MP Form IV (LEM tuwEidu, root wEd); QAC's lemma is the inflected imperfect, so the citation is derived as the perfect أَوْعَدَ. This is the only Form IV occurrence of the root in the Quran; the i'rab treats it as a verb with its object unexpressed. Form IV أَوْعَدَ يُوعِدُ إِيعَاد 'threatened' (with بِ of the thing threatened), distinguished from Form I وَعَدَ يَعِدُ 'promised' (Lane s.v. وعد; Lisan al-Arab; al-Mu'jam al-Wasit). Imperfect vowelling يُوعِدُ (kasra on ع) is confirmed by the attested تُوعِدُونَ."
+  },
+  {
+   "key": "wa`Eado|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "وَاعَدَ",
+   "present": "يُوَاعِدُ",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "مثال واوی اور متعدی فعل ہے: کسی سے باہم وعدہ کرنا یا ملاقات کا وقت مقرر کرنا؛ جس سے وعدہ ہو اور جس چیز یا مدت کا وعدہ ہو، دونوں مفعول بن سکتے ہیں۔ بابِ مفاعلہ میں واو کبھی حذف نہیں ہوتی (وَاعَدَ، يُوَاعِدُ)؛ فاءِ کلمہ کے بعد کا الف اس باب کی علامت ہے، جو رسمِ عثمانی میں کہیں کھڑے زبر سے، کہیں پورے الف سے لکھا گیا ہے۔",
+   "evidenceEnglish": "QAC tags 7:142:1 وَوَٰعَدْنَا as PERF 1P Form III (LEM wa`Eado, a truncated stem; root wEd); the dagger alif after و marks the Form III long ā, so the citation is وَاعَدَ. Quran-wide: perfects وَٰعَدْنَا (2:51) and وَوَٰعَدْنَٰكُمْ (20:80) and the jussive imperfect لَّا تُوَاعِدُوهُنَّ (2:235) give وَاعَدَ يُوَاعِدُ (fā'ala — yufā'ilu). Double object in 7:142 (مُوسَىٰ and ثَلَٰثِينَ لَيْلَةً per the standard i'rab). Lane s.v. وعد; Lisan al-Arab. Note for reviewers: Abu 'Amr (and others) read وَعَدْنَا (Form I) in 2:51, 7:142, 20:80; Hafs reads Form III."
+  },
+  {
+   "key": "waEaZo|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "وَعَظَ",
+   "present": "يَعِظُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "مثال واوی اور متعدی فعل ہے: نصیحت کرنا، سمجھانا؛ جسے نصیحت کی جائے وہ مفعول ہوتا ہے اور جس بات کی نصیحت ہو وہ بِ کے ساتھ آتی ہے۔ اصل يَوْعِظُ میں واو گر کر مضارع يَعِظُ اور امر عِظْ بنے، جیسے وَعَدَ يَعِدُ؛ مجہول يُوعَظُ میں یہ واو پھر ظاہر ہوتی ہے۔",
+   "evidenceEnglish": "QAC Form I active (LEM waEaZo, a truncated stem; root wEZ). Sample imperfects يَعِظُكُم (4:58:19), تَعِظُونَ (7:164:6) and imperatives فَعِظُوهُنَّ (4:34:25), وَعِظْهُمْ (4:63:10) all have kasra on ع with the initial wāw dropped: وَعَظَ يَعِظُ, a–i (daraba), assimilated like وَعَدَ يَعِدُ (lex-00). Thing admonished with takes بِ: نِعِمَّا يَعِظُكُم بِهِۦٓ (4:58). Lane s.v. وعظ and Lisan al-Arab give وَعَظَهُ يَعِظُهُ وَعْظًا وَعِظَةً."
+  },
+  {
+   "key": "waEaZo|I|PASS",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "وُعِظَ",
+   "present": "يُوعَظُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "مثال واوی فعل وَعَظَ کا مجہول ہے: نصیحت کیا جانا؛ جسے نصیحت کی جائے وہ نائبِ فاعل بنتا ہے اور جس بات کی نصیحت ہو وہ بِ کے ساتھ آتی ہے۔ معروف يَعِظُ میں واو گرتی ہے، مگر مجہول مضارع يُوعَظُ میں حرفِ مضارع کے پیش کے بعد واو ظاہر رہتی ہے اور عینِ کلمہ پر زبر آتا ہے۔",
+   "evidenceEnglish": "QAC tags 4:66:21 يُوعَظُونَ as IMPF 3MP passive, Form I (LEM waEaZo, root wEZ); i'rab فعل مضارع مبني للمجهول with the wāw as نائب فاعل. Also passive يُوعَظُ بِهِۦ (2:232, 65:2). No passive perfect occurs in the Quran; وُعِظَ is the regular fu'ila of وَعَظَ يَعِظُ (a–i), with the wāw restored after the prefix damma in يُوعَظُ (yuf'alu), matching waEada|I|PASS وُعِدَ — يُوعَدُ in lex-00."
+  },
+  {
+   "key": "yuwaf~iqi|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "وَفَّقَ",
+   "present": "يُوَفِّقُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "مثال واوی اور متعدی فعل ہے: موافقت پیدا کرنا، دو فریقوں میں میل کرا دینا، نیز توفیق دینا؛ جن کے درمیان میل ہو وہ بَيْنَ کے ساتھ آتے ہیں۔ بابِ تفعیل میں واو کبھی حذف نہیں ہوتی (يُوَفِّقُ) اور عینِ کلمہ پر تشدید اس باب کی علامت ہے؛ جزم میں آخر ساکن ہوتا ہے اور اگلے ساکن سے ملنے پر زیر لیتا ہے۔",
+   "evidenceEnglish": "QAC tags 4:35:15 يُوَفِّقِ as IMPF 3MS Form II, jussive (LEM yuwaf~iqi, root wfq); QAC's lemma is the inflected jussive, so the citation is derived as the perfect وَفَّقَ and the indicative يُوَفِّقُ. The final kasra is the helping vowel of a jussive sukun before the hamzat al-wasl of ٱللَّهُ. Shadda on ف is diagnostic of Form II; Quran-wide the root also has the verbal noun تَوْفِيق (4:62, 11:88). وَفَّقَ بَيْنَهُمَا 'reconciled the two'; وَفَّقَهُ ٱللَّهُ 'God granted him success' (Lane s.v. وفق; Lisan al-Arab; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "waf~aY`^|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "وَفَّى",
+   "present": "يُوَفِّي",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "لفیف مفروق (و ف ي) فعل ہے: پورا پورا دینا، نیز عہد پورا کرنا؛ دینے کے معنی میں دو مفعول لیتا ہے: جسے دیا جائے اور جو بدلہ یا حق دیا جائے۔ آخری یاء ماضی میں الفِ مقصورہ ہے (وَفَّى)؛ مضارع میں رفع میں ساکن (يُوَفِّي)، نصب میں مفتوح (يُوَفِّيَ)، اور جزم میں نیز جمع کی واو سے پہلے گر جاتی ہے؛ فاءِ کلمہ واو کبھی نہیں گرتی۔",
+   "evidenceEnglish": "QAC tags 4:173:6 فَيُوَفِّيهِمْ as IMPF 3MS Form II (LEM waf~aY`^, root wfy) with object هِمْ. Quran-wide: perfect وَفَّىٰٓ (53:37, intransitive 'fulfilled'); imperfects فَيُوَفِّيهِمْ أُجُورَهُمْ (3:57, double object), لَيُوَفِّيَنَّهُمْ (11:111) and jussive نُوَفِّ إِلَيْهِمْ (11:15) with the final yāʾ dropped. Hence وَفَّى — يُوَفِّي (fa''ala — yufa''ilu). Lane s.v. وفى; Lisan al-Arab: وَفَّاهُ حَقَّهُ 'paid him his due in full'. The passive وُفِّيَ is a separate QAC lexeme."
+  },
+  {
+   "key": ">awofaY`|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَوْفَى",
+   "present": "يُوفِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "لفیف مفروق (و ف ي) فعل ہے: عہد پورا کرنا، ناپ تول پورا دینا؛ عہد کے ساتھ عموماً بِ آتا ہے اور ناپ تول براہِ راست مفعول بنتا ہے۔ فاءِ کلمہ واو ماضی میں ساکن اور مضارع میں پیش کے بعد مدّ ہے (أَوْفَى، يُوفِي)؛ آخری یاء ماضی میں الفِ مقصورہ ہے اور جزم، امر اور جمع کی واو سے پہلے گر جاتی ہے (أَوْفِ، أَوْفُوا)۔",
+   "evidenceEnglish": "QAC tags 7:85:19 فَأَوْفُوا۟ as IMPV 2MP Form IV (LEM >awofaY`, root wfy). Quran-wide: perfect أَوْفَىٰ (3:76, 48:10); imperfects يُوفُونَ بِٱلنَّذْرِ (76:7), أُوفِى ٱلْكَيْلَ (12:59), jussive أُوفِ بِعَهْدِكُمْ (2:40); imperatives فَأَوْفِ لَنَا ٱلْكَيْلَ (12:88), أَوْفُوا۟ بِٱلْعُقُودِ (5:1). Hence أَوْفَى — يُوفِي (af'ala — yuf'ilu), transitive directly (the measure) or with بِ (the covenant). Lane s.v. وفى; Lisan al-Arab; al-Mu'jam al-Wasit."
+  },
+  {
+   "key": "waqaEa|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "وَقَعَ",
+   "present": "يَقَعُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "مثال واوی اور لازم فعل ہے: گرنا، واقع ہونا، آ پڑنا؛ عَلَى کے ساتھ کسی پر آ پڑنے یا کسی کے ذمے ثابت و لازم ہونے کا معنی دیتا ہے۔ اصل يَوْقِعُ میں واو گر گئی اور لامِ کلمہ ع حرفِ حلقی ہونے سے عینِ کلمہ پر زبر آیا (يَقَعُ، امر قَعْ)؛ بابِ افعال کا أَوْقَعَ (ڈال دینا) الگ فعل ہے۔",
+   "evidenceEnglish": "QAC Form I active (LEM waqaEa, root wqE). Samples are all PERF 3MS وَقَعَ (4:100:24, 7:71:3, 7:118:1, 7:134:2). Quran-wide imperfect أَن تَقَعَ عَلَى ٱلْأَرْضِ (22:65) and imperative فَقَعُوا۟ لَهُۥ سَٰجِدِينَ (15:29, 38:72) show fatha on ق with the wāw dropped: وَقَعَ يَقَعُ, a–a (fataha). Lane s.v. وقع and Lisan al-Arab give وَقَعَ يَقَعُ وُقُوعًا; grammarians derive it from *يَوْقِعُ with fatha due to the guttural ع, the same analysis as وَضَعَ يَضَعُ (lex-00). Intransitive; وَقَعَ أَجْرُهُۥ عَلَى ٱللَّهِ (4:100) = became due/established. Form IV يُوقِعَ (5:91) is a separate lemma."
+  },
+  {
+   "key": "yalija|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "وَلَجَ",
+   "present": "يَلِجُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "مثال واوی اور لازم فعل ہے: داخل ہونا، کسی تنگ جگہ میں گھس جانا؛ جس میں داخل ہو وہ فِي کے ساتھ آتا ہے۔ اصل يَوْلِجُ میں واو گر کر مضارع يَلِجُ بنا، اس لیے مضارع میں فاءِ کلمہ نظر نہیں آتی؛ بابِ افعال کا أَوْلَجَ يُولِجُ (داخل کرنا) الگ فعل ہے۔",
+   "evidenceEnglish": "QAC tags 7:40:16 يَلِجَ as IMPF 3MS subjunctive, Form I (LEM yalija, root wlj); QAC's lemma is the inflected imperfect, so the citation is derived as the perfect وَلَجَ. Quran-wide imperfects مَا يَلِجُ فِى ٱلْأَرْضِ (34:2, 57:4) have kasra on ل with the wāw dropped; no Form I perfect occurs in the Quran. Lane s.v. ولج and Lisan al-Arab give وَلَجَ يَلِجُ وُلُوجًا 'entered': a–i (daraba), assimilated like وَعَدَ يَعِدُ. Intransitive, with فِي. Form IV أَوْلَجَ يُولِجُ (3:27) is a separate lemma."
+  },
+  {
+   "key": "wahana|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "وَهَنَ",
+   "present": "يَهِنُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "مثال واوی اور لازم فعل ہے: کمزور پڑنا، ہمت ہار دینا۔ اصل يَوْهِنُ میں واو گر کر مضارع يَهِنُ بنا؛ عینِ کلمہ ہاء حرفِ حلقی ہونے کے باوجود مضارع میں زیر ہی رہتا ہے، اس لیے اسے وَهَبَ يَهَبُ پر قیاس نہ کریں۔",
+   "evidenceEnglish": "QAC tags 4:104:2 تَهِنُوا۟ as IMPF 2MP jussive, Form I (LEM wahana, root whn). Quran-wide perfects وَهَنَ ٱلْعَظْمُ (19:4) and فَمَا وَهَنُوا۟ (3:146) have fatha on ه; imperfects وَلَا تَهِنُوا۟ (3:139, 4:104) and فَلَا تَهِنُوا۟ (47:35) have kasra with the wāw dropped: وَهَنَ يَهِنُ, a–i (daraba), assimilated. Lane s.v. وهن and Lisan al-Arab give وَهَنَ يَهِنُ وَهْنًا 'became weak' as the main usage and also record the variants وَهِنَ يَوْهَنُ and وَهُنَ; the Quranic vowels follow وَهَنَ يَهِنُ. Intransitive."
+  }
+ ]
+}

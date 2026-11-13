@@ -1,0 +1,150 @@
+{
+  "retrievedAt": "2026-11-13",
+  "textSource": "Quran.com Content API v4 text_uthmani (end-of-ayah markers excluded); word boundaries and IDs checked against QAC 0.4 morphology",
+  "sources": [
+    "https://api.quran.com/api/v4/verses/by_chapter/95?words=true&word_fields=text_uthmani&per_page=50"
+  ],
+  "surah": 95,
+  "ayahCount": 8,
+  "wordCount": 34,
+  "pauseSignPolicy": "Recitation signs that the API separates from a word by a space (waqf signs, the saktah sign, the sajdah sign and the rub al-hizb marker) are excluded from stored word tokens, following the Surahs 110-114 precedent; each exclusion is listed below.",
+  "words": [
+    {
+      "id": "95:1:1",
+      "arabic": "وَٱلتِّينِ"
+    },
+    {
+      "id": "95:1:2",
+      "arabic": "وَٱلزَّيْتُونِ"
+    },
+    {
+      "id": "95:2:1",
+      "arabic": "وَطُورِ"
+    },
+    {
+      "id": "95:2:2",
+      "arabic": "سِينِينَ"
+    },
+    {
+      "id": "95:3:1",
+      "arabic": "وَهَـٰذَا"
+    },
+    {
+      "id": "95:3:2",
+      "arabic": "ٱلْبَلَدِ"
+    },
+    {
+      "id": "95:3:3",
+      "arabic": "ٱلْأَمِينِ"
+    },
+    {
+      "id": "95:4:1",
+      "arabic": "لَقَدْ"
+    },
+    {
+      "id": "95:4:2",
+      "arabic": "خَلَقْنَا"
+    },
+    {
+      "id": "95:4:3",
+      "arabic": "ٱلْإِنسَـٰنَ"
+    },
+    {
+      "id": "95:4:4",
+      "arabic": "فِىٓ"
+    },
+    {
+      "id": "95:4:5",
+      "arabic": "أَحْسَنِ"
+    },
+    {
+      "id": "95:4:6",
+      "arabic": "تَقْوِيمٍۢ"
+    },
+    {
+      "id": "95:5:1",
+      "arabic": "ثُمَّ"
+    },
+    {
+      "id": "95:5:2",
+      "arabic": "رَدَدْنَـٰهُ"
+    },
+    {
+      "id": "95:5:3",
+      "arabic": "أَسْفَلَ"
+    },
+    {
+      "id": "95:5:4",
+      "arabic": "سَـٰفِلِينَ"
+    },
+    {
+      "id": "95:6:1",
+      "arabic": "إِلَّا"
+    },
+    {
+      "id": "95:6:2",
+      "arabic": "ٱلَّذِينَ"
+    },
+    {
+      "id": "95:6:3",
+      "arabic": "ءَامَنُوا۟"
+    },
+    {
+      "id": "95:6:4",
+      "arabic": "وَعَمِلُوا۟"
+    },
+    {
+      "id": "95:6:5",
+      "arabic": "ٱلصَّـٰلِحَـٰتِ"
+    },
+    {
+      "id": "95:6:6",
+      "arabic": "فَلَهُمْ"
+    },
+    {
+      "id": "95:6:7",
+      "arabic": "أَجْرٌ"
+    },
+    {
+      "id": "95:6:8",
+      "arabic": "غَيْرُ"
+    },
+    {
+      "id": "95:6:9",
+      "arabic": "مَمْنُونٍۢ"
+    },
+    {
+      "id": "95:7:1",
+      "arabic": "فَمَا"
+    },
+    {
+      "id": "95:7:2",
+      "arabic": "يُكَذِّبُكَ"
+    },
+    {
+      "id": "95:7:3",
+      "arabic": "بَعْدُ"
+    },
+    {
+      "id": "95:7:4",
+      "arabic": "بِٱلدِّينِ"
+    },
+    {
+      "id": "95:8:1",
+      "arabic": "أَلَيْسَ"
+    },
+    {
+      "id": "95:8:2",
+      "arabic": "ٱللَّهُ"
+    },
+    {
+      "id": "95:8:3",
+      "arabic": "بِأَحْكَمِ"
+    },
+    {
+      "id": "95:8:4",
+      "arabic": "ٱلْحَـٰكِمِينَ"
+    }
+  ],
+  "excludedPauseSigns": []
+}

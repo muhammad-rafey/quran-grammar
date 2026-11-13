@@ -1,0 +1,44 @@
+{
+  "entries": [
+    {
+      "key": "walada|I|ACT",
+      "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "وَلَدَ",
+      "present": "يَلِدُ",
+      "pattern": "فَعَلَ — يَفْعِلُ",
+      "noteUrdu": "مثال واوی اور متعدی فعل ہے: جننا، یعنی ماں کا بچہ جننا یا باپ سے اولاد ہونا (تولید)؛ یہ خَلَقَ (تخلیق کرنا) کے معنی میں نہیں۔ اصل يَوْلِدُ میں واو حرفِ مضارع کے زبر اور عینِ کلمہ کے زیر کے درمیان آنے سے گر گئی، اس لیے مضارع اور امر (يَلِدُ، لِدْ) میں فاءِ کلمہ نظر نہیں آتی؛ مجہول يُولَدُ میں یہ واو پھر ظاہر ہوتی ہے۔",
+      "evidenceEnglish": "QAC tags 90:3:3 وَلَدَ as PERF form I (LEM walada, root wld). Quran-wide active imperfects لَمْ يَلِدْ (112:3) and وَلَا يَلِدُوٓا۟ (71:27) show kasra on the 2nd radical with the initial waw dropped, i.e. a–i (bab daraba) like وَعَدَ يَعِدُ and وَجَدَ يَجِدُ in lex-00; passive imperfect وَلَمْ يُولَدْ (112:3) restores the waw. Lane s.v. ولد and Lisan al-Arab give وَلَدَ يَلِدُ وِلَادَةً."
+    },
+    {
+      "key": "tawal~aY`|V|ACT",
+      "baabUrdu": "بابِ تَفَعُّل",
+      "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+      "past": "تَوَلَّى",
+      "present": "يَتَوَلَّى",
+      "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+      "noteUrdu": "لفیف مفروق (و ل ي) ہے: لازم معنی منہ پھیر لینا، اور متعدی معنی کسی کو دوست و سرپرست بنانا یا کسی کام کا ذمہ لینا۔ آخری یاء تَوَلَّى اور يَتَوَلَّى میں الفِ مقصورہ ہے۔ جمع مذکر کی واو سے پہلے اور واحد مذکر کے مجزوم و امر میں حذف ہوتی ہے۔ تثنیہ میں یاء باقی رہتی ہے۔",
+      "evidenceEnglish": "QAC tags 88:23:3, 92:16:3 and 96:13:4 تَوَلَّىٰ as PERF form V (LEM tawal~aY`, root wly), intransitive 'turned away'. Quran-wide QAC: perfect plural فَإِن تَوَلَّوْا۟ (3:32), jussive وَمَن يَتَوَلَّ ٱللَّهَ وَرَسُولَهُۥ (5:56) with transitive 'take as ally', and وَإِن تَتَوَلَّوْا۟ (47:38). Hence تَوَلَّى — يَتَوَلَّى (tafaʿʿala — yatafaʿʿalu), parallel to تَوَفَّى يَتَوَفَّى in lex-00; Lane s.v. ولي (تَوَلَّى عَنْهُ turned away; تَوَلَّاهُ took him as friend/patron)."
+    },
+    {
+      "key": "wahaba|I|ACT",
+      "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "وَهَبَ",
+      "present": "يَهَبُ",
+      "pattern": "فَعَلَ — يَفْعَلُ",
+      "noteUrdu": "مثال واوی اور متعدی فعل ہے: بخشنا، عطا کرنا؛ دی جانے والی چیز مفعول بہ ہوتی ہے اور جسے دی جائے وہ عموماً لِ کے ساتھ آتا ہے (هَبْ لَنَا)۔ مضارع اور امر میں واو گر جاتی ہے (يَهَبُ، هَبْ) کیونکہ اصل يَوْهِبُ تھا، پھر عینِ کلمہ ہاء حرفِ حلقی ہونے سے اس پر زبر آیا۔",
+      "evidenceEnglish": "QAC tags 25:74:4 هَبْ as IMPV form I (LEM wahaba, root whb), 2MS, with recipient لَنَا. Quran-wide imperfect يَهَبُ لِمَن يَشَآءُ (42:49) and imperative فَهَبْ لِى (19:5) show fatha on the 2nd radical with the waw dropped. Lane s.v. وهب and Lisan al-Arab give وَهَبَ يَهَبُ هِبَةً; grammarians treat the underlying aorist as يَوْهِبُ (a–i, hence the waw elision), with fatha imposed by the guttural ه — the same analysis as وَضَعَ يَضَعُ (lex-00). Classified here by the attested vowels as a–a (bab fataha)."
+    },
+    {
+      "key": "yas~ara|II|ACT",
+      "baabUrdu": "بابِ تَفْعِيل",
+      "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+      "past": "يَسَّرَ",
+      "present": "يُيَسِّرُ",
+      "pattern": "فَعَّلَ — يُفَعِّلُ",
+      "noteUrdu": "مثال یائی اور متعدی فعل ہے: آسان کرنا، سہولت دینا؛ لِ کبھی اس شخص پر آتا ہے جس کے لیے کام آسان کیا جائے، اور کبھی اس انجام پر جس کی طرف کسی کو آسانی دی جائے۔ بابِ تفعیل میں فاءِ کلمہ یاء کسی صیغے میں نہیں بدلتی، اس لیے مضارع میں علامتِ مضارع کے بعد یاء بھی آتی ہے (يُيَسِّرُ، نُيَسِّرُ)؛ مشدد سین باب کی علامت ہے۔",
+      "evidenceEnglish": "QAC tags 87:8:1 وَنُيَسِّرُكَ and 92:7:1, 92:10:1 فَسَنُيَسِّرُهُۥ as IMPF form II (LEM yas~ara, root ysr), 1P with object pronoun and لِلْيُسْرَىٰ / لِلْعُسْرَىٰ, attesting the yufaʿʿilu imperfect (prefix damma, kasra on the doubled radical). Quran-wide perfect يَسَّرْنَـٰهُ (19:97, 44:58), وَلَقَدْ يَسَّرْنَا (54:17) and imperative وَيَسِّرْ لِىٓ أَمْرِى (20:26). Lane s.v. يسر and al-Mu'jam al-Wasit: يَسَّرَ يُيَسِّرُ تَيْسِيرًا 'made easy'."
+    }
+  ]
+}

@@ -18,10 +18,18 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     reducedMotion: 'reduce',
   },
-  webServer: process.env.BASE_URL ? undefined : {
-    command: 'npm run dev',
-    url: baseURL,
-    reuseExistingServer: !process.env.CI,
-    timeout: 60000,
-  },
+  webServer: process.env.BASE_URL ? undefined : [
+    {
+      command: 'npm run dev -w @quran-grammar/api',
+      url: 'http://127.0.0.1:4000/api/health',
+      reuseExistingServer: !process.env.CI,
+      timeout: 60000,
+    },
+    {
+      command: 'npm run dev -w @quran-grammar/web',
+      url: baseURL,
+      reuseExistingServer: !process.env.CI,
+      timeout: 60000,
+    },
+  ],
 });

@@ -1,0 +1,134 @@
+{
+  "retrievedAt": "2026-11-13",
+  "textSource": "Quran.com Content API v4 text_uthmani (end-of-ayah markers excluded); word boundaries and IDs checked against QAC 0.4 morphology",
+  "sources": [
+    "https://api.quran.com/api/v4/verses/by_chapter/97?words=true&word_fields=text_uthmani&per_page=50"
+  ],
+  "surah": 97,
+  "ayahCount": 5,
+  "wordCount": 30,
+  "pauseSignPolicy": "Recitation signs that the API separates from a word by a space (waqf signs, the saktah sign, the sajdah sign and the rub al-hizb marker) are excluded from stored word tokens, following the Surahs 110-114 precedent; each exclusion is listed below.",
+  "words": [
+    {
+      "id": "97:1:1",
+      "arabic": "إِنَّآ"
+    },
+    {
+      "id": "97:1:2",
+      "arabic": "أَنزَلْنَـٰهُ"
+    },
+    {
+      "id": "97:1:3",
+      "arabic": "فِى"
+    },
+    {
+      "id": "97:1:4",
+      "arabic": "لَيْلَةِ"
+    },
+    {
+      "id": "97:1:5",
+      "arabic": "ٱلْقَدْرِ"
+    },
+    {
+      "id": "97:2:1",
+      "arabic": "وَمَآ"
+    },
+    {
+      "id": "97:2:2",
+      "arabic": "أَدْرَىٰكَ"
+    },
+    {
+      "id": "97:2:3",
+      "arabic": "مَا"
+    },
+    {
+      "id": "97:2:4",
+      "arabic": "لَيْلَةُ"
+    },
+    {
+      "id": "97:2:5",
+      "arabic": "ٱلْقَدْرِ"
+    },
+    {
+      "id": "97:3:1",
+      "arabic": "لَيْلَةُ"
+    },
+    {
+      "id": "97:3:2",
+      "arabic": "ٱلْقَدْرِ"
+    },
+    {
+      "id": "97:3:3",
+      "arabic": "خَيْرٌۭ"
+    },
+    {
+      "id": "97:3:4",
+      "arabic": "مِّنْ"
+    },
+    {
+      "id": "97:3:5",
+      "arabic": "أَلْفِ"
+    },
+    {
+      "id": "97:3:6",
+      "arabic": "شَهْرٍۢ"
+    },
+    {
+      "id": "97:4:1",
+      "arabic": "تَنَزَّلُ"
+    },
+    {
+      "id": "97:4:2",
+      "arabic": "ٱلْمَلَـٰٓئِكَةُ"
+    },
+    {
+      "id": "97:4:3",
+      "arabic": "وَٱلرُّوحُ"
+    },
+    {
+      "id": "97:4:4",
+      "arabic": "فِيهَا"
+    },
+    {
+      "id": "97:4:5",
+      "arabic": "بِإِذْنِ"
+    },
+    {
+      "id": "97:4:6",
+      "arabic": "رَبِّهِم"
+    },
+    {
+      "id": "97:4:7",
+      "arabic": "مِّن"
+    },
+    {
+      "id": "97:4:8",
+      "arabic": "كُلِّ"
+    },
+    {
+      "id": "97:4:9",
+      "arabic": "أَمْرٍۢ"
+    },
+    {
+      "id": "97:5:1",
+      "arabic": "سَلَـٰمٌ"
+    },
+    {
+      "id": "97:5:2",
+      "arabic": "هِىَ"
+    },
+    {
+      "id": "97:5:3",
+      "arabic": "حَتَّىٰ"
+    },
+    {
+      "id": "97:5:4",
+      "arabic": "مَطْلَعِ"
+    },
+    {
+      "id": "97:5:5",
+      "arabic": "ٱلْفَجْرِ"
+    }
+  ],
+  "excludedPauseSigns": []
+}

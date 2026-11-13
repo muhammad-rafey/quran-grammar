@@ -28,6 +28,7 @@ const fail = (chunk, message) => { throw new Error(`${chunk}: ${message}`); };
 export async function reviewSourceFilesSha256(work) {
   const paths = ['guide/authoring-guide.md', 'workflows/chunks.js', 'scripts/validate_chunk.py',
     'meta/plan.json', 'meta/overrides.json', 'libs/rules.json'];
+  if (await exists(join(work, 'edition.json'))) paths.push('edition.json');
   for (const directory of ['libs/lexemes', 'libs/roots']) {
     if (!(await lstat(join(work, directory))).isDirectory()) throw new Error('Review source library directory must be a regular directory');
     for (const entry of await readdir(join(work, directory), { withFileTypes: true })) {
@@ -179,7 +180,7 @@ export async function exportReviews({ work = DEFAULT_WORK, runDir } = {}) {
   const ids = plan.map((spec) => spec?.chunk);
   if (new Set(ids).size !== plan.length) throw new Error('The chunk plan contains duplicate chunks');
   for (const spec of plan) {
-    if (!spec || !/^(18|23|32|36|55)-c\d{2}$/.test(spec.chunk) || spec.surah !== Number(spec.chunk.split('-')[0]) || !Array.isArray(spec.wordIds) || !spec.wordIds.length || !Array.isArray(spec.ayahs) || !spec.ayahs.length) throw new Error('The chunk plan contains an invalid entry');
+    if (!spec || !/^\d{1,3}-c\d{2,3}$/.test(spec.chunk) || spec.surah !== Number(spec.chunk.split('-')[0]) || !Array.isArray(spec.wordIds) || !spec.wordIds.length || !Array.isArray(spec.ayahs) || !spec.ayahs.length) throw new Error('The chunk plan contains an invalid entry');
   }
   const sourceFilesSha256 = await reviewSourceFilesSha256(work);
   if (sourceFilesSha256['meta/plan.json'] !== sha(planRecord.bytes)) throw new Error('Chunk plan changed during review export');

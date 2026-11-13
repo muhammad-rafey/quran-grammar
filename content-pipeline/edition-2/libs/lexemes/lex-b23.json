@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "katama|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "كَتَمَ",
+   "present": "يَكْتُمُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی بات کو چھپانا اور ظاہر نہ کرنا؛ چھپائی جانے والی چیز مفعول بہ بنتی ہے۔ مضارع میں عینِ کلمہ پر پیش ہے (يَكْتُمُ)، اس لیے بابِ نَصَرَ ہے۔",
+   "evidenceEnglish": "QAC tags both occurrences Form I active (LEM katama, root ktm); the imperfect is attested in this batch as يَكْتُمُونَ (4:37, 4:42) and Quran-wide as تَكْتُمُونَ (2:33), jussive يَكْتُمْهَا (2:283), all with damma on the tāʾ, giving a–u. Lexica (Lane; Lisan al-Arab; al-Mu'jam al-Wasit): كَتَمَهُ يَكْتُمُهُ كَتْمًا وَكِتْمَانًا, transitive."
+  },
+  {
+   "key": "kavura|I|ACT",
+   "baabUrdu": "بابِ كَرُمَ يَكْرُمُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "كَثُرَ",
+   "present": "يَكْثُرُ",
+   "pattern": "فَعُلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے: زیادہ یا بہت ہونا، جو قَلَّ (کم ہونا) کا مقابل ہے؛ ماضی اور مضارع دونوں میں عینِ کلمہ مضموم ہے۔ اسے بابِ نَصَرَ کے كَثَرَ (تعداد میں غالب آنا) اور بابِ تفعیل کے كَثَّرَ (بڑھانا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC 4:7:17 كَثُرَ, Form I active perfect (LEM kavura), vocalised with damma on the ʿayn, contrasted with قَلَّ in the same ayah. No imperfect in the Quran; the lexica give كَثُرَ يَكْثُرُ كَثْرَةً (fa'ula/yaf'ulu, karuma class) for \"to be or become much/many\" (Lane; Lisan al-Arab; al-Mu'jam al-Wasit), distinct from كَثَرَهُ يَكْثُرُهُ \"to outnumber\"."
+  },
+  {
+   "key": "kav~ara|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "كَثَّرَ",
+   "present": "يُكَثِّرُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی چیز یا لوگوں کو تعداد میں زیادہ کر دینا؛ ثاء کی تشدید بابِ تفعیل کی علامت ہے جو لازم كَثُرَ (زیادہ ہونا) کو متعدی بناتی ہے۔",
+   "evidenceEnglish": "QAC 7:86:19 فَكَثَّرَكُمْ, Form II active perfect (LEM kav~ara) with an object pronoun. No imperfect in the Quran; the regular Form II imperfect is يُكَثِّرُ (fa''ala/yufa''ilu). Lexica: كَثَّرَهُ \"made it many, increased it\" (Lane; Lisan al-Arab; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "{sotakovaro|X|ACT",
+   "baabUrdu": "بابِ اِسْتِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — دہم (X)",
+   "past": "اِسْتَكْثَرَ",
+   "present": "يَسْتَكْثِرُ",
+   "pattern": "اِسْتَفْعَلَ — يَسْتَفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے: بہت زیادہ حاصل کرنا یا چاہنا، اور کسی چیز کو زیادہ سمجھنا؛ متعدی ہے یا مِنْ کے ساتھ آتا ہے۔ ماضی کا ہمزہ ہمزۂ وصل ہے جو کلام کے بیچ میں پڑھا نہیں جاتا۔",
+   "evidenceEnglish": "QAC 7:188:16 لَٱسْتَكْثَرْتُ, Form X active perfect 1S; QAC's identifier ٱسْتَكْثَرْ is the bare stem before the subject suffix, so the citation form is اِسْتَكْثَرَ. Quran-wide imperfect تَسْتَكْثِرُ (74:6) and perfect ٱسْتَكْثَرْتُم مِّنَ (6:128) confirm istaf'ala/yastaf'ilu. Lexica: اِسْتَكْثَرَ مِنَ الشَّيْءِ \"sought or acquired much of it\" (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": "ka*~aba|II|PASS",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "كَذَّبَ",
+   "present": "يُكَذِّبُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی کو جھوٹا قرار دینا یا کسی بات کو جھٹلانا؛ مفعول براہِ راست یا بِ کے ساتھ آتا ہے۔ ذال کی تشدید بابِ تفعیل کی علامت ہے؛ اسے مجرد كَذَبَ يَكْذِبُ (خود جھوٹ بولنا) کے ساتھ یکساں نہ سمجھیں۔",
+   "evidenceEnglish": "Raw QAC tags 29:18:2 as Form II passive (and subjunctive), but the vocalised Uthmani word تُكَذِّبُوا۟ has kasra on the doubled dhal, i.e. active tukadhdhibū (the passive would be تُكَذَّبُوا with fatha); in وَإِن تُكَذِّبُوا۟ فَقَدْ كَذَّبَ أُمَمٌ the verb is the active, jussive verb of the conditional إِنْ (nūn dropped), with the واو as fāʿil, not nāʾib fāʿil. The paradigm is therefore the active كَذَّبَ — يُكَذِّبُ, identical to ka*~aba|II|ACT in lex-00 (Lane; Lisan al-Arab). Reviewer: the handle's PASS voice and QAC's SUBJ mood/i'rab line should be treated as corrected."
+  },
+  {
+   "key": "kariha|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "كَرِهَ",
+   "present": "يَكْرَهُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی چیز کو ناپسند کرنا؛ ناپسند کی جانے والی چیز مفعول بہ بنتی ہے، جو اسم، ضمیر، مَا (اپنے صلے سمیت) یا أَنْ والا جملہ ہو سکتی ہے، اور مفعول کبھی محذوف بھی ہوتا ہے۔ ماضی میں عینِ کلمہ مکسور اور مضارع میں مفتوح ہے (كَرِهَ، يَكْرَهُ)۔",
+   "evidenceEnglish": "QAC tags both occurrences Form I active (LEM kariha): perfect كَرِهْتُمُوهُنَّ and subjunctive imperfect تَكْرَهُوا۟ (4:19), with fatha on the ʿayn of the imperfect; Quran-wide تَكْرَهُوا۟ (2:216) and كَرِهَ (9:46). Gives fa'ila/yaf'alu (sami'a class); lexica: كَرِهَهُ يَكْرَهُهُ كَرْهًا وَكُرْهًا (Lane; Lisan al-Arab; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "{kotasaba|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِكْتَسَبَ",
+   "present": "يَكْتَسِبُ",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: محنت اور کوشش سے کمانا یا حاصل کرنا؛ فاءِ کلمہ کاف کے بعد بابِ افتعال کی تاء کسی تبدیلی کے بغیر باقی رہتی ہے، اور ماضی کا ہمزہ ہمزۂ وصل ہے۔ اسے مجرد كَسَبَ يَكْسِبُ سے الگ فعل سمجھیں۔",
+   "evidenceEnglish": "QAC tags 4:32:13 ٱكْتَسَبُوا۟ and 4:32:17 ٱكْتَسَبْنَ as Form VIII active perfects (LEM {kotasaba, root ksb); Quran-wide perfects ٱكْتَسَبَتْ (2:286), ٱكْتَسَبَ (24:11). No imperfect is attested; the regular Form VIII imperfect is يَكْتَسِبُ (ifta'ala/yafta'ilu). Lexica: اِكْتَسَبَ \"earned, acquired\" (Lane; Lisan al-Arab). Distinct from Form I kasaba|I|ACT (كَسَبَ يَكْسِبُ) in lex-00."
+  },
+  {
+   "key": "kaf~ara|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "كَفَّرَ",
+   "present": "يُكَفِّرُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: گناہوں کو مٹا دینا اور ڈھانپ دینا؛ عموماً كَفَّرَ عَنْهُ سَيِّئَاتِهِ کی ترکیب میں عَنْ کے ساتھ آتا ہے۔ اسے مجرد كَفَرَ يَكْفُرُ (انکار و کفر کرنا) سے الگ رکھیں؛ عینِ کلمہ ف کی تشدید بابِ تفعیل کی علامت ہے۔",
+   "evidenceEnglish": "QAC tags 4:31:7 نُكَفِّرْ (jussive) and 29:7:5 لَنُكَفِّرَنَّ as Form II active imperfects (LEM kaf~ara), both with عَنْ + سَيِّئَات: the attested imperfect is يُكَفِّرُ (fa''ala/yufa''ilu). Lexica: كَفَّرَ اللهُ عَنْهُ الذَّنْبَ \"God effaced/expiated the sin\" (Lane; Lisan al-Arab; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "kaf~a|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "كَفَّ",
+   "present": "يَكُفُّ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "مضاعف فعل ہے (اصل كَفَفَ): عین اور لامِ کلمہ (دونوں ف) مدغم ہو کر كَفَّ، يَكُفُّ بنتے ہیں اور متحرک ضمیرِ فاعل سے پہلے الگ ہو جاتے ہیں (كَفَفْتُ)۔ روکنے کے معنی میں متعدی ہے (كَفَّ يَدَهُ عَنْ)؛ امر كُفَّ اور اُكْفُفْ دونوں درست ہیں۔",
+   "evidenceEnglish": "QAC tags all three occurrences Form I active (LEM kaf~a, root kff): imperative كُفُّوٓا۟ (4:77), subjunctive يَكُفَّ (4:84), jussive يَكُفُّوٓا۟ (4:91), all with damma on the kāf, giving a–u (naṣara class); Quran-wide كَفَّ أَيْدِيَهُمْ (5:11, 48:24). Lexica: كَفَّهُ عَنِ الشَّيْءِ يَكُفُّهُ كَفًّا (Lane; Lisan al-Arab; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "yukal~ifu|II|PASS",
+   "baabUrdu": "بابِ تَفْعِيل — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)، مجہول",
+   "past": "كُلِّفَ",
+   "present": "يُكَلَّفُ",
+   "pattern": "فُعِّلَ — يُفَعَّلُ",
+   "noteUrdu": "صحیح فعل كَلَّفَ يُكَلِّفُ (کسی پر کوئی ذمہ داری یا مشقت ڈالنا) کا مجہول ہے؛ معروف دو مفعول لیتا ہے، اس لیے مجہول میں پہلا مفعول نائبِ فاعل بنتا ہے اور دوسرا منصوب رہتا ہے۔ مضارع مجہول يُكَلَّفُ میں لام کا فتحہ اسے معروف يُكَلِّفُ سے جدا کرتا ہے۔",
+   "evidenceEnglish": "QAC 4:84:6 تُكَلَّفُ, Form II passive imperfect 2MS with fatha on the doubled lām (LEM yukal~ifu, the inflected active imperfect used as identifier); i'rab فعل مضارع مبني للمجهول, with the following نَفْسَكَ retained as second object. Citation passive perfect كُلِّفَ (fu''ila), imperfect يُكَلَّفُ (yufa''alu); Quran-wide active لَا يُكَلِّفُ ٱللَّهُ نَفْسًا (2:286) and passive لَا تُكَلَّفُ نَفْسٌ (2:233). Lexica: كَلَّفَهُ الأَمْرَ (Lane; Lisan al-Arab)."
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "entries": [
+  {
+   "key": "balawo|I|PASS",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "بُلِيَ",
+   "present": "يُبْلَى",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "ناقص واوی فعل بَلَا يَبْلُو (آزمانا، جانچنا) کا مجہول ہے: آزمایا جانا، جانچا جانا؛ جس کی جانچ ہو وہ نائبِ فاعل بنتا ہے۔ آخری واو ماضی بُلِيَ میں کسرہ کے بعد یاء اور مضارع يُبْلَى میں فتحہ کے بعد الفِ مقصورہ بن جاتی ہے۔",
+   "evidenceEnglish": "QAC 86:9:2 تُبْلَى: IMPF|PASS form I, LEM balawo, ROOT blw; i'rab فعل مضارع مبني للمجهول. Active Form I imperfects in QAC: لِيَبْلُوَ (5:48), نَبْلُوَ (2:155) show waw-final a–u (nasara): بَلَا يَبْلُو بَلْوًا 'he tried, tested' (Lane; Lisan al-Arab). Passive fuʿila/yufʿalu with the waw becoming yāʾ (بُلِيَ) and alif maqsura (يُبْلَى). QAC lemma string بَلَوْ is a raw identifier, not the citation form."
+  },
+  {
+   "key": "{botalaY`^|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِبْتَلَى",
+   "present": "يَبْتَلِي",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "اِبْتَلَى ناقص واوی اور متعدی فعل ہے، یعنی آزمانا۔ باء کے بعد کی تاء بابِ افتعال کی ہے۔ آخری واو ماضی اِبْتَلَى میں الفِ مقصورہ اور مضارع يَبْتَلِي میں یاء بنتی ہے۔ واحد کے مجزوم لَمْ يَبْتَلِ اور امر اِبْتَلِ میں یاء حذف ہے۔",
+   "evidenceEnglish": "QAC tags (VIII), LEM {botalaY`^, ROOT blw: perfects ٱبْتَلَىٰهُ (89:15, 89:16), ٱبْتَلَىٰٓ (2:124); imperfect subjunctive لِيَبْتَلِيَ (3:152, 3:154); imperative وَٱبْتَلُوا۟ (4:6). iftaʿala of ب ل و: اِبْتَلَى يَبْتَلِي اِبْتِلَاء 'to try, test' (Lane; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "yabiytu|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بَاتَ",
+   "present": "يَبِيتُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "اجوف یائی فعل ہے: درمیانی یاء ماضی بَاتَ میں الف اور مضارع يَبِيتُ میں ظاہر یاء ہے، اور ساکن آخر سے پہلے گر جاتی ہے (بِتُّ، لَمْ يَبِتْ)۔ اس کا معنی رات گزارنا ہے اور یہ لازم ہے؛ کبھی یہ افعالِ ناقصہ (كَانَ اور اس کے اخوات) میں شمار ہو کر اسم و خبر لیتا ہے۔",
+   "evidenceEnglish": "QAC 25:64:2 يَبِيتُونَ, IMPF form I, root byt; QAC's lemma label is the imperfect يَبِيتُ. The imperfect with ī marks the hollow-yāʾ faʿala–yafʿilu type (like بَاعَ يَبِيعُ), hence daraba (a–i): بَاتَ يَبِيتُ بَيْتُوتَةً 'to spend the night' (Lane; Lisan al-Arab, which also notes a rare variant يَبَاتُ)."
+  },
+  {
+   "key": "tab~aro|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "تَبَّرَ",
+   "present": "يُتَبِّرُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: پوری طرح ہلاک کرنا، تباہ و برباد کر دینا؛ عینِ کلمہ باء کی تشدید بابِ تفعیل کی علامت ہے۔ مضارع يُتَبِّرُ میں حرفِ مضارعت پر ضمہ اور عین پر کسرہ ہے؛ مصدر تَتْبِير ہے۔",
+   "evidenceEnglish": "QAC 25:39:6 تَبَّرْنَا: PERF (II), root tbr; QAC lemma string تَبَّرْ is a truncated identifier. Quran-wide also لِيُتَبِّرُوا۟ (17:7, Form II imperfect) and the verbal noun تَتْبِيرًا (25:39, 17:7). faʿʿala of ت ب ر: تَبَّرَهُ 'he destroyed it' (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": "taAba|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "تَابَ",
+   "present": "يَتُوبُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "اجوف واوی فعل ہے: درمیانی واو ماضی تَابَ میں الف اور مضارع يَتُوبُ میں واو ہے، اور ساکن آخر سے پہلے گر جاتی ہے (تُبْتُ، لَمْ يَتُبْ، تُبْ)۔ لازم ہے: بندے کے لیے إِلَى کے ساتھ توبہ کرنا، اور اللہ کے لیے عَلَى کے ساتھ توبہ قبول کرنا یا رحمت سے متوجہ ہونا۔",
+   "evidenceEnglish": "QAC form I, root twb: perfects تَابَ (25:70, 25:71), تُبْتُ (4:18); imperfects يَتُوبُ (25:71:6), أَتُوبُ (2:160), jussive يَتُوبُوا۟ (85:10:8); imperative تُوبُوٓا۟ (2:54). Imperfect ū marks hollow-wāw faʿala–yafʿulu, hence nasara (a–u): تَابَ يَتُوبُ تَوْبَةً (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": "vab~ato|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "ثَبَّتَ",
+   "present": "يُثَبِّتُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: مضبوط کرنا، جما دینا، ثابت قدم رکھنا؛ یہ لازم ثَبَتَ (جمے رہنا) کا متعدی ہے۔ مضارع يُثَبِّتُ میں حرفِ مضارعت پر ضمہ اور عینِ کلمہ پر کسرہ ہے؛ مصدر تَثْبِيت ہے۔",
+   "evidenceEnglish": "QAC 25:32:11 لِنُثَبِّتَ: IMPF SUBJ (II), root vbt; QAC lemma string ثَبَّتْ is a truncated identifier. Quran-wide also ثَبَّتْنَـٰكَ (17:74), يُثَبِّتُ (14:27), ثَبِّتْ (2:250). faʿʿala of ث ب ت, transitive of ثَبَتَ (Lane; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": ">avaAru|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَثَارَ",
+   "present": "يُثِيرُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "اجوف واوی (مادہ ث و ر) اور متعدی فعل ہے: ابھارنا، اڑانا (جیسے غبار)، زمین کو کھود کر الٹنا پلٹنا۔ درمیانی واو ماضی أَثَارَ میں الف اور مضارع يُثِيرُ میں یاء بن جاتی ہے، اور ساکن آخر سے پہلے گر جاتی ہے (أَثَرْنَ)۔",
+   "evidenceEnglish": "QAC 100:4:1 فَأَثَرْنَ: PERF (IV), root vwr; QAC lemma string أَثَارُ is a raw identifier. Quran-wide imperfects تُثِيرُ (2:71), فَتُثِيرُ (30:48, 35:9) and perfect أَثَارُوا۟ (30:9). afʿala of ث و ر: أَثَارَ يُثِيرُ إِثَارَة 'to raise, stir up' (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": "jal~aY`|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "جَلَّى",
+   "present": "يُجَلِّي",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "ناقص واوی (مادہ ج ل و) اور متعدی فعل ہے: ظاہر کرنا، روشن اور نمایاں کر دینا۔ لام کی واو ماضی جَلَّى میں الفِ مقصورہ اور مضارع يُجَلِّي میں یاء بن جاتی ہے، جو جزم میں گر جاتی ہے؛ بابِ تفعّل کے لازم تَجَلَّى (ظاہر ہونا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC 91:3:3 جَلَّىٰهَا: PERF (II), root jlw. Quran-wide imperfect لَا يُجَلِّيهَا (7:187). faʿʿala of ج ل و: جَلَّى يُجَلِّي تَجْلِيَة 'to reveal, make clear' (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": "tajal~aY`|I|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَجَلَّى",
+   "present": "يَتَجَلَّى",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "ناقص واوی (مادہ ج ل و) اور لازم فعل ہے: ظاہر ہونا، روشن ہو کر نمایاں ہو جانا؛ یہ جَلَّى (ظاہر کرنا) کا مطاوع ہے۔ شروع کی تاء باب کی زائد تاء ہے، حرفِ مضارعت نہیں؛ لام کی واو ماضی و مضارع دونوں میں الفِ مقصورہ ہے (تَجَلَّى، يَتَجَلَّى) اور جزم میں گر جاتی ہے۔",
+   "evidenceEnglish": "QAC tags 92:2:3 تَجَلَّىٰ (and 7:143 تَجَلَّىٰ) as PERF without a form marker, i.e. Form I, but the vocalised word has the prefixed ta- and doubled second radical of tafaʿʿala, so it is Form V of root jlw: تَجَلَّى يَتَجَلَّى تَجَلٍّ 'to become manifest' (Lane; Lisan al-Arab), the reflexive of Form II جَلَّى. Form I of ج ل و is جَلَا يَجْلُو. The handle's 'I' is a raw QAC tag error; paradigm given as Form V."
+  }
+ ]
+}

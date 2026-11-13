@@ -12,7 +12,7 @@ services:
     read_only: true
     cap_drop: [ALL]
     security_opt: [no-new-privileges:true]
-    mem_limit: 192m
+    mem_limit: 768m
     pids_limit: 100
     healthcheck:
       test:

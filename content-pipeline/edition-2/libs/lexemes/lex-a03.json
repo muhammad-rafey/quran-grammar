@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "yatajan~abu|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَجَنَّبَ",
+   "present": "يَتَجَنَّبُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "صحیح فعل ہے؛ شروع کی تاء اور عینِ کلمہ (نون) کی تشدید بابِ تفعل کی علامت ہے، اور مضارع میں بھی عین پر زبر رہتا ہے۔ متعدی ہے: کسی چیز سے کترانا، دور رہنا، بچنا؛ یہ جَنَّبَ (دور رکھنا) کا مطاوع ہے۔",
+   "evidenceEnglish": "QAC 87:11:1 يَتَجَنَّبُهَا tagged IMPF (V), LEM yatajan~abu, root jnb, with the attached هَا as object (i'rab: ضمير متصل في محل نصب مفعول به). Citation perfect is تَجَنَّبَ (tafa''ala); regular sound Form V tafa''ala — yatafa''alu. Lane and Lisan al-Arab: تَجَنَّبَهُ = he avoided it, kept aloof from it."
+  },
+  {
+   "key": "yujan~abu|II|PASS",
+   "baabUrdu": "بابِ تَفْعِيل — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)، مجہول",
+   "past": "جُنِّبَ",
+   "present": "يُجَنَّبُ",
+   "pattern": "فُعِّلَ — يُفَعَّلُ",
+   "noteUrdu": "صحیح فعل جَنَّبَ يُجَنِّبُ (کسی کو کسی چیز سے دور رکھنا، بچانا) کا مجہول ہے؛ معروف دو مفعول لیتا ہے، اس لیے مجہول میں پہلا مفعول نائبِ فاعل بنتا ہے اور دوسرا منصوب رہتا ہے۔ مضارع مجہول يُجَنَّبُ میں نون کا فتحہ اسے معروف يُجَنِّبُ سے جدا کرتا ہے۔",
+   "evidenceEnglish": "QAC 92:17:1 وَسَيُجَنَّبُهَا tagged IMPF PASS (II), LEM yujan~abu; i'rab: فعل مضارع مبني للمجهول، و«ها» ... مفعول به, i.e. the second object is retained in the accusative while the first becomes na'ib fa'il. The lemma is the inflected imperfect; citation passive perfect is جُنِّبَ (fu''ila), imperfect يُجَنَّبُ (yufa''alu). Active جَنَّبَهُ الشَّيْءَ 'he kept him away from the thing' is doubly transitive (Lane; Lisan al-Arab; cf. 14:35 وَٱجْنُبْنِى وَبَنِىَّ, Form I)."
+  },
+  {
+   "key": "ja`hada|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "جَاهَدَ",
+   "present": "يُجَاهِدُ",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ فاءِ کلمہ کے بعد الف بابِ مفاعلہ کی علامت ہے، مضارع میں علامتِ مضارع مضموم اور عین مکسور ہوتا ہے، اور امر جَاهِدْ ہے۔ متعدی ہے: کسی کے مقابلے میں پوری کوشش کرنا، جہاد کرنا؛ مدِ مقابل براہِ راست مفعول بنتا ہے اور میدان یا مقصد فِي کے ساتھ آتا ہے۔",
+   "evidenceEnglish": "QAC 25:52:4 وَجَـٰهِدْهُم tagged IMPV (III), LEM ja`hada, with هم as direct object (i'rab: مفعول به). Quran-wide QAC also has perfects جَـٰهَدُوا۟ (2:218), imperfect يُجَـٰهِدُ (29:6), يُجَـٰهِدُونَ (5:54). Regular Form III faa'ala — yufaa'ilu; Lane s.v. جهد: جَاهَدَ العَدُوَّ."
+  },
+  {
+   "key": "jaAbu|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "جَابَ",
+   "present": "يَجُوبُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "اجوف واوی فعل ہے (اصل: جَوَبَ يَجْوُبُ)؛ درمیانی واو ماضی جَابَ میں الف بنتی ہے اور مضارع يَجُوبُ میں جیم کو ضمہ دے کر مدّ بن جاتی ہے، جبکہ متحرک ضمیرِ فاعل سے پہلے گر جاتی ہے اور فاءِ کلمہ کو ضمہ ملتا ہے (جُبْتُ)۔ متعدی ہے: کاٹنا، تراشنا، چیر کر پار کرنا۔",
+   "evidenceEnglish": "QAC 89:9:3 جَابُوا۟ tagged PERF form I, root jwb (hollow-waw), 3MP with subject waw; the QAC lemma 'jaAbu' is a truncated identifier, the citation form is جَابَ. No imperfect is attested in the Quran; the a–u class rests on the lexica: جَابَ الشَّيْءَ يَجُوبُهُ جَوْبًا 'he cut/pierced it' (Lisan al-Arab s.v. جوب; Lane; al-Mu'jam al-Wasit), regular for hollow-waw verbs like قَالَ يَقُولُ."
+  },
+  {
+   "key": "jaA^'a|I|PASS",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "جِيءَ",
+   "present": "يُجَاءُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "اجوف یائی اور مہموز اللام فعل جَاءَ يَجِيءُ کا مجہول ہے: ماضی مجہول میں فاءِ کلمہ کو کسرہ اور درمیان میں یاء آتی ہے (جِيءَ، جیسے قِيلَ) اور مضارع مجہول میں الف (يُجَاءُ، جیسے يُقَالُ)۔ «لانا» کا معنی بِ سے بنتا ہے، اس لیے مجہول میں بِ والا جار و مجرور نائبِ فاعل ہوتا ہے: لایا جانا۔",
+   "evidenceEnglish": "QAC 89:23:1 وَجِا۟ىٓءَ tagged PERF PASS form I, root jyA, LEM jaA^'a (i'rab: فعل ماض مبني للمجهول); the Uthmani spelling has a silent alif and is read جِيءَ (also 39:69). Same verb as active جَاءَ يَجِيءُ (a–i, bab daraba) in lex-00, so the bab follows the active. Hollow passive: fu'ila surfaces as fīla (جِيءَ like قِيلَ), yuf'alu as yufālu (يُجَاءُ like يُقَالُ); the passive imperfect is not attested in the Quran. Pattern written as the regular passive wazn, following the lex-00 house style for weak passives."
+  },
+  {
+   "key": ">aHobabo|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَحَبَّ",
+   "present": "يُحِبُّ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "مضاعف فعل ہے (اصل: أَحْبَبَ يُحْبِبُ)؛ دونوں باء مدغم ہو کر أَحَبَّ اور يُحِبُّ بنتے ہیں، مگر متحرک ضمیرِ فاعل سے پہلے ادغام کھل جاتا ہے (أَحْبَبْتُ)۔ متعدی ہے: محبت کرنا، پسند کرنا؛ محبوب چیز براہِ راست مفعول بنتی ہے۔",
+   "evidenceEnglish": "QAC 89:20:1 تُحِبُّونَ tagged IMPF (IV), LEM >aHobabo (a truncated identifier; citation form أَحَبَّ). Quran-wide QAC Form IV of Hbb: perfects أَحْبَبْتَ (28:56), أَحْبَبْتُ (38:32) showing the unassimilated doubled radical, imperfects يُحِبُّ (2:190), تُحِبُّونَ (3:31). Lane and Lisan al-Arab: أَحَبَّهُ يُحِبُّهُ إِحْبَابًا. Regular af'ala — yuf'ilu with gemination."
+  },
+  {
+   "key": "tuHad~ivu|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "حَدَّثَ",
+   "present": "يُحَدِّثُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح فعل ہے؛ عینِ کلمہ (دال) کی تشدید بابِ تفعیل کی علامت ہے، اور امر حَدِّثْ ہے۔ متعدی ہے: بات بتانا، بیان کرنا؛ جسے بتایا جائے وہ مفعول بنتا ہے، اور بیان کی جانے والی بات بِ کے ساتھ یا براہِ راست دوسرے مفعول کے طور پر آتی ہے۔",
+   "evidenceEnglish": "QAC tags both occurrences Form II active, LEM tuHad~ivu (an inflected 3FS imperfect used as identifier; citation form حَدَّثَ): IMPV فَحَدِّثْ (93:11:4) and IMPF تُحَدِّثُ (99:4:2, followed by the direct object أَخْبَارَهَا). Quran-wide also أَتُحَدِّثُونَهُم (2:76). Regular fa''ala — yufa''ilu; Lane: حَدَّثَهُ بِكَذَا and حَدَّثَهُ الحَدِيثَ."
+  },
+  {
+   "key": "Har~ama|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "حَرَّمَ",
+   "present": "يُحَرِّمُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی چیز کو حرام ٹھہرانا، ممنوع قرار دینا۔ احتیاط: ثلاثی مجرد حَرُمَ لازم ہے (حرام ہونا)، جبکہ عینِ کلمہ کی تشدید والا حَرَّمَ متعدی ہے اور حرام کی گئی چیز اس کا مفعول بنتی ہے۔",
+   "evidenceEnglish": "QAC 25:68:12 حَرَّمَ tagged PERF (II), LEM Har~ama. Quran-wide QAC Form II imperfects يُحَرِّمُ (7:157), يُحَرِّمُونَ (9:29), تُحَرِّمُ (66:1) confirm fa''ala — yufa''ilu. Lane and Lisan al-Arab: حَرَّمَهُ 'he made it unlawful', versus intransitive Form I حَرُمَ."
+  },
+  {
+   "key": "HuS~ila|II|PASS",
+   "baabUrdu": "بابِ تَفْعِيل — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)، مجہول",
+   "past": "حُصِّلَ",
+   "present": "يُحَصَّلُ",
+   "pattern": "فُعِّلَ — يُفَعَّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل حَصَّلَ يُحَصِّلُ (کسی چیز کو نکال کر الگ اور نمایاں کرنا، جمع کرنا) کا مجہول ہے: ظاہر کیا جانا، نکال کر سامنے لایا جانا؛ جو چیز ظاہر کی جائے وہ نائبِ فاعل بنتی ہے۔ ماضی مجہول میں پہلا حرف مضموم اور عین مشدد مکسور ہوتا ہے۔",
+   "evidenceEnglish": "QAC 100:10:1 وَحُصِّلَ tagged PERF PASS (II), LEM HuS~ila (i'rab: فعل ماض مبني للمجهول); the following ما-clause is the na'ib fa'il. Active حَصَّلَ 'to extract and separate (as metal from ore), to gather, to make manifest' (Lane; Lisan al-Arab s.v. حصل). Passive imperfect not attested in the Quran; regular fu''ila — yufa''alu."
+  },
+  {
+   "key": "taHa`^D~u|VI|ACT",
+   "baabUrdu": "بابِ تَفَاعُل",
+   "formUrdu": "ثلاثی مزید فیہ — ششم (VI)",
+   "past": "تَحَاضَّ",
+   "present": "يَتَحَاضُّ",
+   "pattern": "تَفَاعَلَ — يَتَفَاعَلُ",
+   "noteUrdu": "مضاعف فعل ہے (اصل: تَحَاضَضَ يَتَحَاضَضُ)؛ دونوں ضاد مدغم ہو کر تَحَاضَّ اور يَتَحَاضُّ بنتے ہیں۔ لازم ہے اور عَلَى کے ساتھ آتا ہے: ایک دوسرے کو کسی کام پر ابھارنا؛ احتیاط: مخاطب کے مضارع (تَتَحَاضُّونَ) میں دو تاء جمع ہونے پر ایک تاء حذف ہو کر تَحَاضُّونَ بھی آتا ہے۔",
+   "evidenceEnglish": "QAC 89:18:2 تَحَـٰٓضُّونَ tagged IMPF (VI) 2MP, LEM taHa`^D~u, root HDD; followed by عَلَىٰ. The Hafs form is the 2MP imperfect with one of the two prefix ta's elided (تَتَحَاضُّونَ > تَحَاضُّونَ), as standard i'rab works note. Citation perfect تَحَاضَّ (tafaa'ala with geminate merger), imperfect يَتَحَاضُّ. Lane/Lisan s.v. حض: تَحَاضُّوا 'they urged one another'. Other readings (e.g. تَحُضُّونَ, Form I) exist but the entry follows QAC/Hafs."
+  }
+ ]
+}

@@ -1,0 +1,104 @@
+{
+  "entries": [
+    {
+      "key": "*uk~ira|II|ACT",
+      "baabUrdu": "بابِ تَفْعِيل",
+      "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+      "past": "ذَكَّرَ",
+      "present": "يُذَكِّرُ",
+      "pattern": "فَعَّلَ — يُفَعِّلُ",
+      "noteUrdu": "صحیح اور متعدی فعل ہے: یاد دلانا، نصیحت کرنا؛ عینِ کلمہ کی تشدید بابِ تفعیل کی علامت ہے اور امر ذَكِّرْ ہے۔ اسے مجرد ذَكَرَ (یاد کرنا، ذکر کرنا) اور بابِ تفعل تَذَكَّرَ (نصیحت قبول کرنا) سے الگ رکھیں۔",
+      "evidenceEnglish": "QAC tags both occurrences form II active imperative: فَذَكِّرْ (87:9, 88:21), LEM:*uk~ira. QAC's lemma string is a passive-looking form; the active citation is ذَكَّرَ, aor. يُذَكِّرُ (fa''ala/yufa''ilu), attested Quran-wide in ذَكِّرْ (50:45, 51:55) and passive ذُكِّرُوا۟ (6:44). Lane and al-Mu'jam al-Wasit: ذَكَّرَهُ تَذْكِيرًا 'reminded him'."
+    },
+    {
+      "key": ">arayo|IV|PASS",
+      "baabUrdu": "بابِ اِفْعَال — مجہول",
+      "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)، مجہول",
+      "past": "أُرِيَ",
+      "present": "يُرَى",
+      "pattern": "أُفْعِلَ — يُفْعَلُ",
+      "noteUrdu": "مادہ ر أ ي مہموز العین اور ناقص یائی ہے؛ اس فعل میں عین کا ہمزہ گر جاتا ہے (أَرَى — يُرِي، مجہول أُرِيَ — يُرَى)، جو رَأَى کی خصوصیت ہے، ہر مہموز العین کا قاعدہ نہیں۔ معروف دو مفعول لیتا ہے (دکھانا) اور مجہول میں پہلا مفعول نائبِ فاعل بنتا ہے؛ مضارع مجہول يُرَى مجرد کے مجہول جیسا ہے، اس لیے باب معنی سے پہچانا جاتا ہے۔",
+      "evidenceEnglish": "Single occurrence 99:6 لِّيُرَوْا۟, QAC IMPF PASS (IV) 3MP subjunctive after lam al-ta'lil; the i'rab says مبني للمجهول with the waw as na'ib fa'il, and the context 'to be shown their deeds' requires causative Form IV. Active أَرَى يُرِي (يُرِيكُمْ 2:73, أَرِنَا 2:128) drops the hamza 'ayn (from أَرْأَى); passive perfect أُرِيَ, imperfect يُرَى. Lane s.v. رأى."
+    },
+    {
+      "key": "rat~alo|II|ACT",
+      "baabUrdu": "بابِ تَفْعِيل",
+      "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+      "past": "رَتَّلَ",
+      "present": "يُرَتِّلُ",
+      "pattern": "فَعَّلَ — يُفَعِّلُ",
+      "noteUrdu": "صحیح فعل ہے؛ عینِ کلمہ کی تشدید بابِ تفعیل کی علامت ہے۔ متعدی ہے: ٹھہر ٹھہر کر، صاف اور ترتیب سے پڑھنا یا پیش کرنا؛ اسی کا مصدر تَرْتِيل ہے۔",
+      "evidenceEnglish": "QAC tags 25:32 وَرَتَّلْنَـٰهُ PERF (II) 1P, LEM:rat~alo (a truncated stem; citation رَتَّلَ). Quran-wide also imperative وَرَتِّلِ (73:4) with verbal noun تَرْتِيلًا (25:32, 73:4). Lane and al-Mu'jam al-Wasit: رَتَّلَ الكَلَامَ تَرْتِيلًا, aor. يُرَتِّلُ."
+    },
+    {
+      "key": "rad~a|I|ACT",
+      "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "رَدَّ",
+      "present": "يَرُدُّ",
+      "pattern": "فَعَلَ — يَفْعُلُ",
+      "noteUrdu": "مضاعف فعل ہے: دوسرا اور تیسرا حرف ایک ہونے سے مدغم ہو کر رَدَّ، يَرُدُّ بنتا ہے؛ جب لامِ کلمہ ساکن ہو، جیسے ضمیرِ متحرک سے پہلے، تو ادغام کھل جاتا ہے (رَدَدْنَا)۔ متعدی ہے: لوٹانا، واپس کرنا، رد کرنا۔",
+      "evidenceEnglish": "QAC 95:5 رَدَدْنَـٰهُ PERF form I 1P (degemination before the consonant-initial suffix). The u-imperfect is attested Quran-wide: يَرُدُّوكُمْ (2:217; also 3:100), يَرُدُّونَكُم (2:109), imperative فَرُدُّوهُ (4:59); passive تُرَدُّونَ (9:94). Lane and al-Mu'jam al-Wasit: رَدَّهُ يَرُدُّهُ رَدًّا (nasara class)."
+    },
+    {
+      "key": "tarad~aY`^|V|ACT",
+      "baabUrdu": "بابِ تَفَعُّل",
+      "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+      "past": "تَرَدَّى",
+      "present": "يَتَرَدَّى",
+      "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+      "noteUrdu": "ناقص یائی ہے (مادہ ر د ي): آخری یاء ماضی اور مضارع دونوں میں الف مقصورہ کی صورت میں لکھی جاتی ہے، اور جزم میں گر جاتی ہے (لَمْ يَتَرَدَّ)۔ لازم ہے: اوپر سے گرنا، ہلاکت میں جا پڑنا؛ مجرد رَدِيَ (ہلاک ہونا) کا ہم معنی ہے۔",
+      "evidenceEnglish": "QAC 92:11 تَرَدَّىٰٓ PERF (V) 3MS, root rdy, LEM:tarad~aY. Regular tafa''ala of a final-ya root; the imperfect يَتَرَدَّى is not attested in the Quran but follows the Form V pattern (cf. يَتَزَكَّى 92:18); the participle ٱلْمُتَرَدِّيَةُ (5:3) is from the same verb. Lane s.v. ردى: تَرَدَّى 'fell (from a height), perished'."
+    },
+    {
+      "key": "r~aDiYa|I|ACT",
+      "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "رَضِيَ",
+      "present": "يَرْضَى",
+      "pattern": "فَعِلَ — يَفْعَلُ",
+      "noteUrdu": "ناقص واوی ہے (مادہ ر ض و): کسرہ کے بعد واو ماضی میں یاء بنتی ہے (رَضِيَ) اور مضارع میں الف مقصورہ (يَرْضَى)؛ جمع کے واو سے پہلے یہ حرف گر جاتا ہے (رَضُوا)۔ عَنْ کے ساتھ «کسی سے راضی ہونا»، بِ کے ساتھ «کسی چیز پر قانع ہونا»، اور براہِ راست مفعول کے ساتھ «پسند کرنا» ہے۔",
+      "evidenceEnglish": "QAC form I, root rDw: perfects رَّضِىَ and وَرَضُوا۟ (98:8) with kasra on the 2nd radical; imperfects يَرْضَىٰ (92:21) and فَتَرْضَىٰٓ (93:5) with fatha: i–a, samiʿa class. Lane and al-Mu'jam al-Wasit: رَضِيَ يَرْضَى رِضًا ورِضْوَانًا (waw root, waw > ya after kasra)."
+    },
+    {
+      "key": "yarogabu|I|ACT",
+      "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "رَغِبَ",
+      "present": "يَرْغَبُ",
+      "pattern": "فَعِلَ — يَفْعَلُ",
+      "noteUrdu": "صحیح فعل ہے؛ ماضی میں عینِ کلمہ مکسور اور مضارع و امر میں مفتوح ہے (اِرْغَبْ)۔ حرفِ جر سے معنی بدلتا ہے: فِي یا إِلَى کے ساتھ «رغبت کرنا، شوق سے متوجہ ہونا»، اور عَنْ کے ساتھ «منہ موڑنا، بے رغبتی کرنا»۔",
+      "evidenceEnglish": "QAC 94:8 فَٱرْغَب IMPV form I 2MS; QAC's lemma string is the imperfect يَرْغَبُ, citation رَغِبَ. The a-imperfect is confirmed by the imperative ٱرْغَب and Quran-wide يَرْغَبُ (2:130), وَتَرْغَبُونَ (4:127), يَرْغَبُوا۟ (9:120). The perfect is not attested in the Quran; Lane, Lisan al-Arab and al-Mu'jam al-Wasit give رَغِبَ فِيهِ / عَنْهُ يَرْغَبُ رَغْبَةً (samiʿa class)."
+    },
+    {
+      "key": "rafaEa|I|PASS",
+      "baabUrdu": "بابِ فَتَحَ يَفْتَحُ — مجہول",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+      "past": "رُفِعَ",
+      "present": "يُرْفَعُ",
+      "pattern": "فُعِلَ — يُفْعَلُ",
+      "noteUrdu": "صحیح فعل رَفَعَ — يَرْفَعُ (بابِ فتح، لامِ کلمہ حرفِ حلقی) کا مجہول ہے: اٹھایا جانا، بلند کیا جانا۔ ماضی مجہول میں پہلا حرف مضموم اور عین مکسور ہوتا ہے، مضارع مجہول میں علامتِ مضارع مضموم اور عین مفتوح؛ فاعل کے بجائے نائبِ فاعل آتا ہے۔",
+      "evidenceEnglish": "QAC 88:18 رُفِعَتْ PERF PASS form I 3FS; i'rab فعل ماض مبني للمجهول. Active رَفَعَ يَرْفَعُ (fataha class) per the shipped lex-00 entry rafaEa|I|ACT (يَرْفَعُ 2:127, 35:10); passive imperfect تُرْفَعَ (24:36). Lane and al-Mu'jam al-Wasit: رَفَعَهُ يَرْفَعُهُ رَفْعًا."
+    },
+    {
+      "key": "tazak~aY`|V|ACT",
+      "baabUrdu": "بابِ تَفَعُّل",
+      "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+      "past": "تَزَكَّى",
+      "present": "يَتَزَكَّى",
+      "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+      "noteUrdu": "ناقص واوی ہے (مادہ ز ك و): لام کی واو اس باب میں یاء بنتی ہے اور ماضی و مضارع میں الف مقصورہ لکھی جاتی ہے (تَزَكَّى، يَتَزَكَّى)؛ جزم میں گر جاتی ہے۔ لازم ہے: پاک ہونا، اپنے آپ کو سنوارنا؛ يَزَّكَّى میں تاء زاء میں مدغم ہے اور یہ بھی اسی باب کا صیغہ ہے۔",
+      "evidenceEnglish": "QAC (V), root zkw: perfect تَزَكَّىٰ (87:14) and imperfect يَتَزَكَّىٰ (92:18); Quran-wide also تَزَكَّىٰ / يَتَزَكَّىٰ (35:18), perfect تَزَكَّىٰ (20:76), subjunctive imperfect أَن تَزَكَّىٰ (79:18, = تَتَزَكَّى with one ta elided), and the assimilated يَزَّكَّىٰٓ (80:3, 80:7). Regular tafa''ala/yatafa''alu of a final-waw root (waw > ya). Lane s.v. زكو."
+    },
+    {
+      "key": "zak~aY`|II|ACT",
+      "baabUrdu": "بابِ تَفْعِيل",
+      "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+      "past": "زَكَّى",
+      "present": "يُزَكِّي",
+      "pattern": "فَعَّلَ — يُفَعِّلُ",
+      "noteUrdu": "ناقص واوی ہے (مادہ ز ك و): لام کی واو ماضی میں الف مقصورہ (زَكَّى، مگر زَكَّيْتُ) اور مضارع میں یاء (يُزَكِّي) بنتی ہے، جو جزم اور امر میں گر جاتی ہے۔ متعدی ہے: پاک کرنا، سنوارنا؛ اپنی پاکیزگی جتانا بھی اسی سے ہے (فَلَا تُزَكُّوا)۔",
+      "evidenceEnglish": "QAC 91:9 زَكَّىٰهَا PERF (II) 3MS with object pronoun. Quran-wide imperfects يُزَكِّيهِمْ (2:129, 62:2), يُزَكِّى (4:49) and jussive فَلَا تُزَكُّوٓا۟ (53:32) confirm fa''ala/yufa''ilu of a final-waw root (waw > ya). Lane and al-Mu'jam al-Wasit: زَكَّاهُ تَزْكِيَةً."
+    }
+  ]
+}

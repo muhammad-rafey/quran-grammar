@@ -1,6 +1,6 @@
 # Quran Grammar · قرآن گرامر
 
-A grammar-focused Quran study app with Urdu explanations, covering Al-Fatihah, Surahs 18, 23, 32, 36 and 55, and the final ten Surahs (105–114). The five longer chapters are published drafts awaiting scholarly review, explicitly authorized by the owner on 2026-11-07. The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
+A grammar-focused Quran study app with Urdu explanations, covering Surahs 1, 4, 7, 18, 23, 25, 29, 32, 36, 55 and 85–114. The owner authorized publishing the two expansion editions as labeled drafts on 2026-11-07 and 2026-11-13. Scholarly review is pending. The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
 
 ## Project
 
@@ -15,11 +15,11 @@ The web app uses React with Vite because the current product is an interactive s
 
 ## Features
 
-- All 4,307 word occurrences across 474 ayahs in 16 Surahs, with contextual Urdu meanings and grammatical segments. The five longer chapters show a persistent draft/review-pending notice while reading.
+- All 14,405 word occurrences across 1,281 ayahs in 40 Surahs, with contextual Urdu meanings and grammatical segments. The 29 owner-authorized drafts show a scholarly-review-pending notice while reading.
 - Root-family meanings and a paradigm for every finite verb, including باب، ماضی، مضارع and patterns.
 - Occurrence-specific morphology, syntax, dictionary explanations, grammar rules, and related-root navigation.
 - Phrase constructions and concise tafsir notes for every ayah, using the same data format as Al-Fatihah.
-- Floating bottom navigation, a Surah/Juz catalog, and an ayah selector. Al-Fatihah, Surahs 18, 23, 32, 36, 55 and 105–114 are available; other chapters are marked Coming soon. Available Juz ranges are explicitly partial previews. Juz 16 opens Al-Kahf at ayah 75 and Juz 23 opens Ya-Sin at ayah 28.
+- Floating bottom navigation, a Surah/Juz catalog, and an ayah selector. The catalog marks unavailable chapters Coming soon and identifies partial Juz ranges. Juz 5 opens An-Nisa at ayah 24, Juz 9 opens Al-A‘raf at ayah 88, and Juz 30 contains 30 available chapters.
 - Part-of-speech filters and the meaning toggle stay behind a collapsed Filters button. Search is currently hidden in both apps; the shared API retains its search endpoint.
 - Three Al-Fatihah grammar practice questions, explanations and an honest attempt score, with a restart option.
 - English interface and counts by default; Settings saves an English/Urdu preference on the current browser or device. Language changes affect interface text and numbers only.
@@ -61,7 +61,7 @@ cp apps/mobile/.env.example apps/mobile/.env
 npm run dev:mobile
 ```
 
-Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app uses its bundled sixteen-Surah edition, including the five labeled drafts. See [native setup](apps/mobile/README.md).
+Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app uses its bundled 40-Surah edition, including both labeled draft expansions. See [native setup](apps/mobile/README.md).
 
 The APK command builds locally with JDK 17+, Android SDK Platform 36 and Build-Tools 36. It bundles JavaScript and fonts, so the installed APK does not require Metro or Expo Go. It uses Expo's debug signing key for local testing, **not a Play Store release**. Each build applies the current app config and launcher icons through incremental Expo Prebuild, retaining the native directory and build caches. See [APK build setup and options](docs/android-build.md).
 
@@ -94,9 +94,9 @@ The production Node process serves both the web app and `/api` on localhost port
 
 ## Content and future work
 
-**Current release (2026-11-07):** the owner authorized publishing the five completed
-expansion snapshots as drafts while scholarly review continues. The app, PostgreSQL
-copy and SQLite copy use the same 16-Surah registry. See
+**Current release (2026-11-13):** the owner authorized publishing all 24 Edition 2
+lessons as labeled drafts. The app, PostgreSQL copy and SQLite copy use the same
+40-Surah registry. See
 [`draft-publication.json`](content-pipeline/draft-publication.json) for exact hashes
 and authorization, and `npm run publish:drafts` to reproduce the runtime modules.
 Scholarly approvals remain pending. The following paragraphs record the earlier

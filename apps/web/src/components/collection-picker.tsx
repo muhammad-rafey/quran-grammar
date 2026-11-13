@@ -203,9 +203,11 @@ export function CollectionPicker({
                         </strong>
                         <small>
                           {juz.available
-                            ? juz.number === 1
-                              ? ui.previewOnly
-                              : ui.partialPreview
+                            ? juz.partial
+                              ? juz.number === 1
+                                ? ui.previewOnly
+                                : ui.partialPreview
+                              : ui.available
                             : ui.comingSoon}
                         </small>
                       </span>

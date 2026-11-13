@@ -1,0 +1,174 @@
+{
+  "retrievedAt": "2026-11-13",
+  "textSource": "Quran.com Content API v4 text_uthmani (end-of-ayah markers excluded); word boundaries and IDs checked against QAC 0.4 morphology",
+  "sources": [
+    "https://api.quran.com/api/v4/verses/by_chapter/93?words=true&word_fields=text_uthmani&per_page=50"
+  ],
+  "surah": 93,
+  "ayahCount": 11,
+  "wordCount": 40,
+  "pauseSignPolicy": "Recitation signs that the API separates from a word by a space (waqf signs, the saktah sign, the sajdah sign and the rub al-hizb marker) are excluded from stored word tokens, following the Surahs 110-114 precedent; each exclusion is listed below.",
+  "words": [
+    {
+      "id": "93:1:1",
+      "arabic": "وَٱلضُّحَىٰ"
+    },
+    {
+      "id": "93:2:1",
+      "arabic": "وَٱلَّيْلِ"
+    },
+    {
+      "id": "93:2:2",
+      "arabic": "إِذَا"
+    },
+    {
+      "id": "93:2:3",
+      "arabic": "سَجَىٰ"
+    },
+    {
+      "id": "93:3:1",
+      "arabic": "مَا"
+    },
+    {
+      "id": "93:3:2",
+      "arabic": "وَدَّعَكَ"
+    },
+    {
+      "id": "93:3:3",
+      "arabic": "رَبُّكَ"
+    },
+    {
+      "id": "93:3:4",
+      "arabic": "وَمَا"
+    },
+    {
+      "id": "93:3:5",
+      "arabic": "قَلَىٰ"
+    },
+    {
+      "id": "93:4:1",
+      "arabic": "وَلَلْـَٔاخِرَةُ"
+    },
+    {
+      "id": "93:4:2",
+      "arabic": "خَيْرٌۭ"
+    },
+    {
+      "id": "93:4:3",
+      "arabic": "لَّكَ"
+    },
+    {
+      "id": "93:4:4",
+      "arabic": "مِنَ"
+    },
+    {
+      "id": "93:4:5",
+      "arabic": "ٱلْأُولَىٰ"
+    },
+    {
+      "id": "93:5:1",
+      "arabic": "وَلَسَوْفَ"
+    },
+    {
+      "id": "93:5:2",
+      "arabic": "يُعْطِيكَ"
+    },
+    {
+      "id": "93:5:3",
+      "arabic": "رَبُّكَ"
+    },
+    {
+      "id": "93:5:4",
+      "arabic": "فَتَرْضَىٰٓ"
+    },
+    {
+      "id": "93:6:1",
+      "arabic": "أَلَمْ"
+    },
+    {
+      "id": "93:6:2",
+      "arabic": "يَجِدْكَ"
+    },
+    {
+      "id": "93:6:3",
+      "arabic": "يَتِيمًۭا"
+    },
+    {
+      "id": "93:6:4",
+      "arabic": "فَـَٔاوَىٰ"
+    },
+    {
+      "id": "93:7:1",
+      "arabic": "وَوَجَدَكَ"
+    },
+    {
+      "id": "93:7:2",
+      "arabic": "ضَآلًّۭا"
+    },
+    {
+      "id": "93:7:3",
+      "arabic": "فَهَدَىٰ"
+    },
+    {
+      "id": "93:8:1",
+      "arabic": "وَوَجَدَكَ"
+    },
+    {
+      "id": "93:8:2",
+      "arabic": "عَآئِلًۭا"
+    },
+    {
+      "id": "93:8:3",
+      "arabic": "فَأَغْنَىٰ"
+    },
+    {
+      "id": "93:9:1",
+      "arabic": "فَأَمَّا"
+    },
+    {
+      "id": "93:9:2",
+      "arabic": "ٱلْيَتِيمَ"
+    },
+    {
+      "id": "93:9:3",
+      "arabic": "فَلَا"
+    },
+    {
+      "id": "93:9:4",
+      "arabic": "تَقْهَرْ"
+    },
+    {
+      "id": "93:10:1",
+      "arabic": "وَأَمَّا"
+    },
+    {
+      "id": "93:10:2",
+      "arabic": "ٱلسَّآئِلَ"
+    },
+    {
+      "id": "93:10:3",
+      "arabic": "فَلَا"
+    },
+    {
+      "id": "93:10:4",
+      "arabic": "تَنْهَرْ"
+    },
+    {
+      "id": "93:11:1",
+      "arabic": "وَأَمَّا"
+    },
+    {
+      "id": "93:11:2",
+      "arabic": "بِنِعْمَةِ"
+    },
+    {
+      "id": "93:11:3",
+      "arabic": "رَبِّكَ"
+    },
+    {
+      "id": "93:11:4",
+      "arabic": "فَحَدِّثْ"
+    }
+  ],
+  "excludedPauseSigns": []
+}

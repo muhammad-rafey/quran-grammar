@@ -1,6 +1,6 @@
 export const meta = {
   name: 'quran-grammar-libraries',
-  description: 'Author and double-verify the shared grammar-rule, verb-paradigm and root libraries for Surahs 18, 23, 32, 36 and 55',
+  description: 'Author and double-verify the shared grammar-rule, verb-paradigm and root libraries for an expansion edition',
   phases: [
     { title: 'Rules', detail: 'rule library: author, two independent verifiers, fix, confirm' },
     { title: 'Lexemes', detail: 'verb-paradigm batches: author, two verifiers, fix, confirm' },
@@ -10,6 +10,8 @@ export const meta = {
 
 // Absolute path of this folder; pass args.work when the repository lives elsewhere.
 const W = (args && args.work) || '/Users/me/Projects/quran-grammar/content-pipeline'
+// Human-readable Surah list of this work directory's edition (prompts only).
+const SL = (args && args.surahLabel) || 'Surahs 18, 23, 32, 36, 55'
 const PRE = `You are one agent in a multi-agent pipeline that builds Urdu grammar lessons for the Quran Grammar app (repository /Users/me/Projects/quran-grammar). Work only inside ${W}. Never edit any other repository file, never run git, and do not use the network. First read ${W}/guide/authoring-guide.md completely. For house style, read the existing lesson /Users/me/Projects/quran-grammar/packages/core/src/lessons/surah-108.ts (read-only) and ${W}/meta/style-exemplars.json. Accuracy matters more than speed: these explanations teach the Quran to learners.`
 
 const AUTHOR = {
@@ -123,7 +125,7 @@ async function runItem(spec) {
 const VALIDATE = (kind, batch) => `python3 -I ${W}/scripts/validate_lib.py ${W} ${kind}${batch ? ' ' + batch : ''}`
 
 function rulesSpec() {
-  const inputs = `${W}/meta/tag-inventory.json (QAC 0.4 tag statistics with examples for the 4,077 words), ${W}/meta/existing-rules.json (the 46 rule ids already used by the app, with every Urdu wording variant), ${W}/meta/style-exemplars.json`
+  const inputs = `${W}/meta/tag-inventory.json (QAC 0.4 tag statistics with examples for every word of the edition), ${W}/meta/existing-rules.json (the 46 rule ids already used by the app, with every Urdu wording variant), ${W}/meta/style-exemplars.json`
   const file = `${W}/libs/rules.json`
   const validate = VALIDATE('rules')
   return {
@@ -135,7 +137,7 @@ function rulesSpec() {
     validate,
     author: `${PRE}
 
-TASK: create the shared grammar-rule library used by all five new lessons (Surahs 18, 23, 32, 36, 55; 4,077 word occurrences). Lesson authors will tag every word with 1–6 rule ids from this library, and the app shows each rule's Urdu title and explanation as a study card.
+TASK: create the shared grammar-rule library used by all new lessons (${SL}). Lesson authors will tag every word with 1–6 rule ids from this library, and the app shows each rule's Urdu title and explanation as a study card.
 
 Inputs: ${inputs}.
 Write ${file} as {"rules": [{"id": "...", "titleUrdu": "...", "explanationUrdu": "...", "appliesWhenEnglish": "..."}]}.
@@ -152,12 +154,12 @@ Return validatorOk, the number of rules, and notes listing new ids.`,
     verifiers: [
       `${PRE}
 
-You are REVIEWER 1 (Arabic grammar accuracy and coverage) of ${file}, the shared grammar-rule library for Surahs 18, 23, 32, 36, 55. Inputs: ${inputs}.
+You are REVIEWER 1 (Arabic grammar accuracy and coverage) of ${file}, the shared grammar-rule library for ${SL}. Inputs: ${inputs}.
 Check every rule: (a) is the Urdu explanation grammatically correct per classical Arabic grammar (case/mood signs, governing particles, verb types)? (b) is appliesWhenEnglish precise and non-overlapping with other rules? (c) is any existing id reused for a different concept than in existing-rules.json? (d) using the tag inventory, is any phenomenon that occurs in these words missing from the library (report as a missing rule with a full proposed entry in "fix")? Run ${validate} as well.
 ${SEVERITY}`,
       `${PRE}
 
-You are REVIEWER 2 (Urdu language, pedagogy and house style) of ${file}, the shared grammar-rule library for Surahs 18, 23, 32, 36, 55. Inputs: ${inputs}.
+You are REVIEWER 2 (Urdu language, pedagogy and house style) of ${file}, the shared grammar-rule library for ${SL}. Inputs: ${inputs}.
 Check every rule: (a) Urdu spelling and grammar (Urdu letters ی ک ہ ے in Urdu words, correct izafat, natural phrasing); (b) clarity for an Urdu-speaking learner and correct, consistent grammatical terminology as in the authoring guide and existing lessons (e.g. مرفوع، منصوب، مجرور، مجزوم، فعلِ مضارع، مضاف الیہ، حال، تمییز); (c) any Arabic illustration has correct full vowels; (d) titles are concise and distinct; (e) explanations are general, 80–300 characters, and free of Latin letters. Run ${validate} as well.
 ${SEVERITY}`,
     ],
@@ -227,7 +229,7 @@ function rootSpec(batch) {
     validate,
     author: `${PRE}
 
-TASK: write one root-family entry per root in ${input}. Each root lists the surahs, the QAC lemmas with counts and sample occurrences with English glosses from Surahs 18, 23, 32, 36, 55. The app shows meaningUrdu and noteUrdu on every word card of that root.
+TASK: write one root-family entry per root in ${input}. Each root lists the surahs, the QAC lemmas with counts and sample occurrences with English glosses from ${SL}. The app shows meaningUrdu and noteUrdu on every word card of that root.
 Write ${file} as {"entries": [{"root", "meaningUrdu", "noteUrdu"}]} with the same roots in the same order as the input.
 ${conventions}
 Run: ${validate}  and fix every error.

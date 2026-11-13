@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "Eajila|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "عَجِلَ",
+   "present": "يَعْجَلُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے: ماضی میں عین کلمہ پر زیر اور مضارع میں زبر ہے (عَجِلَ، يَعْجَلُ)؛ معنی ہے جلدی کرنا۔ عموماً لازم ہے اور إِلَى یا بِ کے ساتھ آتا ہے، مگر کسی کام سے آگے بڑھ جانے کے مفہوم میں مفعول بھی لے لیتا ہے؛ اسے بابِ افعال أَعْجَلَ (جلدی میں ڈالنا) اور بابِ استفعال اِسْتَعْجَلَ (جلدی چاہنا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC tags 7:150:13 أَعَجِلْتُمْ as Form I perfect 2MP (LEM Eajila, root Ejl), with kasra on the 2nd radical; i'rab فعل ماض with أَمْرَ رَبِّكُمْ as its object (sense 'outstripped'). Quran-wide Form I perfect وَعَجِلْتُ إِلَيْكَ (20:84) and jussives لَا تَعْجَلْ (19:84, 20:114) with fatha on the 2nd radical: عَجِلَ يَعْجَلُ عَجَلًا, i–a, sami'a class (Lane; Lisan al-Arab; al-Mu'jam al-Wasit). Distinct from Form IV أَعْجَلَكَ (20:83) and Form X ٱسْتَعْجَلَ."
+  },
+  {
+   "key": "{sotaEojala|X|ACT",
+   "baabUrdu": "بابِ اِسْتِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — دہم (X)",
+   "past": "اِسْتَعْجَلَ",
+   "present": "يَسْتَعْجِلُ",
+   "pattern": "اِسْتَفْعَلَ — يَسْتَفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ شروع کا ہمزہ ہمزۂ وصل ہے جو ملا کر پڑھنے میں ساقط ہو جاتا ہے، اور مضارع میں عین کلمہ پر زیر ہے۔ متعدی ہے: کسی چیز کی جلدی چاہنا یا جلدی مچانا؛ جس چیز کی جلدی ہو وہ مفعول بنتی ہے یا بِ کے ساتھ آتی ہے، اور جس سے مطالبہ ہو وہ بھی مفعول بن سکتا ہے (يَسْتَعْجِلُونَكَ بِٱلْعَذَابِ)۔",
+   "evidenceEnglish": "QAC tags 29:53:1 وَيَسْتَعْجِلُونَكَ and 29:54:1 يَسْتَعْجِلُونَكَ as Form X imperfect 3MP (LEM {sotaEojala, root Ejl), the kasra on the 2nd radical and the 2MS object suffix attested; i'rab فعل مضارع with the كاف as مفعول به and بِٱلْعَذَابِ following. Quran-wide perfect ٱسْتَعْجَلْتُم بِهِۦ (46:24) and jussive فَلَا تَسْتَعْجِلُوهُ (16:1). istaf'ala of ع ج ل: ٱسْتَعْجَلَ يَسْتَعْجِلُ ٱسْتِعْجَالًا 'to seek haste, urge on' (Lane; Lisan al-Arab)."
+  },
+  {
+   "key": ">aEad~a|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَعَدَّ",
+   "present": "يُعِدُّ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "مضاعف مادے (ع د د) سے بابِ افعال ہے: اصل أَعْدَدَ، يُعْدِدُ میں دونوں دال مدغم ہو کر أَعَدَّ، يُعِدُّ بنے، مگر متحرک ضمیرِ فاعل (تُ، نَا، نَ) سے پہلے آخری دال ساکن ہو کر ادغام کھل جاتا ہے (أَعْدَدْتُ)۔ متعدی ہے: پہلے سے تیار کرنا؛ تیار چیز مفعول اور جس کے لیے ہو وہ لِ سے آتا ہے؛ مجرد عَدَّ يَعُدُّ (گننا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC tags 4:93:13 وَأَعَدَّ and 4:102:59 أَعَدَّ as Form IV perfect 3MS (LEM >aEad~a, root Edd), i'rab فعل ماض, each followed by لَهُۥ/لِلْكَٰفِرِينَ and an accusative object (عَذَابًا). Quran-wide imperative وَأَعِدُّوا۟ لَهُم (8:60), perfect لَأَعَدُّوا۟ (9:46), passive أُعِدَّتْ (2:24, 3:133). af'ala of a doubled root: أَعَدَّ يُعِدُّ إِعْدَادًا 'to prepare' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit); distinct from Form I عَدَّ يَعُدُّ and Form II عَدَّدَ (lex-a08)."
+  },
+  {
+   "key": "Eadala|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "عَدَلَ",
+   "present": "يَعْدِلُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے: ماضی میں عین کلمہ پر زبر اور مضارع میں زیر ہے (عَدَلَ، يَعْدِلُ)۔ ساتھ آنے والے ظرف یا حرفِ جر سے معنی بدلتا ہے: بَيْنَ یا فِي کے ساتھ انصاف کرنا، عَنْ کے ساتھ ہٹ جانا، اور بِ کے ساتھ کسی کو برابر ٹھہرانا؛ مفعول کے ساتھ ٹھیک برابر بنانا (عَدَلَكَ)، اس لیے ہر جگہ سیاق سے معنی متعین کریں۔",
+   "evidenceEnglish": "QAC Form I (LEM Eadala, root Edl): subjunctives تَعْدِلُوا۟ (4:3:19, 4:129:4, 4:135:27) and indicatives يَعْدِلُونَ (7:159:8, 7:181:7), all with kasra on the 2nd radical: عَدَلَ يَعْدِلُ, a–i, daraba class (Lane; Lisan al-Arab; al-Mu'jam al-Wasit). Senses vary by complement: 'do justice' (7:159, 7:181; بَيْنَ in 4:129), 'deviate' عَنْ (the gloss at 4:135 'you deviate'), 'equate others with' بِرَبِّهِمْ يَعْدِلُونَ (6:1), and transitive عَدَلَكَ (82:7)."
+  },
+  {
+   "key": "yataEad~a|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَعَدَّى",
+   "present": "يَتَعَدَّى",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "ناقص واوی مادے (ع د و) سے بابِ تفعل ہے: آخری واو ماضی اور مضارع دونوں میں الف مقصورہ بن کر ى لکھی جاتی ہے (تَعَدَّى، يَتَعَدَّى)، اور جزم میں یہ حرفِ علت حذف ہو جاتا ہے (يَتَعَدَّ)۔ متعدی ہے: حد سے آگے بڑھ جانا؛ جس حد کو پار کیا جائے وہ مفعول بنتی ہے (حُدُودَ ٱللَّهِ)۔",
+   "evidenceEnglish": "QAC tags 4:14:5 وَيَتَعَدَّ as Form V imperfect 3MS jussive (LEM yataEad~a, root Edw), i'rab فعل مضارع مجزوم in a conditional clause with حُدُودَهُۥ as object; the lemma handle is this jussive, the citation form being تَعَدَّى. Quran-wide وَمَن يَتَعَدَّ حُدُودَ ٱللَّهِ (2:229, 65:1). tafa''ala of ع د و: تَعَدَّى يَتَعَدَّى تَعَدِّيًا 'to overstep, transgress' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "yaEori$u|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "عَرَشَ",
+   "present": "يَعْرِشُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے: چھت یا چھپر بنانا، بیلوں کے لیے ٹٹیاں کھڑی کرنا، اور عمارتیں اونچی کرنا؛ متعدی ہے، اگرچہ قرآن میں اس کا مفعول (ضمیرِ عائد) محذوف ہے۔ حفص کی قراءت میں مضارع عین کلمہ کے زیر کے ساتھ يَعْرِشُ ہے؛ لغت میں يَعْرُشُ بھی آیا ہے، اس لیے دوسری قراءت کو غلطی نہ سمجھیں۔",
+   "evidenceEnglish": "QAC tags 7:137:29 يَعْرِشُونَ as Form I imperfect 3MP (LEM yaEori$u, root Er$) with kasra on the 2nd radical in the Hafs text; also 16:68 وَمِمَّا يَعْرِشُونَ. The perfect عَرَشَ is not attested in the Quran. Lexica give عَرَشَ يَعْرِشُ ويَعْرُشُ 'to build a trellis/roof, to erect' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit), and يَعْرُشُونَ (damma) is a canonical variant reading (Ibn Amir, Shu'ba); the Hafs kasra places it in the a–i, daraba class."
+  },
+  {
+   "key": "Eaz~aru|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "عَزَّرَ",
+   "present": "يُعَزِّرُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح فعل ہے؛ عین کلمہ مشدد ہے اور مضارع میں حرفِ مضارع پر پیش آتا ہے۔ متعدی ہے: تعظیم کے ساتھ مدد اور حمایت کرنا؛ بعد کی فقہی اصطلاح «تعزیر» (سزا) سے قرآنی معنی کو نہ ملائیں۔",
+   "evidenceEnglish": "QAC tags 7:157:34 وَعَزَّرُوهُ as Form II perfect 3MP with a 3MS object suffix (LEM Eaz~aru, root Ezr; the handle is the stem before the subject suffix, the citation form being عَزَّرَ). Quran-wide perfect وَعَزَّرْتُمُوهُمْ (5:12) and subjunctive وَتُعَزِّرُوهُ (48:9) confirm fa''ala — yufa''ilu. عَزَّرَهُ تَعْزِيرًا 'to aid, support with reverence' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "EaA$iru|III|ACT",
+   "baabUrdu": "بابِ مُفَاعَلَة",
+   "formUrdu": "ثلاثی مزید فیہ — سوم (III)",
+   "past": "عَاشَرَ",
+   "present": "يُعَاشِرُ",
+   "pattern": "فَاعَلَ — يُفَاعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ فاء کلمہ کے بعد الف آتا ہے، ماضی میں عین کلمہ پر زبر اور مضارع و امر میں زیر ہے (عَاشَرَ، يُعَاشِرُ، عَاشِرْ)۔ متعدی ہے: کسی کے ساتھ مل جل کر رہنا اور برتاؤ کرنا؛ بابِ مفاعلہ کے عام مفہوم کے مطابق اس میں دو طرفہ تعلق پایا جاتا ہے۔",
+   "evidenceEnglish": "QAC tags 4:19:22 وَعَاشِرُوهُنَّ as Form III imperative 2MP (LEM EaA$iru, root E$r; the handle is the imperative stem, the citation form being عَاشَرَ), with هُنَّ as مفعول به, the only Quranic occurrence. fā'ala of ع ش ر: عَاشَرَهُ يُعَاشِرُهُ مُعَاشَرَةً 'to live with, keep company with' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "{EotaSamu|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِعْتَصَمَ",
+   "present": "يَعْتَصِمُ",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ شروع کا ہمزہ ہمزۂ وصل ہے اور فاء کلمہ کے بعد بابِ افتعال کی تاء بغیر تبدیلی کے آتی ہے۔ لازم ہے اور بِ کے ساتھ آتا ہے: کسی چیز کو مضبوطی سے تھامنا یا اس کی پناہ لینا (اِعْتَصَمَ بِاللَّهِ)۔",
+   "evidenceEnglish": "QAC tags 4:146:5 and 4:175:5 وَٱعْتَصَمُوا۟ as Form VIII perfect 3MP (LEM {EotaSamu, root ESm; the handle is the stem before the subject suffix, the citation form being ٱعْتَصَمَ), each followed by بِٱللَّهِ. Quran-wide imperative وَٱعْتَصِمُوا۟ بِحَبْلِ ٱللَّهِ (3:103) and jussive يَعْتَصِم بِٱللَّهِ (3:101) with kasra on the 2nd radical. ifta'ala of ع ص م: ٱعْتَصَمَ بِهِ يَعْتَصِمُ 'to hold fast to, seek protection in' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "taEoDulu|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "عَضَلَ",
+   "present": "يَعْضُلُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح فعل ہے: ماضی میں عین کلمہ پر زبر اور قرآن کے مضارع میں پیش ہے (عَضَلَ، يَعْضُلُ)، اگرچہ لغت میں يَعْضِلُ بھی منقول ہے۔ متعدی ہے: عورت کو نکاح یا اس کے حق سے روکنا اور تنگ کرنا؛ جسے روکا جائے وہ مفعول بنتا ہے۔",
+   "evidenceEnglish": "QAC tags 4:19:12 تَعْضُلُوهُنَّ as Form I imperfect 2MP jussive after لَا (LEM taEoDulu, root EDl; the handle is the imperfect, the citation form being عَضَلَ), with damma on the 2nd radical and هُنَّ as مفعول به. Quran-wide فَلَا تَعْضُلُوهُنَّ (2:232). Lexica give عَضَلَ يَعْضُلُ (also يَعْضِلُ) عَضْلًا 'to prevent a woman from marrying, to constrain' (Lane; Lisan al-Arab; al-Mu'jam al-Wasit); the Quranic damma places it in the a–u, nasara class."
+  }
+ ]
+}

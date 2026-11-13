@@ -1,0 +1,84 @@
+{
+ "entries": [
+  {
+   "key": "HaSirato|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "حَصِرَ",
+   "present": "يَحْصَرُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے: دل یا سینے کا تنگ ہو جانا، کسی کام سے رک جانا؛ ماضی میں عینِ کلمہ پر زیر اور مضارع میں زبر ہے۔ اسے اسی مادے کے متعدی حَصَرَ يَحْصُرُ (گھیرنا، روک لینا، بابِ نَصَرَ) سے الگ رکھیں، جس کی حرکات اور معنی دونوں مختلف ہیں۔",
+   "evidenceEnglish": "QAC form I active, single Quranic occurrence حَصِرَتْ (4:90:11, 3FS perfect, LEM HaSirato; i'rab فعل ماض) with kasra on the 2nd radical; the imperfect is not attested in the Quran. Lane s.v. حصر and Lisan al-Arab give حَصِرَ, aor. يَحْصَرُ, inf. n. حَصَرٌ, '(his bosom) became straitened / he was unable to speak', i.e. faʿila–yafʿalu (samiʿa); distinct from transitive حَصَرَ يَحْصُرُ 'to confine, besiege' (9:5 وَٱحْصُرُوهُمْ)."
+  },
+  {
+   "key": ">aHoSanato|IV|PASS",
+   "baabUrdu": "بابِ اِفْعَال — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)، مجہول",
+   "past": "أُحْصِنَ",
+   "present": "يُحْصَنُ",
+   "pattern": "أُفْعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل أَحْصَنَ (محفوظ کرنا، پاک دامن رکھنا، نکاح کے ذریعے حفاظت میں لانا) کا مجہول ہے: محفوظ کیا جانا، نکاح میں آ جانا؛ جس کی حفاظت ہو وہ نائبِ فاعل بنتا ہے۔ ماضی أُحْصِنَ میں ہمزہ مضموم اور صاد مکسور ہے، اور مضارع يُحْصَنُ میں صاد کا فتحہ اسے معروف يُحْصِنُ سے جدا کرتا ہے۔",
+   "evidenceEnglish": "QAC 4:25:36 أُحْصِنَّ: PERF|PASS|(IV), LEM >aHoSanato, root HSn, 3FP; i'rab فعل ماض مبني للمجهول with nun as نائب فاعل (Hafs reading; some other qira'at read active أَحْصَنَّ). Passive imperfect not attested in the Quran; regular form IV passive أُفْعِلَ — يُفْعَلُ. Active أَحْصَنَ يُحْصِنُ 'to fortify, keep chaste; to marry' (Lane s.v. حصن; Lisan al-Arab)."
+  },
+  {
+   "key": ">aHoDarato|IV|PASS",
+   "baabUrdu": "بابِ اِفْعَال — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)، مجہول",
+   "past": "أُحْضِرَ",
+   "present": "يُحْضَرُ",
+   "pattern": "أُفْعِلَ — يُفْعَلُ",
+   "noteUrdu": "صحیح فعل أَحْضَرَ (حاضر کرنا، سامنے لانا) کا مجہول ہے: حاضر کیا جانا؛ جسے حاضر کیا جائے وہ نائبِ فاعل بنتا ہے، اور معروف میں دو مفعول ہوں تو دوسرا مفعول مجہول میں بھی منصوب رہتا ہے۔ ماضی أُحْضِرَ میں ہمزہ مضموم اور ضاد مکسور، اور مضارع يُحْضَرُ میں ضاد مفتوح ہے، جو اسے معروف يُحْضِرُ سے جدا کرتا ہے۔",
+   "evidenceEnglish": "QAC 4:128:18 وَأُحْضِرَتِ: PERF|PASS|(IV), LEM >aHoDarato, root HDr, 3FS; i'rab فعل ماض مبني للمجهول (ٱلْأَنفُسُ نائب فاعل, ٱلشُّحَّ retained second object). No other passive finite form of this verb in the Quran (ٱلْمُحْضَرِينَ 37:57 is a participle, not a verb); the passive imperfect follows the regular pattern. Regular form IV passive of أَحْضَرَ يُحْضِرُ (Lane s.v. حضر): أُفْعِلَ — يُفْعَلُ."
+  },
+  {
+   "key": "HafiZa|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "حَفِظَ",
+   "present": "يَحْفَظُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: حفاظت کرنا، نگہبانی کرنا، یاد رکھنا؛ ماضی میں عینِ کلمہ پر زیر اور مضارع میں زبر ہے، اسی لیے بابِ سَمِعَ ہے اور امر اِحْفَظْ آتا ہے۔ جس چیز کی حفاظت ہو وہ مفعول بہ بنتی ہے، اور کبھی مِنْ کے ساتھ وہ چیز آتی ہے جس سے بچایا جائے۔",
+   "evidenceEnglish": "QAC form I active; sample perfect حَفِظَ (4:34:20). Quran-wide imperfects have fatha on the 2nd radical: يَحْفَظُونَهُ (13:11), وَنَحْفَظُ (12:65), وَيَحْفَظُوا۟ (24:30), وَيَحْفَظْنَ (24:31), and imperative وَٱحْفَظُوٓا۟ (5:89): i–a, samiʿa class. Standard lexica (Lane, Lisan al-Arab, al-Mu'jam al-Wasit): حَفِظَ يَحْفَظُ حِفْظًا."
+  },
+  {
+   "key": "Hakama|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "حَكَمَ",
+   "present": "يَحْكُمُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح فعل ہے: فیصلہ کرنا، حکم دینا؛ ماضی میں عینِ کلمہ پر زبر اور مضارع میں پیش ہے، اسی لیے بابِ نَصَرَ ہے اور امر اُحْكُمْ آتا ہے۔ عموماً ظرف بَيْنَ (جن کے درمیان فیصلہ ہو) اور حروفِ جر کے ساتھ آتا ہے: بِ (جس بنیاد پر فیصلہ ہو)، عَلَى اور لِ (کسی کے خلاف یا حق میں)۔",
+   "evidenceEnglish": "QAC form I active; sample perfect حَكَمْتُم (4:58:10) and imperfects with damma on the 2nd radical: تَحْكُمُوا۟ (4:58:14), لِتَحْكُمَ (4:105:6), يَحْكُمُ (4:141:26), يَحْكُمَ (7:87:14), يَحْكُمُونَ (29:4:10); imperative فَٱحْكُم (5:48): a–u, nasara class. Lane s.v. حكم and Lisan al-Arab: حَكَمَ بَيْنَهُمْ يَحْكُمُ حُكْمًا."
+  },
+  {
+   "key": "yataHaAkamu|VI|ACT",
+   "baabUrdu": "بابِ تَفَاعُل",
+   "formUrdu": "ثلاثی مزید فیہ — ششم (VI)",
+   "past": "تَحَاكَمَ",
+   "present": "يَتَحَاكَمُ",
+   "pattern": "تَفَاعَلَ — يَتَفَاعَلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے: فیصلے کے لیے کسی کے پاس مقدمہ لے جانا، آپس میں کسی کو ثالث بنانا؛ جس کے پاس فیصلہ لے جایا جائے وہ إِلَى کے ساتھ آتا ہے۔ شروع کی تاء اور حاء کے بعد کا الف زائد ہیں؛ مادہ ح ك م ہے، اور مضارع میں علامتِ مضارع اور عینِ کلمہ دونوں پر زبر رہتا ہے۔",
+   "evidenceEnglish": "QAC (VI) active, single Quranic occurrence يَتَحَاكَمُوٓا۟ (4:60:17, subjunctive after أَن), followed by إِلَى ٱلطَّـٰغُوتِ; QAC's lexeme label is the inflected imperfect يَتَحَاكَمُ. Citation تَحَاكَمَ يَتَحَاكَمُ تَحَاكُمٌ 'to refer a dispute (to someone) for judgment' (Lane s.v. حكم; al-Mu'jam al-Wasit). Regular form VI تَفَاعَلَ — يَتَفَاعَلُ."
+  },
+  {
+   "key": "yuHak~imu|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "حَكَّمَ",
+   "present": "يُحَكِّمُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کسی کو فیصلہ کرنے والا (حَکَم) بنانا؛ جسے حَکَم بنایا جائے وہ مفعول بہ ہوتا ہے اور جس معاملے میں فیصلہ ہو وہ فِي کے ساتھ آتا ہے۔ عینِ کلمہ کاف مشدد ہے؛ مضارع میں علامتِ مضارع پر پیش اور کاف پر زیر ہے، اسے مجرد يَحْكُمُ سے الگ پہچانیں۔",
+   "evidenceEnglish": "QAC (II) active, single Quranic occurrence يُحَكِّمُوكَ (4:65:6, subjunctive after حَتَّىٰ, with 2MS object pronoun) followed by فِيمَا شَجَرَ بَيْنَهُمْ; QAC's lexeme label is the inflected imperfect يُحَكِّمُ. Citation حَكَّمَهُ فِي الأَمْرِ 'to make him judge/arbiter' (Lane s.v. حكم; Lisan al-Arab). Regular form II فَعَّلَ — يُفَعِّلُ."
+  },
+  {
+   "key": "Halafo|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "حَلَفَ",
+   "present": "يَحْلِفُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے: قسم کھانا؛ ماضی میں عینِ کلمہ پر زبر اور مضارع میں زیر ہے، اسی لیے بابِ ضَرَبَ ہے۔ جس کی قسم کھائی جائے وہ بِ کے ساتھ آتا ہے، اور قسم کا مضمون عموماً إِنَّ یا لامِ تاکید والے جملے میں آتا ہے، اور نفی کی صورت میں مَا یا نافیہ إِنْ (بمعنی «نہیں») والے جملے میں۔",
+   "evidenceEnglish": "QAC form I active; sample imperfect يَحْلِفُونَ (4:62:10) has kasra on the 2nd radical; Quran-wide also سَيَحْلِفُونَ (9:42), وَلَيَحْلِفُنَّ (9:107), perfect حَلَفْتُمْ (5:89): a–i, daraba class. QAC's lexeme label حَلَفْ is a truncated form; citation حَلَفَ يَحْلِفُ حَلِفًا (Lane s.v. حلف; Lisan al-Arab; al-Mu'jam al-Wasit)."
+  }
+ ]
+}

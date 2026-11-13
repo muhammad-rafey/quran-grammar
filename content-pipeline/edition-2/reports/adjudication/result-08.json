@@ -1,0 +1,28 @@
+{
+  "part": "08",
+  "overrides": {
+    "25:53:4": {"case": "ACC", "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. ٱلْبَحْرَيْنِ is the object of مَرَجَ (He released the two seas); the dual ya ending marks the accusative."},
+    "29:18:2": {"passive": false, "mood": "JUS", "lexemeKey": "ka*~aba|II|ACT", "noteEnglish": "QAC tags تُكَذِّبُوا۟ passive subjunctive. The kasra on the dhal makes it the active Form II (the passive would be تُكَذَّبُوا with fatha), with the waw as subject (if you deny); it is the jussive verb of the conditional وَإِن, its nun dropped for jazm, answered by فَقَدْ كَذَّبَ."},
+    "29:30:2": {"case": "ACC", "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. رَبِّ (يا محذوفة): an annexed vocative (منادیٰ مضاف) is accusative; the visible kasra signals the first-person ya, so the nasb is implied."},
+    "29:36:6": {"case": "ACC", "noteEnglish": "QAC tags this word NOM, contradicting the vocalised form and its role. يَـٰقَوْمِ: an annexed vocative (منادیٰ مضاف) is accusative; the visible kasra signals the first-person ya, so the nasb is implied."},
+    "29:48:3": {"png": "2MS", "noteEnglish": "QAC tags تَتْلُوا۟ 3rd person feminine singular, but its subject is the addressee of وَمَا كُنتَ (you did not recite), parallel to وَلَا تَخُطُّهُۥ; the ta prefix is second person masculine singular. Its indicative mood (khabar of كان, damma implied on the waw; the final alif is orthographic) is correct."},
+    "29:51:7": {"mood": "IND", "noteEnglish": "QAC tags يُتْلَىٰ subjunctive, but no particle of nasb precedes it; it is an indicative passive verbal sentence (hal of ٱلْكِتَـٰبَ per the verse i'rab) with an implied damma."}
+  },
+  "rejected": [
+    {"id": "25:60:2", "reason": "قِيلَ is the regular passive perfect of hollow قَالَ (qīla); hollow passives do not start with u. Passive is correct."},
+    {"id": "25:68:21", "reason": "يَلْقَ is the jussive answer of conditional مَن يَفْعَلْ; the final alif maqsura is dropped for jazm. JUS is correct."},
+    {"id": "25:77:3", "reason": "يَعْبَؤُا۟ follows negative مَا (no jazm); damma on the hamza, the alif is orthographic. Indicative is correct."},
+    {"id": "25:77:5", "reason": "رَبِّى is the fa'il of يَعْبَؤُا۟ with implied damma before the 1S ya, not a vocative. NOM is correct."},
+    {"id": "29:5:3", "reason": "يَرْجُوا۟ is the indicative khabar of كَانَ (damma implied on the waw); the alif is orthographic. Indicative is correct."},
+    {"id": "29:5:9", "reason": "لَـَٔاتٍ is a manqus (ya elided with tanwin), khabar of إِنَّ with implied damma. NOM is correct."},
+    {"id": "29:8:20", "reason": "كُنتُمْ is the active perfect of hollow كَانَ (kāna, shortened before the suffix); not passive."},
+    {"id": "29:10:23", "reason": "كُنَّا is the active perfect of كَانَ with 1P subject; the u is the shortened hollow vowel, not a passive marker."},
+    {"id": "29:16:12", "reason": "كُنتُمْ is the active perfect of hollow كَانَ after conditional إِن; not passive."},
+    {"id": "29:29:21", "reason": "كُنتَ is the active perfect of hollow كَانَ; not passive."},
+    {"id": "29:33:6", "reason": "سِىٓءَ is the passive perfect of hollow سَآءَ (sīʾa, he was distressed); hollow passives take i, not u. Passive is correct."},
+    {"id": "29:45:11", "reason": "تَنْهَىٰ is the khabar of إِنَّ with no jazm particle; indicative with implied damma (alif maqsura retained). Indicative is correct."},
+    {"id": "29:48:2", "reason": "كُنتَ is the active perfect of hollow كَانَ after negative مَا; not passive."},
+    {"id": "29:55:2", "reason": "يَغْشَىٰهُمُ is in a clause annexed to يَوْمَ with no jazm particle; indicative with implied damma (alif maqsura retained)."},
+    {"id": "29:55:12", "reason": "كُنتُمْ is the active perfect of hollow كَانَ; not passive."}
+  ]
+}

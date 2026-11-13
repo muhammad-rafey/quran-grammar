@@ -1,0 +1,283 @@
+{
+  "chunk": "7-c80",
+  "ayahs": [
+    {
+      "number": 159,
+      "translationUrdu": "اور موسیٰ کی قوم میں ایک جماعت ہے جو حق کے مطابق رہنمائی کرتی ہے اور اسی کے مطابق انصاف کرتی ہے۔",
+      "themeUrdu": "حق پر قائم جماعت",
+      "tafsirUrdu": "بنی اسرائیل میں ایک جماعت خود حق پر قائم تھی۔ وہ لوگوں کو تعلیم اور فتویٰ کے ذریعے حق کی راہ دکھاتی اور ان کے باہمی معاملات کا فیصلہ اسی کے مطابق کرتی تھی۔",
+      "phrases": [
+        {
+          "wordIds": [
+            "7:159:1",
+            "7:159:2",
+            "7:159:3",
+            "7:159:4"
+          ],
+          "labelUrdu": "جملۂ اسمیہ مع اضافت",
+          "explanationUrdu": "«قَوْمِ مُوسَىٰٓ» مرکبِ اضافی ہے۔ اس سے پہلے حرفِ جر لگا ہے۔ پورا جار و مجرور خبرِ مقدم ہے اور «أُمَّةٌۭ» مبتداے مؤخر ہے۔"
+        },
+        {
+          "wordIds": [
+            "7:159:5",
+            "7:159:6"
+          ],
+          "labelUrdu": "جملۂ فعلیہ بطور صفت",
+          "explanationUrdu": "یہ جملہ جماعت کی صفت ہے۔ جماعت لفظاً واحد ہے مگر واوِ جماعت اس کے کئی افراد کی طرف لوٹتی ہے۔"
+        },
+        {
+          "wordIds": [
+            "7:159:7",
+            "7:159:8"
+          ],
+          "labelUrdu": "جملۂ فعلیہ معطوف",
+          "explanationUrdu": "ابتدائی واو اس جملے کو رہنمائی والے جملے سے ملاتی ہے۔ جار و مجرور فعل سے پہلے آیا ہے اور اس کی ضمیر حق کی طرف لوٹتی ہے۔"
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "id": "7:159:1",
+      "meaningUrdu": "اور میں سے",
+      "posUrdu": "حرفِ استئناف + حرفِ جر",
+      "lemma": "مِنْ",
+      "morphologyUrdu": "واوِ استئناف فتحہ پر اور حرفِ جر سکون پر مبنی ہے۔",
+      "syntaxUrdu": "واو سے نیا جملہ شروع ہوتا ہے۔ حرفِ جر «قَوْمِ» کو جر دیتا ہے اور پورا جار و مجرور ایک محذوف خبرِ مقدم سے متعلق ہے۔",
+      "dictionaryUrdu": "مِنْ ابتدا یا کسی کل کا حصہ بتاتا ہے۔ یہاں موسیٰ کی پوری قوم میں سے ایک جماعت مراد ہے۔",
+      "segments": [
+        {
+          "arabic": "وَ",
+          "roleUrdu": "حرفِ استئناف",
+          "meaningUrdu": "اور"
+        },
+        {
+          "arabic": "مِن",
+          "roleUrdu": "حرفِ جر",
+          "meaningUrdu": "میں سے"
+        }
+      ],
+      "ruleIds": [
+        "resumption",
+        "preposition",
+        "fronting",
+        "nominal"
+      ]
+    },
+    {
+      "id": "7:159:2",
+      "meaningUrdu": "قوم",
+      "posUrdu": "اسمِ مجرور",
+      "lemma": "قَوْم",
+      "morphologyUrdu": "مذکر اسمِ جمع ہے۔ ظاہر کسرہ جر کی علامت ہے اور اسمِ علم کی طرف اضافت سے معرفہ ہے۔",
+      "syntaxUrdu": "حرفِ جر کے بعد مجرور ہے اور «مُوسَىٰٓ» کی طرف مضاف ہے۔ پورا جار و مجرور خبرِ مقدم ہے۔",
+      "dictionaryUrdu": "قَوْم لوگوں کی جماعت کو کہتے ہیں۔ یہاں اس سے موسیٰ علیہ السلام کی قوم یعنی بنی اسرائیل مراد ہیں۔",
+      "segments": [
+        {
+          "arabic": "قَوْمِ",
+          "roleUrdu": "اسمِ مجرور، مضاف",
+          "meaningUrdu": "قوم"
+        }
+      ],
+      "ruleIds": [
+        "idafa",
+        "genitive"
+      ]
+    },
+    {
+      "id": "7:159:3",
+      "meaningUrdu": "موسیٰ کی",
+      "posUrdu": "اسمِ علمِ مجرور",
+      "lemma": "مُوسَى",
+      "morphologyUrdu": "واحد مذکر اسمِ علم، مقصور اور غیر منصرف ہے۔ جر کی علامت کسرے کی جگہ آخری الف پر مقدر فتحہ ہے۔",
+      "syntaxUrdu": "یہ «قَوْمِ» کا مضاف الیہ ہے۔ اضافت سے واضح ہوتا ہے کہ آیت میں کس کی قوم کا ذکر ہے۔",
+      "dictionaryUrdu": "یہ اللہ کے نبی موسیٰ علیہ السلام کا ذاتی نام ہے۔ یہاں ان کی طرف قوم کی نسبت کی گئی ہے۔",
+      "segments": [
+        {
+          "arabic": "مُوسَىٰٓ",
+          "roleUrdu": "اسمِ علم، مضاف الیہ",
+          "meaningUrdu": "موسیٰ کی"
+        }
+      ],
+      "ruleIds": [
+        "proper-noun",
+        "idafa",
+        "genitive",
+        "implied-case",
+        "diptote"
+      ]
+    },
+    {
+      "id": "7:159:4",
+      "meaningUrdu": "ایک جماعت ہے",
+      "posUrdu": "اسمِ مرفوع",
+      "lemma": "أُمَّة",
+      "morphologyUrdu": "واحد مؤنث نکرہ اسم ہے۔ تائے مربوطہ تانیث اور تنوینِ ضم کا ضمہ رفع کی علامت ہے۔",
+      "syntaxUrdu": "مبتداے مؤخر ہے اور قومِ موسیٰ والا جار و مجرور اس کی خبرِ مقدم ہے۔ جملہ «يَهْدُونَ بِٱلْحَقِّ» اس نکرہ اسم کی صفت ہے۔",
+      "dictionaryUrdu": "أُمَّة کا ایک معنی جماعت ہے۔ یہاں پوری قوم کے اندر ایک ایسے گروہ کی بات ہو رہی ہے جس کے افراد حق پر قائم ہیں۔",
+      "segments": [
+        {
+          "arabic": "أُمَّةٌۭ",
+          "roleUrdu": "اسمِ نکرہ، مبتداے مؤخر",
+          "meaningUrdu": "ایک جماعت"
+        }
+      ],
+      "ruleIds": [
+        "nominal",
+        "fronting",
+        "nominative",
+        "indefinite",
+        "feminine-marker"
+      ]
+    },
+    {
+      "id": "7:159:5",
+      "meaningUrdu": "رہنمائی کرتے ہیں",
+      "posUrdu": "فعلِ مضارع + ضمیرِ فاعل",
+      "lemma": "هَدَى",
+      "morphologyUrdu": "ثلاثی مجرد، ناقص یائی، مضارع معروف کا صیغۂ جمع مذکر غائب ہے۔ افعالِ خمسہ میں سے ہے اور ثبوتِ نون سے مرفوع ہے۔",
+      "syntaxUrdu": "واوِ جماعت ضمیرِ متصل اور محلِ رفع میں فاعل ہے۔ «بِٱلْحَقِّ» اس فعل سے متعلق ہے اور پورا جملہ محلِ رفع میں «أُمَّةٌۭ» کی صفت ہے۔",
+      "dictionaryUrdu": "هَدَى کا معنی کسی کو راہ دکھانا ہے۔ یہاں جماعت کے افراد حق کے مطابق دوسروں کی رہنمائی کرتے ہیں۔",
+      "segments": [
+        {
+          "arabic": "يَهْدُ",
+          "roleUrdu": "فعلِ مضارع معروف",
+          "meaningUrdu": "رہنمائی کرتے ہیں"
+        },
+        {
+          "arabic": "و",
+          "roleUrdu": "واوِ جماعت، ضمیرِ فاعل",
+          "meaningUrdu": "وہ سب"
+        },
+        {
+          "arabic": "نَ",
+          "roleUrdu": "نونِ رفع",
+          "meaningUrdu": "رفع کی علامت"
+        }
+      ],
+      "ruleIds": [
+        "imperfect",
+        "five-verbs",
+        "subject-pronoun",
+        "weak-verb",
+        "adjective"
+      ],
+      "verbNoteUrdu": "هَدَى، يَهْدِي بابِ ضَرَبَ يَضْرِبُ سے ہے۔ یہاں جمع مذکر غائب کا مضارع معروف ہے، واوِ جماعت فاعل ہے، اس سے پہلے اصلی یاء حذف ہوئی ہے اور ناصب یا جازم نہ ہونے سے نون برقرار ہے۔"
+    },
+    {
+      "id": "7:159:6",
+      "meaningUrdu": "حق کے مطابق",
+      "posUrdu": "حرفِ جر + حرفِ تعریف + اسمِ مجرور",
+      "lemma": "حَقّ",
+      "morphologyUrdu": "باء کسرے پر مبنی حرفِ جر ہے۔ مذکر اسم حرفِ تعریف سے معرفہ اور ظاہر کسرے سے مجرور ہے۔",
+      "syntaxUrdu": "یہ جار و مجرور «يَهْدُونَ» سے متعلق ہے۔ باء بتاتی ہے کہ جماعت کے افراد حق کو رہنمائی کی بنیاد بناتے ہیں۔",
+      "dictionaryUrdu": "حَقّ کے معنی سچائی اور ثابت شدہ بات کے ہیں۔ یہاں یہی سچائی رہنمائی کا معیار ہے اور قاف کی تشدید میں مادے کی دونوں قافیں ہیں۔",
+      "segments": [
+        {
+          "arabic": "بِ",
+          "roleUrdu": "حرفِ جر",
+          "meaningUrdu": "کے مطابق"
+        },
+        {
+          "arabic": "ٱلْ",
+          "roleUrdu": "حرفِ تعریف",
+          "meaningUrdu": "معرفہ بنانے والا"
+        },
+        {
+          "arabic": "حَقِّ",
+          "roleUrdu": "اسمِ مجرور",
+          "meaningUrdu": "حق"
+        }
+      ],
+      "ruleIds": [
+        "preposition",
+        "genitive",
+        "definite",
+        "doubled"
+      ]
+    },
+    {
+      "id": "7:159:7",
+      "meaningUrdu": "اور اسی کے مطابق",
+      "posUrdu": "حرفِ عطف + حرفِ جر + ضمیر",
+      "lemma": "بِ + هُ",
+      "morphologyUrdu": "واو فتحہ پر اور باء کسرے پر مبنی ہے۔ واحد مذکر غائب کی ضمیر کسرے پر مبنی اور محلِ جر میں ہے۔",
+      "syntaxUrdu": "واو دونوں فعلی جملوں کو ملاتی ہے۔ جار و مجرور اپنے متعلق «يَعْدِلُونَ» سے پہلے ہے اور ضمیر پچھلے لفظ میں مذکور حق کی طرف لوٹتی ہے۔",
+      "dictionaryUrdu": "باء یہاں معیار بتاتی ہے۔ ضمیر سے وہی حق مراد ہے جس کے مطابق جماعت کے لوگ رہنمائی بھی کرتے ہیں۔",
+      "segments": [
+        {
+          "arabic": "وَ",
+          "roleUrdu": "حرفِ عطف",
+          "meaningUrdu": "اور"
+        },
+        {
+          "arabic": "بِ",
+          "roleUrdu": "حرفِ جر",
+          "meaningUrdu": "کے مطابق"
+        },
+        {
+          "arabic": "هِۦ",
+          "roleUrdu": "ضمیرِ متصل، محلِ جر",
+          "meaningUrdu": "اسی"
+        }
+      ],
+      "ruleIds": [
+        "conjunction",
+        "preposition",
+        "pronoun",
+        "fronting",
+        "genitive"
+      ]
+    },
+    {
+      "id": "7:159:8",
+      "meaningUrdu": "انصاف کرتے ہیں",
+      "posUrdu": "فعلِ مضارع + ضمیرِ فاعل",
+      "lemma": "عَدَلَ",
+      "morphologyUrdu": "ثلاثی مجرد، صحیح سالم، مضارع معروف کا صیغۂ جمع مذکر غائب ہے۔ افعالِ خمسہ میں سے ہے اور ثبوتِ نون سے مرفوع ہے۔",
+      "syntaxUrdu": "واوِ جماعت محلِ رفع میں فاعل ہے اور «وَبِهِۦ» کا جار و مجرور اسی فعل سے متعلق ہے۔ جملہ رہنمائی والے جملے پر معطوف ہے اور اسی کی طرح محلِ رفع میں ہے۔",
+      "dictionaryUrdu": "عَدَلَ یہاں انصاف کرنے کے معنی میں ہے۔ سیاق بتاتا ہے کہ جماعت اپنے فیصلوں میں حق کو معیار بناتی ہے۔",
+      "segments": [
+        {
+          "arabic": "يَعْدِلُ",
+          "roleUrdu": "فعلِ مضارع معروف",
+          "meaningUrdu": "انصاف کرتے ہیں"
+        },
+        {
+          "arabic": "و",
+          "roleUrdu": "واوِ جماعت، ضمیرِ فاعل",
+          "meaningUrdu": "وہ سب"
+        },
+        {
+          "arabic": "نَ",
+          "roleUrdu": "نونِ رفع",
+          "meaningUrdu": "رفع کی علامت"
+        }
+      ],
+      "ruleIds": [
+        "imperfect",
+        "five-verbs",
+        "subject-pronoun"
+      ],
+      "verbNoteUrdu": "عَدَلَ، يَعْدِلُ بابِ ضَرَبَ يَضْرِبُ سے ہے۔ یہاں جمع مذکر غائب کا مضارع معروف واوِ جماعت کو فاعل بناتا ہے اور ناصب یا جازم نہ ہونے سے ثبوتِ نون کے ساتھ مرفوع ہے۔"
+    }
+  ],
+  "auditNotes": [
+    {
+      "ref": "7:159:1",
+      "noteEnglish": "The packet gives the local preposition and noun cases. The opening phrase supplies the fronted predicate of the delayed subject at 7:159:4, with an implicit governor in the traditional analysis."
+    },
+    {
+      "ref": "7:159:3",
+      "noteEnglish": "QAC gives the genitive case. The lesson specifies the estimated fatḥa on the final alif because the proper name is a diptote."
+    },
+    {
+      "ref": "7:159:5",
+      "noteEnglish": "QAC tags the whole wāw–nūn ending as a subject-pronoun segment. The learner split separates the subject wāw from the indicative nūn in both verbs. Both plural subjects refer to the members of the singular collective noun at 7:159:4."
+    },
+    {
+      "ref": "7:159:8",
+      "noteEnglish": "The shared lexeme's Urdu note generalizes bi- as an equating complement. Its English evidence and the root note give the correct sense here: the fronted phrase states the standard for doing justice."
+    }
+  ]
+}

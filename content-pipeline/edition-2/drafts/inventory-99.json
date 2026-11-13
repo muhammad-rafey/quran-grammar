@@ -1,0 +1,158 @@
+{
+  "retrievedAt": "2026-11-13",
+  "textSource": "Quran.com Content API v4 text_uthmani (end-of-ayah markers excluded); word boundaries and IDs checked against QAC 0.4 morphology",
+  "sources": [
+    "https://api.quran.com/api/v4/verses/by_chapter/99?words=true&word_fields=text_uthmani&per_page=50"
+  ],
+  "surah": 99,
+  "ayahCount": 8,
+  "wordCount": 36,
+  "pauseSignPolicy": "Recitation signs that the API separates from a word by a space (waqf signs, the saktah sign, the sajdah sign and the rub al-hizb marker) are excluded from stored word tokens, following the Surahs 110-114 precedent; each exclusion is listed below.",
+  "words": [
+    {
+      "id": "99:1:1",
+      "arabic": "إِذَا"
+    },
+    {
+      "id": "99:1:2",
+      "arabic": "زُلْزِلَتِ"
+    },
+    {
+      "id": "99:1:3",
+      "arabic": "ٱلْأَرْضُ"
+    },
+    {
+      "id": "99:1:4",
+      "arabic": "زِلْزَالَهَا"
+    },
+    {
+      "id": "99:2:1",
+      "arabic": "وَأَخْرَجَتِ"
+    },
+    {
+      "id": "99:2:2",
+      "arabic": "ٱلْأَرْضُ"
+    },
+    {
+      "id": "99:2:3",
+      "arabic": "أَثْقَالَهَا"
+    },
+    {
+      "id": "99:3:1",
+      "arabic": "وَقَالَ"
+    },
+    {
+      "id": "99:3:2",
+      "arabic": "ٱلْإِنسَـٰنُ"
+    },
+    {
+      "id": "99:3:3",
+      "arabic": "مَا"
+    },
+    {
+      "id": "99:3:4",
+      "arabic": "لَهَا"
+    },
+    {
+      "id": "99:4:1",
+      "arabic": "يَوْمَئِذٍۢ"
+    },
+    {
+      "id": "99:4:2",
+      "arabic": "تُحَدِّثُ"
+    },
+    {
+      "id": "99:4:3",
+      "arabic": "أَخْبَارَهَا"
+    },
+    {
+      "id": "99:5:1",
+      "arabic": "بِأَنَّ"
+    },
+    {
+      "id": "99:5:2",
+      "arabic": "رَبَّكَ"
+    },
+    {
+      "id": "99:5:3",
+      "arabic": "أَوْحَىٰ"
+    },
+    {
+      "id": "99:5:4",
+      "arabic": "لَهَا"
+    },
+    {
+      "id": "99:6:1",
+      "arabic": "يَوْمَئِذٍۢ"
+    },
+    {
+      "id": "99:6:2",
+      "arabic": "يَصْدُرُ"
+    },
+    {
+      "id": "99:6:3",
+      "arabic": "ٱلنَّاسُ"
+    },
+    {
+      "id": "99:6:4",
+      "arabic": "أَشْتَاتًۭا"
+    },
+    {
+      "id": "99:6:5",
+      "arabic": "لِّيُرَوْا۟"
+    },
+    {
+      "id": "99:6:6",
+      "arabic": "أَعْمَـٰلَهُمْ"
+    },
+    {
+      "id": "99:7:1",
+      "arabic": "فَمَن"
+    },
+    {
+      "id": "99:7:2",
+      "arabic": "يَعْمَلْ"
+    },
+    {
+      "id": "99:7:3",
+      "arabic": "مِثْقَالَ"
+    },
+    {
+      "id": "99:7:4",
+      "arabic": "ذَرَّةٍ"
+    },
+    {
+      "id": "99:7:5",
+      "arabic": "خَيْرًۭا"
+    },
+    {
+      "id": "99:7:6",
+      "arabic": "يَرَهُۥ"
+    },
+    {
+      "id": "99:8:1",
+      "arabic": "وَمَن"
+    },
+    {
+      "id": "99:8:2",
+      "arabic": "يَعْمَلْ"
+    },
+    {
+      "id": "99:8:3",
+      "arabic": "مِثْقَالَ"
+    },
+    {
+      "id": "99:8:4",
+      "arabic": "ذَرَّةٍۢ"
+    },
+    {
+      "id": "99:8:5",
+      "arabic": "شَرًّۭا"
+    },
+    {
+      "id": "99:8:6",
+      "arabic": "يَرَهُۥ"
+    }
+  ],
+  "excludedPauseSigns": []
+}

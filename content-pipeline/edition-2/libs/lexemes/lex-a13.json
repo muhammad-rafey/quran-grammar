@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": ">anqaDa|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَنْقَضَ",
+   "present": "يُنْقِضُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: بوجھ کا کمر کو اتنا بوجھل کر دینا کہ وہ چٹخنے لگے۔ ماضی میں ہمزۂ قطع مفتوح ہے اور مضارع میں گر کر علامتِ مضارع پر ضمہ آتا ہے (يُنْقِضُ)؛ اسے ثلاثی مجرد نَقَضَ يَنْقُضُ (توڑنا) سے الگ پہچانیں۔",
+   "evidenceEnglish": "QAC tags 94:3:2 أَنقَضَ as PERF form IV 3MS (LEM >anqaDa, root nqD); i'rab فعل ماض. The initial hamzat al-qatʿ before the sukun-bearing first radical is diagnostic of Form IV. Lane s.v. نقض and Lisan al-Arab: أَنْقَضَ الحِمْلُ ظَهْرَهُ = the load weighed down his back so that it creaked (from نَقِيض, a creaking sound). Regular Form IV paradigm أَنْقَضَ يُنْقِضُ إِنْقَاض; distinct from Form I نَقَضَ يَنْقُضُ 'undo, break'."
+  },
+  {
+   "key": "naqamu|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "نَقَمَ",
+   "present": "يَنْقِمُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے: کسی بات کو ناپسند کر کے عیب ٹھہرانا اور اس پر ناراض ہونا؛ جس پر ناراضی ہو وہ مِنْ کے ساتھ آتا ہے اور ناپسند کی گئی بات مفعول ہوتی ہے۔ مضارع میں قاف مکسور ہے (يَنْقِمُ)؛ اسے بابِ افتعال کے اِنْتَقَمَ (بدلہ لینا) سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC tags 85:8:2 نَقَمُوا۟ as PERF 3MP Form I (LEM naqamu, root nqm). Quran-wide attested imperfects with kasra on the 2nd radical: تَنقِمُونَ (5:59) and تَنقِمُ (7:126), giving a–i (bab daraba). Lane and Lisan al-Arab give نَقَمَ يَنْقِمُ as the main form, with a secondary نَقِمَ يَنْقَمُ; the Quranic imperfect decides for a–i. QAC's lemma is the truncated stem; citation is نَقَمَ."
+  },
+  {
+   "key": "tanoharo|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "نَهَرَ",
+   "present": "يَنْهَرُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: سختی سے جھڑکنا، ڈانٹ کر دھتکارنا۔ عینِ کلمہ ہاء حرفِ حلقی ہے اور ماضی و مضارع دونوں میں مفتوح ہے (يَنْهَرُ)؛ لَا نہی کے بعد مجزوم صیغہ تَنْهَرْ ہوتا ہے۔",
+   "evidenceEnglish": "QAC tags 93:10:4 تَنْهَرْ as IMPF 2MS jussive Form I (root nhr) after prohibitive لَا; the same jussive with object pronoun occurs in 17:23 وَلَا تَنْهَرْهُمَا. The attested imperfect has fatha on the guttural ه, giving a–a (bab fataha). Lane s.v. نهر and Lisan al-Arab: نَهَرَهُ يَنْهَرُهُ نَهْرًا = chid him, drove him away roughly. QAC's lemma is the inflected jussive; citation is the perfect نَهَرَ."
+  },
+  {
+   "key": "nahaY`|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "نَهَى",
+   "present": "يَنْهَى",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "ناقص یائی اور متعدی فعل ہے: روکنا، منع کرنا؛ جس چیز سے روکا جائے وہ عَنْ کے ساتھ آتی ہے۔ آخری یاء ماضی و مضارع دونوں میں الفِ مقصورہ بن جاتی ہے (نَهَى، يَنْهَى)، جمع کی واو سے پہلے گرتی ہے (نَهَوْا) اور جزم و امر میں حذف ہوتی ہے (لَمْ يَنْهَ، اِنْهَ)۔",
+   "evidenceEnglish": "QAC tags 96:9:3 يَنْهَىٰ as IMPF 3MS Form I (LEM nahaY`, root nhy). Quran-wide active forms include imperfects يَنْهَىٰ (16:90), يَنْهَوْنَ (3:104) and the imperative وَٱنْهَ (31:17). Fatha on the guttural ه in the imperfect gives a–a (bab fataha), the regular نَهَى يَنْهَى نَهْيًا of Lane and Lisan al-Arab; transitive, with عَنْ for the thing forbidden."
+  },
+  {
+   "key": ">aha`na|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَهَانَ",
+   "present": "يُهِينُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "اجوف واوی اور متعدی فعل ہے: ذلیل کرنا، رسوا کرنا۔ درمیانی واو ماضی میں الف (أَهَانَ) اور مضارع میں یاء (يُهِينُ) بن جاتی ہے، اور جب آخری حرف ساکن ہو تو گر جاتی ہے (أَهَنْتُ، لَمْ يُهِنْ)؛ مصدر إِهَانَة ہے۔",
+   "evidenceEnglish": "QAC tags 89:16:10 أَهَـٰنَنِ as PERF 3MS Form IV (LEM >aha`na, root hwn), with the object pronoun ـنِ (yāʾ of the pronoun not written in this reading). Quran-wide jussive يُهِنِ (22:18, وَمَن يُهِنِ ٱللَّهُ) shows the Form IV imperfect with the hollow radical dropped before a sukun. Hollow wāwī Form IV أَهَانَ يُهِينُ إِهَانَة (underlying أَهْوَنَ يُهْوِنُ), Lane s.v. هون; Lisan al-Arab."
+  },
+  {
+   "key": "yuwviqu|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَوْثَقَ",
+   "present": "يُوثِقُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "مثال واوی اور متعدی فعل ہے: مضبوطی سے باندھنا، جکڑنا۔ فاءِ کلمہ واو ماضی میں ساکن ہے (أَوْثَقَ) اور مضارع میں علامتِ مضارع کے ضمہ کے بعد لمبی واو کی طرح پڑھی جاتی ہے (يُوثِقُ)؛ اس باب میں یہ واو حذف نہیں ہوتی، جبکہ ثلاثی مجرد وَثِقَ يَثِقُ کے مضارع میں حذف ہو جاتی ہے۔",
+   "evidenceEnglish": "QAC tags 89:26:2 يُوثِقُ as IMPF 3MS Form IV (LEM yuwviqu, root wvq); QAC's lemma is the inflected imperfect, so the citation is derived as the perfect أَوْثَقَ. Form IV أَوْثَقَ يُوثِقُ إِيثَاق 'bound fast' (Lane s.v. وثق; Lisan al-Arab; al-Mu'jam al-Wasit). Note for reviewers: Hafs reads active يُوثِقُ; al-Kisaʾi and Yaʿqub read passive يُوثَقُ in 89:25–26, which is not the reading used here."
+  },
+  {
+   "key": "wad~aEa|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "وَدَّعَ",
+   "present": "يُوَدِّعُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "مثال واوی اور متعدی فعل ہے: رخصت کرنا، الوداع کہہ کر چھوڑ دینا۔ بابِ تفعیل میں واو کبھی حذف نہیں ہوتی (يُوَدِّعُ)، اور عینِ کلمہ دال پر تشدید اس باب کی علامت ہے؛ اسے ثلاثی مجرد يَدَعُ (چھوڑ دینا) سے الگ پہچانیں۔",
+   "evidenceEnglish": "QAC tags 93:3:2 وَدَّعَكَ as PERF 3MS Form II (LEM wad~aEa, root wdE) with object pronoun كَ; the shadda on the 2nd radical is diagnostic of Form II. Regular Form II paradigm وَدَّعَ يُوَدِّعُ تَوْدِيع 'bade farewell, took leave of; forsook' (Lane s.v. ودع; Lisan al-Arab). A non-canonical reading مَا وَدَعَكَ (Form I) is reported in the lexica/tafsir; Hafs reads Form II."
+  },
+  {
+   "key": "wasaTo|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "وَسَطَ",
+   "present": "يَسِطُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "مثال واوی فعل ہے: کسی چیز کے بیچ میں جا پہنچنا، درمیان میں گھس جانا؛ جس کے بیچ میں پہنچے وہ مفعول ہوتا ہے۔ ماضی میں واو باقی ہے (وَسَطَ) مگر مضارع میں حذف ہو جاتی ہے (يَسِطُ)، جیسے وَعَدَ يَعِدُ۔",
+   "evidenceEnglish": "QAC tags 100:5:1 فَوَسَطْنَ as PERF 3FP Form I (LEM wasaTo, root wsT); QAC's lemma is a truncated stem, citation derived as وَسَطَ. No imperfect is attested in the Quran; the vowel class is taken from the lexica: Lane s.v. وسط and Lisan al-Arab give وَسَطَهُ يَسِطُهُ وَسْطًا وَسِطَةً 'was/became in the middle of it' (a–i, bab daraba, with the wāw dropped as in وَعَدَ يَعِدُ). Transitive; in 100:5 جَمْعًا is its object."
+  },
+  {
+   "key": "tawaASa|VI|ACT",
+   "baabUrdu": "بابِ تَفَاعُل",
+   "formUrdu": "ثلاثی مزید فیہ — ششم (VI)",
+   "past": "تَوَاصَى",
+   "present": "يَتَوَاصَى",
+   "pattern": "تَفَاعَلَ — يَتَفَاعَلُ",
+   "noteUrdu": "لفیف مفروق (و ص ي) فعل ہے: ایک دوسرے کو تاکید و نصیحت کرنا؛ باہمی عمل کی وجہ سے فاعل عموماً جمع ہوتا ہے اور جس بات کی تاکید ہو وہ بِ کے ساتھ آتی ہے۔ آخری یاء ماضی و مضارع میں الفِ مقصورہ بنتی ہے اور جمع کی واو سے پہلے گر جاتی ہے (تَوَاصَوْا)۔",
+   "evidenceEnglish": "QAC tags all four samples (90:17:6, 90:17:8, 103:3:6, 103:3:8) وَتَوَاصَوْا۟ as PERF 3MP Form VI (LEM tawaASa, root wSy), each followed by بِ; also أَتَوَاصَوْا۟ بِهِۦ (51:53). The 3MP perfect تَوَاصَوْا shows the final yāʾ dropped before the plural wāw with the fatha retained. Form VI تَوَاصَى يَتَوَاصَى 'enjoined one another' (Lisan al-Arab: تَوَاصَى القومُ = أَوْصَى بعضُهم بعضًا; Lane s.v. وصى). QAC's lemma is truncated; citation is تَوَاصَى."
+  },
+  {
+   "key": "tawak~alo|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَوَكَّلَ",
+   "present": "يَتَوَكَّلُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "مثال واوی اور لازم فعل ہے: بھروسہ کرنا، کام سونپ کر اعتماد کرنا؛ جس پر بھروسہ ہو وہ عَلَى کے ساتھ آتا ہے۔ فاءِ کلمہ واو اس باب میں ہمیشہ باقی رہتی ہے (يَتَوَكَّلُ)؛ شروع کی تاء بابِ تفعل کی زائد تاء ہے اور کاف پر تشدید ہے۔",
+   "evidenceEnglish": "QAC tags 25:58:1 وَتَوَكَّلْ as IMPV 2MS Form V (LEM tawak~alo, root wkl); QAC's lemma is the imperative, citation derived as the perfect تَوَكَّلَ. Quran-wide perfects تَوَكَّلْتُ (9:129), imperfects فَلْيَتَوَكَّلِ (3:122), يَتَوَكَّلْ (65:3) confirm تَوَكَّلَ يَتَوَكَّلُ تَوَكُّل; intransitive with عَلَى (Lane s.v. وكل; al-Mu'jam al-Wasit)."
+  }
+ ]
+}

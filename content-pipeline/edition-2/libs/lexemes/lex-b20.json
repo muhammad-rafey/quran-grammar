@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "yufotiy|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَفْتَى",
+   "present": "يُفْتِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "ناقص یائی فعل ہے (مادہ ف ت ي): آخری یاء ماضی أَفْتَى میں الفِ مقصورہ لکھی جاتی ہے، أَفْتَيْتُ اور مضارع يُفْتِي میں یاء رہتی ہے اور جزم و امر میں حذف ہو جاتی ہے۔ متعدی ہے: جسے فتویٰ دیا جائے وہ مفعول بنتا ہے اور مسئلہ عموماً فِي کے ساتھ آتا ہے۔",
+   "evidenceEnglish": "QAC 4:127:6 and 4:176:4 يُفْتِيكُمْ: IMPF 3MS (IV), LEM yufotiy, ROOT fty, with 2MP object suffix. QAC's lemma is the imperfect; the citation perfect is أَفْتَى. Quran-wide also the imperative أَفْتُونِي (12:43). af'ala of final-yaa ف ت ي: أَفْتَى يُفْتِي إِفْتَاءً 'to give a ruling/opinion' (Lane, Lisan al-Arab, al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "far~aqu|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "فَرَّقَ",
+   "present": "يُفَرِّقُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: جدا کرنا، فرق کرنا، بانٹ دینا؛ عینِ کلمہ کی تشدید بابِ تفعیل کی علامت ہے۔ جن کے درمیان فرق کیا جائے وہ عموماً بَيْنَ کے ساتھ آتے ہیں؛ اسے لازم تَفَرَّقَ (بٹ جانا، بابِ تفعّل) سے نہ ملائیں۔",
+   "evidenceEnglish": "QAC 4:150:8 and 4:152:6 يُفَرِّقُوا: IMPF 3MP (II), LEM far~aqu, ROOT frq; subjunctive after أَنْ and jussive after لَمْ respectively, both followed by بَيْنَ. QAC's lemma string is irregular; the citation perfect is فَرَّقَ. Quran-wide also perfect فَرَّقُوا (6:159) and imperfect يُفَرِّقُونَ (2:102). fa''ala of ف ر ق, aor. يُفَرِّقُ (Lane, Lisan al-Arab)."
+  },
+  {
+   "key": ">afosadu|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَفْسَدَ",
+   "present": "يُفْسِدُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے: بگاڑنا، فساد برپا کرنا۔ یہ متعدی ہے (أَفْسَدُوهَا) اور اکثر بغیر مفعول کے فِي ٱلْأَرْضِ کے ساتھ فساد پھیلانے کے معنی میں آتا ہے؛ ثلاثی فَسَدَ يَفْسُدُ (خود بگڑنا) لازم ہے، دونوں کو نہ ملائیں۔",
+   "evidenceEnglish": "QAC 7:56:2 and 7:85:27 تُفْسِدُوا (IMPF 2MP JUS after prohibitive لَا) and 7:127:9 لِيُفْسِدُوا (IMPF 3MP SUBJ after lam of purpose): all (IV), LEM >afosadu, ROOT fsd. QAC's lemma string is irregular; the citation perfect is أَفْسَدَ. Quran-wide also perfect أَفْسَدُوهَا (27:34) and يُفْسِدُونَ (2:27). af'ala of ف س د, transitive or used absolutely (Lane, Lisan al-Arab, al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "faS~ala|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "فَصَّلَ",
+   "present": "يُفَصِّلُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: کھول کھول کر اور تفصیل سے بیان کرنا، الگ الگ کر کے واضح کرنا۔ اسے ثلاثی فَصَلَ (روانہ ہونا، جدا ہونا) سے نہ ملائیں؛ اس فعل میں عینِ کلمہ کی تشدید بابِ تفعیل کی علامت ہے۔",
+   "evidenceEnglish": "QAC 7:32:23 and 7:174:2 نُفَصِّلُ (IMPF 1P) and 7:52:4 فَصَّلْنَـٰهُ (PERF 1P with object suffix): all (II), LEM faS~ala, ROOT fSl. Quran-wide also فَصَّلَ لَكُمْ (6:119), يُفَصِّلُ (10:5) and passive فُصِّلَتْ (41:3). fa''ala of ف ص ل, 'to set out distinctly, explain in detail' (Lane, Lisan al-Arab, al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "faD~ala|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "فَضَّلَ",
+   "present": "يُفَضِّلُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل ہے: فضیلت دینا، برتری بخشنا۔ جسے فضیلت دی جائے وہ مفعول بنتا ہے اور جس پر برتری دی جائے وہ عَلَى کے ساتھ آتا ہے، جیسے فَضَّلَ زَيْدًا عَلَى عَمْرٍو (اس نے زید کو عمرو پر فضیلت دی)؛ سیاق سے واضح ہو تو عَلَى والا حصہ محذوف بھی ہو سکتا ہے۔",
+   "evidenceEnglish": "QAC 4:32:4, 4:34:6, 4:95:15, 4:95:27 and 7:140:7 (فَضَّلَكُمْ): all PERF 3MS (II), LEM faD~ala, ROOT fDl, typically with عَلَى for the one surpassed. Quran-wide also فَضَّلْنَا (17:21) and imperfect نُفَضِّلُ (13:4). fa''ala of ف ض ل, aor. يُفَضِّلُ, 'to prefer, give superiority' (Lane, Lisan al-Arab, al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": ">afoDaY`|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَفْضَى",
+   "present": "يُفْضِي",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "ناقص واوی فعل ہے (مادہ ف ض و): مزید فیہ میں آخری واو یاء بن جاتی ہے، اس لیے ماضی أَفْضَى (الفِ مقصورہ)، أَفْضَيْتُ اور مضارع يُفْضِي ہیں۔ لازم ہے اور إِلَى کے ساتھ آتا ہے: کسی تک پہنچنا؛ میاں بیوی کے لیے یہ خلوت و قربت کا کنایہ ہے۔",
+   "evidenceEnglish": "QAC 4:21:4 أَفْضَىٰ: PERF 3MS (IV), LEM >afoDaY`, ROOT fDw, followed by بَعْضُكُمْ إِلَىٰ بَعْضٍ; the only Quranic attestation, imperfect not attested in the Quran. af'ala of final-waw ف ض و: أَفْضَى إِلَيْهِ يُفْضِي إِفْضَاءً 'to reach, come to; to go in unto (one's wife)', the waw becoming yaa as in all derived forms of defective verbs (Lane, Lisan al-Arab, al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "yatafak~aru|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَفَكَّرَ",
+   "present": "يَتَفَكَّرُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "صحیح اور لازم فعل ہے: غور و فکر کرنا، سوچ بچار کرنا؛ جس چیز میں غور کیا جائے وہ فِي کے ساتھ آتی ہے۔ مضارع میں حرفِ مضارع کے بعد تَ باقی رہتی ہے (يَتَفَكَّرُ)، اور اس باب کا مضارع زبر سے شروع ہوتا ہے، پیش سے نہیں۔",
+   "evidenceEnglish": "QAC 7:176:30 يَتَفَكَّرُونَ (IMPF 3MP indicative) and 7:184:2 يَتَفَكَّرُوا (IMPF 3MP JUS after أَوَلَمْ): (V), LEM yatafak~aru, ROOT fkr. QAC's lemma is the imperfect; the citation perfect is تَفَكَّرَ. Quran-wide also تَتَفَكَّرُونَ (2:219) and يَتَفَكَّرُونَ فِي خَلْقِ (3:191), with فِي. tafa''ala of ف ك ر, intransitive (Lane, Lisan al-Arab, al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": "faAza|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "فَازَ",
+   "present": "يَفُوزُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "اجوف واوی فعل ہے (مادہ ف و ز): اصل فَوَزَ میں واو الف بن کر فَازَ ہوا اور مضارع يَفُوزُ میں واو ظاہر رہتی ہے؛ ساکن صیغوں میں حذف ہوتی ہے (فُزْتُ، فُزْ)۔ لازم ہے: کامیاب ہونا؛ جو چیز حاصل ہو وہ بِ کے ساتھ آتی ہے۔",
+   "evidenceEnglish": "QAC 4:73:16 فَأَفُوزَ: IMPF 1S SUBJ (after fa' of the reply to the wish يَا لَيْتَنِي), form I, LEM faAza, ROOT fwz; the u-vowel of أَفُوزَ attests the imperfect يَفُوزُ. Quran-wide perfect فَازَ (3:185). Hollow-waw a–u: فَازَ يَفُوزُ فَوْزًا (Lane, Lisan al-Arab, al-Mu'jam al-Wasit)."
+  },
+  {
+   "key": ">afaAqa|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَفَاقَ",
+   "present": "يُفِيقُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "اجوف واوی فعل ہے (مادہ ف و ق): اصل أَفْوَقَ اور يُفْوِقُ میں واو کی حرکت پچھلے حرف ف کو منتقل ہوئی، پھر ساکن واو ماضی میں فتحہ کے بعد الف اور مضارع میں کسرہ کے بعد یاء بن گئی، یوں أَفَاقَ اور يُفِيقُ بنے۔ لازم ہے: بے ہوشی یا غفلت سے ہوش میں آنا؛ اسے ثلاثی فَاقَ يَفُوقُ (بڑھ جانا) سے نہ ملائیں۔",
+   "evidenceEnglish": "QAC 7:143:34 أَفَاقَ: PERF 3MS (IV), LEM >afaAqa, ROOT fwq (Musa recovering after falling unconscious); the only Quranic attestation, imperfect not attested in the Quran. af'ala of hollow-waw ف و ق: أَفَاقَ يُفِيقُ إِفَاقَةً 'to recover consciousness, come to' (Lane, Lisan al-Arab, al-Mu'jam al-Wasit), following the regular hollow Form IV pattern (cf. أَقَامَ يُقِيمُ in lex-00)."
+  },
+  {
+   "key": ">afaADa|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَفَاضَ",
+   "present": "يُفِيضُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "اجوف یائی فعل ہے (مادہ ف ي ض): ماضی أَفَاضَ، مضارع يُفِيضُ؛ ساکن صیغوں میں درمیانی حرف حذف ہوتا ہے (أَفَضْتُمْ، واحد امر أَفِضْ) جبکہ أَفِيضُوا میں یاء ظاہر ہے۔ متعدی ہو تو بہانا، انڈیلنا؛ لازم ہو تو لوٹ کر روانہ ہونا یا کسی بات میں مشغول ہونا۔",
+   "evidenceEnglish": "QAC 7:50:7 أَفِيضُوا: IMPV 2MP (IV), LEM >afaADa, ROOT fyD, 'pour upon us (some) of the water' with عَلَى and مِنَ. Quran-wide perfect أَفَضْتُمْ (2:198), imperative أَفِيضُوا (2:199, depart) and imperfect تُفِيضُونَ فِيهِ (10:61). af'ala of hollow-yaa ف ي ض: أَفَاضَ يُفِيضُ إِفَاضَةً (Lane, Lisan al-Arab, al-Mu'jam al-Wasit)."
+  }
+ ]
+}

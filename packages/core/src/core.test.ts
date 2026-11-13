@@ -23,7 +23,8 @@ import {
 
 const lastTen = [105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
 const fiveSurahs = [18, 23, 32, 36, 55];
-const expectedChapters = [1, ...fiveSurahs, ...lastTen];
+const editionTwo = [4, 7, 25, 29, ...Array.from({ length: 20 }, (_, index) => 85 + index)];
+const expectedChapters = [1, ...fiveSurahs, ...lastTen, ...editionTwo].sort((a, b) => a - b);
 
 test('navigation catalogs distinguish the available lesson from future content and partial juz', () => {
   assert.deepEqual(
@@ -52,10 +53,10 @@ test('navigation catalogs distinguish the available lesson from future content a
     juzCatalog.map((juz) => juz.number),
     Array.from({ length: 30 }, (_, i) => i + 1),
   );
-  const preview = (number: number, ranges: Array<[number, number, number]>) => ({
+  const preview = (number: number, ranges: Array<[number, number, number]>, partial = true) => ({
     number,
     available: true,
-    partial: true,
+    partial,
     previewSurahNumber: ranges[0][0],
     surahNumbers: ranges.map(([surah]) => surah),
     ranges: ranges.map(([surah, firstAyah, lastAyah]) => ({ surah, firstAyah, lastAyah })),
@@ -64,16 +65,23 @@ test('navigation catalogs distinguish the available lesson from future content a
     juzCatalog.filter((juz) => juz.available),
     [
       preview(1, [[1, 1, 7]]),
+      preview(4, [[4, 1, 23]]),
+      preview(5, [[4, 24, 147]], false),
+      preview(6, [[4, 148, 176]]),
+      preview(8, [[7, 1, 87]]),
+      preview(9, [[7, 88, 206]]),
       preview(15, [[18, 1, 74]]),
       preview(16, [[18, 75, 110]]),
-      preview(18, [[23, 1, 118]]),
-      preview(21, [[32, 1, 30]]),
+      preview(18, [[23, 1, 118], [25, 1, 20]]),
+      preview(19, [[25, 21, 77]]),
+      preview(20, [[29, 1, 45]]),
+      preview(21, [[29, 46, 69], [32, 1, 30]]),
       preview(22, [[36, 1, 27]]),
       preview(23, [[36, 28, 83]]),
       preview(27, [[55, 1, 78]]),
       preview(
         30,
-        lastTen.map((surah) => [surah, 1, getStudy(surah)!.surah.ayahCount]),
+        Array.from({ length: 30 }, (_, index) => 85 + index).map((surah) => [surah, 1, getStudy(surah)!.surah.ayahCount]),
       ),
     ],
   );
@@ -121,14 +129,38 @@ test('navigation catalogs distinguish the available lesson from future content a
   assert.equal(getSurahTitle(114, 'ur'), 'الناس');
 });
 
-test('all sixteen available lessons have complete occurrence, rule and phrase coverage', () => {
+test('all forty available lessons have complete occurrence, rule and phrase coverage', () => {
   const counts = new Map([
     [1, [7, 29]],
+    [4, [176, 3747]],
+    [7, [206, 3320]],
     [18, [110, 1579]],
     [23, [118, 1050]],
+    [25, [77, 893]],
+    [29, [69, 976]],
     [32, [30, 372]],
     [36, [83, 725]],
     [55, [78, 351]],
+    [85, [22, 109]],
+    [86, [17, 61]],
+    [87, [19, 72]],
+    [88, [26, 92]],
+    [89, [30, 137]],
+    [90, [20, 82]],
+    [91, [15, 54]],
+    [92, [21, 71]],
+    [93, [11, 40]],
+    [94, [8, 27]],
+    [95, [8, 34]],
+    [96, [19, 72]],
+    [97, [5, 30]],
+    [98, [8, 94]],
+    [99, [8, 36]],
+    [100, [11, 40]],
+    [101, [11, 36]],
+    [102, [8, 28]],
+    [103, [3, 14]],
+    [104, [9, 33]],
     [105, [5, 23]],
     [106, [4, 17]],
     [107, [7, 25]],
@@ -147,14 +179,14 @@ test('all sixteen available lessons have complete occurrence, rule and phrase co
   );
   assert.equal(
     studies.reduce((total, study) => total + study.ayahs.length, 0),
-    474,
+    1281,
   );
   assert.equal(
     studies.reduce((total, study) => total + study.words.length, 0),
-    4307,
+    14405,
   );
   const occurrences = studies.flatMap((study) => study.words.map((word) => word.id));
-  assert.equal(new Set(occurrences).size, 4307);
+  assert.equal(new Set(occurrences).size, 14405);
   for (const study of studies) {
     const chapter = study.surah.number;
     assert.equal(getStudy(chapter), study);
@@ -176,12 +208,12 @@ test('all sixteen available lessons have complete occurrence, rule and phrase co
       'Source links stay in the repository audit',
     );
   }
-  for (const number of [0, 2, 17, 104, 115, 105.5, NaN]) assert.equal(getStudy(number), undefined);
+  for (const number of [0, 2, 17, 84, 115, 105.5, NaN]) assert.equal(getStudy(number), undefined);
 });
 
-test('five new surahs preserve every audited Uthmani word and occurrence boundary verbatim', () => {
+test('both draft editions preserve every audited Uthmani word and occurrence boundary verbatim', () => {
   let total = 0;
-  for (const number of fiveSurahs) {
+  for (const number of [...fiveSurahs, ...editionTwo]) {
     const inventory = JSON.parse(
       readFileSync(
         new URL(`../../../docs/source-audits/inventory-${number}.json`, import.meta.url),
@@ -217,7 +249,7 @@ test('five new surahs preserve every audited Uthmani word and occurrence boundar
     }
     total += inventory.words.length;
   }
-  assert.equal(total, 4077);
+  assert.equal(total, 14175);
 });
 
 test('last ten surahs preserve every audited Uthmani word and occurrence boundary verbatim', () => {

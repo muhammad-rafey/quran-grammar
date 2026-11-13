@@ -1,0 +1,126 @@
+{
+  "retrievedAt": "2026-11-13",
+  "textSource": "Quran.com Content API v4 text_uthmani (end-of-ayah markers excluded); word boundaries and IDs checked against QAC 0.4 morphology",
+  "sources": [
+    "https://api.quran.com/api/v4/verses/by_chapter/102?words=true&word_fields=text_uthmani&per_page=50"
+  ],
+  "surah": 102,
+  "ayahCount": 8,
+  "wordCount": 28,
+  "pauseSignPolicy": "Recitation signs that the API separates from a word by a space (waqf signs, the saktah sign, the sajdah sign and the rub al-hizb marker) are excluded from stored word tokens, following the Surahs 110-114 precedent; each exclusion is listed below.",
+  "words": [
+    {
+      "id": "102:1:1",
+      "arabic": "أَلْهَىٰكُمُ"
+    },
+    {
+      "id": "102:1:2",
+      "arabic": "ٱلتَّكَاثُرُ"
+    },
+    {
+      "id": "102:2:1",
+      "arabic": "حَتَّىٰ"
+    },
+    {
+      "id": "102:2:2",
+      "arabic": "زُرْتُمُ"
+    },
+    {
+      "id": "102:2:3",
+      "arabic": "ٱلْمَقَابِرَ"
+    },
+    {
+      "id": "102:3:1",
+      "arabic": "كَلَّا"
+    },
+    {
+      "id": "102:3:2",
+      "arabic": "سَوْفَ"
+    },
+    {
+      "id": "102:3:3",
+      "arabic": "تَعْلَمُونَ"
+    },
+    {
+      "id": "102:4:1",
+      "arabic": "ثُمَّ"
+    },
+    {
+      "id": "102:4:2",
+      "arabic": "كَلَّا"
+    },
+    {
+      "id": "102:4:3",
+      "arabic": "سَوْفَ"
+    },
+    {
+      "id": "102:4:4",
+      "arabic": "تَعْلَمُونَ"
+    },
+    {
+      "id": "102:5:1",
+      "arabic": "كَلَّا"
+    },
+    {
+      "id": "102:5:2",
+      "arabic": "لَوْ"
+    },
+    {
+      "id": "102:5:3",
+      "arabic": "تَعْلَمُونَ"
+    },
+    {
+      "id": "102:5:4",
+      "arabic": "عِلْمَ"
+    },
+    {
+      "id": "102:5:5",
+      "arabic": "ٱلْيَقِينِ"
+    },
+    {
+      "id": "102:6:1",
+      "arabic": "لَتَرَوُنَّ"
+    },
+    {
+      "id": "102:6:2",
+      "arabic": "ٱلْجَحِيمَ"
+    },
+    {
+      "id": "102:7:1",
+      "arabic": "ثُمَّ"
+    },
+    {
+      "id": "102:7:2",
+      "arabic": "لَتَرَوُنَّهَا"
+    },
+    {
+      "id": "102:7:3",
+      "arabic": "عَيْنَ"
+    },
+    {
+      "id": "102:7:4",
+      "arabic": "ٱلْيَقِينِ"
+    },
+    {
+      "id": "102:8:1",
+      "arabic": "ثُمَّ"
+    },
+    {
+      "id": "102:8:2",
+      "arabic": "لَتُسْـَٔلُنَّ"
+    },
+    {
+      "id": "102:8:3",
+      "arabic": "يَوْمَئِذٍ"
+    },
+    {
+      "id": "102:8:4",
+      "arabic": "عَنِ"
+    },
+    {
+      "id": "102:8:5",
+      "arabic": "ٱلنَّعِيمِ"
+    }
+  ],
+  "excludedPauseSigns": []
+}

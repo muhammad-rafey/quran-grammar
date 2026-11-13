@@ -1,0 +1,724 @@
+{
+ "rejected": [
+  {
+   "id": "4:9:1",
+   "reason": "Jussive after lam of command; final alif of يخشى dropped as the sign of jazm (i'rab: مجزوم)."
+  },
+  {
+   "id": "4:11:1",
+   "reason": "No governing particle; indicative with implied damma on the ya of a defective Form IV verb."
+  },
+  {
+   "id": "4:11:10",
+   "reason": "كُنَّ is the active perfect of hollow كَانَ with feminine nun; initial u is from the hollow root, not passive."
+  },
+  {
+   "id": "4:11:52",
+   "reason": "No nasb/jazm governor; indicative with implied damma on the ya."
+  },
+  {
+   "id": "4:12:77",
+   "reason": "Passive Form IV with no governing particle; indicative with implied damma on the alif maqsura."
+  },
+  {
+   "id": "4:13:9",
+   "reason": "Sound feminine plural object of يُدْخِلْهُ; accusative is marked by kasra (tanwin)."
+  },
+  {
+   "id": "4:13:10",
+   "reason": "Adjectival clause after جَنَّـٰتٍ with no governor; indicative with implied damma on the ya."
+  },
+  {
+   "id": "4:14:5",
+   "reason": "Coordinated with conditional jussive يَعْصِ; final alif of يتعدّى dropped for jazm."
+  },
+  {
+   "id": "4:15:2",
+   "reason": "Feminine-plural nun makes it mabni on sukun; no governor, so no jussive."
+  },
+  {
+   "id": "4:15:16",
+   "reason": "After حَتَّىٰ (implied أَنْ) the verb is subjunctive with implied fatha on the alif; QAC SUBJ is correct."
+  },
+  {
+   "id": "4:16:2",
+   "reason": "Dual verb with nun retained; indicative (one of the five verbs), no governor."
+  },
+  {
+   "id": "4:18:13",
+   "reason": "تُبْتُ is the active perfect of hollow تَابَ; initial u comes from the hollow root, not passive."
+  },
+  {
+   "id": "4:19:19",
+   "reason": "Feminine-plural nun makes it mabni on sukun (in position of nasb after أَنْ); not jussive, QAC's unmarked mood is correct."
+  },
+  {
+   "id": "4:25:29",
+   "reason": "Hal, sound feminine plural; accusative is marked by kasra (i'rab: اسم منصوب)."
+  },
+  {
+   "id": "4:30:7",
+   "reason": "After فَسَوْفَ with no governor; indicative with implied damma on the ya."
+  },
+  {
+   "id": "4:40:8",
+   "reason": "Jussive verb of conditional إِن; تَكُ with nun deleted (and the hollow waw elided) for jazm."
+  },
+  {
+   "id": "4:43:21",
+   "reason": "كُنتُم is the active perfect of hollow كَانَ; initial u is from the hollow root, not passive."
+  },
+  {
+   "id": "4:44:2",
+   "reason": "Jussive after أَلَمْ; final alif of ترى dropped as the sign of jazm."
+  },
+  {
+   "id": "4:49:2",
+   "reason": "تَرَ after أَلَمْ is jussive; the final alif of the defective verb is dropped as the sign of jazm (the fatha is the stem vowel), as the i'rab says."
+  },
+  {
+   "id": "4:49:9",
+   "reason": "يُزَكِّى has no governing particle; indicative with an implied damma on the final ya."
+  },
+  {
+   "id": "4:51:2",
+   "reason": "تَرَ after أَلَمْ is jussive by dropping the final weak letter; the fatha is not a subjunctive ending."
+  },
+  {
+   "id": "4:56:6",
+   "reason": "نُصْلِيهِمْ after سَوْفَ is indicative with an implied damma on the ya; no jazm governor."
+  },
+  {
+   "id": "4:57:6",
+   "reason": "جَنَّـٰتٍ is the second object of سَنُدْخِلُهُمْ; a sound feminine plural is accusative with kasra, so ACC is correct."
+  },
+  {
+   "id": "4:57:7",
+   "reason": "تَجْرِى is an ungoverned indicative (adjectival clause of جَنَّـٰتٍ) with an implied damma on the ya."
+  },
+  {
+   "id": "4:59:20",
+   "reason": "كُنتُمْ is the active perfect of the hollow verb كَانَ (kāna > kuntum); the damma is not a passive marker."
+  },
+  {
+   "id": "4:60:2",
+   "reason": "تَرَ after أَلَمْ is jussive by dropping the final weak letter, as the i'rab says."
+  },
+  {
+   "id": "4:61:2",
+   "reason": "قِيلَ is the regular passive perfect of the hollow verb قَالَ (kasra + ya), as the i'rab says مبني للمجهول."
+  },
+  {
+   "id": "4:71:7",
+   "reason": "ثُبَاتٍ is a circumstantial accusative (حال); the sound feminine plural takes kasra in the accusative, as the verse note states."
+  },
+  {
+   "id": "4:73:14",
+   "reason": "كُنتُ is the active perfect of hollow كَانَ; the damma is not a passive marker."
+  },
+  {
+   "id": "4:74:19",
+   "reason": "نُؤْتِيهِ after فَسَوْفَ in the answer clause is itself indicative (implied damma on the ya); only the whole clause stands in the jussive position."
+  },
+  {
+   "id": "4:77:2",
+   "reason": "تَرَ after أَلَمْ is jussive by dropping the final weak letter, as the i'rab says."
+  },
+  {
+   "id": "4:77:5",
+   "reason": "قِيلَ is the passive perfect of hollow قَالَ; the verse note confirms فعل ماض مبني للمجهول."
+  },
+  {
+   "id": "4:78:6",
+   "reason": "كُنتُمْ is the active perfect of hollow كَانَ after لَوْ; the damma is not a passive marker."
+  },
+  {
+   "id": "4:94:27",
+   "reason": "كُنتُم is the active perfect of hollow كَانَ; the damma is not a passive marker."
+  },
+  {
+   "id": "4:95:2",
+   "reason": "يَسْتَوِى after negative لَا is indicative with an implied damma on the ya; لَا does not govern jazm here."
+  },
+  {
+   "id": "4:96:1",
+   "reason": "دَرَجَـٰتٍ is a substitute (بدل) of accusative أَجْرًا; the sound feminine plural is accusative with kasra."
+  },
+  {
+   "id": "4:97:9",
+   "reason": "كُنتُمْ is the active perfect of hollow كَانَ; the damma is not a passive marker."
+  },
+  {
+   "id": "4:97:11",
+   "reason": "كُنَّا is the active Form I perfect of the hollow verb كَانَ (kunnā); the u is the hollow-verb vowel, not a passive marker."
+  },
+  {
+   "id": "4:102:2",
+   "reason": "كُنتَ is the active perfect of hollow كَانَ; the damma comes from the weak root, not the passive."
+  },
+  {
+   "id": "4:102:50",
+   "reason": "كُنتُم is the active perfect of hollow كَانَ; the damma comes from the weak root, not the passive."
+  },
+  {
+   "id": "4:114:24",
+   "reason": "فَسَوْفَ نُؤْتِيهِ is the answer of the conditional after فَ + سَوْفَ, so it is not in jazm; the ya is kept with an implied damma (indicative)."
+  },
+  {
+   "id": "4:120:2",
+   "reason": "وَيُمَنِّيهِمْ is joined to indicative يَعِدُهُمْ with no governing particle; the final ya is kept with an implied damma, so indicative is correct."
+  },
+  {
+   "id": "4:122:6",
+   "reason": "جَنَّـٰتٍ is a sound feminine plural, so its accusative takes kasra; it is the second object of سَنُدْخِلُهُمْ (i'rab: منصوب)."
+  },
+  {
+   "id": "4:122:7",
+   "reason": "تَجْرِى describes جَنَّـٰتٍ with no governing particle; indicative with implied damma on the ya."
+  },
+  {
+   "id": "4:123:10",
+   "reason": "يُجْزَ is the jussive answer of مَن يَعْمَلْ; its final alif is dropped for jazm, leaving fatha (i'rab: مجزوم)."
+  },
+  {
+   "id": "4:127:6",
+   "reason": "ٱللَّهُ يُفْتِيكُمْ is the predicate of a nominal sentence with no governing particle; indicative with implied damma on the ya."
+  },
+  {
+   "id": "4:135:29",
+   "reason": "تَلْوُۥٓا۟ is the jussive verb of the conditional وَإِن; the five-verbs nun is dropped for jazm (i'rab: مجزوم)."
+  },
+  {
+   "id": "4:152:12",
+   "reason": "سَوْفَ يُؤْتِيهِمْ has no governing particle (سَوْفَ does not cause jazm); indicative with implied damma on the ya."
+  },
+  {
+   "id": "4:154:5",
+   "reason": "وَقُلْنَا is the active perfect of hollow قَالَ (We said), with نَا as subject; the damma comes from the weak root."
+  },
+  {
+   "id": "4:154:10",
+   "reason": "وَقُلْنَا is the active perfect of hollow قَالَ (We said), with نَا as subject; the damma comes from the weak root."
+  },
+  {
+   "id": "4:160:7",
+   "reason": "طَيِّبَـٰتٍ is a sound feminine plural, so its accusative takes kasra; it is the object of حَرَّمْنَا."
+  },
+  {
+   "id": "4:162:24",
+   "reason": "سَنُؤْتِيهِمْ is the predicate of أُو۟لَـٰٓئِكَ after future سَ with no governing particle; indicative with implied damma on the ya."
+  },
+  {
+   "id": "4:173:6",
+   "reason": "فَيُوَفِّيهِمْ follows the فَ answering أَمَّا, which does not cause jazm; the ya is kept with an implied damma (indicative)."
+  },
+  {
+   "id": "4:175:12",
+   "reason": "يَهْدِيهِمْ is indicative with an estimated damma on the final ya; no jazm particle, coordinated with فَسَيُدْخِلُهُمْ."
+  },
+  {
+   "id": "4:176:4",
+   "reason": "يُفْتِيكُمْ is indicative (khabar of ٱللَّهُ) with an estimated damma on the ya; no governing particle."
+  },
+  {
+   "id": "7:5:11",
+   "reason": "كُنَّا is the active perfect of kana (ku- comes from the hollow verb plus the 1P suffix), not a passive."
+  },
+  {
+   "id": "7:7:5",
+   "reason": "كُنَّا is the active perfect of kana after ma; ku- comes from the hollow verb plus the 1P suffix."
+  },
+  {
+   "id": "7:11:6",
+   "reason": "قُلْنَا is active 'We said' (hollow qala + 1P suffix); the i'rab makes na the fa'il."
+  },
+  {
+   "id": "7:22:18",
+   "reason": "أَنْهَكُمَا follows لَمْ and has lost its final alif as the sign of jazm, so jussive is correct (the i'rab says مجزوم)."
+  },
+  {
+   "id": "7:26:7",
+   "reason": "يُوَٰرِى is indicative with an estimated damma on the ya (a sentence describing لِبَاسًا); no jazm particle."
+  },
+  {
+   "id": "7:27:17",
+   "reason": "يَرَىٰكُمْ is indicative with an estimated damma on the alif maqsura (khabar of إِنَّ); no jazm particle."
+  },
+  {
+   "id": "7:29:3",
+   "reason": "رَبِّى is the subject of أَمَرَ, nominative with an estimated damma before the 1st person singular ya (the i'rab says اسم مرفوع); not a vocative."
+  },
+  {
+   "id": "7:33:4",
+   "reason": "رَبِّىَ is the subject of حَرَّمَ, nominative with an estimated damma before the ya of the speaker (the i'rab says اسم مرفوع)."
+  },
+  {
+   "id": "7:37:24",
+   "reason": "كُنتُمْ is the active perfect of kana (hollow verb + 2MP suffix), not a passive."
+  },
+  {
+   "id": "7:39:13",
+   "reason": "كُنتُمْ is the active perfect of kana (hollow verb + 2MP suffix), not a passive."
+  },
+  {
+   "id": "7:40:22",
+   "reason": "نَجْزِى is indicative with an estimated damma on the ya; no jazm particle (a new sentence)."
+  },
+  {
+   "id": "7:41:7",
+   "reason": "غَوَاشٍ is a delayed mubtada, nominative with an estimated damma on the elided ya (a defective noun with tanwin al-'iwad), as the verse i'rab states."
+  },
+  {
+   "id": "7:41:9",
+   "reason": "نَجْزِى is indicative with an estimated damma on the ya; no jazm particle."
+  },
+  {
+   "id": "7:43:7",
+   "reason": "تَجْرِى is indicative with an estimated damma on the ya (a hal sentence); no jazm particle."
+  },
+  {
+   "id": "7:43:18",
+   "reason": "كُنَّا is the active perfect of kana (hollow verb + 1P suffix), not a passive."
+  },
+  {
+   "id": "7:43:35",
+   "reason": "كُنتُمْ is the active perfect of kana (hollow verb + 2MP suffix), not a passive."
+  },
+  {
+   "id": "7:48:13",
+   "reason": "كُنتُمْ is the active perfect of kana (hollow verb + 2MP suffix), not a passive."
+  },
+  {
+   "id": "7:51:10",
+   "reason": "نَنسَىٰهُمْ is indicative with an estimated damma on the alif maqsura; no jazm particle."
+  },
+  {
+   "id": "7:53:6",
+   "reason": "Indicative: defective verb يَأْتِى keeps its ya with hidden (muqaddara) damma; يَوْمَ is a temporal adverb, not a jussive particle, and no jazm-governor precedes."
+  },
+  {
+   "id": "7:53:29",
+   "reason": "كُنَّا is the active perfect of hollow كَانَ (kun- before a consonant suffix), not a passive form."
+  },
+  {
+   "id": "7:54:15",
+   "reason": "Indicative: defective form IV يُغْشِى keeps its ya with hidden damma; no governor precedes (hal clause per the i'rab)."
+  },
+  {
+   "id": "7:54:23",
+   "reason": "Accusative is correct in Hafs: مُسَخَّرَٰتٍ is a hal (i'rab: اسم منصوب); a sound feminine plural takes kasra in the accusative."
+  },
+  {
+   "id": "7:57:14",
+   "reason": "سُقْنَـٰهُ is the active perfect of hollow سَاقَ (suq- before a consonant suffix); نَا is the subject per the i'rab."
+  },
+  {
+   "id": "7:60:6",
+   "reason": "Indicative: لَ is the emphatic lam after إِنَّا, not lam of command; defective نَرَىٰ ends in alif with hidden damma."
+  },
+  {
+   "id": "7:66:8",
+   "reason": "Indicative: لَ is the emphatic lam after إِنَّا; defective نَرَىٰ carries hidden damma on its final alif."
+  },
+  {
+   "id": "7:70:15",
+   "reason": "كُنتَ is the active perfect of hollow كَانَ; the initial u-vowel comes from the shortened hollow stem, not the passive."
+  },
+  {
+   "id": "7:77:13",
+   "reason": "كُنتَ is the active perfect of hollow كَانَ; its tāʾ is the ism of kana per the i'rab."
+  },
+  {
+   "id": "7:85:36",
+   "reason": "كُنتُم is the active perfect of hollow كَانَ; not passive."
+  },
+  {
+   "id": "7:86:17",
+   "reason": "كُنتُمْ is the active perfect of hollow كَانَ (when you were few); not passive."
+  },
+  {
+   "id": "7:88:20",
+   "reason": "كُنَّا is the active perfect of hollow كَانَ; not passive."
+  },
+  {
+   "id": "7:89:7",
+   "reason": "عُدْنَا is the active perfect of hollow عَادَ (we returned); نَا is the faʿil per the i'rab."
+  },
+  {
+   "id": "7:93:12",
+   "reason": "Indicative: ءَاسَىٰ ends in alif maqsura with hidden damma; كَيْفَ is an interrogative, not a jussive governor."
+  },
+  {
+   "id": "7:96:9",
+   "reason": "Accusative is correct: بَرَكَـٰتٍ is the object of فَتَحْنَا (i'rab: اسم منصوب); sound feminine plurals take kasra in the accusative."
+  },
+  {
+   "id": "7:106:3",
+   "reason": "كُنتَ is the active perfect of hollow كَانَ after conditional إِن; not passive."
+  },
+  {
+   "id": "7:106:9",
+   "reason": "كُنتَ is the active perfect of hollow كَانَ after conditional إِن; not passive."
+  },
+  {
+   "id": "7:113:9",
+   "reason": "كُنَّا is the active perfect of hollow كَانَ after conditional إِن; not passive."
+  },
+  {
+   "id": "7:133:8",
+   "reason": "Accusative is correct: ءَايَـٰتٍ is a hal, explicitly منصوبة بالكسرة in the verse i'rab (sound feminine plural)."
+  },
+  {
+   "id": "7:133:9",
+   "reason": "Accusative is correct: مُّفَصَّلَـٰتٍ is an adjective agreeing with accusative ءَايَـٰتٍ (i'rab: صفة منصوبة); sound feminine plural with kasra."
+  },
+  {
+   "id": "7:140:4",
+   "reason": "Indicative: defective أَبْغِى keeps its ya with hidden damma; the verse i'rab states مضارع مرفوع بالضمة المقدرة."
+  },
+  {
+   "id": "7:143:14",
+   "reason": "Defective verb after لَن: the fatha is implied on the alif maqsura (منصوب بفتحة مقدرة); SUBJ is correct."
+  },
+  {
+   "id": "7:143:23",
+   "reason": "After فَسَوْفَ with no nasb/jazm particle: indicative with implied damma on the alif; IND is correct."
+  },
+  {
+   "id": "7:143:37",
+   "reason": "تُبْتُ is the active perfect of hollow تَابَ (u-vowel from the waw with the 1S suffix); i'rab: التاء فاعل."
+  },
+  {
+   "id": "7:145:18",
+   "reason": "سَ + Form IV أُرِى: future indicative, the damma on the ya is implied (ثقل); no jazm particle."
+  },
+  {
+   "id": "7:148:18",
+   "reason": "Negated by non-governing لَا in a predicate clause (أَنَّهُۥ لَا يُكَلِّمُهُمْ وَلَا يَهْدِيهِمْ); the ya is retained, so indicative is correct."
+  },
+  {
+   "id": "7:152:14",
+   "reason": "No governing particle; defective verb with retained ya and implied damma: indicative."
+  },
+  {
+   "id": "7:155:31",
+   "reason": "Coordinated with indicative تُضِلُّ; the ya is retained and the damma implied: indicative."
+  },
+  {
+   "id": "7:156:10",
+   "reason": "هُدْنَآ is the active perfect of hollow هَادَ يَهُودُ (we have turned back); i'rab: نا فاعل."
+  },
+  {
+   "id": "7:156:13",
+   "reason": "عَذَابِىٓ is the mubtada' (predicate أُصِيبُ بِهِۦ); its damma is implied before the 1S ya, so NOM is correct."
+  },
+  {
+   "id": "7:156:18",
+   "reason": "وَرَحْمَتِى is a mubtada' (predicate وَسِعَتْ); the kasra is for the 1S ya with damma implied: NOM is correct."
+  },
+  {
+   "id": "7:157:15",
+   "reason": "Coordinated with indicative يَأْمُرُهُم; the damma is implied on the alif: indicative."
+  },
+  {
+   "id": "7:161:2",
+   "reason": "قِيلَ is the standard passive of hollow قَالَ (kasra replaces initial u); i'rab: مبني للمجهول."
+  },
+  {
+   "id": "7:162:8",
+   "reason": "قِيلَ is the standard passive of hollow قَالَ; i'rab: مبني للمجهول."
+  },
+  {
+   "id": "7:163:13",
+   "reason": "After temporal إِذْ (no governing particle); the ya is retained with implied damma: indicative."
+  },
+  {
+   "id": "7:163:22",
+   "reason": "Here لَا is negative (they did not come), not prohibitive; the ya is retained, so indicative is correct."
+  },
+  {
+   "id": "7:163:24",
+   "reason": "No governing particle; the final waw is retained with implied damma: indicative."
+  },
+  {
+   "id": "7:166:7",
+   "reason": "قُلْنَا is the active perfect of hollow قَالَ (We said); i'rab: نا فاعل."
+  },
+  {
+   "id": "7:169:26",
+   "reason": "After ميثاق, أَن is read as explanatory (مفسرة) with prohibitive لَا, so the verb is jussive; the i'rab line agrees (مجزوم). The masdari/subjunctive reading is also possible, so the tag is defensible."
+  },
+  {
+   "id": "7:172:23",
+   "reason": "كُنَّا is the active perfect of hollow كَانَ; نا is its ism."
+  },
+  {
+   "id": "7:173:8",
+   "reason": "كُنَّا is the active perfect of hollow كَانَ; نا is its ism."
+  },
+  {
+   "id": "7:183:1",
+   "reason": "Form IV أُمْلِى with no governing particle; the ya is retained with implied damma: indicative."
+  },
+  {
+   "id": "7:187:12",
+   "reason": "يُجَلِّيهَا follows negating لَا, not a jazm particle; indicative with implied damma on the ya (weak final). QAC IND is correct."
+  },
+  {
+   "id": "7:187:21",
+   "reason": "تَأْتِيكُمْ follows negating لَا (exception with إِلَّا); indicative with implied damma on the ya. QAC IND is correct."
+  },
+  {
+   "id": "7:188:13",
+   "reason": "كُنتُ is the active perfect of hollow كَانَ (kun- before a consonant suffix), not a passive."
+  },
+  {
+   "id": "7:194:13",
+   "reason": "كُنتُمْ is the active perfect of hollow كَانَ (kun- before a consonant suffix), not a passive."
+  },
+  {
+   "id": "7:195:7",
+   "reason": "أَيْدٍ is a manqus plural, delayed mubtada' after لَهُمْ: nominative with the damma implied on the elided ya. QAC NOM is correct."
+  },
+  {
+   "id": "7:196:8",
+   "reason": "يَتَوَلَّى has no governing jazm particle (predicate of هُوَ); indicative with implied damma on the final alif."
+  },
+  {
+   "id": "7:198:7",
+   "reason": "وَتَرَىٰهُمْ begins a new clause (waw isti'nafiyya); the final alif is retained, so it is indicative, not jussive تَرَ."
+  },
+  {
+   "id": "25:5:6",
+   "reason": "تُمْلَىٰ is predicate of فَهِىَ with no jazm particle; indicative with implied damma on the alif. Passive Form IV is correct."
+  },
+  {
+   "id": "25:7:7",
+   "reason": "وَيَمْشِى is coordinated with indicative يَأْكُلُ; indicative with implied damma on the ya."
+  },
+  {
+   "id": "25:8:2",
+   "reason": "يُلْقَىٰٓ follows أَوْ in the تحضيض series (parallel with indicative تَكُونُ); no jazm governor, alif retained: indicative."
+  },
+  {
+   "id": "25:10:11",
+   "reason": "تَجْرِى is a descriptive clause for جَنَّـٰتٍ, not the jussive answer; indicative with implied damma on the ya."
+  },
+  {
+   "id": "25:18:5",
+   "reason": "يَنۢبَغِى follows مَا كَانَ with no jazm particle; indicative with implied damma on the ya."
+  },
+  {
+   "id": "25:21:11",
+   "reason": "نَرَىٰ follows أَوْ after تحضيض لَوْلَآ, coordinated with أُنزِلَ; no jazm governor and the alif is retained: indicative."
+  },
+  {
+   "id": "25:36:1",
+   "reason": "فَقُلْنَا is the active perfect of hollow قَالَ (qul- before a consonant suffix) with نَا as subject, not a passive."
+  },
+  {
+   "id": "25:60:2",
+   "reason": "قِيلَ is the regular passive perfect of hollow قَالَ (qīla); hollow passives do not start with u. Passive is correct."
+  },
+  {
+   "id": "25:68:21",
+   "reason": "يَلْقَ is the jussive answer of conditional مَن يَفْعَلْ; the final alif maqsura is dropped for jazm. JUS is correct."
+  },
+  {
+   "id": "25:77:3",
+   "reason": "يَعْبَؤُا۟ follows negative مَا (no jazm); damma on the hamza, the alif is orthographic. Indicative is correct."
+  },
+  {
+   "id": "25:77:5",
+   "reason": "رَبِّى is the fa'il of يَعْبَؤُا۟ with implied damma before the 1S ya, not a vocative. NOM is correct."
+  },
+  {
+   "id": "29:5:3",
+   "reason": "يَرْجُوا۟ is the indicative khabar of كَانَ (damma implied on the waw); the alif is orthographic. Indicative is correct."
+  },
+  {
+   "id": "29:5:9",
+   "reason": "لَـَٔاتٍ is a manqus (ya elided with tanwin), khabar of إِنَّ with implied damma. NOM is correct."
+  },
+  {
+   "id": "29:8:20",
+   "reason": "كُنتُمْ is the active perfect of hollow كَانَ (kāna, shortened before the suffix); not passive."
+  },
+  {
+   "id": "29:10:23",
+   "reason": "كُنَّا is the active perfect of كَانَ with 1P subject; the u is the shortened hollow vowel, not a passive marker."
+  },
+  {
+   "id": "29:16:12",
+   "reason": "كُنتُمْ is the active perfect of hollow كَانَ after conditional إِن; not passive."
+  },
+  {
+   "id": "29:29:21",
+   "reason": "كُنتَ is the active perfect of hollow كَانَ; not passive."
+  },
+  {
+   "id": "29:33:6",
+   "reason": "سِىٓءَ is the passive perfect of hollow سَآءَ (sīʾa, he was distressed); hollow passives take i, not u. Passive is correct."
+  },
+  {
+   "id": "29:45:11",
+   "reason": "تَنْهَىٰ is the khabar of إِنَّ with no jazm particle; indicative with implied damma (alif maqsura retained). Indicative is correct."
+  },
+  {
+   "id": "29:48:2",
+   "reason": "كُنتَ is the active perfect of hollow كَانَ after negative مَا; not passive."
+  },
+  {
+   "id": "29:55:2",
+   "reason": "يَغْشَىٰهُمُ is in a clause annexed to يَوْمَ with no jazm particle; indicative with implied damma (alif maqsura retained)."
+  },
+  {
+   "id": "29:55:12",
+   "reason": "كُنتُمْ is the active perfect of hollow كَانَ; not passive."
+  },
+  {
+   "id": "29:58:9",
+   "reason": "تَجْرِى is in a descriptive clause with no jazm particle; indicative with implied damma on the retained ya."
+  },
+  {
+   "id": "85:11:8",
+   "reason": "تَجْرِى is in a descriptive clause with no jazm particle; indicative with implied damma on the retained ya."
+  },
+  {
+   "id": "86:9:2",
+   "reason": "تُبْلَى follows the adverb يَوْمَ, no jazm particle; indicative passive with implied damma on the alif maqsura."
+  },
+  {
+   "id": "87:6:3",
+   "reason": "لَا in فَلَا تَنسَىٰٓ is negative (نافية, per the verse i'rab), not prohibitive; the alif is retained, so indicative."
+  },
+  {
+   "id": "87:7:9",
+   "reason": "يَخْفَىٰ is in the relative clause of مَا; no governor, alif retained: indicative."
+  },
+  {
+   "id": "87:10:3",
+   "reason": "مَن is relative (subject of سَيَذَّكَّرُ), not conditional; يَخْشَىٰ keeps its alif: indicative."
+  },
+  {
+   "id": "87:12:2",
+   "reason": "يَصْلَى is in the relative clause of ٱلَّذِى; no governor, alif retained: indicative."
+  },
+  {
+   "id": "87:13:6",
+   "reason": "لَا here is negative, parallel to لَا يَمُوتُ (indicative, damma); يَحْيَىٰ keeps its alif: indicative."
+  },
+  {
+   "id": "88:4:1",
+   "reason": "تَصْلَىٰ is the predicate of وُجُوهٌ with no governor; alif retained: indicative."
+  },
+  {
+   "id": "88:5:1",
+   "reason": "تُسْقَىٰ is a second predicate of وُجُوهٌ with no governor; alif retained: indicative passive."
+  },
+  {
+   "id": "88:7:4",
+   "reason": "Negative لَا does not govern jazm; يُغْنِى keeps its ya: indicative, parallel to لَا يُسْمِنُ."
+  },
+  {
+   "id": "89:6:2",
+   "reason": "After أَلَمْ, تَرَ is jussive with its final alif dropped; QAC's JUS is correct."
+  },
+  {
+   "id": "89:15:10",
+   "reason": "رَبِّىٓ is the subject (mubtada) of أَكْرَمَنِ in quoted speech, not a vocative; nominative implied before the ya."
+  },
+  {
+   "id": "89:16:9",
+   "reason": "رَبِّىٓ is the subject (mubtada) of أَهَـٰنَنِ in quoted speech, not a vocative; nominative implied before the ya."
+  },
+  {
+   "id": "89:23:1",
+   "reason": "وَجِا۟ىٓءَ is the passive of the hollow verb جَاءَ (jī'a, kasra replaces the u-pattern); بِجَهَنَّمَ is na'ib al-fa'il per the verse i'rab."
+  },
+  {
+   "id": "90:7:4",
+   "reason": "After لَمْ, يَرَهُۥٓ is jussive with its final alif dropped; QAC's JUS is correct."
+  },
+  {
+   "id": "91:4:3",
+   "reason": "After temporal إِذَا (no jazm), يَغْشَىٰهَا keeps its alif: indicative."
+  },
+  {
+   "id": "92:1:3",
+   "reason": "After temporal إِذَا (no jazm), يَغْشَىٰ keeps its alif: indicative."
+  },
+  {
+   "id": "92:11:2",
+   "reason": "مَا is negative (or interrogative), not a jazm particle; يُغْنِى keeps its ya: indicative."
+  },
+  {
+   "id": "92:15:2",
+   "reason": "Defective verb after negative لَا (not lam of command): indicative with hidden damma on the alif; adjective clause of نَارًا."
+  },
+  {
+   "id": "92:18:2",
+   "reason": "يُؤْتِى is indicative with hidden damma on the ya; no governing particle (sila of ٱلَّذِى)."
+  },
+  {
+   "id": "92:18:4",
+   "reason": "يَتَزَكَّىٰ is indicative with hidden damma on the alif; ungoverned hal clause."
+  },
+  {
+   "id": "92:19:6",
+   "reason": "Passive تُجْزَىٰٓ is indicative with hidden damma on the alif; ungoverned adjective clause of نِعْمَةٍ."
+  },
+  {
+   "id": "92:21:2",
+   "reason": "After لَسَوْفَ the verb is indicative; final alif maqsura retained (hidden damma)."
+  },
+  {
+   "id": "93:5:2",
+   "reason": "After لَسَوْفَ يُعْطِيكَ is indicative; ya retained with hidden damma."
+  },
+  {
+   "id": "93:5:4",
+   "reason": "Joined by fa to indicative يُعْطِيكَ; alif retained, hidden damma: indicative."
+  },
+  {
+   "id": "96:6:4",
+   "reason": "Emphatic lam (in khabar of إِنَّ) does not govern; alif retained, indicative."
+  },
+  {
+   "id": "96:9:3",
+   "reason": "Sila of ٱلَّذِى, ungoverned; alif retained with hidden damma: indicative."
+  },
+  {
+   "id": "96:14:5",
+   "reason": "Khabar of أَنَّ, ungoverned; alif retained: indicative. لَمْ governs only يَعْلَم."
+  },
+  {
+   "id": "96:15:5",
+   "reason": "No five-verbs nun is dropped: the tanwin-alif is the light nun of emphasis (نَسْفَعَنْ), the verb is mabni on fatha, not subjunctive or jussive; QAC's mood tag is a non-issue."
+  },
+  {
+   "id": "96:17:1",
+   "reason": "Correct: after lam of command يَدْعُ is jussive, its final waw dropped."
+  },
+  {
+   "id": "98:2:4",
+   "reason": "Singular يَتْلُو with orthographic alif after the root waw (not a plural waw); indicative with hidden damma; adjective clause of رَسُولٌ."
+  },
+  {
+   "id": "98:8:6",
+   "reason": "تَجْرِى is indicative with hidden damma on the ya; ungoverned hal clause."
+  },
+  {
+   "id": "99:7:6",
+   "reason": "Correct: jussive answer of the conditional مَن يَعْمَلْ; the final alif of يَرَى is dropped for jazm."
+  },
+  {
+   "id": "99:8:6",
+   "reason": "Correct: jussive answer of the conditional مَن يَعْمَلْ; the final alif of يَرَى is dropped for jazm."
+  },
+  {
+   "id": "102:2:2",
+   "reason": "Hollow verb زَارَ: the 2MP perfect active is زُرْتُمْ (damma for the waw-medial root); the i'rab gives a fa'il, and ٱلْمَقَابِرَ is its object, so active is correct."
+  }
+ ]
+}

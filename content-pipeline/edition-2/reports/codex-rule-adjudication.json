@@ -1,0 +1,579 @@
+{
+  "scholarlyReview": "pending",
+  "entries": [
+    {
+      "rule": "genitive",
+      "sourceChunks": [
+        "85-c01",
+        "86-c01",
+        "95-c01",
+        "103-c01"
+      ],
+      "old": {
+        "id": "genitive",
+        "titleUrdu": "جر اور اس کی علامات",
+        "explanationUrdu": "حرفِ جر کے بعد اور مضاف الیہ ہونے کی صورت میں اسم مجرور ہوتا ہے، اور اس کا تابع بھی جر لیتا ہے۔ اس کی اصل علامت کسرہ ہے؛ تثنیہ، جمع مذکر سالم اور اسماءِ خمسہ میں یاء، اور غیر منصرف اسم میں فتحہ جر کی علامت ہے۔ مبنی ضمیر یا اسم میں یہ حالت محلِ جر کہلاتی ہے۔",
+        "appliesWhenEnglish": "Tag a noun/adjective in the genitive (QAC GEN) — after a preposition, as muḍāf ilayh, or as a follower of a genitive — when the case or its sign matters; also an attached pronoun or built word in محل جر. Pair with preposition or idafa for the cause of jarr. Do not rely on QAC’s GEN label alone. QAC marks وَٱلْبَـٰقِيَـٰتُ ٱلصَّـٰلِحَـٰتُ (18:46) and وَٱلرَّيْحَانُ (55:12, Ḥafṣ) GEN although they are nominative, and هُدًۭى (32:23) GEN although it is accusative; these do not take this rule. Conversely, it marks the genitive duals and ذَاتِ/ذِى listed under nominative NOM, and the genitives ٱلْحِزْبَيْنِ (18:12) and ٱلْجَنَّتَيْنِ (55:54) ACC; these do take this rule."
+      },
+      "new": {
+        "id": "genitive",
+        "titleUrdu": "جر اور اس کی علامات",
+        "explanationUrdu": "حرفِ جر کے بعد اسم مجرور ہوتا ہے۔ مضاف الیہ اور مجرور کا تابع بھی جر لیتے ہیں۔ جر کی اصل علامت کسرہ ہے۔ تثنیہ، جمع مذکر سالم اور اسماءِ خمسہ میں یاء علامتِ جر ہے۔ غیر منصرف اسم جر میں فتحہ لیتا ہے جب اس پر ال نہ ہو اور وہ مضاف بھی نہ ہو۔ مبنی اسم یا ضمیر کے لیے محلِ جر کہا جاتا ہے۔",
+        "appliesWhenEnglish": "Tag a noun/adjective in the genitive (QAC GEN) — after a preposition, as muḍāf ilayh, or as a follower of a genitive — when the case or its sign matters; also an attached pronoun or built word in محل جر. Pair with preposition or idafa for the cause of jarr. Do not rely on QAC’s GEN label alone. QAC marks وَٱلْبَـٰقِيَـٰتُ ٱلصَّـٰلِحَـٰتُ (18:46) and وَٱلرَّيْحَانُ (55:12, Ḥafṣ) GEN although they are nominative, and هُدًۭى (32:23) GEN although it is accusative; these do not take this rule. Conversely, it marks the genitive duals and ذَاتِ/ذِى listed under nominative NOM, and the genitives ٱلْحِزْبَيْنِ (18:12) and ٱلْجَنَّتَيْنِ (55:54) ACC; these do take this rule."
+      }
+    },
+    {
+      "rule": "diptote",
+      "sourceChunks": [
+        "95-c01"
+      ],
+      "old": {
+        "id": "diptote",
+        "titleUrdu": "غیر منصرف اسم",
+        "explanationUrdu": "غیر منصرف اسم پر تنوین نہیں آتی اور حالتِ جر میں کسرہ کے بجائے فتحہ آتا ہے، جیسے إِلَى إِبْرَاهِيمَ۔ اکثر عجمی یا مؤنث اعلام، أَفْعَلُ کے وزن کی صفات، اور مَسَاجِدُ یا أَوْلِيَاءُ جیسی جمعیں اس میں شامل ہیں؛ ال یا اضافت کے ساتھ آئے تو یہ عام اسم کی طرح کسرہ لیتا ہے۔",
+        "appliesWhenEnglish": "Tag a noun/adjective that is diptote (ممنوع من الصرف) where the missing tanwīn or the fatḥa-for-kasra in jarr is visible or worth noting: foreign or feminine proper names (فِرْعَوْن، جَهَنَّم، إِبْلِيس), أَفْعَلُ adjectives and elatives, plurals of the مَفَاعِل/مَفَاعِيل type and words ending in feminine alif (ـَاءُ/ـَىٰ, e.g. أَوْلِيَاءَ). Pair with proper-noun, comparative or broken-plural as relevant. Not when the word has ال or is muḍāf (it then takes kasra normally) unless that contrast is the point."
+      },
+      "new": {
+        "id": "diptote",
+        "titleUrdu": "غیر منصرف اسم",
+        "explanationUrdu": "غیر منصرف اسم پر تنوین نہیں آتی اور حالتِ جر میں کسرہ کے بجائے فتحہ آتا ہے، جیسے إِلَى إِبْرَاهِيمَ۔ اکثر عجمی یا مؤنث اعلام، أَفْعَلُ کے وزن کی صفات، اور مَسَاجِدُ یا أَوْلِيَاءُ جیسی جمعیں اس میں شامل ہیں؛ جب خود اس اسم پر ال ہو یا یہ مضاف ہو تو حالتِ جر میں کسرہ لیتا ہے۔",
+        "appliesWhenEnglish": "Tag a noun/adjective that is diptote (ممنوع من الصرف) where the missing tanwīn or the fatḥa-for-kasra in jarr is visible or worth noting: foreign or feminine proper names (فِرْعَوْن، جَهَنَّم، إِبْلِيس), أَفْعَلُ adjectives and elatives, plurals of the مَفَاعِل/مَفَاعِيل type and words ending in feminine alif (ـَاءُ/ـَىٰ, e.g. أَوْلِيَاءَ). Pair with proper-noun, comparative or broken-plural as relevant. Not when the word has ال or is muḍāf (it then takes kasra normally) unless that contrast is the point."
+      }
+    },
+    {
+      "rule": "feminine-plural",
+      "sourceChunks": [
+        "95-c01"
+      ],
+      "old": {
+        "id": "feminine-plural",
+        "titleUrdu": "جمع مؤنث سالم",
+        "explanationUrdu": "جمع مؤنث سالم واحد کے آخر میں الف اور تاء کے اضافے سے بنتی ہے، جیسے جَنَّاتٌ اور الصَّالِحَاتُ۔ اس کا رفع ضمہ سے ہوتا ہے جبکہ نصب اور جر دونوں کسرہ سے؛ اس لیے حالتِ نصب میں بھی اس کے آخر میں کسرہ نظر آتا ہے۔",
+        "appliesWhenEnglish": "Tag a noun/adjective in the sound feminine plural (ـَات), especially in the accusative, where kasra marks naṣb. Caution: QAC’s English label “feminine plural” is also used for broken plurals (قُلُوب، ءَاذَان) — those take broken-plural; and plurals like أَمْوَات/أَصْوَات (tāʾ is a root letter) are broken plurals."
+      },
+      "new": {
+        "id": "feminine-plural",
+        "titleUrdu": "جمع مؤنث سالم",
+        "explanationUrdu": "جمع مؤنث سالم عام طور پر واحد کے آخر میں الف اور تاء کے اضافے سے بنتی ہے۔ اگر واحد میں تائے مربوطہ ہو تو اسے ہٹا کر یہ اضافہ کیا جاتا ہے، جیسے جَنَّاتٌ اور الصَّالِحَاتُ۔ اس کا رفع ضمہ سے ہوتا ہے جبکہ نصب اور جر دونوں کسرہ سے؛ اس لیے حالتِ نصب میں بھی اس کے آخر میں کسرہ نظر آتا ہے۔",
+        "appliesWhenEnglish": "Tag a noun/adjective in the sound feminine plural (ـَات), especially in the accusative, where kasra marks naṣb. Caution: QAC’s English label “feminine plural” is also used for broken plurals (قُلُوب، ءَاذَان) — those take broken-plural; and plurals like أَمْوَات/أَصْوَات (tāʾ is a root letter) are broken plurals."
+      }
+    },
+    {
+      "rule": "definite",
+      "sourceChunks": [
+        "103-c01"
+      ],
+      "old": {
+        "id": "definite",
+        "titleUrdu": "معرفہ اور ال",
+        "explanationUrdu": "ال اسم کو معرفہ، یعنی متعین، بناتا ہے اور مادے کا حصہ نہیں ہوتا؛ اس کا ہمزہ وصلی ہے جو ملا کر پڑھنے میں ساقط ہو جاتا ہے۔ شمسی حرف سے پہلے لام مدغم ہو جاتا ہے مگر تعریف باقی رہتی ہے، اور ال والے اسم پر تنوین نہیں آتی۔",
+        "appliesWhenEnglish": "Tag a noun/adjective carrying the definite article ال (QAC DET prefix) when definiteness or the article matters (agreement of an adjective, a definite mubtada, sun-letter assimilation, hamzat al-waṣl). For other kinds of definiteness use proper-noun or idafa; for tanwīn and indefiniteness use indefinite."
+      },
+      "new": {
+        "id": "definite",
+        "titleUrdu": "معرفہ اور ال",
+        "explanationUrdu": "ال اسم کو معرفہ بناتا ہے اور مادے کا حصہ نہیں ہوتا۔ سیاق کے مطابق یہ کسی متعین چیز یا پوری جنس کو ظاہر کرتا ہے؛ اس کا ہمزہ وصلی ہے جو ملا کر پڑھنے میں ساقط ہو جاتا ہے۔ شمسی حرف سے پہلے لام مدغم ہو جاتا ہے مگر تعریف باقی رہتی ہے، اور ال والے اسم پر تنوین نہیں آتی۔",
+        "appliesWhenEnglish": "Tag a noun/adjective carrying the definite article ال (QAC DET prefix) when definiteness or the article matters (agreement of an adjective, a definite mubtada, sun-letter assimilation, hamzat al-waṣl). For other kinds of definiteness use proper-noun or idafa; for tanwīn and indefiniteness use indefinite."
+      }
+    },
+    {
+      "rule": "feminine-marker",
+      "sourceChunks": [
+        "88-c01",
+        "99-c01"
+      ],
+      "old": {
+        "id": "feminine-marker",
+        "titleUrdu": "مؤنث کی علامات",
+        "explanationUrdu": "اسم میں مؤنث کی عام علامتیں گول تاء، الفِ مقصورہ اور الفِ ممدودہ ہیں، جیسے رَحْمَةٌ، الدُّنْيَا اور صَحْرَاءُ؛ أَرْضٌ اور نَارٌ جیسے بعض الفاظ بغیر علامت کے مؤنث ہیں۔ ماضی کے آخر کی ساکن تاء، جیسے قَالَتْ، صرف مؤنث فاعل کی علامت ہے، ضمیر نہیں؛ اسے تُ اور تَ والی فاعلی ضمیر سے الگ رکھیں۔",
+        "appliesWhenEnglish": "Tag a word whose feminine marking matters: nouns/adjectives with tāʾ marbūṭa, feminine alif maqṣūra (ـَىٰ) or alif mamdūda (ـَاءُ), inherently feminine nouns when agreement depends on them, a perfect verb with the feminine tāʾ sākina (ـَتْ), or an imperfect with تَـ for a 3rd-person feminine subject. Not for the subject pronoun تُ/تَ/تِ (subject-pronoun) or sound feminine plurals (feminine-plural)."
+      },
+      "new": {
+        "id": "feminine-marker",
+        "titleUrdu": "مؤنث کی علامات",
+        "explanationUrdu": "اسم میں مؤنث کی عام علامتیں گول تاء، الفِ مقصورہ اور الفِ ممدودہ ہیں، جیسے رَحْمَةٌ، الدُّنْيَا اور صَحْرَاءُ؛ أَرْضٌ اور نَارٌ جیسے بعض الفاظ بغیر علامت کے مؤنث ہیں۔ ماضی کے آخر کی ساکن تاء، جیسے قَالَتْ، مؤنث فاعل یا نائبِ فاعل سے مطابقت کی علامت ہے۔ اسے تُ اور تَ والی فاعلی ضمیر سے الگ رکھیں۔ مضارع کی ابتدائی تاء بھی مؤنث غائب کی علامت ہو سکتی ہے، جیسے تَصْلَى یا تُسْقَى۔",
+        "appliesWhenEnglish": "Tag a word whose feminine marking matters: nouns/adjectives with tāʾ marbūṭa, feminine alif maqṣūra (ـَىٰ) or alif mamdūda (ـَاءُ), inherently feminine nouns when agreement depends on them, a perfect verb with the feminine tāʾ sākina (ـَتْ), or an imperfect with prefixed تـ for a third-person feminine subject, including تُـ in augmented forms or the passive. Not for the subject pronoun تُ/تَ/تِ (subject-pronoun) or sound feminine plurals (feminine-plural)."
+      }
+    },
+    {
+      "rule": "number-words",
+      "sourceChunks": [
+        "89-c01"
+      ],
+      "old": {
+        "id": "number-words",
+        "titleUrdu": "عدد اور معدود",
+        "explanationUrdu": "تین سے دس تک کا عدد جنس میں اپنے معدود کے الٹ آتا ہے اور معدود جمع مجرور ہوتا ہے، جیسے ثَلَاثَةُ رِجَالٍ؛ ایک اور دو معدود کے مطابق رہتے ہیں۔ گیارہ سے ننانوے تک معدود مفرد منصوب تمییز، اور مِائَةٌ اور أَلْفٌ کے بعد مفرد مجرور ہوتا ہے؛ ثَالِثٌ جیسے ترتیبی عدد صفت کی طرح مطابقت رکھتے ہیں۔",
+        "appliesWhenEnglish": "Tag cardinal and ordinal numerals that follow the number–counted-noun rules: وَاحِد، ٱثْنَيْن، ثَلَٰثَة … تِسْع، سِتَّة، سَبْع، مِائَة، أَلْف، ثَالِث، رَابِع، سَادِس، ثَامِن. Tag the counted noun with tamyiz if accusative or idafa if genitive (a noun the i‘rab calls badal, e.g. سِنِينَ after ثَلَٰثَ مِا۟ئَةٍ, takes badal). Not for أَحَد used as “anyone”. Not for the noun عَدَد: in 23:112 عَدَدَ سِنِينَ is the tamyīz of كَمْ (tamyiz, idafa), and in 18:11 عَدَدًۭا is an adjective (adjective)."
+      },
+      "new": {
+        "id": "number-words",
+        "titleUrdu": "عدد اور معدود",
+        "explanationUrdu": "تین سے دس تک کا عدد جنس میں اپنے معدود کے الٹ آتا ہے اور معدود جمع مجرور ہوتا ہے، جیسے ثَلَاثَةُ رِجَالٍ؛ ایک اور دو معدود کے مطابق رہتے ہیں۔ گیارہ سے ننانوے تک معدود مفرد منصوب تمییز، اور مِائَةٌ اور أَلْفٌ کے بعد مفرد مجرور ہوتا ہے؛ ثَالِثٌ جیسے ترتیبی عدد صفت کی طرح مطابقت رکھتے ہیں۔ عدد معدود کے بعد صفت ہو تو اس کے اعراب کی پیروی کرتا ہے۔",
+        "appliesWhenEnglish": "Tag cardinal and ordinal numerals that follow the number–counted-noun rules: وَاحِد، ٱثْنَيْن، ثَلَٰثَة … تِسْع، سِتَّة، سَبْع، مِائَة، أَلْف، ثَالِث، رَابِع، سَادِس، ثَامِن. Tag the counted noun with tamyiz if accusative or idafa if it is the muḍāf ilayh (a noun the i‘rab calls badal, e.g. سِنِينَ after ثَلَٰثَ مِا۟ئَةٍ, takes badal). Not for أَحَد used as “anyone”. Not for the noun عَدَد: in 23:112 عَدَدَ سِنِينَ is the tamyīz of كَمْ (tamyiz, idafa), and in 18:11 عَدَدًۭا is an adjective (adjective)."
+      }
+    },
+    {
+      "rule": "perfect",
+      "sourceChunks": [
+        "91-c01"
+      ],
+      "old": {
+        "id": "perfect",
+        "titleUrdu": "فعلِ ماضی",
+        "explanationUrdu": "فعلِ ماضی عموماً گزرے یا مکمل ہو چکے عمل کو بیان کرتا ہے، جیسے كَتَبَ «اس نے لکھا»۔ یہ مبنی ہے؛ فاعل کی ضمیریں آخر میں لگ کر شخص اور عدد بتاتی ہیں، جیسے كَتَبْتُ، كَتَبْنَا اور كَتَبُوا۔ شرط کے بعد یا آنے والے یقینی واقعے کے بیان میں سیاق اس کا مفہوم مستقبل کی طرف بھی لے جاتا ہے۔",
+        "appliesWhenEnglish": "Tag every perfect verb (QAC PERF) — normally all of them — including passive perfects (also passive) and perfects with future or hypothetical sense after إِذَا/إِنْ/لَوْ (also the conditional rule). For نِعْمَ/بِئْسَ use praise-blame; for the exclamatory أَفْعِلْ بِهِ use exclamation."
+      },
+      "new": {
+        "id": "perfect",
+        "titleUrdu": "فعلِ ماضی",
+        "explanationUrdu": "فعلِ ماضی عموماً گزرے یا مکمل ہو چکے عمل کو بیان کرتا ہے، جیسے كَتَبَ «اس نے لکھا»۔ یہ مبنی ہے؛ فاعل کی ضمیریں آخر میں لگ کر شخص اور عدد بتاتی ہیں، جیسے كَتَبْتُ، كَتَبْنَا اور كَتَبُوا۔ شرط کے بعد یا آنے والے یقینی واقعے کے بیان میں سیاق اس کا مفہوم مستقبل کی طرف بھی لے جاتا ہے۔",
+        "appliesWhenEnglish": "Tag every perfect verb (QAC PERF) — normally all of them — including passive perfects (also passive) and perfects with future or hypothetical sense after إِذَا/إِنْ/لَوْ (also the applicable conditional rule when the construction is conditional). For نِعْمَ/بِئْسَ use praise-blame; for the exclamatory أَفْعِلْ بِهِ use exclamation."
+      }
+    },
+    {
+      "rule": "imperative",
+      "sourceChunks": [
+        "94-c01"
+      ],
+      "old": {
+        "id": "imperative",
+        "titleUrdu": "فعلِ امر",
+        "explanationUrdu": "فعلِ امر مخاطب سے کسی کام کا مطالبہ کرتا ہے؛ سیاق کے مطابق یہ حکم، دعا یا درخواست ہو سکتا ہے۔ یہ مبنی ہے: صحیح آخر پر سکون (اُكْتُبْ)، ناقص میں آخری حرفِ علت کا حذف (اُدْعُ) اور جمع میں نون کا حذف (اُكْتُبُوا)؛ واحد مذکر میں فاعل پوشیدہ أَنْتَ ہوتا ہے۔",
+        "appliesWhenEnglish": "Tag every imperative verb (QAC IMPV), with or without attached pronouns (قُلْ، ٱذْكُرْ، ءَاتِنَا، فَأْوُۥٓا۟، ٱصْنَعِ); add subject-pronoun for its subject. Not for an imperfect after the lām of command (imperative-lam) or prohibitive لَا (prohibition), and not for the exclamatory أَفْعِلْ بِهِ even if QAC calls it imperative (exclamation)."
+      },
+      "new": {
+        "id": "imperative",
+        "titleUrdu": "فعلِ امر",
+        "explanationUrdu": "فعلِ امر مخاطب سے کسی کام کا مطالبہ کرتا ہے۔ صحیح آخر یا نونِ نسوہ کے ساتھ امر سکون پر مبنی ہے، جیسے اُكْتُبْ اور اُكْتُبْنَ۔ ناقص اُدْعُ میں آخری حرفِ علت حذف ہے۔ الفِ تثنیہ، واوِ جماعت یا یائے مخاطبہ والے صیغے حذفِ نون پر مبنی ہیں، جیسے اُكْتُبَا، اُكْتُبُوا اور اُكْتُبِي۔",
+        "appliesWhenEnglish": "Tag every imperative verb (QAC IMPV), with or without attached pronouns (قُلْ، ٱذْكُرْ، ءَاتِنَا، فَأْوُۥٓا۟، ٱصْنَعِ); add subject-pronoun for its subject. Not for an imperfect after the lām of command (imperative-lam) or prohibitive لَا (prohibition), and not for the exclamatory أَفْعِلْ بِهِ even if QAC calls it imperative (exclamation)."
+      }
+    },
+    {
+      "rule": "jussive",
+      "sourceChunks": [
+        "99-c01"
+      ],
+      "old": {
+        "id": "jussive",
+        "titleUrdu": "جزم اور اس کے اسباب",
+        "explanationUrdu": "مضارع لَمْ، لَمَّا، لامِ امر، لائے نہی اور جازم ادواتِ شرط کے بعد، یا امر کے جواب میں، مجزوم ہوتا ہے۔ صحیح آخر پر سکون (لَمْ يَكْتُبْ)، افعالِ خمسہ میں نون کا حذف، اور معتل آخر میں حرفِ علت کا حذف (لَمْ يَدْعُ) جزم کی علامت ہے؛ اجوف میں درمیانی حرف بھی گر سکتا ہے (لَمْ يَقُلْ)۔",
+        "appliesWhenEnglish": "Tag every imperfect verb in the jussive mood — after لَمْ، لَمَّا (jussive), the lām of command, prohibitive لَا, a jussive conditional (both verbs), or as the answer to a command/implied condition (فَأْوُۥٓا۟ … يَنشُرْ) — and optionally the governing particle. Decide the mood by its cause: QAC 0.4 labels some conditional five-verbs with dropped nūn as subjunctive (e.g. after إِنْ); tag them jussive and log an auditNote. Pair with the cause rule (lam-jussive, prohibition, imperative-lam, conditional-jazm). The conditional five-verbs QAC calls subjunctive here are يَظْهَرُوا۟، يَرْجُمُوكُمْ، يُعِيدُوكُمْ (18:20) and يَسْتَغِيثُوا۟، يُغَاثُوا۟ (18:29). Conversely, QAC 0.4 labels يُظْلَمُونَ (23:62) and تُظْلَمُ (36:54) jussive although they are indicative after negating لَا (the nūn of raf‘ and the ḍamma are visible): tag them imperfect + negation (+ passive), not jussive or prohibition, and log it."
+      },
+      "new": {
+        "id": "jussive",
+        "titleUrdu": "جزم اور اس کے اسباب",
+        "explanationUrdu": "مضارع لَمْ، لَمَّا، لامِ امر، لائے نہی اور جازم ادواتِ شرط کے بعد، یا امر کے جواب میں، مجزوم ہوتا ہے۔ صحیح آخر پر سکون (لَمْ يَكْتُبْ)، افعالِ خمسہ میں نون کا حذف، اور معتل آخر میں حرفِ علت کا حذف (لَمْ يَدْعُ) جزم کی علامت ہے؛ اجوف میں درمیانی حرف بھی گر سکتا ہے (لَمْ يَقُلْ)۔",
+        "appliesWhenEnglish": "Tag every imperfect verb in the jussive mood — after لَمْ، لَمَّا (jussive), the lām of command, prohibitive لَا, a jussive conditional (both verbs), or as the answer to a command/implied condition (فَأْوُۥٓا۟ … يَنشُرْ) — and optionally the governing particle. Decide the mood by its cause: QAC 0.4 labels some conditional five-verbs with dropped nūn as subjunctive (e.g. after إِنْ); tag them jussive and log an auditNote. Pair with the governing rule: lam-jussive, prohibition or imperative-lam. In jussive conditionals pair the condition verb with conditional-jazm and the answer verb with condition-answer. The conditional five-verbs QAC calls subjunctive here are يَظْهَرُوا۟، يَرْجُمُوكُمْ، يُعِيدُوكُمْ (18:20) and يَسْتَغِيثُوا۟، يُغَاثُوا۟ (18:29). Conversely, QAC 0.4 labels يُظْلَمُونَ (23:62) and تُظْلَمُ (36:54) jussive although they are indicative after negating لَا (the nūn of raf‘ and the ḍamma are visible): tag them imperfect + negation (+ passive), not jussive or prohibition, and log it."
+      }
+    },
+    {
+      "rule": "subjunctive",
+      "sourceChunks": [
+        "29-c18"
+      ],
+      "old": {
+        "id": "subjunctive",
+        "titleUrdu": "نصبِ مضارع اور اس کے اسباب",
+        "explanationUrdu": "مضارع أَنْ، لَنْ، كَيْ اور إِذَنْ کے بعد منصوب ہوتا ہے، اور لامِ تعلیل، حَتَّى یا فاءِ سببیہ کے بعد بھی، جہاں أَنْ مقدر مانا جاتا ہے۔ صحیح آخر پر فتحہ (لَنْ يَكْتُبَ) اور افعالِ خمسہ میں نون کا حذف (أَنْ يَكْتُبُوا) نصب کی علامت ہے؛ الف پر ختم ہونے والے فعل میں فتحہ مقدر رہتا ہے۔",
+        "appliesWhenEnglish": "Tag every imperfect verb that is subjunctive because of a nāṣib — أَنْ، لَنْ، كَيْ، إِذَنْ، the lām of purpose, حَتَّىٰ, or فَ/أَوْ with an implied أَنْ — or because it is coordinated with such a verb. Verify the governor: QAC 0.4 marks some indicative verbs ending in alif maqṣūra (يُوحَىٰٓ 18:110، وَنَحْيَا 23:37، يَتَوَفَّىٰكُم 32:11، يَسْعَىٰ 36:20، وَيَبْقَىٰ 55:27 — all indicative, with implied ḍamma) and some jussive conditional verbs as subjunctive; tag by the actual governor and log the disagreement. Pair with masdar-particle, lan-negation, purpose-lam or hatta."
+      },
+      "new": {
+        "id": "subjunctive",
+        "titleUrdu": "نصبِ مضارع اور اس کے اسباب",
+        "explanationUrdu": "مضارع أَنْ، لَنْ، كَيْ اور إِذَنْ کے بعد منصوب ہوتا ہے، اور لامِ تعلیل، لامِ جحود، حَتَّى یا فاءِ سببیہ کے بعد بھی، جہاں أَنْ مقدر مانا جاتا ہے۔ صحیح آخر پر فتحہ (لَنْ يَكْتُبَ) اور افعالِ خمسہ میں نون کا حذف (أَنْ يَكْتُبُوا) نصب کی علامت ہے؛ الف پر ختم ہونے والے فعل میں فتحہ مقدر رہتا ہے۔",
+        "appliesWhenEnglish": "Tag every imperfect verb that is subjunctive because of a nāṣib — أَنْ، لَنْ، كَيْ، إِذَنْ، the lām of purpose, lām of emphatic negation after negated kāna, حَتَّىٰ, or فَ/أَوْ with an implied أَنْ — or because it is coordinated with such a verb. Verify the governor: QAC 0.4 marks some indicative verbs ending in alif maqṣūra (يُوحَىٰٓ 18:110، وَنَحْيَا 23:37، يَتَوَفَّىٰكُم 32:11، يَسْعَىٰ 36:20، وَيَبْقَىٰ 55:27 — all indicative, with implied ḍamma) and some jussive conditional verbs as subjunctive; tag by the actual governor and log the disagreement. Pair with masdar-particle, lan-negation, purpose-lam, lam-juhud or hatta."
+      }
+    },
+    {
+      "rule": "hamzated",
+      "sourceChunks": [
+        "93-c01"
+      ],
+      "old": {
+        "id": "hamzated",
+        "titleUrdu": "مہموز فعل",
+        "explanationUrdu": "جس فعل کے اصلی حروف میں ہمزہ ہو وہ مہموز ہے، جیسے أَخَذَ، سَأَلَ اور قَرَأَ۔ ہمزہ لکھنے میں الف، واو یا یاء کی کرسی پر آتا ہے اور بعض صیغوں میں نرم یا حذف ہو جاتا ہے، جیسے خُذْ، كُلْ اور رَأَى کا مضارع يَرَى؛ پھر بھی مادے میں اسے شمار کیا جاتا ہے۔",
+        "appliesWhenEnglish": "Tag a verb (or a derived noun where relevant) whose QAC root contains hamza, especially where the hamza changes its seat, softens or drops (رَأَىٰ/يَرَىٰ/تَرَ، فَأْوُۥٓا۟، يَسْـَٔلُونَ، ءَاتَىٰ). The added hamza of form IV (أَفْعَلَ) and hamzat al-waṣl are not radicals — do not use this rule for them."
+      },
+      "new": {
+        "id": "hamzated",
+        "titleUrdu": "مہموز مادہ",
+        "explanationUrdu": "جس مادے کے اصلی حروف میں ہمزہ ہو وہ مہموز ہے، جیسے أَخَذَ، سَأَلَ اور قَرَأَ کے مادے۔ اسمِ فاعل سَائِل میں بھی یہی اصلی ہمزہ آتا ہے۔ ہمزہ لکھنے میں الف، واو یا یاء کی کرسی پر آتا ہے اور بعض صیغوں میں نرم یا حذف ہو جاتا ہے، جیسے خُذْ، كُلْ اور رَأَى کا مضارع يَرَى؛ پھر بھی مادے میں اسے شمار کیا جاتا ہے۔",
+        "appliesWhenEnglish": "Tag a verb (or a derived noun where relevant) whose QAC root contains hamza, especially where the hamza changes its seat, softens or drops (رَأَىٰ/يَرَىٰ/تَرَ، فَأْوُۥٓا۟، يَسْـَٔلُونَ، ءَاتَىٰ). The added hamza of form IV (أَفْعَلَ) and hamzat al-waṣl are not radicals — do not use this rule for them."
+      }
+    },
+    {
+      "rule": "doubled",
+      "sourceChunks": [
+        "103-c01"
+      ],
+      "old": {
+        "id": "doubled",
+        "titleUrdu": "مضاعف فعل",
+        "explanationUrdu": "جس فعل کے دوسرے اور تیسرے اصلی حروف ایک جیسے ہوں وہ مضاعف ہے، جیسے مَدَّ اور ظَنَّ؛ اکثر صیغوں میں دونوں حرف مدغم ہو کر تشدید بن جاتے ہیں، اور اس تشدید کو بابِ تفعیل کی علامت نہ سمجھیں۔ تُ اور نَا جیسی فاعلی ضمیروں سے پہلے ادغام کھل جاتا ہے، جیسے مَدَدْتُ۔",
+        "appliesWhenEnglish": "Tag a verb (or derived noun) whose second and third radicals are identical (roots like ظ ن ن، م د د، ض ل ل، ح ق ق), whether merged under a shadda (ظَنَّ، يَمَسَّ) or separated (أَضْلَلْتُمْ). Not for the doubled middle radical of form II (derived-form)."
+      },
+      "new": {
+        "id": "doubled",
+        "titleUrdu": "مضاعف مادہ",
+        "explanationUrdu": "جس مادے کے دوسرے اور تیسرے اصلی حروف ایک جیسے ہوں اسے مضاعف کہتے ہیں۔ اسم حَقّ اور فعل مَدَّ میں دونوں اصلی حروف تشدید میں جمع ہیں۔ مَدَدْتُ جیسے صیغے میں یہ دونوں الگ ظاہر ہوتے ہیں۔",
+        "appliesWhenEnglish": "Tag a verb (or derived noun) whose second and third radicals are identical (roots like ظ ن ن، م د د، ض ل ل، ح ق ق), whether merged under a shadda (ظَنَّ، يَمَسَّ) or separated (أَضْلَلْتُمْ). Not for the doubled middle radical of form II (derived-form)."
+      }
+    },
+    {
+      "rule": "verbal-noun",
+      "sourceChunks": [
+        "88-c03"
+      ],
+      "old": {
+        "id": "verbal-noun",
+        "titleUrdu": "مصدر",
+        "explanationUrdu": "مصدر کسی کام یا کیفیت کا نام ہے، جیسے ذِكْرٌ «یاد کرنا»؛ یہ زمانہ یا فاعل کا شخص نہیں بتاتا۔ ثلاثی مجرد کے مصادر سماعی ہیں جبکہ مزید فیہ کے مصادر مقرر اوزان پر آتے ہیں، جیسے إِنْذَارٌ اور تَكْذِيبٌ؛ میم سے شروع ہونے والا مصدرِ میمی بھی ہوتا ہے، اور مصدر کبھی اپنے فعل کی طرح مفعول لیتا ہے۔",
+        "appliesWhenEnglish": "Tag a verbal noun (QAC “verbal noun”, or a masdar named in the i‘rab), including masdar mīmī, when its being a masdar matters. When it functions as مفعول مطلق also tag cognate-object, as مفعول لأجله purpose-object, as ḥāl haal. Not for an interpreted masdar built from أَنْ/أَنَّ/مَا + clause (masdar-particle)."
+      },
+      "new": {
+        "id": "verbal-noun",
+        "titleUrdu": "مصدر",
+        "explanationUrdu": "مصدر کسی کام یا کیفیت کا نام ہے، جیسے ذِكْرٌ «یاد کرنا»؛ یہ زمانہ یا فاعل کا شخص نہیں بتاتا۔ ثلاثی مجرد کے مصادر سماعی ہیں جبکہ مزید فیہ کے مصادر مقرر اوزان پر آتے ہیں، جیسے إِنْذَارٌ اور تَكْذِيبٌ؛ میم سے شروع ہونے والا مصدرِ میمی بھی ہوتا ہے، اور مصدر کبھی اپنے فعل کی طرح مفعول لیتا ہے۔",
+        "appliesWhenEnglish": "Tag a verbal noun identified by QAC, the i‘rab, or a verified packet lexeme or root entry, including masdar mīmī, when its being a masdar matters. If QAC tags it as a plain noun, record the difference in auditNotes. When it functions as مفعول مطلق also tag cognate-object, as مفعول لأجله purpose-object, as ḥāl haal. Not for an interpreted masdar built from أَنْ/أَنَّ/مَا + clause (masdar-particle)."
+      }
+    },
+    {
+      "rule": "noun-of-place-time",
+      "sourceChunks": [
+        "89-c02"
+      ],
+      "old": {
+        "id": "noun-of-place-time",
+        "titleUrdu": "اسمِ ظرف: مَفْعَلٌ اور مَفْعِلٌ",
+        "explanationUrdu": "اسمِ ظرف کام کی جگہ یا وقت کا نام ہے؛ ثلاثی مجرد میں یہ مَفْعَلٌ یا مَفْعِلٌ کے وزن پر آتا ہے، جیسے مَجْمَعٌ، مَطْلِعٌ اور مَغْرِبٌ۔ مزید فیہ میں اس کی شکل اسمِ مفعول جیسی ہوتی ہے، جیسے مُرْتَفَقٌ، اس لیے سیاق سے طے کریں کہ لفظ جگہ، وقت یا مصدر میں سے کیا بتا رہا ہے۔",
+        "appliesWhenEnglish": "Tag a noun of place or time derived on مَفْعَل/مَفْعِل (مَطْلِع، مَغْرِب، مَجْمَع، مَوْعِد، مَوْبِق، مَصْرِف، مَوْئِل، مَرْقَد، مَقَام، مَنَازِل) or on the passive-participle shape of a derived verb used for place/time (مُرْتَفَقًا، مُلْتَحَدًا — QAC labels these passive participles). If the word names the action itself it is a masdar mīmī (verbal-noun). This is a morphological rule; the syntactic role ظرف/مفعول فیہ is adverb."
+      },
+      "new": {
+        "id": "noun-of-place-time",
+        "titleUrdu": "اسمِ ظرف: مَفْعَلٌ اور مَفْعِلٌ",
+        "explanationUrdu": "اسمِ ظرف کام کی جگہ یا وقت کا نام ہے؛ ثلاثی مجرد میں یہ مَفْعَلٌ یا مَفْعِلٌ کے وزن پر آتا ہے، جیسے مَجْمَعٌ، مَطْلِعٌ اور مَغْرِبٌ۔ مزید فیہ میں اس کی شکل اسمِ مفعول جیسی ہوتی ہے، جیسے مُرْتَفَقٌ، اس لیے سیاق سے طے کریں کہ لفظ جگہ، وقت یا مصدر میں سے کیا بتا رہا ہے۔ بعض اسمائے ظرف سماعی وزن پر بھی آتے ہیں، جیسے مِرْصَاد۔",
+        "appliesWhenEnglish": "Tag a noun of place or time derived on مَفْعَل/مَفْعِل (مَطْلِع، مَغْرِب، مَجْمَع، مَوْعِد، مَوْبِق، مَصْرِف، مَوْئِل، مَرْقَد، مَقَام، مَنَازِل) or on the passive-participle shape of a derived verb used for place/time (مُرْتَفَقًا، مُلْتَحَدًا — QAC labels these passive participles). If the word names the action itself it is a masdar mīmī (verbal-noun). This is a morphological rule; the syntactic role ظرف/مفعول فیہ is adverb. Also tag attested lexical place or time patterns supported by the packet, such as مِرْصَاد on مِفْعَال in 89:14."
+      }
+    },
+    {
+      "rule": "independent-pronoun",
+      "sourceChunks": [
+        "86-c02"
+      ],
+      "old": {
+        "id": "independent-pronoun",
+        "titleUrdu": "ضمیرِ منفصل",
+        "explanationUrdu": "ضمیرِ منفصل الگ لفظ کے طور پر لکھی جاتی ہے، جیسے هُوَ، هِيَ، هُمْ، أَنْتَ، أَنْتُمْ، أَنَا اور نَحْنُ۔ یہ مبنی ہے اور جملے میں اکثر مبتدا یا خبر بنتی ہے، یا کسی متصل ضمیر کی تاکید کرتی ہے؛ واوِ حالیہ کے بعد یہ جملۂ حال بھی شروع کر سکتی ہے۔",
+        "appliesWhenEnglish": "Tag a free-standing nominative pronoun (هُوَ، هِىَ، هُمَا، هُمْ، هُنَّ، أَنتَ، أَنتُمْ، أَنَا۠، نَحْنُ) serving as mubtada, khabar, emphasis of an attached pronoun (also tawkid) or the start of a ḥāl clause (وَهُمْ — also haal). If the i‘rab calls it ضمير فصل use separating-pronoun; if ضمير الشأن use pronoun-of-matter; for إِيَّا forms use object-pronoun."
+      },
+      "new": {
+        "id": "independent-pronoun",
+        "titleUrdu": "ضمیرِ منفصل",
+        "explanationUrdu": "ضمیرِ منفصل الگ لفظ کے طور پر لکھی جاتی ہے، جیسے هُوَ، هِيَ، هُمْ، أَنْتَ، أَنْتُمْ، أَنَا اور نَحْنُ۔ یہ مبنی ہے اور جملے میں اکثر مبتدا یا خبر بنتی ہے، یا کسی متصل ضمیر کی تاکید کرتی ہے؛ واوِ حالیہ کے بعد یہ جملۂ حال بھی شروع کر سکتی ہے۔",
+        "appliesWhenEnglish": "Tag a free-standing nominative pronoun (هُوَ، هِىَ، هُمَا، هُمْ، هُنَّ، أَنتَ، أَنتُمْ، أَنَا۠، نَحْنُ) serving as mubtada, khabar, the ism of negative مَا when it governs like لَيْسَ, emphasis of an attached pronoun (also tawkid) or the start of a ḥāl clause (وَهُمْ — also haal). If the i‘rab calls it ضمير فصل use separating-pronoun; if ضمير الشأن use pronoun-of-matter; for إِيَّا forms use object-pronoun."
+      }
+    },
+    {
+      "rule": "relative",
+      "sourceChunks": [
+        "95-c01"
+      ],
+      "old": {
+        "id": "relative",
+        "titleUrdu": "اسمِ موصول اور صلہ",
+        "explanationUrdu": "اسمِ موصول، جیسے الَّذِي، الَّتِي، الَّذِينَ، مَنْ اور مَا، اپنا معنی بعد کے جملے سے مکمل کرتا ہے جسے صلہ کہتے ہیں؛ صلے میں موصول کی طرف لوٹنے والی ضمیر ظاہر یا محذوف ہوتی ہے۔ موصول عموماً مبنی ہے اور اس کا محلِ اعراب جملے میں کردار سے طے ہوتا ہے، جبکہ صلے کا اپنا کوئی محلِ اعراب نہیں۔",
+        "appliesWhenEnglish": "Tag a relative pronoun (ٱلَّذِى، ٱلَّتِى، ٱلَّذِينَ، مَن، مَا, usually QAC REL) and, when useful, the head word of its ṣila. Decide relative vs conditional from the ayah i‘rab (qacGrammarNotesArabic), not from QAC’s label or from a following فَ. QAC tags conditional مَن/مَا as REL in 18:17، 18:29، 18:39 (مَا شَآءَ ٱللَّهُ: «ما» شرطية with an elided answer)، 18:110، 23:7، 23:102، 23:117، 36:68; use conditional-jazm there. QAC tags مَن after أَمَّا (18:87, where the i‘rab says «مَن» موصول مبتدأ; 18:88 is parallel) and ٱلَّذِينَ after أَمَّا (32:19، 32:20, mubtada whose khabar carries the فَ) as COND; use relative + detailing, not conditional-jazm. A فَ that answers أَمَّا does not make the noun conditional. Not for masdar مَا (masdar-particle), interrogative مَن/مَا (interrogative) or negative مَا (negation)."
+      },
+      "new": {
+        "id": "relative",
+        "titleUrdu": "اسمِ موصول اور صلہ",
+        "explanationUrdu": "اسمِ موصول، جیسے الَّذِي، الَّتِي، الَّذِينَ، مَنْ اور مَا، اپنا معنی بعد کے جملے سے مکمل کرتا ہے جسے صلہ کہتے ہیں؛ صلے میں موصول کی طرف لوٹنے والی ضمیر ظاہر، مستتر یا محذوف ہو سکتی ہے۔ موصول عموماً مبنی ہے اور اس کا محلِ اعراب جملے میں کردار سے طے ہوتا ہے، جبکہ صلے کا اپنا کوئی محلِ اعراب نہیں۔",
+        "appliesWhenEnglish": "Tag a relative pronoun (ٱلَّذِى، ٱلَّتِى، ٱلَّذِينَ، مَن، مَا, usually QAC REL) and, when useful, the head word of its ṣila. Decide relative vs conditional from the ayah i‘rab (qacGrammarNotesArabic), not from QAC’s label or from a following فَ. QAC tags conditional مَن/مَا as REL in 18:17، 18:29، 18:39 (مَا شَآءَ ٱللَّهُ: «ما» شرطية with an elided answer)، 18:110، 23:7، 23:102، 23:117، 36:68; use conditional-jazm there. QAC tags مَن after أَمَّا (18:87, where the i‘rab says «مَن» موصول مبتدأ; 18:88 is parallel) and ٱلَّذِينَ after أَمَّا (32:19، 32:20, mubtada whose khabar carries the فَ) as COND; use relative + detailing, not conditional-jazm. A فَ that answers أَمَّا does not make the noun conditional. Not for masdar مَا (masdar-particle), interrogative مَن/مَا (interrogative) or negative مَا (negation)."
+      }
+    },
+    {
+      "rule": "object",
+      "sourceChunks": [
+        "85-c03"
+      ],
+      "old": {
+        "id": "object",
+        "titleUrdu": "مفعول بہ",
+        "explanationUrdu": "متعدی فعل کا اثر جس پر پڑے وہ مفعول بہ ہے اور منصوب ہوتا ہے، جیسے نَصَرَ زَيْدٌ عَمْرًا میں عَمْرًا۔ اسمِ فاعل یا مصدر بھی فعل کی طرح مفعول لے سکتے ہیں، اور أَنْ يَفْعَلَ جیسا مصدری جملہ بھی مفعول بن سکتا ہے۔ سوالیہ یا دوسرا پورا جملہ بھی محلِ نصب میں مفعول ہو سکتا ہے؛ اس کے الگ الفاظ کا اعراب ان کے اپنے کردار سے طے ہوتا ہے۔",
+        "appliesWhenEnglish": "Tag an explicit noun (or demonstrative, relative or interpreted masdar), or the head of a whole clause, that the i‘rab calls مفعول به of a verb, participle or masdar. A clause object is in محل نصب; do not infer accusative endings for its internal nouns or subjunctive mood for its internal verbs (18:7، 18:19، 36:31). For pronoun objects use object-pronoun; for an object placed before its verb also fronted-object; for a second object also two-objects; for the quoted sentence after قَالَ use quoted-speech."
+      },
+      "new": {
+        "id": "object",
+        "titleUrdu": "مفعول بہ",
+        "explanationUrdu": "متعدی فعل کا اثر جس پر پڑے وہ مفعول بہ ہے اور منصوب ہوتا ہے، جیسے نَصَرَ زَيْدٌ عَمْرًا میں عَمْرًا۔ اسمِ فاعل یا مصدر بھی فعل کی طرح مفعول لے سکتے ہیں، اور أَنْ يَفْعَلَ جیسا مصدری جملہ بھی مفعول بن سکتا ہے۔ سوالیہ یا دوسرا پورا جملہ بھی محلِ نصب میں مفعول ہو سکتا ہے؛ اس کے الگ الفاظ کا اعراب ان کے اپنے کردار سے طے ہوتا ہے۔",
+        "appliesWhenEnglish": "Tag an explicit noun (or demonstrative, relative or interpreted masdar), or the head of a whole clause, that the i‘rab calls مفعول به of a verb, participle, intensive noun (صيغة مبالغة) or masdar. A clause object is in محل نصب; do not infer accusative endings for its internal nouns or subjunctive mood for its internal verbs (18:7، 18:19، 36:31). For pronoun objects use object-pronoun; for an object placed before its verb also fronted-object; for a second object also two-objects; for the quoted sentence after قَالَ use quoted-speech."
+      }
+    },
+    {
+      "rule": "tamyiz",
+      "sourceChunks": [
+        "99-c01"
+      ],
+      "old": {
+        "id": "tamyiz",
+        "titleUrdu": "تمییز",
+        "explanationUrdu": "تمییز ایک نکرہ منصوب اسم ہے جو کسی مبہم عدد، مقدار یا نسبت کی وضاحت کرتا ہے، جیسے عِشْرُونَ كِتَابًا اور أَكْثَرُ عِلْمًا «علم میں زیادہ»۔ یہ گیارہ سے ننانوے کے عدد، اسمِ تفضیل، نِعْمَ اور بِئْسَ، اور كَمْ استفہامیہ کے بعد کثرت سے آتا ہے؛ اردو میں اسے «کے لحاظ سے» سے سمجھا جا سکتا ہے۔",
+        "appliesWhenEnglish": "Tag an indefinite accusative noun that the i‘rab calls تمييز — after numbers 11–99, an elative (أَحْسَنُ عَمَلًا، أَكْثَرُ مِنكَ مَالًا), praise/blame verbs (سَآءَتْ مُرْتَفَقًا، بِئْسَ … بَدَلًا), كَمْ, or a verb whose subject it clarifies (كَبُرَتْ كَلِمَةً; رُعْبًا in وَلَمُلِئْتَ مِنْهُمْ رُعْبًا). Boundary: ḥāl answers “in what state?”, tamyīz answers “in respect of what?”."
+      },
+      "new": {
+        "id": "tamyiz",
+        "titleUrdu": "تمییز",
+        "explanationUrdu": "تمییز ایک نکرہ منصوب اسم ہے جو کسی مبہم عدد، مقدار یا نسبت کی وضاحت کرتا ہے، جیسے عِشْرُونَ كِتَابًا اور أَكْثَرُ عِلْمًا «علم میں زیادہ»۔ یہ گیارہ سے ننانوے کے عدد، اسمِ تفضیل، نِعْمَ اور بِئْسَ، اور كَمْ استفہامیہ کے بعد کثرت سے آتا ہے؛ اردو میں اسے «کے لحاظ سے» سے سمجھا جا سکتا ہے۔",
+        "appliesWhenEnglish": "Tag an indefinite accusative noun that the i‘rab calls تمييز — after numbers 11–99, a unit of weight or measure, an elative (أَحْسَنُ عَمَلًا، أَكْثَرُ مِنكَ مَالًا), praise/blame verbs (سَآءَتْ مُرْتَفَقًا، بِئْسَ … بَدَلًا), كَمْ, or a verb whose subject it clarifies (كَبُرَتْ كَلِمَةً; رُعْبًا in وَلَمُلِئْتَ مِنْهُمْ رُعْبًا). Boundary: ḥāl answers “in what state?”, tamyīz answers “in respect of what?”."
+      }
+    },
+    {
+      "rule": "cognate-object",
+      "sourceChunks": [
+        "86-c02"
+      ],
+      "old": {
+        "id": "cognate-object",
+        "titleUrdu": "مفعولِ مطلق",
+        "explanationUrdu": "مفعولِ مطلق اپنے ہی فعل کا منصوب مصدر ہے جو عمل کی تاکید، نوع یا تعداد بتاتا ہے، جیسے ضَرَبْتُهُ ضَرْبًا شَدِيدًا۔ کبھی مصدر کی جگہ اس کی صفت، ہم معنی لفظ، كُلَّ یا بَعْضَ، یا كَذَٰلِكَ کا پہلا كَ آ کر نائبِ مفعولِ مطلق بنتا ہے۔",
+        "appliesWhenEnglish": "Tag a word the i‘rab calls مفعول مطلق or نائب مفعول مطلق: an accusative masdar of the clause’s own verb (or a synonym) expressing emphasis, kind or number (فِرَارًا، شَطَطًا, a masdar governed by an omitted verb such as فَبُعْدًا), or a substitute such as an adjective of the omitted masdar, كُلَّ/بَعْضَ, a number, or the كَ of كَذَٰلِكَ. Not for a masdar that is a direct object, a ḥāl (مصدر في موضع الحال) or مفعول لأجله."
+      },
+      "new": {
+        "id": "cognate-object",
+        "titleUrdu": "مفعولِ مطلق",
+        "explanationUrdu": "مفعولِ مطلق اپنے ہی فعل کا منصوب مصدر ہے جو عمل کی تاکید، نوع یا تعداد بتاتا ہے، جیسے ضَرَبْتُهُ ضَرْبًا شَدِيدًا۔ کبھی مصدر کی جگہ اس کی صفت، ہم معنی لفظ، كُلَّ یا بَعْضَ، یا كَذَٰلِكَ کا پہلا كَ آ کر نائبِ مفعولِ مطلق بنتا ہے۔",
+        "appliesWhenEnglish": "Tag a مفعول مطلق or نائب مفعول مطلق based on explicit i‘rab or a clear construction supported by packet morphology and documented in auditNotes: an accusative masdar of the clause’s own verb (or a synonym) expressing emphasis, kind or number (فِرَارًا، شَطَطًا, a masdar governed by an omitted verb such as فَبُعْدًا), or a substitute such as an adjective of the omitted masdar, كُلَّ/بَعْضَ, a number, or the كَ of كَذَٰلِكَ. Not for a masdar that is a direct object, a ḥāl (مصدر في موضع الحال) or مفعول لأجله."
+      }
+    },
+    {
+      "rule": "fronted-object",
+      "sourceChunks": [
+        "7-c75"
+      ],
+      "old": {
+        "id": "fronted-object",
+        "titleUrdu": "مفعول کو پہلے لانا",
+        "explanationUrdu": "مفعول عام طور پر فعل اور فاعل کے بعد آتا ہے؛ جب اسے فعل سے پہلے لایا جائے تو اکثر اختصاص یا زور پیدا ہوتا ہے، جیسے إِيَّاكَ نَعْبُدُ «ہم تیری ہی عبادت کرتے ہیں»۔ ترجمے میں «ہی» اسی مفہوم کو ظاہر کرتا ہے، جبکہ اعراب مفعول کا ہی رہتا ہے۔",
+        "appliesWhenEnglish": "Tag an object (noun or separate pronoun) placed before its verb or participle that the i‘rab calls مفعول به مقدم, including objects of participles fronted with a strengthening lām (لِلزَّكَوٰةِ فَٰعِلُونَ — also extra-particle). Not for words that must come first anyway (interrogative or conditional nouns, كَمْ — use their rules) or for ishtighal constructions (ishtighal)."
+      },
+      "new": {
+        "id": "fronted-object",
+        "titleUrdu": "مفعول کو پہلے لانا",
+        "explanationUrdu": "مفعول عام طور پر فعل اور فاعل کے بعد آتا ہے؛ جب اسے فعل سے پہلے لایا جائے تو اکثر اختصاص یا زور پیدا ہوتا ہے، جیسے إِيَّاكَ نَعْبُدُ «ہم تیری ہی عبادت کرتے ہیں»۔ ترجمے میں «ہی» اسی مفہوم کو ظاہر کرتا ہے، جبکہ اعراب مفعول کا ہی رہتا ہے۔",
+        "appliesWhenEnglish": "Tag an object (noun or separate pronoun) placed before its verb or participle that the i‘rab calls مفعول به مقدم, including objects fronted with a strengthening lām before a participle or a finite verb (23:4, 7:154 — also extra-particle). Not for words that must come first anyway (interrogative or conditional nouns, كَمْ — use their rules) or for ishtighal constructions (ishtighal)."
+      }
+    },
+    {
+      "rule": "badal",
+      "sourceChunks": [
+        "88-c02",
+        "88-c03"
+      ],
+      "old": {
+        "id": "badal",
+        "titleUrdu": "بدل",
+        "explanationUrdu": "اسمی بدل پہلے اسم کو زیادہ واضح یا متعین کرتا اور اعراب میں اس کی پیروی کرتا ہے، جیسے جَاءَ أَخُوكَ زَيْدٌ۔ یہ پورے کا، اس کے کسی جز کا یا اس سے متعلق کسی چیز کا بدل ہو سکتا ہے؛ عطفِ بیان بھی وضاحت کرتا ہے۔ پورا جملہ بھی پہلے جملے کا بدل ہو سکتا ہے؛ پہلے جملے کا محلِ اعراب ہو تو یہ بھی اسی محل میں ہوتا ہے، الگ الفاظ کا اعراب یکساں ہونا لازم نہیں۔",
+        "appliesWhenEnglish": "Tag a word the i‘rab calls بدل — or عطف بيان, which has no separate card — that follows a noun in the same case to specify it: a name after a description, a noun after a demonstrative or after the vocative أَيُّهَا, or a noun restating a previous one. Also tag the head of a whole clause that the i‘rab explicitly calls بدل of an earlier clause (ٱتَّبِعُوا۟ in 36:21); follow the replaced clause’s syntactic status, without requiring case agreement between their head words. Not for coordinated nouns or clauses (conjunction) or adjectives (adjective)."
+      },
+      "new": {
+        "id": "badal",
+        "titleUrdu": "بدل",
+        "explanationUrdu": "اسمی بدل پہلے اسم کو زیادہ واضح یا متعین کرتا اور اعراب میں اس کی پیروی کرتا ہے، جیسے جَاءَ أَخُوكَ زَيْدٌ۔ یہ پورے کا، اس کے کسی جز کا یا اس سے متعلق کسی چیز کا بدل ہو سکتا ہے؛ عطفِ بیان بھی وضاحت کرتا ہے۔ پورا جملہ بھی کسی پہلے اسم یا جملے کا بدل ہو سکتا ہے۔ بدل کا محل اعراب میں اسی کے تابع ہے اور الگ الفاظ کا اعراب یکساں ہونا لازم نہیں۔",
+        "appliesWhenEnglish": "Tag a word the i‘rab calls بدل — or عطف بيان, which has no separate card — that follows a noun in the same case to specify it: a name after a description, a noun after a demonstrative or after the vocative أَيُّهَا, or a noun restating a previous one. Also tag the head of a whole clause that the i‘rab explicitly calls بدل of an earlier noun or clause (88:19, 36:21). The entire replacing clause inherits the replaced expression’s syntactic position. Its head need not have the same inflection. Not for coordinated nouns or clauses (conjunction) or adjectives (adjective)."
+      }
+    },
+    {
+      "rule": "extra-particle",
+      "sourceChunks": [
+        "7-c75",
+        "85-c02"
+      ],
+      "old": {
+        "id": "extra-particle",
+        "titleUrdu": "حرفِ زائد",
+        "explanationUrdu": "کبھی کوئی حرف ترکیب میں نیا کردار ادا کیے بغیر صرف تاکید یا تقویت کے لیے آتا ہے، جیسے نفی کے بعد مِنْ (مَا جَاءَنَا مِنْ أَحَدٍ) یا لَيْسَ کی خبر پر بِ۔ ایسے حرف کے بعد کا اسم لفظاً مجرور مگر اپنے اصل کردار کے لحاظ سے محلاً مرفوع یا منصوب ہوتا ہے؛ مَا، لام اور فاء بھی کبھی زائد ہوتے ہیں۔",
+        "appliesWhenEnglish": "Tag a particle the i‘rab calls زائد/زائدة: مِنْ after negation or a question before an indefinite (مِنْ عِلْمٍ، مِن وَلِىٍّ), بِ on the khabar of لَيْسَ or of negative مَا and after أَفْعِلْ, the strengthening lām (لام التقوية) before the object of a participle, extra مَا (إِمَّا = إِنْ + مَا، عَمَّا قَلِيلٍ), and the فَ or وَ after a question hamza that QAC labels SUP (أَفَلَا، أَفَحَسِبَ، أَفَمَن، أَوَلَمْ، أَوَلَيْسَ; word i‘rab «الفاء/الواو زائدة»). Many grammarians call it عاطفة (and the ayah note of 32:26 calls that وَ مستأنفة); give those only as alternatives in auditNotes. Not for ordinary prepositions (preposition)."
+      },
+      "new": {
+        "id": "extra-particle",
+        "titleUrdu": "حرفِ زائد",
+        "explanationUrdu": "حرفِ زائد تاکید، تقویت یا نحوی ربط دے سکتا ہے۔ زائد حرفِ جر کے بعد اسم لفظاً مجرور ہوتا ہے اور اس کا نحوی محل اصل ترکیب سے طے ہوتا ہے، جیسے نفی کے بعد مِنْ یا لَيْسَ کی خبر پر بِ۔ بعض جگہ فاء خبر کو اس اسم سے جوڑتی ہے جس میں شرط کا مفہوم ہو۔",
+        "appliesWhenEnglish": "Tag a particle the i‘rab calls زائد/زائدة: مِنْ after negation or a question before an indefinite (مِنْ عِلْمٍ، مِن وَلِىٍّ), بِ on the khabar of لَيْسَ or of negative مَا and after أَفْعِلْ, the strengthening lām (لام التقوية) before the object of a participle or a fronted object of a finite verb (7:154), extra مَا (إِمَّا = إِنْ + مَا، عَمَّا قَلِيلٍ), and the فَ or وَ after a question hamza that QAC labels SUP (أَفَلَا، أَفَحَسِبَ، أَفَمَن، أَوَلَمْ، أَوَلَيْسَ; word i‘rab «الفاء/الواو زائدة»). Many grammarians call it عاطفة (and the ayah note of 32:26 calls that وَ مستأنفة); give those only as alternatives in auditNotes. Not for ordinary prepositions (preposition)."
+      }
+    },
+    {
+      "rule": "condition",
+      "sourceChunks": [
+        "94-c01"
+      ],
+      "old": {
+        "id": "condition",
+        "titleUrdu": "إِذَا: ظرف اور شرط",
+        "explanationUrdu": "إِذَا مستقبل کے وقت کا ظرف ہے جو اکثر شرط کا مفہوم بھی رکھتا ہے: «جب ایسا ہو تو…»؛ اس کے بعد کا جملہ اس کا مضاف الیہ اور شرط ہوتا ہے، اور یہ فعل کو جزم نہیں دیتا۔ اس کے بعد ماضی بھی مستقبل کا معنی دیتا ہے، اور جوابِ شرط پر ضرورت ہو تو فاء آتی ہے۔",
+        "appliesWhenEnglish": "Tag إِذَا (QAC T, time adverb) when it introduces a condition (ظرفية شرطية), plus its condition verb and, if useful, the head of the answer (also condition-answer when the answer takes فَ or is elided). If the i‘rab calls it ظرف محض (no answer) use adverb; إِذَا before a nominal sentence meaning “suddenly” is surprise-idha; إِذًا with tanwīn is answer-particle."
+      },
+      "new": {
+        "id": "condition",
+        "titleUrdu": "إِذَا: ظرف اور شرط",
+        "explanationUrdu": "إِذَا مستقبل کے وقت کا ظرف ہے جو اکثر شرط کا مفہوم بھی رکھتا ہے: «جب ایسا ہو تو…»؛ اس کے بعد کا جملہ اس کا مضاف الیہ اور شرط ہوتا ہے، اور یہ فعل کو جزم نہیں دیتا۔ آئندہ کے سیاق میں اس کے بعد ماضی کا صیغہ بھی مستقبل کا معنی دیتا ہے، اور جوابِ شرط پر ضرورت ہو تو فاء آتی ہے۔",
+        "appliesWhenEnglish": "Tag إِذَا (QAC T, time adverb) when it introduces a condition (ظرفية شرطية), plus its condition verb and, if useful, the head of the answer (also condition-answer when the answer takes فَ or is elided). If the i‘rab calls it ظرف محض (no answer) use adverb; إِذَا before a nominal sentence meaning “suddenly” is surprise-idha; إِذًا with tanwīn is answer-particle."
+      }
+    },
+    {
+      "rule": "law-condition",
+      "sourceChunks": [
+        "25-c28"
+      ],
+      "old": {
+        "id": "law-condition",
+        "titleUrdu": "لَوْ: فرضی شرط",
+        "explanationUrdu": "لَوْ «اگر ایسا ہوتا» عموماً ایسی شرط کے لیے آتا ہے جو واقع نہیں ہوئی، اس لیے جواب بھی واقع نہیں ہوتا؛ یہ فعل کو جزم نہیں دیتا۔ اس کے مثبت جواب پر اکثر لام آتا ہے، جیسے لَوْ جَاءَ لَأَكْرَمْتُهُ، اور لَوْ کے بعد أَنَّ بھی آتا ہے۔ وَلَوْ کبھی «اگرچہ» کے معنی میں آتا ہے؛ تب محذوف جواب ہر حال میں ثابت رہتا ہے۔",
+        "appliesWhenEnglish": "Tag لَوْ (QAC COND) in a hypothetical or counterfactual conditional, its condition verb, and the head of its answer (with emphatic-lam for the لَ of the answer, e.g. لَوَلَّيْتَ، لَنَفِدَ). Not for لَوْلَا (exhortation) or إِنْ (conditional-jazm). Also tag concessive وَلَوْ “even if” (18:109 وَلَوْ جِئْنَا; i‘rab: الواو حالية, answer elided); add haal for the وَ and elision for the omitted answer."
+      },
+      "new": {
+        "id": "law-condition",
+        "titleUrdu": "لَوْ: فرضی شرط",
+        "explanationUrdu": "لَوْ «اگر ایسا ہوتا» عموماً ایسی شرط کے لیے آتا ہے جو واقع نہیں ہوئی، اس لیے جواب بھی واقع نہیں ہوتا؛ یہ فعل کو جزم نہیں دیتا۔ اس کے مثبت جواب پر اکثر لام آتا ہے، جیسے لَوْ جَاءَ لَأَكْرَمْتُهُ، اور لَوْ کے بعد أَنَّ بھی آتا ہے۔ وَلَوْ کبھی «اگرچہ» کے معنی میں آتا ہے؛ تب محذوف جواب ہر حال میں ثابت رہتا ہے۔",
+        "appliesWhenEnglish": "Tag لَوْ (QAC COND) in a hypothetical or counterfactual conditional, its condition verb, and the head of its answer (with emphatic-lam for the لَ of the answer, e.g. لَوَلَّيْتَ، لَنَفِدَ). Not for لَوْلَا (lawla-condition or exhortation) or إِنْ (conditional-jazm). Also tag concessive وَلَوْ “even if” (18:109 وَلَوْ جِئْنَا; i‘rab: الواو حالية, answer elided); add haal for the وَ and elision for the omitted answer."
+      }
+    },
+    {
+      "rule": "purpose-lam",
+      "sourceChunks": [
+        "29-c18"
+      ],
+      "old": {
+        "id": "purpose-lam",
+        "titleUrdu": "لامِ تعلیل اور كَيْ",
+        "explanationUrdu": "لامِ تعلیل «تاکہ» کے معنی میں مضارع سے پہلے آتا ہے اور اس کے بعد أَنْ مقدر مان کر فعل منصوب ہوتا ہے، جیسے لِيَعْلَمَ «تاکہ وہ جان لے»؛ كَيْ اور لِكَيْ بھی یہی معنی دیتے ہیں۔ اسے لامِ امر سے الگ رکھیں، جس کے بعد فعل مجزوم ہوتا ہے اور حکم کا معنی نکلتا ہے۔",
+        "appliesWhenEnglish": "Tag a verb carrying the purpose lām (QAC PRP: لِّيُنذِرَ، لِنَبْلُوَهُمْ، لِيَتَسَآءَلُوا۟) or preceded by كَيْ/لِكَيْ; also tag subjunctive. Not for the imperative lām with a jussive verb (imperative-lam) or the prepositional lām before nouns (preposition)."
+      },
+      "new": {
+        "id": "purpose-lam",
+        "titleUrdu": "لامِ تعلیل اور كَيْ",
+        "explanationUrdu": "لامِ تعلیل «تاکہ» کے معنی میں مضارع سے پہلے آتا ہے اور اس کے بعد أَنْ مقدر مان کر فعل منصوب ہوتا ہے، جیسے لِيَعْلَمَ «تاکہ وہ جان لے»؛ كَيْ اور لِكَيْ بھی یہی معنی دیتے ہیں۔ اسے لامِ امر سے الگ رکھیں، جس کے بعد فعل مجزوم ہوتا ہے اور حکم کا معنی نکلتا ہے۔",
+        "appliesWhenEnglish": "Tag a verb carrying the purpose lām (QAC PRP: لِّيُنذِرَ، لِنَبْلُوَهُمْ، لِيَتَسَآءَلُوا۟) or preceded by كَيْ/لِكَيْ; also tag subjunctive. Not for the lām of emphatic negation after negated kāna (lam-juhud), the imperative lām with a jussive verb (imperative-lam) or the prepositional lām before nouns (preposition)."
+      }
+    },
+    {
+      "rule": "restriction",
+      "sourceChunks": [
+        "88-c03"
+      ],
+      "old": {
+        "id": "restriction",
+        "titleUrdu": "حصر: إِنَّمَا اور إِلَّا",
+        "explanationUrdu": "حصر کسی بات کو ایک ہی چیز تک محدود کرتا ہے، جس کا اردو مفہوم «صرف، فقط، ہی» ہے۔ اس کے عام طریقے نفی کے بعد إِلَّا (مَا… إِلَّا، إِنْ… إِلَّا) اور إِنَّمَا ہیں؛ إِنَّمَا میں مَا کافہ إِنَّ کے عمل کو روک دیتا ہے، اس لیے بعد کا جملہ اپنے عام اعراب پر رہتا ہے۔",
+        "appliesWhenEnglish": "Tag إِلَّا when the clause before it is negative, prohibitive or interrogative and incomplete, so the word after إِلَّا takes the case its own role needs (استثناء مفرّغ / أداة حصر); tag إِنَّمَا/أَنَّمَا (QAC ACC + PREV, كافة ومكفوفة) and لَمَّا meaning إِلَّا. QAC labels every إِلَّا in these surahs RES; decide exception vs restriction by structure — if the group excluded from is stated, use exception."
+      },
+      "new": {
+        "id": "restriction",
+        "titleUrdu": "حصر: إِنَّمَا اور إِلَّا",
+        "explanationUrdu": "حصر کسی بات کو ایک ہی چیز تک محدود کرتا ہے، جس کا اردو مفہوم «صرف، فقط، ہی» ہے۔ اس کے عام طریقے نفی کے بعد إِلَّا (مَا… إِلَّا، إِنْ… إِلَّا) اور إِنَّمَا ہیں؛ إِنَّمَا میں مَا کافہ إِنَّ کے عمل کو روک دیتا ہے، اس لیے بعد کا جملہ اپنے عام اعراب پر رہتا ہے۔",
+        "appliesWhenEnglish": "Tag إِلَّا when the clause before it is negative, prohibitive or interrogative and incomplete, so the word after إِلَّا takes the case its own role needs (استثناء مفرّغ / أداة حصر); tag إِنَّمَا/أَنَّمَا (QAC ACC + PREV, كافة ومكفوفة) and لَمَّا meaning إِلَّا. QAC may label إِلَّا RES or EXP. Decide by structure — if the group excluded from is stated, use exception."
+      }
+    },
+    {
+      "rule": "exception",
+      "sourceChunks": [
+        "88-c03",
+        "103-c01"
+      ],
+      "old": {
+        "id": "exception",
+        "titleUrdu": "استثنا: إِلَّا اور غَيْرُ",
+        "explanationUrdu": "استثنا کسی حکم سے کچھ الگ کرتا ہے: پہلے جماعت (مستثنیٰ منہ) اور إِلَّا کے بعد مستثنیٰ آتا ہے، جیسے جَاءَ الْقَوْمُ إِلَّا زَيْدًا۔ مثبت مکمل جملے میں مستثنیٰ منصوب ہوتا ہے؛ وہ جماعت کی جنس سے نہ ہو تو استثنا منقطع ہے اور إِلَّا «لیکن» کا معنی دیتا ہے۔ غَيْرُ اور سِوَى بھی «علاوہ» کے معنی میں مضاف ہو کر آتے ہیں۔",
+        "appliesWhenEnglish": "Tag إِلَّا when the group excluded from is stated (فَسَجَدُوٓا۟ إِلَّآ إِبْلِيسَ، إِلَّا مَن سَبَقَ) and the excepted word, and tag غَيْر/سِوَى meaning “other than / except / without”. QAC labels such إِلَّا RES; follow the structure. For إِلَّا after an incomplete negated clause use restriction."
+      },
+      "new": {
+        "id": "exception",
+        "titleUrdu": "استثنا: إِلَّا اور غَيْرُ",
+        "explanationUrdu": "استثنا کسی حکم سے کچھ الگ کرتا ہے: پہلے جماعت (مستثنیٰ منہ) اور إِلَّا کے بعد مستثنیٰ آتا ہے، جیسے جَاءَ الْقَوْمُ إِلَّا زَيْدًا۔ مثبت مکمل جملے میں مستثنیٰ منصوب ہوتا ہے؛ وہ جماعت کی جنس سے نہ ہو تو استثنا منقطع ہے اور إِلَّا «لیکن» کا معنی دیتا ہے۔ غَيْرُ اور سِوَى بھی «علاوہ» کے معنی میں مضاف ہو کر آتے ہیں۔",
+        "appliesWhenEnglish": "Tag إِلَّا when the group excluded from is stated (فَسَجَدُوٓا۟ إِلَّآ إِبْلِيسَ، إِلَّا مَن سَبَقَ) and the excepted word, and tag غَيْر/سِوَى meaning “other than / except / without”. QAC may label إِلَّا RES or EXP. Follow the structure and i‘rab. For إِلَّا after an incomplete negated clause use restriction."
+      }
+    },
+    {
+      "rule": "retraction",
+      "sourceChunks": [
+        "85-c03"
+      ],
+      "old": {
+        "id": "retraction",
+        "titleUrdu": "اضراب: بَلْ اور أَمْ",
+        "explanationUrdu": "بَلْ پچھلی بات سے ہٹ کر اسے رد کرنے یا کسی نئی، زیادہ اہم بات کی طرف منتقل ہونے کے لیے آتا ہے، یعنی «بلکہ»۔ أَمْ منقطعہ بھی بَلْ اور سوالیہ ہمزہ کا مفہوم دیتا ہے، یعنی «بلکہ کیا…؟»؛ جملے سے پہلے آئیں تو یہ ابتدا کے حروف ہیں اور اعراب پر اثر نہیں ڈالتے۔",
+        "appliesWhenEnglish": "Tag بَلْ (QAC RET) and أَمْ that the i‘rab calls منقطعة (بمعنى بل والهمزة), e.g. أَمْ حَسِبْتَ، أَمْ يَقُولُونَ. Not for أَمْ paired with a question or equalization hamza (conjunction, equalization) or for لَٰكِنْ (lightened-particle, inna-sisters)."
+      },
+      "new": {
+        "id": "retraction",
+        "titleUrdu": "اضراب: بَلْ اور أَمْ",
+        "explanationUrdu": "بَلْ پچھلی بات سے ہٹ کر اسے رد کرنے یا کسی نئی، زیادہ اہم بات کی طرف منتقل ہونے کے لیے آتا ہے، یعنی «بلکہ»۔ أَمْ منقطعہ بھی بَلْ اور سوالیہ ہمزہ کا مفہوم دیتا ہے، یعنی «بلکہ کیا…؟»؛ جملے سے پہلے آئیں تو یہ ابتدا کے حروف ہیں اور اعراب پر اثر نہیں ڈالتے۔",
+        "appliesWhenEnglish": "Tag بَلْ as a particle of iḍrāb before a clause, even when QAC labels it CONJ (85:21). Also tag أَمْ that the i‘rab calls منقطعة (بمعنى بل والهمزة), e.g. أَمْ حَسِبْتَ، أَمْ يَقُولُونَ. Not for أَمْ paired with a question or equalization hamza (conjunction, equalization) or for لَٰكِنْ (lightened-particle, inna-sisters)."
+      }
+    },
+    {
+      "rule": "exhortation",
+      "sourceChunks": [
+        "25-c28"
+      ],
+      "old": {
+        "id": "exhortation",
+        "titleUrdu": "لَوْلَا: ترغیب اور ملامت",
+        "explanationUrdu": "لَوْلَا جب فعل سے پہلے آئے تو تحضیض کا حرف ہے: مضارع کے ساتھ کسی کام پر ابھارتا ہے، یعنی «کیوں نہیں…؟»، اور ماضی کے ساتھ نہ کرنے پر ملامت کرتا ہے، یعنی «کیوں نہ کیا…؟»۔ اسم سے پہلے آنے والا لَوْلَا «اگر… نہ ہوتا» کے معنی میں شرطیہ ہوتا ہے۔",
+        "appliesWhenEnglish": "Tag لَوْلَا (QAC EXH, i‘rab حرف تحضيض) used for urging or reproach before a verb (لَّوْلَا يَأْتُونَ، وَلَوْلَآ إِذْ دَخَلْتَ … قُلْتَ), and optionally that verb."
+      },
+      "new": {
+        "id": "exhortation",
+        "titleUrdu": "لَوْلَا: ترغیب اور ملامت",
+        "explanationUrdu": "لَوْلَا جب فعل سے پہلے آئے تو تحضیض کا حرف ہے: مضارع کے ساتھ کسی کام پر ابھارتا ہے، یعنی «کیوں نہیں…؟»، اور ماضی کے ساتھ نہ کرنے پر ملامت کرتا ہے، یعنی «کیوں نہ کیا…؟»۔ اسم سے پہلے آنے والا لَوْلَا «اگر… نہ ہوتا» کے معنی میں شرطیہ ہوتا ہے۔",
+        "appliesWhenEnglish": "Tag لَوْلَا (QAC EXH, i‘rab حرف تحضيض) used for urging or reproach before a verb (لَّوْلَا يَأْتُونَ، وَلَوْلَآ إِذْ دَخَلْتَ … قُلْتَ), and optionally that verb. For conditional لَوْلَا indicating prevention by an existing circumstance, use lawla-condition."
+      }
+    },
+    {
+      "rule": "hatta",
+      "sourceChunks": [
+        "97-c01"
+      ],
+      "old": {
+        "id": "hatta",
+        "titleUrdu": "حَتَّى کے استعمال",
+        "explanationUrdu": "حَتَّى کا بنیادی معنی «یہاں تک کہ، تک» ہے؛ اسم سے پہلے یہ حرفِ جر ہے، جیسے حَتَّى الْفَجْرِ، اور مضارع سے پہلے أَنْ مقدر مان کر فعل کو منصوب کرتا ہے۔ حَتَّى إِذَا جیسی ترکیب میں یہ ابتدائیہ ہے، یعنی ایک نیا جملہ شروع کرتا ہے جس کا اپنا شرط و جواب ہوتا ہے۔",
+        "appliesWhenEnglish": "Tag every حَتَّىٰ: jārra before a noun or an interpreted masdar (حَتَّىٰ حِينٍ، حَتَّىٰٓ أَنسَوْكُمْ — QAC P), before a subjunctive verb (حَتَّىٰٓ أَبْلُغَ — also subjunctive), or inceptive before إِذَا (QAC INC, حرف ابتداء — also condition). Pair with preposition where it is jārra."
+      },
+      "new": {
+        "id": "hatta",
+        "titleUrdu": "حَتَّى کے استعمال",
+        "explanationUrdu": "حَتَّى «تک» یا «یہاں تک کہ» کے معنی میں آتا ہے۔ حرفِ جر ہو تو اسم یا مصدرِ مؤول کو جر دیتا ہے۔ غایت کا مضارع أَنْ مقدر سے منصوب ہو سکتا ہے۔ حرفِ ابتدا ہو تو اپنے بعد مستقل جملہ لاتا ہے۔ ایسے جملے کا مضارع رفع میں بھی آ سکتا ہے۔",
+        "appliesWhenEnglish": "Tag حَتَّى as jārra before a noun or interpreted masdar (also preposition), before an imperfect made subjunctive by implied أَنْ (also subjunctive), or when inceptive before an independent nominal or verbal clause. For a temporal condition after حَتَّى add condition."
+      }
+    },
+    {
+      "rule": "lawla-condition",
+      "sourceChunks": [
+        "25-c16",
+        "25-c28"
+      ],
+      "old": null,
+      "new": {
+        "id": "lawla-condition",
+        "titleUrdu": "لَوْلَا کی شرط",
+        "explanationUrdu": "لَوْلَا «اگر یہ نہ ہوتا» کے معنی میں آتا ہے۔ اس کے بعد مذکور اسم مبتدا ہوتا ہے اور اس کی عام خبر مقدر رہتی ہے۔ جواب بتاتا ہے کہ اس چیز کی موجودگی نے کس بات کو واقع ہونے سے روکا۔ مثبت جواب پر عموماً لام آتا ہے اور جواب سیاق سے معلوم ہو تو حذف بھی ہو سکتا ہے۔",
+        "appliesWhenEnglish": "Tag counterfactual لَوْلَا that the i‘rab calls حرف امتناع لوجود, the subject after it, and the explicit answer if useful. Pair with condition-answer and elision as appropriate. Use exhortation when the particle urges or rebukes. See 25:77."
+      }
+    },
+    {
+      "rule": "lam-juhud",
+      "sourceChunks": [
+        "29-c18"
+      ],
+      "old": null,
+      "new": {
+        "id": "lam-juhud",
+        "titleUrdu": "لامِ جحود",
+        "explanationUrdu": "منفی كَانَ کے بعد لامِ جحود نفی کو مضبوط کرتا ہے۔ اس لام کے بعد أَنْ مقدر ہوتا ہے جو مضارع کو نصب دیتا ہے۔ مصدرِ مؤول لام سے مجرور ہوتا ہے اور یہ ترکیب كَانَ کی مقدر خبر سے متعلق ہوتی ہے۔",
+        "appliesWhenEnglish": "Tag an imperfect verb carrying the lām of emphatic negation after negated كَانَ (مَا كَانَ or لَمْ يَكُنْ), even when QAC tags the lām PRP. The i‘rab calls it لام الجحود and the verb is subjunctive by implied أَنْ. Also tag subjunctive. See 29:40."
+      }
+    }
+  ]
+}

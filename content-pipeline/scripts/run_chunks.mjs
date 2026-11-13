@@ -15,6 +15,8 @@ const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
 const sha = (value) => createHash('sha256').update(value).digest('hex');
 const json = async (file) => JSON.parse(await readFile(file, 'utf8'));
 const exists = async (file) => access(file).then(() => true, () => false);
+class UnconfirmedChunk extends Error {}
+
 const inside = (base, file) => {
   const path = relative(base, file);
   return path === '' || (!isAbsolute(path) && path !== '..' && !path.startsWith(`..${sep}`));
@@ -108,13 +110,14 @@ function bounded(limit) {
 }
 
 function parseOptions(argv) {
-  const options = { work: DEFAULT_WORK, chunks: [], concurrency: 3, chunkConcurrency: 3, maxConfirmRounds: 3, agentBin: 'codex', resume: false, reuseAuthored: false, dryRun: false };
+  const options = { work: DEFAULT_WORK, chunks: [], concurrency: 3, chunkConcurrency: 3, maxConfirmRounds: 3, agentBin: 'codex', resume: false, reuseAuthored: false, authorOnly: false, dryRun: false };
   const valued = { '--work': 'work', '--chunks': 'chunks', '--concurrency': 'concurrency', '--chunk-concurrency': 'chunkConcurrency', '--max-confirm-rounds': 'maxConfirmRounds', '--agent-bin': 'agentBin', '--run-dir': 'runDir' };
   for (let index = 0; index < argv.length; index++) {
     const option = argv[index];
     if (option === '--help' || option === '-h') options.help = true;
     else if (option === '--resume') options.resume = true;
     else if (option === '--reuse-authored') options.reuseAuthored = true;
+    else if (option === '--author-only') options.authorOnly = true;
     else if (option === '--dry-run') options.dryRun = true;
     else if (Object.hasOwn(valued, option)) {
       const value = argv[++index];
@@ -131,7 +134,7 @@ function parseOptions(argv) {
   if (!inside(join(options.work, 'runs'), options.runDir)) throw new Error('--run-dir must be inside content-pipeline/runs (private, ignored logs)');
   if (options.agentBin.includes(sep)) options.agentBin = resolve(options.agentBin);
   if (options.chunks.length === 0 && !options.help) throw new Error('Specify --chunks with comma-separated chunk IDs');
-  if (new Set(options.chunks).size !== options.chunks.length || options.chunks.some((chunk) => !/^(18|23|32|36|55)-c\d{2}$/.test(chunk))) throw new Error('Invalid or duplicate chunk IDs');
+  if (new Set(options.chunks).size !== options.chunks.length || options.chunks.some((chunk) => !/^\d{1,3}-c\d{2,3}$/.test(chunk))) throw new Error('Invalid or duplicate chunk IDs');
   return options;
 }
 
@@ -142,6 +145,7 @@ const HELP = `Usage: node content-pipeline/scripts/run_chunks.mjs --chunks 18-c0
   --max-confirm-rounds N      Confirmation rounds; default 3
   --resume                    Skip only unchanged, validated AI-reviewed chunks
   --reuse-authored            Reuse a mechanically valid existing draft; run all fresh reviews
+  --author-only               Save validated authorship for a later independent review run
   --dry-run                   Verify inputs and show selection; never start models
   --run-dir PATH              Private checkpoint/log directory under WORK/runs
   --agent-bin PATH            Codex executable, or a mock for offline tests
@@ -159,7 +163,8 @@ export async function run(argv = process.argv.slice(2)) {
   const overrideSource = await readFile(join(work, 'meta', 'overrides.json'));
   const overrides = JSON.parse(overrideSource);
   const overridesHash = sha(overrideSource);
-  const workflow = await readFile(join(work, 'workflows', 'chunks.js'), 'utf8');
+  const workflowPath = join(work, 'workflows', options.authorOnly ? 'chunks-reuse.js' : 'chunks.js');
+  const workflow = await readFile(workflowPath, 'utf8');
   const workflowFunction = new AsyncFunction('args', 'agent', 'parallel', 'log', workflow.replace(/^export const meta\s*=/m, 'const meta ='));
   const libraries = await readLibraries(work);
   const libraryEntries = libraries.entries;
@@ -195,7 +200,7 @@ export async function run(argv = process.argv.slice(2)) {
         }
         if (Object.hasOwn(fix, 'lexemeKey')) lexemeKey = fix.lexemeKey;
         if (verb) {
-          for (const [key, field] of [['passive', 'passive'], ['mood', 'mood'], ['png', 'png'], ['verbForm', 'form']]) {
+          for (const [key, field] of [['passive', 'passive'], ['mood', 'mood'], ['png', 'png'], ['verbForm', 'form'], ['aspect', 'aspect']]) {
             if (Object.hasOwn(fix, key)) verb[field] = fix[key];
           }
         }
@@ -287,6 +292,7 @@ export async function run(argv = process.argv.slice(2)) {
     return report;
   };
   const results = [];
+  const completedStatus = options.authorOnly ? 'authored' : 'ai-reviewed';
   try {
     let schedulingFailure;
     const chunkCapacity = bounded(options.chunkConcurrency);
@@ -302,10 +308,10 @@ export async function run(argv = process.argv.slice(2)) {
       let existing;
       if (options.resume && await exists(checkpointFile)) {
         existing = await json(checkpointFile);
-        if (existing.status === 'ai-reviewed' && existing.result?.status === 'ai-reviewed' && JSON.stringify(existing.hashes) === JSON.stringify(hashes) && await exists(target) && existing.contentHash === sha(await readFile(target))) {
+        if (existing.status === completedStatus && existing.result?.status === completedStatus && JSON.stringify(existing.hashes) === JSON.stringify(hashes) && await exists(target) && existing.contentHash === sha(await readFile(target))) {
           await validate(work, chunk);
           results.push(existing);
-          process.stdout.write(`${chunk}: skipped unchanged AI-reviewed draft\n`);
+          process.stdout.write(`${chunk}: skipped unchanged ${completedStatus} draft\n`);
           return existing;
         }
       }
@@ -388,7 +394,7 @@ export async function run(argv = process.argv.slice(2)) {
             throw error;
           }
         });
-        const output = await workflowFunction({ work: isolated, chunks: [chunk], maxConfirmRounds: options.maxConfirmRounds }, agent, async (tasks) => {
+        const output = await workflowFunction({ work: isolated, chunks: [chunk], maxConfirmRounds: options.maxConfirmRounds, authorOnly: options.authorOnly }, agent, async (tasks) => {
           // Wait for all launched reviewers, including on failure, before removing their workspace.
           const settled = await Promise.allSettled(tasks.map((task) => task()));
           const failed = settled.find((entry) => entry.status === 'rejected');
@@ -397,24 +403,24 @@ export async function run(argv = process.argv.slice(2)) {
         }, (message) => process.stdout.write(`${String(message)}\n`));
         const result = output?.results?.[0];
         if (result) checkpoint = { ...checkpoint, result };
-        if (!result || result.chunk !== chunk || result.status !== 'ai-reviewed' || result.libraryIssues?.length || result.blockingReasons?.length) throw new Error(`Workflow did not confirm ${chunk}; draft remains blocked`);
+        if (!result || result.chunk !== chunk || result.status !== completedStatus || result.libraryIssues?.length || result.blockingReasons?.length) throw new UnconfirmedChunk(`Workflow did not confirm ${chunk}; draft remains blocked`);
         const validation = await validate(isolated, chunk);
         await guard(true);
         const content = await readFile(join(isolated, chunkRelative));
         // Re-read source hashes immediately before import so edits made during a run cannot be stamped reviewed.
         const currentSpec = (await json(join(work, 'meta', 'plan.json'))).find((entry) => entry.chunk === chunk);
         const currentWords = await json(join(work, 'meta', 'words.json'));
-        if (sha(await readFile(join(work, 'packets', String(spec.surah), `${chunk}.json`))) !== hashes.packet || chunkLibraryHash(input.packet, await readLibraries(work)) !== hashes.libraries || sha(await readFile(join(work, 'workflows', 'chunks.js'))) !== hashes.workflow || sha(await readFile(join(work, 'guide', 'authoring-guide.md'))) !== hashes.guide || sha(await readFile(join(work, 'scripts', 'validate_chunk.py'))) !== hashes.validator || sha(JSON.stringify(currentSpec ?? null)) !== hashes.plan || sha(JSON.stringify(Object.fromEntries(spec.wordIds.map((id) => [id, currentWords[id]])))) !== hashes.words || sha(await readFile(join(work, 'meta', 'overrides.json'))) !== hashes.overrides) throw new Error(`Source inputs changed during review for ${chunk}; rerun required`);
+        if (sha(await readFile(join(work, 'packets', String(spec.surah), `${chunk}.json`))) !== hashes.packet || chunkLibraryHash(input.packet, await readLibraries(work)) !== hashes.libraries || sha(await readFile(workflowPath)) !== hashes.workflow || sha(await readFile(join(work, 'guide', 'authoring-guide.md'))) !== hashes.guide || sha(await readFile(join(work, 'scripts', 'validate_chunk.py'))) !== hashes.validator || sha(JSON.stringify(currentSpec ?? null)) !== hashes.plan || sha(JSON.stringify(Object.fromEntries(spec.wordIds.map((id) => [id, currentWords[id]])))) !== hashes.words || sha(await readFile(join(work, 'meta', 'overrides.json'))) !== hashes.overrides) throw new Error(`Source inputs changed during ${options.authorOnly ? 'authoring' : 'review'} for ${chunk}; rerun required`);
         const currentContentHash = await exists(target) ? sha(await readFile(target)) : null;
         if (currentContentHash !== originalContentHash) throw new Error(`Chunk ${chunk} changed outside this run; original preserved`);
         if (controller.signal.aborted) throw new Error('Run cancelled');
         await atomicWrite(target, content);
-        checkpoint = { ...checkpoint, status: 'ai-reviewed', contentHash: sha(content), result, validation, completedAt: new Date().toISOString() };
+        checkpoint = { ...checkpoint, status: completedStatus, contentHash: sha(content), result, validation, completedAt: new Date().toISOString() };
         await atomicWrite(checkpointFile, `${JSON.stringify(checkpoint, null, 2)}\n`);
         await rm(candidateFile, { force: true });
         await journal({ type: 'chunk-completed', chunk, status: checkpoint.status, contentHash: checkpoint.contentHash, hashes });
         results.push(checkpoint);
-        process.stdout.write(`${chunk}: AI-reviewed draft saved; held for scholarly review\n`);
+        process.stdout.write(`${chunk}: ${options.authorOnly ? 'Authored draft saved; independent review pending' : 'AI-reviewed draft saved; held for scholarly review'}\n`);
       } catch (error) {
         checkpoint = { ...checkpoint, status: 'blocked', error: error.message, completedAt: new Date().toISOString() };
         const candidate = join(isolated, chunkRelative);
@@ -430,7 +436,7 @@ export async function run(argv = process.argv.slice(2)) {
         await rm(isolated, { recursive: true, force: true });
       }
       } catch (error) {
-        schedulingFailure ??= error;
+        if (!(error instanceof UnconfirmedChunk)) schedulingFailure ??= error;
         throw error;
       }
     })));

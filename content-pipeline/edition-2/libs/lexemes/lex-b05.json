@@ -1,0 +1,104 @@
+{
+ "entries": [
+  {
+   "key": "jaHadu|I|ACT",
+   "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "جَحَدَ",
+   "present": "يَجْحَدُ",
+   "pattern": "فَعَلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے؛ عینِ کلمہ حرفِ حلقی ح ہے اور ماضی و مضارع دونوں میں اس پر زبر ہے، اس لیے بابِ فَتَحَ ہے۔ معنی ہے جانتے بوجھتے کسی حق کا انکار کرنا؛ لغت میں براہِ راست مفعول کے ساتھ بھی آتا ہے، مگر قرآن میں انکار کی جانے والی چیز بِ کے ساتھ آتی ہے (جَحَدَ بِهِ)۔",
+   "evidenceEnglish": "QAC form I, root jHd, 3 sample occurrences: imperfects يَجْحَدُونَ (7:51:19) and يَجْحَدُ (29:47:16, 29:49:11) with fatha on the 2nd radical; perfect جَحَدُوا (27:14, 11:59) with fatha. a–a, fataha class (guttural ح as 2nd radical). QAC's lemma string جَحَدُ is a truncated identifier; citation جَحَدَ. Lisan al-Arab / al-Mu'jam al-Wasit: جَحَدَهُ حَقَّهُ وبِحَقِّهِ يَجْحَدُ جَحْدًا وجُحُودًا, denial despite knowledge."
+  },
+  {
+   "key": "yajur~u|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "جَرَّ",
+   "present": "يَجُرُّ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "مضاعف فعل ہے (مادہ ج ر ر)؛ عین اور لامِ کلمہ (دونوں راء) مدغم ہو کر جَرَّ / يَجُرُّ بنتے ہیں، اور متحرک ضمیرِ فاعل سے پہلے ادغام کھل جاتا ہے (جَرَرْتُ)۔ اصل مضارع يَجْرُرُ میں عینِ کلمہ پر پیش ہے جو ادغام کے بعد جیم پر منتقل ہو جاتا ہے، اس لیے بابِ نَصَرَ ہے؛ متعدی ہے: کھینچنا، گھسیٹنا۔",
+   "evidenceEnglish": "QAC form I, root jrr (doubled); single Quranic occurrence يَجُرُّهُۥٓ (7:150:21) with damma on the 1st radical after idgham (< يَجْرُرُ), i.e. a–u, nasara class. QAC's lemma string يَجُرُّ is the imperfect; citation perfect جَرَّ (< جَرَرَ). Lisan al-Arab / Lane: جَرَّهُ يَجُرُّهُ جَرًّا 'to drag, pull'."
+  },
+  {
+   "key": "{jotanabu|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِجْتَنَبَ",
+   "present": "يَجْتَنِبُ",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ بابِ افتعال میں فاءِ کلمہ ج کے بعد افتعال کی تاء آتی ہے اور شروع کا ہمزۂ وصل مضارع میں گر جاتا ہے (اِجْتَنَبَ / يَجْتَنِبُ)۔ متعدی ہے: کسی چیز سے بچنا، اس سے دور رہنا؛ اسے مجرد جَنَبَ (کسی کو دور رکھنا) اور بابِ تفعیل جَنَّبَ سے الگ رکھیں۔",
+   "evidenceEnglish": "QAC tags (VIII), LEM {jotanabu, ROOT jnb; sample occurrence تَجْتَنِبُوا۟ (4:31:2, jussive). Other attested forms: ٱجْتَنَبُوا (39:17), يَجْتَنِبُونَ (42:37, 53:32), imperative فَٱجْتَنِبُوهُ (5:90). QAC's lemma string ٱجْتَنَبُ is truncated; citation اِجْتَنَبَ / يَجْتَنِبُ (iftaʿala–yaftaʿilu). Lisan al-Arab: اجْتَنَبَهُ 'kept away from it'; Form I جَنَبَهُ (14:35 وَٱجْنُبْنِى) is 'to keep someone away'."
+  },
+  {
+   "key": "yajohalu|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "جَهِلَ",
+   "present": "يَجْهَلُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی میں عینِ کلمہ پر زیر اور مضارع میں زبر ہے، اس لیے بابِ سَمِعَ ہے۔ متعدی بھی ہے (کسی بات سے ناواقف ہونا) اور لازم بھی (نادانی کا رویہ اختیار کرنا)؛ قرآن میں یہ صرف علم کی کمی نہیں بلکہ حلم و سمجھ کے خلاف نادانی کے معنی میں بھی آتا ہے۔",
+   "evidenceEnglish": "QAC form I, root jhl; sample occurrence تَجْهَلُونَ (7:138:23) with fatha on the 2nd radical; also تَجْهَلُونَ (11:29, 27:55, 46:23). QAC's lemma string يَجْهَلُ is the imperfect. No Form I perfect occurs in the Quran; the kasra of the perfect جَهِلَ is from the lexica (Lisan al-Arab, Lane, al-Mu'jam al-Wasit: جَهِلَ يَجْهَلُ جَهْلًا وجَهَالَةً), giving i–a, samiʿa class."
+  },
+  {
+   "key": "HaraSo|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "حَرَصَ",
+   "present": "يَحْرِصُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی میں عینِ کلمہ پر زبر اور مضارع میں زیر ہے، اس لیے بابِ ضَرَبَ ہے؛ لغت میں حَرِصَ يَحْرَصُ بھی منقول ہے، مگر قرآن کے صیغے بابِ ضَرَبَ کے ہیں۔ لازم ہے اور عَلَى کے ساتھ آتا ہے: کسی چیز کو شدت سے چاہنا اور اس کے لیے کوشاں رہنا۔",
+   "evidenceEnglish": "QAC form I, root HrS; sample perfect حَرَصْتُمْ (4:129:8) and حَرَصْتَ (12:103) with fatha on the 2nd radical; attested imperfect تَحْرِصْ (16:37, jussive after إِنْ) with kasra: a–i, ḍaraba class. QAC's lemma string حَرَصْ is truncated; citation حَرَصَ. Lisan al-Arab / Lane record حَرَصَ يَحْرِصُ (the common form) and a less common حَرِصَ يَحْرَصُ; the Quranic forms decide."
+  },
+  {
+   "key": "Har~iDi|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "حَرَّضَ",
+   "present": "يُحَرِّضُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "بابِ تفعیل کا صحیح اور متعدی فعل ہے: کسی کو کسی کام پر ابھارنا اور ترغیب دینا؛ جس کام پر ابھارا جائے وہ عَلَى کے ساتھ آتا ہے (حَرَّضَهُ عَلَى الْقِتَالِ)۔ امر حَرِّضْ ہے؛ آگے ہمزۂ وصل والے لفظ سے ملنے پر التقائے ساکنین کے سبب اس کا سکون زیر میں بدل جاتا ہے (حَرِّضِ)۔",
+   "evidenceEnglish": "QAC tags (II), LEM Har~iDi, ROOT HrD; sample occurrence وَحَرِّضِ (4:84:9), imperative, also حَرِّضِ (8:65) — both followed by ٱلْمُؤْمِنِينَ, so the final kasra is for iltiqāʾ al-sākinayn, not part of the stem. QAC's lemma string is the imperative; citation حَرَّضَ / يُحَرِّضُ (faʿʿala–yufaʿʿilu). Lisan al-Arab / Lane: حَرَّضَهُ عَلَى الْقِتَالِ 'urged, incited him'."
+  },
+  {
+   "key": "yuHar~ifu|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "حَرَّفَ",
+   "present": "يُحَرِّفُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "بابِ تفعیل کا صحیح اور متعدی فعل ہے: کسی چیز کو اس کے اصل رخ یا مقام سے پھیر دینا، یعنی کلام میں تحریف کرنا (حَرَّفَ الْكَلِمَ عَنْ مَوَاضِعِهِ)۔ مضارع معروف يُحَرِّفُ میں راء پر زیر ہے؛ مجہول يُحَرَّفُ میں زبر ہوتا ہے۔",
+   "evidenceEnglish": "QAC tags (II), LEM yuHar~ifu, ROOT Hrf; sample occurrence يُحَرِّفُونَ (4:46:4), also يُحَرِّفُونَهُۥ (2:75) and يُحَرِّفُونَ ٱلْكَلِمَ (5:13, 5:41), object direct, the place turned from given with عَن or مِنۢ بَعْدِ. QAC's lemma string is the imperfect; citation حَرَّفَ / يُحَرِّفُ (faʿʿala–yufaʿʿilu). Lisan al-Arab / Lane: تَحْرِيفُ الْكَلِمِ عَنْ مَوَاضِعِهِ 'altering words from their proper places', from حَرْف 'edge, side'."
+  },
+  {
+   "key": "Har~iqu|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "حَرَّقَ",
+   "present": "يُحَرِّقُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "بابِ تفعیل کا صحیح اور متعدی فعل ہے: آگ میں جلا دینا؛ یہاں تشدید عموماً شدت یا کثرت کا مفہوم دیتی ہے، یعنی خوب جلا ڈالنا۔ مضارع يُحَرِّقُ اور امر حَرِّقْ ہے؛ اسے بابِ افعال أَحْرَقَ اور مجرد حَرَقَ سے الگ پہچانیں۔",
+   "evidenceEnglish": "QAC tags (II), LEM Har~iqu, ROOT Hrq; sample occurrence حَرِّقُوهُ (29:24:10), imperative 2MP; also حَرِّقُوهُ (21:68) and لَّنُحَرِّقَنَّهُۥ (20:97) with the Form II imperfect. QAC's lemma string is the imperative; citation حَرَّقَ / يُحَرِّقُ (faʿʿala–yufaʿʿilu). Lisan al-Arab: حَرَّقَهُ, doubled for intensity/frequency (تكثير) relative to أَحْرَقَهُ."
+  },
+  {
+   "key": "Har~ama|II|PASS",
+   "baabUrdu": "بابِ تَفْعِيل — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)، مجہول",
+   "past": "حُرِّمَ",
+   "present": "يُحَرَّمُ",
+   "pattern": "فُعِّلَ — يُفَعَّلُ",
+   "noteUrdu": "صحیح اور متعدی فعل حَرَّمَ (حرام ٹھہرانا) کا مجہول ہے: حرام کیا جانا؛ جو چیز حرام کی جائے وہ نائبِ فاعل بنتی ہے اور جس پر حرام ہو وہ عموماً عَلَى کے ساتھ آتا ہے۔ ماضی مجہول میں پہلے حرف پر ضمہ ہے، اور مضارع مجہول يُحَرَّمُ میں راء کا فتحہ اسے معروف يُحَرِّمُ سے جدا کرتا ہے۔",
+   "evidenceEnglish": "QAC: sample occurrence حُرِّمَتْ (4:23:1), tagged PERF PASS (II), LEM Har~ama, ROOT Hrm; also حُرِّمَتْ (5:3). The entry voice is passive, so past/present are the passive حُرِّمَ / يُحَرَّمُ (fuʿʿila–yufaʿʿalu); QAC's lemma string حَرَّمَ is the active citation form. The passive imperfect is not in the sample and follows the regular pattern. Active حَرَّمَ / يُحَرِّمُ 'to declare unlawful' (Lane, Lisan al-Arab)."
+  },
+  {
+   "key": "Hasada|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "حَسَدَ",
+   "present": "يَحْسُدُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح فعل ہے؛ قرآن میں مضارع عینِ کلمہ پر پیش کے ساتھ آیا ہے (يَحْسُدُونَ)، اس لیے بابِ نَصَرَ ہے؛ لغت میں يَحْسِدُ بھی منقول ہے۔ متعدی ہے: کسی کی نعمت کے چھن جانے کی تمنا کرنا؛ جس سے حسد ہو وہ مفعول بہ بنتا ہے اور جس نعمت پر ہو وہ عَلَى کے ساتھ آتی ہے۔",
+   "evidenceEnglish": "QAC form I, root Hsd; sample imperfect يَحْسُدُونَ (4:54:2) with damma on the 2nd radical, also تَحْسُدُونَنَا (48:15); perfect حَسَدَ (113:5) with fatha: a–u, nasara class as read in Hafs. Lisan al-Arab and Lane record both يَحْسُدُ and يَحْسِدُ (and a rarer حَسِدَ يَحْسَدُ); the Quranic imperfect decides the class. 4:54: يَحْسُدُونَ ٱلنَّاسَ عَلَىٰ مَآ ءَاتَىٰهُمُ."
+  }
+ ]
+}

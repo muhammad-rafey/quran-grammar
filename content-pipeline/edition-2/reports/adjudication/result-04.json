@@ -1,0 +1,31 @@
+{
+  "part": "04",
+  "overrides": {
+    "7:17:2": {
+      "png": "1S",
+      "noteEnglish": "QAC tags لَـَٔاتِيَنَّهُم 2nd person masculine singular, but its prefix is hamza (أَ), the 1st person singular marker: Iblis says 'I will surely come to them'. Its mood stays as tagged: the fatha comes from the energetic nun of the oath answer (mabni), not from subjunctive nasb."
+    }
+  },
+  "rejected": [
+    {"id": "4:175:12", "reason": "يَهْدِيهِمْ is indicative with an estimated damma on the final ya; no jazm particle, coordinated with فَسَيُدْخِلُهُمْ."},
+    {"id": "4:176:4", "reason": "يُفْتِيكُمْ is indicative (khabar of ٱللَّهُ) with an estimated damma on the ya; no governing particle."},
+    {"id": "7:5:11", "reason": "كُنَّا is the active perfect of kana (ku- comes from the hollow verb plus the 1P suffix), not a passive."},
+    {"id": "7:7:5", "reason": "كُنَّا is the active perfect of kana after ma; ku- comes from the hollow verb plus the 1P suffix."},
+    {"id": "7:11:6", "reason": "قُلْنَا is active 'We said' (hollow qala + 1P suffix); the i'rab makes na the fa'il."},
+    {"id": "7:22:18", "reason": "أَنْهَكُمَا follows لَمْ and has lost its final alif as the sign of jazm, so jussive is correct (the i'rab says مجزوم)."},
+    {"id": "7:26:7", "reason": "يُوَٰرِى is indicative with an estimated damma on the ya (a sentence describing لِبَاسًا); no jazm particle."},
+    {"id": "7:27:17", "reason": "يَرَىٰكُمْ is indicative with an estimated damma on the alif maqsura (khabar of إِنَّ); no jazm particle."},
+    {"id": "7:29:3", "reason": "رَبِّى is the subject of أَمَرَ, nominative with an estimated damma before the 1st person singular ya (the i'rab says اسم مرفوع); not a vocative."},
+    {"id": "7:33:4", "reason": "رَبِّىَ is the subject of حَرَّمَ, nominative with an estimated damma before the ya of the speaker (the i'rab says اسم مرفوع)."},
+    {"id": "7:37:24", "reason": "كُنتُمْ is the active perfect of kana (hollow verb + 2MP suffix), not a passive."},
+    {"id": "7:39:13", "reason": "كُنتُمْ is the active perfect of kana (hollow verb + 2MP suffix), not a passive."},
+    {"id": "7:40:22", "reason": "نَجْزِى is indicative with an estimated damma on the ya; no jazm particle (a new sentence)."},
+    {"id": "7:41:7", "reason": "غَوَاشٍ is a delayed mubtada, nominative with an estimated damma on the elided ya (a defective noun with tanwin al-'iwad), as the verse i'rab states."},
+    {"id": "7:41:9", "reason": "نَجْزِى is indicative with an estimated damma on the ya; no jazm particle."},
+    {"id": "7:43:7", "reason": "تَجْرِى is indicative with an estimated damma on the ya (a hal sentence); no jazm particle."},
+    {"id": "7:43:18", "reason": "كُنَّا is the active perfect of kana (hollow verb + 1P suffix), not a passive."},
+    {"id": "7:43:35", "reason": "كُنتُمْ is the active perfect of kana (hollow verb + 2MP suffix), not a passive."},
+    {"id": "7:48:13", "reason": "كُنتُمْ is the active perfect of kana (hollow verb + 2MP suffix), not a passive."},
+    {"id": "7:51:10", "reason": "نَنسَىٰهُمْ is indicative with an estimated damma on the alif maqsura; no jazm particle."}
+  ]
+}

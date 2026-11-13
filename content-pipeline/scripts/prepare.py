@@ -14,16 +14,11 @@ from collections import Counter, OrderedDict, defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from qac import derive_pos, derive_root, dump, load_qac, stem_root_any, verb_stem  # noqa: E402
+import edition  # noqa: E402
 
 SRC, WORK = sys.argv[1], sys.argv[2]
-SURAHS = OrderedDict([(18, 110), (23, 118), (32, 30), (36, 83), (55, 78)])
-NAMES = {
-    18: ('Al-Kahf', 'الكهف'),
-    23: ("Al-Mu'minun", 'المؤمنون'),
-    32: ('As-Sajdah', 'السجدة'),
-    36: ('Ya-Sin', 'يس'),
-    55: ('Ar-Rahman', 'الرحمن'),
-}
+SURAHS = edition.ayah_counts(WORK)
+NAMES = {s['number']: (s['nameEnglish'], s['nameArabicShort']) for s in edition.load(WORK)}
 TARGET_WORDS = 30  # chunk size target (ayah-aligned)
 MAX_WORDS = 40
 
@@ -154,7 +149,7 @@ for surah, count in SURAHS.items():
     dump(
         os.path.join(inv_dir, f'inventory-{surah}.json'),
         OrderedDict(
-            retrievedAt='2026-11-06',
+            retrievedAt=vfile.get('retrievedAt', '2026-11-06'),
             textSource='Quran.com Content API v4 text_uthmani (end-of-ayah markers excluded); word boundaries and IDs checked against QAC 0.4 morphology',
             sources=[
                 f'https://api.quran.com/api/v4/verses/by_chapter/{surah}?words=true&word_fields=text_uthmani&per_page=50'

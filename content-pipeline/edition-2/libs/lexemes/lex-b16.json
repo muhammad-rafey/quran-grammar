@@ -1,0 +1,94 @@
+{
+ "entries": [
+  {
+   "key": "yaTolubu|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "طَلَبَ",
+   "present": "يَطْلُبُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی میں عینِ کلمہ پر زبر اور مضارع میں پیش ہے، اسی لیے بابِ نَصَرَ ہے اور امر اُطْلُبْ آتا ہے۔ متعدی ہے: تلاش کرنا، طلب کرنا، پیچھا کرنا؛ مطلوب چیز مفعول بہ بنتی ہے۔",
+   "evidenceEnglish": "QAC 7:54:18 يَطْلُبُهُۥ tagged IMPF form I, LEM yaTolubu, root Tlb, with damma on the 2nd radical (yaf'ulu) and the attached هُ as object (i'rab: ضمير متصل في محل نصب مفعول به). Lemma handle is the imperfect; citation perfect طَلَبَ. Related nouns طَلَبًا (18:41) and ٱلطَّالِبُ (22:73). Lane, Lisan al-Arab, al-Mu'jam al-Wasit: طَلَبَهُ يَطْلُبُهُ طَلَبًا: a–u, nasara class."
+  },
+  {
+   "key": "yaTomaEu|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "طَمِعَ",
+   "present": "يَطْمَعُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی میں عینِ کلمہ پر زیر اور مضارع میں زبر ہے، اسی لیے بابِ سَمِعَ ہے۔ لازم ہے: امید رکھنا، لالچ کرنا؛ متعلق چیز فِي کے ساتھ آتی ہے (طَمِعَ فِيهِ) یا أَنْ والا جملہ اس کی جگہ لیتا ہے۔",
+   "evidenceEnglish": "QAC 7:46:18 يَطْمَعُونَ tagged IMPF form I, LEM yaTomaEu, root TmE: fatha on the 2nd radical in the imperfect; also أَطْمَعُ (26:82), نَطْمَعُ (5:84, 26:51), يَطْمَعُ (74:15), subjunctive فَيَطْمَعَ (33:32). Lemma handle is the imperfect; citation perfect طَمِعَ with kasra (Lane, Lisan al-Arab, al-Mu'jam al-Wasit: طَمِعَ فِيهِ وبِهِ يَطْمَعُ طَمَعًا): i–a, sami'a class. Construction with فِي or أَنْ (2:75, 26:82)."
+  },
+  {
+   "key": "{Toma>an~a|XII|ACT",
+   "baabUrdu": "بابِ اِفْعِلَّال",
+   "formUrdu": "رباعی مزید فیہ — چہارم (QIV)",
+   "past": "اِطْمَأَنَّ",
+   "present": "يَطْمَئِنُّ",
+   "pattern": "اِفْعَلَلَّ — يَفْعَلِلُّ",
+   "noteUrdu": "بابِ اِفْعِلَّال کا لازم فعل ہے: مطمئن ہونا، سکون پانا؛ مصدر اِطْمِئْنَان، اسمِ فاعل مُطْمَئِنّ، اور ہمزہ کو اصل حرف مانیں تو یہ مہموز ہے اور مادہ ط م أ ن ہے (یہاں ط م ن کے تحت درج ہے)۔ آخری دو نون مدغم رہتے ہیں، لیکن ضمیرِ رفع متحرک (تُ، نَا، تُمْ) سے پہلے ادغام کھل جاتا ہے اور ہمزہ ساکن ہو جاتا ہے (اِطْمَأْنَنْتُمْ)۔",
+   "evidenceEnglish": "SOURCE LABEL CONFLICT. QAC 4:103:11 ٱطْمَأْنَنتُمْ tagged PERF (XII), LEM {Toma>an~a, ROOT Tmn. The word is not the Western Form XII if'aw'ala (e.g. اِحْدَوْدَبَ); it is if'alalla, the pattern of اِقْشَعَرَّ, conventionally the quadriliteral-augmented Form QIV (Urdu sarf: رباعی مزید فیہ، بابِ اِفْعِلَّال، اِطْمَأَنَّ اِطْمِئْنَانًا), so formUrdu uses (QIV) rather than QAC's XII. Root: Lisan al-Arab lists it under طمن and reports Sibawayh's view that it is transposed from طَأْمَنَ, while others count the hamza as radical (طمأن); the note mentions both. Quran: perfect اطْمَأَنَّ (22:11), اطْمَأْنَنتُمْ (4:103), imperfect تَطْمَئِنُّ (13:28, 2:260 لِيَطْمَئِنَّ), participles مُطْمَئِنٌّ (16:106), ٱلْمُطْمَئِنَّةُ (89:27). The doubled final nun is split before vowelled subject pronouns (-tu, -nā, -tum), with the hamza then sukun, as in 4:103."
+  },
+  {
+   "key": "taTah~aro|V|ACT",
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَطَهَّرَ",
+   "present": "يَتَطَهَّرُ",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": "صحیح فعل ہے؛ شروع کی تاء اور عینِ کلمہ (ہاء) کی تشدید بابِ تفعل کی علامت ہے، اور کبھی یہ تاء طاء میں مدغم ہو جاتی ہے، جیسے اِطَّهَّرُوا (اصل: تَطَهَّرُوا)۔ لازم ہے: پاکی حاصل کرنا، پاک صاف رہنا؛ یہ طَهَّرَ (پاک کرنا) کا مطاوع ہے۔",
+   "evidenceEnglish": "QAC 7:82:13 يَتَطَهَّرُونَ tagged IMPF (V), LEM taTah~aro (handle is a truncated imperative-like stem), root Thr. Citation perfect تَطَهَّرَ (2:222 تَطَهَّرْنَ), imperfect يَتَطَهَّرُ (7:82, 27:56, 9:108 يَتَطَهَّرُوا۟): regular tafa''ala — yatafa''alu. Assimilated variant with ت merged into ط: فَٱطَّهَّرُوا۟ (5:6); likewise the reading يَطَّهَّرْنَ (Hamza, al-Kisa'i, Shu'ba) for Hafs يَطْهُرْنَ in 2:222. Lane and Lisan al-Arab: تَطَهَّرَ = he purified himself, quasi-passive of طَهَّرَ."
+  },
+  {
+   "key": "yuTaAEu|I|PASS",
+   "baabUrdu": "بابِ اِفْعَال — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)، مجہول",
+   "past": "أُطِيعَ",
+   "present": "يُطَاعُ",
+   "pattern": "أُفْعِلَ — يُفْعَلُ",
+   "noteUrdu": "اجوف واوی أَطَاعَ يُطِيعُ (اطاعت کرنا) کا مجہول ہے: ماضی میں واو یاء بنتی ہے (أُطِيعَ، اصل أُطْوِعَ) اور مضارع میں الف (يُطَاعُ، اصل يُطْوَعُ)۔ احتیاط: يُطَاعُ کی صورت ثلاثی مجرد کے مجہول جیسی ہے، مگر «اطاعت کیا جانا» کا معنی أَطَاعَ ہی سے ہے؛ جس کی اطاعت ہو وہ نائبِ فاعل ہوتا ہے۔",
+   "evidenceEnglish": "FORM ADJUSTED FROM HANDLE. QAC 4:64:6 لِيُطَاعَ tagged IMPF PASS 3MS SUBJ with no form marker (form I), LEM yuTaAEu, root TwE; i'rab فعل مضارع مبني للمجهول منصوب. The passive imperfect yuf'alu of a hollow root (yuṭwa'u > yuṭā'u) is identical for Form I and Form IV, so the surface cannot decide. Meaning 'to be obeyed' (gloss; the Messenger is the implied na'ib fa'il) is the passive of transitive أَطَاعَهُ: Lisan al-Arab s.v. طوع (citing al-Azhari) distinguishes Form I طَاعَ لَهُ 'complied, yielded' from أَطَاعَهُ 'carried out his command, obeyed him'. The Quran's active verb for obeying is Form IV أَطَاعَ يُطِيعُ (>aTaAEa|IV|ACT, e.g. 4:13 يُطِعِ). Hence Form IV passive أُطِيعَ — يُطَاعُ; passive perfect not attested in the Quran. Same surface يُطَاعُ in 40:18. Reviewer: a Form I passive (طِيعَ, from rare transitive طَاعَهُ) is grammatically possible but less likely."
+  },
+  {
+   "key": "TaAba|I|ACT",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "طَابَ",
+   "present": "يَطِيبُ",
+   "pattern": "فَعَلَ — يَفْعِلُ",
+   "noteUrdu": "اجوف یائی ہے (اصل: طَيَبَ يَطْيِبُ): ماضی میں یاء الف بنتی ہے (طَابَ)، مضارع میں یاء ظاہر رہتی ہے (يَطِيبُ)، اور ضمیرِ رفع متحرک سے پہلے لامِ کلمہ ساکن ہونے پر الف گر جاتا ہے اور فاءِ کلمہ کو کسرہ ملتا ہے (طِبْنَ، طِبْتُمْ)۔ لازم ہے: اچھا، پاکیزہ یا پسندیدہ ہونا؛ جسے پسند آئے وہ لِ کے ساتھ آتا ہے (طَابَ لَكُمْ)۔",
+   "evidenceEnglish": "QAC form I, root Tyb: 4:3:9 طَابَ (3MS) and 4:4:6 طِبْنَ (3FP) with kasra on the first radical, which marks a hollow ya' verb; also طِبْتُمْ (39:73). Lane, Lisan al-Arab, al-Mu'jam al-Wasit: طَابَ يَطِيبُ طِيبًا: a–i, daraba class (underlying faʿala — yafʿilu like بَاعَ يَبِيعُ). The imperfect is not attested in the Quran; the class follows the lexica. In 4:4 نَفْسًا is tamyiz with عَنْ."
+  },
+  {
+   "key": "Zal~alo|II|ACT",
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "ظَلَّلَ",
+   "present": "يُظَلِّلُ",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": "مادہ ظ ل ل مضاعف ہے، مگر اس باب میں عینِ کلمہ (پہلا لام) مشدد ہوتا ہے اور لامِ کلمہ الگ رہتا ہے، اس لیے مضاعف والا ادغام نہیں ہوتا (ظَلَّلْنَا)۔ متعدی ہے: سایہ فگن کرنا؛ قرآن میں سایہ دینے والی چیز (بادل) مفعول بہ ہے اور جن پر سایہ کیا جائے وہ عَلَى کے ساتھ آتے ہیں۔",
+   "evidenceEnglish": "QAC 7:160:26 وَظَلَّلْنَا tagged PERF (II) 1P, LEM Zal~alo (handle ends with sukun), root Zll; also وَظَلَّلْنَا عَلَيْكُمُ (2:57). Citation فَعَّلَ ظَلَّلَ with imperfect يُظَلِّلُ (regular Form II of a doubled root; no imperfect in the Quran). Lane and Lisan al-Arab: ظَلَّلَ عَلَيْهِ = he shaded/overshadowed him. Not a Form I مضاعف ظَلَّ (to remain), whose 1P perfect would be ظَلِلْنَا (cf. ظَلْتَ 20:97)."
+  },
+  {
+   "key": "taEova|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "عَثِيَ",
+   "present": "يَعْثَى",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "ناقص ہے (مادہ ع ث و): ماضی میں کسرہ کے بعد واو یاء بنتی ہے (عَثِيَ، جیسے رَضِيَ) اور مضارع کے آخر میں الف مقصورہ ہے (يَعْثَى)، جو واوِ جمع سے پہلے گر جاتا ہے اور زبر باقی رہتا ہے (لَا تَعْثَوْا)۔ لازم ہے: سخت فساد پھیلانا؛ اس کا ہم معنی عَثَا يَعْثُو بھی آتا ہے۔",
+   "evidenceEnglish": "QAC 7:74:22 and 29:36:13 تَعْثَوْا۟ tagged IMPF JUS 2MP form I, root Evw (handle taEova is the truncated imperfect stem). The fatha before the plural waw (taʿthaw, not taʿthū) shows an imperfect in -ā, i.e. يَعْثَى, so the verb is عَثِيَ يَعْثَى (i–a, sami'a), like رَضِيَ يَرْضَى from a w-final root; also 2:60, 11:85, 26:183. Lisan al-Arab and Lane record both عَثِيَ يَعْثَى and عَثَا يَعْثُو in the same sense; only يَعْثَى yields the Quranic تَعْثَوْا (from يَعْثُو the jussive would be تَعْثُوا). Perfect not attested in the Quran. Uncertain point: lexica also file it under عثي; QAC's root Evw is kept."
+  },
+  {
+   "key": "Eajibu|I|ACT",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "عَجِبَ",
+   "present": "يَعْجَبُ",
+   "pattern": "فَعِلَ — يَفْعَلُ",
+   "noteUrdu": "صحیح فعل ہے؛ ماضی میں عینِ کلمہ پر زیر اور مضارع میں زبر ہے، اسی لیے بابِ سَمِعَ ہے۔ لازم ہے: تعجب کرنا، حیران ہونا؛ جس پر تعجب ہو وہ مِنْ کے ساتھ آتا ہے یا أَنْ والا جملہ اس کی جگہ لیتا ہے (عَجِبْتُمْ أَنْ…)۔",
+   "evidenceEnglish": "QAC 7:63:1 and 7:69:1 أَوَعَجِبْتُمْ tagged PERF form I 2MP, LEM Eajibu (handle is not a citation form), root Ejb: kasra on the 2nd radical. Imperfects with fatha: تَعْجَبُونَ (53:59), أَتَعْجَبِينَ (11:73), تَعْجَبْ (13:5). Lane, Lisan al-Arab, al-Mu'jam al-Wasit: عَجِبَ مِنْهُ يَعْجَبُ عَجَبًا: i–a, sami'a class. In 7:63/7:69 the object of wonder is the أَن-clause."
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "part": "03",
+ "overrides": {
+  "4:105:10": {
+   "aspect": "PERF",
+   "mood": null,
+   "png": "3MS",
+   "verbForm": "IV",
+   "lexemeKey": "ra'aA|IV|ACT",
+   "noteEnglish": "QAC tags أَرَىٰكَ a 1st-person singular subjunctive imperfect, but in بِمَآ أَرَىٰكَ ٱللَّهُ the nominative ٱللَّهُ is its subject and no particle of nasb precedes it: it is the Form IV perfect أَرَى (He showed you), 3rd masculine singular, in the relative clause of مَا. The generated i'rab line 'مضارع منصوب' follows the faulty tag."
+  },
+  "4:108:14": {
+   "mood": "IND",
+   "noteEnglish": "QAC tags يَرْضَىٰ subjunctive, but in مَا لَا يَرْضَىٰ the لَا is plain negation inside a relative clause and nothing governs nasb; it is indicative with an implied damma on the alif maqsura."
+  },
+  "4:124:15": {
+   "mood": "IND",
+   "noteEnglish": "QAC tags يُظْلَمُونَ jussive, but its nun is retained (sign of raf') after negative لَا; it is joined to the nominal answer فَأُو۟لَـٰٓئِكَ يَدْخُلُونَ, which is not in jazm, so it is indicative."
+  },
+  "4:127:9": {
+   "mood": "IND",
+   "noteEnglish": "QAC tags يُتْلَىٰ subjunctive, but in وَمَا يُتْلَىٰ عَلَيْكُمْ the مَا is relative and no particle of nasb precedes; it is an indicative passive with an implied damma on the alif maqsura."
+  },
+  "4:140:11": {
+   "passive": true,
+   "lexemeKey": "kafara|I|PASS",
+   "noteEnglish": "QAC omits PASS, but يُكْفَرُ has prefix-u with fatha on the fa (active Form I would be يَكْفُرُ): it is the Form I passive (they are disbelieved in), with بِهَا as na'ib al-fa'il, parallel to the passive وَيُسْتَهْزَأُ بِهَا."
+  }
+ },
+ "rejected": [
+  {"id": "4:97:11", "reason": "كُنَّا is the active Form I perfect of the hollow verb كَانَ (kunnā); the u is the hollow-verb vowel, not a passive marker."},
+  {"id": "4:102:2", "reason": "كُنتَ is the active perfect of hollow كَانَ; the damma comes from the weak root, not the passive."},
+  {"id": "4:102:50", "reason": "كُنتُم is the active perfect of hollow كَانَ; the damma comes from the weak root, not the passive."},
+  {"id": "4:114:24", "reason": "فَسَوْفَ نُؤْتِيهِ is the answer of the conditional after فَ + سَوْفَ, so it is not in jazm; the ya is kept with an implied damma (indicative)."},
+  {"id": "4:120:2", "reason": "وَيُمَنِّيهِمْ is joined to indicative يَعِدُهُمْ with no governing particle; the final ya is kept with an implied damma, so indicative is correct."},
+  {"id": "4:122:6", "reason": "جَنَّـٰتٍ is a sound feminine plural, so its accusative takes kasra; it is the second object of سَنُدْخِلُهُمْ (i'rab: منصوب)."},
+  {"id": "4:122:7", "reason": "تَجْرِى describes جَنَّـٰتٍ with no governing particle; indicative with implied damma on the ya."},
+  {"id": "4:123:10", "reason": "يُجْزَ is the jussive answer of مَن يَعْمَلْ; its final alif is dropped for jazm, leaving fatha (i'rab: مجزوم)."},
+  {"id": "4:127:6", "reason": "ٱللَّهُ يُفْتِيكُمْ is the predicate of a nominal sentence with no governing particle; indicative with implied damma on the ya."},
+  {"id": "4:135:29", "reason": "تَلْوُۥٓا۟ is the jussive verb of the conditional وَإِن; the five-verbs nun is dropped for jazm (i'rab: مجزوم)."},
+  {"id": "4:152:12", "reason": "سَوْفَ يُؤْتِيهِمْ has no governing particle (سَوْفَ does not cause jazm); indicative with implied damma on the ya."},
+  {"id": "4:154:5", "reason": "وَقُلْنَا is the active perfect of hollow قَالَ (We said), with نَا as subject; the damma comes from the weak root."},
+  {"id": "4:154:10", "reason": "وَقُلْنَا is the active perfect of hollow قَالَ (We said), with نَا as subject; the damma comes from the weak root."},
+  {"id": "4:160:7", "reason": "طَيِّبَـٰتٍ is a sound feminine plural, so its accusative takes kasra; it is the object of حَرَّمْنَا."},
+  {"id": "4:162:24", "reason": "سَنُؤْتِيهِمْ is the predicate of أُو۟لَـٰٓئِكَ after future سَ with no governing particle; indicative with implied damma on the ya."},
+  {"id": "4:173:6", "reason": "فَيُوَفِّيهِمْ follows the فَ answering أَمَّا, which does not cause jazm; the ya is kept with an implied damma (indicative)."}
+ ]
+}

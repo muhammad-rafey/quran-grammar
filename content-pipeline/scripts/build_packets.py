@@ -9,6 +9,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from qac import dump  # noqa: E402
+import edition  # noqa: E402
 
 WORK = sys.argv[1]
 ONLY = set(sys.argv[2:])  # optional chunk ids; then only their library entries are required
@@ -38,18 +39,12 @@ def corrected(word):
     if 'lexemeKey' in fix:
         word['lexemeKey'] = fix['lexemeKey']
     if 'verb' in word:
-        for key, field in (('passive', 'passive'), ('mood', 'mood'), ('png', 'png'), ('verbForm', 'form')):
+        for key, field in (('passive', 'passive'), ('mood', 'mood'), ('png', 'png'), ('verbForm', 'form'), ('aspect', 'aspect')):
             if key in fix:
                 word['verb'][field] = fix[key]
     word['qacCorrection'] = fix['noteEnglish'] + ' Follow this correction, not the raw QAC tag or the generated i‘rab line; record it in auditNotes.'
     return word
-NAMES = {
-    18: ('Al-Kahf', 'الكهف'),
-    23: ("Al-Mu'minun", 'المؤمنون'),
-    32: ('As-Sajdah', 'السجدة'),
-    36: ('Ya-Sin', 'يس'),
-    55: ('Ar-Rahman', 'الرحمن'),
-}
+NAMES = {s['number']: (s['nameEnglish'], s['nameArabicShort']) for s in edition.load(WORK)}
 lexemes, roots = {}, {}
 for path in sorted(glob.glob(os.path.join(WORK, 'libs', 'lexemes', 'lex-*.json'))):
     for e in json.load(open(path))['entries']:
