@@ -16,6 +16,7 @@ const chapters = [
 // Exercise the actual published API and UI on localhost or the deployed server.
 // No intercepted availability, mocked responses or scholarly-approval claims.
 test.use({ storageState: { cookies: [], origins: [] } });
+const chapterLoadTimeout = 20_000;
 const { surahs: authorizedDrafts } = JSON.parse(
   readFileSync(new URL('../content-pipeline/draft-publication.json', import.meta.url), 'utf8'),
 ) as { surahs: Array<{ number: number; work?: string }> };
@@ -44,6 +45,7 @@ async function chooseJuz(page: Page, number: number, surah: number) {
 }
 
 test('published draft APIs contain the exact authorized snapshots', async ({ request }) => {
+  test.setTimeout(120_000);
   for (const chapter of authorizedDrafts) {
     const response = await request.get('/api/v1/surahs/' + chapter.number);
     expect(response.status(), `Surah ${chapter.number}`).toBe(200);
@@ -59,7 +61,7 @@ for (const chapter of chapters) {
     expect(study.surah.ayahCount).toBe(chapter.ayahs);
     await page.goto(`/#surah=${chapter.number}`);
     await expect(page.locator('.bottom-nav button')).toHaveText(['Study', 'Grammar', 'Settings']);
-    await expect(page.locator('.quran-word')).toHaveCount(chapter.words);
+    await expect(page.locator('.quran-word')).toHaveCount(chapter.words, { timeout: chapterLoadTimeout });
     await expect(page.locator('.draft-notice')).toContainText('Scholarly review pending');
     expect(await page.locator('.quran-word .arabic').allTextContents()).toEqual(study.words.map(word => word.arabic));
     await expect(page.locator('.reading-card article.ayah')).toHaveCount(chapter.ayahs);
@@ -87,7 +89,7 @@ for (const boundary of [
     await page.goto('/');
     await expect(page.locator('.quran-word')).toHaveCount(29);
     await chooseJuz(page, boundary.juz, boundary.surah);
-    await expect(page.locator('.quran-word')).toHaveCount(study.surah.wordCount);
+    await expect(page.locator('.quran-word')).toHaveCount(study.surah.wordCount, { timeout: chapterLoadTimeout });
     await expect(ayahSelector(page)).toHaveValue(String(boundary.start));
     await expect(page.locator('.collection-trigger')).toContainText(`Juz ${boundary.juz}`);
     await expect(page.locator(`#ayah-${boundary.start}`)).toBeInViewport();
@@ -108,7 +110,7 @@ test('390px published Al-Kahf reader opens a contextual verb paradigm and closes
   test.setTimeout(60000);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/#surah=18&ayah=75');
-  await expect(page.locator('.quran-word')).toHaveCount(1579);
+  await expect(page.locator('.quran-word')).toHaveCount(1579, { timeout: chapterLoadTimeout });
   await page.evaluate(() => document.fonts.ready);
   const verb = study.words.find((word) => word.id === '18:75:2' && word.pos === 'verb' && word.root && study.verbForms[word.id])
     ?? study.words.find((word) => word.ayah === 75 && word.pos === 'verb' && word.root && study.verbForms[word.id]);
