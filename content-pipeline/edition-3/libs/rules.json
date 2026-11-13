@@ -178,7 +178,7 @@
    "id": "quadriliteral",
    "titleUrdu": "رباعی مادہ",
    "explanationUrdu": "جس لفظ کے چار اصلی حروف ہوں وہ رباعی ہے؛ فعل کا بنیادی وزن فَعْلَلَ / يُفَعْلِلُ ہے، جیسے وَسْوَسَ / يُوَسْوِسُ۔ رباعی اسم بھی ہوتے ہیں، جیسے بُرْهَانٌ اور صَلْصَالٌ؛ ان کے چوتھے اصلی حرف کو ثلاثی مادے پر زائد حرف نہ سمجھیں۔",
-   "appliesWhenEnglish": "Tag a verb or noun whose QAC root has four radicals (here e.g. ب ر ه ن، ص ل ص ل، ر ف ر ف، ل أ ل أ، ع ر ج ن، س ر د ق، ع ب ق ر). Not for triliteral roots with added letters (derived-form) or for foreign words without a QAC root."
+   "appliesWhenEnglish": "Tag a verb or noun whose analysis establishes four radicals, including a documented augmented quadriliteral override if the QAC index has three radicals (here e.g. ب ر ه ن، ص ل ص ل، ر ف ر ف، ل أ ل أ، ع ر ج ن، س ر د ق، ع ب ق ر). Not for triliteral roots with added letters (derived-form) or for foreign words without a QAC root."
   },
   {
    "id": "derived-form",
@@ -496,7 +496,7 @@
    "id": "vocative",
    "titleUrdu": "ندا اور منادیٰ",
    "explanationUrdu": "يَا پکارنے کا حرف ہے اور جسے پکارا جائے وہ منادیٰ کہلاتا ہے؛ مضاف منادیٰ منصوب ہوتا ہے، جیسے يَا رَبَّنَا، اور مفرد معرفہ ضمہ پر مبنی ہوتا ہے۔ غیر معین نکرہ اور شبیہ بالمضاف منادیٰ بھی منصوب ہوتا ہے، جیسے يَـٰحَسْرَةً عَلَى ٱلْعِبَادِ۔ ال والے اسم کو أَيُّهَا کے ذریعے پکارا جاتا ہے، اور حرفِ ندا کبھی حذف بھی ہوتا ہے، جیسے رَبِّ میں۔",
-   "appliesWhenEnglish": "Tag يَا / يَـٰٓأَيُّهَا and the munādā, including an elided يَا (رَبِّ in Surah 23, رَبَّنَا as a call; أَيُّهَا without يَا in 36:59 and 55:31), and يَا before a word of lament (يَـٰوَيْلَتَنَا، يَـٰوَيْلَنَا are منادى مضاف; يَـٰحَسْرَةً is منادى شبيه بالمضاف). Not for يَا before لَيْتَ (يَـٰلَيْتَنِى 18:42، يَـٰلَيْتَ 36:26): QAC labels it VOC, but the ayah i‘rab says «يا» للتنبيه, so tag inna-sisters only and log it. A munādā muḍāf or shabīh bil-muḍāf is accusative even where QAC says NOM (see nominative). For the ال-noun after أَيُّهَا, use badal (the i‘rab may call it عطف بيان)."
+   "appliesWhenEnglish": "Tag يَا / يَـٰٓأَيُّهَا and the munādā, including an elided يَا (رَبِّ in Surah 23, رَبَّنَا as a call; أَيُّهَا without يَا in 36:59 and 55:31), and يَا before a word of lament (يَـٰوَيْلَتَنَا، يَـٰوَيْلَنَا are منادى مضاف; يَـٰحَسْرَةً is منادى شبيه بالمضاف). Not for يَا before لَيْتَ (يَـٰلَيْتَنِى 18:42، يَـٰلَيْتَ 36:26): QAC labels it VOC, but the ayah i‘rab says «يا» للتنبيه, so tag inna-sisters only and log it. A munādā muḍāf or shabīh bil-muḍāf is accusative even where QAC says NOM (see nominative). For the ال-noun after أَيُّهَا, follow the adopted i‘rab: use badal for بدل or عطف بيان, or adjective for a derived adjective analyzed as نعت. Record genuine alternatives in the audit."
   },
   {
    "id": "condition",
