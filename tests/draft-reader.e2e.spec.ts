@@ -62,7 +62,7 @@ for (const chapter of chapters) {
     await page.goto(`/#surah=${chapter.number}`);
     await expect(page.locator('.bottom-nav button')).toHaveText(['Study', 'Grammar', 'Settings']);
     await expect(page.locator('.quran-word')).toHaveCount(chapter.words, { timeout: chapterLoadTimeout });
-    await expect(page.locator('.draft-notice')).toContainText('Scholarly review pending');
+    await expect(page.getByText(/published draft|scholar(?:ly)? review pending/i)).toHaveCount(0);
     expect(await page.locator('.quran-word .arabic').allTextContents()).toEqual(study.words.map(word => word.arabic));
     await expect(page.locator('.reading-card article.ayah')).toHaveCount(chapter.ayahs);
     await expect(ayahSelector(page).locator('option')).toHaveCount(chapter.ayahs);

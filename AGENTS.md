@@ -7,7 +7,7 @@ Read https://docs.expo.dev/versions/v57.0.0/ before changing native app code.
 - `apps/mobile`: Expo React Native for Android and iOS.
 - `apps/api`: the shared Node API; also serves the production web bundle.
 - `packages/core`: typed study data, search/validation, interface strings and numeral formatting.
-- `content-pipeline`: authoring/review records for Surahs 18, 23, 32, 36, 55. The owner authorized publication as visibly labeled drafts on 2026-11-07; scholarly review remains pending. Read its README.md and `draft-publication.json` before content work. Preserve the pinned snapshots and review provenance; do not claim scholarly approval. A second expansion (Surahs 4, 7, 25, 29, 85–104) is in progress in `content-pipeline/edition-2/`; read its README.md before continuing it.
+- `content-pipeline`: authoring/review records for Surahs 18, 23, 32, 36, 55. The owner authorized publication on 2026-11-07. The owner removed in-app review labels on 2026-11-13. Scholarly review remains pending. Read its README.md and `draft-publication.json` before content work. Preserve the pinned snapshots and review provenance; do not claim scholarly approval. The second expansion (Surahs 4, 7, 25, 29, 85–104) is documented in `content-pipeline/edition-2/`; read its README.md before continuing it.
 
 Preserve Arabic text, word occurrence IDs, contextual grammar, root meanings and verb paradigms. Content changes need scholarly review. Preserve provenance in the repository and the required Corpus credit/link in Settings → About; the study interface has no References tab or per-word source links.
 

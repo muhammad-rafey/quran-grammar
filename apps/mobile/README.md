@@ -1,12 +1,10 @@
 # Quran Grammar · iOS and Android
 
-## Current draft edition — 2026-11-13
+## Current edition — 2026-11-13
 
-The native app bundles all 40 Surahs, 1,281 ayahs and 14,405 words, including
-29 owner-authorized drafts. Draft readers show
-the scholarly-review-pending notice; scholarly approvals remain pending. The APK
-command now synchronizes app config and icons before compiling. Earlier native
-verification records below describe their original pre-publication snapshots.
+The native app bundles all 40 Surahs, 1,281 ayahs and 14,405 words. The APK
+command synchronizes app config and icons before compiling. Earlier native
+verification records below describe their original snapshots.
 
 
 A native Expo SDK 57 app. The React Native screens share their content, TypeScript
@@ -51,17 +49,15 @@ cancelled requests cannot replace the newly selected lesson.
 - Choose Surah or Juz in the native catalog sheet, then use the chapter's own
   ayah picker. The catalog lists all 114 surahs and 30 juz; unavailable entries
   are disabled and labelled Coming soon. Available chapters come from the shared
-  registry: Surahs 1, 4, 7, 18, 23, 25, 29, 32, 36, 55 and 85–114. The 29 authorized draft
-  chapters show a scholarly-review-pending notice. Available Juz ranges are
-  partial previews; Juz 16 opens Al-Kahf at ayah 75 and Juz 23 opens Ya-Sin at
+  registry of Surahs 1, 4, 7, 18, 23, 25, 29, 32, 36, 55 and 85–114. The catalog
+  identifies partial Juz ranges. Juz 16 opens Al-Kahf at ayah 75 and Juz 23 opens Ya-Sin at
   ayah 28. Expand a Juz to choose one of its available surahs.
 - The compact Filter button reveals part-of-speech filters and the word-meaning
   toggle; full ayah context and translation stay visible. There is no search bar.
 - Study, Grammar and Settings use English controls by default. Settings switches
   the interface and counts between English and Urdu, persists the preference,
   and leaves all Quranic Arabic and Urdu learning explanations unchanged.
-- Content connection status, the teaching draft notice and required attribution
-  are grouped in Settings to keep the reader focused.
+- Settings shows the content connection status and Quranic Arabic Corpus attribution.
 - A floating bottom dock switches Study, Grammar and Settings. Al-Fatihah's
   Grammar view includes three interactive practice questions with explanations,
   first-attempt scoring and restart. Every available chapter has its own phrase

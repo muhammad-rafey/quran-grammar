@@ -1,6 +1,6 @@
 # Quran Grammar · قرآن گرامر
 
-A grammar-focused Quran study app with Urdu explanations, covering Surahs 1, 4, 7, 18, 23, 25, 29, 32, 36, 55 and 85–114. The owner authorized publishing the two expansion editions as labeled drafts on 2026-11-07 and 2026-11-13. Scholarly review is pending. The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
+A grammar-focused Quran study app with Urdu explanations, covering Surahs 1, 4, 7, 18, 23, 25, 29, 32, 36, 55 and 85–114. The content is awaiting scholarly review. The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
 
 ## Project
 
@@ -15,7 +15,7 @@ The web app uses React with Vite because the current product is an interactive s
 
 ## Features
 
-- All 14,405 word occurrences across 1,281 ayahs in 40 Surahs, with contextual Urdu meanings and grammatical segments. The 29 owner-authorized drafts show a scholarly-review-pending notice while reading.
+- All 14,405 word occurrences across 1,281 ayahs in 40 Surahs, with contextual Urdu meanings and grammatical segments.
 - Root-family meanings and a paradigm for every finite verb, including باب، ماضی، مضارع and patterns.
 - Occurrence-specific morphology, syntax, dictionary explanations, grammar rules, and related-root navigation.
 - Phrase constructions and concise tafsir notes for every ayah, using the same data format as Al-Fatihah.
@@ -26,7 +26,7 @@ The web app uses React with Vite because the current product is an interactive s
 - Mobile web detail sheet with focus trapping, dismiss/back controls, and preserved reading position; desktop side inspector.
 - Native study and word-detail screens, bundled fonts, explicit offline content option, and API loading/error/retry states.
 
-There is no References tab or repeated source-link UI. Settings → About contains the compact Quranic Arabic Corpus credit and link required by its published attribution terms, alongside the teaching-draft notice. Source provenance and font licenses are maintained in [third-party notices](THIRD_PARTY_NOTICES.md). Settings explicitly labels the Urdu explanations as AI-assisted educational drafts awaiting scholarly review. They are not verbatim imports from Urdu dictionaries, translations or tafsir books.
+There is no References tab or repeated source-link UI. Settings → About contains the compact Quranic Arabic Corpus credit and link required by its published attribution terms. The [content provenance](docs/content-provenance.md) records the Urdu authorship and review status. [Third-party notices](THIRD_PARTY_NOTICES.md) records source attribution and font licenses.
 
 ## Run locally
 
@@ -61,7 +61,7 @@ cp apps/mobile/.env.example apps/mobile/.env
 npm run dev:mobile
 ```
 
-Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app uses its bundled 40-Surah edition, including both labeled draft expansions. See [native setup](apps/mobile/README.md).
+Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app uses its bundled 40-Surah edition. See [native setup](apps/mobile/README.md).
 
 The APK command builds locally with JDK 17+, Android SDK Platform 36 and Build-Tools 36. It bundles JavaScript and fonts, so the installed APK does not require Metro or Expo Go. It uses Expo's debug signing key for local testing, **not a Play Store release**. Each build applies the current app config and launcher icons through incremental Expo Prebuild, retaining the native directory and build caches. See [APK build setup and options](docs/android-build.md).
 
@@ -95,7 +95,7 @@ The production Node process serves both the web app and `/api` on localhost port
 ## Content and future work
 
 **Current release (2026-11-13):** the owner authorized publishing all 24 Edition 2
-lessons as labeled drafts. The app, PostgreSQL copy and SQLite copy use the same
+lessons. The app, PostgreSQL copy and SQLite copy use the same
 40-Surah registry. See
 [`draft-publication.json`](content-pipeline/draft-publication.json) for exact hashes
 and authorization, and `npm run publish:drafts` to reproduce the runtime modules.

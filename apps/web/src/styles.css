@@ -149,16 +149,6 @@ p {
   object-fit: contain;
   flex-shrink: 0;
 }
-.draft-notice {
-  margin-bottom: 16px;
-  padding: 10px 14px;
-  border: 1px solid #e4d6b4;
-  border-radius: 12px;
-  background: #fbf5e6;
-  color: #80601c;
-  font-size: 14px;
-  line-height: 1.6;
-}
 .page-shell {
   max-width: 1280px;
   margin: auto;

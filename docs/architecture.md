@@ -4,7 +4,7 @@
 
 Use npm workspaces with React/Vite for web, Expo React Native for Android/iOS, and one Express service on Node.js 24. Share typed study content, normalization, searching, schema validation, interface strings and numeral formatting in `@quran-grammar/core`. Keep DOM UI and native UI separate so each uses appropriate layout and accessibility primitives.
 
-The Node service returns a complete chapter from a shared 40-Surah registry (1, 4, 7, 18, 23, 25, 29, 32, 36, 55 and 85–114). The 29 owner-authorized draft chapters display a scholarly-review-pending notice. Clients request the selected chapter, validate the chapter number and data relationships, and cancel obsolete requests so content from another chapter cannot appear under the selected title. Search and word inspection run locally after loading, keeping interactions immediate. Stable `surah:ayah:word` IDs preserve contextual differences even when a word is repeated. The native app bundles the same registry for offline study; the server remains the source for connected operation.
+The Node service returns a complete chapter from a shared 40-Surah registry (1, 4, 7, 18, 23, 25, 29, 32, 36, 55 and 85–114). Clients request the selected chapter, validate the chapter number and data relationships, and cancel obsolete requests so content from another chapter cannot appear under the selected title. Search and word inspection run locally after loading, keeping interactions immediate. Stable `surah:ayah:word` IDs preserve contextual differences even when a word is repeated. The native app bundles the same registry for offline study; the server remains the source for connected operation.
 
 ## Why React/Vite for web
 
@@ -26,4 +26,4 @@ Study, Grammar and Settings use English interface text and ASCII digits by defau
 
 Interface language never translates or replaces Quranic Arabic, Urdu meanings, grammatical labels within teaching content, dictionary notes or tafsir. Those content containers keep their Arabic/Urdu language and right-to-left direction while interface controls follow the selected language. Numeral conversion is deterministic across platforms and does not depend on the device locale.
 
-The user-facing References view was removed. Settings → About retains the compact Quranic Arabic Corpus credit and source link required by its published terms, plus the teaching-draft notice. Data provenance and font notices remain in the repository; the study API has no per-record reference links.
+The user-facing References view was removed. Settings → About retains the compact Quranic Arabic Corpus credit and source link required by its published terms. Data provenance and font notices remain in the repository; the study API has no per-record reference links.

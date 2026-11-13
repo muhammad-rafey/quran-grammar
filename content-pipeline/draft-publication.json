@@ -5,7 +5,9 @@
   "timezone": "Asia/Karachi",
   "authorization": "The project owner explicitly directed publication and deployment while scholarly review remains pending: publish them, we will review them while published.",
   "scholarlyReview": "pending",
-  "noticeRequired": true,
+  "noticeRequired": false,
+  "noticePolicyUpdatedOn": "2026-11-13",
+  "noticePolicyAuthorization": "The owner requested removing in-app draft and review labels across the collection while scholarly review is pending.",
   "scope": [
     "web",
     "android",
