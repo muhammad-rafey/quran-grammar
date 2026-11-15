@@ -4,6 +4,16 @@ On 2026-11-13 the owner removed review labels from the web and native interfaces
 because scholarly review is pending across the collection. Settings retains the
 Quranic Arabic Corpus credit and link.
 
+## Edition 3 publication: Al-Hajj and Al-Waqi‘ah (2026-11-13)
+
+The owner requested complete lessons for Surahs 22 and 56 and authorized adding them to
+the web, native, SQLite and home-server PostgreSQL copies. The 174 ayahs and 1,653 words
+use the existing study format. The [draft publication manifest](../content-pipeline/draft-publication.json)
+pins both release snapshots. The [Edition 3 handoff](../content-pipeline/edition-3/README.md)
+records the reused libraries, the seven occurrence overrides and the source-checked review
+corrections. The [Al-Hajj](source-audits/surah-22.md) and [Al-Waqi‘ah](source-audits/surah-56.md)
+source audits describe the sources and method. Scholarly review remains pending.
+
 ## Edition 2 draft publication (2026-11-13)
 
 The owner authorized publishing Surahs 4, 7, 25, 29 and 85–104 as labeled drafts for

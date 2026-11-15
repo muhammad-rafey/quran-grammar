@@ -95,8 +95,9 @@ The production Node process serves both the web app and `/api` on localhost port
 ## Content and future work
 
 **Current release (2026-11-13):** the owner authorized publishing all 24 Edition 2
-lessons. The app, PostgreSQL copy and SQLite copy use the same
-42-Surah registry. See
+lessons and the Edition 3 lessons for Al-Hajj and Al-Waqi‘ah
+([handoff](content-pipeline/edition-3/README.md)). The app, PostgreSQL copy and
+SQLite copy use the same 42-Surah registry. See
 [`draft-publication.json`](content-pipeline/draft-publication.json) for exact hashes
 and authorization, and `npm run publish:drafts` to reproduce the runtime modules.
 Scholarly approvals remain pending. The following paragraphs record the earlier
