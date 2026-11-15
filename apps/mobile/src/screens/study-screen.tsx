@@ -10,7 +10,6 @@ import {
   juzCatalog,
   type Ayah,
   type PartOfSpeechFilter,
-  type StudyData,
   type Word,
 } from '@quran-grammar/core';
 import { AppIcon } from '@/components/app-icon';
@@ -94,15 +93,22 @@ export default function StudyScreen() {
     },
     [surface, applyPendingJump],
   );
+  // Index once per chapter; the longest lessons have thousands of words.
+  const wordIndex = useMemo(() => {
+    const byAyah = new Map<number, Word[]>();
+    const byId = new Map<string, Word>();
+    for (const word of study?.words ?? []) {
+      byId.set(word.id, word);
+      const list = byAyah.get(word.ayah);
+      if (list) list.push(word);
+      else byAyah.set(word.ayah, [word]);
+    }
+    return { byAyah, byId };
+  }, [study]);
   // Long chapters render over a thousand words; keep scroll-driven ayah updates from re-rendering them.
   const wordAyahs = useMemo(() => {
     if (!study) return null;
-    const wordsByAyah = new Map<number, Word[]>();
-    for (const word of study.words) {
-      const list = wordsByAyah.get(word.ayah);
-      if (list) list.push(word);
-      else wordsByAyah.set(word.ayah, [word]);
-    }
+    const wordsByAyah = wordIndex.byAyah;
     return study.ayahs.map((item) => (
       <View
         key={`${study.surah.number}:${item.number}`}
@@ -131,7 +137,7 @@ export default function StudyScreen() {
         </View>
       </View>
     ));
-  }, [study, selectedWord, pos, showMeanings, openWord, recordAyahPosition]);
+  }, [study, wordIndex, selectedWord, pos, showMeanings, openWord, recordAyahPosition]);
   const grammarAyahs = useMemo(
     () =>
       study?.ayahs.map((item) => (
@@ -142,10 +148,15 @@ export default function StudyScreen() {
             recordAyahPosition(item.number, y, height);
           }}
         >
-          <GrammarAyah ayah={item} study={study} onWord={openWord} />
+          <GrammarAyah
+            ayah={item}
+            words={wordIndex.byAyah.get(item.number) ?? []}
+            wordById={wordIndex.byId}
+            onWord={openWord}
+          />
         </View>
       )) ?? null,
-    [study, openWord, recordAyahPosition],
+    [study, wordIndex, openWord, recordAyahPosition],
   );
   if (!study) return <InitialDataState />;
   const currentJuz =
@@ -452,11 +463,13 @@ function AyahLabel({ number }: { number: number }) {
 
 function GrammarAyah({
   ayah,
-  study,
+  words,
+  wordById,
   onWord,
 }: {
   ayah: Ayah;
-  study: StudyData;
+  words: readonly Word[];
+  wordById: ReadonlyMap<string, Word>;
   onWord: (id: string) => void;
 }) {
   const { ui } = useInterface();
@@ -464,10 +477,7 @@ function GrammarAyah({
     <View style={{ ...card, gap: spacing.lg }}>
       <AyahLabel number={ayah.number} />
       <Text selectable style={type.arabic}>
-        {study.words
-          .filter((word) => word.ayah === ayah.number)
-          .map((word) => word.arabic)
-          .join(' ')}
+        {words.map((word) => word.arabic).join(' ')}
       </Text>
       <Paragraph>{ayah.translationUrdu}</Paragraph>
       {ayah.phrases.map((phrase) => (
@@ -483,7 +493,7 @@ function GrammarAyah({
           <Text style={[type.body, { color: colors.primary }]}>{phrase.labelUrdu}</Text>
           <View style={{ ...row, flexWrap: 'wrap' }}>
             {phrase.wordIds.map((id) => {
-              const word = study.words.find((entry) => entry.id === id);
+              const word = wordById.get(id);
               return word ? (
                 <Pressable
                   key={id}
@@ -545,7 +555,8 @@ function WordToken({
       onPress={onPress}
       style={({ pressed }) => ({
         minWidth: 84,
-        maxWidth: '100%',
+        // 180dp of label text plus padding; the widest Arabic word in the registry is ~125dp.
+        maxWidth: 208,
         paddingHorizontal: spacing.md,
         paddingVertical: spacing.sm,
         borderRadius: radius.md,
@@ -564,13 +575,15 @@ function WordToken({
           {word.meaningUrdu}
         </Text>
       )}
+      {/* Stretch the label to the token: on Android a shrink-wrapped RTL label can be laid
+          out wider than it was measured, which clipped its last word (e.g. 56:2:2). */}
       <View
         style={{
+          alignSelf: 'stretch',
           paddingHorizontal: spacing.sm,
           paddingVertical: 2,
           borderRadius: radius.sm,
           backgroundColor: wash,
-          maxWidth: 180,
         }}
       >
         <Text style={[type.small, { fontSize: 13, lineHeight: 22, color, textAlign: 'center' }]}>

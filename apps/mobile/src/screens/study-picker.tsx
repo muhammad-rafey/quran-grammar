@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BottomSheet, RNHostView } from '@expo/ui';
 import { FlatList, Pressable, Text, View, useWindowDimensions } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   getJuzForAyah,
   getJuzStartAyah,
@@ -67,6 +68,9 @@ function PickerContent({
 }: StudyPickerProps) {
   const { ui, count, isUrdu, language, labelStyle, controlRow } = useInterface();
   const { height } = useWindowDimensions();
+  const insets = useSafeAreaInsets();
+  // The native sheet sizes the host; fill it so the list never stops short of the sheet edge.
+  const [hostHeight, setHostHeight] = useState(0);
   const selectedJuz = (
     getJuzForAyah(surah, ayah) ?? juzCatalog.find((item) => item.surahNumbers.includes(surah))
   )?.number;
@@ -112,10 +116,10 @@ function PickerContent({
             ]);
 
   return (
-    <RNHostView>
+    <RNHostView onLayout={(event) => setHostHeight(event.nativeEvent.layout.height)}>
       <View
         style={{
-          height: height * 0.8,
+          height: hostHeight > 0 ? hostHeight : height * 0.8,
           paddingHorizontal: spacing.xl,
           paddingTop: spacing.lg,
         }}
@@ -196,7 +200,7 @@ function PickerContent({
           key={`${kind}-${mode}`}
           keyExtractor={(item) => `${item.kind}-${item.number}`}
           contentInsetAdjustmentBehavior="automatic"
-          contentContainerStyle={{ paddingBottom: 48 }}
+          contentContainerStyle={{ paddingBottom: Math.max(insets.bottom, spacing.lg) + spacing.xl }}
           renderItem={({ item }) => {
             const selected =
               item.kind === 'ayah'
