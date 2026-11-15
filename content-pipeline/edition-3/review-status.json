@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "policy": "Record scholarly approval only with reviewer identity, evidence, date and exact input digest.",
+  "surahs": {
+    "22": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null,
+      "evidence": null,
+      "contentSha256": null
+    },
+    "56": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null,
+      "evidence": null,
+      "contentSha256": null
+    }
+  }
+}

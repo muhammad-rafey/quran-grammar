@@ -1,0 +1,25 @@
+{
+  "name": "edition-3",
+  "surahs": [
+    {
+      "number": 22,
+      "ayahs": 78,
+      "words": 1274,
+      "nameEnglish": "Al-Hajj",
+      "nameArabicShort": "الحج",
+      "nameUrdu": "سورۃ الحج",
+      "nameArabic": "سُورَةُ الْحَجِّ",
+      "slug": "al-hajj"
+    },
+    {
+      "number": 56,
+      "ayahs": 96,
+      "words": 379,
+      "nameEnglish": "Al-Waqi'ah",
+      "nameArabicShort": "الواقعة",
+      "nameUrdu": "سورۃ الواقعہ",
+      "nameArabic": "سُورَةُ الْوَاقِعَةِ",
+      "slug": "al-waqiah"
+    }
+  ]
+}

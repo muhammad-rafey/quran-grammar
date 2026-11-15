@@ -1,0 +1,31 @@
+{
+  "22:11:11": {
+    "verbForm": "QIV",
+    "noteEnglish": "The vocalized quadriliteral-augmented pattern is اِفْعَلَلَّ as in اِقْشَعَرَّ, rather than the unrelated triliteral Form XII. Use the existing QIV paradigm; the inherited QAC key is an index."
+  },
+  "22:26:12": {
+    "case": "ACC",
+    "noteEnglish": "The house is the direct object of the imperative وَطَهِّرْ. Its accusative fatḥa is estimated before the first-person yāʾ, which is in the genitive position as the possessive complement. The QAC nominative tag conflicts with this construction."
+  },
+  "22:30:16": {
+    "mood": "IND",
+    "noteEnglish": "The passive verb is in the relative clause of مَا. No subjunctive or jussive governor precedes it; it is indicative with an estimated ḍamma on the final alif. The token-level QAC subjunctive analysis conflicts with the verse-level identification of a relative phrase."
+  },
+  "22:42:2": {
+    "mood": "JUS",
+    "noteEnglish": "The verb is the protasis after conditional إِنْ, so it is jussive with nūn omitted. The plural wāw is the subject and the kāf the object. QAC instead tags it as subjunctive."
+  },
+  "22:44:3": {
+    "lexemeKey": "kadhdhaba|II|PASS",
+    "noteEnglish": "The ḍamma on kāf and kasra on dhāl establish the passive كُذِّبَ. Mūsā is the following subject of the passive. The raw lookup key was mapped to an active paradigm for the differently vocalized 29:18:2 in Edition 2."
+  },
+  "22:52:11": {
+    "verbForm": "V",
+    "noteEnglish": "The prefixed tāʾ and doubled second radical mark Form V تَمَنَّى. The verse’s tafsir sources discuss recitation and desire; preserve their interpretive distinction in the lesson."
+  },
+  "56:47:4": {
+    "passive": false,
+    "lexemeKey": "mata-yamatu|I|ACT",
+    "noteEnglish": "مِتْنَا is active and intransitive, with nā as subject. The kasra on mīm is the attested variant discussed by al-Naḥḥās, who connects it with مَاتَ يَمَاتُ and records a second explanation. QAC tags it passive although its own gloss is “we die.”"
+  }
+}

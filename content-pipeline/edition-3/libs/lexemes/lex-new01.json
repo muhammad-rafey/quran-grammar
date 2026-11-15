@@ -1,0 +1,94 @@
+{
+ "entries": [
+  {
+   "key": ">a*ina|I|PASS",
+   "baabUrdu": "بابِ سَمِعَ يَسْمَعُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "أُذِنَ",
+   "present": "يُؤْذَنُ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "مہموز الفاء فعل أَذِنَ يَأْذَنُ کا مجہول ہے، یعنی اجازت دی جانا۔ جسے اجازت ملے وہ لِ کے ساتھ آتا ہے۔ مضارع مجہول میں ساکن ہمزہ اپنے سے پہلے کے ضمے کی وجہ سے واو کی کرسی پر لکھا جاتا ہے۔",
+   "evidenceEnglish": "22:39:1 أُذِنَ is a 3MS passive perfect of permission with لِلَّذِينَ. 77:36:2 يُؤْذَنُ attests the passive imperfect. The active أَذِنَ in 20:109 and يَأْذَنَ in 53:26 establish the i–a class of أَذِنَ يَأْذَنُ."
+  },
+  {
+   "key": "bus~ati|I|PASS",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "بُسَّ",
+   "present": "يُبَسُّ",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "مضاعف فعل بَسَّ يَبُسُّ کا مجہول ہے، یعنی ریزہ ریزہ کیا جانا۔ دونوں سین مدغم ہیں۔ پہاڑ نائبِ فاعل ہیں اور تائے تانیث پر کسرہ اگلے لفظ سے ملا کر پڑھنے کی وجہ سے ہے۔",
+   "evidenceEnglish": "56:5:1 وَبُسَّتِ is a 3FS passive perfect with ٱلْجِبَالُ as its deputy subject and بَسًّۭا as its cognate accusative. The raw lemma preserves the inflected 3FS form. The active class follows بَسَّ يَبُسُّ in the sense 'to crumble or pulverize' (al-Muʿjam al-Wasīṭ, s.v. بسّ). The passive verse itself cannot establish the active imperfect vowel. يُبَسُّ is the regular contracted passive imperfect."
+  },
+  {
+   "key": "bagaY`|I|PASS",
+   "baabUrdu": "بابِ ضَرَبَ يَضْرِبُ — مجہول",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)، مجہول",
+   "past": "بُغِيَ",
+   "present": "يُبْغَى",
+   "pattern": "فُعِلَ — يُفْعَلُ",
+   "noteUrdu": "ناقص یائی فعل بَغَى يَبْغِي کا مجہول ہے۔ عَلَى کے ساتھ معنی کسی پر زیادتی کی جانا ہے۔ ماضی مجہول میں آخری یاء ظاہر ہے اور مضارع مجہول میں الفِ مقصورہ بن جاتی ہے۔",
+   "evidenceEnglish": "22:60:9 بُغِىَ is a 3MS passive perfect followed by عَلَيْهِ. 49:9 attests the active بَغَتْ and تَبْغِى in the same sense of aggression against someone, establishing the a–i class of بَغَى يَبْغِي. يُبْغَى is the regular passive imperfect of this final-yāʾ verb."
+  },
+  {
+   "key": "{jotamaEu|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِجْتَمَعَ",
+   "present": "يَجْتَمِعُ",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے، یعنی اکٹھا ہونا۔ ماضی کا ابتدائی ہمزہ ہمزۂ وصل ہے اور جیم کے بعد کی تاء بابِ افتعال کی علامت ہے۔ آیت میں واوِ جمع فاعل ہے۔",
+   "evidenceEnglish": "22:73:17 ٱجْتَمَعُوا۟ is the active 3MP perfect after لَوْ, with plural wāw as subject. 17:88:3 ٱجْتَمَعَتِ also attests the Form VIII perfect. The raw lemma is the stem before the plural suffix. اِجْتَمَعَ يَجْتَمِعُ is the regular Form VIII paradigm of ج م ع (al-Muʿjam al-Wasīṭ, s.v. جمع)."
+  },
+  {
+   "key": "taHoruvu|I|ACT",
+   "baabUrdu": "بابِ نَصَرَ يَنْصُرُ",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "حَرَثَ",
+   "present": "يَحْرُثُ",
+   "pattern": "فَعَلَ — يَفْعُلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے، یعنی زمین جوتنا یا بیج بونا۔ ماضی میں راء پر زبر اور مضارع میں پیش ہے۔ آیت میں واوِ جمع فاعل ہے اور نون کا باقی رہنا رفع کی علامت ہے۔",
+   "evidenceEnglish": "56:63:3 تَحْرُثُونَ is the active indicative 2MP imperfect in the relative clause of مَّا, with ḍamma on rāʾ. The raw lemma is an inflected imperfect stem. Al-Muʿjam al-Wasīṭ (s.v. حرث) gives حَرَثَ for cultivating the soil, and the Quranic imperfect identifies the a–u class here."
+  },
+  {
+   "key": ">uHokimato|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَحْكَمَ",
+   "present": "يُحْكِمُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح سالم اور متعدی فعل ہے، یعنی محکم کرنا۔ مضارع معروف میں کاف پر زیر ہے۔ آیت میں اللہ فاعل اور اس کی آیات مفعول بہ ہیں۔",
+   "evidenceEnglish": "22:52:22 يُحْكِمُ is active Form IV, as shown by the kasra on kāf, with ٱللَّهُ as subject and ءَايَـٰتِهِۦ as direct object. QAC marks the object GEN, but its kasra marks the accusative of a sound feminine plural here. The raw lookup lemma comes from the 3FS passive perfect أُحْكِمَتْ at 11:1:3. The active citation pair for this occurrence is أَحْكَمَ يُحْكِمُ."
+  },
+  {
+   "key": "Hul~u|II|PASS",
+   "baabUrdu": "بابِ تَفْعِيل — مجہول",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)، مجہول",
+   "past": "حُلِّيَ",
+   "present": "يُحَلَّى",
+   "pattern": "فُعِّلَ — يُفَعَّلُ",
+   "noteUrdu": "ناقص یائی فعل حَلَّى يُحَلِّي کا مجہول ہے، یعنی زیور پہنایا جانا۔ آیت کے جمع صیغے میں آخری یاء واوِ جمع سے پہلے حذف ہے اور واو نائبِ فاعل ہے۔",
+   "evidenceEnglish": "22:23:13 يُحَلَّوْنَ is the Form II passive imperfect, with the plural wāw as deputy subject. 76:21:6 وَحُلُّوٓا۟ attests the corresponding passive perfect plural and supplies the inflected stem used as the QAC lookup lemma. The final-yāʾ active حَلَّى يُحَلِّي 'to adorn' (Lisān al-ʿArab, s.v. حلي) gives passive حُلِّيَ يُحَلَّى."
+  },
+  {
+   "key": ">axobatu|IV|ACT",
+   "baabUrdu": "بابِ اِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَخْبَتَ",
+   "present": "يُخْبِتُ",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے، یعنی عاجزی سے جھکنا۔ جس کے آگے عاجزی ہو وہ لِ کے ساتھ آتا ہے۔ آیت میں قلوب فاعل ہے اور اس غیر عاقل جمع کے لیے مضارع واحد مؤنث آیا ہے۔",
+   "evidenceEnglish": "22:54:11 فَتُخْبِتَ is a 3FS active subjunctive with قُلُوبُهُمْ as subject. The ḍamma on the prefix and kasra on bāʾ identify the active Form IV imperfect. 11:23:6 وَأَخْبَتُوٓا۟ attests the active perfect, and its inflected stem is the raw lookup lemma."
+  },
+  {
+   "key": "{xotaSamu|VIII|ACT",
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "اِخْتَصَمَ",
+   "present": "يَخْتَصِمُ",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": "صحیح سالم اور لازم فعل ہے، یعنی آپس میں جھگڑنا۔ جس بات میں جھگڑا ہو وہ فِي کے ساتھ آتی ہے۔ آیت میں واوِ جمع فاعل ہے، کیونکہ دونوں فریقوں کے افراد مراد ہیں۔",
+   "evidenceEnglish": "22:19:3 ٱخْتَصَمُوا۟ is a Form VIII active perfect with a plural subject referring to the members of the two opposing groups. The raw lemma retains the inflected plural stem. 3:44:20 يَخْتَصِمُونَ directly attests the kasra on ṣād in the active imperfect."
+  }
+ ]
+}

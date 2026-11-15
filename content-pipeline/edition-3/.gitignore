@@ -1,0 +1,12 @@
+# Same policy as ../.gitignore: third-party reference texts and derived bulk data are local only.
+# (Patterns containing a slash in ../.gitignore are anchored there, so they are repeated here.)
+qac
+meta/words.json
+meta/ayahs.json
+meta/lexemes.json
+meta/roots.json
+meta/tag-inventory.json
+meta/verb-flags.json
+meta/case-flags.json
+reports/*-raw.json
+reports/adjudication/input-*.json

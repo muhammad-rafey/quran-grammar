@@ -1,10 +1,33 @@
 # Quran Grammar · iOS and Android
 
-## Current edition — 2026-11-13
+## Current edition — 2026-11-15
 
-The native app bundles all 40 Surahs, 1,281 ayahs and 14,405 words. The APK
-command synchronizes app config and icons before compiling. Earlier native
-verification records below describe their original snapshots.
+The native app bundles all 42 Surahs, 1,455 ayahs and 16,058 words, including
+Al-Hajj and Al-Waqi‘ah. The APK command synchronizes app config and icons before
+compiling. Earlier native verification records below describe their original snapshots.
+
+### Al-Hajj and Al-Waqi‘ah verification on 2026-11-15
+
+In Expo Go 57 on the `repro36` Android 36 emulator, with the bundled registry:
+Surah catalog → Al-Hajj; Juz catalog → Juz 17 (opens pre-expanded on Al-Hajj) and
+Juz 27 → Al-Waqi‘ah with the "Juz 27 · Partial preview" label; word deep links
+22:1:1 (3 / 1274) and 56:2:2 (5 / 379) with roots and paradigms; Study, Grammar and
+Settings for both Surahs. The iOS simulator (iPhone 17 Pro, iOS 26.5) rendered the
+56:2:2 word screen. Three native defects found during this pass were fixed:
+
+- Tapping an icon (inactive dock tabs, Filter, sheet Close) did nothing on Android:
+  the Expo UI Compose host consumed the touch despite `pointerEvents="none"`.
+  `AppIcon` now wraps the host in a React Native `View` that ignores touches.
+- The catalog list stopped about 350 px short of the full-height sheet and cut its
+  last visible row. It now fills the size the native sheet reports and clears the
+  bottom inset.
+- A word-type label could lose its last word on Android (56:2:2 showed
+  `حرفِ جر + اسم +`). Labels now stretch to the token width, with tokens capped at
+  208 dp; the widest Arabic word in the registry measures about 125 dp.
+
+The Grammar view now indexes words once per chapter instead of scanning the whole
+lesson for every ayah and phrase word. Expo Go's floating developer button covers
+the Filter button in development builds only.
 
 
 A native Expo SDK 57 app. The React Native screens share their content, TypeScript
@@ -49,7 +72,7 @@ cancelled requests cannot replace the newly selected lesson.
 - Choose Surah or Juz in the native catalog sheet, then use the chapter's own
   ayah picker. The catalog lists all 114 surahs and 30 juz; unavailable entries
   are disabled and labelled Coming soon. Available chapters come from the shared
-  registry of Surahs 1, 4, 7, 18, 23, 25, 29, 32, 36, 55 and 85–114. The catalog
+  registry of Surahs 1, 4, 7, 18, 22, 23, 25, 29, 32, 36, 55, 56 and 85–114. The catalog
   identifies partial Juz ranges. Juz 16 opens Al-Kahf at ayah 75 and Juz 23 opens Ya-Sin at
   ayah 28. Expand a Juz to choose one of its available surahs.
 - The compact Filter button reveals part-of-speech filters and the word-meaning

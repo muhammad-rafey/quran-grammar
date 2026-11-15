@@ -1,0 +1,106 @@
+{
+  "independentReview": "in progress",
+  "scholarlyReview": "pending",
+  "changes": [
+    {
+      "kind": "root",
+      "key": "ت ر ب",
+      "evidenceEnglish": "The three derivatives are distinguished by their attested forms. The tafsir of 56:37 treats أَتْرَاب as people of the same age."
+    },
+    {
+      "kind": "root",
+      "key": "ح ر ر",
+      "evidenceEnglish": "The occurrence at 22:23:22 and its source gloss identify silk."
+    },
+    {
+      "kind": "root",
+      "key": "ن ذ ر",
+      "evidenceEnglish": "Al-Hajj 22:29:5 concerns fulfilling vows, a separate derivative from the warning verbs."
+    },
+    {
+      "kind": "root",
+      "key": "ن ف ع",
+      "evidenceEnglish": "The sources on 22:28 include benefits of pilgrimage as a whole. The same noun is also used for livestock benefits."
+    },
+    {
+      "kind": "root",
+      "key": "ف ق ر",
+      "evidenceEnglish": "At 22:28:20 the noun describes a person whom pilgrims are told to feed."
+    },
+    {
+      "kind": "root",
+      "key": "ب د و",
+      "evidenceEnglish": "The contextual contrast at 22:25 is between the resident and the person coming from outside. The lexical derivative can refer to a person of the open country."
+    },
+    {
+      "kind": "root",
+      "key": "ر ي ب",
+      "evidenceEnglish": "At 22:5:6, رَيْب is governed by فِي. Other occurrences use categorical negation."
+    },
+    {
+      "kind": "root",
+      "key": "ر ب و",
+      "evidenceEnglish": "At 22:5:64 the earth swells. The card also covers the other established meanings of the root."
+    },
+    {
+      "kind": "root",
+      "key": "م ن ي",
+      "evidenceEnglish": "Al-Waqi’ah 56:58 uses the Form IV reproductive sense. The recitation sense of Form V is recorded in the tafsir of 22:52."
+    },
+    {
+      "kind": "lexeme",
+      "key": "kaAna|I|ACT",
+      "field": "noteUrdu"
+    },
+    {
+      "kind": "lexeme",
+      "key": "bi}osa|I|ACT",
+      "field": "noteUrdu"
+    },
+    {
+      "kind": "lexeme",
+      "key": "tawal~aY`|V|ACT",
+      "field": "noteUrdu"
+    },
+    {
+      "kind": "rule",
+      "key": "vocative",
+      "field": "appliesWhenEnglish"
+    },
+    {
+      "kind": "rule",
+      "key": "quadriliteral",
+      "field": "appliesWhenEnglish"
+    },
+    {
+      "kind": "occurrence",
+      "ref": "56:47:1",
+      "fields": [
+        "meaningUrdu",
+        "segment1"
+      ]
+    },
+    {
+      "kind": "occurrence",
+      "ref": "56:24:3",
+      "fields": [
+        "meaningUrdu"
+      ]
+    },
+    {
+      "kind": "occurrence",
+      "ref": "56:2:2",
+      "fields": [
+        "meaningUrdu",
+        "segment0"
+      ]
+    },
+    {
+      "kind": "occurrence",
+      "ref": "56:46:2",
+      "fields": [
+        "dictionaryUrdu"
+      ]
+    }
+  ]
+}
