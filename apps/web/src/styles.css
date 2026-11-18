@@ -1066,8 +1066,12 @@ p {
   font-size: 14px;
   font-weight: 650;
 }
-.bottom-nav button:hover {
+.bottom-nav button:hover:not(:disabled) {
   background: #eff4e9;
+}
+.bottom-nav button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
 }
 .bottom-nav button.active {
   background: #dfedd7;
