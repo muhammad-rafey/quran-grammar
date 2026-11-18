@@ -20,6 +20,19 @@ async function loadStudy(page: Page, hash = '') {
   await page.evaluate(() => document.fonts.ready);
 }
 
+// The Grammar navigation button is disabled on web; the selected word's "View grammar" link
+// still opens the Grammar view at that word's ayah.
+async function openGrammar(page: Page, nav = 'Grammar', viewGrammar = 'View grammar') {
+  await expect(page.getByRole('button', { name: nav, exact: true })).toBeDisabled();
+  // From Settings, return to Study (the first navigation button) to reach a word.
+  if (!(await page.locator('.quran-word').first().isVisible()))
+    await page.locator('.bottom-nav button').first().click();
+  if (!(await detail(page).isVisible()))
+    await page.locator('.quran-word[aria-pressed="true"]').click();
+  await detail(page).getByRole('button', { name: viewGrammar, exact: true }).click();
+  await expect(page.locator('.grammar-view')).toBeVisible();
+}
+
 async function expectNoOverflow(page: Page) {
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 }
@@ -122,8 +135,9 @@ test('ayah selector follows selection, jumps in both views and resets with the c
   }
   await word(page, '1:5:2').click();
   await expect(selector).toHaveValue('5');
-  await page.getByRole('button', { name: 'Grammar', exact: true }).click();
-  await expect(selector).toHaveValue('1');
+  await openGrammar(page);
+  await expect(selector).toHaveValue('5');
+  await expect(page.locator('#grammar-ayah-5')).toBeInViewport();
   await selector.selectOption('6');
   await expect(page.locator('#grammar-ayah-6')).toBeInViewport();
   await page.getByRole('button', { name: 'Select surah', exact: true }).click();
@@ -143,7 +157,7 @@ test('practice explains mistakes, grades three questions and resets the score', 
   page,
 }) => {
   await loadStudy(page);
-  await page.getByRole('button', { name: 'Grammar', exact: true }).click();
+  await openGrammar(page);
   const practice = page.getByRole('region', { name: 'Quick practice', exact: true });
   await expect(practice.locator('.practice-count')).toHaveText('1 / 3');
   await expect(practice.getByRole('button', { name: 'Check answer', exact: true })).toBeDisabled();
@@ -327,7 +341,7 @@ test('grammar has fourteen constructions and seven tafsir notes, with no referen
     'href',
     'https://corpus.quran.com',
   );
-  await page.getByRole('button', { name: 'Grammar', exact: true }).click();
+  await openGrammar(page);
   await expect(page.locator('.grammar-card')).toHaveCount(7);
   await expect(page.locator('.phrase')).toHaveCount(14);
   await expect(page.locator('.tafsir')).toHaveCount(7);
@@ -450,7 +464,7 @@ for (const width of [320, 390, 768]) {
     await page.mouse.click(4, 4);
     await expect(sheet).not.toBeVisible();
     await expect(trigger).toBeFocused();
-    await page.getByRole('button', { name: 'Grammar', exact: true }).click();
+    await openGrammar(page);
     await expect(page.locator('.phrase')).toHaveCount(14);
     await expectNoOverflow(page);
     await page.getByRole('button', { name: 'Settings', exact: true }).click();
@@ -519,7 +533,7 @@ test('interface language persists while Arabic text and Urdu study content stay 
   await expect(page.locator('[data-surah="1"]')).toContainText('الفاتحة');
   await expect(page.locator('[data-surah="2"]')).toContainText('جلد دستیاب ہوگا');
   await page.keyboard.press('Escape');
-  await page.getByRole('button', { name: 'قواعد', exact: true }).click();
+  await openGrammar(page, 'قواعد', 'قواعد دیکھیں');
   const practice = page.getByRole('region', { name: 'مختصر مشق', exact: true });
   await expect(practice.locator('.practice-count')).toHaveText('۱ / ۳');
   await practice.locator('[data-answer="1:5:2"]').click();
@@ -610,7 +624,7 @@ test('all ten new chapters use their own words, root details, grammar and ayah s
     await expect(
       detail(page).getByRole('button', { name: 'Next word', exact: true }),
     ).toBeDisabled();
-    await page.getByRole('button', { name: 'Grammar', exact: true }).click();
+    await openGrammar(page);
     await expect(page.locator('.grammar-card')).toHaveCount(ayahs);
     await expect(page.locator('.tafsir')).toHaveCount(ayahs);
     await expect(page.locator('.practice-card')).toHaveCount(0);
@@ -671,7 +685,7 @@ test('five longer chapters load complete lessons with grammar, tafsir and paradi
         await expect(detail(page).locator('.verb-paradigm')).toBeVisible();
       }
     }
-    await page.getByRole('button', { name: 'Grammar', exact: true }).click();
+    await openGrammar(page);
     await expect(page.locator('.grammar-card')).toHaveCount(ayahs);
     await expect(page.locator('.tafsir')).toHaveCount(ayahs);
     await page.getByRole('combobox', { name: 'Select ayah' }).selectOption(String(ayahs));
