@@ -422,6 +422,7 @@ export function App() {
             type="button"
             key={id}
             className={view === id ? 'active' : ''}
+            disabled={id === 'grammar'}
             aria-label={label}
             title={label}
             aria-current={view === id ? 'page' : undefined}
