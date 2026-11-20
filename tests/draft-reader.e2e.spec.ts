@@ -32,7 +32,24 @@ function loadDraft(number: number): StudyData {
   return wrapper.study;
 }
 
-const ayahSelector = (page: Page) => page.getByRole('combobox', { name: 'Select ayah', exact: true });
+// The ayah chip opens a dialog with a number search and a grid of ayah buttons.
+const ayahSelector = (page: Page, name = 'Select ayah') =>
+  page.getByRole('button', { name, exact: true });
+const ayahPicker = (page: Page, name = 'Select ayah') =>
+  page.getByRole('dialog', { name, exact: true });
+async function chooseAyah(page: Page, number: number | string) {
+  await ayahSelector(page).click();
+  const picker = ayahPicker(page);
+  await expect(picker).toBeVisible();
+  await picker.locator(`.ayah-grid [data-ayah="${number}"]`).click();
+  await expect(picker).not.toBeVisible();
+}
+async function expectAyahNumbers(page: Page, count: number, name = 'Select ayah') {
+  await ayahSelector(page, name).click();
+  await expect(ayahPicker(page, name).locator('.ayah-grid button')).toHaveCount(count);
+  await page.keyboard.press('Escape');
+  await expect(ayahPicker(page, name)).not.toBeVisible();
+}
 const wordButton = (page: Page, id: string) => page.locator(`[data-word-id="${id}"]`);
 
 async function chooseJuz(page: Page, number: number, surah: number) {
@@ -62,19 +79,19 @@ for (const chapter of chapters) {
     expect(study.surah.wordCount).toBe(chapter.words);
     expect(study.surah.ayahCount).toBe(chapter.ayahs);
     await page.goto(`/#surah=${chapter.number}`);
-    await expect(page.locator('.bottom-nav button')).toHaveText(['Study', 'Grammar', 'Settings']);
+    await expect(page.locator('.bottom-nav button')).toHaveText(['Study', 'Practice Grammar', 'Settings']);
     await expect(page.locator('.quran-word')).toHaveCount(chapter.words, { timeout: chapterLoadTimeout });
     await expect(page.getByText(/published draft|scholar(?:ly)? review pending/i)).toHaveCount(0);
     expect(await page.locator('.quran-word .arabic').allTextContents()).toEqual(study.words.map(word => word.arabic));
     await expect(page.locator('.reading-card article.ayah')).toHaveCount(chapter.ayahs);
-    await expect(ayahSelector(page).locator('option')).toHaveCount(chapter.ayahs);
+    await expectAyahNumbers(page, chapter.ayahs);
     const first = study.words[0];
     const last = study.words.at(-1)!;
     expect(await wordButton(page, first.id).locator('.arabic').textContent()).toBe(first.arabic);
     expect(await wordButton(page, last.id).locator('.arabic').textContent()).toBe(last.arabic);
     const ids = await page.locator('.quran-word').evaluateAll((nodes) => nodes.map((node) => node.getAttribute('data-word-id')));
     expect(ids).toEqual(study.words.map((word) => word.id));
-    await ayahSelector(page).selectOption(String(chapter.ayahs));
+    await chooseAyah(page, String(chapter.ayahs));
     await expect(page.locator(`#ayah-${chapter.ayahs}`)).toBeInViewport();
   });
 }
@@ -92,18 +109,18 @@ for (const boundary of [
     await expect(page.locator('.quran-word')).toHaveCount(29);
     await chooseJuz(page, boundary.juz, boundary.surah);
     await expect(page.locator('.quran-word')).toHaveCount(study.surah.wordCount, { timeout: chapterLoadTimeout });
-    await expect(ayahSelector(page)).toHaveValue(String(boundary.start));
+    await expect(ayahSelector(page)).toHaveAttribute('data-ayah', String(boundary.start));
     await expect(page.locator('.collection-trigger')).toContainText(`Juz ${boundary.juz}`);
     await expect(page.locator(`#ayah-${boundary.start}`)).toBeInViewport();
     const first = study.words.find((word) => word.ayah === boundary.start)!;
     await expect(wordButton(page, first.id)).toHaveAttribute('aria-pressed', 'true');
     await expect(page).toHaveURL(new RegExp(`#surah=${boundary.surah}&ayah=${boundary.start}$`));
-    await ayahSelector(page).selectOption(String(boundary.start - 1));
+    await chooseAyah(page, String(boundary.start - 1));
     await expect(page.locator('.collection-trigger')).toContainText(`Juz ${boundary.beforeJuz}`);
     await expect(page.locator(`#ayah-${boundary.start - 1}`)).toBeInViewport();
-    await ayahSelector(page).selectOption(String(boundary.start));
+    await chooseAyah(page, String(boundary.start));
     await expect(page.locator('.collection-trigger')).toContainText(`Juz ${boundary.juz}`);
-    await expect(ayahSelector(page)).toHaveValue(String(boundary.start));
+    await expect(ayahSelector(page)).toHaveAttribute('data-ayah', String(boundary.start));
   });
 }
 
@@ -138,5 +155,5 @@ test('390px published Al-Kahf reader opens a contextual verb paradigm and closes
   await expect(sheet).toHaveCount(0);
   await expect(trigger).toBeFocused();
   expect(Math.abs((await page.evaluate(() => scrollY)) - readingY)).toBeLessThan(2);
-  await expect(ayahSelector(page)).toHaveValue('75');
+  await expect(ayahSelector(page)).toHaveAttribute('data-ayah', '75');
 });

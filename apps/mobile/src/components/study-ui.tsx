@@ -2,7 +2,8 @@ import { ActivityIndicator, Linking, Pressable, Text, View, type TextStyle } fro
 import type { ReactNode } from 'react';
 import { useStudy } from '@/state/study-provider';
 import { useInterface } from '@/state/preferences-provider';
-import { card, colors, type } from '@/theme/tokens';
+import { card, colors, lineEndSlack } from '@/theme/tokens';
+import { useTypography } from '@/theme/typography';
 
 export function Action({
   children,
@@ -39,6 +40,7 @@ export function Action({
     >
       <Text style={[labelStyle, { textAlign: 'center', color: quiet ? colors.primary : '#fff' }]}>
         {children}
+        {lineEndSlack}
       </Text>
     </Pressable>
   );
@@ -53,10 +55,13 @@ export function Label({
   muted?: boolean;
   style?: TextStyle;
 }) {
-  const { labelStyle } = useInterface();
+  const { labelText } = useInterface();
+  // The size goes through labelText so Urdu text gets a lineHeight its font needs.
+  const { fontSize = muted ? 14 : 16, lineHeight, ...rest } = style ?? {};
   return (
-    <Text style={[labelStyle, muted && { color: colors.muted, fontSize: 14 }, style]}>
+    <Text style={[labelText(fontSize, lineHeight), muted && { color: colors.muted }, rest]}>
       {children}
+      {lineEndSlack}
     </Text>
   );
 }
@@ -70,19 +75,22 @@ export function Paragraph({
   muted?: boolean;
   style?: TextStyle;
 }) {
+  const typography = useTypography();
   return (
-    <Text selectable style={[muted ? type.small : type.body, style]}>
+    <Text selectable style={typography.safe([muted ? typography.small : typography.body, style])}>
       {children}
+      {lineEndSlack}
     </Text>
   );
 }
 
 export function Section({ title, children }: { title: string; children: ReactNode }) {
-  const { labelStyle } = useInterface();
+  const { labelText } = useInterface();
   return (
     <View style={card}>
-      <Text accessibilityRole="header" style={[labelStyle, { fontSize: 18, fontWeight: '600' }]}>
+      <Text accessibilityRole="header" style={[labelText(18), { fontWeight: '600' }]}>
         {title}
+        {lineEndSlack}
       </Text>
       {children}
     </View>
@@ -115,8 +123,16 @@ export function DataStatus() {
   );
 }
 
-export function InitialDataState({ pending = false }: { pending?: boolean }) {
-  const { loading, retry, useBundled } = useStudy();
+export function InitialDataState({
+  pending = false,
+  state,
+}: {
+  pending?: boolean;
+  /** Overrides the selected chapter's state, e.g. for a word screen showing another chapter. */
+  state?: { loading: boolean; retry: () => void };
+}) {
+  const selected = useStudy();
+  const { loading, retry } = state ?? selected;
   const { ui, labelStyle } = useInterface();
   return (
     <View
@@ -139,9 +155,6 @@ export function InitialDataState({ pending = false }: { pending?: boolean }) {
             {ui.loadError}
           </Text>
           <Action onPress={retry}>{ui.retry}</Action>
-          <Action quiet onPress={useBundled}>
-            {ui.useOffline}
-          </Action>
         </>
       )}
     </View>

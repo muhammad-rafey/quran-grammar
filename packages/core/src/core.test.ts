@@ -2,19 +2,16 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { formatCount, getUiStrings, isUiLanguage } from './interface';
+import { fatihahPractice, fatihahStudy, getStudy, studies } from './content';
 import {
-  fatihahStudy,
   isStudyData,
   matchesWord,
   normalizeText,
   urduNumber,
   surahCatalog,
   juzCatalog,
-  fatihahPractice,
   gradePracticeAnswer,
   getPracticeProgress,
-  studies,
-  getStudy,
   availableSurahNumbers,
   getSurahTitle,
   getJuzForAyah,

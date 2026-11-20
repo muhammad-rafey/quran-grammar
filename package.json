@@ -27,6 +27,7 @@
     "test:content-pipeline": "node --test content-pipeline/tests/*.test.mjs && python3 -I -m unittest discover -s content-pipeline/tests -p 'test_*.py'",
     "test:e2e": "playwright test",
     "db:sqlite": "npm run db:sqlite -w @quran-grammar/api",
+    "db:mobile": "npm run db:mobile -w @quran-grammar/api",
     "db:sync": "npm run db:sync-postgres -w @quran-grammar/api",
     "db:verify": "npm run db:verify-sqlite -w @quran-grammar/api && npm run db:verify-postgres -w @quran-grammar/api",
     "verify": "npm run typecheck && npm test && npm run build"

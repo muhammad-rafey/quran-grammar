@@ -22,7 +22,9 @@ COPY apps/api/package.json apps/api/package.json
 COPY apps/web/package.json apps/web/package.json
 COPY apps/mobile/package.json apps/mobile/package.json
 COPY packages/core/package.json packages/core/package.json
-RUN npm ci --omit=dev --workspace @quran-grammar/api --include-workspace-root=false && npm cache clean --force
+# Runtime dependencies kept external by esbuild: express, cors and pg (Postgres content source).
+RUN npm ci --omit=dev --workspace @quran-grammar/api --include-workspace-root=false && npm cache clean --force \
+ && node -e "Promise.all(['express','cors','pg'].map((m)=>import(m))).catch((e)=>{console.error(e);process.exit(1)})"
 COPY --from=build /app/apps/api/dist apps/api/dist
 COPY --from=build /app/apps/web/dist apps/web/dist
 COPY THIRD_PARTY_NOTICES.md ./

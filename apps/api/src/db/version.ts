@@ -1,28 +1,28 @@
-import type { StudyData } from '@quran-grammar/core';
-import { DATABASE_SCHEMA_VERSION } from './schema';
-import { contentSha256 } from './rows';
+import { createHash } from 'node:crypto';
+import type { GrammarContent, StudyData } from '@quran-grammar/core';
+import { DATABASE_SCHEMA_VERSION, type ContentVersion } from '@quran-grammar/core/db';
 
-/** One row describing which bundled content a database copy holds. */
-export interface ContentVersion {
-  database_schema_version: number;
-  study_schema_version: number;
-  content_sha256: string;
-  source_commit: string;
-  synced_at: string;
-  surah_count: number;
-  ayah_count: number;
-  word_count: number;
+export type { ContentVersion };
+
+/** Stable fingerprint of the bundled studies and grammar content; recorded with every sync. */
+export function contentSha256(studies: readonly StudyData[], grammar: GrammarContent): string {
+  return createHash('sha256')
+    .update(JSON.stringify(studies))
+    .update('\n')
+    .update(JSON.stringify(grammar))
+    .digest('hex');
 }
 
 export function contentVersion(
   studies: readonly StudyData[],
+  grammar: GrammarContent,
   sourceCommit: string,
   syncedAt: string,
 ): ContentVersion {
   return {
     database_schema_version: DATABASE_SCHEMA_VERSION,
     study_schema_version: 1,
-    content_sha256: contentSha256(studies),
+    content_sha256: contentSha256(studies, grammar),
     source_commit: sourceCommit,
     synced_at: syncedAt,
     surah_count: studies.length,

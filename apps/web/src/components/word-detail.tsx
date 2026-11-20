@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, ChevronDown, GitBranch, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BookOpenText, GitBranch, X } from 'lucide-react';
 import {
   formatCount,
   getUiStrings,
@@ -13,11 +13,12 @@ interface Props {
   study: StudyData;
   language: UiLanguage;
   onSelect: (id: string) => void;
-  onGrammar: (ayah: number) => void;
+  /** Opens the grammar topic dialog for a rule; the button is passed back for focus return. */
+  onTopic: (ruleId: string, trigger: HTMLElement) => void;
   onClose?: () => void;
 }
 
-export function WordDetail({ word, study, language, onSelect, onGrammar, onClose }: Props) {
+export function WordDetail({ word, study, language, onSelect, onTopic, onClose }: Props) {
   const strings = getUiStrings(language);
   const uiDirection = language === 'ur' ? 'rtl' : 'ltr';
   const [segment, setSegment] = useState<number | null>(null);
@@ -161,16 +162,6 @@ export function WordDetail({ word, study, language, onSelect, onGrammar, onClose
             {strings.syntax}
           </h3>
           <p>{word.syntaxUrdu}</p>
-          <button
-            type="button"
-            className="text-button ui"
-            dir={uiDirection}
-            lang={language}
-            onClick={() => onGrammar(word.ayah)}
-          >
-            {strings.viewGrammar}{' '}
-            {language === 'ur' ? <ArrowLeft size={15} /> : <ArrowRight size={15} />}
-          </button>
         </section>
         <section className="detail-section">
           <h3 className="ui" dir={uiDirection} lang={language}>
@@ -182,19 +173,25 @@ export function WordDetail({ word, study, language, onSelect, onGrammar, onClose
           <h3 className="ui" dir={uiDirection} lang={language}>
             {strings.rules}
           </h3>
-          {word.ruleIds
-            .map((id) => study.rules.find((rule) => rule.id === id))
-            .filter((rule) => !!rule)
-            .map((rule) => (
-              <details className="grammar-rule" key={`${word.id}-${rule.id}`}>
-                <summary>
-                  {rule.titleUrdu}
-                  <ChevronDown size={15} />
-                </summary>
-                <p>{rule.explanationUrdu}</p>
-                <p className="rule-example">{rule.exampleUrdu}</p>
-              </details>
-            ))}
+          <ul className="grammar-rules">
+            {word.ruleIds
+              .map((id) => study.rules.find((rule) => rule.id === id))
+              .filter((rule) => !!rule)
+              .map((rule) => (
+                <li key={`${word.id}-${rule.id}`}>
+                  <button
+                    type="button"
+                    className="grammar-rule"
+                    data-rule={rule.id}
+                    aria-haspopup="dialog"
+                    onClick={(event) => onTopic(rule.id, event.currentTarget)}
+                  >
+                    <span className="grammar-rule-title">{rule.titleUrdu}</span>
+                    <BookOpenText size={16} aria-hidden="true" />
+                  </button>
+                </li>
+              ))}
+          </ul>
         </section>
         {related.length > 0 && (
           <section className="detail-section">

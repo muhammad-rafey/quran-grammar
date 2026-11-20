@@ -6,6 +6,10 @@ import {
   type UiLanguage,
   type Word,
 } from '@quran-grammar/core';
+import type { ReadingLayout } from '../use-reading-layout';
+
+const arabicDigits = (value: number) =>
+  String(value).replace(/[0-9]/g, (digit) => '٠١٢٣٤٥٦٧٨٩'[Number(digit)]!);
 
 interface Props {
   study: StudyData;
@@ -14,6 +18,7 @@ interface Props {
   meanings: boolean;
   filtering: boolean;
   matches: Set<string>;
+  layout: ReadingLayout;
   onSelect: (id: string, trigger: HTMLButtonElement) => void;
 }
 
@@ -24,6 +29,7 @@ export function Reading({
   meanings,
   filtering,
   matches,
+  layout,
   onSelect,
 }: Props) {
   const strings = getUiStrings(language);
@@ -39,16 +45,63 @@ export function Reading({
       : word.posUrdu === 'اسمِ موصول'
         ? 'اسمِ موصول'
         : { noun: 'اسم', adjective: 'صفت', particle: 'حرف', pronoun: 'ضمیر' }[word.pos];
+  // Plain layouts keep words tappable as inline buttons (no card styling) plus an ayah marker.
+  const plainWords = (number: number) => (
+    <>
+      {study.words
+        .filter((word) => word.ayah === number)
+        .map((word) => (
+          <span key={word.id}>
+            <button
+              type="button"
+              data-word-id={word.id}
+              className={`plain-word ${selectedId === word.id ? 'selected' : ''}`}
+              aria-pressed={selectedId === word.id}
+              aria-label={`${word.arabic}، ${word.meaningUrdu}`}
+              onClick={(event) => onSelect(word.id, event.currentTarget)}
+            >
+              {word.arabic}
+            </button>{' '}
+          </span>
+        ))}
+      <span
+        className="ayah-end"
+        role="img"
+        aria-label={`${strings.ayah} ${formatCount(number, language)}`}
+      >
+        {arabicDigits(number)}
+      </span>
+    </>
+  );
   return (
     <div
-      className="reading-card"
+      className={`reading-card ${layout.grammar ? '' : 'plain-reading'}`}
       id="reading"
       tabIndex={-1}
       aria-label={`${getSurahTitle(study.surah.number, language)} · ${strings.words}`}
       dir="rtl"
       lang="ur"
     >
-      {study.ayahs.map((ayah) => (
+      {!layout.grammar && !layout.translation ? (
+        // Mushaf-like: one continuous Quranic text; each ayah is an inline span for ayah jumps.
+        <p className="ayah-text mushaf-text arabic" lang="ar" dir="rtl">
+          {study.ayahs.map((ayah) => (
+            <span className="plain-ayah" id={`ayah-${ayah.number}`} key={ayah.number}>
+              {plainWords(ayah.number)}{' '}
+            </span>
+          ))}
+        </p>
+      ) : !layout.grammar ? (
+        study.ayahs.map((ayah) => (
+          <article className="ayah plain-ayah" id={`ayah-${ayah.number}`} key={ayah.number}>
+            <p className="ayah-text arabic" lang="ar" dir="rtl">
+              {plainWords(ayah.number)}
+            </p>
+            <p className="ayah-translation">{ayah.translationUrdu}</p>
+          </article>
+        ))
+      ) : (
+        study.ayahs.map((ayah) => (
         <article className="ayah" id={`ayah-${ayah.number}`} key={ayah.number}>
           <div className="ayah-heading">
             <span
@@ -84,9 +137,10 @@ export function Reading({
                 </button>
               ))}
           </div>
-          <p className="ayah-translation">{ayah.translationUrdu}</p>
+          {layout.translation && <p className="ayah-translation">{ayah.translationUrdu}</p>}
         </article>
-      ))}
+        ))
+      )}
     </div>
   );
 }

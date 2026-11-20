@@ -3,128 +3,146 @@ import {
   use,
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
   type ReactNode,
 } from 'react';
-import { fetch } from 'expo/fetch';
-import { getStudy, isStudyData, type StudyData } from '@quran-grammar/core';
-
-const apiOrigin = process.env.EXPO_PUBLIC_API_URL?.trim().replace(/\/+$/, '');
+import { availableSurahNumbers, type StudyData } from '@quran-grammar/core';
+import { getOpenedRepository, getRepository } from '@/data/repository';
 
 type StudyState = {
   selectedSurah: number;
   selectSurah: (number: number) => void;
+  /** Always the selected chapter's data, or null while it loads / after a failure. */
   study: StudyData | null;
   loading: boolean;
   error: string | null;
-  bundled: boolean;
-  hasApi: boolean;
   retry: () => void;
-  useBundled: () => void;
 };
 
 const StudyContext = createContext<StudyState | null>(null);
+const available = new Set(availableSurahNumbers);
+
+const cachedStudy = (surah: number) => getOpenedRepository()?.peekStudy(surah) ?? null;
 
 export function StudyProvider({ children }: { children: ReactNode }) {
   const [selectedSurah, setSelectedSurah] = useState(1);
   const selectedSurahRef = useRef(1);
-  const [study, setStudy] = useState<StudyData | null>(apiOrigin ? null : (getStudy(1) ?? null));
-  const [loading, setLoading] = useState(Boolean(apiOrigin));
+  const [study, setStudy] = useState<StudyData | null>(() => cachedStudy(1));
+  const [loading, setLoading] = useState(() => cachedStudy(1) === null);
   const [error, setError] = useState<string | null>(null);
-  const [bundled, setBundled] = useState(!apiOrigin);
-  const controller = useRef<AbortController | null>(null);
+  // Bumped by retry; also identifies the latest request so older results are ignored.
+  const [attempt, setAttempt] = useState(0);
 
   const selectSurah = useCallback((number: number) => {
-    if (!Number.isInteger(number) || !getStudy(number) || selectedSurahRef.current === number) {
-      return;
-    }
-    controller.current?.abort();
-    controller.current = null;
+    if (!available.has(number) || selectedSurahRef.current === number) return;
     selectedSurahRef.current = number;
     setSelectedSurah(number);
     // A previous chapter must never appear under the newly selected chapter's title.
-    setStudy(apiOrigin ? null : (getStudy(number) ?? null));
-    setBundled(!apiOrigin);
-    setLoading(Boolean(apiOrigin));
+    const cached = cachedStudy(number);
+    setStudy(cached);
+    setLoading(cached === null);
     setError(null);
   }, []);
 
-  const fetchStudy = useCallback(() => {
-    if (!apiOrigin) return;
-    controller.current?.abort();
-    const next = new AbortController();
-    controller.current = next;
-    const timeout = setTimeout(() => next.abort(), 12000);
-    void fetch(`${apiOrigin}/api/v1/surahs/${selectedSurah}`, { signal: next.signal })
-      .then(async (response) => {
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const value: unknown = await response.json();
-        if (!isStudyData(value) || value.surah.number !== selectedSurah) {
-          throw new Error('Invalid study data');
-        }
-        return value;
-      })
+  useEffect(() => {
+    let current = true;
+    const surah = selectedSurah;
+    const cached = cachedStudy(surah);
+    if (cached) {
+      setStudy(cached);
+      setError(null);
+      setLoading(false);
+      return;
+    }
+    setLoading(true);
+    getRepository()
+      .then((repository) => repository.getStudy(surah))
       .then((value) => {
-        if (controller.current !== next) return;
+        if (!current || selectedSurahRef.current !== surah) return;
+        if (!value || value.surah.number !== surah) throw new Error(`Surah ${surah} is missing.`);
         setStudy(value);
-        setBundled(false);
+        setError(null);
       })
-      .catch(() => {
-        if (controller.current !== next) return;
-        setError('سبق لوڈ نہیں ہو سکا۔ انٹرنیٹ اور سرور کا رابطہ دیکھ کر دوبارہ کوشش کریں۔');
+      .catch((reason: unknown) => {
+        if (!current || selectedSurahRef.current !== surah) return;
+        console.warn('Study content failed to load', reason);
+        setError(reason instanceof Error ? reason.message : String(reason));
       })
       .finally(() => {
-        clearTimeout(timeout);
-        if (controller.current === next) setLoading(false);
+        if (current && selectedSurahRef.current === surah) setLoading(false);
       });
-  }, [selectedSurah]);
-
-  useEffect(() => {
-    void fetchStudy();
     return () => {
-      controller.current?.abort();
-      controller.current = null;
+      current = false;
     };
-  }, [fetchStudy]);
+  }, [selectedSurah, attempt]);
 
   const retry = useCallback(() => {
-    if (!apiOrigin) return;
+    setError(null);
     setLoading(true);
-    setError(null);
-    void fetchStudy();
-  }, [fetchStudy]);
+    setAttempt((value) => value + 1);
+  }, []);
 
-  const useBundled = useCallback(() => {
-    controller.current?.abort();
-    controller.current = null;
-    setStudy(getStudy(selectedSurah) ?? null);
-    setBundled(true);
-    setLoading(false);
-    setError(null);
-  }, [selectedSurah]);
-
-  return (
-    <StudyContext
-      value={{
-        selectedSurah,
-        selectSurah,
-        study,
-        loading,
-        error,
-        bundled,
-        hasApi: Boolean(apiOrigin),
-        retry,
-        useBundled,
-      }}
-    >
-      {children}
-    </StudyContext>
+  const value = useMemo(
+    () => ({ selectedSurah, selectSurah, study, loading, error, retry }),
+    [selectedSurah, selectSurah, study, loading, error, retry],
   );
+  return <StudyContext value={value}>{children}</StudyContext>;
 }
 
 export function useStudy() {
   const context = use(StudyContext);
   if (!context) throw new Error('useStudy requires StudyProvider');
   return context;
+}
+
+/**
+ * Any chapter's study data WITHOUT changing the study screen's selected chapter, e.g. for a word
+ * opened from a grammar topic or quiz. Reuses the selected chapter and the repository's cache, so a
+ * chapter that is open or was recently viewed renders immediately.
+ */
+export function useSurahStudy(surah: number | null) {
+  const selected = useStudy();
+  const shared = surah !== null && selected.study?.surah.number === surah ? selected.study : null;
+  const [own, setOwn] = useState<{ surah: number; study: StudyData } | null>(null);
+  const [failed, setFailed] = useState<{ surah: number; message: string } | null>(null);
+  const [attempt, setAttempt] = useState(0);
+  const peeked = surah !== null && !shared ? cachedStudy(surah) : null;
+  const study =
+    shared ?? peeked ?? (own && own.surah === surah ? own.study : null);
+
+  useEffect(() => {
+    if (surah === null || !available.has(surah) || study) return;
+    let current = true;
+    getRepository()
+      .then((repository) => repository.getStudy(surah))
+      .then((value) => {
+        if (!current) return;
+        if (!value || value.surah.number !== surah) throw new Error(`Surah ${surah} is missing.`);
+        setOwn({ surah, study: value });
+        setFailed(null);
+      })
+      .catch((reason: unknown) => {
+        if (!current) return;
+        console.warn('Study content failed to load', reason);
+        setFailed({ surah, message: reason instanceof Error ? reason.message : String(reason) });
+      });
+    return () => {
+      current = false;
+    };
+    // `study` is derived; only refetch when the chapter or a retry changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [surah, attempt, Boolean(study)]);
+
+  const error = failed && failed.surah === surah && !study ? failed.message : null;
+  return {
+    study,
+    loading: surah !== null && !study && !error,
+    error,
+    retry: () => {
+      setFailed(null);
+      setAttempt((value) => value + 1);
+    },
+  };
 }

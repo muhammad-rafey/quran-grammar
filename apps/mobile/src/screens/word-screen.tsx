@@ -3,29 +3,38 @@ import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Stack } from 'expo-router/stack';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { getStudy, type Rule } from '@quran-grammar/core';
+import { availableSurahNumbers, type Rule } from '@quran-grammar/core';
+import { AppIcon } from '@/components/app-icon';
 import { Action, InitialDataState, Label, Paragraph, Section } from '@/components/study-ui';
 import { useInterface } from '@/state/preferences-provider';
-import { useStudy } from '@/state/study-provider';
+import { useStudy, useSurahStudy } from '@/state/study-provider';
 import { parseWordLocation } from '@/state/word-location';
-import { card, colors, row, type } from '@/theme/tokens';
+import { card, colors, lineEndSlack, row } from '@/theme/tokens';
+import { useTypography } from '@/theme/typography';
 
 export default function WordScreen() {
-  const { id } = useLocalSearchParams<{ id: string }>();
-  const { study, selectSurah } = useStudy();
+  const { id, preview } = useLocalSearchParams<{ id: string; preview?: string }>();
+  const { selectSurah } = useStudy();
   const { ui, count, labelStyle, controlRow } = useInterface();
+  const type = useTypography();
+  const { arabicText } = type;
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const [segmentSelection, setSegmentSelection] = useState({ wordId: id, index: 0 });
   const segment = segmentSelection.wordId === id ? segmentSelection.index : 0;
   const location = parseWordLocation(id);
+  // The Surah's words load asynchronously; the word itself is checked once that study arrives.
   const routeSurah =
-    location && getStudy(location.surah)?.words.some((word) => word.id === id)
-      ? location.surah
-      : null;
+    location && availableSurahNumbers.includes(location.surah) ? location.surah : null;
+  // Words opened from a grammar topic or quiz are previews: they load their chapter on their own,
+  // so returning never switches (or reloads) the study screen behind them. Other entries, such as
+  // deep links, also select the chapter on the study screen.
+  const isPreview = preview === '1';
   useEffect(() => {
-    if (routeSurah !== null) selectSurah(routeSurah);
-  }, [routeSurah, selectSurah]);
+    if (routeSurah !== null && !isPreview) selectSurah(routeSurah);
+  }, [routeSurah, isPreview, selectSurah]);
+  const chapter = useSurahStudy(routeSurah);
+  const study = chapter.study;
   const close = () => (router.canGoBack() ? router.back() : router.replace('/'));
   if (routeSurah === null)
     return (
@@ -35,7 +44,7 @@ export default function WordScreen() {
       </View>
     );
   if (!study || study.surah.number !== routeSurah) {
-    return <InitialDataState pending={Boolean(study && study.surah.number !== routeSurah)} />;
+    return <InitialDataState state={chapter} />;
   }
   const index = study.words.findIndex((entry) => entry.id === id);
   const word = study.words[index];
@@ -96,11 +105,11 @@ export default function WordScreen() {
         <View style={{ ...card, alignItems: 'center' }}>
           <Text
             selectable
-            style={[type.arabic, { fontSize: 46, lineHeight: 100, textAlign: 'center' }]}
+            style={[type.arabic, arabicText(46), { textAlign: 'center' }]}
           >
             {word.arabic}
           </Text>
-          <Paragraph style={{ textAlign: 'center', fontSize: 22, lineHeight: 38 }}>
+          <Paragraph style={{ ...type.urduText(22, 38), textAlign: 'center' }}>
             {word.meaningUrdu}
           </Paragraph>
           <View
@@ -111,7 +120,9 @@ export default function WordScreen() {
               backgroundColor: colors.wash,
             }}
           >
-            <Text style={[type.small, { color: colors.primary }]}>{word.posUrdu}</Text>
+            <Text style={[type.small, { color: colors.primary }]}>{word.posUrdu}
+              {lineEndSlack}
+            </Text>
           </View>
         </View>
         <View style={{ ...controlRow, flexWrap: 'wrap', justifyContent: 'space-between' }}>
@@ -134,7 +145,7 @@ export default function WordScreen() {
             <>
               <Text
                 selectable
-                style={[type.arabic, { fontSize: 34, lineHeight: 64, color: colors.primary }]}
+                style={[type.arabic, arabicText(34), { color: colors.primary }]}
               >
                 {word.root}
               </Text>
@@ -173,7 +184,7 @@ export default function WordScreen() {
               </View>
             </View>
             <Label muted>{ui.pattern}</Label>
-            <Text selectable style={[type.arabic, { fontSize: 26, lineHeight: 62 }]}>
+            <Text selectable style={[type.arabic, arabicText(26)]}>
               {verb.pattern}
             </Text>
             <Paragraph>{verb.noteUrdu}</Paragraph>
@@ -199,11 +210,8 @@ export default function WordScreen() {
                 <Text
                   style={[
                     type.arabic,
-                    {
-                      color: segment === itemIndex ? '#fff' : colors.primary,
-                      fontSize: 25,
-                      lineHeight: 58,
-                    },
+                    arabicText(25),
+                    { color: segment === itemIndex ? '#fff' : colors.primary },
                   ]}
                 >
                   {item.arabic}
@@ -227,7 +235,11 @@ export default function WordScreen() {
         {rules.length > 0 && (
           <Section title={ui.rules}>
             {rules.map((rule) => (
-              <RuleDisclosure key={`${word.id}-${rule.id}`} rule={rule} />
+              <RuleLink
+                key={`${word.id}-${rule.id}`}
+                rule={rule}
+                onPress={() => router.push({ pathname: '/topic/[id]', params: { id: rule.id } })}
+              />
             ))}
           </Section>
         )}
@@ -248,7 +260,7 @@ export default function WordScreen() {
                   }}
                 >
                   <Text
-                    style={[type.arabic, { fontSize: 24, lineHeight: 56, color: colors.primary }]}
+                    style={[type.arabic, arabicText(24), { color: colors.primary }]}
                   >
                     {entry.arabic}
                   </Text>
@@ -266,28 +278,31 @@ export default function WordScreen() {
   );
 }
 
-function RuleDisclosure({ rule }: { rule: Rule }) {
-  const [open, setOpen] = useState(false);
-  // Expo Go 57's SwiftUI disclosure did not lay out its body during device QA.
-  // Keep this disclosure in the RN layout tree so all text stays reachable.
+function RuleLink({ rule, onPress }: { rule: Rule; onPress: () => void }) {
+  const { ui } = useInterface();
+  const type = useTypography();
+  // The row is laid out right-to-left for the Urdu title, so the chevron points left.
+  // Rules open their full grammar topic screen instead of expanding inline.
   return (
-    <View style={{ borderTopWidth: 1, borderColor: colors.border, paddingTop: 6, gap: 8 }}>
-      <Pressable
-        accessibilityRole="button"
-        accessibilityLabel={rule.titleUrdu}
-        accessibilityState={{ expanded: open }}
-        onPress={() => setOpen(!open)}
-        style={{ ...row, minHeight: 48, justifyContent: 'space-between', gap: 12 }}
-      >
-        <Text style={[type.body, { color: colors.primary, flex: 1 }]}>{rule.titleUrdu}</Text>
-        <Text style={{ color: colors.primary, fontSize: 24 }}>{open ? '−' : '+'}</Text>
-      </Pressable>
-      {open && (
-        <View style={{ gap: 8, paddingBottom: 10 }}>
-          <Paragraph>{rule.explanationUrdu}</Paragraph>
-          <Paragraph muted>{rule.exampleUrdu}</Paragraph>
-        </View>
-      )}
-    </View>
+    <Pressable
+      testID={`rule-${rule.id}`}
+      accessibilityRole="button"
+      accessibilityLabel={rule.titleUrdu}
+      accessibilityHint={ui.openTopic}
+      onPress={onPress}
+      style={({ pressed }) => ({
+        ...row,
+        minHeight: 52,
+        justifyContent: 'space-between',
+        gap: 12,
+        borderTopWidth: 1,
+        borderColor: colors.border,
+        paddingVertical: 6,
+        opacity: pressed ? 0.6 : 1,
+      })}
+    >
+      <Text style={[type.body, { color: colors.primary, flex: 1 }]}>{rule.titleUrdu}</Text>
+      <AppIcon name="chevronLeft" />
+    </Pressable>
   );
 }

@@ -27,6 +27,14 @@ const icons = {
   close: Icon.select({ ios: 'xmark', android: import('@expo/material-symbols/close.xml') }),
   lock: Icon.select({ ios: 'lock', android: import('@expo/material-symbols/lock.xml') }),
   spark: Icon.select({ ios: 'sparkles', android: import('@expo/material-symbols/wand_stars.xml') }),
+  chevronRight: Icon.select({
+    ios: 'chevron.right',
+    android: import('@expo/material-symbols/chevron_right.xml'),
+  }),
+  chevronLeft: Icon.select({
+    ios: 'chevron.left',
+    android: import('@expo/material-symbols/chevron_left.xml'),
+  }),
 } as const;
 
 export function AppIcon({

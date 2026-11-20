@@ -2,9 +2,20 @@ import express, { type ErrorRequestHandler } from 'express';
 import cors from 'cors';
 import { existsSync } from 'node:fs';
 import { extname, resolve } from 'node:path';
-import { studies, getStudy, matchesWord, type PartOfSpeechFilter } from '@quran-grammar/core';
+import {
+  matchesWord,
+  type ContentRepository,
+  type PartOfSpeechFilter,
+  type PracticeQuestionFilter,
+} from '@quran-grammar/core';
+
+export type ContentSource = 'postgres' | 'bundled';
 
 export interface AppOptions {
+  /** Content source: Postgres (DATABASE_URL) in production, bundled lessons otherwise. */
+  repository: ContentRepository;
+  /** Reported by /api/health. Defaults to 'bundled'. */
+  source?: ContentSource;
   allowedOrigins?: string[];
   webDist?: string;
 }
@@ -19,8 +30,12 @@ const filters = new Set<PartOfSpeechFilter>([
   'pronoun',
 ]);
 const failure = (code: string, message: string) => ({ error: { code, message } });
+const topicId = /^[a-z0-9-]{1,64}$/;
+const cacheable = 'public, max-age=300';
 
-export function createApp(options: AppOptions = {}) {
+export function createApp(options: AppOptions) {
+  const { repository } = options;
+  const source: ContentSource = options.source ?? 'bundled';
   const app = express();
   const origins = new Set(options.allowedOrigins ?? defaultOrigins);
   app.disable('x-powered-by');
@@ -51,23 +66,22 @@ export function createApp(options: AppOptions = {}) {
   app.get('/api/health', (_req, res) => {
     res
       .set('Cache-Control', 'no-store')
-      .json({ status: 'ok', service: 'quran-grammar-api', schemaVersion: 1 });
+      .json({ status: 'ok', service: 'quran-grammar-api', schemaVersion: 1, source });
   });
 
-  app.get('/api/v1/surahs', (_req, res) => {
-    res
-      .set('Cache-Control', 'public, max-age=300')
-      .json({ surahs: studies.map((study) => study.surah) });
+  app.get('/api/v1/surahs', async (_req, res) => {
+    const surahs = await repository.listSurahs();
+    res.set('Cache-Control', cacheable).json({ surahs });
   });
 
-  app.get('/api/v1/surahs/:surahId', (req, res) => {
+  app.get('/api/v1/surahs/:surahId', async (req, res) => {
     if (!/^[1-9][0-9]{0,2}$/.test(req.params.surahId)) {
       res
         .status(400)
         .json(failure('INVALID_SURAH', 'Surah must be a positive numeric identifier.'));
       return;
     }
-    const study = getStudy(Number(req.params.surahId));
+    const study = await repository.getStudy(Number(req.params.surahId));
     if (!study) {
       res
         .status(404)
@@ -79,10 +93,10 @@ export function createApp(options: AppOptions = {}) {
         );
       return;
     }
-    res.set('Cache-Control', 'public, max-age=300').json(study);
+    res.set('Cache-Control', cacheable).json(study);
   });
 
-  app.get('/api/v1/surahs/:surahId/words/:id', (req, res) => {
+  app.get('/api/v1/surahs/:surahId/words/:id', async (req, res) => {
     if (
       !/^[1-9][0-9]{0,2}$/.test(req.params.surahId) ||
       !/^\d{1,3}:\d{1,3}:\d{1,3}$/.test(req.params.id)
@@ -90,7 +104,7 @@ export function createApp(options: AppOptions = {}) {
       res.status(400).json(failure('INVALID_WORD', 'Word identifiers use surah:ayah:position.'));
       return;
     }
-    const study = getStudy(Number(req.params.surahId));
+    const study = await repository.getStudy(Number(req.params.surahId));
     if (!study) {
       res
         .status(404)
@@ -107,7 +121,7 @@ export function createApp(options: AppOptions = {}) {
       res.status(404).json(failure('WORD_NOT_FOUND', 'This word occurrence is not available.'));
       return;
     }
-    res.set('Cache-Control', 'public, max-age=300').json({
+    res.set('Cache-Control', cacheable).json({
       word,
       root: word.root ? study.roots[word.root] : null,
       verbForm: study.verbForms[word.id] ?? null,
@@ -115,7 +129,7 @@ export function createApp(options: AppOptions = {}) {
     });
   });
 
-  app.get('/api/v1/search', (req, res) => {
+  app.get('/api/v1/search', async (req, res) => {
     const query = req.query.q ?? '';
     const pos = req.query.pos ?? 'all';
     const surahId = req.query.surah ?? '1';
@@ -137,7 +151,7 @@ export function createApp(options: AppOptions = {}) {
         );
       return;
     }
-    const study = getStudy(Number(surahId));
+    const study = await repository.getStudy(Number(surahId));
     if (!study) {
       res
         .status(404)
@@ -148,6 +162,55 @@ export function createApp(options: AppOptions = {}) {
       matchesWord(word, study, query, pos as PartOfSpeechFilter),
     );
     res.json({ query: query.trim(), pos, surah: study.surah.number, total: words.length, words });
+  });
+
+  app.get('/api/v1/topics', async (_req, res) => {
+    const topics = await repository.listTopics();
+    res.set('Cache-Control', cacheable).json({ topics });
+  });
+
+  app.get('/api/v1/topics/:topicId', async (req, res) => {
+    if (!topicId.test(req.params.topicId)) {
+      res
+        .status(400)
+        .json(failure('INVALID_TOPIC', 'Topic identifiers use lowercase letters, digits and hyphens.'));
+      return;
+    }
+    const topic = await repository.getTopic(req.params.topicId);
+    if (!topic) {
+      res.status(404).json(failure('TOPIC_NOT_FOUND', 'This grammar topic is not available.'));
+      return;
+    }
+    res.set('Cache-Control', cacheable).json(topic);
+  });
+
+  app.get('/api/v1/practice', async (req, res) => {
+    const { topic, set } = req.query;
+    let filter: PracticeQuestionFilter;
+    if (typeof topic === 'string' && set === undefined && topicId.test(topic)) {
+      filter = { topicId: topic };
+    } else if (set === 'fatihah' && topic === undefined) {
+      filter = { set: 'fatihah' };
+    } else {
+      res
+        .status(400)
+        .json(
+          failure(
+            'INVALID_PRACTICE',
+            'Use exactly one of topic=<topic id> or set=fatihah.',
+          ),
+        );
+      return;
+    }
+    if (
+      'topicId' in filter &&
+      !(await repository.listTopics()).some((entry) => entry.id === filter.topicId)
+    ) {
+      res.status(404).json(failure('TOPIC_NOT_FOUND', 'This grammar topic is not available.'));
+      return;
+    }
+    const questions = await repository.getPracticeQuestions(filter);
+    res.set('Cache-Control', cacheable).json({ questions });
   });
 
   // This precedes the SPA fallback so an unknown API route can never return HTML.

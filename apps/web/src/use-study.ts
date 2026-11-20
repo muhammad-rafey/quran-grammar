@@ -1,11 +1,27 @@
 import { useEffect, useState } from 'react';
 import { isStudyData, type StudyData } from '@quran-grammar/core';
 
+// Recently viewed chapters, so returning to one (browser Back, a topic example) is instant.
+const recent = new Map<number, StudyData>();
+const RECENT_LIMIT = 6;
+function remember(study: StudyData) {
+  recent.delete(study.surah.number);
+  recent.set(study.surah.number, study);
+  while (recent.size > RECENT_LIMIT) recent.delete(recent.keys().next().value as number);
+}
+
 export function useStudy(surahNumber: number) {
-  const [data, setData] = useState<StudyData | null>(null);
+  const [data, setData] = useState<StudyData | null>(() => recent.get(surahNumber) ?? null);
   const [failedSurah, setFailedSurah] = useState<number | null>(null);
   const [attempt, setAttempt] = useState(0);
   useEffect(() => {
+    const cached = recent.get(surahNumber);
+    if (cached) {
+      remember(cached);
+      setData(cached);
+      setFailedSurah(null);
+      return;
+    }
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 15000);
     let active = true;
@@ -17,6 +33,7 @@ export function useStudy(surahNumber: number) {
         const payload: unknown = await response.json();
         if (!isStudyData(payload) || payload.surah.number !== surahNumber)
           throw new Error('Invalid study');
+        remember(payload);
         if (active) setData(payload);
       })
       .catch(() => {
@@ -29,8 +46,9 @@ export function useStudy(surahNumber: number) {
       window.clearTimeout(timeout);
     };
   }, [attempt, surahNumber]);
+  const current = data?.surah.number === surahNumber ? data : (recent.get(surahNumber) ?? null);
   return {
-    data: data?.surah.number === surahNumber ? data : null,
+    data: current,
     error: failedSurah === surahNumber,
     retry: () => setAttempt((value) => value + 1),
   };

@@ -1,7 +1,7 @@
-import { createHash } from 'node:crypto';
-import type { PartOfSpeech, StudyData } from '@quran-grammar/core';
+import type { PartOfSpeech, StudyData } from '../types';
 
-export interface ContentRows {
+/** Rows of the ten study tables (one StudyData per Surah). */
+export interface StudyRows {
   surahs: {
     number: number;
     name_urdu: string;
@@ -76,27 +76,8 @@ export interface ContentRows {
   phrase_words: { phrase_id: string; position: number; word_id: string }[];
 }
 
-/** Insertion order: parents before children. */
-export const TABLES_PARENT_FIRST = [
-  'surahs',
-  'ayahs',
-  'rules',
-  'roots',
-  'words',
-  'word_segments',
-  'word_rules',
-  'verb_forms',
-  'phrases',
-  'phrase_words',
-] as const satisfies readonly (keyof ContentRows)[];
-
-/** Stable fingerprint of the bundled content; recorded with every database sync. */
-export function contentSha256(studies: readonly StudyData[]): string {
-  return createHash('sha256').update(JSON.stringify(studies)).digest('hex');
-}
-
-export function studiesToRows(studies: readonly StudyData[]): ContentRows {
-  const rows: ContentRows = {
+export function studiesToRows(studies: readonly StudyData[]): StudyRows {
+  const rows: StudyRows = {
     surahs: [],
     ayahs: [],
     rules: [],
@@ -205,9 +186,9 @@ export function studiesToRows(studies: readonly StudyData[]): ContentRows {
   return rows;
 }
 
-const byPosition = <T extends { position: number }>(a: T, b: T) => a.position - b.position;
+export const byPosition = <T extends { position: number }>(a: T, b: T) => a.position - b.position;
 
-function group<T>(
+export function group<T>(
   items: readonly T[],
   key: (item: T) => string | number,
 ): Map<string | number, T[]> {
@@ -222,7 +203,7 @@ function group<T>(
 }
 
 /** Rebuild StudyData exactly (including key and list order) from database rows. */
-export function rowsToStudies(rows: ContentRows): StudyData[] {
+export function rowsToStudies(rows: StudyRows): StudyData[] {
   const ayahsBySurah = group(rows.ayahs, (row) => row.surah);
   const wordsBySurah = group(rows.words, (row) => row.surah);
   const rulesBySurah = group(rows.rules, (row) => row.surah);

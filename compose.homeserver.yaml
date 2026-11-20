@@ -1,8 +1,16 @@
 # Use with compose.yaml when an existing Caddy proxy shares the apps network.
+# The API reads study content from the home-server Supabase Postgres (schema quran_grammar)
+# through the read-only role described in apps/api/README.md. Put DATABASE_URL in an untracked
+# .env next to this file; without it (or if Postgres is unreachable) the bundled content is served.
 services:
   app:
     container_name: quran-grammar
-    networks: [apps]
+    networks: [apps, supabase_default]
+    env_file:
+      - path: .env
+        required: false
 networks:
   apps:
+    external: true
+  supabase_default:
     external: true
