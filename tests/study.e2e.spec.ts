@@ -4,6 +4,24 @@ const word = (page: Page, id: string) => page.locator(`[data-word-id="${id}"]`);
 const detail = (page: Page) => page.locator('.word-detail, .word-sheet[open]');
 const withoutMarks = (text: string | null) => (text || '').replace(/[\u064b-\u065f\u0670]/g, '');
 const preferenceKey = 'quran-grammar.ui-language';
+// The ayah chip opens a dialog with a number search and a grid of ayah buttons.
+const ayahChip = (page: Page, name = 'Select ayah') =>
+  page.getByRole('button', { name, exact: true });
+const ayahPicker = (page: Page, name = 'Select ayah') =>
+  page.getByRole('dialog', { name, exact: true });
+async function chooseAyah(page: Page, number: number | string) {
+  await ayahChip(page).click();
+  const picker = ayahPicker(page);
+  await expect(picker).toBeVisible();
+  await picker.locator(`.ayah-grid [data-ayah="${number}"]`).click();
+  await expect(picker).not.toBeVisible();
+}
+async function expectAyahNumbers(page: Page, count: number, name = 'Select ayah') {
+  await ayahChip(page, name).click();
+  await expect(ayahPicker(page, name).locator('.ayah-grid button')).toHaveCount(count);
+  await page.keyboard.press('Escape');
+  await expect(ayahPicker(page, name)).not.toBeVisible();
+}
 
 // Every test receives a new browser context; reloads within a test retain its preference.
 test.use({ storageState: { cookies: [], origins: [] } });
@@ -20,18 +38,24 @@ async function loadStudy(page: Page, hash = '') {
   await page.evaluate(() => document.fonts.ready);
 }
 
-// The Grammar navigation button is disabled on web; the selected word's "View grammar" link
-// still opens the Grammar view at that word's ayah.
-async function openGrammar(page: Page, nav = 'Grammar', viewGrammar = 'View grammar') {
-  await expect(page.getByRole('button', { name: nav, exact: true })).toBeDisabled();
-  // From Settings, return to Study (the first navigation button) to reach a word.
-  if (!(await page.locator('.quran-word').first().isVisible()))
-    await page.locator('.bottom-nav button').first().click();
-  if (!(await detail(page).isVisible()))
-    await page.locator('.quran-word[aria-pressed="true"]').click();
-  await detail(page).getByRole('button', { name: viewGrammar, exact: true }).click();
-  await expect(page.locator('.grammar-view')).toBeVisible();
+const navLabels = ['Study', 'Practice Grammar', 'Settings'];
+
+// The Practice Grammar tab lists grammar topics (from the API) and the Al-Fatihah quick practice.
+async function openPracticeGrammar(page: Page, nav = 'Practice Grammar') {
+  const button = page.locator('.bottom-nav').getByRole('button', { name: nav, exact: true });
+  await expect(button).toBeEnabled();
+  await button.click();
+  await expect(page.locator('.practice-view')).toBeVisible();
+  await expect(page.locator('.lesson-toolbar')).toHaveCount(0);
+  await expect(page.locator('.grammar-card, .phrase, .tafsir')).toHaveCount(0);
 }
+
+async function openFatihahPractice(page: Page, nav = 'Practice Grammar') {
+  await openPracticeGrammar(page, nav);
+  await page.locator('[data-practice="fatihah"]').click();
+}
+
+const topicDialog = (page: Page) => page.locator('dialog.topic-dialog[open]');
 
 async function expectNoOverflow(page: Page) {
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -82,8 +106,8 @@ test('surah and juz catalogs expose available lessons and preserve picker focus'
   await catalog.locator('[data-surah="2"]').evaluate((node: HTMLButtonElement) => node.click());
   await expect(catalog).toBeVisible();
   await expect(
-    page.getByRole('combobox', { name: 'Select ayah', includeHidden: true }),
-  ).toHaveValue('1');
+    page.getByRole('button', { name: 'Select ayah', includeHidden: true }),
+  ).toHaveAttribute('data-ayah', '1');
   for (let index = 0; index < 7; index++) {
     await page.keyboard.press('Tab');
     // Chromium may move focus to browser chrome between cycles; background controls stay inert.
@@ -122,33 +146,37 @@ test('surah and juz catalogs expose available lessons and preserve picker focus'
   expect(requestedSurahs.every((path) => path === '/api/v1/surahs/1')).toBe(true);
 });
 
-test('ayah selector follows selection, jumps in both views and resets with the collection', async ({
+test('ayah selector follows selection, jumps to ayahs and resets with the collection', async ({
   page,
 }) => {
   await loadStudy(page);
-  const selector = page.getByRole('combobox', { name: 'Select ayah', exact: true });
-  await expect(selector.locator('option')).toHaveText(['1', '2', '3', '4', '5', '6', '7']);
+  const selector = ayahChip(page);
+  await selector.click();
+  await expect(ayahPicker(page).locator('.ayah-grid button')).toHaveText([
+    '1', '2', '3', '4', '5', '6', '7',
+  ]);
+  await page.keyboard.press('Escape');
   for (const number of ['1', '4', '7']) {
-    await selector.selectOption(number);
+    await chooseAyah(page, number);
     await expect(page.locator(`#ayah-${number}`)).toBeInViewport();
     await expect(word(page, `1:${number}:1`)).toHaveAttribute('aria-pressed', 'true');
   }
   await word(page, '1:5:2').click();
-  await expect(selector).toHaveValue('5');
-  await openGrammar(page);
-  await expect(selector).toHaveValue('5');
-  await expect(page.locator('#grammar-ayah-5')).toBeInViewport();
-  await selector.selectOption('6');
-  await expect(page.locator('#grammar-ayah-6')).toBeInViewport();
+  await expect(selector).toHaveAttribute('data-ayah', '5');
+  await openPracticeGrammar(page);
+  await expect(selector).toHaveCount(0);
+  await page.getByRole('button', { name: 'Study', exact: true }).click();
+  await expect(selector).toHaveAttribute('data-ayah', '1');
+  await chooseAyah(page, '6');
+  await expect(page.locator('#ayah-6')).toBeInViewport();
   await page.getByRole('button', { name: 'Select surah', exact: true }).click();
   await page.locator('[data-surah="1"]').click();
-  await expect(selector).toHaveValue('1');
-  await expect(page.locator('#grammar-ayah-1')).toBeInViewport();
-  await page.getByRole('button', { name: 'Study', exact: true }).click();
+  await expect(selector).toHaveAttribute('data-ayah', '1');
+  await expect(page.locator('#ayah-1')).toBeInViewport();
   await word(page, '1:5:2').click();
   await page.getByRole('button', { name: 'Settings', exact: true }).click();
   await page.getByRole('button', { name: 'Study', exact: true }).click();
-  await expect(selector).toHaveValue('1');
+  await expect(selector).toHaveAttribute('data-ayah', '1');
   await expect(word(page, '1:1:1')).toHaveAttribute('aria-pressed', 'true');
   await expect(page).toHaveURL(/word=1%3A1%3A1/);
 });
@@ -157,7 +185,7 @@ test('practice explains mistakes, grades three questions and resets the score', 
   page,
 }) => {
   await loadStudy(page);
-  await openGrammar(page);
+  await openFatihahPractice(page);
   const practice = page.getByRole('region', { name: 'Quick practice', exact: true });
   await expect(practice.locator('.practice-count')).toHaveText('1 / 3');
   await expect(practice.getByRole('button', { name: 'Check answer', exact: true })).toBeDisabled();
@@ -209,6 +237,130 @@ test('practice explains mistakes, grades three questions and resets the score', 
       .click();
   }
   await expect(practice.getByRole('status')).toContainText('Correct answers: 3 / 3');
+  await practice.getByRole('button', { name: 'All topics' }).first().click();
+  await expect(page.locator('[data-practice="fatihah"]')).toBeFocused();
+});
+
+test('practice grammar lists searchable topics and runs a topic quiz', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  await loadStudy(page);
+  await openPracticeGrammar(page);
+  await expect(page.locator('.bottom-nav button.active')).toHaveText('Practice Grammar');
+  const items = page.locator('.topic-item');
+  await expect(items.first()).toBeVisible();
+  const total = await items.count();
+  expect(total).toBeGreaterThan(50);
+  const first = items.first();
+  await expect(first.locator('strong[lang="ur"]')).not.toBeEmpty();
+  await expect(first.locator('.topic-english')).not.toBeEmpty();
+  await expect(first.locator('.topic-meta')).toContainText('questions');
+  const english = (await first.locator('.topic-english').textContent())!;
+  const search = page.getByRole('searchbox', { name: 'Search topics' });
+  await search.fill(english);
+  await expect(items).not.toHaveCount(total);
+  await expect(items.first().locator('.topic-english')).toHaveText(english);
+  await expect(page.locator('[data-practice="fatihah"]')).toHaveCount(0);
+  await search.fill('zzzz-no-such-topic');
+  await expect(page.locator('.topic-empty')).toHaveText('No matching words');
+  await page.getByRole('button', { name: 'Clear search' }).click();
+  await expect(items).toHaveCount(total);
+
+  const topicId = (await first.getAttribute('data-topic'))!;
+  await first.locator('.topic-start').click();
+  const quiz = page.locator('.practice-card');
+  await expect(quiz).toBeVisible();
+  const count = (await quiz.locator('.practice-count').textContent())!;
+  const questions = Number(count.split('/')[1]!.trim());
+  expect(questions).toBeGreaterThanOrEqual(3);
+  await expect(quiz.locator('.practice-prompt')).toHaveAttribute('dir', 'rtl');
+  for (const option of await quiz.locator('[data-answer][lang="ar"]').all())
+    await expect(option).toHaveCSS('font-family', /Amiri/);
+  for (let index = 0; index < questions; index += 1) {
+    await expect(quiz.getByRole('button', { name: 'Check answer', exact: true })).toBeDisabled();
+    await quiz.locator('[data-answer]').first().click();
+    await quiz.getByRole('button', { name: 'Check answer', exact: true }).click();
+    await expect(quiz.locator('.practice-feedback p')).not.toBeEmpty();
+    await expect(quiz.locator('.practice-option.correct')).toHaveCount(1);
+    await quiz
+      .getByRole('button', {
+        name: index === questions - 1 ? 'Practice complete' : 'Next question',
+        exact: true,
+      })
+      .click();
+  }
+  await expect(quiz.getByRole('status')).toContainText(`Correct answers: `);
+  await expect(quiz.getByRole('status')).toContainText(`/ ${questions}`);
+  await quiz.getByRole('button', { name: 'Practice again', exact: true }).click();
+  await expect(quiz.locator('.practice-count')).toHaveText(`1 / ${questions}`);
+  await quiz.getByRole('button', { name: 'All topics' }).first().click();
+  await expect(page.locator(`[data-practice="${topicId}"]`)).toBeFocused();
+  await expectNoOverflow(page);
+  expect(errors).toEqual([]);
+});
+
+test('a word rule opens its topic dialog, examples navigate and practice opens the quiz', async ({
+  page,
+}) => {
+  await loadStudy(page);
+  await expect(detail(page).locator('details, summary')).toHaveCount(0);
+  await expect(detail(page).getByRole('button', { name: 'View grammar' })).toHaveCount(0);
+  // 'genitive' has authored key points and annotated examples (some topics only have the summary).
+  const rule = detail(page).locator('.grammar-rule[data-rule="genitive"]');
+  await rule.click();
+  const dialog = page.getByRole('dialog');
+  await expect(dialog).toBeVisible();
+  await expect(dialog).toHaveAttribute('aria-modal', 'true');
+  // The dialog shows the canonical library title (lesson rule titles may be phrased differently).
+  await expect(dialog.locator('#topic-title')).not.toBeEmpty();
+  await expect(dialog.locator('#topic-title')).toBeFocused();
+  await expect(dialog.locator('.topic-english')).not.toBeEmpty();
+  await expect(dialog.locator('.topic-text p').first()).not.toBeEmpty();
+  await expect(dialog.locator('.topic-points li')).not.toHaveCount(0);
+  await expect(dialog.locator('.topic-example').first().locator('mark')).not.toBeEmpty();
+  await expect.poll(() => page.evaluate(() => document.body.style.overflow)).toBe('hidden');
+  // Focus stays in the dialog while tabbing.
+  for (let index = 0; index < 4; index += 1) {
+    await page.keyboard.press('Shift+Tab');
+    expect(await page.evaluate(() => !!document.activeElement?.closest('.topic-dialog'))).toBe(true);
+  }
+  await page.keyboard.press('Escape');
+  await expect(dialog).toHaveCount(0);
+  await expect(rule).toBeFocused();
+  await expect.poll(() => page.evaluate(() => document.body.style.overflow)).toBe('');
+
+  // Close button, then an example word navigates the study view.
+  await rule.click();
+  await expect(topicDialog(page)).toBeVisible();
+  await topicDialog(page).getByRole('button', { name: 'Close', exact: true }).click();
+  await expect(topicDialog(page)).toHaveCount(0);
+  await rule.click();
+  const example = topicDialog(page).locator('[data-example-word], .topic-reference').last();
+  await expect(example).toBeVisible();
+  const target =
+    (await example.getAttribute('data-example-word')) ||
+    (await example.locator('xpath=ancestor::li[1]').getAttribute('data-example'))!;
+  await example.click();
+  await expect(topicDialog(page)).toHaveCount(0);
+  await expect(page).toHaveURL(new RegExp(`word=${encodeURIComponent(target)}`));
+  await expect(word(page, target)).toHaveAttribute('aria-pressed', 'true');
+  await expect(word(page, target)).toBeInViewport();
+
+  // Practice this topic opens the topic quiz in Practice Grammar.
+  await detail(page).locator('.grammar-rule').first().click();
+  const topicTitle = (await topicDialog(page).locator('.topic-english').textContent())!;
+  await topicDialog(page).getByRole('button', { name: 'Practice this topic', exact: true }).click();
+  await expect(topicDialog(page)).toHaveCount(0);
+  await expect(page.locator('.bottom-nav button.active')).toHaveText('Practice Grammar');
+  await expect(page.getByRole('region', { name: topicTitle, exact: true })).toBeVisible();
+  await expect(page.locator('.practice-card .practice-prompt')).toBeFocused();
+  // The topic list's open-topic button shows the same dialog.
+  await page.locator('.practice-card').getByRole('button', { name: 'All topics' }).first().click();
+  const open = page.locator('.topic-item').first().locator('.topic-open');
+  await open.click();
+  await expect(topicDialog(page)).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(open).toBeFocused();
 });
 
 test('all verses and words retain root meanings and the four verb paradigms', async ({ page }) => {
@@ -250,7 +402,7 @@ test('all verses and words retain root meanings and the four verb paradigms', as
     } else {
       await expect(detail(page).locator('.root-meaning')).toHaveCount(0);
     }
-    for (const title of await detail(page).locator('.grammar-rule summary').allTextContents())
+    for (const title of await detail(page).locator('.grammar-rule-title').allTextContents())
       rules.add(title);
   }
   expect(roots.size).toBe(18);
@@ -282,9 +434,11 @@ test('segments, related words, rules and bounded word navigation work', async ({
   await expect(detail(page).locator('.segment-explanation')).toBeVisible();
   await expect(detail(page).locator('[data-segment="0"]')).toHaveAttribute('aria-pressed', 'true');
   const rule = detail(page).locator('.grammar-rule').first();
-  await rule.locator('summary').click();
-  await expect(rule).toHaveAttribute('open', '');
-  await expect(rule.locator('.rule-example')).toBeVisible();
+  await expect(rule).toHaveAttribute('aria-haspopup', 'dialog');
+  await rule.click();
+  await expect(topicDialog(page)).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(rule).toBeFocused();
   await word(page, '1:1:3').click();
   await expect(detail(page).locator('.segment-explanation')).toHaveCount(0);
   await detail(page).locator('[data-related-word="1:3:1"]').click();
@@ -325,11 +479,11 @@ test('filters and meaning toggle preserve verses while search UI is removed', as
   await expect(page.locator('.word-meaning')).toHaveCount(29);
 });
 
-test('grammar has fourteen constructions and seven tafsir notes, with no references interface', async ({
+test('practice grammar replaces the per-ayah grammar cards, with no references interface', async ({
   page,
 }) => {
   await loadStudy(page);
-  await expect(page.locator('.bottom-nav button')).toHaveText(['Study', 'Grammar', 'Settings']);
+  await expect(page.locator('.bottom-nav button')).toHaveText(navLabels);
   await expect(page.getByRole('button', { name: /حوالہ جات|Sources|References/ })).toHaveCount(0);
   await expect(page.locator('a[href^="https://"]')).toHaveCount(0);
   await expect(
@@ -341,16 +495,142 @@ test('grammar has fourteen constructions and seven tafsir notes, with no referen
     'href',
     'https://corpus.quran.com',
   );
-  await openGrammar(page);
-  await expect(page.locator('.grammar-card')).toHaveCount(7);
-  await expect(page.locator('.phrase')).toHaveCount(14);
-  await expect(page.locator('.tafsir')).toHaveCount(7);
-  await expect(page.locator('.grammar-view a')).toHaveCount(0);
-  await page.locator('#grammar-ayah-6').getByRole('button', { name: 'Back to study' }).click();
-  await expect(page.locator('#ayah-6')).toBeInViewport();
-  await page.getByRole('combobox', { name: 'Select ayah' }).selectOption('7');
+  await openPracticeGrammar(page);
+  await expect(page.getByText('مختصر تفسیری نوٹ')).toHaveCount(0);
+  await expect(page.getByText('نحوی ترکیب')).toHaveCount(0);
+  await expect(page.locator('.practice-view a')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Study', exact: true }).click();
+  await chooseAyah(page, '7');
   await expect(page.locator('#ayah-7')).toBeInViewport();
 });
+
+test('ayah picker searches numbers, jumps from the grid or Enter and closes with Escape', async ({
+  page,
+}) => {
+  test.setTimeout(60000);
+  await page.goto('/#surah=4');
+  await expect(page.locator('.quran-word')).toHaveCount(3747, { timeout: 20000 });
+  const chip = ayahChip(page);
+  await expect(chip).toHaveAttribute('aria-haspopup', 'dialog');
+  await chip.click();
+  const picker = ayahPicker(page);
+  const search = picker.getByRole('textbox', { name: 'Go to ayah number', exact: true });
+  const grid = picker.locator('.ayah-grid');
+  await expect(search).toBeFocused();
+  await expect(search).toHaveAttribute('inputmode', 'numeric');
+  await expect(grid.locator('button')).toHaveCount(176);
+  await expect(grid.locator('[aria-current="true"]')).toHaveText('1');
+  // A dense grid: several numbers per row inside the anchored popover.
+  expect(
+    await grid.evaluate((node) => getComputedStyle(node).gridTemplateColumns.split(' ').length),
+  ).toBeGreaterThanOrEqual(5);
+  await expectNoOverflow(page);
+
+  await search.fill('15');
+  await expect(grid.locator('button')).toHaveText([
+    '15', '150', '151', '152', '153', '154', '155', '156', '157', '158', '159',
+  ]);
+  // Urdu and Arabic-Indic digits search the same numbers.
+  await search.fill('۱۵');
+  await expect(grid.locator('button')).toHaveCount(11);
+  await search.fill('١٥٣');
+  await expect(grid.locator('button')).toHaveText(['153']);
+  await search.fill('999');
+  await expect(picker.getByRole('status')).toHaveText('No ayah with that number');
+  await expect(grid).toHaveCount(0);
+
+  // Enter on an exact valid number jumps directly.
+  await search.fill('123');
+  await search.press('Enter');
+  await expect(picker).not.toBeVisible();
+  await expect(chip).toBeFocused();
+  await expect(chip).toHaveAttribute('data-ayah', '123');
+  await expect(chip).toContainText('123');
+  await expect(page.locator('#ayah-123')).toBeInViewport();
+  await expect(word(page, '4:123:1')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page).toHaveURL(/word=4%3A123%3A1/);
+
+  // Reopening clears the search and scrolls the current ayah into view.
+  await chip.click();
+  await expect(search).toHaveValue('');
+  await expect(grid.locator('[aria-current="true"]')).toHaveText('123');
+  await expect(grid.locator('[aria-current="true"]')).toBeInViewport();
+  // Arrow keys move through the grid; Enter selects the focused number.
+  await search.press('ArrowDown');
+  await expect(grid.locator('[data-ayah="123"]')).toBeFocused();
+  await page.keyboard.press('ArrowRight');
+  await expect(grid.locator('[data-ayah="124"]')).toBeFocused();
+  await page.keyboard.press('ArrowLeft');
+  await page.keyboard.press('ArrowLeft');
+  await expect(grid.locator('[data-ayah="122"]')).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(picker).not.toBeVisible();
+  await expect(chip).toHaveAttribute('data-ayah', '122');
+  await expect(page.locator('#ayah-122')).toBeInViewport();
+
+  // Escape closes without changing the ayah and returns focus to the chip.
+  await chip.click();
+  await expect(picker).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(picker).not.toBeVisible();
+  await expect(chip).toBeFocused();
+  await expect(chip).toHaveAttribute('data-ayah', '122');
+
+  // A click outside the popover closes it.
+  await chip.click();
+  await expect(picker).toBeVisible();
+  await page.mouse.click(10, 500);
+  await expect(picker).not.toBeVisible();
+
+  // Clicking a grid number jumps to it.
+  await chip.click();
+  await search.fill('17');
+  await grid.locator('[data-ayah="176"]').click();
+  await expect(picker).not.toBeVisible();
+  await expect(chip).toHaveAttribute('data-ayah', '176');
+  await expect(page.locator('#ayah-176')).toBeInViewport();
+});
+
+for (const width of [320, 390, 768, 1280]) {
+  test(`ayah picker fits the ${width}px viewport in English and Urdu`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto('/#surah=18');
+    await expect(page.locator('.quran-word')).toHaveCount(1579, { timeout: 20000 });
+    for (const [chipName, searchName] of [
+      ['Select ayah', 'Go to ayah number'],
+      ['آیت منتخب کریں', 'آیت نمبر پر جائیں'],
+    ]) {
+      if (chipName !== 'Select ayah') {
+        await page.getByRole('button', { name: 'Settings', exact: true }).click();
+        await page.getByRole('button', { name: 'اردو', exact: true }).click();
+        await page.locator('.bottom-nav button').first().click();
+      }
+      await ayahChip(page, chipName).click();
+      const picker = ayahPicker(page, chipName);
+      await expect(picker).toBeVisible();
+      await expect(picker.getByRole('textbox', { name: searchName })).toBeFocused();
+      await expectNoOverflow(page);
+      const box = (await picker.boundingBox())!;
+      expect(box.x).toBeGreaterThanOrEqual(0);
+      expect(box.x + box.width).toBeLessThanOrEqual(width + 0.5);
+      expect(box.y + box.height).toBeLessThanOrEqual(800 + 0.5);
+      if (width <= 600) expect(Math.round(box.width)).toBe(width);
+      const grid = picker.locator('.ayah-grid');
+      expect(
+        await grid.evaluate((node) => node.scrollWidth <= node.clientWidth),
+      ).toBe(true);
+      expect(
+        await grid.evaluate((node) => getComputedStyle(node).gridTemplateColumns.split(' ').length),
+      ).toBeGreaterThanOrEqual(5);
+      await picker.getByRole('textbox', { name: searchName }).fill('۱۱۰');
+      await expect(grid.locator('button')).toHaveText([chipName === 'Select ayah' ? '110' : '۱۱۰']);
+      await page.keyboard.press('Enter');
+      await expect(picker).not.toBeVisible();
+      await expect(page.locator('#ayah-110')).toBeInViewport();
+      await expectNoOverflow(page);
+    }
+  });
+}
 
 test('valid and invalid deep links select safely and hash changes are respected', async ({
   page,
@@ -383,15 +663,15 @@ for (const width of [390, 1440]) {
   test(`ayah deep links select and scroll to the requested occurrence at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/#surah=105&ayah=4');
-    const selector = page.getByRole('combobox', { name: 'Select ayah', exact: true });
+    const selector = ayahChip(page);
     await expect(page.locator('.quran-word')).toHaveCount(23);
     await expect(word(page, '105:4:1')).toHaveAttribute('aria-pressed', 'true');
-    await expect(selector).toHaveValue('4');
+    await expect(selector).toHaveAttribute('data-ayah', '4');
     await expect(page.locator('#ayah-4')).toBeInViewport();
     await expect(page.locator('.word-sheet[open]')).toHaveCount(0);
     await page.evaluate(() => { location.hash = 'surah=105&ayah=2'; });
     await expect(word(page, '105:2:1')).toHaveAttribute('aria-pressed', 'true');
-    await expect(selector).toHaveValue('2');
+    await expect(selector).toHaveAttribute('data-ayah', '2');
     await expect(page.locator('#ayah-2')).toBeInViewport();
   });
 }
@@ -404,7 +684,7 @@ test('invalid ayah links fall back safely and an explicit word takes precedence'
   }
   await page.evaluate(() => { location.hash = 'surah=1&ayah=2&word=1%3A5%3A2'; });
   await expect(word(page, '1:5:2')).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.getByRole('combobox', { name: 'Select ayah', exact: true })).toHaveValue('5');
+  await expect(ayahChip(page)).toHaveAttribute('data-ayah', '5');
 });
 
 for (const width of [320, 390, 768]) {
@@ -426,9 +706,9 @@ for (const width of [320, 390, 768]) {
     await expect.poll(() => page.evaluate(() => document.body.style.overflow)).toBe('hidden');
     await page.keyboard.press('Escape');
     await expect(page.getByRole('button', { name: 'Select surah', exact: true })).toBeFocused();
-    const ayahSelect = page.getByRole('combobox', { name: 'Select ayah', exact: true });
+    const ayahSelect = ayahChip(page);
     await ayahSelect.focus();
-    await ayahSelect.selectOption('5');
+    await chooseAyah(page, '5');
     await expect(ayahSelect).toBeFocused();
     await expect(page.locator('.word-sheet')).not.toBeVisible();
     await openFilters(page);
@@ -464,8 +744,26 @@ for (const width of [320, 390, 768]) {
     await page.mouse.click(4, 4);
     await expect(sheet).not.toBeVisible();
     await expect(trigger).toBeFocused();
-    await openGrammar(page);
-    await expect(page.locator('.phrase')).toHaveCount(14);
+    await trigger.click();
+    await sheet.locator('.grammar-rule').first().click();
+    const topic = topicDialog(page);
+    await expect(topic).toBeVisible();
+    if (width <= 600) {
+      const box = (await topic.boundingBox())!;
+      expect(box.width).toBe(width);
+      expect(box.height).toBeGreaterThanOrEqual(840);
+    }
+    await expect
+      .poll(() => topic.locator('.topic-body').evaluate((node) => node.scrollHeight > node.clientHeight))
+      .toBe(true);
+    await expectNoOverflow(page);
+    await page.keyboard.press('Escape');
+    await expect(topic).toHaveCount(0);
+    await expect(sheet).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(sheet).not.toBeVisible();
+    await openFatihahPractice(page);
+    await expect(page.locator('.practice-card')).toBeVisible();
     await expectNoOverflow(page);
     await page.getByRole('button', { name: 'Settings', exact: true }).click();
     await expectNoOverflow(page);
@@ -492,7 +790,7 @@ test('mobile deep link opens its word and closes without losing access to the pa
     .toContain('ضرب');
   await page.getByRole('button', { name: 'Close' }).click();
   await expect(page.getByRole('dialog')).not.toBeVisible();
-  await page.getByRole('combobox', { name: 'Select ayah' }).selectOption('6');
+  await chooseAyah(page, '6');
   await expect(page.locator('#ayah-6')).toBeInViewport();
 });
 
@@ -510,7 +808,7 @@ test('interface language persists while Arabic text and Urdu study content stay 
     'true',
   );
   await page.getByRole('button', { name: 'اردو', exact: true }).click();
-  await expect(page.locator('.bottom-nav button')).toHaveText(['مطالعہ', 'قواعد', 'ترتیبات']);
+  await expect(page.locator('.bottom-nav button')).toHaveText(['مطالعہ', 'گرامر کی مشق', 'ترتیبات']);
   await expect(page.locator('html')).toHaveAttribute('lang', 'ur');
   await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
   expect(await page.evaluate((key) => localStorage.getItem(key), preferenceKey)).toBe('ur');
@@ -526,14 +824,20 @@ test('interface language persists while Arabic text and Urdu study content stay 
   await page.getByRole('button', { name: 'فلٹر', exact: true }).click();
   await page.locator('[data-pos="verb"]').click();
   await expect(page.locator('.filter-feedback')).toContainText('۴ نتائج');
-  await expect(page.getByRole('combobox', { name: 'آیت منتخب کریں' }).locator('option')).toHaveText(
+  await ayahChip(page, 'آیت منتخب کریں').click();
+  await expect(ayahPicker(page, 'آیت منتخب کریں')).toHaveAttribute('dir', 'rtl');
+  await expect(
+    ayahPicker(page, 'آیت منتخب کریں').getByRole('textbox', { name: 'آیت نمبر پر جائیں' }),
+  ).toBeFocused();
+  await expect(ayahPicker(page, 'آیت منتخب کریں').locator('.ayah-grid button')).toHaveText(
     ['۱', '۲', '۳', '۴', '۵', '۶', '۷'],
   );
+  await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'سورت منتخب کریں', exact: true }).click();
   await expect(page.locator('[data-surah="1"]')).toContainText('الفاتحة');
   await expect(page.locator('[data-surah="2"]')).toContainText('جلد دستیاب ہوگا');
   await page.keyboard.press('Escape');
-  await openGrammar(page, 'قواعد', 'قواعد دیکھیں');
+  await openFatihahPractice(page, 'گرامر کی مشق');
   const practice = page.getByRole('region', { name: 'مختصر مشق', exact: true });
   await expect(practice.locator('.practice-count')).toHaveText('۱ / ۳');
   await practice.locator('[data-answer="1:5:2"]').click();
@@ -542,15 +846,86 @@ test('interface language persists while Arabic text and Urdu study content stay 
   await page.getByRole('button', { name: 'ترتیبات', exact: true }).click();
   await page.getByRole('button', { name: 'English', exact: true }).click();
   await page.reload();
-  await expect(page.locator('.bottom-nav button')).toHaveText(['Study', 'Grammar', 'Settings']);
+  await expect(page.locator('.bottom-nav button')).toHaveText(navLabels);
   await expect(page.locator('.ayah-number')).toHaveText(['1', '2', '3', '4', '5', '6', '7']);
   expect(await page.evaluate((key) => localStorage.getItem(key), preferenceKey)).toBe('en');
+});
+
+test('reading layout switches persist and change the study text in both layouts', async ({
+  page,
+}) => {
+  await loadStudy(page);
+  const arabic = await page.locator('.quran-word .arabic').allTextContents();
+  const settings = () => page.getByRole('button', { name: 'Settings', exact: true }).click();
+  const study = () => page.getByRole('button', { name: 'Study', exact: true }).click();
+  const grammar = page.getByRole('switch', { name: /Word-by-word grammar/ });
+  const translation = page.getByRole('switch', { name: /^Translation/ });
+  await settings();
+  await expect(page.getByRole('heading', { name: 'Reading layout' })).toBeVisible();
+  await expect(grammar).toBeChecked();
+  await expect(translation).toBeChecked();
+
+  // Translation off keeps the word blocks.
+  await translation.uncheck();
+  await study();
+  await expect(page.locator('.quran-word')).toHaveCount(29);
+  await expect(page.locator('.ayah-translation')).toHaveCount(0);
+
+  // Grammar off: continuous Quranic text, no word blocks, filters hidden.
+  await settings();
+  await grammar.uncheck();
+  await study();
+  // With translation also off, the whole chapter flows as one continuous Quranic text.
+  await expect(page.locator('.quran-word, .word-meaning, .word-kind')).toHaveCount(0);
+  await expect(page.locator('.ayah-text')).toHaveCount(1);
+  await expect(page.locator('.mushaf-text .plain-ayah')).toHaveCount(7);
+  await expect(page.locator('.ayah-text')).toHaveAttribute('lang', 'ar');
+  await expect(page.locator('.ayah-text')).toHaveCSS('font-family', /Amiri/);
+  await expect(page.locator('.ayah-end')).toHaveText(['١', '٢', '٣', '٤', '٥', '٦', '٧']);
+  await expect(page.locator('.ayah-translation')).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Filters', exact: true })).toHaveCount(0);
+  expect(await page.locator('.plain-word').allTextContents()).toEqual(arabic);
+  await expectNoOverflow(page);
+
+  // Ayah jumps and word selection still work in the plain layout.
+  const selector = ayahChip(page);
+  await chooseAyah(page, '6');
+  await expect(page.locator('#ayah-6')).toBeInViewport();
+  await word(page, '1:5:2').click();
+  await expect(word(page, '1:5:2')).toHaveAttribute('aria-pressed', 'true');
+  await expect(detail(page).locator('#detail-title')).toHaveText(
+    (await word(page, '1:5:2').textContent())!,
+  );
+
+  // Translation on in the plain layout.
+  await settings();
+  await translation.check();
+  await study();
+  await expect(page.locator('.plain-ayah .ayah-translation')).toHaveCount(7);
+  await expect(page.locator('.ayah-text')).toHaveCount(7);
+  await chooseAyah(page, '4');
+  await expect(page.locator('#ayah-4')).toBeInViewport();
+
+  // Preferences persist and #ayah deep links work in the plain layout.
+  expect(
+    await page.evaluate(() => localStorage.getItem('quran-grammar.reading-layout')),
+  ).toBe('{"grammar":false,"translation":true}');
+  await page.goto('/#surah=18&ayah=60');
+  await expect(page.locator('.plain-ayah')).toHaveCount(110, { timeout: 30000 });
+  await expect(page.locator('#ayah-60')).toBeInViewport();
+  await expect(selector).toHaveAttribute('data-ayah', '60');
+
+  await settings();
+  await grammar.check();
+  await study();
+  await expect(page.locator('.quran-word').first()).toBeVisible();
+  await expect(page.locator('.ayah-translation')).toHaveCount(110);
 });
 
 test('invalid saved language falls back to English', async ({ page }) => {
   await page.addInitScript((key) => localStorage.setItem(key, 'invalid-language'), preferenceKey);
   await loadStudy(page);
-  await expect(page.locator('.bottom-nav button')).toHaveText(['Study', 'Grammar', 'Settings']);
+  await expect(page.locator('.bottom-nav button')).toHaveText(navLabels);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
 });
 
@@ -589,7 +964,7 @@ const newChapters = [
   [114, 6, 20],
 ] as const;
 
-test('all ten new chapters use their own words, root details, grammar and ayah selector', async ({
+test('all ten new chapters use their own words, root details, grammar rules and ayah selector', async ({
   page,
 }) => {
   test.setTimeout(90000);
@@ -602,9 +977,7 @@ test('all ten new chapters use their own words, root details, grammar and ayah s
       .locator('.quran-word')
       .evaluateAll((nodes) => nodes.map((node) => node.getAttribute('data-word-id')!));
     expect(ids.every((id) => id.startsWith(`${number}:`))).toBe(true);
-    await expect(page.getByRole('combobox', { name: 'Select ayah' }).locator('option')).toHaveCount(
-      ayahs,
-    );
+    await expectAyahNumbers(page, ayahs);
     await expect(detail(page).locator('.detail-navigation')).toContainText(`1 / ${words}`);
     await expect(
       detail(page).getByRole('button', { name: 'Previous word', exact: true }),
@@ -624,12 +997,8 @@ test('all ten new chapters use their own words, root details, grammar and ayah s
     await expect(
       detail(page).getByRole('button', { name: 'Next word', exact: true }),
     ).toBeDisabled();
-    await openGrammar(page);
-    await expect(page.locator('.grammar-card')).toHaveCount(ayahs);
-    await expect(page.locator('.tafsir')).toHaveCount(ayahs);
-    await expect(page.locator('.practice-card')).toHaveCount(0);
-    await page.getByRole('combobox', { name: 'Select ayah' }).selectOption(String(ayahs));
-    await expect(page.locator(`#grammar-ayah-${ayahs}`)).toBeInViewport();
+    await chooseAyah(page, String(ayahs));
+    await expect(page.locator(`#ayah-${ayahs}`)).toBeInViewport();
     await page.getByRole('button', { name: 'Study', exact: true }).click();
     await expect(word(page, `${number}:1:1`)).toHaveAttribute('aria-pressed', 'true');
   }
@@ -643,7 +1012,7 @@ const fiveChapters = [
   [55, 78, 351, 'Ar-Rahman'],
 ] as const;
 
-test('five longer chapters load complete lessons with grammar, tafsir and paradigms', async ({
+test('five longer chapters load complete lessons with grammar rules and paradigms', async ({
   page,
 }) => {
   test.setTimeout(180000);
@@ -658,9 +1027,7 @@ test('five longer chapters load complete lessons with grammar, tafsir and paradi
       .evaluateAll((nodes) => nodes.map((node) => node.getAttribute('data-word-id')!));
     expect(ids.every((id) => id.startsWith(`${number}:`))).toBe(true);
     expect(new Set(ids).size).toBe(words);
-    await expect(page.getByRole('combobox', { name: 'Select ayah' }).locator('option')).toHaveCount(
-      ayahs,
-    );
+    await expectAyahNumbers(page, ayahs);
     await expect(detail(page).locator('.detail-navigation')).toContainText(`1 / ${words}`);
     const verbIds = await page
       .locator('.quran-word.verb')
@@ -685,11 +1052,8 @@ test('five longer chapters load complete lessons with grammar, tafsir and paradi
         await expect(detail(page).locator('.verb-paradigm')).toBeVisible();
       }
     }
-    await openGrammar(page);
-    await expect(page.locator('.grammar-card')).toHaveCount(ayahs);
-    await expect(page.locator('.tafsir')).toHaveCount(ayahs);
-    await page.getByRole('combobox', { name: 'Select ayah' }).selectOption(String(ayahs));
-    await expect(page.locator(`#grammar-ayah-${ayahs}`)).toBeInViewport();
+    await chooseAyah(page, String(ayahs));
+    await expect(page.locator(`#ayah-${ayahs}`)).toBeInViewport();
     await page.getByRole('button', { name: 'Study', exact: true }).click();
   }
 });
@@ -697,7 +1061,7 @@ test('five longer chapters load complete lessons with grammar, tafsir and paradi
 test('juz previews open a chapter at its first ayah inside that juz', async ({ page }) => {
   await loadStudy(page);
   const trigger = page.locator('.collection-trigger');
-  const selector = page.getByRole('combobox', { name: 'Select ayah', exact: true });
+  const selector = ayahChip(page);
   const openJuz = async (number: number) => {
     await trigger.click();
     await page.getByRole('dialog').getByRole('button', { name: 'Juz', exact: true }).click();
@@ -708,25 +1072,25 @@ test('juz previews open a chapter at its first ayah inside that juz', async ({ p
   };
   await openJuz(16);
   await expect(page.locator('.quran-word')).toHaveCount(1579);
-  await expect(selector).toHaveValue('75');
+  await expect(selector).toHaveAttribute('data-ayah', '75');
   await expect(word(page, '18:75:1')).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('#ayah-75')).toBeInViewport();
   await expect(trigger).toContainText('Juz 16');
   await expect(trigger).toContainText('Al-Kahf');
   expect(page.url()).toContain('#surah=18&ayah=75');
-  await selector.selectOption('74');
+  await chooseAyah(page, '74');
   await expect(trigger).toContainText('Juz 15');
   await openJuz(15);
-  await expect(selector).toHaveValue('1');
+  await expect(selector).toHaveAttribute('data-ayah', '1');
   await expect(trigger).toContainText('Juz 15');
   await openJuz(23);
   await expect(page.locator('.quran-word')).toHaveCount(725);
-  await expect(selector).toHaveValue('28');
+  await expect(selector).toHaveAttribute('data-ayah', '28');
   await expect(word(page, '36:28:1')).toHaveAttribute('aria-pressed', 'true');
   await expect(trigger).toContainText('Juz 23');
   await expect(trigger).toContainText('Ya-Sin');
   await page.goto('/#surah=18&ayah=100');
-  await expect(selector).toHaveValue('100');
+  await expect(selector).toHaveAttribute('data-ayah', '100');
   await expect(word(page, '18:100:1')).toHaveAttribute('aria-pressed', 'true');
   await expectNoOverflow(page);
 });

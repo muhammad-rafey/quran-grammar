@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "exports": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./content": "./src/content.ts",
+    "./db": "./src/db/index.ts"
+  },
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "test": "node --import tsx --test src/core.test.ts"
+    "test": "node --import tsx --test src/core.test.ts src/grammar.test.ts src/db.test.ts src/fonts.test.ts"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { BookOpen, ChevronDown, Settings, SlidersHorizontal, Sparkles, X } from 'lucide-react';
+import { BookOpen, GraduationCap, Settings, SlidersHorizontal, X } from 'lucide-react';
 import {
   matchesWord,
   availableSurahNumbers,
@@ -8,14 +8,23 @@ import {
   getUiStrings,
   type PartOfSpeechFilter,
 } from '@quran-grammar/core';
-import { Grammar } from './components/grammar';
+import { AyahPicker } from './components/ayah-picker';
 import { CollectionPicker, type CollectionMode } from './components/collection-picker';
+import { FontSettings } from './components/font-settings';
+import { PracticeGrammar } from './components/practice';
 import { Reading } from './components/reading';
+import { SplitPane } from './components/split-pane';
+import { TopicDialog } from './components/topic-dialog';
 import { WordDetail } from './components/word-detail';
 import { useMobileLayout, useStudy } from './use-study';
 import { useInterfaceLanguage } from './use-interface-language';
+import { useReadingLayout, type ReadingLayout } from './use-reading-layout';
+import { useFonts } from './use-fonts';
+import type { PracticeFilter } from './use-api';
 
-function readLocation() {
+type StudyView = 'words' | 'practice' | 'settings';
+
+function readLocation(scroll = false) {
   const params = new URLSearchParams(location.hash.slice(1));
   const word = params.get('word');
   const requested = Number(word?.split(':')[0] || params.get('surah') || 1);
@@ -25,6 +34,8 @@ function readLocation() {
     word,
     // Juz selections open a chapter at its first ayah inside that juz, e.g. Al-Kahf 75 for Juz 16.
     ayah: !word && Number.isSafeInteger(ayah) && ayah > 1 ? ayah : null,
+    /** Scroll the reading column to the requested word (in-app navigation from a topic). */
+    scroll,
   };
 }
 
@@ -34,6 +45,8 @@ export function App() {
   const appliedRequest = useRef<typeof locationRequest | null>(null);
   const mobile = useMobileLayout();
   const { language, changeLanguage, saveError } = useInterfaceLanguage();
+  const { layout, changeLayout, saveError: layoutSaveError } = useReadingLayout();
+  const { quranFont, urduFont, changeFont, saveError: fontSaveError } = useFonts();
   const ui = getUiStrings(language);
   const direction = language === 'ur' ? 'rtl' : 'ltr';
   const filters: { id: PartOfSpeechFilter; label: string }[] = [
@@ -45,7 +58,9 @@ export function App() {
   ];
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [selectedId, setSelectedId] = useState('1:1:1');
-  const [view, setView] = useState<'words' | 'grammar' | 'settings'>('words');
+  const [view, setView] = useState<StudyView>('words');
+  const [practice, setPractice] = useState<PracticeFilter | null>(null);
+  const [topic, setTopic] = useState<{ id: string; trigger: HTMLElement | null } | null>(null);
   const [collectionMode, setCollectionMode] = useState<CollectionMode>('surah');
   const [activeAyah, setActiveAyah] = useState(1);
   const [pos, setPos] = useState<PartOfSpeechFilter>('all');
@@ -61,11 +76,17 @@ export function App() {
       ),
     [study, pos],
   );
-  const filtering = pos !== 'all';
+  // Word-type filters only apply to the word-by-word grammar layout.
+  const filtering = layout.grammar && pos !== 'all';
+  const layoutSwitches: { key: keyof ReadingLayout; label: string; help: string }[] = [
+    { key: 'grammar', label: ui.showGrammarAnalysis, help: ui.showGrammarAnalysisHelp },
+    { key: 'translation', label: ui.showTranslation, help: ui.showTranslationHelp },
+  ];
 
   useEffect(() => {
     const update = () => {
       setSheetOpen(false);
+      setTopic(null);
       setPos('all');
       setView('words');
       setLocationRequest(readLocation());
@@ -84,6 +105,12 @@ export function App() {
     setSelectedId(target?.id || startWord?.id || study.words[0].id);
     setActiveAyah(target?.ayah || startWord?.ayah || 1);
     setSheetOpen(!!target && matchMedia('(max-width: 1023px)').matches);
+    if (target && locationRequest.scroll)
+      requestAnimationFrame(() =>
+        document
+          .querySelector(`[data-word-id="${target.id}"]`)
+          ?.scrollIntoView({ behavior: 'instant', block: 'center' }),
+      );
     if (startWord)
       requestAnimationFrame(() =>
         document
@@ -121,7 +148,22 @@ export function App() {
     history.replaceState(null, '', `#word=${encodeURIComponent(id)}`);
     if (mobile) setSheetOpen(true);
   };
-  const goToAyah = (number: number, target: 'words' | 'grammar') => {
+  // Topic examples open their word through the same #word=s:a:p location as deep links.
+  const openWord = (id: string) => {
+    history.replaceState(null, '', `#word=${encodeURIComponent(id)}`);
+    setTopic(null);
+    setSheetOpen(false);
+    setPos('all');
+    setView('words');
+    setLocationRequest(readLocation(true));
+  };
+  const practiseTopic = (topicId: string) => {
+    setTopic(null);
+    setSheetOpen(false);
+    setPractice({ topicId });
+    setView('practice');
+  };
+  const goToAyah = (number: number) => {
     setSheetOpen(false);
     setActiveAyah(number);
     const firstWord = study?.words.find((word) => word.ayah === number);
@@ -129,14 +171,12 @@ export function App() {
       setSelectedId(firstWord.id);
       history.replaceState(null, '', `#word=${encodeURIComponent(firstWord.id)}`);
     }
-    setView(target);
+    setView('words');
     requestAnimationFrame(() =>
-      document
-        .getElementById(`${target === 'words' ? 'ayah' : 'grammar-ayah'}-${number}`)
-        ?.scrollIntoView({
-          behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
-          block: 'start',
-        }),
+      document.getElementById(`ayah-${number}`)?.scrollIntoView({
+        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+        block: 'start',
+      }),
     );
   };
 
@@ -162,7 +202,7 @@ export function App() {
       </header>
       <main className="page-shell" id="main" tabIndex={-1}>
         <h1 className="sr-only">{getSurahTitle(locationRequest.surah, language)}</h1>
-        {view !== 'settings' && (
+        {view === 'words' && (
           <section
             className="lesson-toolbar ui"
             lang={language}
@@ -190,29 +230,19 @@ export function App() {
                   surah: surahNumber,
                   word: null,
                   ayah: startAyah > 1 ? startAyah : null,
+                  scroll: false,
                 });
                 window.scrollTo({ top: 0, behavior: 'instant' });
               }}
             />
-            <label className="ayah-selector selector-chip">
-              <small>{ui.ayah}</small>
-              <select
-                aria-label={ui.selectAyah}
-                disabled={!study}
-                value={activeAyah}
-                onChange={(event) =>
-                  goToAyah(Number(event.target.value), view === 'grammar' ? 'grammar' : 'words')
-                }
-              >
-                {study?.ayahs.map((ayah) => (
-                  <option key={ayah.number} value={ayah.number}>
-                    {formatCount(ayah.number, language)}
-                  </option>
-                ))}
-              </select>
-              <ChevronDown size={17} aria-hidden="true" />
-            </label>
-            {study && view === 'words' && (
+            <AyahPicker
+              language={language}
+              ayahs={study?.ayahs.map((ayah) => ayah.number) ?? []}
+              current={activeAyah}
+              disabled={!study}
+              onSelect={goToAyah}
+            />
+            {study && layout.grammar && (
               <button
                 type="button"
                 aria-label={ui.filters}
@@ -264,6 +294,51 @@ export function App() {
                 </p>
               )}
             </div>
+            <div className="settings-card">
+              <h2 id="reading-layout-title">{ui.readingLayout}</h2>
+              <p>{ui.readingLayoutHelp}</p>
+              <div
+                className="layout-switches"
+                role="group"
+                aria-labelledby="reading-layout-title"
+              >
+                {layoutSwitches.map(({ key, label, help }) => (
+                  <label className="layout-switch" key={key}>
+                    <span className="layout-switch-copy">
+                      <strong>{label}</strong>
+                      <small>{help}</small>
+                    </span>
+                    <input
+                      type="checkbox"
+                      role="switch"
+                      data-layout={key}
+                      checked={layout[key]}
+                      onChange={(event) => {
+                        changeLayout({ [key]: event.target.checked });
+                        if (key === 'grammar' && !event.target.checked) {
+                          setPos('all');
+                          setFiltersOpen(false);
+                        }
+                      }}
+                    />
+                    <span className="toggle-track" aria-hidden="true" />
+                  </label>
+                ))}
+              </div>
+              {layoutSaveError && (
+                <p className="settings-error" role="alert">
+                  {ui.preferenceError}
+                </p>
+              )}
+            </div>
+            <FontSettings
+              language={language}
+              study={study ?? null}
+              quranFont={quranFont}
+              urduFont={urduFont}
+              onChange={changeFont}
+              saveError={fontSaveError}
+            />
             <div className="settings-card about-card">
               <h2>{ui.about}</h2>
               <p lang="en" dir="ltr">
@@ -274,6 +349,13 @@ export function App() {
               </p>
             </div>
           </section>
+        ) : view === 'practice' ? (
+          <PracticeGrammar
+            language={language}
+            selection={practice}
+            onSelect={setPractice}
+            onOpenTopic={(id, button) => setTopic({ id, trigger: button })}
+          />
         ) : !study ? (
           <section
             className="load-state ui"
@@ -296,7 +378,7 @@ export function App() {
               </>
             )}
           </section>
-        ) : view === 'words' ? (
+        ) : (
           <>
             <section
               className="study-controls ui"
@@ -304,7 +386,7 @@ export function App() {
               dir={direction}
               aria-label={ui.filters}
             >
-              {filtersOpen && (
+              {filtersOpen && layout.grammar && (
                 <div className="filter-panel" id="filter-panel">
                   <div className="filters" role="group" aria-label={ui.wordType}>
                     {filters.map((filter) => (
@@ -350,38 +432,43 @@ export function App() {
                 </button>
               </div>
             )}
-            <div className="study-layout" dir="rtl" lang="ur">
-              <div className="reading-column">
-                <Reading
-                  study={study}
-                  language={language}
-                  selectedId={selected!.id}
-                  meanings={meanings}
-                  filtering={filtering}
-                  matches={matches}
-                  onSelect={selectWord}
-                />
-              </div>
-              {!mobile && (
-                <aside className="word-detail" aria-label={ui.wordStudy}>
-                  <WordDetail
-                    word={selected!}
+            <SplitPane
+              className="study-layout"
+              dir="rtl"
+              lang="ur"
+              enabled={!mobile}
+              label={ui.resizePanels}
+              labelLang={language}
+              controls="word-detail-panel"
+              reading={
+                <div className="reading-column">
+                  <Reading
                     study={study}
                     language={language}
+                    selectedId={selected!.id}
+                    meanings={meanings}
+                    filtering={filtering}
+                    matches={matches}
+                    layout={layout}
                     onSelect={selectWord}
-                    onGrammar={(ayah) => goToAyah(ayah, 'grammar')}
                   />
-                </aside>
-              )}
-            </div>
+                </div>
+              }
+              detail={
+                !mobile && (
+                  <aside className="word-detail" id="word-detail-panel" aria-label={ui.wordStudy}>
+                    <WordDetail
+                      word={selected!}
+                      study={study}
+                      language={language}
+                      onSelect={selectWord}
+                      onTopic={(id, button) => setTopic({ id, trigger: button })}
+                    />
+                  </aside>
+                )
+              }
+            />
           </>
-        ) : (
-          <Grammar
-            key={study.surah.number}
-            study={study}
-            language={language}
-            onRead={(ayah) => goToAyah(ayah, 'words')}
-          />
         )}
         {study && mobile && (
           <dialog
@@ -403,18 +490,29 @@ export function App() {
                 study={study}
                 language={language}
                 onSelect={selectWord}
-                onGrammar={(ayah) => goToAyah(ayah, 'grammar')}
+                onTopic={(id, button) => setTopic({ id, trigger: button })}
                 onClose={() => setSheetOpen(false)}
               />
             </div>
           </dialog>
+        )}
+        {topic && (
+          <TopicDialog
+            key={topic.id}
+            topicId={topic.id}
+            language={language}
+            returnFocus={topic.trigger}
+            onClose={() => setTopic(null)}
+            onWord={openWord}
+            onPractice={practiseTopic}
+          />
         )}
       </main>
       <nav className="bottom-nav ui" lang={language} dir={direction} aria-label={ui.study}>
         {(
           [
             { id: 'words', label: ui.study, Icon: BookOpen },
-            { id: 'grammar', label: ui.grammar, Icon: Sparkles },
+            { id: 'practice', label: ui.practiceGrammar, Icon: GraduationCap },
             { id: 'settings', label: ui.settings, Icon: Settings },
           ] as const
         ).map(({ id, label, Icon }) => (
@@ -422,14 +520,15 @@ export function App() {
             type="button"
             key={id}
             className={view === id ? 'active' : ''}
-            disabled={id === 'grammar'}
             aria-label={label}
             title={label}
             aria-current={view === id ? 'page' : undefined}
             onClick={() => {
               setSheetOpen(false);
+              // Re-selecting Practice Grammar returns to its topic list.
+              if (id === 'practice' && view === 'practice') setPractice(null);
               setView(id);
-              if (id !== 'settings') {
+              if (id === 'words') {
                 setActiveAyah(1);
                 if (study) {
                   setSelectedId(study.words[0].id);

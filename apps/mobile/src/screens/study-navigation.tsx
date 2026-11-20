@@ -4,7 +4,7 @@ import { AppIcon } from '@/components/app-icon';
 import { useInterface } from '@/state/preferences-provider';
 import { colors, radius, shadows, spacing } from '@/theme/tokens';
 
-export type StudyView = 'words' | 'grammar' | 'settings';
+export type StudyView = 'words' | 'practice' | 'settings';
 
 export function FloatingNavigation({
   value,
@@ -13,11 +13,11 @@ export function FloatingNavigation({
   value: StudyView;
   onChange: (view: StudyView) => void;
 }) {
-  const { ui, labelStyle, controlRow } = useInterface();
+  const { ui, labelText, controlRow } = useInterface();
   const insets = useSafeAreaInsets();
   const tabs = [
     { value: 'words', title: ui.study, icon: 'study' },
-    { value: 'grammar', title: ui.grammar, icon: 'grammar' },
+    { value: 'practice', title: ui.practiceGrammar, icon: 'grammar' },
     { value: 'settings', title: ui.settings, icon: 'settings' },
   ] as const;
   return (
@@ -73,7 +73,7 @@ export function FloatingNavigation({
               <AppIcon name={tab.icon} color={active ? colors.primary : colors.muted} />
               {active && (
                 <Text
-                  style={[labelStyle, { color: colors.primary, fontSize: 15, fontWeight: '600' }]}
+                  style={[labelText(15), { color: colors.primary, fontWeight: '600' }]}
                 >
                   {tab.title}
                 </Text>

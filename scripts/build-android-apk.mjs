@@ -61,7 +61,7 @@ async function prebuild(expoCli, env) {
     const after = JSON.parse(await readFile(packagePath, 'utf8'));
     for (const platform of ['android', 'ios']) {
       if (
-        before.scripts?.[platform] === `expo start --${platform}` &&
+        before.scripts?.[platform] !== undefined &&
         after.scripts?.[platform] === `expo run:${platform}`
       )
         after.scripts[platform] = before.scripts[platform];
@@ -78,7 +78,7 @@ async function prebuild(expoCli, env) {
 async function main() {
   if (process.argv.includes('--help')) {
     console.log(
-      'npm run build:android:apk [-- --check | --prepare]\nBuild a local test APK at build/quran-grammar.apk.\n--check validates installed tooling; --prepare synchronizes Android config and icons without compiling.\nEXPO_PUBLIC_API_URL optionally selects an HTTP(S) API origin; unset uses the bundled lessons.\nAPK_ABIS defaults to arm64-v8a,x86_64. APK_GRADLE_WORKERS defaults to 4.',
+      'npm run build:android:apk [-- --check | --prepare]\nBuild a local test APK at build/quran-grammar.apk.\n--check validates installed tooling; --prepare synchronizes Android config and icons without compiling.\nThe app reads the bundled SQLite content database (generated first if missing).\nAPK_ABIS defaults to arm64-v8a,x86_64. APK_GRADLE_WORKERS defaults to 4.',
     );
     return;
   }
@@ -106,30 +106,13 @@ async function main() {
   if (process.argv.includes('--check')) return;
 
   const dotenv = expoEnv.parseProjectEnv(mobile, { mode: 'production', silent: true }).env;
-  const apiUrl = process.env.EXPO_PUBLIC_API_URL ?? dotenv.EXPO_PUBLIC_API_URL ?? '';
-  if (apiUrl) {
-    const url = new URL(apiUrl);
-    if (
-      !['https:', 'http:'].includes(url.protocol) ||
-      url.username ||
-      url.password ||
-      url.search ||
-      url.hash ||
-      url.pathname !== '/'
-    )
-      throw new Error(
-        'EXPO_PUBLIC_API_URL must be an HTTP(S) origin without credentials, query parameters or a path.',
-      );
-    if (url.protocol !== 'https:')
-      console.warn(
-        'HTTP API configured: Android release builds may block cleartext requests. Use HTTPS for a connected APK; the bundled lesson remains available.',
-      );
-  }
-  console.log(
-    apiUrl
-      ? 'Bundling with the configured API origin.'
-      : 'Bundling the offline Quran Grammar lessons; no API origin is configured.',
+  // All content comes from the bundled SQLite database; make sure it exists and is current.
+  await run(
+    process.execPath,
+    ['--disable-warning=ExperimentalWarning', join(mobile, 'scripts/ensure-db.mjs')],
+    { cwd: mobile },
   );
+  console.log('Bundling the offline Quran Grammar content database.');
   const abis = process.env.APK_ABIS || 'arm64-v8a,x86_64';
   if (!abis.split(',').every((abi) => ['arm64-v8a', 'armeabi-v7a', 'x86_64', 'x86'].includes(abi)))
     throw new Error('APK_ABIS must be a comma-separated list of Android ABI names.');
@@ -146,7 +129,6 @@ async function main() {
       .filter(Boolean)
       .join(delimiter),
     NODE_ENV: 'production',
-    EXPO_PUBLIC_API_URL: apiUrl,
     EXPO_NO_DOTENV: '1',
     CI: '1',
   };
@@ -189,8 +171,8 @@ async function main() {
   await run(
     wrapper,
     [
-      // Environment values are not Gradle source inputs; always refresh the JS
-      // bundle so changing the API origin cannot reuse an earlier configuration.
+      // Environment values and the content database are not Gradle source inputs;
+      // always refresh the JS bundle and assets so a rebuilt database is included.
       'app:createBundleReleaseJsAndAssets',
       '--rerun',
       'app:assembleRelease',
@@ -221,7 +203,7 @@ async function main() {
   await writeFile(join(outputDir, 'quran-grammar.apk.sha256'), `${sha256}  quran-grammar.apk\n`);
   await writeFile(
     join(outputDir, 'android-build.json'),
-    `${JSON.stringify({ builtAt: new Date().toISOString(), artifact: 'quran-grammar.apk', bytes: info.size, sha256, architectures: abis.split(','), signing: 'Expo debug key; local testing only', apiConfigured: Boolean(apiUrl), metroRequired: false }, null, 2)}\n`,
+    `${JSON.stringify({ builtAt: new Date().toISOString(), artifact: 'quran-grammar.apk', bytes: info.size, sha256, architectures: abis.split(','), signing: 'Expo debug key; local testing only', contentSource: 'bundled-sqlite', metroRequired: false }, null, 2)}\n`,
   );
   console.log(
     `\nAPK ready: ${output}\n${(info.size / 1024 / 1024).toFixed(1)} MB · bundled JavaScript · local testing only, not a Play Store release.\nInstall: adb install -r "${output}"`,

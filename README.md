@@ -49,6 +49,7 @@ Every command below runs from the repository root:
 | `npm run dev:ios`           | iPhone simulator in Expo Go, with the Node API   |
 | `npm run build:android:apk` | Standalone test APK at `build/quran-grammar.apk` |
 | `npm run db:sqlite`         | Local SQLite copy of the content, verified       |
+| `npm run db:mobile`         | SQLite asset bundled by the Expo app, verified   |
 | `npm run db:sync`           | Postgres (Supabase) copy via `QG_PSQL`, verified |
 
 The simulator commands reuse a healthy Quran Grammar API already running on port 4000, otherwise start one. They stop only the processes they started when you press Ctrl+C. Android requires an Android Studio emulator; iPhone requires macOS, Xcode and an available iOS simulator. Both use an SDK 57-compatible Expo Go client, which supports the native modules currently used by this project. A custom development client can be added when app-specific native modules or native configuration testing require it.

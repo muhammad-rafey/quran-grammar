@@ -1,79 +1,107 @@
-/** Native scroll/layout events can arrive in either order after changing chapters. */
-export class AyahScroll {
-  private active = true;
-  private positions = new Map<number, { y: number; height: number }>();
-  private contentHeight = 0;
-  private viewportHeight = 0;
-  private target: number | null;
-  private issuedOffset: number | null = null;
-  private issuedMeasurements = '';
-  private lastScrollTime = -Infinity;
+/**
+ * Ayah navigation for the virtualized study list.
+ *
+ * FlatList only measures the cells it has rendered, and without fixed row heights it cannot scroll
+ * to an unmeasured ayah. The list therefore holds a slice of the chapter that starts at a "start"
+ * ayah: a far jump remounts the list with the target as its first item, and earlier ayahs are
+ * prepended in chunks as the reader scrolls up (FlatList keeps the visible content in place).
+ * Jumps inside the slice use measured `scrollToIndex` commands, re-issued until they settle.
+ */
 
-  constructor(target = 1) {
-    this.target = target;
+export type ViewableAyah = { index: number | null; isViewable: boolean; item: { number: number } };
+
+/** What the screen should do after FlatList could not scroll to the target. */
+export type JumpRecovery = 'remount' | 'none';
+
+/** The ayah nearest the top of the viewport, from FlatList's viewability report. */
+export function topVisibleAyah(viewable: readonly ViewableAyah[]): number | null {
+  let top: ViewableAyah | null = null;
+  for (const entry of viewable) {
+    if (!entry.isViewable || entry.index === null) continue;
+    if (!top || entry.index < (top.index ?? Infinity)) top = entry;
+  }
+  return top ? top.item.number : null;
+}
+
+export class AyahJump {
+  private target: { surah: number; index: number } | null = null;
+  private failures = 0;
+  private confirmations = 0;
+  private readonly maxFailures: number;
+  private readonly confirmationPasses: number;
+
+  constructor(maxFailures = 4, confirmationPasses = 2) {
+    this.maxFailures = maxFailures;
+    this.confirmationPasses = confirmationPasses;
   }
 
-  activate() {
-    this.active = true;
+  /** Request a jump; the chapter may still be loading, so the target remembers its Surah. */
+  request(surah: number, ayah: number) {
+    this.target = { surah, index: Math.max(0, Math.floor(ayah) - 1) };
+    this.failures = 0;
+    this.confirmations = 0;
   }
 
-  deactivate() {
-    this.active = false;
-  }
-
-  request(number: number) {
-    this.target = number;
-    this.issuedOffset = null;
-    this.issuedMeasurements = '';
-  }
-
-  recordAyah(number: number, y: number, height: number) {
-    if (this.active) this.positions.set(number, { y, height });
-  }
-
-  recordContent(height: number) {
-    if (this.active) this.contentHeight = height;
-  }
-
-  recordViewport(height: number) {
-    if (this.active) this.viewportHeight = height;
-  }
-
-  /** A native command is ready only when this surface can actually contain the target. */
-  takeScroll(gap: number, retry = false): number | null {
-    if (!this.active || this.target === null || this.viewportHeight <= 0) return null;
-    const position = this.positions.get(this.target);
-    if (!position || position.height <= 0 || this.contentHeight < position.y + position.height) {
-      return null;
-    }
-    const y = Math.min(
-      this.target === 1 ? 0 : Math.max(0, position.y - gap),
-      Math.max(0, this.contentHeight - this.viewportHeight),
-    );
-    const measurements = `${this.target}:${y}:${position.height}:${this.contentHeight}:${this.viewportHeight}`;
-    if (!retry && measurements === this.issuedMeasurements) return null;
-    this.issuedMeasurements = measurements;
-    this.issuedOffset = y;
-    return y;
-  }
-
-  beginReading() {
+  /** The user started reading (dragging), or the jump finished. */
+  cancel() {
     this.target = null;
-    this.issuedOffset = null;
   }
 
-  observeScroll(y: number, time: number): { ayah: number | null; retry: boolean } {
-    if (!this.active || time < this.lastScrollTime) return { ayah: null, retry: false };
-    this.lastScrollTime = time;
-    if (this.target !== null) {
-      if (this.issuedOffset === null) return { ayah: null, retry: false };
-      // A clamped/queued scroll is not acknowledgement that the requested ayah was reached.
-      if (Math.abs(y - this.issuedOffset) > 2) return { ayah: null, retry: true };
+  /** True while a jump for this Surah is unresolved (scroll-driven ayah labels wait for it). */
+  pendingFor(surah: number) {
+    return this.target !== null && this.target.surah === surah;
+  }
+
+  /**
+   * The list index to scroll to on this Surah's list, clamped to its length. A request made for
+   * another chapter is never applied to this one (no stale chapter jumps).
+   */
+  indexFor(surah: number, itemCount: number): number | null {
+    if (!this.target || this.target.surah !== surah || itemCount <= 0) return null;
+    return Math.min(this.target.index, itemCount - 1);
+  }
+
+  /**
+   * A new list instance is being mounted for this Surah. Returns the ayah index its slice starts
+   * at: the pending target, so a far ayah renders first instead of every ayah before it.
+   */
+  mount(surah: number, itemCount: number): number {
+    return this.indexFor(surah, itemCount) ?? 0;
+  }
+
+  /**
+   * Where to scroll inside a slice starting at `start`: an index into the slice, or 'remount'
+   * when the target lies before the slice. Null when there is nothing to do for this Surah.
+   */
+  sliceIndex(surah: number, itemCount: number, start: number): number | 'remount' | null {
+    const index = this.indexFor(surah, itemCount);
+    if (index === null) return null;
+    return index < start ? 'remount' : index - start;
+  }
+
+  /** FlatList has not measured the target cell (it is far below the rendered window). */
+  failed(surah: number): JumpRecovery {
+    if (!this.pendingFor(surah)) return 'none';
+    this.failures += 1;
+    if (this.failures > this.maxFailures) {
       this.target = null;
+      return 'none';
     }
-    const visible = [...this.positions]
-      .filter(([, position]) => position.y <= y + 48)
-      .sort((a, b) => b[1].y - a[1].y)[0];
-    return { ayah: visible?.[0] ?? null, retry: false };
+    // Start a new list at the target; it is then the first item and needs no measurement.
+    return 'remount';
+  }
+
+  /**
+   * A measured scrollToIndex was issued. Returns true when one more confirmation pass should be
+   * scheduled (cells above the target can still settle); false once the jump is complete.
+   */
+  succeeded(surah: number): boolean {
+    if (!this.pendingFor(surah)) return false;
+    this.confirmations += 1;
+    if (this.confirmations > this.confirmationPasses) {
+      this.target = null;
+      return false;
+    }
+    return true;
   }
 }

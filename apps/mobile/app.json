@@ -22,7 +22,14 @@
         "backgroundColor": "#f7f8ef"
       }
     },
-    "plugins": ["expo-router", "expo-font", "expo-system-ui"],
-    "experiments": { "typedRoutes": true }
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-system-ui",
+      "expo-sqlite"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
   }
 }

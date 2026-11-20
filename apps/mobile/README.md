@@ -3,7 +3,7 @@
 ## Current edition — 2026-11-15
 
 The native app bundles all 42 Surahs, 1,455 ayahs and 16,058 words, including
-Al-Hajj and Al-Waqi‘ah. The APK command synchronizes app config and icons before
+Al-Hajj and Al-Waqi‘ah, in its SQLite content database (see below). The APK command synchronizes app config and icons before
 compiling. Earlier native verification records below describe their original snapshots.
 
 ### Al-Hajj and Al-Waqi‘ah verification on 2026-11-15
@@ -30,9 +30,9 @@ lesson for every ayah and phrase word. Expo Go's floating developer button cover
 the Filter button in development builds only.
 
 
-A native Expo SDK 57 app. The React Native screens share their content, TypeScript
-types, search and validation with `@quran-grammar/core`; they are not a WebView of
-the website. Expo Router provides the native navigation stack and dismissible
+A native Expo SDK 57 app. The React Native screens share TypeScript types, interface
+strings, search and validation with the light `@quran-grammar/core` entry and read content
+from the bundled SQLite database; they are not a WebView of the website. Expo Router provides the native navigation stack and dismissible
 word detail screen. Expo UI supplies the native translation switch. Rules use an accessible React
 Native disclosure: the SwiftUI disclosure body did not render reliably in the
 SDK 57 Expo Go client during simulator testing.
@@ -50,20 +50,30 @@ Open it using an SDK 57 compatible Expo Go client, or use the `ios` / `android`
 scripts to open an available simulator/emulator. No EAS account is needed for
 local development.
 
-## One backend
+## Content: bundled SQLite database
 
-Copy `.env.example` to `.env` and set `EXPO_PUBLIC_API_URL` to the Node API origin.
-The app requests `/api/v1/surahs/:number` for the selected available chapter.
-It validates the response and chapter number before displaying it. Use your computer's LAN address when testing
-on a physical phone; `localhost` means the phone itself. Use HTTPS for a deployed
-API. The value is bundled into the client and must not contain credentials.
+The app reads all content — chapters, grammar topics and practice questions — from a SQLite
+database bundled as an asset (`assets/db/quran-grammar.db`, schema v2) through `expo-sqlite`.
+It does not bundle the TypeScript lessons and makes no network requests for content.
 
-Without an API URL, the app uses the bundled study registry, starting at Al-Fatihah.
-Offline status is shown in Settings; choosing another available surah loads its own lesson.
-When a configured API fails, the app shows retry and an explicit action to use the
-bundled lesson for the selected surah. A refresh failure keeps already loaded
-content visible. A chapter change clears the previous chapter while loading;
-cancelled requests cannot replace the newly selected lesson.
+- The database is generated from `@quran-grammar/core/content` by `npm run db:mobile` at the
+  repository root and is git-ignored. `npm run db -w @quran-grammar/mobile`
+  (`scripts/ensure-db.mjs`) generates it when it is missing or not schema v2 (`-- --force`
+  always regenerates it) and writes `assets/db/quran-grammar.json`, a small manifest with the
+  database's `content_version.content_sha256`. The `start`, `android`, `ios` and `export`
+  scripts, `npm run dev:android|ios` and `npm run build:android:apk` run it first.
+- `metro.config.js` adds `db` to Metro's asset extensions on top of Expo's monorepo defaults.
+- On first launch `src/data/repository.ts` copies the asset into the SQLite directory as
+  `quran-grammar-<hash prefix>.db` (`importDatabaseFromAssetAsync`), opens it with
+  `PRAGMA query_only` and checks `content_version`. AsyncStorage records the installed file
+  and hash; later launches open it directly. When a new build bundles different content, the
+  asset is imported again and the previous copy deleted. The app never writes to it.
+- `src/data/queries.ts` rebuilds a chapter's `StudyData` in ten indexed queries regardless of
+  its length; the three most recent chapters stay cached in memory. `src/state/content-hooks.ts`
+  provides `useTopics()`, `useTopic(id)` and `usePracticeQuestions(filter)`.
+- A loading spinner shows while the database opens or a chapter loads. A chapter change clears
+  the previous chapter immediately; late results for an earlier selection are ignored. Read
+  failures show an error with a retry action.
 
 ## Study flow
 
@@ -80,7 +90,7 @@ cancelled requests cannot replace the newly selected lesson.
 - Study, Grammar and Settings use English controls by default. Settings switches
   the interface and counts between English and Urdu, persists the preference,
   and leaves all Quranic Arabic and Urdu learning explanations unchanged.
-- Settings shows the content connection status and Quranic Arabic Corpus attribution.
+- Settings shows the offline content status and Quranic Arabic Corpus attribution.
 - A floating bottom dock switches Study, Grammar and Settings. Al-Fatihah's
   Grammar view includes three interactive practice questions with explanations,
   first-attempt scoring and restart. Every available chapter has its own phrase

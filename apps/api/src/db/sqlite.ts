@@ -1,27 +1,30 @@
 import { DatabaseSync } from 'node:sqlite';
 import { mkdirSync, renameSync, rmSync } from 'node:fs';
 import { dirname } from 'node:path';
-import type { StudyData } from '@quran-grammar/core';
-import { createTableStatements } from './schema';
-import { studiesToRows, TABLES_PARENT_FIRST, type ContentRows } from './rows';
+import type { ContentRepository, GrammarContent, StudyData } from '@quran-grammar/core';
+import {
+  ORDER_BY,
+  TABLES_PARENT_FIRST,
+  contentToRows,
+  createSqlRepository,
+  createTableStatements,
+  type ContentRows,
+  type SqlExecutor,
+} from '@quran-grammar/core/db';
 import type { ContentVersion } from './version';
 
-/** Read order for every table; reproduces the bundled list order. */
-export const ORDER_BY: Record<keyof ContentRows, string> = {
-  surahs: 'number',
-  ayahs: 'surah, number',
-  rules: 'surah, position',
-  roots: 'surah, position',
-  words: 'surah, ayah, position',
-  word_segments: 'word_id, position',
-  word_rules: 'word_id, position',
-  verb_forms: 'surah, position',
-  phrases: 'surah, ayah, position',
-  phrase_words: 'phrase_id, position',
-};
+export { ORDER_BY };
 
-/** Build a fresh SQLite database atomically (temporary file, then rename). */
-export function writeSqlite(file: string, studies: readonly StudyData[], version: ContentVersion) {
+/**
+ * Build a fresh SQLite database atomically (temporary file, then rename). The result is a plain
+ * SQLite 3 file in rollback-journal (DELETE) mode, vacuumed, so expo-sqlite can open it directly.
+ */
+export function writeSqlite(
+  file: string,
+  studies: readonly StudyData[],
+  grammar: GrammarContent,
+  version: ContentVersion,
+) {
   mkdirSync(dirname(file), { recursive: true });
   const temporary = `${file}.tmp-${process.pid}`;
   rmSync(temporary, { force: true });
@@ -29,7 +32,7 @@ export function writeSqlite(file: string, studies: readonly StudyData[], version
   try {
     db.exec('pragma foreign_keys = on; pragma journal_mode = delete;');
     for (const statement of createTableStatements('sqlite')) db.exec(statement);
-    const rows = studiesToRows(studies);
+    const rows = contentToRows(studies, grammar);
     db.exec('begin');
     for (const table of TABLES_PARENT_FIRST) {
       const list = rows[table] as Record<string, string | number | null>[];
@@ -51,6 +54,7 @@ export function writeSqlite(file: string, studies: readonly StudyData[], version
     const integrity = db.prepare('pragma integrity_check').get() as { integrity_check: string };
     if (integrity.integrity_check !== 'ok')
       throw new Error(`Integrity check failed: ${integrity.integrity_check}`);
+    db.exec('analyze');
     db.exec('vacuum');
   } catch (error) {
     db.close();
@@ -79,4 +83,22 @@ export function readSqlite(file: string): { rows: ContentRows; version: ContentV
   } finally {
     db.close();
   }
+}
+
+/** SqlExecutor over node:sqlite (the same SQL the mobile app runs through expo-sqlite). */
+export function nodeSqliteExecutor(db: DatabaseSync): SqlExecutor {
+  return {
+    async all(sql, params) {
+      return db.prepare(sql).all(...params) as Record<string, unknown>[];
+    },
+  };
+}
+
+/** Read-only repository over a SQLite content file (tests and local checks). */
+export function openSqliteRepository(file: string): {
+  repository: ContentRepository;
+  close: () => void;
+} {
+  const db = new DatabaseSync(file, { readOnly: true });
+  return { repository: createSqlRepository(nodeSqliteExecutor(db), 'sqlite'), close: () => db.close() };
 }

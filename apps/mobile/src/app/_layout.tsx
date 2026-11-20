@@ -6,15 +6,14 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StudyProvider } from '@/state/study-provider';
 import { PreferencesProvider, useInterface } from '@/state/preferences-provider';
 import { colors } from '@/theme/tokens';
+import { startupFonts } from '@/theme/font-loading';
 
 export const unstable_settings = { initialRouteName: 'index' };
 
 export default function Layout() {
-  const [loaded, error] = useFonts({
-    AmiriQuran: require('../../assets/fonts/amiri-quran.ttf'),
-    Naskh: require('../../assets/fonts/naskh.ttf'),
-    Nastaliq: require('../../assets/fonts/nastaliq.ttf'),
-  });
+  // Only the default Quran and Urdu fonts block the first screen; a chosen font is loaded on
+  // demand by PreferencesProvider (see theme/font-loading.ts).
+  const [loaded, error] = useFonts(startupFonts);
   if (!loaded)
     return (
       <View
@@ -46,13 +45,13 @@ export default function Layout() {
 }
 
 function AppStack() {
-  const { ui, isUrdu } = useInterface();
+  const { ui, isUrdu, activeFonts } = useInterface();
   return (
     <Stack
       screenOptions={{
         headerStyle: { backgroundColor: colors.paper },
         headerTintColor: colors.primary,
-        headerTitleStyle: { fontFamily: isUrdu ? 'Naskh' : undefined, fontSize: 20 },
+        headerTitleStyle: { fontFamily: isUrdu ? activeFonts.urdu.family : undefined, fontSize: 20 },
         headerShadowVisible: false,
         contentStyle: { backgroundColor: colors.background },
         headerBackButtonDisplayMode: 'minimal',
@@ -60,6 +59,8 @@ function AppStack() {
     >
       <Stack.Screen name="index" options={{ title: ui.study, headerShown: false }} />
       <Stack.Screen name="word/[id]" options={{ title: ui.wordStudy, presentation: 'modal' }} />
+      <Stack.Screen name="topic/[id]" options={{ title: ui.grammarTopics }} />
+      <Stack.Screen name="practice/[topicId]" options={{ title: ui.practiceGrammar }} />
     </Stack>
   );
 }

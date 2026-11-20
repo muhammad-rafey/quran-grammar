@@ -32,4 +32,19 @@ No general redistribution license for those hosted editions is asserted. No thir
 
 `apps/mobile/LICENSE` records the Expo template's MIT license. It does not assign a general license to this project's original application code or study content.
 
-Bundled Amiri Quran, Noto Naskh Arabic, and Noto Nastaliq Urdu fonts are distributed under the SIL Open Font License 1.1; their font copyright and license files accompany the app assets. Dependency licenses remain with their respective packages and are recorded through the package lockfile. Keep the font license files when redistributing builds or source assets.
+All bundled reading fonts are distributed under the SIL Open Font License 1.1. Each font file is in both `apps/web/public/fonts/` and `apps/mobile/assets/fonts/` (identical bytes) next to its copyright and license file, and is listed in the shared registry `packages/core/src/fonts.ts`:
+
+| File | Font | Copyright / source | License file |
+| --- | --- | --- | --- |
+| `amiri-quran.ttf` | Amiri Quran 1.003 | The Amiri Project Authors, [aliftype/amiri](https://github.com/aliftype/amiri) | `OFL-Amiri.txt` |
+| `naskh.ttf` | Noto Naskh Arabic 2.021 | The Noto Project Authors, [notofonts](https://github.com/notofonts/arabic) | `OFL-Naskh.txt` |
+| `nastaliq.ttf` | Noto Nastaliq Urdu 3.007 | The Noto Project Authors, [notofonts/nastaliq](https://github.com/notofonts/nastaliq) | `OFL-Nastaliq.txt` |
+| `scheherazade-new.ttf` | Scheherazade New 4.500, Regular | SIL Global (Reserved Font Names "Scheherazade", "SIL"), [silnrsi/font-scheherazade](https://github.com/silnrsi/font-scheherazade), file from [google/fonts](https://github.com/google/fonts/tree/main/ofl/scheherazadenew) | `OFL-ScheherazadeNew.txt` |
+| `lateef.ttf` | Lateef 4.400, Regular | SIL Global (Reserved Font Names "Lateef", "SIL"), [silnrsi/font-lateef](https://github.com/silnrsi/font-lateef), file from [google/fonts](https://github.com/google/fonts/tree/main/ofl/lateef) | `OFL-Lateef.txt` |
+| `digitalkhatt-indopak.otf` | DigitalKhatt IndoPak (font version 0.1, release v1.0.0-beta.1) | Amine Anane and Tarteel Inc., [DigitalKhatt/indopakfont](https://github.com/DigitalKhatt/indopakfont) (no Reserved Font Name) | `OFL-DigitalKhattIndoPak.txt` |
+
+The SIL fonts are unmodified and only renamed on disk. `digitalkhatt-indopak.otf` is a modified version, as the OFL permits: the upstream `indopak.otf` of release v1.0.0-beta.1 (a CFF2 variable font with justification axes) was instanced at its default location with fontTools (`varLib.instancer LTAT=0 RTAT=0 --static`) and its outlines converted from CFF2 to CFF (`cffLib.CFF2ToCFF`) so that older Android and iOS text stacks can render it. No glyphs were removed, and shaping of every word in the study data is identical to the upstream file.
+
+Fonts whose terms do not clearly permit redistribution in an app are not bundled. This includes Al Qalam Quran Majeed, whose files carry no license, the AlQuran IndoPak font by QuranWBW, the King Fahd Complex (KFGQPC) fonts and PDMS Saleem QuranFont.
+
+Dependency licenses remain with their respective packages and are recorded through the package lockfile. Keep the font license files when redistributing builds or source assets.

@@ -1,0 +1,35 @@
+/*
+ * Reading fonts from the shared registry (packages/core/src/fonts.ts): one @font-face per registry
+ * `family`. Files and license texts are in public/fonts (identical to apps/mobile/assets/fonts).
+ * A face is downloaded only when text uses it, so unselected fonts cost nothing.
+ */
+@font-face {
+  font-family: 'AmiriQuran';
+  src: url('/fonts/amiri-quran.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DigitalKhattIndoPak';
+  src: url('/fonts/digitalkhatt-indopak.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ScheherazadeNew';
+  src: url('/fonts/scheherazade-new.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Naskh';
+  src: url('/fonts/naskh.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Nastaliq';
+  src: url('/fonts/nastaliq.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lateef';
+  src: url('/fonts/lateef.ttf') format('truetype');
+  font-display: swap;
+}

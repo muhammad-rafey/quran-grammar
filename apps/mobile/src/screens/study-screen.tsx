@@ -1,204 +1,352 @@
-import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import {
+  FlatList,
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  type ListRenderItem,
+  type NativeScrollEvent,
+  type NativeSyntheticEvent,
+  type StyleProp,
+  type TextStyle,
+  type ViewStyle,
+  type ViewToken,
+} from 'react-native';
 import { useRouter } from 'expo-router';
-import { Host, Switch } from '@expo/ui';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
+  formatCount,
   matchesWord,
   getJuzForAyah,
   getSurahTitle,
   juzCatalog,
   type Ayah,
   type PartOfSpeechFilter,
+  type StudyData,
+  type UiLanguage,
   type Word,
 } from '@quran-grammar/core';
 import { AppIcon } from '@/components/app-icon';
 import { Action, DataStatus, InitialDataState, Label, Paragraph } from '@/components/study-ui';
 import { useStudy } from '@/state/study-provider';
 import { useInterface } from '@/state/preferences-provider';
-import { card, colors, radius, row, spacing, type } from '@/theme/tokens';
+import { card, colors, lineEndSlack, radius, row, spacing } from '@/theme/tokens';
+import { fontStyles, useTypography, type Typography } from '@/theme/typography';
 import { FloatingNavigation, type StudyView } from './study-navigation';
 import { StudyPicker, type BrowseMode, type PickerKind } from './study-picker';
-import { QuickPractice } from './quick-practice';
-import { Settings } from './study-settings';
-import { AyahScroll } from './ayah-scroll';
+import { PracticeGrammar } from './practice-grammar';
+import { Settings, ToggleRow } from './study-settings';
+import { AyahJump, topVisibleAyah } from './ayah-scroll';
+
+type SelectedWord = { id: string; ayah: number };
+/** Per-language strings and styles shared by every card; one object per language. */
+type CardChrome = {
+  language: UiLanguage;
+  ayahLabel: string;
+  wordStudy: string;
+  controlRow: ViewStyle;
+  fonts: StudyFonts;
+  ayahNumberText: StyleProp<TextStyle>;
+  ayahCaption: StyleProp<TextStyle>;
+};
+
+const isAndroid = Platform.OS === 'android';
+const viewabilityConfig = { itemVisiblePercentThreshold: 1, minimumViewTime: 0 };
+const jumpRetryDelay = 120;
+// FlatList always renders its first `initialNumToRender` items, so a prepended chunk of the same
+// size is rendered in the same commit: no estimated spacer ever sits above the visible ayah, which
+// keeps Android's maintainVisibleContentPosition anchored on a real cell.
+const prependChunk = 4;
+const prependThreshold = 1.5;
+let listInstances = 0;
+// Keeps the visible ayah in place when earlier ayahs are prepended above it.
+const keepVisibleContent = { minIndexForVisible: 0 };
 
 export default function StudyScreen() {
   const { study, selectedSurah, selectSurah } = useStudy();
-  const { ui, count, language, labelStyle, controlRow, isUrdu } = useInterface();
+  const { ui, count, language, labelText, controlRow, readingLayout } = useInterface();
+  const typography = useTypography();
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const scroll = useRef<ScrollView>(null);
   const [view, setView] = useState<StudyView>('words');
+  const [practiceVisited, setPracticeVisited] = useState(false);
   const [mode, setMode] = useState<BrowseMode>('surah');
   const [browseMode, setBrowseMode] = useState<BrowseMode>('surah');
   const [picker, setPicker] = useState<PickerKind>(null);
   const [ayahSelection, setAyahSelection] = useState({ surah: selectedSurah, number: 1 });
   const ayah = ayahSelection.surah === selectedSurah ? ayahSelection.number : 1;
-  const setAyah = (number: number) => setAyahSelection({ surah: selectedSurah, number });
-  const [selectedWord, setSelectedWord] = useState<string | null>(null);
+  const [selectedWord, setSelectedWord] = useState<SelectedWord | null>(null);
   const [pos, setPos] = useState<PartOfSpeechFilter>('all');
   const [showMeanings, setShowMeanings] = useState(true);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const requestedAyah = useRef({ surah: selectedSurah, number: 1 });
-  const surface = useMemo(
-    () => ({
-      navigation: new AyahScroll(
-        requestedAyah.current.surah === selectedSurah ? requestedAyah.current.number : 1,
-      ),
-      frame: null as number | null,
-      retry: false,
-    }),
-    [selectedSurah, view],
+  const grammar = readingLayout.grammar;
+  const showTranslation = readingLayout.translation;
+
+  // --- Ayah jumps on the virtualized list -------------------------------------------------
+  const list = useRef<FlatList<Ayah>>(null);
+  const [jump] = useState(() => new AyahJump());
+  // Bumped to start a fresh list (slice) at a far ayah; see ayah-scroll.ts.
+  const [generation, setGeneration] = useState(0);
+  const jumpTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const jumpFailed = useRef(false);
+  const listSurah = study?.surah.number ?? null;
+  const itemCount = study?.ayahs.length ?? 0;
+  // A new list instance per Surah, reading layout or fonts (different cell heights) and far jump.
+  const layoutKey = `${grammar ? 'grammar' : 'plain'}:${showTranslation ? 'translation' : 'arabic'}:${typography.quranFont.id}:${typography.urduFont.id}`;
+  // Unique per list instance (returning to a chapter must not reuse an old instance's slice).
+  const listKey = useMemo(
+    () => `${listSurah}:${layoutKey}:${generation}:${(listInstances += 1)}`,
+    [study, layoutKey, generation], // eslint-disable-line react-hooks/exhaustive-deps
   );
-  const activeSurface = useRef<typeof surface | null>(null);
+  const live = useRef({ surah: listSurah, count: itemCount, view, ayah, listKey, start: 0 });
+  const mountStart = useMemo(() => {
+    if (listSurah === null) return 0;
+    // A layout change keeps the reader's ayah; a Surah change already requested its start ayah.
+    const { surah, ayah: current } = live.current;
+    if (!jump.pendingFor(listSurah) && surah === listSurah && current > 1) {
+      jump.request(listSurah, current);
+    }
+    return jump.mount(listSurah, itemCount);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- computed once per list instance
+  }, [listKey]);
+  // Earlier ayahs are prepended in chunks as the reader scrolls up from a far start.
+  const [prepended, setPrepended] = useState({ listKey, start: mountStart });
+  const start = prepended.listKey === listKey ? prepended.start : mountStart;
+  const data = useMemo(
+    () => (!study ? [] : start > 0 ? study.ayahs.slice(start) : study.ayahs),
+    [study, start],
+  );
   useLayoutEffect(() => {
-    surface.navigation.activate();
-    activeSurface.current = surface;
-    return () => {
-      surface.navigation.deactivate();
-      if (surface.frame !== null) cancelAnimationFrame(surface.frame);
-      surface.frame = null;
-      if (activeSurface.current === surface) activeSurface.current = null;
+    live.current = { surah: listSurah, count: itemCount, view, ayah, listKey, start };
+  });
+  const clearJumpTimer = useCallback(() => {
+    if (jumpTimer.current !== null) clearTimeout(jumpTimer.current);
+    jumpTimer.current = null;
+  }, []);
+  const runJump = useCallback(() => {
+    clearJumpTimer();
+    const { surah, count, view: currentView, start: sliceStart } = live.current;
+    const target = list.current;
+    // A hidden list has no layout; the jump resumes when the Study tab is shown again.
+    if (surah === null || !target || currentView !== 'words') return;
+    const index = jump.sliceIndex(surah, count, sliceStart);
+    if (index === null) return;
+    if (index === 'remount') {
+      setGeneration((value) => value + 1);
+      return;
+    }
+    if (index === 0) {
+      target.scrollToOffset({ offset: 0, animated: false });
+      jump.cancel();
+      return;
+    }
+    jumpFailed.current = false;
+    target.scrollToIndex({ index, animated: false, viewOffset: spacing.sm });
+    // onScrollToIndexFailed runs synchronously inside scrollToIndex and handles recovery.
+    if (!jumpFailed.current && jump.succeeded(surah)) {
+      jumpTimer.current = setTimeout(runJump, jumpRetryDelay);
+    }
+  }, [clearJumpTimer, jump]);
+  const onScrollToIndexFailed = useCallback(() => {
+    jumpFailed.current = true;
+    const { surah } = live.current;
+    if (surah !== null && jump.failed(surah) === 'remount') setGeneration((value) => value + 1);
+  }, [jump]);
+  // Prepend only once the reader scrolls: right after a jump the list sits exactly at its first
+  // cell, and Android's maintainVisibleContentPosition anchors on the first view crossing the top.
+  const readerScrolled = useRef<string | null>(null);
+  const prependEarlier = useCallback(() => {
+    const { listKey: key, start: sliceStart } = live.current;
+    if (sliceStart > 0 && readerScrolled.current === key) {
+      setPrepended({ listKey: key, start: Math.max(0, sliceStart - prependChunk) });
+    }
+  }, []);
+  useEffect(() => clearJumpTimer, [clearJumpTimer]);
+  useEffect(() => {
+    if (view === 'words') runJump();
+  }, [view, runJump]);
+
+  // FlatList requires one onViewableItemsChanged per list instance; the list is keyed by Surah.
+  const onViewableItemsChanged = useMemo(() => {
+    const surah = listSurah;
+    return ({ viewableItems }: { viewableItems: ViewToken<Ayah>[] }) => {
+      if (surah === null || live.current.surah !== surah || jump.pendingFor(surah)) return;
+      const top = topVisibleAyah(viewableItems);
+      if (top !== null && top !== live.current.ayah) setAyahSelection({ surah, number: top });
     };
-  }, [surface]);
-  const applyPendingJump = useCallback(
-    (retry = false) => {
-      if (activeSurface.current !== surface) return;
-      surface.retry ||= retry;
-      if (surface.frame !== null) return;
-      // Content-size events describe native layout; issue the command after that commit.
-      surface.frame = requestAnimationFrame(() => {
-        surface.frame = null;
-        if (activeSurface.current !== surface || !scroll.current) return;
-        const y = surface.navigation.takeScroll(spacing.sm, surface.retry);
-        surface.retry = false;
-        if (y !== null) scroll.current.scrollTo({ y, animated: false });
-      });
+  }, [listSurah, jump]);
+  const onScrollBeginDrag = useCallback(
+    (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+      readerScrolled.current = live.current.listKey;
+      jump.cancel();
+      clearJumpTimer();
+      // At the top of a slice there are no scroll events (and so no onStartReached) to come.
+      const { contentOffset, layoutMeasurement } = event.nativeEvent;
+      if (contentOffset.y < layoutMeasurement.height * prependThreshold) prependEarlier();
     },
-    [surface],
+    [jump, clearJumpTimer, prependEarlier],
   );
+
+  // --- Cards ---------------------------------------------------------------------------------
   const openWord = useCallback(
-    (id: string) => {
-      setSelectedWord(id);
-      router.push({ pathname: '/word/[id]', params: { id } });
+    (word: Word) => {
+      setSelectedWord({ id: word.id, ayah: word.ayah });
+      router.push({ pathname: '/word/[id]', params: { id: word.id } });
     },
     [router],
   );
-  const recordAyahPosition = useCallback(
-    (number: number, y: number, height: number) => {
-      if (activeSurface.current !== surface) return;
-      surface.navigation.recordAyah(number, y, height);
-      applyPendingJump();
-    },
-    [surface, applyPendingJump],
-  );
   // Index once per chapter; the longest lessons have thousands of words.
-  const wordIndex = useMemo(() => {
+  const wordsByAyah = useMemo(() => {
     const byAyah = new Map<number, Word[]>();
-    const byId = new Map<string, Word>();
     for (const word of study?.words ?? []) {
-      byId.set(word.id, word);
-      const list = byAyah.get(word.ayah);
-      if (list) list.push(word);
+      const entries = byAyah.get(word.ayah);
+      if (entries) entries.push(word);
       else byAyah.set(word.ayah, [word]);
     }
-    return { byAyah, byId };
+    return byAyah;
   }, [study]);
-  // Long chapters render over a thousand words; keep scroll-driven ayah updates from re-rendering them.
-  const wordAyahs = useMemo(() => {
-    if (!study) return null;
-    const wordsByAyah = wordIndex.byAyah;
-    return study.ayahs.map((item) => (
-      <View
-        key={`${study.surah.number}:${item.number}`}
-        onLayout={(event) => {
-          const { y, height } = event.nativeEvent.layout;
-          recordAyahPosition(item.number, y, height);
-        }}
-        style={{ ...card, gap: spacing.md }}
-        testID={`ayah-${item.number}`}
-      >
-        <AyahLabel number={item.number} />
-        <View style={{ ...row, flexWrap: 'wrap', alignItems: 'stretch', gap: spacing.sm }}>
-          {(wordsByAyah.get(item.number) ?? []).map((word) => (
-            <WordToken
-              key={word.id}
-              word={word}
-              selected={word.id === selectedWord}
-              matched={matchesWord(word, study, '', pos)}
-              showMeaning={showMeanings}
-              onPress={() => openWord(word.id)}
-            />
-          ))}
-        </View>
-        <View style={{ borderTopWidth: 1, borderColor: colors.border, paddingTop: spacing.md }}>
-          <Paragraph>{item.translationUrdu}</Paragraph>
-        </View>
-      </View>
-    ));
-  }, [study, wordIndex, selectedWord, pos, showMeanings, openWord, recordAyahPosition]);
-  const grammarAyahs = useMemo(
-    () =>
-      study?.ayahs.map((item) => (
-        <View
-          key={`${study.surah.number}:${item.number}`}
-          onLayout={(event) => {
-            const { y, height } = event.nativeEvent.layout;
-            recordAyahPosition(item.number, y, height);
-          }}
-        >
-          <GrammarAyah
-            ayah={item}
-            words={wordIndex.byAyah.get(item.number) ?? []}
-            wordById={wordIndex.byId}
-            onWord={openWord}
-          />
-        </View>
-      )) ?? null,
-    [study, wordIndex, openWord, recordAyahPosition],
+  const chrome = useMemo<CardChrome>(
+    () => ({
+      language,
+      ayahLabel: ui.ayah,
+      wordStudy: ui.wordStudy,
+      controlRow,
+      fonts: fontStyles(typography, studyFonts),
+      ayahNumberText: [labelText(13), styles.ayahNumberText],
+      ayahCaption: [labelText(12), styles.ayahCaption],
+    }),
+    [language, ui, labelText, controlRow, typography],
   );
-  if (!study) return <InitialDataState />;
+  const selectedId = selectedWord?.id ?? null;
+  const selectedAyah = selectedWord?.ayah ?? null;
+  const renderItem = useCallback<ListRenderItem<Ayah>>(
+    ({ item }) =>
+      study ? (
+        <AyahCard
+          ayah={item}
+          words={wordsByAyah.get(item.number) ?? noWords}
+          study={study}
+          // Only the card holding the selected word re-renders when the selection changes.
+          selectedId={selectedAyah === item.number ? selectedId : null}
+          pos={pos}
+          showMeanings={showMeanings}
+          showTranslation={showTranslation}
+          grammar={grammar}
+          chrome={chrome}
+          onOpen={openWord}
+        />
+      ) : null,
+    [
+      study,
+      wordsByAyah,
+      selectedAyah,
+      selectedId,
+      pos,
+      showMeanings,
+      showTranslation,
+      grammar,
+      chrome,
+      openWord,
+    ],
+  );
+
+  const filters = useMemo<{ value: PartOfSpeechFilter; label: string }[]>(
+    () => [
+      { value: 'all', label: ui.allWords },
+      { value: 'noun', label: ui.noun },
+      { value: 'verb', label: ui.verb },
+      { value: 'particle', label: ui.particle },
+      { value: 'pronoun', label: ui.pronoun },
+    ],
+    [ui],
+  );
+  const listHeader = useMemo(
+    () => (
+      <View style={styles.listHeader}>
+        <DataStatus />
+        {grammar && filtersOpen && (
+          <View style={styles.filterPanel} testID="filter-panel">
+            <Label style={{ fontWeight: '600' }}>{ui.wordType}</Label>
+            <View style={{ ...controlRow, flexWrap: 'wrap', gap: spacing.sm }}>
+              {filters.map((filter) => (
+                <Pressable
+                  key={filter.value}
+                  testID={`filter-${filter.value}`}
+                  accessibilityRole="button"
+                  accessibilityState={{ selected: pos === filter.value }}
+                  onPress={() => setPos(filter.value)}
+                  style={({ pressed }) => [
+                    styles.filterChip,
+                    pos === filter.value && styles.filterChipActive,
+                    pressed && styles.pressedFade,
+                  ]}
+                >
+                  <Text
+                    style={[
+                      labelText(14),
+                      { color: pos === filter.value ? colors.white : colors.ink },
+                    ]}
+                  >
+                    {filter.label}
+                  </Text>
+                </Pressable>
+              ))}
+            </View>
+            <ToggleRow
+              testID="meaning-toggle"
+              label={ui.wordMeanings}
+              value={showMeanings}
+              onValueChange={setShowMeanings}
+            />
+            <Action
+              quiet
+              onPress={() => {
+                setPos('all');
+                setShowMeanings(true);
+              }}
+            >
+              {ui.reset}
+            </Action>
+          </View>
+        )}
+      </View>
+    ),
+    [grammar, filtersOpen, ui, controlRow, filters, pos, labelText, showMeanings],
+  );
+  const listContent = useMemo(
+    () => [styles.listContent, { paddingBottom: Math.max(insets.bottom, 12) + 100 }],
+    [insets.bottom],
+  );
+
+  // --- Header and navigation -------------------------------------------------------------
   const currentJuz =
     getJuzForAyah(selectedSurah, ayah) ??
     juzCatalog.find((item) => item.surahNumbers.includes(selectedSurah));
-  const filters: { value: PartOfSpeechFilter; label: string }[] = [
-    { value: 'all', label: ui.allWords },
-    { value: 'noun', label: ui.noun },
-    { value: 'verb', label: ui.verb },
-    { value: 'particle', label: ui.particle },
-    { value: 'pronoun', label: ui.pronoun },
-  ];
   const chooseAyah = (number: number) => {
     setPicker(null);
-    setAyah(number);
-    requestedAyah.current = { surah: selectedSurah, number };
-    surface.navigation.request(number);
-    applyPendingJump();
+    setAyahSelection({ surah: selectedSurah, number });
+    jump.request(selectedSurah, number);
+    runJump();
   };
   const changeView = (next: StudyView) => {
     if (next === view) return;
-    requestedAyah.current = { surah: selectedSurah, number: 1 };
-    activeSurface.current = null;
+    if (next === 'practice') setPracticeVisited(true);
+    setPicker(null);
     setView(next);
-    setAyah(1);
   };
+  const filtersActive = pos !== 'all' || !showMeanings;
+  // PracticeGrammar renders its own heading.
+  const title = view === 'settings' ? ui.settings : null;
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background, paddingTop: insets.top }}>
-      <View
-        style={{
-          width: '100%',
-          maxWidth: 860,
-          alignSelf: 'center',
-          paddingHorizontal: spacing.lg,
-          paddingTop: spacing.sm,
-          paddingBottom: spacing.md,
-        }}
-      >
-        {view === 'settings' ? (
+      <View style={[styles.header, view === 'practice' && styles.hidden]}>
+        {title !== null ? (
           <Label style={{ fontSize: 24, fontWeight: '700', paddingVertical: spacing.md }}>
-            {ui.settings}
+            {title}
           </Label>
         ) : (
           <View style={{ ...controlRow, alignItems: 'stretch', gap: spacing.sm }}>
@@ -210,18 +358,11 @@ export default function StudyScreen() {
                 setBrowseMode(mode);
                 setPicker('chapter');
               }}
-              style={({ pressed }) => ({
-                ...controlRow,
-                flex: 1,
-                minHeight: 66,
-                paddingHorizontal: spacing.md,
-                gap: spacing.sm,
-                borderRadius: radius.lg,
-                borderWidth: 1,
-                borderBottomWidth: pressed ? 1 : 3,
-                borderColor: colors.border,
-                backgroundColor: colors.paper,
-              })}
+              style={({ pressed }) => [
+                controlRow,
+                styles.chapterButton,
+                { borderBottomWidth: pressed ? 1 : 3 },
+              ]}
             >
               <View style={{ flex: 1 }}>
                 <Label muted style={{ fontSize: 11, lineHeight: 18 }}>
@@ -239,15 +380,14 @@ export default function StudyScreen() {
               testID="ayah-picker"
               accessibilityRole="button"
               accessibilityLabel={`${ui.selectAyah}, ${ui.ayah} ${count(ayah)}`}
+              accessibilityState={{ disabled: !study }}
+              disabled={!study}
               onPress={() => setPicker('ayah')}
-              style={({ pressed }) => ({
-                ...controlRow,
-                minHeight: 66,
-                paddingHorizontal: spacing.md,
-                gap: spacing.sm,
-                borderRadius: radius.lg,
-                backgroundColor: pressed ? colors.lime : colors.wash,
-              })}
+              style={({ pressed }) => [
+                controlRow,
+                styles.ayahButton,
+                { backgroundColor: pressed ? colors.lime : colors.wash },
+              ]}
             >
               <View>
                 <Label muted style={{ fontSize: 11, lineHeight: 18 }}>
@@ -259,164 +399,86 @@ export default function StudyScreen() {
               </View>
               <AppIcon name="down" size={17} />
             </Pressable>
-            {view === 'words' && (
+            {grammar && (
               <Pressable
                 testID="filter-toggle"
                 accessibilityRole="button"
                 accessibilityLabel={ui.filters}
                 accessibilityState={{ expanded: filtersOpen }}
                 onPress={() => setFiltersOpen(!filtersOpen)}
-                style={({ pressed }) => ({
-                  width: 48,
-                  minHeight: 66,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  gap: spacing.xs,
-                  borderRadius: radius.lg,
-                  backgroundColor:
-                    filtersOpen || pos !== 'all' || !showMeanings
-                      ? colors.lime
-                      : pressed
-                        ? colors.wash
-                        : colors.paper,
-                })}
+                style={({ pressed }) => [
+                  styles.filterButton,
+                  {
+                    backgroundColor:
+                      filtersOpen || filtersActive
+                        ? colors.lime
+                        : pressed
+                          ? colors.wash
+                          : colors.paper,
+                  },
+                ]}
               >
                 <AppIcon name="filter" />
-                {pos !== 'all' || !showMeanings ? (
-                  <View
-                    style={{
-                      width: 5,
-                      height: 5,
-                      borderRadius: radius.pill,
-                      backgroundColor: colors.primary,
-                    }}
-                  />
-                ) : null}
+                {filtersActive ? <View style={styles.filterDot} /> : null}
               </Pressable>
             )}
           </View>
         )}
       </View>
-      <ScrollView
-        key={`${selectedSurah}:${view}`}
-        ref={scroll}
-        testID="study-screen"
-        contentInsetAdjustmentBehavior="automatic"
-        keyboardShouldPersistTaps="handled"
-        scrollEventThrottle={100}
-        onLayout={(event) => {
-          if (activeSurface.current !== surface) return;
-          surface.navigation.recordViewport(event.nativeEvent.layout.height);
-          applyPendingJump();
-        }}
-        onContentSizeChange={(_, height) => {
-          if (activeSurface.current !== surface) return;
-          surface.navigation.recordContent(height);
-          applyPendingJump();
-        }}
-        onScrollBeginDrag={() => {
-          if (activeSurface.current === surface) surface.navigation.beginReading();
-        }}
-        onScroll={(event) => {
-          if (activeSurface.current !== surface) return;
-          const result = surface.navigation.observeScroll(
-            event.nativeEvent.contentOffset.y,
-            event.timeStamp,
-          );
-          if (result.retry) applyPendingJump(true);
-          if (result.ayah !== null) setAyah(result.ayah);
-        }}
-        contentContainerStyle={{
-          paddingHorizontal: spacing.lg,
-          paddingTop: spacing.xs,
-          paddingBottom: Math.max(insets.bottom, 12) + 100,
-          gap: spacing.lg,
-          maxWidth: 860,
-          width: '100%',
-          alignSelf: 'center',
-        }}
-      >
-        {view !== 'settings' && <DataStatus />}
-        {study.surah.number === 1 && (
-          <View style={{ display: view === 'grammar' ? 'flex' : 'none' }}>
-            <QuickPractice onWord={openWord} />
-          </View>
-        )}
-        {view === 'words' ? (
-          <>
-            {filtersOpen && (
-              <View
-                style={{ ...card, backgroundColor: colors.mint, gap: spacing.md }}
-                testID="filter-panel"
-              >
-                <Label style={{ fontWeight: '600' }}>{ui.wordType}</Label>
-                <View style={{ ...controlRow, flexWrap: 'wrap', gap: spacing.sm }}>
-                  {filters.map((filter) => (
-                    <Pressable
-                      key={filter.value}
-                      testID={`filter-${filter.value}`}
-                      accessibilityRole="button"
-                      accessibilityState={{ selected: pos === filter.value }}
-                      onPress={() => setPos(filter.value)}
-                      style={({ pressed }) => ({
-                        minHeight: 44,
-                        paddingHorizontal: spacing.md,
-                        paddingVertical: spacing.sm,
-                        justifyContent: 'center',
-                        borderRadius: radius.pill,
-                        backgroundColor: pos === filter.value ? colors.primary : colors.paper,
-                        opacity: pressed ? 0.7 : 1,
-                      })}
-                    >
-                      <Text
-                        style={[
-                          labelStyle,
-                          { fontSize: 14, color: pos === filter.value ? colors.white : colors.ink },
-                        ]}
-                      >
-                        {filter.label}
-                      </Text>
-                    </Pressable>
-                  ))}
-                </View>
-                <Host
-                  matchContents
-                  colorScheme="light"
-                  layoutDirection={isUrdu ? 'rightToLeft' : 'leftToRight'}
-                  seedColor={colors.primary}
-                >
-                  <Switch
-                    testID="meaning-toggle"
-                    label={ui.wordMeanings}
-                    value={showMeanings}
-                    onValueChange={setShowMeanings}
-                  />
-                </Host>
-                <Action
-                  quiet
-                  onPress={() => {
-                    setPos('all');
-                    setShowMeanings(true);
-                  }}
-                >
-                  {ui.reset}
-                </Action>
-              </View>
-            )}
-            {wordAyahs}
-          </>
-        ) : view === 'grammar' ? (
-          <>{grammarAyahs}</>
+      {/* The study list stays mounted (but hidden) on other tabs so its position survives. */}
+      <View style={[styles.fill, view !== 'words' && styles.hidden]}>
+        {/* Above the list, not its header: the list keeps its visible ayah anchored while earlier
+            ayahs are prepended, which would also hide a header that opens at the top. */}
+        {listHeader}
+        {study ? (
+          <FlatList
+            key={listKey}
+            ref={list}
+            testID="study-screen"
+            data={data}
+            renderItem={renderItem}
+            keyExtractor={ayahKey}
+            contentContainerStyle={listContent}
+            contentInsetAdjustmentBehavior="automatic"
+            keyboardShouldPersistTaps="handled"
+            initialNumToRender={prependChunk}
+            maxToRenderPerBatch={3}
+            updateCellsBatchingPeriod={60}
+            windowSize={7}
+            removeClippedSubviews={isAndroid}
+            viewabilityConfig={viewabilityConfig}
+            onViewableItemsChanged={onViewableItemsChanged}
+            onScrollToIndexFailed={onScrollToIndexFailed}
+            onStartReached={prependEarlier}
+            onStartReachedThreshold={prependThreshold}
+            maintainVisibleContentPosition={keepVisibleContent}
+            onScrollBeginDrag={onScrollBeginDrag}
+            onLayout={runJump}
+          />
         ) : (
-          <Settings />
+          <InitialDataState />
         )}
-      </ScrollView>
+      </View>
+      {practiceVisited && (
+        <ScrollView
+          style={[styles.fill, view !== 'practice' && styles.hidden]}
+          contentContainerStyle={listContent}
+          keyboardShouldPersistTaps="handled"
+        >
+          <PracticeGrammar />
+        </ScrollView>
+      )}
+      {view === 'settings' && (
+        <ScrollView style={styles.fill} contentContainerStyle={listContent}>
+          <Settings />
+        </ScrollView>
+      )}
       <FloatingNavigation value={view} onChange={changeView} />
       <StudyPicker
         kind={picker}
         mode={browseMode}
         ayah={ayah}
-        ayahCount={study.surah.ayahCount}
+        ayahCount={study?.surah.ayahCount ?? 0}
         surah={selectedSurah}
         onMode={setBrowseMode}
         onClose={() => setPicker(null)}
@@ -428,8 +490,9 @@ export default function StudyScreen() {
             chooseAyah(startAyah);
             return;
           }
-          requestedAyah.current = { surah: number, number: startAyah };
-          activeSurface.current = null;
+          // Applied once that chapter's list is on screen; never to the chapter shown now.
+          jump.request(number, startAyah);
+          clearJumpTimer();
           setAyahSelection({ surah: number, number: startAyah });
           selectSurah(number);
         }}
@@ -438,158 +501,270 @@ export default function StudyScreen() {
   );
 }
 
-function AyahLabel({ number }: { number: number }) {
-  const { ui, count, controlRow } = useInterface();
-  return (
-    <View style={{ ...controlRow, gap: spacing.sm }}>
-      <View
-        style={{
-          width: 30,
-          height: 30,
-          borderRadius: radius.sm,
-          backgroundColor: colors.wash,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Label style={{ fontSize: 13, fontWeight: '700' }}>{count(number)}</Label>
-      </View>
-      <Label muted style={{ fontSize: 12 }}>
-        {ui.ayah}
-      </Label>
-    </View>
-  );
-}
+const noWords: readonly Word[] = [];
+const ayahKey = (item: Ayah) => String(item.number);
 
-function GrammarAyah({
-  ayah,
-  words,
-  wordById,
-  onWord,
-}: {
+type AyahCardProps = {
   ayah: Ayah;
   words: readonly Word[];
-  wordById: ReadonlyMap<string, Word>;
-  onWord: (id: string) => void;
-}) {
-  const { ui } = useInterface();
+  study: StudyData;
+  selectedId: string | null;
+  pos: PartOfSpeechFilter;
+  showMeanings: boolean;
+  showTranslation: boolean;
+  grammar: boolean;
+  chrome: CardChrome;
+  onOpen: (word: Word) => void;
+};
+
+const AyahCard = memo(function AyahCard({
+  ayah,
+  words,
+  study,
+  selectedId,
+  pos,
+  showMeanings,
+  showTranslation,
+  grammar,
+  chrome,
+  onOpen,
+}: AyahCardProps) {
+  if (!grammar) {
+    return (
+      <View style={styles.plainAyah} testID={`ayah-${ayah.number}`}>
+        <Text style={chrome.fonts.plainArabic}>
+          {words.map((word, index) => (
+            <Text
+              key={word.id}
+              testID={`word-${word.id}`}
+              onPress={() => onOpen(word)}
+              style={word.id === selectedId ? styles.plainSelected : undefined}
+            >
+              {index > 0 ? ' ' : ''}
+              {word.arabic}
+            </Text>
+          ))}
+          <Text style={styles.ayahEnd}>{` ۝${formatCount(ayah.number, 'ur')}`}</Text>
+        </Text>
+        {showTranslation && <Paragraph>{ayah.translationUrdu}</Paragraph>}
+      </View>
+    );
+  }
   return (
-    <View style={{ ...card, gap: spacing.lg }}>
-      <AyahLabel number={ayah.number} />
-      <Text selectable style={type.arabic}>
-        {words.map((word) => word.arabic).join(' ')}
-      </Text>
-      <Paragraph>{ayah.translationUrdu}</Paragraph>
-      {ayah.phrases.map((phrase) => (
-        <View
-          key={phrase.id}
-          style={{
-            backgroundColor: colors.mint,
-            borderRadius: radius.md,
-            padding: spacing.md,
-            gap: spacing.sm,
-          }}
-        >
-          <Text style={[type.body, { color: colors.primary }]}>{phrase.labelUrdu}</Text>
-          <View style={{ ...row, flexWrap: 'wrap' }}>
-            {phrase.wordIds.map((id) => {
-              const word = wordById.get(id);
-              return word ? (
-                <Pressable
-                  key={id}
-                  accessibilityRole="button"
-                  accessibilityLabel={`${word.arabic}, ${ui.wordStudy}`}
-                  onPress={() => onWord(id)}
-                  style={({ pressed }) => ({
-                    minHeight: 48,
-                    paddingHorizontal: spacing.sm,
-                    opacity: pressed ? 0.6 : 1,
-                  })}
-                >
-                  <Text
-                    style={[type.arabic, { fontSize: 24, lineHeight: 56, color: colors.primary }]}
-                  >
-                    {word.arabic}
-                  </Text>
-                </Pressable>
-              ) : null;
-            })}
-          </View>
-          <Paragraph>{phrase.explanationUrdu}</Paragraph>
+    <View style={styles.ayahCard} testID={`ayah-${ayah.number}`}>
+      <View style={[chrome.controlRow, { gap: spacing.sm }]}>
+        <View style={styles.ayahNumber}>
+          <Text style={chrome.ayahNumberText}>
+            {formatCount(ayah.number, chrome.language)}
+          </Text>
         </View>
-      ))}
-      <Label style={{ fontWeight: '600' }}>{ui.conciseMeaning}</Label>
-      <Paragraph>{ayah.tafsirUrdu}</Paragraph>
+        <Text style={chrome.ayahCaption}>{chrome.ayahLabel}</Text>
+      </View>
+      <View style={styles.wordRow}>
+        {words.map((word) => (
+          <WordToken
+            key={word.id}
+            word={word}
+            selected={word.id === selectedId}
+            matched={pos === 'all' || matchesWord(word, study, '', pos)}
+            showMeaning={showMeanings}
+            wordStudy={chrome.wordStudy}
+            fonts={chrome.fonts}
+            onOpen={onOpen}
+          />
+        ))}
+      </View>
+      {showTranslation && (
+        <View style={styles.translation}>
+          <Paragraph>{ayah.translationUrdu}</Paragraph>
+        </View>
+      )}
     </View>
   );
-}
+});
 
-function WordToken({
+const WordToken = memo(function WordToken({
   word,
   matched,
   selected,
   showMeaning,
-  onPress,
+  wordStudy,
+  fonts,
+  onOpen,
 }: {
   word: Word;
   matched: boolean;
   selected: boolean;
   showMeaning: boolean;
-  onPress: () => void;
+  wordStudy: string;
+  fonts: StudyFonts;
+  onOpen: (word: Word) => void;
 }) {
-  const { ui } = useInterface();
-  const color =
-    word.pos === 'verb' ? colors.blue : word.pos === 'particle' ? colors.amber : colors.primary;
-  const wash =
-    word.pos === 'verb'
-      ? colors.blueWash
-      : word.pos === 'particle'
-        ? colors.amberWash
-        : colors.wash;
+  const tone = word.pos === 'verb' ? fonts.verb : word.pos === 'particle' ? fonts.particle : fonts.noun;
   return (
     <Pressable
       testID={`word-${word.id}`}
       accessibilityRole="button"
-      accessibilityLabel={`${word.arabic}, ${word.meaningUrdu}, ${word.posUrdu}, ${ui.wordStudy}`}
+      accessibilityLabel={`${word.arabic}, ${word.meaningUrdu}, ${word.posUrdu}, ${wordStudy}`}
       accessibilityState={{ selected }}
-      onPress={onPress}
-      style={({ pressed }) => ({
-        minWidth: 84,
-        // 180dp of label text plus padding; the widest Arabic word in the registry is ~125dp.
-        maxWidth: 208,
-        paddingHorizontal: spacing.md,
-        paddingVertical: spacing.sm,
-        borderRadius: radius.md,
-        borderWidth: selected ? 2 : 1,
-        borderBottomWidth: pressed ? 1 : 4,
-        borderColor: selected ? colors.primary : colors.border,
-        backgroundColor: selected || pressed ? colors.wash : colors.paper,
-        opacity: matched ? 1 : 0.35,
-        alignItems: 'center',
-        gap: spacing.xs,
-      })}
+      onPress={() => onOpen(word)}
+      style={({ pressed }) => [
+        styles.token,
+        selected && styles.tokenSelected,
+        pressed && styles.tokenPressed,
+        !matched && styles.tokenDimmed,
+      ]}
     >
-      <Text style={[type.arabic, { textAlign: 'center' }]}>{word.arabic}</Text>
-      {showMeaning && (
-        <Text style={[type.small, { color: colors.ink, textAlign: 'center', maxWidth: 180 }]}>
+      <Text style={fonts.tokenArabic}>{word.arabic}</Text>
+      {showMeaning && <Text style={fonts.tokenMeaning}>
           {word.meaningUrdu}
-        </Text>
-      )}
+          {lineEndSlack}
+        </Text>}
       {/* Stretch the label to the token: on Android a shrink-wrapped RTL label can be laid
           out wider than it was measured, which clipped its last word (e.g. 56:2:2). */}
-      <View
-        style={{
-          alignSelf: 'stretch',
-          paddingHorizontal: spacing.sm,
-          paddingVertical: 2,
-          borderRadius: radius.sm,
-          backgroundColor: wash,
-        }}
-      >
-        <Text style={[type.small, { fontSize: 13, lineHeight: 22, color, textAlign: 'center' }]}>
+      <View style={tone.wash}>
+        <Text style={tone.text}>
           {word.posUrdu}
+          {lineEndSlack}
         </Text>
       </View>
     </Pressable>
   );
+});
+
+const posLabel = {
+  alignSelf: 'stretch',
+  paddingHorizontal: spacing.sm,
+  paddingVertical: 2,
+  borderRadius: radius.sm,
+} as const;
+
+/** The study cards' font-dependent styles, built once per font pair (see fontStyles). */
+function studyFonts(typography: Typography) {
+  const posText = { ...typography.small, ...typography.urduText(13, 22), textAlign: 'center' } as const;
+  const tone = (backgroundColor: string, color: string) =>
+    StyleSheet.create({
+      wash: { ...posLabel, backgroundColor },
+      text: { ...posText, color },
+    });
+  return {
+    ...StyleSheet.create({
+      tokenArabic: { ...typography.arabic, textAlign: 'center' },
+      tokenMeaning: { ...typography.small, color: colors.ink, textAlign: 'center', maxWidth: 180 },
+      plainArabic: typography.arabic,
+    }),
+    noun: tone(colors.wash, colors.primary),
+    verb: tone(colors.blueWash, colors.blue),
+    particle: tone(colors.amberWash, colors.amber),
+  };
 }
+type StudyFonts = ReturnType<typeof studyFonts>;
+
+const styles = StyleSheet.create({
+  fill: { flex: 1 },
+  hidden: { display: 'none' },
+  header: {
+    width: '100%',
+    maxWidth: 860,
+    alignSelf: 'center',
+    paddingHorizontal: spacing.lg,
+    paddingTop: spacing.sm,
+    paddingBottom: spacing.md,
+  },
+  chapterButton: {
+    flex: 1,
+    minHeight: 66,
+    paddingHorizontal: spacing.md,
+    gap: spacing.sm,
+    borderRadius: radius.lg,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.paper,
+  },
+  ayahButton: {
+    minHeight: 66,
+    paddingHorizontal: spacing.md,
+    gap: spacing.sm,
+    borderRadius: radius.lg,
+  },
+  filterButton: {
+    width: 48,
+    minHeight: 66,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: spacing.xs,
+    borderRadius: radius.lg,
+  },
+  filterDot: { width: 5, height: 5, borderRadius: radius.pill, backgroundColor: colors.primary },
+  // No top padding: a jump puts its ayah exactly at offset 0 of the content (see onStartReached).
+  listContent: {
+    paddingHorizontal: spacing.lg,
+    maxWidth: 860,
+    width: '100%',
+    alignSelf: 'center',
+  },
+  listHeader: {
+    width: '100%',
+    maxWidth: 860,
+    alignSelf: 'center',
+    paddingHorizontal: spacing.lg,
+    gap: spacing.md,
+    paddingBottom: spacing.xs,
+  },
+  filterPanel: { ...card, backgroundColor: colors.mint, gap: spacing.md, marginBottom: spacing.md },
+  filterChip: {
+    minHeight: 44,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    justifyContent: 'center',
+    borderRadius: radius.pill,
+    backgroundColor: colors.paper,
+  },
+  filterChipActive: { backgroundColor: colors.primary },
+  pressedFade: { opacity: 0.7 },
+  // Cells carry their own spacing: a container gap would also space FlatList's spacer views.
+  ayahCard: { ...card, gap: spacing.md, marginBottom: spacing.lg },
+  ayahNumber: {
+    minWidth: 30,
+    minHeight: 30,
+    paddingHorizontal: 2,
+    borderRadius: radius.sm,
+    backgroundColor: colors.wash,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  ayahNumberText: { fontWeight: '700', textAlign: 'center' },
+  ayahCaption: { color: colors.muted },
+  wordRow: { ...row, flexWrap: 'wrap', alignItems: 'stretch', gap: spacing.sm },
+  translation: { borderTopWidth: 1, borderColor: colors.border, paddingTop: spacing.md },
+  token: {
+    minWidth: 84,
+    // 180dp of label text plus padding; the widest Arabic word in the registry is ~125dp.
+    maxWidth: 208,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    borderRadius: radius.md,
+    borderWidth: 1,
+    borderBottomWidth: 4,
+    borderColor: colors.border,
+    backgroundColor: colors.paper,
+    alignItems: 'center',
+    gap: spacing.xs,
+  },
+  tokenSelected: {
+    borderWidth: 2,
+    borderBottomWidth: 4,
+    borderColor: colors.primary,
+    backgroundColor: colors.wash,
+  },
+  tokenPressed: { borderBottomWidth: 1, backgroundColor: colors.wash },
+  tokenDimmed: { opacity: 0.35 },
+  plainAyah: {
+    paddingVertical: spacing.md,
+    gap: spacing.sm,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor: colors.border,
+  },
+  plainSelected: { color: colors.primary },
+  ayahEnd: { color: colors.primary },
+});

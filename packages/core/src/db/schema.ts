@@ -1,6 +1,6 @@
 /**
- * Relational schema for the study content, shared by SQLite and Postgres (Supabase).
- * The tables mirror StudyData exactly so a database can later replace the bundled data.
+ * Relational schema for the study content, shared by SQLite (node:sqlite, expo-sqlite) and
+ * Postgres (Supabase). The tables mirror StudyData, grammar topics and practice questions exactly.
  * Every list keeps an explicit `position` so reading the rows back reproduces the original order.
  */
 export type Dialect = 'sqlite' | 'postgres';
@@ -9,10 +9,15 @@ export type Dialect = 'sqlite' | 'postgres';
 export const POSTGRES_SCHEMA = 'quran_grammar';
 
 /** Increment when the table layout changes. */
-export const DATABASE_SCHEMA_VERSION = 1;
+export const DATABASE_SCHEMA_VERSION = 2;
 
 /** Child tables first, so deletes and truncation never violate foreign keys. */
 export const TABLES_CHILD_FIRST = [
+  'practice_options',
+  'practice_questions',
+  'grammar_topic_examples',
+  'grammar_topic_points',
+  'grammar_topics',
   'phrase_words',
   'phrases',
   'verb_forms',
@@ -138,8 +143,54 @@ export function createTableStatements(dialect: Dialect): string[] {
   word_id text not null references ${p}words (id),
   primary key (phrase_id, position)
 )`,
+    `create table if not exists ${p}grammar_topics (
+  id text primary key,
+  position integer not null unique check (position > 0),
+  title_urdu ${text},
+  title_english ${text},
+  summary_urdu ${text},
+  explanation_urdu ${text},
+  occurrence_count integer not null check (occurrence_count >= 0)
+)`,
+    `create table if not exists ${p}grammar_topic_points (
+  topic_id text not null references ${p}grammar_topics (id) on delete cascade,
+  position integer not null check (position > 0),
+  text_urdu ${text},
+  primary key (topic_id, position)
+)`,
+    `create table if not exists ${p}grammar_topic_examples (
+  topic_id text not null references ${p}grammar_topics (id) on delete cascade,
+  position integer not null check (position > 0),
+  kind text not null check (kind in ('annotated', 'quranic')),
+  word_id text not null references ${p}words (id),
+  note_urdu text,
+  primary key (topic_id, kind, position)
+)`,
+    `create table if not exists ${p}practice_questions (
+  id text primary key,
+  position integer not null unique check (position > 0),
+  topic_id text references ${p}grammar_topics (id) on delete cascade,
+  kind text not null check (kind in ('concept', 'apply', 'spot', 'fatihah')),
+  prompt_urdu ${text},
+  correct_option_id ${text},
+  explanation_urdu ${text},
+  word_id text references ${p}words (id)
+)`,
+    `create table if not exists ${p}practice_options (
+  question_id text not null references ${p}practice_questions (id) on delete cascade,
+  position integer not null check (position > 0),
+  id ${text},
+  text ${text},
+  language text not null check (language in ('ar', 'ur')),
+  primary key (question_id, position),
+  unique (question_id, id)
+)`,
+    // words (surah) lookups use the unique (surah, ayah, position) index; word_rules by rule use
+    // word_rules_rule_idx (surah, rule_id), and topic occurrence counts are precomputed;
+    // grammar_topic_examples (topic_id) lookups use its primary key.
     `create index if not exists words_root_idx on ${p}words (root)`,
     `create index if not exists word_rules_rule_idx on ${p}word_rules (surah, rule_id)`,
     `create index if not exists phrase_words_word_idx on ${p}phrase_words (word_id)`,
+    `create index if not exists practice_questions_topic_idx on ${p}practice_questions (topic_id, position)`,
   ];
 }

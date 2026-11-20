@@ -6,12 +6,15 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import type { Server } from 'node:http';
 import { isStudyData } from '@quran-grammar/core';
+import { getBundledRepository, getGrammarContent } from '@quran-grammar/core/content';
 import { createApp } from './app';
+
+const repository = getBundledRepository();
 
 let server: Server;
 let base: string;
 before(async () => {
-  server = createApp().listen(0, '127.0.0.1');
+  server = createApp({ repository }).listen(0, '127.0.0.1');
   await once(server, 'listening');
   const address = server.address();
   assert.ok(address && typeof address !== 'string');
@@ -27,7 +30,12 @@ after(async () => {
 test('health and study routes return a complete validated dataset', async () => {
   const health = await fetch(`${base}/api/health`);
   assert.equal(health.status, 200);
-  assert.equal((await health.json()).status, 'ok');
+  assert.deepEqual(await health.json(), {
+    status: 'ok',
+    service: 'quran-grammar-api',
+    schemaVersion: 1,
+    source: 'bundled',
+  });
   const list = await (await fetch(`${base}/api/v1/surahs`)).json();
   assert.equal(list.surahs[0].number, 1);
   const response = await fetch(`${base}/api/v1/surahs/1`);
@@ -109,7 +117,11 @@ test('CORS permits local development and native calls but rejects other browser 
 test('production SPA fallback excludes API paths and missing static files', async (context) => {
   const webDist = await mkdtemp(join(tmpdir(), 'quran-grammar-web-'));
   await writeFile(join(webDist, 'index.html'), '<!doctype html><title>Study app</title>');
-  const staticServer = createApp({ webDist, allowedOrigins: ['https://grammar.example'] }).listen(
+  const staticServer = createApp({
+    repository,
+    webDist,
+    allowedOrigins: ['https://grammar.example'],
+  }).listen(
     0,
     '127.0.0.1',
   );
@@ -230,4 +242,66 @@ test('chapter-scoped search never returns another chapter and rejects invalid sc
     ['/api/v1/search?surah=nope', 400],
   ] as const)
     assert.equal((await fetch(`${base}${path}`)).status, status, path);
+});
+
+test('topic list and topic detail match the built grammar content', async () => {
+  const grammar = getGrammarContent();
+  const response = await fetch(`${base}/api/v1/topics`);
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('cache-control'), 'public, max-age=300');
+  const { topics } = await response.json();
+  assert.equal(topics.length, grammar.topics.length);
+  assert.deepEqual(
+    topics.map((topic: { id: string }) => topic.id),
+    grammar.topics.map((topic) => topic.id),
+  );
+  assert.deepEqual(Object.keys(topics[0]), [
+    'id',
+    'position',
+    'titleUrdu',
+    'titleEnglish',
+    'summaryUrdu',
+    'questionCount',
+    'occurrenceCount',
+  ]);
+  const detail = await (await fetch(`${base}/api/v1/topics/${topics[0].id}`)).json();
+  assert.ok(detail.quranicExamples.length > 0 && detail.explanationUrdu);
+  assert.deepEqual(detail, await repository.getTopic(topics[0].id));
+  for (const [path, status, code] of [
+    ['/api/v1/topics/does-not-exist', 404, 'TOPIC_NOT_FOUND'],
+    ['/api/v1/topics/Not_Valid', 400, 'INVALID_TOPIC'],
+    [`/api/v1/topics/${'a'.repeat(65)}`, 400, 'INVALID_TOPIC'],
+  ] as const) {
+    const failed = await fetch(`${base}${path}`);
+    assert.equal(failed.status, status, path);
+    assert.equal((await failed.json()).error.code, code);
+  }
+});
+
+test('practice endpoint serves one topic or the Al-Fatihah set and rejects ambiguous queries', async () => {
+  const fatihah = await (await fetch(`${base}/api/v1/practice?set=fatihah`)).json();
+  assert.deepEqual(
+    fatihah.questions.map((question: { id: string }) => question.id),
+    ['fatihah/identify-verb', 'fatihah/identify-imperative', 'fatihah/identify-root'],
+  );
+  const { topics } = await (await fetch(`${base}/api/v1/topics`)).json();
+  const topic = topics[0];
+  const response = await fetch(`${base}/api/v1/practice?topic=${topic.id}`);
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('cache-control'), 'public, max-age=300');
+  const { questions } = await response.json();
+  assert.equal(questions.length, topic.questionCount);
+  assert.ok(questions.every((question: { topicId: string }) => question.topicId === topic.id));
+  for (const [path, status] of [
+    ['/api/v1/practice', 400],
+    ['/api/v1/practice?set=other', 400],
+    [`/api/v1/practice?set=fatihah&topic=${topic.id}`, 400],
+    [`/api/v1/practice?topic=${topic.id}&topic=${topic.id}`, 400],
+    ['/api/v1/practice?topic=BAD!', 400],
+    ['/api/v1/practice?topic=does-not-exist', 404],
+  ] as const) {
+    const failed = await fetch(`${base}${path}`);
+    assert.equal(failed.status, status, path);
+    assert.ok((await failed.json()).error.code);
+  }
 });

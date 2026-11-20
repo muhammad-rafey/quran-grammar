@@ -1,102 +1,76 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { AyahScroll } from '../src/screens/ayah-scroll.ts';
+import { AyahJump, topVisibleAyah } from '../src/screens/ayah-scroll.ts';
 
-test('short-to-long chapter jumps wait for the new content extent and native acknowledgement', () => {
-  const previous = new AyahScroll();
-  previous.recordViewport(700);
-  previous.recordContent(800);
-  previous.recordAyah(1, 20, 200);
-  previous.deactivate();
+const viewable = (index, number, isViewable = true) => ({ index, isViewable, item: { number } });
 
-  const current = new AyahScroll(28);
-  current.recordViewport(700);
-  current.recordAyah(6, 900, 300);
-  current.recordAyah(28, 5000, 300);
-  current.recordContent(800); // An initial incomplete native layout cannot reach ayah 28.
-  assert.equal(current.takeScroll(8), null);
-  assert.deepEqual(current.observeScroll(900, 1), { ayah: null, retry: false });
-  current.recordContent(9000);
-  assert.equal(current.takeScroll(8), 4992);
-  assert.deepEqual(current.observeScroll(900, 2), { ayah: null, retry: true });
-  assert.equal(current.takeScroll(8, true), 4992);
-  assert.deepEqual(current.observeScroll(4992, 3), { ayah: 28, retry: false });
-  assert.deepEqual(previous.observeScroll(0, 4), { ayah: null, retry: false });
-  assert.equal(previous.takeScroll(8), null);
+test('the current ayah is the top-most viewable cell, whatever order FlatList reports', () => {
+  assert.equal(topVisibleAyah([viewable(5, 6), viewable(3, 4), viewable(4, 5)]), 4);
+  assert.equal(topVisibleAyah([viewable(2, 3, false), viewable(3, 4)]), 4);
+  assert.equal(topVisibleAyah([viewable(null, 9)]), null);
+  assert.equal(topVisibleAyah([]), null);
 });
 
-for (const order of ['content-first', 'ayah-first']) {
-  test(`deferred target layout and content size work in ${order} order`, () => {
-    const navigation = new AyahScroll(28);
-    if (order === 'content-first') navigation.recordContent(9000);
-    else navigation.recordAyah(28, 5000, 300);
-    navigation.recordViewport(700);
-    assert.equal(navigation.takeScroll(8), null);
-    if (order === 'content-first') navigation.recordAyah(28, 5000, 300);
-    else navigation.recordContent(9000);
-    assert.equal(navigation.takeScroll(8), 4992);
-    assert.equal(navigation.takeScroll(8), null, 'unchanged measurements do not schedule duplicate commands');
-    assert.deepEqual(navigation.observeScroll(4992, 1), { ayah: 28, retry: false });
-  });
-}
+test('a far jump starts a new slice at the target; jumps inside the slice settle after confirmations', () => {
+  const jump = new AyahJump(4, 2);
+  assert.equal(jump.mount(4, 176), 0, 'a fresh chapter starts at the top');
+  jump.request(4, 150);
+  assert.equal(jump.pendingFor(4), true);
+  // From a slice starting at ayah 1 the target is index 149 of the slice, but not measured yet.
+  assert.equal(jump.sliceIndex(4, 176, 0), 149);
+  assert.equal(jump.failed(4), 'remount');
+  assert.equal(jump.mount(4, 176), 149, 'the new slice starts at the target');
+  assert.equal(jump.sliceIndex(4, 176, 149), 0, 'the target is now the first item');
 
-test('content and target layout still wait for the viewport, including a top-of-chapter jump', () => {
-  const navigation = new AyahScroll();
-  navigation.recordContent(500);
-  navigation.recordAyah(1, 100, 200);
-  assert.equal(navigation.takeScroll(8), null);
-  navigation.recordViewport(700);
-  assert.equal(navigation.takeScroll(8), 0);
-  assert.deepEqual(navigation.observeScroll(0, 1), { ayah: null, retry: false });
+  // Earlier ayahs were prepended (slice starts at ayah 138); jumping back to ayah 140 is in range.
+  jump.request(4, 140);
+  assert.equal(jump.sliceIndex(4, 176, 137), 2);
+  assert.equal(jump.succeeded(4), true, 'first measured pass is confirmed once more');
+  assert.equal(jump.succeeded(4), true);
+  assert.equal(jump.succeeded(4), false, 'settled after the confirmation passes');
+  assert.equal(jump.pendingFor(4), false);
+  assert.equal(jump.sliceIndex(4, 176, 137), null);
+  assert.equal(jump.failed(4), 'none');
+
+  // A target before the slice needs a new slice.
+  jump.request(4, 2);
+  assert.equal(jump.sliceIndex(4, 176, 137), 'remount');
 });
 
-test('same-chapter jumps can supersede an earlier request without accepting its queued scroll', () => {
-  const navigation = new AyahScroll(28);
-  navigation.recordViewport(700);
-  navigation.recordContent(9000);
-  navigation.recordAyah(10, 1500, 300);
-  navigation.recordAyah(28, 5000, 300);
-  assert.equal(navigation.takeScroll(8), 4992);
-  navigation.request(10);
-  assert.equal(navigation.takeScroll(8), 1492);
-  assert.deepEqual(navigation.observeScroll(4992, 1), { ayah: null, retry: true });
-  assert.deepEqual(navigation.observeScroll(1492, 2), { ayah: 10, retry: false });
+test('a Juz jump into another chapter applies only once that chapter is mounted', () => {
+  const jump = new AyahJump();
+  jump.request(22, 30); // Juz start in Al-Hajj while An-Nisa is still displayed.
+  assert.equal(jump.mount(4, 176), 0, 'never applied to the chapter on screen');
+  assert.equal(jump.sliceIndex(4, 176, 0), null);
+  assert.equal(jump.pendingFor(4), false);
+  assert.equal(jump.failed(4), 'none');
+  assert.equal(jump.succeeded(4), false);
+  assert.equal(jump.mount(22, 78), 29, 'Al-Hajj mounts at its Juz start ayah');
+  assert.equal(jump.sliceIndex(22, 78, 29), 0);
 });
 
-test('user dragging cancels a deferred jump and reading labels follow actual offsets', () => {
-  const navigation = new AyahScroll(28);
-  navigation.recordAyah(1, 20, 200);
-  navigation.recordAyah(2, 300, 200);
-  navigation.beginReading();
-  assert.equal(navigation.takeScroll(8), null);
-  assert.deepEqual(navigation.observeScroll(300, 10), { ayah: 2, retry: false });
-  assert.deepEqual(navigation.observeScroll(0, 9), { ayah: null, retry: false }, 'older queued event is ignored');
-  assert.deepEqual(navigation.observeScroll(0, 11), { ayah: 1, retry: false });
+test('targets are clamped to the chapter and a newer request supersedes an older one', () => {
+  const jump = new AyahJump();
+  jump.request(1, 99);
+  assert.equal(jump.indexFor(1, 7), 6);
+  assert.equal(jump.mount(1, 7), 6);
+  jump.request(1, 3);
+  assert.equal(jump.indexFor(1, 7), 2);
+  jump.request(1, 0);
+  assert.equal(jump.indexFor(1, 7), 0);
+  assert.equal(jump.indexFor(1, 0), null);
 });
 
-test('switching words/grammar surfaces discards previous-view layouts and scroll callbacks', () => {
-  const words = new AyahScroll(28);
-  words.recordViewport(700);
-  words.recordContent(9000);
-  words.recordAyah(28, 5000, 300);
-  words.deactivate();
-  const grammar = new AyahScroll();
-  grammar.recordViewport(700);
-  grammar.recordContent(2000);
-  grammar.recordAyah(1, 20, 300);
-  words.recordAyah(1, 1800, 300);
-  assert.equal(words.takeScroll(8), null);
-  assert.deepEqual(words.observeScroll(4992, 5), { ayah: null, retry: false });
-  assert.equal(grammar.takeScroll(8), 0);
-  assert.deepEqual(grammar.observeScroll(0, 1), { ayah: 1, retry: false });
-});
+test('dragging cancels a pending jump and repeated failures give up', () => {
+  const jump = new AyahJump(2, 1);
+  jump.request(4, 100);
+  jump.cancel();
+  assert.equal(jump.pendingFor(4), false);
+  assert.equal(jump.sliceIndex(4, 176, 0), null);
 
-test('a bottom-of-chapter target uses the reachable native offset rather than waiting forever', () => {
-  const navigation = new AyahScroll(30);
-  navigation.recordViewport(700);
-  navigation.recordContent(5700);
-  navigation.recordAyah(29, 4950, 400);
-  navigation.recordAyah(30, 5500, 100);
-  assert.equal(navigation.takeScroll(8), 5000);
-  assert.deepEqual(navigation.observeScroll(5000, 1), { ayah: 29, retry: false });
+  jump.request(4, 100);
+  assert.equal(jump.failed(4), 'remount');
+  assert.equal(jump.failed(4), 'remount');
+  assert.equal(jump.failed(4), 'none', 'third failure exceeds the limit');
+  assert.equal(jump.pendingFor(4), false);
 });

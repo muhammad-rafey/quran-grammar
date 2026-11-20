@@ -1,3 +1,8 @@
+/**
+ * Light entry for web and mobile bundles. It must never import the lesson registry, data.ts or
+ * the grammar topic library (core.test.ts checks the import graph). Heavy content lives in
+ * `@quran-grammar/core/content`; database schema and SQL in `@quran-grammar/core/db`.
+ */
 export type {
   StudyData,
   Word,
@@ -10,7 +15,6 @@ export type {
   PartOfSpeech,
   PartOfSpeechFilter,
 } from './types';
-export { fatihahStudy } from './data';
 export { normalizeText, urduNumber, matchesWord } from './search';
 export { isStudyData } from './validate';
 export type { UiLanguage, UiStrings } from './interface';
@@ -23,7 +27,23 @@ export type {
   PracticeAnswers,
   PracticeProgress,
 } from './practice';
-export { fatihahPractice, gradePracticeAnswer, getPracticeProgress } from './practice';
+export { gradePracticeAnswer, getPracticeProgress } from './practice';
+export type {
+  AuthoredQuestionSource,
+  TopicExampleSource,
+  GrammarTopicSource,
+  TopicExampleKind,
+  ResolvedTopicExample,
+  GrammarTopicSummary,
+  GrammarTopicDetail,
+  PracticeQuestionKind,
+  GrammarTopicRecord,
+  GrammarTopicExampleRecord,
+  GrammarContent,
+} from './grammar/types';
+export type { ContentRepository, PracticeQuestionFilter, SurahSummary } from './repository';
+export { cachedRepository } from './repository';
 
-export { studies, getStudy } from './registry';
 export { availableSurahNumbers } from './availability';
+export type { FontRole, FontStyleKind, FontMetrics, ReadingFont } from './fonts';
+export { readingFonts, defaultFontIds, fontsForRole, resolveFont } from './fonts';
