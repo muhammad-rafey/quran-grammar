@@ -76,7 +76,7 @@ test('search uses the same root-aware filtering as both clients', async () => {
 test('invalid queries, missing content, and unknown API paths return JSON errors', async () => {
   const cases: Array<[string, number]> = [
     ['/api/v1/surahs/nope', 400],
-    ['/api/v1/surahs/2', 404],
+    ['/api/v1/surahs/3', 404],
     ['/api/v1/surahs/1/words/not-a-location', 400],
     ['/api/v1/surahs/1/words/1%3A8%3A1', 404],
     ['/api/v1/search?pos=invalid', 400],
@@ -151,6 +151,7 @@ test('production SPA fallback excludes API paths and missing static files', asyn
 test('every published chapter and word detail stays within its own lesson', async () => {
   const expected = [
     [1, 7, 29],
+    [2, 20, 230],
     [4, 176, 3747],
     [7, 206, 3320],
     [18, 110, 1579],
@@ -237,7 +238,7 @@ test('chapter-scoped search never returns another chapter and rejects invalid sc
     ['/api/v1/surahs/17', 404],
     ['/api/v1/surahs/18/words/36%3A1%3A1', 404],
     ['/api/v1/surahs/0', 400],
-    ['/api/v1/search?surah=2', 404],
+    ['/api/v1/search?surah=3', 404],
     ['/api/v1/search?surah=105&surah=106', 400],
     ['/api/v1/search?surah=nope', 400],
   ] as const)

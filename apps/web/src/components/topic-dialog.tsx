@@ -215,9 +215,11 @@ export function TopicDialog({
                           <bdi>{reference(example, language)}</bdi>
                           {language === 'ur' ? <ArrowLeft size={14} /> : <ArrowRight size={14} />}
                         </button>
-                        <p className="topic-translation" lang="ur" dir="rtl">
-                          {example.translationUrdu}
-                        </p>
+                        {example.translationUrdu && (
+                          <p className="topic-translation" lang="ur" dir="rtl">
+                            {example.translationUrdu}
+                          </p>
+                        )}
                         {example.noteUrdu && (
                           <p className="topic-note" lang="ur" dir="rtl">
                             {example.noteUrdu}

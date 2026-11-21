@@ -74,7 +74,7 @@ async function assertSameAsBundled(label: string, repository: typeof bundled) {
     const [actual, expected] = [await repository.getStudy(surah), await bundled.getStudy(surah)];
     assert.equal(JSON.stringify(actual), JSON.stringify(expected), `${label} Surah ${surah}`);
   }
-  assert.equal(await repository.getStudy(2), null);
+  assert.equal(await repository.getStudy(3), null);
   assert.equal(JSON.stringify(await repository.listTopics()), JSON.stringify(await bundled.listTopics()));
   for (const topic of grammar.topics.filter((_, index) => index % 10 === 0)) {
     assert.equal(

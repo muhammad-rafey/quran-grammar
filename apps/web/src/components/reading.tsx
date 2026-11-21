@@ -97,7 +97,7 @@ export function Reading({
             <p className="ayah-text arabic" lang="ar" dir="rtl">
               {plainWords(ayah.number)}
             </p>
-            <p className="ayah-translation">{ayah.translationUrdu}</p>
+            {ayah.translationUrdu && <p className="ayah-translation">{ayah.translationUrdu}</p>}
           </article>
         ))
       ) : (
@@ -137,7 +137,9 @@ export function Reading({
                 </button>
               ))}
           </div>
-          {layout.translation && <p className="ayah-translation">{ayah.translationUrdu}</p>}
+          {layout.translation && ayah.translationUrdu && (
+            <p className="ayah-translation">{ayah.translationUrdu}</p>
+          )}
         </article>
         ))
       )}

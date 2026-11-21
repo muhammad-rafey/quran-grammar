@@ -249,7 +249,7 @@ function ExampleCard({
           example.ayahArabic
         )}
       </Text>
-      <Paragraph muted>{example.translationUrdu}</Paragraph>
+      {example.translationUrdu ? <Paragraph muted>{example.translationUrdu}</Paragraph> : null}
       {example.noteUrdu ? (
         <View
           style={{

@@ -1,0 +1,55 @@
+{
+  "_note": "AI-assisted verb paradigms for lexeme keys first met in 2:1-20 that have no entry in the published libraries. Keys are opaque Corpus lookup handles (lemma|form|voice). Scholarly review pending.",
+  "entries": [
+    {
+      "key": "yaxodaEu|I|ACT",
+      "baabUrdu": "بابِ فَتَحَ يَفْتَحُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "خَدَعَ",
+      "present": "يَخْدَعُ",
+      "pattern": "فَعَلَ — يَفْعَلُ",
+      "noteUrdu": "صحیح اور متعدی فعل ہے: دھوکا دینا۔ آخری حرف ع حلقی ہے، اس لیے ماضی اور مضارع دونوں میں درمیانی حرف مفتوح ہے۔ اسی مادے کا بابِ مفاعلہ يُخَادِعُ دھوکا دینے کی کوشش کا مفہوم دیتا ہے، جبکہ مجرد يَخْدَعُ فعل کے واقع ہونے کو بیان کرتا ہے۔",
+      "evidenceEnglish": "QAC lemma label yaxodaEu is the imperfect stem of وَمَا يَخْدَعُونَ (2:9:6), Form I, root xdE. Quran-wide: perfect/participle خَادِعُهُمْ (4:142, Form I active participle), imperfect يَخْدَعُوكَ (8:62) with fatha on dal. Lane and Lisan al-Arab: خَدَعَهُ يَخْدَعُهُ خَدْعًا, fa'ala/yaf'alu (guttural third radical), bab fataha."
+    },
+    {
+      "key": "rabiHat|I|ACT",
+      "baabUrdu": "بابِ سَمِعَ يَسْمَعُ",
+      "formUrdu": "ثلاثی مجرد — اوّل (I)",
+      "past": "رَبِحَ",
+      "present": "يَرْبَحُ",
+      "pattern": "فَعِلَ — يَفْعَلُ",
+      "noteUrdu": "صحیح فعل ہے: تجارت میں نفع پانا۔ ماضی میں باء مکسور اور مضارع میں مفتوح ہے۔ رَبِحَتْ میں آخری تاء تانیث کی ساکن علامت ہے، جو مؤنث فاعل تِّجَارَة کی مطابقت میں آئی ہے۔",
+      "evidenceEnglish": "QAC lemma label rabiHat is the inflected 3FS perfect at 2:16:7 (the only Quranic occurrence), Form I, root rbH. Lane and Lisan al-Arab: رَبِحَ يَرْبَحُ رِبْحًا, fa'ila/yaf'alu (bab sami'a). The feminine subject is ٱلتِّجَٰرَة (via تِّجَـٰرَتُهُمْ)."
+    },
+    {
+      "key": "{sotawoqada|X|ACT",
+      "baabUrdu": "بابِ اِسْتِفْعَال",
+      "formUrdu": "ثلاثی مزید فیہ — دہم (X)",
+      "past": "اِسْتَوْقَدَ",
+      "present": "يَسْتَوْقِدُ",
+      "pattern": "اِسْتَفْعَلَ — يَسْتَفْعِلُ",
+      "noteUrdu": "مثال واوی فعل ہے (مادہ و ق د)، مگر بابِ استفعال میں پہلی واو ساکن ہو کر اپنی جگہ باقی رہتی ہے: اِسْتَوْقَدَ، يَسْتَوْقِدُ۔ متعدی ہے: آگ جلانا یا جلانے کی کوشش کرنا؛ ہمزہ وصلی ہے، اس لیے جملے کے درمیان پڑھنے میں نہیں آتا۔",
+      "evidenceEnglish": "QAC 2:17:4 ٱسْتَوْقَدَ, Form X, root wqd; only Quranic occurrence. The w (first radical) stays as sukun-waw after the sta- prefix: istawqada/yastawqidu (Lane s.v. وقد: اسْتَوْقَدَ النَّارَ = أَوْقَدَهَا)."
+    },
+    {
+      "key": ">aDaA^'a|IV|ACT",
+      "baabUrdu": "بابِ اِفْعَال",
+      "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+      "past": "أَضَاءَ",
+      "present": "يُضِيءُ",
+      "pattern": "أَفْعَلَ — يُفْعِلُ",
+      "noteUrdu": "اجوف واوی اور مہموز اللام فعل ہے (مادہ ض و أ): اصل أَضْوَأَ سے أَضَاءَ اور يُضْوِئُ سے يُضِيءُ بنے، یعنی درمیانی واو ماضی میں الف اور مضارع میں یاء بن جاتی ہے۔ لازم «روشن ہونا» بھی ہے اور متعدی «روشن کرنا» بھی؛ سیاق سے فیصلہ کریں۔",
+      "evidenceEnglish": "QAC Form IV, root DwA: perfect أَضَآءَتْ (2:17:7), أَضَآءَ (2:20:6); imperfect يُضِىٓءُ (24:35). Lane s.v. ضوء: أَضَاءَ both intransitive (shone) and transitive (lit up). Hollow-waw afʿala/yufʿilu with final hamza."
+    },
+    {
+      "key": ">aZolama|IV|ACT",
+      "baabUrdu": "بابِ اِفْعَال",
+      "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+      "past": "أَظْلَمَ",
+      "present": "يُظْلِمُ",
+      "pattern": "أَفْعَلَ — يُفْعِلُ",
+      "noteUrdu": "صحیح اور لازم فعل ہے: اندھیرا ہونا یا اندھیرے میں ہونا۔ یہ مادہ ظ ل م سے ہے، مگر مجرد ظَلَمَ (ظلم کرنا) سے الگ معنی رکھتا ہے؛ اسی بابِ افعال کا اسمِ فاعل مُظْلِم (اندھیرے میں پڑا ہوا) ہے۔",
+      "evidenceEnglish": "QAC 2:20:11 أَظْلَمَ, Form IV, root Zlm; elsewhere the Form IV active participle مُّظْلِمُونَ (36:37) and مُظْلِمًا (10:27). Lane s.v. ظلم: أَظْلَمَ اللَّيْلُ = became dark; intransitive aflaʿa/yufʿilu."
+    }
+  ]
+}
