@@ -6,7 +6,7 @@
  */
 export const fontAssets: Record<string, number> = {
   AmiriQuran: require('../../assets/fonts/amiri-quran.ttf'),
-  DigitalKhattIndoPak: require('../../assets/fonts/digitalkhatt-indopak.otf'),
+  AlQalamQuranMajeed: require('../../assets/fonts/al-qalam-quran-majeed.ttf'),
   ScheherazadeNew: require('../../assets/fonts/scheherazade-new.ttf'),
   Naskh: require('../../assets/fonts/naskh.ttf'),
   Nastaliq: require('../../assets/fonts/nastaliq.ttf'),

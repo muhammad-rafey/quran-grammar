@@ -1,7 +1,8 @@
 /**
  * Selectable reading fonts, shared by web and native. Quranic Arabic and Urdu explanations each
  * have their own choice. Font files live in apps/web/public/fonts and apps/mobile/assets/fonts
- * (same file names, identical bytes), each with its license file; see THIRD_PARTY_NOTICES.md.
+ * (same file names, identical bytes), each with its license or permission file; see
+ * THIRD_PARTY_NOTICES.md.
  * Web declares one @font-face per `family` in apps/web/src/fonts.css; native registers the files
  * with expo-font through apps/mobile/src/theme/font-assets.ts. A `family` always maps to one file,
  * so a file offered for both roles (Noto Naskh Arabic, Scheherazade New) is one face with two
@@ -44,7 +45,11 @@ export interface ReadingFont {
   /** Visual size relative to the default font of its role (1 = same); keeps text sizes balanced. */
   readonly scale: number;
   readonly metrics: FontMetrics;
-  readonly license: string;
+  /**
+   * 'OFL-1.1', or 'permission' for a font bundled under the rights holder's written permission
+   * (recorded in the license file next to it; see THIRD_PARTY_NOTICES.md).
+   */
+  readonly license: 'OFL-1.1' | 'permission';
   /**
    * Set when the font lacks characters used in the role's text: those characters are drawn by a
    * fallback font. Short and user-facing (English / Urdu); the exact code points are in comments.
@@ -69,25 +74,20 @@ export const readingFonts: readonly ReadingFont[] = [
     license: 'OFL-1.1',
   },
   {
-    id: 'digitalkhatt-indopak',
+    id: 'al-qalam-quran-majeed',
     role: 'quran',
-    family: 'DigitalKhattIndoPak',
-    file: 'digitalkhatt-indopak.otf',
-    label: 'DigitalKhatt IndoPak',
-    labelUrdu: 'ڈیجیٹل خط انڈوپاک',
+    family: 'AlQalamQuranMajeed',
+    file: 'al-qalam-quran-majeed.ttf',
+    label: 'Al Qalam Quran Majeed',
+    labelUrdu: 'القلم قرآن مجید',
     kind: 'indopak',
-    scale: 0.9,
-    // hhea also has a 0.2em line gap. The head bounding box reaches 3.70em because of unused
-    // stretched justification glyphs, so do not size lines from the font bounding box
-    // (Android includeFontPadding); the shaped text stays within 1.456em / 0.981em.
-    metrics: { ascent: 1.5, descent: 0.7, inkTop: 1.456, inkBottom: 0.981 },
-    license: 'OFL-1.1',
-    // Missing: U+06E5 small waw (240 words), U+06E0 small high upright rectangular zero (12),
-    // U+06E7 small high yeh (4) and the Urdu digits U+06F0–U+06F9 of the ayah-end marker.
-    coverageNote:
-      'IndoPak style. A few Uthmani marks (such as the small waw ۥ) and ayah numbers use a fallback font.',
-    coverageNoteUrdu:
-      'انڈوپاک طرز۔ چند عثمانی علامتیں (جیسے چھوٹا واو ۥ) اور آیت نمبر متبادل فونٹ میں دکھائی دیتے ہیں۔',
+    // Alef 0.656em vs Amiri Quran 0.696em, letter bodies slightly taller: same visual size.
+    scale: 1,
+    // hhea line gap is 0. Ink: «فَأُو۟لَـٰٓئِكَ» reaches 1.337em, «وَبِيَعٌۭ» 0.653em below. Every
+    // study word and the "۝ + Urdu digits" ayah-end marker shape without .notdef (the marker's
+    // digits are placed inside the circle by the font).
+    metrics: { ascent: 1.238, descent: 0.5, inkTop: 1.34, inkBottom: 0.66 },
+    license: 'permission',
   },
   {
     id: 'scheherazade-new',

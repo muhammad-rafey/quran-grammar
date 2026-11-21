@@ -47,8 +47,7 @@ export const shadows = { floating: '0 8px 28px rgba(32,59,48,0.13)' } as const;
  * split leading holds the font's tallest/deepest shaped ink (registry inkTop/inkBottom), on both
  * platforms. Android's natural layout (no lineHeight, includeFontPadding) is not used: it extends
  * lines only to the font's head bounding box, which stops short of the shaped ink (Amiri Quran's
- * small low meem in «أَلِيمٌۭ» reaches 0.95em, its box 0.835em; Scheherazade New 1.22em vs 0.74em)
- * or is far too tall (DigitalKhatt IndoPak, 3.70em, from unused stretched glyphs).
+ * small low meem in «أَلِيمٌۭ» reaches 0.95em, its box 0.835em; Scheherazade New 1.22em vs 0.74em).
  */
 export function quranTextStyle(font: ReadingFont, fontSize = 29): TextStyle {
   const size = scaledSize(font, fontSize);
