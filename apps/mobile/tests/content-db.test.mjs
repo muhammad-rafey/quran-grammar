@@ -88,7 +88,7 @@ test('content database: version, studies, topics and practice', { skip }, async 
       assert.ok(core.isStudyData(study), `Surah ${number} is not valid StudyData`);
       if (bundled) assert.deepEqual(study, bundled.get(number), `Surah ${number} differs`);
     }
-    assert.equal(await repository.getStudy(2), null);
+    assert.equal(await repository.getStudy(3), null);
     assert.equal(await repository.getStudy(0), null);
   });
 

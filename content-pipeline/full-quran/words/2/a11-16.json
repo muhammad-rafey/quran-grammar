@@ -1,0 +1,703 @@
+{
+  "2:11:1": {
+    "arabic": "وَإِذَا",
+    "segmentMeaningsUrdu": [
+      "اور (نیا جملہ)",
+      "جب"
+    ],
+    "dictionaryUrdu": "وَ یہاں نیا بیان شروع کرتا ہے اور إِذَا آئندہ وقت کا ظرف ہے جس میں شرط کا مفہوم ہے۔ اس کے بعد شرط کا فعل آتا ہے اور پھر اس کا جواب؛ یاد رہے کہ إِذَا اسم (ظرف) ہے، حرف نہیں۔"
+  },
+  "2:11:2": {
+    "arabic": "قِيلَ",
+    "segmentMeaningsUrdu": [
+      "کہا جاتا ہے"
+    ],
+    "dictionaryUrdu": "قَالَ کا معنی کہنا ہے؛ یہ اس کا مجہول ماضی ہے، اس لیے کہنے والے کا ذکر نہیں۔ اصل قُوِلَ تھا اور واو یاء میں بدل گیا؛ إِذَا کے بعد ماضی آئندہ یا عادت کا مفہوم دیتا ہے۔",
+    "addRuleIds": [
+      "condition",
+      "quoted-speech"
+    ]
+  },
+  "2:11:3": {
+    "arabic": "لَهُمْ",
+    "segmentMeaningsUrdu": [
+      "کو / سے",
+      "ان (جمع مذکر غائب)"
+    ],
+    "dictionaryUrdu": "لام یہاں اس شخص کو بتاتا ہے جس سے بات کہی جائے، اس لیے اردو میں «ان سے» یا «ان کو» بنتا ہے۔ هُمْ حرفِ جر سے جڑی ہوئی متصل ضمیر ہے اور محلِ جر میں ہے، الگ ضمیر نہیں۔",
+    "addRuleIds": [
+      "pronoun"
+    ],
+    "auditNotes": "ruleIds include independent-pronoun, but the pronoun here is attached to a preposition (QAC prefix l:P+ with PRON 3MP stem); rules.json reserves independent-pronoun for free-standing pronouns. posUrdu and segment roleUrdu say ضمیرِ منفصل; it should be ضمیرِ متصل (حرفِ جر + ضمیرِ متصل). Added pronoun."
+  },
+  "2:11:4": {
+    "arabic": "لَا",
+    "segmentMeaningsUrdu": [
+      "نہ (منع کرنے والا)"
+    ],
+    "dictionaryUrdu": "یہ لائے نہی ہے جو مضارع کو مجزوم کر کے کسی کام سے روکتی ہے۔ اسے لائے نفی سے الگ پہچانیں جو صرف خبر دیتی ہے اور فعل کی حالت نہیں بدلتی۔"
+  },
+  "2:11:5": {
+    "arabic": "تُفْسِدُوا۟",
+    "segmentMeaningsUrdu": [
+      "فساد کرو (مجزوم مضارع)",
+      "تم سب (فاعل)"
+    ],
+    "dictionaryUrdu": "أَفْسَدَ کا معنی بگاڑنا اور فساد پھیلانا ہے، جو فَسَدَ «بگڑنا» سے بابِ افعال ہے۔ لائے نہی کی وجہ سے آخر کا نون گر گیا، اور واو کے بعد الف صرف لکھنے میں ہے۔",
+    "auditNotes": "Packet lemma أَفْسَدُ (QAC LEM >afosadu) ends in ḍamma; the dictionary form is أَفْسَدَ. Check the lexemeKey >afosadu|IV|ACT paradigm uses أَفْسَدَ."
+  },
+  "2:11:6": {
+    "arabic": "فِى",
+    "segmentMeaningsUrdu": [
+      "میں"
+    ],
+    "dictionaryUrdu": "فِى کسی چیز کے اندر یا کسی جگہ میں ہونے کا تعلق بتاتا ہے۔ یہاں یہ اپنے مجرور کے ساتھ مل کر بتاتا ہے کہ فساد سے روکنا کس دائرے سے متعلق ہے۔"
+  },
+  "2:11:7": {
+    "arabic": "ٱلْأَرْضِ",
+    "segmentMeaningsUrdu": [
+      "تعریف (معرفہ بنانے والا)",
+      "زمین"
+    ],
+    "dictionaryUrdu": "أَرْض زمین اور سرزمین کو کہتے ہیں؛ یہ مؤنث سماعی ہے اگرچہ اس میں تائے تانیث نہیں۔ یہاں حرفِ جر کی وجہ سے آخر پر کسرہ ہے۔"
+  },
+  "2:11:8": {
+    "arabic": "قَالُوٓا۟",
+    "segmentMeaningsUrdu": [
+      "کہا / کہتے ہیں",
+      "وہ سب (فاعل)"
+    ],
+    "dictionaryUrdu": "قَالَ کا معنی کہنا ہے اور مادہ ق و ل ہے؛ ماضی کے الف کے پیچھے اصلی واو چھپا ہے۔ یہاں یہ إِذَا کا جواب ہے، اس لیے اردو میں «کہتے ہیں» بنتا ہے اور آگے ان کی بات نقل ہوتی ہے۔",
+    "addRuleIds": [
+      "condition-answer",
+      "quoted-speech"
+    ]
+  },
+  "2:11:9": {
+    "arabic": "إِنَّمَا",
+    "segmentMeaningsUrdu": [
+      "بے شک",
+      "روکنے والا (مَا کافہ)"
+    ],
+    "dictionaryUrdu": "إِنَّ کے ساتھ مَا کافہ مل کر إِنَّمَا بنتا ہے جو حصر کا معنی دیتا ہے: «بس، صرف یہی»۔ مَا اسے عمل سے روک دیتا ہے، اس لیے بعد والا اسم منصوب نہیں بلکہ مبتدا بن کر مرفوع رہتا ہے۔",
+    "addRuleIds": [
+      "restriction"
+    ],
+    "auditNotes": "Packet ruleId inna does not apply: rules.json says inna is not for إِنَّمَا (كافة ومكفوفة), which takes restriction. Added restriction; reviewer should drop inna."
+  },
+  "2:11:10": {
+    "arabic": "نَحْنُ",
+    "segmentMeaningsUrdu": [
+      "ہم"
+    ],
+    "dictionaryUrdu": "نَحْنُ جمع متکلم کی منفصل ضمیر ہے، یعنی «ہم»۔ یہاں یہ مبتدا ہے اور بعد کا اسم اس کی خبر؛ بولنے والے اپنے بارے میں دعویٰ کر رہے ہیں۔",
+    "addRuleIds": [
+      "nominal"
+    ]
+  },
+  "2:11:11": {
+    "arabic": "مُصْلِحُونَ",
+    "segmentMeaningsUrdu": [
+      "اصلاح کرنے والے"
+    ],
+    "dictionaryUrdu": "مُصْلِح أَصْلَحَ «درست کرنا، سنوارنا» کا اسمِ فاعل ہے اور اس کی ضد مُفْسِد ہے۔ یہ اسم ہے فعل نہیں؛ آخر کا واو اور نون جمع مذکر سالم کے رفع کی علامت ہیں۔",
+    "addRuleIds": [
+      "nominal",
+      "derived-form"
+    ]
+  },
+  "2:12:1": {
+    "arabic": "أَلَآ",
+    "segmentMeaningsUrdu": [
+      "سن لو / خبردار"
+    ],
+    "dictionaryUrdu": "أَلَا حرفِ استفتاح و تنبیہ ہے جو کلام کے آغاز میں سننے والے کو آگے کی اہم بات پر متوجہ کرتا ہے: «سن لو، خبردار»۔ یہاں نہ سوال ہے نہ نفی۔"
+  },
+  "2:12:2": {
+    "arabic": "إِنَّهُمْ",
+    "segmentMeaningsUrdu": [
+      "بے شک",
+      "وہ (اسمِ إِنَّ)"
+    ],
+    "dictionaryUrdu": "إِنَّ تاکید کا حرف ہے جو اسم کو نصب اور خبر کو رفع دیتا ہے۔ یہاں اس کا اسم جڑی ہوئی ضمیر هُمْ ہے جو محلِ نصب میں ہے، اور خبر آگے آتی ہے۔"
+  },
+  "2:12:3": {
+    "arabic": "هُمُ",
+    "segmentMeaningsUrdu": [
+      "وہی"
+    ],
+    "dictionaryUrdu": "هُمْ «وہ لوگ» کی منفصل ضمیر ہے۔ یہاں یہ ضمیرِ فصل ہے جو خبر کو انہی کے ساتھ خاص کرتا ہے، اسی لیے اردو میں «وہی» آیا؛ آگے ساکن سے ملنے پر میم کو ضمہ ملا۔",
+    "addRuleIds": [
+      "separating-pronoun"
+    ],
+    "auditNotes": "QAC i‘rab says only ضمير منفصل. Standard i‘rab allows ضمير فصل (no position), تأكيد of the attached pronoun, or mubtada with the following noun as khabar and the clause as khabar of إنّ. Added separating-pronoun (fasl reading); packet independent-pronoun fits the mubtada reading — keep only one after review."
+  },
+  "2:12:4": {
+    "arabic": "ٱلْمُفْسِدُونَ",
+    "segmentMeaningsUrdu": [
+      "تعریف (معرفہ بنانے والا)",
+      "فساد کرنے والے"
+    ],
+    "dictionaryUrdu": "مُفْسِد أَفْسَدَ «بگاڑنا» کا اسمِ فاعل ہے، یعنی فساد پھیلانے والا۔ معرفہ خبر ہونے سے یہ مفہوم بنتا ہے کہ اصل فسادی یہی ہیں؛ یہ اسم ہے، فعل نہیں۔",
+    "addRuleIds": [
+      "inna",
+      "derived-form"
+    ]
+  },
+  "2:12:5": {
+    "arabic": "وَلَـٰكِن",
+    "segmentMeaningsUrdu": [
+      "اور (زائد)",
+      "لیکن"
+    ],
+    "dictionaryUrdu": "لَٰكِنْ استدراک کا حرف ہے، یعنی پہلی بات کے بعد ایک وضاحت یا مخالف پہلو لانا۔ تشدید کے بغیر ہونے سے یہ عمل نہیں کرتا، اس لیے بعد کا جملہ اپنے حال پر رہتا ہے۔",
+    "addRuleIds": [
+      "lightened-particle"
+    ],
+    "auditNotes": "QAC tags the wāw SUP (word i‘rab الواو زائدة), hence extra-particle; many i‘rab call it عاطفة (or حالية). Added lightened-particle for the light لَٰكِنْ (QAC AMD) per rules.json."
+  },
+  "2:12:6": {
+    "arabic": "لَّا",
+    "segmentMeaningsUrdu": [
+      "نہیں"
+    ],
+    "dictionaryUrdu": "یہ لائے نفی ہے جو مضارع کے کام کے نہ ہونے کی خبر دیتی ہے اور فعل کی حالت نہیں بدلتی۔ لام پر تشدید پچھلے نون کے ادغام سے ہے؛ اسے لائے نہی سے الگ رکھیں۔"
+  },
+  "2:12:7": {
+    "arabic": "يَشْعُرُونَ",
+    "segmentMeaningsUrdu": [
+      "احساس رکھتے ہیں",
+      "وہ سب (فاعل)"
+    ],
+    "dictionaryUrdu": "شَعَرَ کسی بات کا باریک احساس اور ادراک ہونا ہے، اسی سے شعور ہے۔ یہاں نفی کے ساتھ اس احساس کا نہ ہونا مراد ہے؛ آخر کا نون رفع کی علامت ہے۔"
+  },
+  "2:13:1": {
+    "arabic": "وَإِذَا",
+    "segmentMeaningsUrdu": [
+      "اور",
+      "جب"
+    ],
+    "dictionaryUrdu": "یہاں وَ عطف کا ہے جو اس شرطیہ جملے کو پچھلے جملے سے جوڑتا ہے، اور إِذَا آئندہ وقت کا شرطیہ ظرف ہے۔ إِذَا اسم (ظرف) ہے، حرف نہیں؛ اس کے بعد شرط کا فعل اور پھر جواب آتا ہے۔"
+  },
+  "2:13:2": {
+    "arabic": "قِيلَ",
+    "segmentMeaningsUrdu": [
+      "کہا جاتا ہے"
+    ],
+    "dictionaryUrdu": "مجہول ماضی ہے: کہنے والا مذکور نہیں، کہی گئی بات اہم ہے۔ اجوف واوی فعل ہے جس کی اصل واو یہاں یاء کی صورت میں ہے، اور إِذَا کے بعد ماضی «کہا جاتا ہے» کا معنی دیتا ہے۔",
+    "addRuleIds": [
+      "condition",
+      "quoted-speech"
+    ]
+  },
+  "2:13:3": {
+    "arabic": "لَهُمْ",
+    "segmentMeaningsUrdu": [
+      "واسطے / کو",
+      "ان کے"
+    ],
+    "dictionaryUrdu": "لام یہاں مخاطب کو بتاتا ہے، یعنی بات کس سے کہی گئی؛ لفظی ترجمہ «واسطے ان کے» ہے۔ ضمیر حرفِ جر سے جڑی ہوئی ہے اور محلِ جر میں ہے؛ اسے منفصل ضمیر نہ سمجھیں۔",
+    "addRuleIds": [
+      "pronoun"
+    ],
+    "auditNotes": "ruleIds include independent-pronoun, but the pronoun here is attached to a preposition (QAC prefix l:P+ with PRON 3MP stem); rules.json reserves independent-pronoun for free-standing pronouns. posUrdu and segment roleUrdu say ضمیرِ منفصل; it should be ضمیرِ متصل (حرفِ جر + ضمیرِ متصل). Added pronoun."
+  },
+  "2:13:4": {
+    "arabic": "ءَامِنُوا۟",
+    "segmentMeaningsUrdu": [
+      "ایمان لاؤ",
+      "تم سب (فاعل)"
+    ],
+    "dictionaryUrdu": "ءَامَنَ بابِ افعال سے ہے: مادہ أ م ن میں امن و اطمینان کا مفہوم ہے اور اس باب میں «ایمان لانا، مان لینا»۔ شروع کا مد دو ہمزوں کے ملنے سے ہے: پہلا باب کا، دوسرا مادے کا۔"
+  },
+  "2:13:5": {
+    "arabic": "كَمَآ",
+    "segmentMeaningsUrdu": [
+      "جیسے / کی طرح",
+      "کہ (مصدر بنانے والا)"
+    ],
+    "dictionaryUrdu": "کاف تشبیہ کا حرفِ جر ہے اور مَا مصدریہ اگلے فعل کو مصدر کے معنی میں کر دیتا ہے: «جیسے وہ ایمان لائے» یعنی «ان کے ایمان کی طرح»۔ یہاں مَا «جو چیز» والا موصول نہیں۔"
+  },
+  "2:13:6": {
+    "arabic": "ءَامَنَ",
+    "segmentMeaningsUrdu": [
+      "ایمان لائے"
+    ],
+    "dictionaryUrdu": "ءَامَنَ کا معنی ایمان لانا اور تصدیق کرنا ہے۔ فاعل جمع ہونے کے باوجود فعل واحد ہے، کیونکہ فعل اپنے ظاہری فاعل سے پہلے آئے تو عموماً واحد رہتا ہے۔",
+    "addRuleIds": [
+      "verbal-sentence"
+    ]
+  },
+  "2:13:7": {
+    "arabic": "ٱلنَّاسُ",
+    "segmentMeaningsUrdu": [
+      "تعریف (معرفہ بنانے والا)",
+      "لوگ"
+    ],
+    "dictionaryUrdu": "نَاس انسانوں کے لیے آتا ہے اور جمع کا معنی رکھنے والا اسمِ جمع ہے، جس کا اپنے لفظ سے واحد نہیں۔ اسے ن و س کے تحت رکھنا لغوی درجہ بندی ہے؛ اس کے اشتقاق میں اقوال مختلف ہیں۔",
+    "addRuleIds": [
+      "subject"
+    ],
+    "auditNotes": "Packet ruleId broken-plural does not apply: rules.json excludes collective nouns such as نَاس (QAC tags MP). Reviewer should drop broken-plural; نَاس is اسمِ جمع."
+  },
+  "2:13:8": {
+    "arabic": "قَالُوٓا۟",
+    "segmentMeaningsUrdu": [
+      "کہا / کہتے ہیں",
+      "وہ سب (فاعل)"
+    ],
+    "dictionaryUrdu": "یہ قَالَ کا ماضی جمع مذکر غائب ہے؛ اجوف واوی ہے اور الف کے پیچھے اصلی واو ہے۔ إِذَا کے جواب میں آنے سے حال کا ترجمہ بنتا ہے، اور واو کے بعد کا الف صرف لکھنے میں ہے۔",
+    "addRuleIds": [
+      "condition-answer",
+      "quoted-speech"
+    ]
+  },
+  "2:13:9": {
+    "arabic": "أَنُؤْمِنُ",
+    "segmentMeaningsUrdu": [
+      "کیا",
+      "ہم ایمان لائیں"
+    ],
+    "dictionaryUrdu": "شروع کا ہمزہ سوال کا ہے اور یہاں انکار کے انداز میں ہے۔ نُؤْمِنُ ءَامَنَ کا مضارع جمع متکلم ہے؛ مضارع میں باب کا ہمزہ گر جاتا ہے اور مادے کا ہمزہ واو کی کرسی پر لکھا جاتا ہے۔",
+    "auditNotes": "Quran.com Urdu meaningUrdu «کیاہم» lacks a space (کیا ہم)."
+  },
+  "2:13:10": {
+    "arabic": "كَمَآ",
+    "segmentMeaningsUrdu": [
+      "جیسے",
+      "کہ (مصدر بنانے والا)"
+    ],
+    "dictionaryUrdu": "كَ «کی طرح» اور مَا مصدریہ مل کر «جیسے» کا معنی دیتے ہیں۔ مَا کے بعد کا فعل اپنے فاعل سمیت ایک مصدر کے حکم میں ہے اور اسی پر کاف داخل ہے۔"
+  },
+  "2:13:11": {
+    "arabic": "ءَامَنَ",
+    "segmentMeaningsUrdu": [
+      "ایمان لائے"
+    ],
+    "dictionaryUrdu": "یہ ءَامَنَ کا ماضی واحد ہے، حالانکہ اس کا فاعل جمع ہے: ظاہری فاعل بعد میں ہو تو فعل واحد آتا ہے۔ شروع کا مد باب کے ہمزہ اور مادے کے ہمزہ کے ملنے سے بنا ہے۔",
+    "addRuleIds": [
+      "verbal-sentence"
+    ]
+  },
+  "2:13:12": {
+    "arabic": "ٱلسُّفَهَآءُ",
+    "segmentMeaningsUrdu": [
+      "تعریف (معرفہ بنانے والا)",
+      "بے وقوف لوگ"
+    ],
+    "dictionaryUrdu": "سُفَهَاء سَفِيه کی جمع ہے، یعنی کم عقل اور ناسمجھ؛ مادہ س ف ه میں ہلکے پن اور عقل کی کمی کا مفہوم ہے۔ یہ وزن غیر منصرف ہے، مگر یہاں فاعل ہونے سے ضمہ کے ساتھ مرفوع ہے۔",
+    "addRuleIds": [
+      "subject"
+    ]
+  },
+  "2:13:13": {
+    "arabic": "أَلَآ",
+    "segmentMeaningsUrdu": [
+      "سن لو / خبردار"
+    ],
+    "dictionaryUrdu": "أَلَا کلام کے شروع میں «سنو» یا «خبردار» کا مفہوم دیتا ہے اور بعد کی خبر کو نمایاں کرتا ہے۔ یہ مبنی حرف ہے؛ اس پر کوئی اعراب نہیں اور اس کا اگلے لفظ پر عمل نہیں۔"
+  },
+  "2:13:14": {
+    "arabic": "إِنَّهُمْ",
+    "segmentMeaningsUrdu": [
+      "بے شک",
+      "وہ (اسمِ إِنَّ)"
+    ],
+    "dictionaryUrdu": "إِنَّ «بے شک» تاکید کے لیے ہے؛ جڑی ہوئی هُمْ اس کا اسم ہے اور محلِ نصب میں ہے۔ أَلَا کے بعد إِنَّ کا آنا بات کو دہری تاکید دیتا ہے۔"
+  },
+  "2:13:15": {
+    "arabic": "هُمُ",
+    "segmentMeaningsUrdu": [
+      "وہی"
+    ],
+    "dictionaryUrdu": "هُمْ کا عام مفہوم «وہ» ہے؛ یہاں اسم اور معرفہ خبر کے درمیان آ کر فصل اور تاکید کا کام کرتا ہے، جسے اردو میں «ہی» سے ادا کیا جاتا ہے۔ میم کا ضمہ اگلے ساکن کی وجہ سے ہے۔",
+    "addRuleIds": [
+      "separating-pronoun"
+    ],
+    "auditNotes": "QAC i‘rab says only ضمير منفصل. Standard i‘rab allows ضمير فصل (no position), تأكيد of the attached pronoun, or mubtada with the following noun as khabar and the clause as khabar of إنّ. Added separating-pronoun (fasl reading); packet independent-pronoun fits the mubtada reading — keep only one after review."
+  },
+  "2:13:16": {
+    "arabic": "ٱلسُّفَهَآءُ",
+    "segmentMeaningsUrdu": [
+      "تعریف (معرفہ بنانے والا)",
+      "بے وقوف"
+    ],
+    "dictionaryUrdu": "یہاں یہی لفظ إِنَّ کی خبر ہے: سَفِيه کی جمع، یعنی کم عقل لوگ۔ الف لام والی خبر اور ضمیرِ فصل مل کر یہ مفہوم دیتے ہیں کہ اصل بے وقوف یہی ہیں۔",
+    "addRuleIds": [
+      "inna"
+    ]
+  },
+  "2:13:17": {
+    "arabic": "وَلَـٰكِن",
+    "segmentMeaningsUrdu": [
+      "اور (زائد)",
+      "لیکن"
+    ],
+    "dictionaryUrdu": "لَٰكِنْ «لیکن» پچھلی بات سے پیدا ہونے والے خیال کی اصلاح کرتا ہے۔ یہ مخففہ ہے اور عمل نہیں کرتا؛ پہلے کی وَ کو یہاں زائد مانا گیا ہے۔",
+    "addRuleIds": [
+      "lightened-particle"
+    ],
+    "auditNotes": "QAC tags the wāw SUP (word i‘rab الواو زائدة), hence extra-particle; many i‘rab call it عاطفة (or حالية). Added lightened-particle for the light لَٰكِنْ (QAC AMD) per rules.json."
+  },
+  "2:13:18": {
+    "arabic": "لَّا",
+    "segmentMeaningsUrdu": [
+      "نہیں"
+    ],
+    "dictionaryUrdu": "لَا یہاں خبر کی نفی کرتا ہے، کسی کو منع نہیں کرتا؛ اسی لیے بعد کے مضارع کا نون باقی ہے۔ لام کی تشدید پچھلے ساکن نون کے اس میں مدغم ہونے سے آئی ہے۔"
+  },
+  "2:13:19": {
+    "arabic": "يَعْلَمُونَ",
+    "segmentMeaningsUrdu": [
+      "جانتے ہیں",
+      "وہ سب (فاعل)"
+    ],
+    "dictionaryUrdu": "عَلِمَ کا معنی جاننا ہے، اسی سے عِلْم ہے۔ یہ مضارع جمع ہے اور آخر کا نون رفع کی علامت ہے؛ پہلے لَا نفی کا ہے، نہی کا نہیں، اس لیے نون باقی ہے۔"
+  },
+  "2:14:1": {
+    "arabic": "وَإِذَا",
+    "segmentMeaningsUrdu": [
+      "اور",
+      "جب"
+    ],
+    "dictionaryUrdu": "وَ اس نئی شرط کو پچھلے بیان پر عطف کرتا ہے اور إِذَا شرطیہ ظرف ہے، یعنی «جب»۔ اس آیت میں دو شرطیں آمنے سامنے آئی ہیں اور ہر ایک کا اپنا جواب ہے۔"
+  },
+  "2:14:2": {
+    "arabic": "لَقُوا۟",
+    "segmentMeaningsUrdu": [
+      "ملے / ملتے ہیں",
+      "وہ سب (فاعل)"
+    ],
+    "dictionaryUrdu": "لَقِيَ کا معنی کسی سے ملنا اور سامنا ہونا ہے۔ اصل لَقِيُوا تھا؛ آخری یاء گر گئی اور قاف کو ضمہ ملا، اس لیے لفظ میں مادے کا تیسرا حرف دکھائی نہیں دیتا۔",
+    "addRuleIds": [
+      "condition"
+    ],
+    "auditNotes": "Packet lemma لَقُ (QAC LEM laqu, lexemeKey laqu|I|ACT) is a truncated stem; the dictionary form is لَقِيَ (root ل ق ي, defective)."
+  },
+  "2:14:3": {
+    "arabic": "ٱلَّذِينَ",
+    "segmentMeaningsUrdu": [
+      "ان لوگوں سے جو"
+    ],
+    "dictionaryUrdu": "ٱلَّذِينَ جمع مذکر کا اسمِ موصول ہے: «وہ لوگ جو»۔ یہ مبنی ہے اور اس کا مطلب بعد کے صلہ سے مکمل ہوتا ہے؛ یہاں یہ پچھلے فعل کا مفعول ہے، اس لیے اردو میں «سے» آیا۔",
+    "addRuleIds": [
+      "object"
+    ]
+  },
+  "2:14:4": {
+    "arabic": "ءَامَنُوا۟",
+    "segmentMeaningsUrdu": [
+      "ایمان لائے",
+      "وہ سب (فاعل)"
+    ],
+    "dictionaryUrdu": "ءَامَنَ کا معنی ایمان لانا ہے۔ یہاں یہ اسمِ موصول کا صلہ ہے، اس لیے ترجمہ «جو ایمان لائے» بنتا ہے؛ واو کے بعد کا الف صرف لکھنے میں ہے، پڑھا نہیں جاتا۔"
+  },
+  "2:14:5": {
+    "arabic": "قَالُوٓا۟",
+    "segmentMeaningsUrdu": [
+      "کہا / کہتے ہیں",
+      "وہ سب (فاعل)"
+    ],
+    "dictionaryUrdu": "قَالَ کہنا ہے؛ یہاں شرط کے جواب میں ان کی کہی ہوئی بات آگے نقل ہو رہی ہے۔ جمع کی واو فاعل کی ضمیر ہے اور اس کے بعد لکھا گیا الف پڑھا نہیں جاتا۔",
+    "addRuleIds": [
+      "condition-answer",
+      "quoted-speech"
+    ]
+  },
+  "2:14:6": {
+    "arabic": "ءَامَنَّا",
+    "segmentMeaningsUrdu": [
+      "ایمان لائے",
+      "ہم (فاعل)"
+    ],
+    "dictionaryUrdu": "یہ ءَامَنَ کا ماضی جمع متکلم ہے۔ اصل ءَامَنْنَا تھا: فعل کا آخری نون اور ضمیر نَا کا نون مل کر مشدد ہو گئے، اس لیے فعل والے حصے میں نون نظر نہیں آتا۔",
+    "auditNotes": "Segment split ءَامَ + نَّا places the stem’s final radical nūn inside the shadda of the suffix segment; the stem segment therefore lacks its third radical visually. Harmless, but the roleUrdu could mention the merged nūn."
+  },
+  "2:14:7": {
+    "arabic": "وَإِذَا",
+    "segmentMeaningsUrdu": [
+      "اور",
+      "جب"
+    ],
+    "dictionaryUrdu": "وَ اس دوسری صورت کو پہلی شرط پر عطف کرتا ہے اور إِذَا پھر شرطیہ ظرف ہے، یعنی «جب»۔ یہاں ایک ہی جملے میں دو شرطیں آمنے سامنے آئی ہیں اور ہر ایک کا اپنا جواب ہے۔",
+    "auditNotes": "Quran.com Urdu meaningUrdu «اورجب» lacks a space (اور جب)."
+  },
+  "2:14:8": {
+    "arabic": "خَلَوْا۟",
+    "segmentMeaningsUrdu": [
+      "اکیلے ہوئے / تنہا جاتے ہیں",
+      "وہ سب (فاعل)"
+    ],
+    "dictionaryUrdu": "خَلَا کا معنی خالی ہونا اور تنہائی میں جانا ہے۔ ناقص واوی فعل ہے؛ جمع کی واو سے ملنے پر آخری اصلی حرف گر گیا، اور إِلَىٰ کے ساتھ یہ کسی کے پاس الگ جا ملنے کا مفہوم دیتا ہے۔",
+    "addRuleIds": [
+      "condition"
+    ]
+  },
+  "2:14:9": {
+    "arabic": "إِلَىٰ",
+    "segmentMeaningsUrdu": [
+      "کی طرف / کے پاس"
+    ],
+    "dictionaryUrdu": "إِلَىٰ عموماً کسی سمت یا انتہا کی طرف بڑھنے کو بتاتا ہے۔ یہاں تنہائی کے فعل کے ساتھ آ کر «کسی کے پاس جا کر» کا مفہوم دیتا ہے، اس لیے اردو میں «کے پاس» یا «کے ساتھ» بھی بنتا ہے۔"
+  },
+  "2:14:10": {
+    "arabic": "شَيَـٰطِينِهِمْ",
+    "segmentMeaningsUrdu": [
+      "شیطانوں",
+      "اپنے / ان کے"
+    ],
+    "dictionaryUrdu": "شَيَاطِين شَيْطَان کی جمع ہے، یعنی سرکش اور بہکانے والا؛ یہ لفظ ہر حد سے بڑھے ہوئے سرکش کے لیے آتا ہے۔ یہ وزن غیر منصرف ہے، مگر مضاف ہونے کی وجہ سے یہاں کسرہ آیا۔",
+    "addRuleIds": [
+      "idafa"
+    ]
+  },
+  "2:14:11": {
+    "arabic": "قَالُوٓا۟",
+    "segmentMeaningsUrdu": [
+      "کہا / کہتے ہیں",
+      "وہ سب (فاعل)"
+    ],
+    "dictionaryUrdu": "یہ دوسری شرط کا جواب ہے اور اس کا مقولہ آگے آتا ہے۔ قَالَ اجوف واوی ہے؛ ماضی میں درمیانی واو الف بن جاتا ہے، جبکہ آخر کی واو جمع کے فاعل کی ضمیر ہے۔",
+    "addRuleIds": [
+      "condition-answer",
+      "quoted-speech"
+    ]
+  },
+  "2:14:12": {
+    "arabic": "إِنَّا",
+    "segmentMeaningsUrdu": [
+      "بے شک",
+      "ہم (اسمِ إِنَّ)"
+    ],
+    "dictionaryUrdu": "إِنَّ تاکید کا حرف ہے اور اس کا اسم ضمیر نَا ہے جو محلِ نصب میں ہے۔ اصل إِنَّنَا تھا؛ ایک نون گر گیا، اس لیے ضمیر کے حصے میں لکھنے میں صرف الف باقی ہے۔"
+  },
+  "2:14:13": {
+    "arabic": "مَعَكُمْ",
+    "segmentMeaningsUrdu": [
+      "ساتھ",
+      "تمہارے"
+    ],
+    "dictionaryUrdu": "مَعَ ساتھ ہونے کا ظرف ہے جو اپنے بعد والے کی طرف مضاف ہوتا ہے۔ یہ اسم (ظرف) ہے، حرف نہیں؛ یہاں إِنَّ کی خبر اسی ظرف سے متعلق ہے۔",
+    "addRuleIds": [
+      "idafa"
+    ]
+  },
+  "2:14:14": {
+    "arabic": "إِنَّمَا",
+    "segmentMeaningsUrdu": [
+      "بے شک",
+      "روکنے والا (مَا کافہ)"
+    ],
+    "dictionaryUrdu": "إِنَّمَا حصر کا حرف ہے، یعنی بات کو ایک ہی پہلو میں محدود کرنا: «ہم تو بس…»۔ یہاں مَا کافہ ہے، موصول نہیں؛ اسی لیے بعد کی ضمیر إِنَّ کا اسم نہیں بلکہ مبتدا ہے۔",
+    "addRuleIds": [
+      "restriction"
+    ],
+    "auditNotes": "Packet ruleId inna does not apply: rules.json says inna is not for إِنَّمَا (كافة ومكفوفة), which takes restriction. Added restriction; reviewer should drop inna."
+  },
+  "2:14:15": {
+    "arabic": "نَحْنُ",
+    "segmentMeaningsUrdu": [
+      "ہم"
+    ],
+    "dictionaryUrdu": "نَحْنُ کا معنی «ہم» ہے اور یہ مبنی ضمیر ہے۔ یہاں یہ إِنَّمَا کے بعد مبتدا ہے؛ بولنے والے اپنے ساتھیوں کے سامنے اپنی اصل حیثیت بیان کر رہے ہیں۔",
+    "addRuleIds": [
+      "nominal"
+    ]
+  },
+  "2:14:16": {
+    "arabic": "مُسْتَهْزِءُونَ",
+    "segmentMeaningsUrdu": [
+      "مذاق اڑانے والے"
+    ],
+    "dictionaryUrdu": "مُسْتَهْزِئ اسْتَهْزَأَ «مذاق اڑانا» کا اسمِ فاعل ہے، جو هَزِئَ سے بابِ استفعال ہے۔ ہمزہ یہاں واو کی کرسی پر لکھا گیا ہے؛ یہ اسم ہے، فعل نہیں۔",
+    "addRuleIds": [
+      "nominal",
+      "derived-form"
+    ],
+    "auditNotes": "Packet lemma مُسْتَهْزِءُون is the plural form (QAC LEM musotahozi'uwn); a singular dictionary form would be مُسْتَهْزِئ."
+  },
+  "2:15:1": {
+    "arabic": "ٱللَّهُ",
+    "segmentMeaningsUrdu": [
+      "اللہ"
+    ],
+    "dictionaryUrdu": "اللہ تعالیٰ کا خاص نام ہے۔ لغوی اشاریے میں اسے أ ل ه کے تحت رکھا جاتا ہے، مگر اس کے اشتقاق میں اختلاف ہے؛ یہاں یہ مبتدا ہونے کی وجہ سے مرفوع ہے۔",
+    "addRuleIds": [
+      "nominal"
+    ]
+  },
+  "2:15:2": {
+    "arabic": "يَسْتَهْزِئُ",
+    "segmentMeaningsUrdu": [
+      "مذاق کرتا ہے"
+    ],
+    "dictionaryUrdu": "اسْتَهْزَأَ مذاق اڑانے کے معنی میں بابِ استفعال ہے۔ یہاں فعل مضارع ہے جو جاری یا آئندہ ہونے کا مفہوم دیتا ہے، اور یہ جملہ مبتدا کی خبر ہے؛ آخری ہمزہ یاء کی کرسی پر ہے۔",
+    "addRuleIds": [
+      "nominal"
+    ],
+    "auditNotes": "Packet lemma ٱسْتُهْزِئَ (QAC LEM {sotuhozi}a) has passive vowelling, but this verb is active form X; the dictionary form is ٱسْتَهْزَأَ. Check the lexemeKey {sotuhozi}a|X|ACT paradigm."
+  },
+  "2:15:3": {
+    "arabic": "بِهِمْ",
+    "segmentMeaningsUrdu": [
+      "کے ساتھ / سے",
+      "ان"
+    ],
+    "dictionaryUrdu": "بِ یہاں اس شخص کو بتاتا ہے جس کا مذاق اڑایا جائے؛ اسْتَهْزَأَ اپنا مفعول اسی حرف کے ذریعے لیتا ہے۔ هِمْ متصل ضمیر ہے اور اس کی ہاء پر کسرہ پچھلی کسرہ کی وجہ سے ہے۔",
+    "addRuleIds": [
+      "pronoun"
+    ],
+    "auditNotes": "ruleIds include independent-pronoun, but the pronoun here is attached to a preposition (QAC prefix b:P+ with PRON 3MP stem); rules.json reserves independent-pronoun for free-standing pronouns. posUrdu and segment roleUrdu say ضمیرِ منفصل; it should be ضمیرِ متصل (حرفِ جر + ضمیرِ متصل). Added pronoun."
+  },
+  "2:15:4": {
+    "arabic": "وَيَمُدُّهُمْ",
+    "segmentMeaningsUrdu": [
+      "اور",
+      "ڈھیل دیتا ہے",
+      "ان کو"
+    ],
+    "dictionaryUrdu": "مَدَّ کا اصل معنی کھینچنا، پھیلانا اور بڑھانا ہے، اسی سے «مہلت بڑھانا، ڈھیل دینا» بنتا ہے۔ مضاعف فعل ہے: اصل يَمْدُدُ میں دونوں دال مل کر مشدد ہو گئے۔"
+  },
+  "2:15:5": {
+    "arabic": "فِى",
+    "segmentMeaningsUrdu": [
+      "میں"
+    ],
+    "dictionaryUrdu": "فِى کسی کیفیت کے اندر ہونے کو بتاتا ہے؛ یہاں اگلا مصدر وہ حالت ہے جس میں وہ پڑے رہتے ہیں۔ لفظ بہ لفظ ترجمے میں «ان کی» اس کے نیچے آیا ہے، مگر خود اس حرف کا معنی «میں» ہے۔",
+    "auditNotes": "Quran.com Urdu word-by-word is misaligned here: «ان کی» is under فِى and «سرکشی میں» under طُغْيَـٰنِهِمْ (expected «میں» / «ان کی سرکشی»)."
+  },
+  "2:15:6": {
+    "arabic": "طُغْيَـٰنِهِمْ",
+    "segmentMeaningsUrdu": [
+      "سرکشی",
+      "ان کی"
+    ],
+    "dictionaryUrdu": "طُغْيَان طَغَىٰ «حد سے بڑھنا» کا مصدر ہے، یعنی سرکشی اور حد سے تجاوز۔ مادہ ط غ ي ناقص ہے؛ فُعْلَان کے وزن میں یاء یہاں ظاہر رہتی ہے۔",
+    "addRuleIds": [
+      "idafa"
+    ],
+    "auditNotes": "See 2:15:5: meaningUrdu «سرکشی میں» carries the preposition’s meaning; the possessive «ان کی» was placed on the previous word."
+  },
+  "2:15:7": {
+    "arabic": "يَعْمَهُونَ",
+    "segmentMeaningsUrdu": [
+      "بھٹکتے پھرتے ہیں",
+      "وہ سب (فاعل)"
+    ],
+    "dictionaryUrdu": "عَمِهَ گمراہی میں حیران و سرگرداں پھرنے کو کہتے ہیں اور اس کا تعلق دل کی بصیرت سے ہے۔ اسے آنکھ کے اندھے پن والے مادے ع م ي سے نہ ملائیں؛ یہاں آخری اصلی حرف ہاء ہے۔",
+    "addRuleIds": [
+      "haal"
+    ]
+  },
+  "2:16:1": {
+    "arabic": "أُو۟لَـٰٓئِكَ",
+    "segmentMeaningsUrdu": [
+      "وہ لوگ / یہی"
+    ],
+    "dictionaryUrdu": "یہ دور کے متعدد افراد کی طرف اشارہ ہے: «وہ لوگ»۔ لکھنے میں ہمزہ کے بعد والا واو پڑھا نہیں جاتا، اور آخر کا كَ خطاب کا حرف ہے، ضمیر نہیں۔",
+    "addRuleIds": [
+      "nominal"
+    ]
+  },
+  "2:16:2": {
+    "arabic": "ٱلَّذِينَ",
+    "segmentMeaningsUrdu": [
+      "وہ جنہوں نے"
+    ],
+    "dictionaryUrdu": "ٱلَّذِينَ جمع مذکر کا اسمِ موصول ہے: «وہ لوگ جو / جنہوں نے»۔ یہاں یہ اسمِ اشارہ کی خبر ہے اور اس کا مفہوم بعد کے صلہ سے پورا ہوتا ہے۔",
+    "addRuleIds": [
+      "nominal"
+    ]
+  },
+  "2:16:3": {
+    "arabic": "ٱشْتَرَوُا۟",
+    "segmentMeaningsUrdu": [
+      "خرید لی",
+      "وہ سب (فاعل)"
+    ],
+    "dictionaryUrdu": "ٱشْتَرَىٰ شَرَىٰ سے بابِ افتعال ہے اور خریدنے، یعنی ایک چیز دے کر دوسری لینے کے معنی دیتا ہے۔ آخری یاء ضمیر سے ملنے پر گر گئی، اور واو کا ضمہ اگلے ساکن سے ملنے کی وجہ سے ہے۔"
+  },
+  "2:16:4": {
+    "arabic": "ٱلضَّلَـٰلَةَ",
+    "segmentMeaningsUrdu": [
+      "تعریف (معرفہ بنانے والا)",
+      "گمراہی"
+    ],
+    "dictionaryUrdu": "ضَلَالَة ضَلَّ «راستے سے بھٹکنا» کا مصدر ہے، یعنی گمراہی، اور اس کی ضد ہدایت ہے۔ الف لام کا لام ضاد میں مدغم ہے، اس لیے ضاد مشدد ہے؛ یہاں یہ خریدنے کا مفعول ہے۔",
+    "addRuleIds": [
+      "object"
+    ]
+  },
+  "2:16:5": {
+    "arabic": "بِٱلْهُدَىٰ",
+    "segmentMeaningsUrdu": [
+      "کے بدلے",
+      "تعریف (معرفہ بنانے والا)",
+      "ہدایت"
+    ],
+    "dictionaryUrdu": "هُدًى کا معنی رہنمائی اور سیدھا راستہ ہے۔ بِ یہاں عوض کا ہے، یعنی وہ چیز جو بدلے میں دے دی گئی؛ آخر میں الف ہونے سے جر کی علامت مقدر ہے۔",
+    "addRuleIds": [
+      "implied-case"
+    ]
+  },
+  "2:16:6": {
+    "arabic": "فَمَا",
+    "segmentMeaningsUrdu": [
+      "تو",
+      "نہ"
+    ],
+    "dictionaryUrdu": "فَ پچھلی بات کے بعد نتیجہ لاتا ہے اور مَا ماضی کی نفی کرتا ہے۔ یہاں مَا نافیہ ہے، موصول یا سوالیہ نہیں؛ اس کا فعل پر کوئی عمل نہیں۔",
+    "auditNotes": "QAC calls the fāʾ استئنافية (REM); many i‘rab treat it as عاطفة (the clause joined to the ṣila). Alternative only."
+  },
+  "2:16:7": {
+    "arabic": "رَبِحَت",
+    "segmentMeaningsUrdu": [
+      "نفع دیا / فائدہ مند ہوئی"
+    ],
+    "dictionaryUrdu": "رَبِحَ کا معنی تجارت میں نفع کمانا ہے۔ آخر کی ساکن تاء فاعل کے مؤنث ہونے کی علامت ہے، ضمیر نہیں؛ یہاں نفع کی نسبت تجارت کی طرف کی گئی ہے۔",
+    "addRuleIds": [
+      "feminine-marker"
+    ],
+    "auditNotes": "Packet lemma رَبِحَت (QAC LEM rabiHat, lexemeKey rabiHat|I|ACT) includes the feminine tāʾ; the dictionary form is رَبِحَ."
+  },
+  "2:16:8": {
+    "arabic": "تِّجَـٰرَتُهُمْ",
+    "segmentMeaningsUrdu": [
+      "تجارت",
+      "ان کی"
+    ],
+    "dictionaryUrdu": "تِجَارَة خرید و فروخت اور نفع کے لیے کاروبار ہے۔ گول تاء کی وجہ سے مؤنث ہے، اسی لیے فعل پر تائے تانیث آئی؛ شروع کی تاء پر تشدید پچھلی تاء کے ادغام سے ہے۔",
+    "addRuleIds": [
+      "subject",
+      "idafa"
+    ]
+  },
+  "2:16:9": {
+    "arabic": "وَمَا",
+    "segmentMeaningsUrdu": [
+      "اور",
+      "نہ"
+    ],
+    "dictionaryUrdu": "وَ اس نفی کو پچھلی نفی سے جوڑتا ہے اور مَا نافیہ ہے۔ یہاں مَا کے بعد كَانَ آیا ہے، اس لیے نفی ماضی کی ایک حالت پر ہے۔"
+  },
+  "2:16:10": {
+    "arabic": "كَانُوا۟",
+    "segmentMeaningsUrdu": [
+      "تھے",
+      "وہ سب (اسمِ كَانَ)"
+    ],
+    "dictionaryUrdu": "كَانَ «ہونا، تھا» کے معنی میں فعلِ ناقص ہے جو اسم کو رفع اور خبر کو نصب دیتا ہے۔ اجوف واوی ہے: الف کے پیچھے اصلی واو ہے، اور جمع کی واو یہاں اس کا اسم ہے۔"
+  },
+  "2:16:11": {
+    "arabic": "مُهْتَدِينَ",
+    "segmentMeaningsUrdu": [
+      "ہدایت پانے والے"
+    ],
+    "dictionaryUrdu": "مُهْتَدٍ ٱهْتَدَىٰ «راہ پانا» کا اسمِ فاعل ہے، جو هَدَىٰ سے بابِ افتعال ہے۔ كَانَ کی خبر ہونے سے یاء اور نون کے ساتھ منصوب ہے؛ مادے کی آخری یاء جمع میں گر گئی۔",
+    "addRuleIds": [
+      "kana",
+      "derived-form"
+    ],
+    "auditNotes": "Packet lemma مُّهْتَدُون has a stray initial shadda (from QAC LEM m~uhotaduwn, the assimilated tanwīn of the previous word) and is plural; singular dictionary form مُهْتَدٍ."
+  }
+}

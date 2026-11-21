@@ -1,5 +1,6 @@
 import { fatihahStudy } from './data';
 import type { StudyData } from './types';
+import { study2 } from './lessons/surah-2';
 import { study4 } from './lessons/surah-4';
 import { study7 } from './lessons/surah-7';
 import { study18 } from './lessons/surah-18';
@@ -45,6 +46,7 @@ import { study114 } from './lessons/surah-114';
 /** Complete locally bundled study editions. */
 export const studies: readonly StudyData[] = [
   fatihahStudy,
+  study2,
   study4,
   study7,
   study18,

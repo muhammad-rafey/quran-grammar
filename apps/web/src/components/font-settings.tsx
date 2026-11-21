@@ -30,6 +30,13 @@ const coverageNote = (font: ReadingFont, language: UiLanguage) =>
 export function FontSettings({ language, study, quranFont, urduFont, onChange, saveError }: Props) {
   const ui = getUiStrings(language);
   const firstAyah = study?.ayahs[0];
+  // Source-first lessons have no ayah translation; preview the Urdu font with word meanings.
+  const urduSample =
+    firstAyah?.translationUrdu ||
+    (study?.words ?? [])
+      .slice(0, previewWords)
+      .map((word) => word.meaningUrdu)
+      .join('، ');
   const ayahWords = firstAyah
     ? study.words.filter((word) => word.ayah === firstAyah.number).map((word) => word.arabic)
     : [];
@@ -37,7 +44,7 @@ export function FontSettings({ language, study, quranFont, urduFont, onChange, s
     ayahWords.slice(0, previewWords).join(' ') + (ayahWords.length > previewWords ? ' …' : '');
   const groups: { role: FontRole; title: string; selected: ReadingFont; sample: string }[] = [
     { role: 'quran', title: ui.quranFont, selected: quranFont, sample: quranSample },
-    { role: 'urdu', title: ui.urduFont, selected: urduFont, sample: firstAyah?.translationUrdu ?? '' },
+    { role: 'urdu', title: ui.urduFont, selected: urduFont, sample: urduSample },
   ];
   // The preview is clamped to two lines (overflow hidden), so each line holds the font's full ink
   // extent: marks above and below are never cut.

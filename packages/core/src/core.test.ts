@@ -22,7 +22,9 @@ const lastTen = [105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
 const fiveSurahs = [18, 23, 32, 36, 55];
 const editionTwo = [4, 7, 25, 29, ...Array.from({ length: 20 }, (_, index) => 85 + index)];
 const editionThree = [22, 56];
-const expectedChapters = [1, ...fiveSurahs, ...lastTen, ...editionTwo, ...editionThree].sort((a, b) => a - b);
+/** Source-first lessons (content-pipeline/full-quran): no ayah translation, tafsir or phrase cards. */
+const sourceFirst = new Set([2]);
+const expectedChapters = [1, 2, ...fiveSurahs, ...lastTen, ...editionTwo, ...editionThree].sort((a, b) => a - b);
 
 test('navigation catalogs distinguish the available lesson from future content and partial juz', () => {
   assert.deepEqual(
@@ -62,7 +64,7 @@ test('navigation catalogs distinguish the available lesson from future content a
   assert.deepEqual(
     juzCatalog.filter((juz) => juz.available),
     [
-      preview(1, [[1, 1, 7]]),
+      preview(1, [[1, 1, 7], [2, 1, 20]]),
       preview(4, [[4, 1, 23]]),
       preview(5, [[4, 24, 147]], false),
       preview(6, [[4, 148, 176]]),
@@ -110,13 +112,17 @@ test('navigation catalogs distinguish the available lesson from future content a
     [55, 13, 27],
     [56, 96, 27],
     [1, 7, 1],
+    [2, 1, 1],
+    [2, 20, 1],
     [114, 6, 30],
   ] as const)
     assert.equal(getJuzForAyah(surah, ayah)?.number, juz, `${surah}:${ayah}`);
   for (const [surah, ayah] of [
     [18, 111],
     [36, 0],
-    [2, 1],
+    [2, 21],
+    [2, 142],
+    [3, 1],
   ] as const)
     assert.equal(getJuzForAyah(surah, ayah), undefined, `${surah}:${ayah}`);
   assert.equal(getJuzStartAyah(15, 18), 1);
@@ -133,6 +139,7 @@ test('navigation catalogs distinguish the available lesson from future content a
 test('all available lessons have complete occurrence, rule and phrase coverage', () => {
   const counts = new Map([
     [1, [7, 29]],
+    [2, [20, 230]],
     [4, [176, 3747]],
     [7, [206, 3320]],
     [18, [110, 1579]],
@@ -182,14 +189,14 @@ test('all available lessons have complete occurrence, rule and phrase coverage',
   );
   assert.equal(
     studies.reduce((total, study) => total + study.ayahs.length, 0),
-    1455,
+    1475,
   );
   assert.equal(
     studies.reduce((total, study) => total + study.words.length, 0),
-    16058,
+    16288,
   );
   const occurrences = studies.flatMap((study) => study.words.map((word) => word.id));
-  assert.equal(new Set(occurrences).size, 16058);
+  assert.equal(new Set(occurrences).size, 16288);
   for (const study of studies) {
     const chapter = study.surah.number;
     assert.equal(getStudy(chapter), study);
@@ -199,19 +206,32 @@ test('all available lessons have complete occurrence, rule and phrase coverage',
       study.ayahs.flatMap((ayah) => ayah.phrases.flatMap((phrase) => phrase.wordIds)),
     );
     for (const word of study.words) {
-      assert.ok(word.ruleIds.length > 0, `${word.id}: grammar rules`);
-      assert.ok(covered.has(word.id), `${word.id}: phrase context`);
+      // Source-first words get a rule only where a library card applies (none covers أَلَا).
+      if (!sourceFirst.has(chapter)) assert.ok(word.ruleIds.length > 0, `${word.id}: grammar rules`);
+      if (!sourceFirst.has(chapter)) assert.ok(covered.has(word.id), `${word.id}: phrase context`);
     }
-    assert.ok(
-      study.ayahs.every((ayah) => ayah.phrases.length > 0),
-      `Surah ${chapter}: phrase analysis`,
-    );
+    if (sourceFirst.has(chapter))
+      assert.ok(
+        study.ayahs.every(
+          (ayah) =>
+            ayah.phrases.length === 0 &&
+            ayah.translationUrdu === '' &&
+            ayah.themeUrdu === '' &&
+            ayah.tafsirUrdu === '',
+        ),
+        `Surah ${chapter}: source-first lessons carry no translation, theme, tafsir or phrases`,
+      );
+    else
+      assert.ok(
+        study.ayahs.every((ayah) => ayah.phrases.length > 0),
+        `Surah ${chapter}: phrase analysis`,
+      );
     assert.ok(
       !/https?:\/\//.test(JSON.stringify(study)),
       'Source links stay in the repository audit',
     );
   }
-  for (const number of [0, 2, 17, 84, 115, 105.5, NaN]) assert.equal(getStudy(number), undefined);
+  for (const number of [0, 3, 17, 84, 115, 105.5, NaN]) assert.equal(getStudy(number), undefined);
 });
 
 test('expansion lessons preserve every audited Uthmani word and occurrence boundary verbatim', () => {

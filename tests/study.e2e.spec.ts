@@ -92,18 +92,18 @@ test('surah and juz catalogs expose available lessons and preserve picker focus'
   const catalog = page.getByRole('dialog', { name: 'Select surah', exact: true });
   await expect(catalog).toBeVisible();
   await expect(catalog.locator('[data-surah]')).toHaveCount(114);
-  await expect(catalog.locator('[data-surah]:disabled')).toHaveCount(72);
+  await expect(catalog.locator('[data-surah]:disabled')).toHaveCount(71);
   expect(
     await catalog
       .locator('[data-surah]')
       .evaluateAll((nodes) =>
-        nodes.slice(0, 42).map((node) => Number(node.getAttribute('data-surah'))),
+        nodes.slice(0, 43).map((node) => Number(node.getAttribute('data-surah'))),
       ),
-  ).toEqual([1, 4, 7, 18, 22, 23, 25, 29, 32, 36, 55, 56, ...Array.from({ length: 30 }, (_, index) => 85 + index)]);
+  ).toEqual([1, 2, 4, 7, 18, 22, 23, 25, 29, 32, 36, 55, 56, ...Array.from({ length: 30 }, (_, index) => 85 + index)]);
   await expect(catalog.locator('[data-surah="1"]')).toBeEnabled();
-  await expect(catalog.locator('[data-surah="2"]')).toContainText('Coming soon');
+  await expect(catalog.locator('[data-surah="3"]')).toContainText('Coming soon');
   await expect(catalog.locator('[data-surah="114"]')).toContainText('An-Nas');
-  await catalog.locator('[data-surah="2"]').evaluate((node: HTMLButtonElement) => node.click());
+  await catalog.locator('[data-surah="3"]').evaluate((node: HTMLButtonElement) => node.click());
   await expect(catalog).toBeVisible();
   await expect(
     page.getByRole('button', { name: 'Select ayah', includeHidden: true }),
@@ -134,10 +134,13 @@ test('surah and juz catalogs expose available lessons and preserve picker focus'
         nodes.slice(0, 17).map((node) => Number(node.getAttribute('data-juz'))),
       ),
   ).toEqual([1, 4, 5, 6, 8, 9, 15, 16, 17, 18, 19, 20, 21, 22, 23, 27, 30]);
-  await expect(juz.locator('[data-juz="1"]')).toContainText('Al-Fatihah only');
+  await expect(juz.locator('[data-juz="1"]')).toContainText('Partial preview');
   await juz.locator('[data-juz="29"]').evaluate((node: HTMLButtonElement) => node.click());
   await expect(juz).toBeVisible();
+  // Juz 1 holds Al-Fatihah and the built ayahs of Al-Baqarah, so it lists its chapters first.
   await juz.locator('[data-juz="1"]').click();
+  await expect(juz.locator('[data-surah]')).toHaveCount(2);
+  await juz.locator('[data-surah="1"]').click();
   await expect(juz).not.toBeVisible();
   await expect(page.getByRole('button', { name: 'Select juz', exact: true })).toBeFocused();
   await expect(page.locator('.collection-trigger')).toContainText('Juz 1');
@@ -835,7 +838,7 @@ test('interface language persists while Arabic text and Urdu study content stay 
   await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'سورت منتخب کریں', exact: true }).click();
   await expect(page.locator('[data-surah="1"]')).toContainText('الفاتحة');
-  await expect(page.locator('[data-surah="2"]')).toContainText('جلد دستیاب ہوگا');
+  await expect(page.locator('[data-surah="3"]')).toContainText('جلد دستیاب ہوگا');
   await page.keyboard.press('Escape');
   await openFatihahPractice(page, 'گرامر کی مشق');
   const practice = page.getByRole('region', { name: 'مختصر مشق', exact: true });
@@ -1165,7 +1168,7 @@ test('cross-chapter deep links and failed requests never show the previous chapt
   await expect(word(page, '114:5:2')).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('.quran-word')).toHaveCount(20);
   await page.evaluate(() => {
-    location.hash = 'surah=2';
+    location.hash = 'surah=3';
   });
   await expect(word(page, '1:1:1')).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('.quran-word')).toHaveCount(29);

@@ -167,7 +167,8 @@ function FontSettings() {
     const words = study.words.filter((word) => word.ayah === first.number);
     return {
       arabic: words.map((word) => word.arabic).join(' '),
-      urdu: first.translationUrdu,
+      // Source-first lessons have no ayah translation; preview with word meanings instead.
+      urdu: first.translationUrdu || words.map((word) => word.meaningUrdu).join('، '),
     };
   }, [study]);
   return (

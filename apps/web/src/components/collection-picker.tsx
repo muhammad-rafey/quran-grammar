@@ -204,7 +204,7 @@ export function CollectionPicker({
                         <small>
                           {juz.available
                             ? juz.partial
-                              ? juz.number === 1
+                              ? juz.surahNumbers.length === 1 && juz.surahNumbers[0] === 1
                                 ? ui.previewOnly
                                 : ui.partialPreview
                               : ui.available

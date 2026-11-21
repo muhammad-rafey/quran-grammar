@@ -1,0 +1,4 @@
+{
+  "description": "Ayah ranges built by the full-Quran source-first pipeline. Each range starts at ayah 1 and grows; a chapter is published with the ayahs built so far.",
+  "ranges": [{ "surah": 2, "fromAyah": 1, "toAyah": 20, "nameUrdu": "سورۃ البقرہ", "nameArabic": "سُورَةُ الْبَقَرَةِ" }]
+}

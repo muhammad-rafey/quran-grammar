@@ -1,4 +1,4 @@
-import { availableSurahNumbers } from './availability';
+import { availableSurahNumbers, partialSurahLastAyah } from './availability';
 import type { UiLanguage } from './interface';
 /** Factual chapter names checked against Quran.com API v4 on 2026-10-23.
  * Source and scope are recorded in docs/content-provenance.md.
@@ -301,15 +301,25 @@ const juzBoundaries: ReadonlyArray<readonly [number, number, number, number]> = 
 export const juzCatalog: readonly JuzCatalogEntry[] = Array.from({ length: 30 }, (_, index) => {
   const number = index + 1;
   const rows = juzBoundaries.filter(([juz]) => juz === number);
+  // A partially built chapter contributes only its built ayahs; a juz past them has none.
+  const built = (surah: number) => partialSurahLastAyah[surah] ?? Number.POSITIVE_INFINITY;
   const ranges = rows
-    .filter(([, surah]) => availableSurahNumbers.includes(surah))
-    .map(([, surah, firstAyah, lastAyah]) => ({ surah, firstAyah, lastAyah }));
+    .filter(([, surah, firstAyah]) => availableSurahNumbers.includes(surah) && firstAyah <= built(surah))
+    .map(([, surah, firstAyah, lastAyah]) => ({
+      surah,
+      firstAyah,
+      lastAyah: Math.min(lastAyah, built(surah)),
+    }));
   const surahNumbers = ranges.map((range) => range.surah);
   return {
     number,
     available: surahNumbers.length > 0,
     partial:
-      surahNumbers.length > 0 && rows.some(([, surah]) => !availableSurahNumbers.includes(surah)),
+      surahNumbers.length > 0 &&
+      rows.some(
+        ([, surah, , lastAyah]) =>
+          !availableSurahNumbers.includes(surah) || lastAyah > built(surah),
+      ),
     previewSurahNumber: surahNumbers[0],
     surahNumbers,
     ranges,

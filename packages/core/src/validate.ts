@@ -109,7 +109,10 @@ export function isStudyData(value: unknown): value is StudyData {
     if (
       !record(ayah) ||
       ayah.number !== index + 1 ||
-      !fields(ayah, ['translationUrdu', 'themeUrdu', 'tafsirUrdu']) ||
+      // Source-first lessons have no ayah translation, theme or tafsir: these may be empty strings.
+      !['translationUrdu', 'themeUrdu', 'tafsirUrdu'].every(
+        (name) => typeof ayah[name] === 'string' && (ayah[name] as string).length <= 20_000,
+      ) ||
       !array(ayah.phrases)
     )
       return false;

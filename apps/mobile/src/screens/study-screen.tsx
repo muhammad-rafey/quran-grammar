@@ -546,7 +546,7 @@ const AyahCard = memo(function AyahCard({
           ))}
           <Text style={styles.ayahEnd}>{` ۝${formatCount(ayah.number, 'ur')}`}</Text>
         </Text>
-        {showTranslation && <Paragraph>{ayah.translationUrdu}</Paragraph>}
+        {showTranslation && !!ayah.translationUrdu && <Paragraph>{ayah.translationUrdu}</Paragraph>}
       </View>
     );
   }
@@ -574,7 +574,7 @@ const AyahCard = memo(function AyahCard({
           />
         ))}
       </View>
-      {showTranslation && (
+      {showTranslation && !!ayah.translationUrdu && (
         <View style={styles.translation}>
           <Paragraph>{ayah.translationUrdu}</Paragraph>
         </View>

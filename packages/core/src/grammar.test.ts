@@ -168,6 +168,6 @@ test('bundled repository resolves topic details, summaries and practice sets', a
   const practice = await repository.getPracticeQuestions({ topicId: first.id });
   assert.equal(practice.length, first.questionCount);
   assert.deepEqual(await repository.getPracticeQuestions({ topicId: 'nope' }), []);
-  assert.equal(await repository.getStudy(2), null);
+  assert.equal(await repository.getStudy(3), null);
   assert.equal((await repository.getStudy(1))!.words.length, 29);
 });
