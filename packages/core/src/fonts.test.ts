@@ -12,7 +12,7 @@ const roles: FontRole[] = ['quran', 'urdu'];
 /** License text shipped next to each font file (folder-relative names). */
 const licenseFiles: Readonly<Record<string, string>> = {
   'amiri-quran.ttf': 'OFL-Amiri.txt',
-  'digitalkhatt-indopak.otf': 'OFL-DigitalKhattIndoPak.txt',
+  'al-qalam-quran-majeed.ttf': 'LICENSE-AlQalamQuranMajeed.txt',
   'scheherazade-new.ttf': 'OFL-ScheherazadeNew.txt',
   'naskh.ttf': 'OFL-Naskh.txt',
   'nastaliq.ttf': 'OFL-Nastaliq.txt',
@@ -38,10 +38,13 @@ test('every bundled font ships with its license text in both folders', () => {
   for (const font of readingFonts) {
     const license = licenseFiles[font.file];
     assert.ok(license, `no license file recorded for ${font.file}`);
-    assert.equal(font.license, 'OFL-1.1');
     const texts = folders.map((folder) => readFileSync(new URL(license, folder), 'utf8'));
     assert.equal(texts[0], texts[1], `${license} differs between web and mobile`);
-    assert.match(texts[0], /SIL Open Font License, Version 1\.1/);
+    if (font.license === 'OFL-1.1') {
+      assert.match(texts[0], /SIL Open Font License, Version 1\.1/);
+    } else {
+      assert.ok(texts[0].includes(font.label), `${license} does not name ${font.label}`);
+    }
   }
 });
 

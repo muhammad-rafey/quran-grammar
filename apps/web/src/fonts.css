@@ -9,8 +9,8 @@
   font-display: swap;
 }
 @font-face {
-  font-family: 'DigitalKhattIndoPak';
-  src: url('/fonts/digitalkhatt-indopak.otf') format('opentype');
+  font-family: 'AlQalamQuranMajeed';
+  src: url('/fonts/al-qalam-quran-majeed.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
