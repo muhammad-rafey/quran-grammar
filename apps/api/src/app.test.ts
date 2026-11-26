@@ -294,3 +294,38 @@ test('practice endpoint serves one topic or the Al-Fatihah set and rejects ambig
     assert.ok((await failed.json()).error.code);
   }
 });
+
+test('large lessons are gzipped for clients that accept it and plain otherwise', async () => {
+  const { request } = await import('node:http');
+  const { gunzipSync } = await import('node:zlib');
+  const get = (path: string, encoding?: string) =>
+    new Promise<{ headers: Record<string, string | string[] | undefined>; body: Buffer }>(
+      (resolve, reject) => {
+        const req = request(`${base}${path}`, {
+          headers: encoding ? { 'Accept-Encoding': encoding } : {},
+        });
+        req.on('response', (response) => {
+          const chunks: Buffer[] = [];
+          response.on('data', (chunk: Buffer) => chunks.push(chunk));
+          response.on('end', () =>
+            resolve({ headers: response.headers, body: Buffer.concat(chunks) }),
+          );
+        });
+        req.on('error', reject);
+        req.end();
+      },
+    );
+  const expected = await repository.getStudy(2);
+  const zipped = await get('/api/v1/surahs/2', 'gzip, deflate, br');
+  assert.equal(zipped.headers['content-encoding'], 'gzip');
+  assert.match(String(zipped.headers['content-type']), /^application\/json/);
+  assert.match(String(zipped.headers.vary), /Accept-Encoding/);
+  assert.ok(zipped.body.length < 1_000_000, `gzipped Al-Baqarah is ${zipped.body.length} bytes`);
+  assert.deepEqual(JSON.parse(gunzipSync(zipped.body).toString('utf8')), expected);
+  const plain = await get('/api/v1/surahs/2');
+  assert.equal(plain.headers['content-encoding'], undefined);
+  assert.deepEqual(JSON.parse(plain.body.toString('utf8')), expected);
+  // Small responses are not worth compressing.
+  const health = await get('/api/health', 'gzip');
+  assert.equal(health.headers['content-encoding'], undefined);
+});

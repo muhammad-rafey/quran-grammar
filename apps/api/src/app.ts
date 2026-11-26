@@ -2,6 +2,8 @@ import express, { type ErrorRequestHandler } from 'express';
 import cors from 'cors';
 import { existsSync } from 'node:fs';
 import { extname, resolve } from 'node:path';
+import { promisify } from 'node:util';
+import { gzip } from 'node:zlib';
 import {
   matchesWord,
   type ContentRepository,
@@ -32,6 +34,9 @@ const filters = new Set<PartOfSpeechFilter>([
 const failure = (code: string, message: string) => ({ error: { code, message } });
 const topicId = /^[a-z0-9-]{1,64}$/;
 const cacheable = 'public, max-age=300';
+const gzipAsync = promisify(gzip);
+/** JSON bodies from this size are gzipped (Al-Baqarah's lesson is about 4.9 MB uncompressed). */
+const compressFromBytes = 16 * 1024;
 
 export function createApp(options: AppOptions) {
   const { repository } = options;
@@ -51,6 +56,25 @@ export function createApp(options: AppOptions) {
       res.status(403).json(failure('ORIGIN_NOT_ALLOWED', 'This origin is not allowed.'));
       return;
     }
+    next();
+  });
+  // Large lessons travel gzipped when the client accepts it (browsers, Node fetch, React Native).
+  app.use('/api', (req, res, next) => {
+    res.vary('Accept-Encoding');
+    if (req.acceptsEncodings('gzip', 'identity') !== 'gzip') return next();
+    const json = res.json.bind(res);
+    res.json = (body: unknown) => {
+      const text = JSON.stringify(body);
+      if (text === undefined || Buffer.byteLength(text) < compressFromBytes) return json(body);
+      gzipAsync(text, { level: 6 })
+        .then((compressed) => {
+          res.type('application/json; charset=utf-8');
+          res.set('Content-Encoding', 'gzip');
+          res.send(compressed);
+        })
+        .catch(next);
+      return res;
+    };
     next();
   });
   app.use(
