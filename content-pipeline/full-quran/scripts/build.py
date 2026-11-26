@@ -510,7 +510,10 @@ def indopak(text):
     text = re.sub(r'\s+', ' ', text)  # en spaces / doubled spaces left by removed controls
     text = re.sub(r'^۞\s*', '', text).strip()
     # A waqf sign is part of the word in IndoPak print: no space before it (1:7:4 عَلَيۡهِمۡ ۙ).
-    return re.sub(r'\s+(?=[\u0610-\u061a\u06d6-\u06ed]+$)', '', text)
+    # Quran.com also draws some waqf signs with private-use glyphs (U+E000–U+F8FF, Al Qalam has
+    # them), e.g. 1:7:4 `…مۡ U+E021 ۙ`: they belong to the word too.
+    signs = '\u0610-\u061a\u06d6-\u06ed\ue000-\uf8ff'
+    return re.sub(rf'\s+(?=[{signs}][{signs}\s]*$)', '', text)
 
 
 def with_indopak(word, text):
