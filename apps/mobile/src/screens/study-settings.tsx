@@ -60,7 +60,8 @@ export function Settings() {
             >
               <Text
                 style={[
-                  labelStyle,
+                  // Each option in its own script: Latin set in the Urdu font fell back to a serif.
+                  item.value === 'en' ? latinLabel : labelStyle,
                   { textAlign: 'center', color: language === item.value ? '#fff' : colors.primary },
                 ]}
               >
@@ -120,6 +121,8 @@ export function Settings() {
   );
 }
 
+const latinLabel = { fontSize: 16, lineHeight: 24, writingDirection: 'ltr' } as const;
+
 /**
  * A labelled native switch. The label is a React Native Text rather than the @expo/ui Switch
  * `label`: that variant lays its Compose Row out with an intrinsic-size width modifier which the
@@ -137,8 +140,20 @@ export function ToggleRow({
   testID?: string;
 }) {
   const { controlRow, isUrdu } = useInterface();
+  // One accessibility element: screen readers announce the label with the switch state, and
+  // activating it toggles (the native switch alone was announced without its label).
   return (
-    <View style={[controlRow, { justifyContent: 'space-between', minHeight: 48 }]}>
+    <View
+      accessible
+      accessibilityRole="switch"
+      accessibilityLabel={label}
+      accessibilityState={{ checked: value }}
+      accessibilityActions={toggleActions}
+      onAccessibilityAction={(event) => {
+        if (event.nativeEvent.actionName === 'activate') onValueChange(!value);
+      }}
+      style={[controlRow, { justifyContent: 'space-between', minHeight: 48 }]}
+    >
       <Label style={{ flex: 1 }}>{label}</Label>
       <Host
         matchContents
@@ -151,6 +166,8 @@ export function ToggleRow({
     </View>
   );
 }
+
+const toggleActions = [{ name: 'activate' }] as const;
 
 /** One option of a radio group: a bordered card with a radio mark, its name and any details. */
 function RadioCard({

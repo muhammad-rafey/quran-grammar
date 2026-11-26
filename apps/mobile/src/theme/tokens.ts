@@ -81,6 +81,19 @@ export function urduTextStyle(font: ReadingFont, fontSize: number, lineHeight?: 
  */
 export const lineEndSlack = Platform.OS === 'android' ? '\u2009' : '';
 
+/**
+ * Append to a Quranic word in its own shrink-wrapped, centred Text (a word block, the word screen's
+ * heading, a chip): `<Text>{quranText(word, font)}{quranWordSlack}</Text>`.
+ *
+ * Quranic annotation marks at the end of a word (waqf signs such as ۙ ۚ ۛ ۖ, U+0615 and the IndoPak
+ * fonts' private-use waqf glyphs) carry no advance width, so Android measures the word narrower
+ * than the ink it draws; the TextView then broke or shifted the word inside its measured box and
+ * a letter or the sign itself was cut off (Al Qalam: 1:5:4 lost its first ن, 2:2:4 its ر). An en
+ * space (half an em, so it scales with the font size) is counted when measuring but hangs at the
+ * line end when the text is laid out, like lineEndSlack. Android only.
+ */
+export const quranWordSlack = Platform.OS === 'android' ? '\u2002' : '';
+
 export const row = {
   flexDirection: physicalRowDirection(true, I18nManager.isRTL),
   alignItems: 'center',

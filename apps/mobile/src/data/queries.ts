@@ -81,7 +81,31 @@ function groupBy<T, K>(rows: readonly T[], key: (row: T) => K): Map<K, T[]> {
   return map;
 }
 
-/** Rebuild one chapter's StudyData exactly (key and list order included). */
+/**
+ * Separators for values folded into one row with group_concat. Content text never contains these
+ * C0 control characters (a folded value with an unexpected field count is rejected).
+ */
+const unitSeparator = '\u001f';
+const recordSeparator = '\u001e';
+
+/** Split a group_concat of records (char(31)-separated) of fields (char(30)-separated). */
+function splitRecords(value: string | null, fields: number): string[][] {
+  if (value === null || value === '') return [];
+  return value.split(unitSeparator).map((record) => {
+    const parts = record.split(recordSeparator);
+    if (parts.length !== fields) throw new Error('Unexpected separator in folded content.');
+    return parts;
+  });
+}
+
+/**
+ * Rebuild one chapter's StudyData exactly (key and list order included).
+ *
+ * Per-word lists (segments, grammar-rule ids) and per-ayah translations are folded into their
+ * word / ayah row with `group_concat(... order by position)` (SQLite 3.44+; expo-sqlite bundles
+ * 3.49+). Al-Baqarah then reads ~8.5k rows instead of ~35k: on device each row becomes a JS
+ * object, so the row count, not the SQL, dominated a long chapter's load time.
+ */
 export async function loadStudy(exec: SqlExecutor, surah: number): Promise<StudyData | null> {
   const [surahRow] = await exec.all<SurahRow>(
     'select number, name_urdu, name_arabic, ayah_count, word_count from surahs where number = ?',
@@ -89,23 +113,15 @@ export async function loadStudy(exec: SqlExecutor, surah: number): Promise<Study
   );
   if (!surahRow) return null;
   const p = [surah];
-  const [
-    ayahs,
-    ayahTranslations,
-    words,
-    segments,
-    wordRules,
-    verbs,
-    rules,
-    roots,
-    phrases,
-    phraseWords,
-  ] = await Promise.all([
-    exec.all<{ number: number }>('select number from ayahs where surah = ? order by number', p),
-    // Keys in catalog (position) order, as core's rowsToStudies builds them.
-    exec.all<{ ayah: number; translation_id: string; text: string }>(
-      `select ayah, translation_id, text
-         from ayah_translations where surah = ? order by ayah, position`,
+  const [ayahs, words, verbs, rules, roots, phrases, phraseWords] = await Promise.all([
+    // Translations keyed in catalog (position) order, as core's rowsToStudies builds them.
+    exec.all<{ number: number; translations: string | null }>(
+      `select a.number,
+              (select group_concat(t.translation_id || char(30) || t.text, char(31)
+                                   order by t.position)
+                 from ayah_translations t
+                where t.surah = a.surah and t.ayah = a.number) as translations
+         from ayahs a where a.surah = ? order by a.number`,
       p,
     ),
     exec.all<{
@@ -122,20 +138,17 @@ export async function loadStudy(exec: SqlExecutor, surah: number): Promise<Study
       morphology_urdu: string;
       syntax_urdu: string;
       dictionary_urdu: string;
+      segments: string | null;
+      rule_ids: string | null;
     }>(
-      `select id, ayah, position, arabic, arabic_indopak, meaning_urdu, pos, pos_urdu, root, lemma,
-              morphology_urdu, syntax_urdu, dictionary_urdu
-         from words where surah = ? order by ayah, position`,
-      p,
-    ),
-    exec.all<{ word_id: string; arabic: string; role_urdu: string; meaning_urdu: string }>(
-      `select s.word_id, s.arabic, s.role_urdu, s.meaning_urdu
-         from words w join word_segments s on s.word_id = w.id
-        where w.surah = ? order by s.word_id, s.position`,
-      p,
-    ),
-    exec.all<{ word_id: string; rule_id: string }>(
-      'select word_id, rule_id from word_rules where surah = ? order by word_id, position',
+      `select w.id, w.ayah, w.position, w.arabic, w.arabic_indopak, w.meaning_urdu, w.pos,
+              w.pos_urdu, w.root, w.lemma, w.morphology_urdu, w.syntax_urdu, w.dictionary_urdu,
+              (select group_concat(s.arabic || char(30) || s.role_urdu || char(30) || s.meaning_urdu,
+                                   char(31) order by s.position)
+                 from word_segments s where s.word_id = w.id) as segments,
+              (select group_concat(r.rule_id, char(31) order by r.position)
+                 from word_rules r where r.word_id = w.id) as rule_ids
+         from words w where w.surah = ? order by w.ayah, w.position`,
       p,
     ),
     exec.all<{
@@ -166,15 +179,12 @@ export async function loadStudy(exec: SqlExecutor, surah: number): Promise<Study
     exec.all<{ phrase_id: string; word_id: string }>(
       `select pw.phrase_id, pw.word_id
          from phrases ph join phrase_words pw on pw.phrase_id = ph.id
-        where ph.surah = ? order by pw.phrase_id, pw.position`,
+        where ph.surah = ? order by ph.ayah, ph.position, pw.position`,
       p,
     ),
   ]);
 
-  const segmentsByWord = groupBy(segments, (row) => row.word_id);
-  const rulesByWord = groupBy(wordRules, (row) => row.word_id);
   const phrasesByAyah = groupBy(phrases, (row) => row.ayah);
-  const translationsByAyah = groupBy(ayahTranslations, (row) => row.ayah);
   const wordsByPhrase = groupBy(phraseWords, (row) => row.phrase_id);
 
   return {
@@ -194,18 +204,16 @@ export async function loadStudy(exec: SqlExecutor, surah: number): Promise<Study
       morphologyUrdu: word.morphology_urdu,
       syntaxUrdu: word.syntax_urdu,
       dictionaryUrdu: word.dictionary_urdu,
-      segments: (segmentsByWord.get(word.id) ?? []).map((segment) => ({
-        arabic: segment.arabic,
-        roleUrdu: segment.role_urdu,
-        meaningUrdu: segment.meaning_urdu,
+      segments: splitRecords(word.segments, 3).map(([arabic, roleUrdu, meaningUrdu]) => ({
+        arabic: arabic!,
+        roleUrdu: roleUrdu!,
+        meaningUrdu: meaningUrdu!,
       })),
-      ruleIds: (rulesByWord.get(word.id) ?? []).map((rule) => rule.rule_id),
+      ruleIds: word.rule_ids ? word.rule_ids.split(unitSeparator) : [],
     })),
     ayahs: ayahs.map((ayah) => ({
       number: ayah.number,
-      translations: Object.fromEntries(
-        (translationsByAyah.get(ayah.number) ?? []).map((row) => [row.translation_id, row.text]),
-      ),
+      translations: Object.fromEntries(splitRecords(ayah.translations, 2)),
       phrases: (phrasesByAyah.get(ayah.number) ?? []).map((phrase) => ({
         id: phrase.id,
         wordIds: (wordsByPhrase.get(phrase.id) ?? []).map((entry) => entry.word_id),

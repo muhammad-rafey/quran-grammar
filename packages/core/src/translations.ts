@@ -33,6 +33,12 @@ export function resolveTranslationId(value: unknown): string {
   return isTranslationId(value) ? value : defaultTranslationId;
 }
 
+/** The edition for a stored preference (the default edition when it is no longer offered). */
+export function getTranslationEdition(value: unknown): TranslationEdition {
+  const id = resolveTranslationId(value);
+  return translationEditions.find((edition) => edition.id === id) ?? translationEditions[0];
+}
+
 /** The selected translation of an ayah ('' if the data has none). */
 export function translationText(
   translations: Readonly<Record<string, string>> | undefined,

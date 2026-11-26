@@ -11,9 +11,16 @@ import {
 import { availableSurahNumbers, type StudyData } from '@quran-grammar/core';
 import { getOpenedRepository, getRepository } from '@/data/repository';
 
+/** A request for the study screen to show an ayah (and highlight a word), e.g. from a deep link. */
+export type StudyFocus = { surah: number; ayah: number; wordId: string | null; seq: number };
+
 type StudyState = {
   selectedSurah: number;
   selectSurah: (number: number) => void;
+  /** The latest focus request; the study screen applies each `seq` once. */
+  focus: StudyFocus | null;
+  /** Select the word's chapter and ask the study screen to show its ayah with the word selected. */
+  focusWord: (surah: number, ayah: number, wordId: string | null) => void;
   /** Always the selected chapter's data, or null while it loads / after a failure. */
   study: StudyData | null;
   loading: boolean;
@@ -78,6 +85,16 @@ export function StudyProvider({ children }: { children: ReactNode }) {
     };
   }, [selectedSurah, attempt]);
 
+  const [focus, setFocus] = useState<StudyFocus | null>(null);
+  const focusWord = useCallback(
+    (surah: number, ayah: number, wordId: string | null) => {
+      if (!available.has(surah)) return;
+      selectSurah(surah);
+      setFocus((current) => ({ surah, ayah, wordId, seq: (current?.seq ?? 0) + 1 }));
+    },
+    [selectSurah],
+  );
+
   const retry = useCallback(() => {
     setError(null);
     setLoading(true);
@@ -85,8 +102,8 @@ export function StudyProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo(
-    () => ({ selectedSurah, selectSurah, study, loading, error, retry }),
-    [selectedSurah, selectSurah, study, loading, error, retry],
+    () => ({ selectedSurah, selectSurah, focus, focusWord, study, loading, error, retry }),
+    [selectedSurah, selectSurah, focus, focusWord, study, loading, error, retry],
   );
   return <StudyContext value={value}>{children}</StudyContext>;
 }
