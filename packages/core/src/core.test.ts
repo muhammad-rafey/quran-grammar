@@ -49,8 +49,19 @@ test('navigation catalogs list every chapter and every complete juz', () => {
     number: 1,
     nameArabic: 'الفاتحة',
     nameEnglish: 'Al-Fatihah',
+    meaningEnglish: 'The Opener',
+    ayahCount: 7,
     available: true,
   });
+  assert.equal(surahCatalog[1].meaningEnglish, 'The Cow');
+  assert.equal(surahCatalog[1].ayahCount, 286);
+  assert.ok(surahCatalog.every((surah) => surah.meaningEnglish.trim()));
+  // Ayah counts come from the juz boundaries and match every bundled lesson.
+  assert.deepEqual(
+    surahCatalog.map((surah) => surah.ayahCount),
+    studies.map((study) => study.surah.ayahCount),
+  );
+  assert.equal(surahCatalog.reduce((sum, surah) => sum + surah.ayahCount, 0), 6236);
   assert.equal(surahCatalog[113].nameArabic, 'الناس');
   assert.equal(surahCatalog[113].nameEnglish, 'An-Nas');
   assert.ok(

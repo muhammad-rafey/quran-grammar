@@ -554,3 +554,18 @@ The three practice questions are original Urdu teaching drafts based on the exis
 - <https://corpus.quran.com/wordmorphology.jsp?location=%281%3A7%3A3%29>
 - <https://corpus.quran.com/qurandictionary.jsp?q=nEm>
 - <https://www.arabicacademy.gov.eg/ar/search_engine/roots/نعم>
+
+## Surah picker names and search (2026-11-26)
+
+Chapter metadata for navigation, not Quranic or teaching content
+(`packages/core/src/surah-names.ts`, used by `searchSurahs` in `surah-search.ts`):
+
+- **English meanings** shown in the English interface ("The Cow"): Quran.com API v4
+  `/chapters?language=en` `translated_name`, retrieved 2026-11-26, verbatim.
+- **Urdu meanings**: Quran.com API v4 `/chapters?language=ur` `translated_name`
+  (`content-pipeline/full-quran/sources/qurancom/chapters.json`), verbatim, used as search keys
+  only. They are unreviewed and some contain spelling slips, so the interface does not show them.
+- **Alternative spellings and other common names** (e.g. bakra, yaseen, rehman, Bani Isra'il,
+  یاسین): compiled for search only.
+- **Ayah counts** come from the juz boundaries in `catalog.ts`; core tests check them against every
+  bundled lesson.

@@ -374,7 +374,7 @@ export default function StudyScreen() {
                 <Label muted style={{ fontSize: 11, lineHeight: 18 }}>
                   {mode === 'surah' || !currentJuz
                     ? ui.surah
-                    : `${ui.juz} ${count(currentJuz.number)}${currentJuz.partial ? ` · ${ui.partialPreview}` : ''}`}
+                    : `${ui.juz} ${count(currentJuz.number)}`}
                 </Label>
                 <Label style={{ fontSize: 18, fontWeight: '700' }}>
                   {getSurahTitle(selectedSurah, language)}
