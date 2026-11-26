@@ -15,7 +15,8 @@ import { Action, Label, Paragraph, Section } from '@/components/study-ui';
 import { useTopic } from '@/state/content-hooks';
 import { useInterface } from '@/state/preferences-provider';
 import { parseWordLocation } from '@/state/word-location';
-import { card, colors, lineEndSlack, radius, row, spacing } from '@/theme/tokens';
+import { cardStyle, lineEndSlack, radius, row, spacing } from '@/theme/tokens';
+import { useTheme } from '@/theme/theme';
 import { useTypography } from '@/theme/typography';
 import { LoadState } from './practice-grammar';
 
@@ -94,6 +95,8 @@ function TopicBody({
 }) {
   const { ui, count } = useInterface();
   const type = useTypography();
+  const { colors } = useTheme();
+  const card = cardStyle(colors);
   const paragraphs = topic.explanationUrdu
     .split(/\n\s*\n/)
     .map((paragraph) => paragraph.trim())
@@ -201,6 +204,7 @@ function ExampleCard({
 }) {
   const { ui, count, labelText, controlRow, isUrdu, translationId } = useInterface();
   const type = useTypography();
+  const { colors } = useTheme();
   const translation = translationText(example.translations, translationId);
   const { arabicText } = type;
   const { word, ayah, parts } = exampleText(example, type.quranFont);

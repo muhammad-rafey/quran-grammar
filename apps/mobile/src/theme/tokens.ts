@@ -2,33 +2,14 @@ import { I18nManager, Platform, type TextStyle } from 'react-native';
 import type { ReadingFont } from '@quran-grammar/core';
 import { quranLineHeight, scaledSize, urduLine } from './font-metrics';
 import { physicalRowDirection } from './physical-row';
+import { themed } from './theme';
 
 export { urduMinLineHeight } from './font-metrics';
 
-export const colors = {
-  background: '#f7f8ef',
-  paper: '#ffffff',
-  ink: '#203b30',
-  muted: '#65736b',
-  primary: '#14654c',
-  primaryEdge: '#104e3b',
-  wash: '#eaf4df',
-  mint: '#eef6ee',
-  lime: '#d8ed9b',
-  border: '#dbe5d5',
-  edge: '#cbd9c4',
-  white: '#ffffff',
-  transparent: 'transparent',
-  gold: '#b57a22',
-  amber: '#80601c',
-  amberWash: '#fbf5e6',
-  blue: '#42648b',
-  blueWash: '#edf2f9',
-};
-
 export const spacing = { xs: 4, sm: 8, md: 12, lg: 16, xl: 24, xxl: 32 } as const;
 export const radius = { sm: 10, md: 16, lg: 24, pill: 999 } as const;
-export const shadows = { floating: '0 8px 28px rgba(32,59,48,0.13)' } as const;
+/** The shadow of floating surfaces (the tab bar). */
+export const floatingShadow = themed((colors) => `0 8px 28px ${colors.shadow}`);
 
 /**
  * Line layout for the selectable reading fonts (registry and em metrics in
@@ -99,12 +80,16 @@ export const row = {
   alignItems: 'center',
   gap: 10,
 } as const;
-export const card = {
-  backgroundColor: colors.paper,
-  borderWidth: 1,
-  borderColor: colors.border,
-  borderRadius: radius.lg,
-  borderCurve: 'continuous',
-  padding: spacing.lg,
-  gap: 10,
-} as const;
+/** A bordered card on the paper surface: `cardStyle(useTheme().colors)`. */
+export const cardStyle = themed(
+  (colors) =>
+    ({
+      backgroundColor: colors.paper,
+      borderWidth: 1,
+      borderColor: colors.border,
+      borderRadius: radius.lg,
+      borderCurve: 'continuous',
+      padding: spacing.lg,
+      gap: 10,
+    }) as const,
+);

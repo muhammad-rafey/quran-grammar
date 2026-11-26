@@ -123,6 +123,11 @@ const english = {
   translator: 'Translation',
   translatorHelp: 'Choose whose Urdu translation is shown under each ayah.',
   translationSource: 'Ayah translations and Urdu word-by-word meanings',
+  theme: 'Theme',
+  themeHelp: 'Choose light or dark colours, or follow your device setting.',
+  themeSystem: 'System',
+  themeLight: 'Light',
+  themeDark: 'Dark',
 } as const;
 
 export type UiStrings = { readonly [Key in keyof typeof english]: string };
@@ -250,6 +255,11 @@ const urdu: UiStrings = {
   translator: 'ترجمہ',
   translatorHelp: 'منتخب کریں کہ ہر آیت کے نیچے کس کا اردو ترجمہ دکھایا جائے۔',
   translationSource: 'آیات کے تراجم اور لفظ بہ لفظ اردو معانی',
+  theme: 'تھیم',
+  themeHelp: 'ہلکے یا گہرے رنگ منتخب کریں، یا اپنے آلے کی ترتیب کے مطابق رکھیں۔',
+  themeSystem: 'سسٹم',
+  themeLight: 'ہلکا',
+  themeDark: 'گہرا',
 };
 
 /** Validate a stored preference before passing it into the interface. */

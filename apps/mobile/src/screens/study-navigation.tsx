@@ -2,7 +2,8 @@ import { Pressable, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AppIcon } from '@/components/app-icon';
 import { useInterface } from '@/state/preferences-provider';
-import { colors, radius, shadows, spacing } from '@/theme/tokens';
+import { floatingShadow, radius, spacing } from '@/theme/tokens';
+import { useTheme } from '@/theme/theme';
 
 export type StudyView = 'words' | 'practice' | 'settings';
 
@@ -15,6 +16,7 @@ export function FloatingNavigation({
 }) {
   const { ui, labelText, controlRow } = useInterface();
   const insets = useSafeAreaInsets();
+  const { colors } = useTheme();
   const tabs = [
     { value: 'words', title: ui.study, icon: 'study' },
     { value: 'practice', title: ui.practiceGrammar, icon: 'grammar' },
@@ -41,7 +43,7 @@ export function FloatingNavigation({
           backgroundColor: colors.paper,
           borderWidth: 1,
           borderColor: colors.border,
-          boxShadow: shadows.floating,
+          boxShadow: floatingShadow(colors),
           maxWidth: 380,
         }}
       >

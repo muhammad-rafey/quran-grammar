@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import { Host, Icon } from '@expo/ui';
-import { colors } from '@/theme/tokens';
+import { useTheme } from '@/theme/theme';
 
 const icons = {
   study: Icon.select({
@@ -42,20 +42,22 @@ const icons = {
 
 export function AppIcon({
   name,
-  color = colors.primary,
+  color,
   size = 22,
 }: {
   name: keyof typeof icons;
+  /** Defaults to the theme's primary colour. */
   color?: string;
   size?: number;
 }) {
+  const { colors, scheme } = useTheme();
   // The native Compose host consumes touches on Android even with pointerEvents="none",
   // so a tap on the icon never reached the surrounding button. React Native's own
   // hit-testing honours pointerEvents on a plain View and passes the touch to the parent.
   return (
     <View pointerEvents="none" style={{ width: size, height: size }}>
-      <Host colorScheme="light" style={{ width: size, height: size }}>
-        <Icon name={icons[name]} color={color} size={size} />
+      <Host colorScheme={scheme} style={{ width: size, height: size }}>
+        <Icon name={icons[name]} color={color ?? colors.primary} size={size} />
       </Host>
     </View>
   );

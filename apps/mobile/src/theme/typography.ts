@@ -1,17 +1,20 @@
 import { StyleSheet, type StyleProp, type TextStyle } from 'react-native';
 import type { ReadingFont } from '@quran-grammar/core';
 import { useInterface } from '@/state/preferences-provider';
-import { colors, quranTextStyle, urduMinLineHeight, urduTextStyle } from './tokens';
+import { quranTextStyle, urduMinLineHeight, urduTextStyle } from './tokens';
+import { useTheme, type Palette } from './theme';
 
 /**
  * Text styles for the reader's chosen Quran and Urdu fonts. One frozen object per font pair (shared
- * by every component), so memoized components can depend on it and styles are built once per font
- * change rather than on each render. Sizes are design sizes for the default fonts; each font's
+ * and colour scheme, shared by every component), so memoized components can depend on it and styles
+ * are built once per font or theme change rather than on each render. Sizes are design sizes for the default fonts; each font's
  * registry `scale` and metrics are applied here (see tokens.ts for the clipping rules).
  */
 export type Typography = {
   readonly quranFont: ReadingFont;
   readonly urduFont: ReadingFont;
+  /** The palette the text colours below come from (see theme.tsx). */
+  readonly colors: Palette;
   /** Quranic Arabic at the reading size (29), ink colour, right-to-left. */
   readonly arabic: TextStyle;
   /** Quranic Arabic at `fontSize`: font family and size (and lineHeight on iOS) only. */
@@ -43,7 +46,11 @@ function memoBySize<T>(build: (key: string) => T): (key: string) => T {
   };
 }
 
-function createTypography(quranFont: ReadingFont, urduFont: ReadingFont): Typography {
+function createTypography(
+  quranFont: ReadingFont,
+  urduFont: ReadingFont,
+  colors: Palette,
+): Typography {
   const quranAt = memoBySize((key) => Object.freeze(quranTextStyle(quranFont, Number(key))));
   const urduAt = memoBySize((key) => {
     const [size, lineHeight] = key.split('/');
@@ -56,6 +63,7 @@ function createTypography(quranFont: ReadingFont, urduFont: ReadingFont): Typogr
   return Object.freeze({
     quranFont,
     urduFont,
+    colors,
     arabic: Object.freeze({ ...quranTextStyle(quranFont, 29), color: colors.ink, ...rtl }),
     arabicText: (fontSize = 29) => quranAt(String(fontSize)),
     urduText,
@@ -72,15 +80,24 @@ function createTypography(quranFont: ReadingFont, urduFont: ReadingFont): Typogr
   });
 }
 
-const typographies = new Map<string, Typography>();
+const typographies = new Map<string, WeakMap<Palette, Typography>>();
 
-/** The shared Typography for a font pair. */
-export function typographyFor(quranFont: ReadingFont, urduFont: ReadingFont): Typography {
+/** The shared Typography for a font pair in a palette. */
+export function typographyFor(
+  quranFont: ReadingFont,
+  urduFont: ReadingFont,
+  colors: Palette,
+): Typography {
   const key = `${quranFont.id}|${urduFont.id}`;
-  let typography = typographies.get(key);
+  let byPalette = typographies.get(key);
+  if (!byPalette) {
+    byPalette = new WeakMap();
+    typographies.set(key, byPalette);
+  }
+  let typography = byPalette.get(colors);
   if (!typography) {
-    typography = createTypography(quranFont, urduFont);
-    typographies.set(key, typography);
+    typography = createTypography(quranFont, urduFont, colors);
+    byPalette.set(colors, typography);
   }
   return typography;
 }
@@ -88,14 +105,15 @@ export function typographyFor(quranFont: ReadingFont, urduFont: ReadingFont): Ty
 /** Typography for the reader's fonts (the chosen ones once loaded; see preferences-provider). */
 export function useTypography(): Typography {
   const { activeFonts } = useInterface();
-  return typographyFor(activeFonts.quran, activeFonts.urdu);
+  const { colors } = useTheme();
+  return typographyFor(activeFonts.quran, activeFonts.urdu, colors);
 }
 
 const derived = new WeakMap<object, WeakMap<Typography, unknown>>();
 
 /**
  * Styles derived from a Typography by a module-level `build` function, built once per font pair
- * and shared, e.g. a screen's StyleSheet of font-dependent entries.
+ * and palette (`typography.colors`) and shared, e.g. a screen's StyleSheet of font-dependent entries.
  */
 export function fontStyles<T>(typography: Typography, build: (typography: Typography) => T): T {
   let byTypography = derived.get(build);
