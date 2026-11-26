@@ -3,6 +3,7 @@ import { ActivityIndicator, Image, Pressable, Text, View } from 'react-native';
 import { Host, Switch } from '@expo/ui';
 import {
   quranText,
+  spaceQuranText,
   translationEditions,
   translationText,
   type FontRole,
@@ -313,7 +314,8 @@ function FontSettings() {
     const words = study.words.filter((word) => word.ayah === first.number);
     return {
       // Each Quran option previews the text it will show (IndoPak fonts: the IndoPak text).
-      arabic: (font: ReadingFont) => words.map((word) => quranText(word, font)).join(' '),
+      arabic: (font: ReadingFont) =>
+        spaceQuranText(words.map((word) => quranText(word, font)).join(' '), font),
       // An ayah without the selected translation is previewed with its word meanings instead.
       urdu: () =>
         translationText(first.translations, translationId) ||

@@ -5,6 +5,7 @@ import {
   formatCount,
   getSurahTitle,
   getUiStrings,
+  spaceQuranText,
   splitAyahAtWord,
   translationText,
   type ReadingFont,
@@ -30,17 +31,15 @@ function AyahWithWord({
   if (!parts) {
     return (
       <p className="topic-ayah arabic" lang="ar" dir="rtl">
-        <mark>{text.word}</mark> — {text.ayah}
+        <mark>{text.word}</mark> — {spaceQuranText(text.ayah, quranFont)}
       </p>
     );
   }
   return (
     <p className="topic-ayah arabic" lang="ar" dir="rtl">
-      {parts.before}
-      {parts.before && ' '}
+      {parts.before && spaceQuranText(`${parts.before} `, quranFont)}
       <mark>{parts.word}</mark>
-      {parts.after && ' '}
-      {parts.after}
+      {parts.after && spaceQuranText(` ${parts.after}`, quranFont, parts.word)}
     </p>
   );
 }

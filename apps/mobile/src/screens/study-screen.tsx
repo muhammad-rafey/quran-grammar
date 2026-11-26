@@ -1,7 +1,20 @@
-import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import {
+  Fragment,
+  createContext,
+  memo,
+  useCallback,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ComponentProps,
+} from 'react';
 import {
   FlatList,
   Platform,
+  type FlatListProps,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -11,6 +24,7 @@ import {
   type NativeScrollEvent,
   type NativeSyntheticEvent,
   type StyleProp,
+  type TextLayoutEvent,
   type TextStyle,
   type ViewStyle,
   type ViewToken,
@@ -26,6 +40,8 @@ import {
   juzCatalog,
   translationText,
   quranText,
+  quranAyahEndGap,
+  quranWordGap,
   type Ayah,
   type PartOfSpeechFilter,
   type StudyData,
@@ -42,7 +58,17 @@ import { FloatingNavigation, type StudyView } from './study-navigation';
 import { StudyPicker, type BrowseMode, type PickerKind } from './study-picker';
 import { PracticeGrammar } from './practice-grammar';
 import { Settings, ToggleRow } from './study-settings';
-import { AyahJump, topVisibleAyah } from './ayah-scroll';
+import { AyahJump, topVisibleAyah, type AyahIndex } from './ayah-scroll';
+import {
+  ayahAtOffset,
+  ayahLines,
+  blockIndexOf,
+  flowBlockText,
+  groupFlowBlocks,
+  unbrokenWord,
+  type AyahLine,
+  type FlowBlock,
+} from './mushaf-flow';
 
 type SelectedWord = { id: string; ayah: number };
 /** Per-language strings and styles shared by every card; one object per language. */
@@ -66,6 +92,8 @@ const jumpRetryDelay = 120;
 // size is rendered in the same commit: no estimated spacer ever sits above the visible ayah, which
 // keeps Android's maintainVisibleContentPosition anchored on a real cell.
 const prependChunk = 4;
+// Continuous reading: each cell is a block of ~180 words (see mushaf-flow.ts).
+const flowChunk = 2;
 const prependThreshold = 1.5;
 let listInstances = 0;
 // Keeps the visible ayah in place when earlier ayahs are prepended above it.
@@ -91,16 +119,41 @@ export default function StudyScreen() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const grammar = readingLayout.grammar;
   const showTranslation = readingLayout.translation;
+  // Grammar and translation off: the chapter reads as continuous text, like a printed mushaf.
+  const flow = !grammar && !showTranslation;
+
+  // Index once per chapter; the longest lessons have thousands of words.
+  const wordsByAyah = useMemo(() => {
+    const byAyah = new Map<number, Word[]>();
+    for (const word of study?.words ?? []) {
+      const entries = byAyah.get(word.ayah);
+      if (entries) entries.push(word);
+      else byAyah.set(word.ayah, [word]);
+    }
+    return byAyah;
+  }, [study]);
+  // Continuous reading lists blocks of whole ayahs instead of one cell per ayah.
+  const blocks = useMemo(
+    () =>
+      study && flow
+        ? groupFlowBlocks(study.ayahs, (number) => wordsByAyah.get(number)?.length ?? 0)
+        : null,
+    [study, flow, wordsByAyah],
+  );
+  const indexOf = useMemo<AyahIndex | undefined>(
+    () => (blocks ? (number) => blockIndexOf(blocks, number) : undefined),
+    [blocks],
+  );
 
   // --- Ayah jumps on the virtualized list -------------------------------------------------
-  const list = useRef<FlatList<Ayah>>(null);
+  const list = useRef<FlatList<ListItem>>(null);
   const [jump] = useState(() => new AyahJump());
   // Bumped to start a fresh list (slice) at a far ayah; see ayah-scroll.ts.
   const [generation, setGeneration] = useState(0);
   const jumpTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const jumpFailed = useRef(false);
   const listSurah = study?.surah.number ?? null;
-  const itemCount = study?.ayahs.length ?? 0;
+  const itemCount = blocks ? blocks.length : (study?.ayahs.length ?? 0);
   // A new list instance per Surah, reading layout, translation or fonts (different cell heights)
   // and far jump.
   const layoutKey = `${grammar ? 'grammar' : 'plain'}:${showTranslation ? `translation-${translationId}` : 'arabic'}:${typography.quranFont.id}:${typography.urduFont.id}`;
@@ -109,7 +162,36 @@ export default function StudyScreen() {
     () => `${listSurah}:${layoutKey}:${generation}:${(listInstances += 1)}`,
     [study, layoutKey, generation], // eslint-disable-line react-hooks/exhaustive-deps
   );
-  const live = useRef({ surah: listSurah, count: itemCount, view, ayah, listKey, start: 0 });
+  const live = useRef({
+    surah: listSurah,
+    count: itemCount,
+    view,
+    ayah,
+    listKey,
+    start: 0,
+    blocks,
+    indexOf,
+  });
+  // Continuous reading: where each block cell sits in the list and where each of its ayahs starts
+  // (the top of its line), both measured; used by ayah jumps and the current-ayah label.
+  const flowLayout = useRef({
+    cells: new Map<string, number>(),
+    ayahTops: new Map<string, AyahLine[]>(),
+    scrollY: 0,
+    visible: [] as readonly FlowBlock[],
+  });
+  // Each list instance measures afresh (before its cells report their layout).
+  useLayoutEffect(() => {
+    flowLayout.current = {
+      cells: new Map(),
+      ayahTops: new Map(),
+      scrollY: 0,
+      visible: [],
+    };
+  }, [listKey]);
+  const recordCell = useCallback((key: string, y: number) => {
+    flowLayout.current.cells.set(key, y);
+  }, []);
   const mountStart = useMemo(() => {
     if (listSurah === null) return 0;
     // A layout change keeps the reader's ayah; a Surah change already requested its start ayah.
@@ -117,42 +199,62 @@ export default function StudyScreen() {
     if (!jump.pendingFor(listSurah) && surah === listSurah && current > 1) {
       jump.request(listSurah, current);
     }
-    return jump.mount(listSurah, itemCount);
+    return jump.mount(listSurah, itemCount, indexOf);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- computed once per list instance
   }, [listKey]);
   // Earlier ayahs are prepended in chunks as the reader scrolls up from a far start.
   const [prepended, setPrepended] = useState({ listKey, start: mountStart });
   const start = prepended.listKey === listKey ? prepended.start : mountStart;
-  const data = useMemo(
-    () => (!study ? [] : start > 0 ? study.ayahs.slice(start) : study.ayahs),
-    [study, start],
-  );
+  const data = useMemo<readonly ListItem[]>(() => {
+    const items: readonly ListItem[] = blocks ?? study?.ayahs ?? [];
+    return start > 0 ? items.slice(start) : items;
+  }, [study, blocks, start]);
   useLayoutEffect(() => {
-    live.current = { surah: listSurah, count: itemCount, view, ayah, listKey, start };
+    live.current = {
+      surah: listSurah,
+      count: itemCount,
+      view,
+      ayah,
+      listKey,
+      start,
+      blocks,
+      indexOf,
+    };
   });
   const clearJumpTimer = useCallback(() => {
     if (jumpTimer.current !== null) clearTimeout(jumpTimer.current);
     jumpTimer.current = null;
   }, []);
+  // Continuous reading: after a jump the label keeps the chosen ayah (its line may start with the
+  // previous ayah) until the reader scrolls.
+  const flowFollowsReader = useRef(false);
   const runJump = useCallback(() => {
     clearJumpTimer();
-    const { surah, count, view: currentView, start: sliceStart } = live.current;
+    const { surah, count, view: currentView, start: sliceStart, blocks: flowBlocks } = live.current;
     const target = list.current;
     // A hidden list has no layout; the jump resumes when the Study tab is shown again.
     if (surah === null || !target || currentView !== 'words') return;
-    const index = jump.sliceIndex(surah, count, sliceStart);
+    const index = jump.sliceIndex(surah, count, sliceStart, live.current.indexOf);
     if (index === null) return;
+    flowFollowsReader.current = false;
     if (index === 'remount') {
       setGeneration((value) => value + 1);
       return;
     }
-    if (index === 0) {
+    // In a flowing block the ayah can start lines below the block's top: scroll on to its line
+    // once the block's text is laid out (onTextLayout runs the jump again).
+    const block = flowBlocks?.[sliceStart + index];
+    const position = block?.ayahs.indexOf(jump.targetAyah(surah) ?? 0) ?? -1;
+    const tops = block && position > 0 ? flowLayout.current.ayahTops.get(block.key) : undefined;
+    const awaitingLayout = !!block && position > 0 && !tops;
+    const lineTop = tops?.[position]?.top ?? 0;
+    if (index === 0 && lineTop === 0) {
       target.scrollToOffset({ offset: 0, animated: false });
-      jump.cancel();
+      if (!awaitingLayout) jump.cancel();
       return;
     }
     jumpFailed.current = false;
-    target.scrollToIndex({ index, animated: false, viewOffset: spacing.sm });
+    target.scrollToIndex({ index, animated: false, viewOffset: spacing.sm - lineTop });
     // onScrollToIndexFailed runs synchronously inside scrollToIndex and handles recovery.
     if (!jumpFailed.current && jump.succeeded(surah)) {
       jumpTimer.current = setTimeout(runJump, jumpRetryDelay);
@@ -167,9 +269,10 @@ export default function StudyScreen() {
   // cell, and Android's maintainVisibleContentPosition anchors on the first view crossing the top.
   const readerScrolled = useRef<string | null>(null);
   const prependEarlier = useCallback(() => {
-    const { listKey: key, start: sliceStart } = live.current;
+    const { listKey: key, start: sliceStart, blocks: flowBlocks } = live.current;
     if (sliceStart > 0 && readerScrolled.current === key) {
-      setPrepended({ listKey: key, start: Math.max(0, sliceStart - prependChunk) });
+      const size = flowBlocks ? flowChunk : prependChunk;
+      setPrepended({ listKey: key, start: Math.max(0, sliceStart - size) });
     }
   }, []);
   useEffect(() => clearJumpTimer, [clearJumpTimer]);
@@ -191,18 +294,67 @@ export default function StudyScreen() {
     if (view === 'words') runJump();
   }, [view, runJump]);
 
+  // Continuous reading: the current ayah is the one at the start of the line at the viewport top.
+  const trackFlowAyah = useCallback(() => {
+    const { surah, blocks: flowBlocks } = live.current;
+    if (surah === null || !flowBlocks || !flowFollowsReader.current) return;
+    if (jump.pendingFor(surah)) return;
+    const measured = flowLayout.current;
+    const y = measured.scrollY + spacing.sm + 2;
+    let found: FlowBlock | undefined;
+    let foundTop = 0;
+    // Visible blocks only: cells scrolled out of the window keep stale offsets after a prepend.
+    for (const block of measured.visible) {
+      const top = measured.cells.get(block.key);
+      if (top !== undefined && top <= y && (!found || top > foundTop)) {
+        found = block;
+        foundTop = top;
+      }
+    }
+    if (!found) return;
+    const number = ayahAtOffset(found.ayahs, measured.ayahTops.get(found.key), y - foundTop);
+    if (number !== live.current.ayah) setAyahSelection({ surah, number });
+  }, [jump]);
   // FlatList requires one onViewableItemsChanged per list instance; the list is keyed by Surah.
   const onViewableItemsChanged = useMemo(() => {
     const surah = listSurah;
-    return ({ viewableItems }: { viewableItems: ViewToken<Ayah>[] }) => {
-      if (surah === null || live.current.surah !== surah || jump.pendingFor(surah)) return;
-      const top = topVisibleAyah(viewableItems);
+    return ({ viewableItems }: { viewableItems: ViewToken<ListItem>[] }) => {
+      if (surah === null || live.current.surah !== surah) return;
+      if (live.current.blocks) {
+        const visible = viewableItems
+          .filter((entry) => entry.isViewable)
+          .map((entry) => entry.item)
+          .filter(isFlowBlock);
+        if (visible.length > 0) flowLayout.current.visible = visible;
+        trackFlowAyah();
+        return;
+      }
+      if (jump.pendingFor(surah)) return;
+      const top = topVisibleAyah(viewableItems as ViewToken<Ayah>[]);
       if (top !== null && top !== live.current.ayah) setAyahSelection({ surah, number: top });
     };
-  }, [listSurah, jump]);
+  }, [listSurah, jump, trackFlowAyah]);
+  const onScroll = useCallback(
+    (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+      flowLayout.current.scrollY = event.nativeEvent.contentOffset.y;
+      trackFlowAyah();
+    },
+    [trackFlowAyah],
+  );
+  // A block's text was laid out: remember where its ayahs start, and finish a jump into it.
+  const onFlowTops = useCallback(
+    (key: string, ayahs: readonly number[], tops: AyahLine[]) => {
+      flowLayout.current.ayahTops.set(key, tops);
+      const { surah } = live.current;
+      const target = surah === null ? null : jump.targetAyah(surah);
+      if (target !== null && ayahs.includes(target)) runJump();
+    },
+    [jump, runJump],
+  );
   const onScrollBeginDrag = useCallback(
     (event: NativeSyntheticEvent<NativeScrollEvent>) => {
       readerScrolled.current = live.current.listKey;
+      flowFollowsReader.current = true;
       jump.cancel();
       clearJumpTimer();
       // At the top of a slice there are no scroll events (and so no onStartReached) to come.
@@ -220,16 +372,6 @@ export default function StudyScreen() {
     },
     [router],
   );
-  // Index once per chapter; the longest lessons have thousands of words.
-  const wordsByAyah = useMemo(() => {
-    const byAyah = new Map<number, Word[]>();
-    for (const word of study?.words ?? []) {
-      const entries = byAyah.get(word.ayah);
-      if (entries) entries.push(word);
-      else byAyah.set(word.ayah, [word]);
-    }
-    return byAyah;
-  }, [study]);
   const chrome = useMemo<CardChrome>(() => {
     const edition = getTranslationEdition(translationId);
     return {
@@ -246,9 +388,20 @@ export default function StudyScreen() {
   }, [language, isUrdu, ui, labelText, controlRow, typography, translationId]);
   const selectedId = selectedWord?.id ?? null;
   const selectedAyah = selectedWord?.ayah ?? null;
-  const renderItem = useCallback<ListRenderItem<Ayah>>(
+  const renderItem = useCallback<ListRenderItem<ListItem>>(
     ({ item }) =>
-      study ? (
+      !study ? null : isFlowBlock(item) ? (
+        <FlowBlockText
+          block={item}
+          wordsByAyah={wordsByAyah}
+          selectedId={
+            selectedAyah !== null && item.ayahs.includes(selectedAyah) ? selectedId : null
+          }
+          chrome={chrome}
+          onOpen={openWord}
+          onTops={onFlowTops}
+        />
+      ) : (
         <AyahCard
           ayah={item}
           words={wordsByAyah.get(item.number) ?? noWords}
@@ -263,9 +416,10 @@ export default function StudyScreen() {
           chrome={chrome}
           onOpen={openWord}
         />
-      ) : null,
+      ),
     [
       study,
+      onFlowTops,
       wordsByAyah,
       selectedAyah,
       selectedId,
@@ -377,32 +531,37 @@ export default function StudyScreen() {
           </Label>
         ) : (
           <View style={{ ...controlRow, alignItems: 'stretch', gap: spacing.sm }}>
-            <Pressable
-              testID="chapter-picker"
-              accessibilityRole="button"
-              accessibilityLabel={mode === 'surah' ? ui.selectSurah : ui.selectJuz}
-              onPress={() => {
-                setBrowseMode(mode);
-                setPicker('chapter');
-              }}
-              style={({ pressed }) => [
-                controlRow,
-                styles.chapterButton,
-                { borderBottomWidth: pressed ? 1 : 3 },
-              ]}
-            >
-              <View style={{ flex: 1 }}>
-                <Label muted style={{ fontSize: 11, lineHeight: 18 }}>
-                  {mode === 'surah' || !currentJuz
-                    ? ui.surah
-                    : `${ui.juz} ${count(currentJuz.number)}`}
-                </Label>
-                <Label style={{ fontSize: 18, fontWeight: '700' }}>
-                  {getSurahTitle(selectedSurah, language)}
-                </Label>
-              </View>
-              <AppIcon name="down" size={17} />
-            </Pressable>
+            {/* The rounded clip also rounds Android's keyboard-focus highlight, which is drawn over the
+                whole pill when focus returns to it after a picker search submitted with a hardware
+                Enter key (it was a grey square until the next touch). */}
+            <View style={styles.chapterClip}>
+              <Pressable
+                testID="chapter-picker"
+                accessibilityRole="button"
+                accessibilityLabel={mode === 'surah' ? ui.selectSurah : ui.selectJuz}
+                onPress={() => {
+                  setBrowseMode(mode);
+                  setPicker('chapter');
+                }}
+                style={({ pressed }) => [
+                  controlRow,
+                  styles.chapterButton,
+                  { borderBottomWidth: pressed ? 1 : 3 },
+                ]}
+              >
+                <View style={{ flex: 1 }}>
+                  <Label muted style={{ fontSize: 11, lineHeight: 18 }}>
+                    {mode === 'surah' || !currentJuz
+                      ? ui.surah
+                      : `${ui.juz} ${count(currentJuz.number)}`}
+                  </Label>
+                  <Label style={{ fontSize: 18, fontWeight: '700' }}>
+                    {getSurahTitle(selectedSurah, language)}
+                  </Label>
+                </View>
+                <AppIcon name="down" size={17} />
+              </Pressable>
+            </View>
             <Pressable
               testID="ayah-picker"
               accessibilityRole="button"
@@ -463,30 +622,35 @@ export default function StudyScreen() {
             ayahs are prepended, which would also hide a header that opens at the top. */}
         {listHeader}
         {study ? (
-          <FlatList
-            key={listKey}
-            ref={list}
-            testID="study-screen"
-            data={data}
-            renderItem={renderItem}
-            keyExtractor={ayahKey}
-            contentContainerStyle={listContent}
-            contentInsetAdjustmentBehavior="automatic"
-            keyboardShouldPersistTaps="handled"
-            initialNumToRender={prependChunk}
-            maxToRenderPerBatch={3}
-            updateCellsBatchingPeriod={60}
-            windowSize={7}
-            removeClippedSubviews={isAndroid}
-            viewabilityConfig={viewabilityConfig}
-            onViewableItemsChanged={onViewableItemsChanged}
-            onScrollToIndexFailed={onScrollToIndexFailed}
-            onStartReached={prependEarlier}
-            onStartReachedThreshold={prependThreshold}
-            maintainVisibleContentPosition={keepVisibleContent}
-            onScrollBeginDrag={onScrollBeginDrag}
-            onLayout={runJump}
-          />
+          <FlowCellLayouts.Provider value={recordCell}>
+            <FlatList
+              key={listKey}
+              ref={list}
+              testID="study-screen"
+              data={data}
+              renderItem={renderItem}
+              keyExtractor={ayahKey}
+              contentContainerStyle={listContent}
+              contentInsetAdjustmentBehavior="automatic"
+              keyboardShouldPersistTaps="handled"
+              initialNumToRender={flow ? flowChunk : prependChunk}
+              maxToRenderPerBatch={flow ? 1 : 3}
+              updateCellsBatchingPeriod={60}
+              windowSize={flow ? 5 : 7}
+              CellRendererComponent={flow ? FlowCell : undefined}
+              onScroll={flow ? onScroll : undefined}
+              scrollEventThrottle={flow ? 100 : undefined}
+              removeClippedSubviews={isAndroid}
+              viewabilityConfig={viewabilityConfig}
+              onViewableItemsChanged={onViewableItemsChanged}
+              onScrollToIndexFailed={onScrollToIndexFailed}
+              onStartReached={prependEarlier}
+              onStartReachedThreshold={prependThreshold}
+              maintainVisibleContentPosition={keepVisibleContent}
+              onScrollBeginDrag={onScrollBeginDrag}
+              onLayout={runJump}
+            />
+          </FlowCellLayouts.Provider>
         ) : (
           <InitialDataState />
         )}
@@ -534,7 +698,137 @@ export default function StudyScreen() {
 }
 
 const noWords: readonly Word[] = [];
-const ayahKey = (item: Ayah) => String(item.number);
+type ListItem = Ayah | FlowBlock;
+const isFlowBlock = (item: ListItem): item is FlowBlock => 'ayahs' in item;
+const ayahKey = (item: ListItem) => (isFlowBlock(item) ? item.key : String(item.number));
+
+/** Records each flow cell's offset in the list (keyed by block), for the current-ayah label. */
+const FlowCellLayouts = createContext<((key: string, y: number) => void) | null>(null);
+type CellProps = ComponentProps<NonNullable<FlatListProps<ListItem>['CellRendererComponent']>>;
+function FlowCell({ cellKey, item, index: _index, onLayout, ...props }: CellProps) {
+  const record = useContext(FlowCellLayouts);
+  const key = isFlowBlock(item) ? item.key : cellKey;
+  return (
+    <View
+      {...props}
+      onLayout={(event) => {
+        record?.(key, event.nativeEvent.layout.y);
+        onLayout?.(event);
+      }}
+    />
+  );
+}
+
+type FlowTextProps = {
+  ayahs: readonly number[];
+  wordsOf: (ayah: number) => readonly Word[];
+  selectedId: string | null;
+  chrome: CardChrome;
+  onOpen: (word: Word) => void;
+  justify?: boolean;
+  onTops?: (tops: AyahLine[]) => void;
+};
+
+/**
+ * Running Quranic text: every word can be opened, and each ayah ends with its marker, kept on the
+ * line of the ayah's last word by a no-break gap. IndoPak fonts get wider word gaps (see
+ * quranWordGap) so pause marks do not overprint the next word.
+ */
+const FlowText = memo(function FlowText({
+  ayahs,
+  wordsOf,
+  selectedId,
+  chrome,
+  onOpen,
+  justify = false,
+  onTops,
+}: FlowTextProps) {
+  const font = chrome.fonts.quranFont;
+  const { pieces, starts } = useMemo(
+    () =>
+      flowBlockText(ayahs, wordsOf, (word) => unbrokenWord(quranText(word, font)), {
+        word: (previous) => quranWordGap(previous, font),
+        end: (lastWord) => quranAyahEndGap(lastWord, font),
+        marker: (number) => `۝${formatCount(number, 'ur')}`,
+      }),
+    [ayahs, wordsOf, font],
+  );
+  const onTextLayout = useMemo(
+    () =>
+      onTops
+        ? (event: TextLayoutEvent) => onTops(ayahLines(event.nativeEvent.lines, starts))
+        : undefined,
+    [onTops, starts],
+  );
+  return (
+    <Text
+      style={justify ? chrome.fonts.flowArabic : chrome.fonts.plainArabic}
+      // Greedy line breaking (Android): the default breaker may plan a justified line slightly wider
+      // than the box, counting on shrinking its spaces, and such RTL lines ran past the right edge
+      // (seen with Al Qalam at 2:254-255). Greedy lines always fit; justification then stretches.
+      textBreakStrategy="simple"
+      onTextLayout={onTextLayout}
+    >
+      {pieces.map((piece) =>
+        piece.kind === 'word' ? (
+          <Fragment key={piece.word.id}>
+            {piece.lead}
+            <Text
+              testID={`word-${piece.word.id}`}
+              onPress={() => onOpen(piece.word)}
+              style={piece.word.id === selectedId ? styles.plainSelected : undefined}
+            >
+              {piece.text}
+            </Text>
+          </Fragment>
+        ) : (
+          <Fragment key={`end-${piece.ayah}`}>
+            {piece.lead}
+            <Text testID={`ayah-end-${piece.ayah}`} style={styles.ayahEnd}>
+              {piece.text}
+            </Text>
+          </Fragment>
+        ),
+      )}
+    </Text>
+  );
+});
+
+/** One cell of continuous reading: a block of whole ayahs as one justified text. */
+const FlowBlockText = memo(function FlowBlockText({
+  block,
+  wordsByAyah,
+  selectedId,
+  chrome,
+  onOpen,
+  onTops,
+}: {
+  block: FlowBlock;
+  wordsByAyah: ReadonlyMap<number, readonly Word[]>;
+  selectedId: string | null;
+  chrome: CardChrome;
+  onOpen: (word: Word) => void;
+  onTops: (key: string, ayahs: readonly number[], tops: AyahLine[]) => void;
+}) {
+  const wordsOf = useCallback((ayah: number) => wordsByAyah.get(ayah) ?? noWords, [wordsByAyah]);
+  const reportTops = useCallback(
+    (tops: AyahLine[]) => onTops(block.key, block.ayahs, tops),
+    [onTops, block],
+  );
+  return (
+    <View testID={`flow-block-${block.ayahs[0]}`}>
+      <FlowText
+        ayahs={block.ayahs}
+        wordsOf={wordsOf}
+        selectedId={selectedId}
+        chrome={chrome}
+        onOpen={onOpen}
+        justify
+        onTops={reportTops}
+      />
+    </View>
+  );
+});
 
 type AyahCardProps = {
   ayah: Ayah;
@@ -565,24 +859,18 @@ const AyahCard = memo(function AyahCard({
   onOpen,
 }: AyahCardProps) {
   const translation = showTranslation ? translationText(ayah.translations, translationId) : '';
+  const ayahs = useMemo(() => [ayah.number], [ayah.number]);
+  const wordsOf = useCallback(() => words, [words]);
   if (!grammar) {
     return (
       <View style={styles.plainAyah} testID={`ayah-${ayah.number}`}>
-        <Text style={chrome.fonts.plainArabic}>
-          {words.map((word, index) => (
-            <Text
-              key={word.id}
-              testID={`word-${word.id}`}
-              onPress={() => onOpen(word)}
-              style={word.id === selectedId ? styles.plainSelected : undefined}
-            >
-              {index > 0 ? ' ' : ''}
-              {quranText(word, chrome.fonts.quranFont)}
-            </Text>
-          ))}
-          {/* A no-break space keeps the ayah marker with the last word (it wrapped alone). */}
-          <Text style={styles.ayahEnd}>{`\u00a0۝${formatCount(ayah.number, 'ur')}`}</Text>
-        </Text>
+        <FlowText
+          ayahs={ayahs}
+          wordsOf={wordsOf}
+          selectedId={selectedId}
+          chrome={chrome}
+          onOpen={onOpen}
+        />
         {!!translation && (
           <View style={styles.translationBody}>
             <Paragraph>{translation}</Paragraph>
@@ -704,6 +992,9 @@ function studyFonts(typography: Typography) {
       tokenArabic: { ...typography.arabic, textAlign: 'center' },
       tokenMeaning: { ...typography.small, color: colors.ink, textAlign: 'center', maxWidth: 180 },
       plainArabic: typography.arabic,
+      // Justified like a printed mushaf (Android 8+ justifies between words; RTL keeps the last
+      // line at the start).
+      flowArabic: { ...typography.arabic, textAlign: 'justify' },
     }),
     noun: tone(colors.wash, colors.primary),
     verb: tone(colors.blueWash, colors.blue),
@@ -723,6 +1014,7 @@ const styles = StyleSheet.create({
     paddingTop: spacing.sm,
     paddingBottom: spacing.md,
   },
+  chapterClip: { flex: 1, borderRadius: radius.lg, overflow: 'hidden' },
   chapterButton: {
     flex: 1,
     minHeight: 66,

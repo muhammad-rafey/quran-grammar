@@ -4,6 +4,7 @@ import {
   getUiStrings,
   translationText,
   quranText,
+  spaceQuranText,
   type FontRole,
   type ReadingFont,
   type StudyData,
@@ -51,10 +52,13 @@ export function FontSettings({
   const ayahWords = firstAyah ? study.words.filter((word) => word.ayah === firstAyah.number) : [];
   // Each Quran option previews the text it will show (IndoPak fonts: the IndoPak text).
   const quranSample = (font: ReadingFont) =>
-    ayahWords
-      .slice(0, previewWords)
-      .map((word) => quranText(word, font))
-      .join(' ') + (ayahWords.length > previewWords ? ' …' : '');
+    spaceQuranText(
+      ayahWords
+        .slice(0, previewWords)
+        .map((word) => quranText(word, font))
+        .join(' '),
+      font,
+    ) + (ayahWords.length > previewWords ? ' …' : '');
   const groups: {
     role: FontRole;
     title: string;

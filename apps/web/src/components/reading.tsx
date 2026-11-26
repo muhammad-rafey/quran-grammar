@@ -6,6 +6,8 @@ import {
   translationEditions,
   translationText,
   quranText,
+  quranAyahEndGapExtra,
+  quranWordGapExtra,
   type ReadingFont,
   type StudyData,
   type UiLanguage,
@@ -16,6 +18,30 @@ import type { ReadingLayout } from '../use-reading-layout';
 
 const arabicDigits = (value: number) =>
   String(value).replace(/[0-9]/g, (digit) => '٠١٢٣٤٥٦٧٨٩'[Number(digit)]!);
+/** Ayah-marker digits: IndoPak fonts use Urdu digits (Al Qalam has no Arabic-Indic digit glyphs). */
+const ayahNumber = (value: number, font: ReadingFont) =>
+  font.script === 'indopak' ? formatCount(value, 'ur') : arabicDigits(value);
+
+/**
+ * The space between two words of running Quranic text. IndoPak fonts widen it with word-spacing
+ * (see quranWordGapExtra): runs of spaces would collapse in HTML.
+ */
+function WordGap({ previous, font }: { previous: string; font: ReadingFont }) {
+  const extra = quranWordGapExtra(previous, font);
+  return extra === 0 ? ' ' : <span style={{ wordSpacing: `${extra}em` }}> </span>;
+}
+
+const noBreakSpace = String.fromCharCode(0xa0);
+
+/** The gap between an ayah's last word and its marker (inside the no-wrap .ayah-tail). */
+function AyahEndGap({ lastWord, font }: { lastWord: string; font: ReadingFont }) {
+  const extra = quranAyahEndGapExtra(lastWord, font);
+  return extra === 0 ? (
+    noBreakSpace
+  ) : (
+    <span style={{ wordSpacing: `${extra}em` }}>{noBreakSpace}</span>
+  );
+}
 
 const kindLabel = (word: Word) =>
   word.pos === 'verb'
@@ -66,7 +92,11 @@ interface AyahProps {
   onSelect: SelectHandler;
 }
 
-/** Plain layouts keep words tappable as inline buttons (no card styling) plus an ayah marker. */
+/**
+ * Plain layouts keep words tappable as inline buttons (no card styling) plus an ayah marker. The
+ * marker follows the last word after a no-break gap, so it never starts a line alone; IndoPak fonts
+ * get wider word gaps (see WordGap) so pause marks do not overprint the next word.
+ */
 const PlainWords = memo(function PlainWords({
   ayah,
   words,
@@ -76,33 +106,50 @@ const PlainWords = memo(function PlainWords({
   quranFont,
   onSelect,
 }: AyahProps) {
+  const marker = (
+    <span
+      className="ayah-end"
+      role="img"
+      aria-label={`${strings.ayah} ${formatCount(ayah.number, language)}`}
+    >
+      {ayahNumber(ayah.number, quranFont)}
+    </span>
+  );
   return (
     <>
-      {words.map((word) => (
-        <span key={word.id}>
+      {words.map((word, index) => {
+        const text = quranText(word, quranFont);
+        const button = (
           <button
             type="button"
             data-word-id={word.id}
             className={`plain-word ${selectedId === word.id ? 'selected' : ''}`}
             aria-pressed={selectedId === word.id}
-            aria-label={
-              word.meaningUrdu
-                ? `${quranText(word, quranFont)}، ${word.meaningUrdu}`
-                : quranText(word, quranFont)
-            }
+            aria-label={word.meaningUrdu ? `${text}، ${word.meaningUrdu}` : text}
             onClick={(event) => onSelect(word.id, event.currentTarget)}
           >
-            {quranText(word, quranFont)}
-          </button>{' '}
-        </span>
-      ))}
-      <span
-        className="ayah-end"
-        role="img"
-        aria-label={`${strings.ayah} ${formatCount(ayah.number, language)}`}
-      >
-        {arabicDigits(ayah.number)}
-      </span>
+            {text}
+          </button>
+        );
+        if (index < words.length - 1) {
+          return (
+            <span key={word.id}>
+              {button}
+              <WordGap previous={text} font={quranFont} />
+            </span>
+          );
+        }
+        // Browsers may break before an inline-block even after a no-break space: the last word,
+        // the gap and the marker are kept together explicitly.
+        return (
+          <span key={word.id} className="ayah-tail">
+            {button}
+            <AyahEndGap lastWord={text} font={quranFont} />
+            {marker}
+          </span>
+        );
+      })}
+      {words.length === 0 && marker}
     </>
   );
 });
@@ -335,11 +382,13 @@ export function Reading({
       lang="ur"
     >
       {!layout.grammar && !showTranslation ? (
-        // Mushaf-like: one continuous Quranic text; each ayah is an inline span for ayah jumps.
+        // Mushaf-like: one continuous, justified Quranic text in which each ayah follows the
+        // previous ayah's marker on the same line; each ayah is an inline span for ayah jumps.
         <p className="ayah-text mushaf-text arabic" lang="ar" dir="rtl">
           {study.ayahs.map((ayah) => (
             <span className="plain-ayah" id={`ayah-${ayah.number}`} key={ayah.number}>
-              <PlainWords {...common(ayah)} />{' '}
+              <PlainWords {...common(ayah)} />
+              <WordGap previous={ayahNumber(ayah.number, quranFont)} font={quranFont} />
             </span>
           ))}
         </p>
