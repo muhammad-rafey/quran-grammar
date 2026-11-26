@@ -1,5 +1,14 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { BookOpen, GraduationCap, Settings, SlidersHorizontal, X } from 'lucide-react';
+import {
+  BookOpen,
+  GraduationCap,
+  Monitor,
+  Moon,
+  Settings,
+  SlidersHorizontal,
+  Sun,
+  X,
+} from 'lucide-react';
 import {
   matchesWord,
   availableSurahNumbers,
@@ -7,6 +16,7 @@ import {
   formatCount,
   getUiStrings,
   type PartOfSpeechFilter,
+  type ThemePreference,
 } from '@quran-grammar/core';
 import { AyahPicker } from './components/ayah-picker';
 import { CollectionPicker, type CollectionMode } from './components/collection-picker';
@@ -22,6 +32,7 @@ import { useInterfaceLanguage } from './use-interface-language';
 import { useReadingLayout, type ReadingLayout } from './use-reading-layout';
 import { useTranslationChoice } from './use-translation';
 import { useFonts } from './use-fonts';
+import { useTheme } from './use-theme';
 import type { PracticeFilter } from './use-api';
 
 type StudyView = 'words' | 'practice' | 'settings';
@@ -48,6 +59,7 @@ export function App() {
   const appliedRequest = useRef<typeof locationRequest | null>(null);
   const mobile = useMobileLayout();
   const { language, changeLanguage, saveError } = useInterfaceLanguage();
+  const { theme, changeTheme, saveError: themeSaveError } = useTheme();
   const { layout, changeLayout, saveError: layoutSaveError } = useReadingLayout();
   const { quranFont, urduFont, changeFont, saveError: fontSaveError } = useFonts();
   const {
@@ -87,6 +99,11 @@ export function App() {
   );
   // Word-type filters only apply to the word-by-word grammar layout.
   const filtering = layout.grammar && pos !== 'all';
+  const themeOptions: { id: ThemePreference; label: string; Icon: typeof Sun }[] = [
+    { id: 'system', label: ui.themeSystem, Icon: Monitor },
+    { id: 'light', label: ui.themeLight, Icon: Sun },
+    { id: 'dark', label: ui.themeDark, Icon: Moon },
+  ];
   const layoutSwitches: { key: keyof ReadingLayout; label: string; help: string }[] = [
     { key: 'grammar', label: ui.showGrammarAnalysis, help: ui.showGrammarAnalysisHelp },
     { key: 'translation', label: ui.showTranslation, help: ui.showTranslationHelp },
@@ -419,6 +436,33 @@ export function App() {
                 </button>
               </div>
               {saveError && (
+                <p className="settings-error" role="alert">
+                  {ui.preferenceError}
+                </p>
+              )}
+            </div>
+            <div className="settings-card">
+              <h2 id="theme-title">{ui.theme}</h2>
+              <p>{ui.themeHelp}</p>
+              <div
+                className="language-options theme-options"
+                role="group"
+                aria-labelledby="theme-title"
+              >
+                {themeOptions.map(({ id, label, Icon }) => (
+                  <button
+                    type="button"
+                    key={id}
+                    data-theme-option={id}
+                    aria-pressed={theme === id}
+                    onClick={() => changeTheme(id)}
+                  >
+                    <Icon size={18} aria-hidden="true" />
+                    <span>{label}</span>
+                  </button>
+                ))}
+              </div>
+              {themeSaveError && (
                 <p className="settings-error" role="alert">
                   {ui.preferenceError}
                 </p>

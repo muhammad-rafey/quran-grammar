@@ -23,8 +23,12 @@ export function topVisibleAyah(viewable: readonly ViewableAyah[]): number | null
   return top ? top.item.number : null;
 }
 
+/** Maps an ayah number to its list index (one cell per ayah unless the list groups ayahs). */
+export type AyahIndex = (ayah: number) => number;
+const oneCellPerAyah: AyahIndex = (ayah) => ayah - 1;
+
 export class AyahJump {
-  private target: { surah: number; index: number } | null = null;
+  private target: { surah: number; ayah: number } | null = null;
   private failures = 0;
   private confirmations = 0;
   private readonly maxFailures: number;
@@ -37,7 +41,7 @@ export class AyahJump {
 
   /** Request a jump; the chapter may still be loading, so the target remembers its Surah. */
   request(surah: number, ayah: number) {
-    this.target = { surah, index: Math.max(0, Math.floor(ayah) - 1) };
+    this.target = { surah, ayah: Math.max(1, Math.floor(ayah)) };
     this.failures = 0;
     this.confirmations = 0;
   }
@@ -52,29 +56,39 @@ export class AyahJump {
     return this.target !== null && this.target.surah === surah;
   }
 
+  /** The ayah a pending jump on this Surah's list is heading for. */
+  targetAyah(surah: number): number | null {
+    return this.target && this.target.surah === surah ? this.target.ayah : null;
+  }
+
   /**
    * The list index to scroll to on this Surah's list, clamped to its length. A request made for
    * another chapter is never applied to this one (no stale chapter jumps).
    */
-  indexFor(surah: number, itemCount: number): number | null {
+  indexFor(surah: number, itemCount: number, indexOf: AyahIndex = oneCellPerAyah): number | null {
     if (!this.target || this.target.surah !== surah || itemCount <= 0) return null;
-    return Math.min(this.target.index, itemCount - 1);
+    return Math.min(Math.max(0, indexOf(this.target.ayah)), itemCount - 1);
   }
 
   /**
    * A new list instance is being mounted for this Surah. Returns the ayah index its slice starts
    * at: the pending target, so a far ayah renders first instead of every ayah before it.
    */
-  mount(surah: number, itemCount: number): number {
-    return this.indexFor(surah, itemCount) ?? 0;
+  mount(surah: number, itemCount: number, indexOf?: AyahIndex): number {
+    return this.indexFor(surah, itemCount, indexOf) ?? 0;
   }
 
   /**
    * Where to scroll inside a slice starting at `start`: an index into the slice, or 'remount'
    * when the target lies before the slice. Null when there is nothing to do for this Surah.
    */
-  sliceIndex(surah: number, itemCount: number, start: number): number | 'remount' | null {
-    const index = this.indexFor(surah, itemCount);
+  sliceIndex(
+    surah: number,
+    itemCount: number,
+    start: number,
+    indexOf?: AyahIndex,
+  ): number | 'remount' | null {
+    const index = this.indexFor(surah, itemCount, indexOf);
     if (index === null) return null;
     return index < start ? 'remount' : index - start;
   }

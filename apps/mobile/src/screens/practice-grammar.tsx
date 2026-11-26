@@ -6,7 +6,8 @@ import { AppIcon } from '@/components/app-icon';
 import { Action, Label } from '@/components/study-ui';
 import { usePracticeQuestions, useTopics } from '@/state/content-hooks';
 import { useInterface } from '@/state/preferences-provider';
-import { card, colors, lineEndSlack, radius, spacing } from '@/theme/tokens';
+import { cardStyle, lineEndSlack, radius, spacing } from '@/theme/tokens';
+import { themed, useTheme } from '@/theme/theme';
 import { useTypography } from '@/theme/typography';
 import { QuizRunner } from './quick-practice';
 
@@ -115,6 +116,8 @@ export function LoadState({
   backLabel?: string;
 }) {
   const { ui, labelStyle } = useInterface();
+  const { colors } = useTheme();
+  const card = cardStyle(colors);
   return (
     <View style={{ ...card, gap: spacing.md, alignItems: 'stretch' }}>
       {loading || !error ? (
@@ -153,6 +156,8 @@ function TopicIndex({
   onOpenTopic: (id: string) => void;
 }) {
   const { ui, count, labelStyle, labelText, controlRow, isUrdu } = useInterface();
+  const { colors, scheme } = useTheme();
+  const card = cardStyle(colors);
   const [query, setQuery] = useState('');
   const [limit, setLimit] = useState(pageSize);
   const normalized = normalizeText(query);
@@ -218,6 +223,8 @@ function TopicIndex({
           }}
           placeholder={ui.searchTopics}
           placeholderTextColor={colors.muted}
+          selectionColor={colors.primary}
+          keyboardAppearance={scheme}
           accessibilityLabel={ui.searchTopics}
           autoCorrect={false}
           autoCapitalize="none"
@@ -278,6 +285,9 @@ function TopicRow({
 }) {
   const { ui, count, labelText, controlRow, isUrdu } = useInterface();
   const type = useTypography();
+  const { colors } = useTheme();
+  const card = cardStyle(colors);
+  const styles = practiceStyles(colors);
   const questions = `${count(topic.questionCount)} ${ui.topicQuestions}`;
   return (
     <View
@@ -348,12 +358,15 @@ function TopicRow({
   );
 }
 
-const styles = {
-  english: {
-    fontSize: 14,
-    lineHeight: 20,
-    color: colors.muted,
-    textAlign: 'left',
-    writingDirection: 'ltr',
-  },
-} as const;
+const practiceStyles = themed(
+  (colors) =>
+    ({
+      english: {
+        fontSize: 14,
+        lineHeight: 20,
+        color: colors.muted,
+        textAlign: 'left',
+        writingDirection: 'ltr',
+      },
+    }) as const,
+);

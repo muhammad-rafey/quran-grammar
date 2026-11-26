@@ -8,27 +8,41 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import { ActivityIndicator, I18nManager, View, type TextStyle, type ViewStyle } from 'react-native';
+import {
+  ActivityIndicator,
+  I18nManager,
+  View,
+  useColorScheme,
+  type TextStyle,
+  type ViewStyle,
+} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as SystemUI from 'expo-system-ui';
 import {
   defaultFontIds,
+  defaultThemePreference,
   formatCount,
   getUiStrings,
+  isThemePreference,
   isUiLanguage,
+  resolveColorScheme,
   resolveFont,
   resolveTranslationId,
   type FontRole,
   type ReadingFont,
+  type ThemePreference,
   type UiLanguage,
   type UiStrings,
 } from '@quran-grammar/core';
-import { colors, urduTextStyle } from '@/theme/tokens';
+import { urduTextStyle } from '@/theme/tokens';
+import { ThemeContext, paletteFor, type Theme } from '@/theme/theme';
 import { physicalRowDirection } from '@/theme/physical-row';
 import { isFontReady, loadReadingFont } from '@/theme/font-loading';
 
 const languageKey = 'quran-grammar:interface-language';
 const readingLayoutKey = 'quran-grammar:reading-layout';
 const translationKey = 'quran-grammar:translation';
+const themeKey = 'quran-grammar:theme';
 const fontKeys: Record<FontRole, string> = {
   quran: 'quran-grammar:quran-font',
   urdu: 'quran-grammar:urdu-font',
@@ -139,6 +153,11 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
   const [translationError, setTranslationError] = useState(false);
   const [fontIds, updateFontIds] = useState<Record<FontRole, string>>(defaultFontIds);
   const [fontSaveError, setFontSaveError] = useState(false);
+  const [themePreference, updateThemePreference] =
+    useState<ThemePreference>(defaultThemePreference);
+  const [themeSaveError, setThemeSaveError] = useState(false);
+  // System follows the device setting live (null when the platform does not report one).
+  const systemScheme = useColorScheme();
   const pending = useRef(false);
   const layoutRef = useRef(defaultReadingLayout);
   useEffect(() => {
@@ -149,12 +168,15 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
       translationKey,
       fontKeys.quran,
       fontKeys.urdu,
+      themeKey,
     ])
       .then(async (entries) => {
         if (!active) return;
         const saved = new Map(entries);
         const savedLanguage = saved.get(languageKey) ?? null;
         if (isUiLanguage(savedLanguage)) updateLanguage(savedLanguage);
+        const savedTheme = saved.get(themeKey) ?? null;
+        if (isThemePreference(savedTheme)) updateThemePreference(savedTheme);
         const layout = parseReadingLayout(saved.get(readingLayoutKey) ?? null);
         layoutRef.current = layout;
         updateReadingLayout(layout);
@@ -232,6 +254,31 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
       setFontSaveError(true);
     }
   }, []);
+  const setThemePreference = useCallback(async (next: ThemePreference) => {
+    updateThemePreference(next);
+    setThemeSaveError(false);
+    try {
+      await AsyncStorage.setItem(themeKey, next);
+    } catch {
+      setThemeSaveError(true);
+    }
+  }, []);
+  const scheme = resolveColorScheme(themePreference, systemScheme);
+  const colors = paletteFor(scheme);
+  const theme = useMemo<Theme>(
+    () => ({
+      scheme,
+      colors,
+      preference: themePreference,
+      setPreference: setThemePreference,
+      saveError: themeSaveError,
+    }),
+    [scheme, colors, themePreference, setThemePreference, themeSaveError],
+  );
+  // The root view behind every screen (seen during transitions and behind the keyboard).
+  useEffect(() => {
+    SystemUI.setBackgroundColorAsync(colors.background).catch(() => undefined);
+  }, [colors]);
   const setQuranFont = useCallback((id: string) => setFont('quran', id), [setFont]);
   const setUrduFont = useCallback((id: string) => setFont('urdu', id), [setFont]);
   const quran = useActiveFont('quran', fontIds.quran);
@@ -314,6 +361,7 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
     quran.failed,
     urdu.failed,
     fontSaveError,
+    colors,
   ]);
 
   if (!hydrated)
@@ -322,7 +370,11 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
         <ActivityIndicator color={colors.primary} />
       </View>
     );
-  return <PreferencesContext value={value}>{children}</PreferencesContext>;
+  return (
+    <ThemeContext value={theme}>
+      <PreferencesContext value={value}>{children}</PreferencesContext>
+    </ThemeContext>
+  );
 }
 
 export function useInterface() {
