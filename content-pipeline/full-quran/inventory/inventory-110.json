@@ -1,0 +1,16 @@
+{
+ "surah": 110,
+ "corpusSpellingDifferences": [
+  {
+   "id": "110:2:7",
+   "quranCom": "أَفْوَاجًۭا",
+   "corpus": "أَفْوَاجًا"
+  }
+ ],
+ "excludedPauseSigns": [
+  {
+   "id": "110:3:4",
+   "apiText": "وَٱسْتَغْفِرْهُ ۚ"
+  }
+ ]
+}

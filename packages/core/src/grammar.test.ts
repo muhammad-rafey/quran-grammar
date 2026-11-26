@@ -12,8 +12,17 @@ import {
   grammarTopicSources,
   studies,
 } from './content';
-import { gradePracticeAnswer, normalizeText } from './index';
+import {
+  exampleQuranText,
+  gradePracticeAnswer,
+  normalizeText,
+  practiceOptionText,
+  resolveFont,
+  splitAyahAtWord,
+  translationIds,
+} from './index';
 
+const studyBySurah = new Map(studies.map((study) => [study.surah.number, study]));
 const words = new Map(studies.flatMap((study) => study.words.map((word) => [word.id, word])));
 const ruleIds = new Set(studies.flatMap((study) => study.rules.map((rule) => rule.id)));
 const grammar = getGrammarContent();
@@ -158,7 +167,14 @@ test('bundled repository resolves topic details, summaries and practice sets', a
     const word = words.get(example.wordId)!;
     assert.equal(example.wordArabic, word.arabic);
     assert.ok(example.ayahArabic.split(' ').includes(word.arabic));
+    assert.equal(example.wordArabicIndoPak, word.arabicIndoPak);
+    const ayahWords = studyBySurah.get(example.surah)!.words.filter((w) => w.ayah === example.ayah);
+    assert.equal(example.ayahArabicIndoPak, ayahWords.map((w) => w.arabicIndoPak).join(' '));
     assert.equal(`${example.surah}:${example.ayah}`, example.wordId.split(':').slice(0, 2).join(':'));
+    // Examples carry the ayah's six translations, in catalog order, from the lesson itself.
+    const ayah = studyBySurah.get(example.surah)!.ayahs[example.ayah - 1];
+    assert.deepEqual(Object.keys(example.translations), translationIds);
+    assert.deepEqual(example.translations, ayah.translations);
   }
   assert.ok(detail.examples.every((example) => example.kind === 'annotated' && example.noteUrdu));
   assert.ok(detail.quranicExamples.every((example) => example.kind === 'quranic'));
@@ -168,6 +184,81 @@ test('bundled repository resolves topic details, summaries and practice sets', a
   const practice = await repository.getPracticeQuestions({ topicId: first.id });
   assert.equal(practice.length, first.questionCount);
   assert.deepEqual(await repository.getPracticeQuestions({ topicId: 'nope' }), []);
-  assert.equal(await repository.getStudy(3), null);
+  assert.equal(await repository.getStudy(115), null);
   assert.equal((await repository.getStudy(1))!.words.length, 29);
+  assert.equal((await repository.getStudy(3))!.words.length, 3481);
+});
+
+test('topic examples and word options carry the IndoPak text for IndoPak fonts', async () => {
+  const repository = getBundledRepository();
+  const indoPak = resolveFont('quran', 'al-qalam-quran-majeed');
+  const uthmani = resolveFont('quran', null);
+  let examples = 0;
+  for (const summary of await repository.listTopics()) {
+    const topic = (await repository.getTopic(summary.id))!;
+    for (const example of [...topic.examples, ...topic.quranicExamples]) {
+      examples += 1;
+      const position = Number(example.wordId.split(':')[2]);
+      const ayahWords = studyBySurah
+        .get(example.surah)!
+        .words.filter((word) => word.ayah === example.ayah);
+      // The highlighted word is the occurrence itself (exact offset), in both orthographies.
+      for (const [font, field] of [
+        [indoPak, 'arabicIndoPak'],
+        [uthmani, 'arabic'],
+      ] as const) {
+        const text = exampleQuranText(example, font);
+        const parts = splitAyahAtWord(text.ayah, text.word, position);
+        const before = ayahWords.slice(0, position - 1).map((word) => word[field]).join(' ');
+        const after = ayahWords.slice(position).map((word) => word[field]).join(' ');
+        assert.deepEqual(parts, { before, word: words.get(example.wordId)![field], after }, example.wordId);
+      }
+      assert.ok(!exampleQuranText(example, indoPak).ayah.includes('\u0671'), example.wordId);
+    }
+  }
+  assert.ok(examples > 1000, `${examples} examples`);
+  let wordOptions = 0;
+  for (const filter of [{ set: 'fatihah' as const }, { topicId: grammar.topics[0].id }]) {
+    for (const question of await repository.getPracticeQuestions(filter))
+      for (const option of question.options) {
+        const word = option.language === 'ar' ? words.get(option.id) : undefined;
+        if (word && word.arabic === option.text) {
+          wordOptions += 1;
+          assert.equal(option.textIndoPak, word.arabicIndoPak, option.id);
+          assert.equal(practiceOptionText(option, indoPak), word.arabicIndoPak);
+          assert.equal(practiceOptionText(option, uthmani), word.arabic);
+        } else assert.equal(option.textIndoPak, undefined, option.id);
+        assert.deepEqual(Object.keys(option), [
+          'id',
+          'text',
+          'language',
+          ...(option.textIndoPak ? ['textIndoPak'] : []),
+        ]);
+      }
+  }
+  assert.ok(wordOptions >= 3, `${wordOptions} word options`);
+  // Stored content stays free of display text: the IndoPak text is added when read.
+  assert.ok(grammar.questions.every((question) => question.options.every((o) => !('textIndoPak' in o))));
+});
+
+test('splitAyahAtWord finds words containing spaces and repeated words', () => {
+  const ayah = 'وَ عَمِلُوا الصّٰلِحٰتِ وَ عَمِلُوا';
+  assert.deepEqual(splitAyahAtWord(ayah, 'وَ عَمِلُوا', 1), {
+    before: '',
+    word: 'وَ عَمِلُوا',
+    after: 'الصّٰلِحٰتِ وَ عَمِلُوا',
+  });
+  assert.deepEqual(splitAyahAtWord(ayah, 'الصّٰلِحٰتِ', 2), {
+    before: 'وَ عَمِلُوا',
+    word: 'الصّٰلِحٰتِ',
+    after: 'وَ عَمِلُوا',
+  });
+  assert.deepEqual(splitAyahAtWord(ayah, 'وَ عَمِلُوا', 3), {
+    before: 'وَ عَمِلُوا الصّٰلِحٰتِ',
+    word: 'وَ عَمِلُوا',
+    after: '',
+  });
+  // Only whole words match; a missing word gives null.
+  assert.equal(splitAyahAtWord(ayah, 'عَمِل', 1), null);
+  assert.equal(splitAyahAtWord(ayah, '', 1), null);
 });

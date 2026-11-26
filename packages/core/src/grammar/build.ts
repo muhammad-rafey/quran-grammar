@@ -7,9 +7,9 @@
  * from a word occurrence in the study data.
  */
 import { normalizeText, urduNumber } from '../search';
-import type { PracticeOption, PracticeQuestion } from '../practice';
+import { toResolvedOption, type PracticeOption, type PracticeQuestion } from '../practice';
 import type { PartOfSpeech, Rule, StudyData, Word } from '../types';
-import { toResolvedExample, toTopicDetail, toTopicSummary } from './resolve';
+import { joinIndoPak, toResolvedExample, toTopicDetail, toTopicSummary } from './resolve';
 import type {
   GrammarContent,
   GrammarTopicDetail,
@@ -647,9 +647,12 @@ export interface ExampleWordContext {
   readonly surah: number;
   readonly ayah: number;
   readonly wordArabic: string;
+  readonly wordArabicIndoPak: string;
   readonly meaningUrdu: string;
   readonly ayahArabic: string;
-  readonly translationUrdu: string;
+  readonly ayahArabicIndoPak: string;
+  /** The ayah's translations keyed by translation id. */
+  readonly translations: Readonly<Record<string, string>>;
 }
 
 /** Word-context lookup over study data (ayah Arabic = the ayah's words joined by spaces). */
@@ -662,17 +665,34 @@ export function createWordContextLookup(
     if (!occurrence) return null;
     const { study, word } = occurrence;
     const ayah = study.ayahs.find((entry) => entry.number === word.ayah);
+    const ayahWords = index.ayahWords.get(ayahKey(study.surah.number, word.ayah)) ?? [];
     return {
       surah: study.surah.number,
       ayah: word.ayah,
       wordArabic: word.arabic,
+      wordArabicIndoPak: word.arabicIndoPak ?? '',
       meaningUrdu: word.meaningUrdu,
-      ayahArabic: (index.ayahWords.get(ayahKey(study.surah.number, word.ayah)) ?? [])
-        .map((entry) => entry.arabic)
-        .join(' '),
-      translationUrdu: ayah?.translationUrdu ?? '',
+      ayahArabic: ayahWords.map((entry) => entry.arabic).join(' '),
+      ayahArabicIndoPak: joinIndoPak(ayahWords.map((entry) => entry.arabicIndoPak)),
+      translations: ayah?.translations ?? {},
     };
   };
+}
+
+/**
+ * Display-time practice options for the bundled repository: each Arabic option that is a word
+ * occurrence gets the word's IndoPak text (`toResolvedOption`, as the SQL repositories do).
+ */
+export function createPracticeResolver(
+  studies: readonly StudyData[],
+): (question: PracticeQuestion) => PracticeQuestion {
+  const index = indexStudies(studies);
+  return (question) => ({
+    ...question,
+    options: question.options.map((option) =>
+      toResolvedOption(option, index.words.get(option.id)?.word),
+    ),
+  });
 }
 
 export function questionCounts(content: GrammarContent): Map<string, number> {

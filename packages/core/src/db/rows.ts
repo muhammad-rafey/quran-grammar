@@ -1,7 +1,16 @@
+import { translationEditions } from '../translations';
 import type { PartOfSpeech, StudyData } from '../types';
 
-/** Rows of the ten study tables (one StudyData per Surah). */
+/** Rows of the twelve study tables (one StudyData per Surah, plus the translation catalog). */
 export interface StudyRows {
+  /** The offered translations (`translationEditions`), independent of the Surahs. */
+  translations: {
+    id: string;
+    position: number;
+    resource_id: number;
+    name_english: string;
+    name_urdu: string;
+  }[];
   surahs: {
     number: number;
     name_urdu: string;
@@ -12,9 +21,13 @@ export interface StudyRows {
   ayahs: {
     surah: number;
     number: number;
-    translation_urdu: string;
-    theme_urdu: string;
-    tafsir_urdu: string;
+  }[];
+  ayah_translations: {
+    surah: number;
+    ayah: number;
+    position: number;
+    translation_id: string;
+    text: string;
   }[];
   rules: {
     surah: number;
@@ -37,6 +50,7 @@ export interface StudyRows {
     ayah: number;
     position: number;
     arabic: string;
+    arabic_indopak: string | null;
     meaning_urdu: string;
     pos: PartOfSpeech;
     pos_urdu: string;
@@ -78,8 +92,16 @@ export interface StudyRows {
 
 export function studiesToRows(studies: readonly StudyData[]): StudyRows {
   const rows: StudyRows = {
+    translations: translationEditions.map((edition, index) => ({
+      id: edition.id,
+      position: index + 1,
+      resource_id: edition.resourceId,
+      name_english: edition.nameEnglish,
+      name_urdu: edition.nameUrdu,
+    })),
     surahs: [],
     ayahs: [],
+    ayah_translations: [],
     rules: [],
     roots: [],
     words: [],
@@ -100,13 +122,16 @@ export function studiesToRows(studies: readonly StudyData[]): StudyRows {
       word_count: study.surah.wordCount,
     });
     for (const ayah of study.ayahs) {
-      rows.ayahs.push({
-        surah,
-        number: ayah.number,
-        translation_urdu: ayah.translationUrdu,
-        theme_urdu: ayah.themeUrdu,
-        tafsir_urdu: ayah.tafsirUrdu,
-      });
+      rows.ayahs.push({ surah, number: ayah.number });
+      Object.entries(ayah.translations).forEach(([id, text], index) =>
+        rows.ayah_translations.push({
+          surah,
+          ayah: ayah.number,
+          position: index + 1,
+          translation_id: id,
+          text,
+        }),
+      );
       ayah.phrases.forEach((phrase, index) => {
         rows.phrases.push({
           id: phrase.id,
@@ -147,6 +172,7 @@ export function studiesToRows(studies: readonly StudyData[]): StudyRows {
         ayah: word.ayah,
         position: word.position,
         arabic: word.arabic,
+        arabic_indopak: word.arabicIndoPak ?? null,
         meaning_urdu: word.meaningUrdu,
         pos: word.pos,
         pos_urdu: word.posUrdu,
@@ -205,6 +231,7 @@ export function group<T>(
 /** Rebuild StudyData exactly (including key and list order) from database rows. */
 export function rowsToStudies(rows: StudyRows): StudyData[] {
   const ayahsBySurah = group(rows.ayahs, (row) => row.surah);
+  const translationsByAyah = group(rows.ayah_translations, (row) => `${row.surah}:${row.ayah}`);
   const wordsBySurah = group(rows.words, (row) => row.surah);
   const rulesBySurah = group(rows.rules, (row) => row.surah);
   const rootsBySurah = group(rows.roots, (row) => row.surah);
@@ -234,6 +261,7 @@ export function rowsToStudies(rows: StudyRows): StudyData[] {
           ayah: word.ayah,
           position: word.position,
           arabic: word.arabic,
+          ...(word.arabic_indopak === null ? {} : { arabicIndoPak: word.arabic_indopak }),
           meaningUrdu: word.meaning_urdu,
           pos: word.pos,
           posUrdu: word.pos_urdu,
@@ -255,9 +283,11 @@ export function rowsToStudies(rows: StudyRows): StudyData[] {
           .sort((a, b) => a.number - b.number)
           .map((ayah) => ({
             number: ayah.number,
-            translationUrdu: ayah.translation_urdu,
-            themeUrdu: ayah.theme_urdu,
-            tafsirUrdu: ayah.tafsir_urdu,
+            translations: Object.fromEntries(
+              [...(translationsByAyah.get(`${n}:${ayah.number}`) ?? [])]
+                .sort(byPosition)
+                .map((row) => [row.translation_id, row.text]),
+            ),
             phrases: [...(phrasesByAyah.get(`${n}:${ayah.number}`) ?? [])]
               .sort(byPosition)
               .map((phrase) => ({

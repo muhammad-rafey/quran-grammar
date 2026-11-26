@@ -19,10 +19,13 @@ import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   formatCount,
+  getTranslationEdition,
   matchesWord,
   getJuzForAyah,
   getSurahTitle,
   juzCatalog,
+  translationText,
+  quranText,
   type Ayah,
   type PartOfSpeechFilter,
   type StudyData,
@@ -33,7 +36,7 @@ import { AppIcon } from '@/components/app-icon';
 import { Action, DataStatus, InitialDataState, Label, Paragraph } from '@/components/study-ui';
 import { useStudy } from '@/state/study-provider';
 import { useInterface } from '@/state/preferences-provider';
-import { card, colors, lineEndSlack, radius, row, spacing } from '@/theme/tokens';
+import { card, colors, lineEndSlack, quranWordSlack, radius, row, spacing } from '@/theme/tokens';
 import { fontStyles, useTypography, type Typography } from '@/theme/typography';
 import { FloatingNavigation, type StudyView } from './study-navigation';
 import { StudyPicker, type BrowseMode, type PickerKind } from './study-picker';
@@ -47,10 +50,13 @@ type CardChrome = {
   language: UiLanguage;
   ayahLabel: string;
   wordStudy: string;
+  /** "Translation: <translator>", shown under each ayah's translation. */
+  translationCredit: string;
   controlRow: ViewStyle;
   fonts: StudyFonts;
   ayahNumberText: StyleProp<TextStyle>;
   ayahCaption: StyleProp<TextStyle>;
+  creditText: StyleProp<TextStyle>;
 };
 
 const isAndroid = Platform.OS === 'android';
@@ -66,8 +72,9 @@ let listInstances = 0;
 const keepVisibleContent = { minIndexForVisible: 0 };
 
 export default function StudyScreen() {
-  const { study, selectedSurah, selectSurah } = useStudy();
-  const { ui, count, language, labelText, controlRow, readingLayout } = useInterface();
+  const { study, selectedSurah, selectSurah, focus } = useStudy();
+  const { ui, count, language, isUrdu, labelText, controlRow, readingLayout, translationId } =
+    useInterface();
   const typography = useTypography();
   const router = useRouter();
   const insets = useSafeAreaInsets();
@@ -94,8 +101,9 @@ export default function StudyScreen() {
   const jumpFailed = useRef(false);
   const listSurah = study?.surah.number ?? null;
   const itemCount = study?.ayahs.length ?? 0;
-  // A new list instance per Surah, reading layout or fonts (different cell heights) and far jump.
-  const layoutKey = `${grammar ? 'grammar' : 'plain'}:${showTranslation ? 'translation' : 'arabic'}:${typography.quranFont.id}:${typography.urduFont.id}`;
+  // A new list instance per Surah, reading layout, translation or fonts (different cell heights)
+  // and far jump.
+  const layoutKey = `${grammar ? 'grammar' : 'plain'}:${showTranslation ? `translation-${translationId}` : 'arabic'}:${typography.quranFont.id}:${typography.urduFont.id}`;
   // Unique per list instance (returning to a chapter must not reuse an old instance's slice).
   const listKey = useMemo(
     () => `${listSurah}:${layoutKey}:${generation}:${(listInstances += 1)}`,
@@ -165,6 +173,20 @@ export default function StudyScreen() {
     }
   }, []);
   useEffect(() => clearJumpTimer, [clearJumpTimer]);
+  // A word screen (deep link, or the reader moving to another word there) asks the study list to
+  // show that word's ayah with the word selected. A different chapter's list mounts at the target.
+  const appliedFocus = useRef(0);
+  useEffect(() => {
+    if (!focus || focus.seq === appliedFocus.current) return;
+    appliedFocus.current = focus.seq;
+    setSelectedWord(focus.wordId ? { id: focus.wordId, ayah: focus.ayah } : null);
+    const { surah, ayah: current } = live.current;
+    if (surah === focus.surah && current === focus.ayah) return;
+    clearJumpTimer();
+    jump.request(focus.surah, focus.ayah);
+    setAyahSelection({ surah: focus.surah, number: focus.ayah });
+    if (surah === focus.surah) runJump();
+  }, [focus, jump, runJump, clearJumpTimer]);
   useEffect(() => {
     if (view === 'words') runJump();
   }, [view, runJump]);
@@ -194,7 +216,7 @@ export default function StudyScreen() {
   const openWord = useCallback(
     (word: Word) => {
       setSelectedWord({ id: word.id, ayah: word.ayah });
-      router.push({ pathname: '/word/[id]', params: { id: word.id } });
+      router.push({ pathname: '/word/[id]', params: { id: word.id, source: 'study' } });
     },
     [router],
   );
@@ -208,18 +230,20 @@ export default function StudyScreen() {
     }
     return byAyah;
   }, [study]);
-  const chrome = useMemo<CardChrome>(
-    () => ({
+  const chrome = useMemo<CardChrome>(() => {
+    const edition = getTranslationEdition(translationId);
+    return {
       language,
       ayahLabel: ui.ayah,
       wordStudy: ui.wordStudy,
+      translationCredit: `${ui.translator}: ${isUrdu ? edition.nameUrdu : edition.nameEnglish}`,
       controlRow,
       fonts: fontStyles(typography, studyFonts),
       ayahNumberText: [labelText(13), styles.ayahNumberText],
       ayahCaption: [labelText(12), styles.ayahCaption],
-    }),
-    [language, ui, labelText, controlRow, typography],
-  );
+      creditText: [labelText(12), styles.credit],
+    };
+  }, [language, isUrdu, ui, labelText, controlRow, typography, translationId]);
   const selectedId = selectedWord?.id ?? null;
   const selectedAyah = selectedWord?.ayah ?? null;
   const renderItem = useCallback<ListRenderItem<Ayah>>(
@@ -234,6 +258,7 @@ export default function StudyScreen() {
           pos={pos}
           showMeanings={showMeanings}
           showTranslation={showTranslation}
+          translationId={translationId}
           grammar={grammar}
           chrome={chrome}
           onOpen={openWord}
@@ -247,6 +272,7 @@ export default function StudyScreen() {
       pos,
       showMeanings,
       showTranslation,
+      translationId,
       grammar,
       chrome,
       openWord,
@@ -266,7 +292,8 @@ export default function StudyScreen() {
   const listHeader = useMemo(
     () => (
       <View style={styles.listHeader}>
-        <DataStatus />
+        {/* Without a chapter, InitialDataState below already shows the loading or error state. */}
+        {study ? <DataStatus /> : null}
         {grammar && filtersOpen && (
           <View style={styles.filterPanel} testID="filter-panel">
             <Label style={{ fontWeight: '600' }}>{ui.wordType}</Label>
@@ -314,7 +341,7 @@ export default function StudyScreen() {
         )}
       </View>
     ),
-    [grammar, filtersOpen, ui, controlRow, filters, pos, labelText, showMeanings],
+    [study, grammar, filtersOpen, ui, controlRow, filters, pos, labelText, showMeanings],
   );
   const listContent = useMemo(
     () => [styles.listContent, { paddingBottom: Math.max(insets.bottom, 12) + 100 }],
@@ -368,7 +395,7 @@ export default function StudyScreen() {
                 <Label muted style={{ fontSize: 11, lineHeight: 18 }}>
                   {mode === 'surah' || !currentJuz
                     ? ui.surah
-                    : `${ui.juz} ${count(currentJuz.number)}${currentJuz.partial ? ` · ${ui.partialPreview}` : ''}`}
+                    : `${ui.juz} ${count(currentJuz.number)}`}
                 </Label>
                 <Label style={{ fontSize: 18, fontWeight: '700' }}>
                   {getSurahTitle(selectedSurah, language)}
@@ -405,6 +432,11 @@ export default function StudyScreen() {
                 accessibilityRole="button"
                 accessibilityLabel={ui.filters}
                 accessibilityState={{ expanded: filtersOpen }}
+                accessibilityValue={
+                  filtersActive
+                    ? { text: filters.find((filter) => filter.value === pos)?.label ?? '' }
+                    : undefined
+                }
                 onPress={() => setFiltersOpen(!filtersOpen)}
                 style={({ pressed }) => [
                   styles.filterButton,
@@ -512,6 +544,8 @@ type AyahCardProps = {
   pos: PartOfSpeechFilter;
   showMeanings: boolean;
   showTranslation: boolean;
+  /** The selected ayah translation (shown when showTranslation and the ayah has its text). */
+  translationId: string;
   grammar: boolean;
   chrome: CardChrome;
   onOpen: (word: Word) => void;
@@ -525,10 +559,12 @@ const AyahCard = memo(function AyahCard({
   pos,
   showMeanings,
   showTranslation,
+  translationId,
   grammar,
   chrome,
   onOpen,
 }: AyahCardProps) {
+  const translation = showTranslation ? translationText(ayah.translations, translationId) : '';
   if (!grammar) {
     return (
       <View style={styles.plainAyah} testID={`ayah-${ayah.number}`}>
@@ -541,12 +577,18 @@ const AyahCard = memo(function AyahCard({
               style={word.id === selectedId ? styles.plainSelected : undefined}
             >
               {index > 0 ? ' ' : ''}
-              {word.arabic}
+              {quranText(word, chrome.fonts.quranFont)}
             </Text>
           ))}
-          <Text style={styles.ayahEnd}>{` ۝${formatCount(ayah.number, 'ur')}`}</Text>
+          {/* A no-break space keeps the ayah marker with the last word (it wrapped alone). */}
+          <Text style={styles.ayahEnd}>{`\u00a0۝${formatCount(ayah.number, 'ur')}`}</Text>
         </Text>
-        {showTranslation && !!ayah.translationUrdu && <Paragraph>{ayah.translationUrdu}</Paragraph>}
+        {!!translation && (
+          <View style={styles.translationBody}>
+            <Paragraph>{translation}</Paragraph>
+            <Text style={chrome.creditText}>{chrome.translationCredit}</Text>
+          </View>
+        )}
       </View>
     );
   }
@@ -574,9 +616,10 @@ const AyahCard = memo(function AyahCard({
           />
         ))}
       </View>
-      {showTranslation && !!ayah.translationUrdu && (
-        <View style={styles.translation}>
-          <Paragraph>{ayah.translationUrdu}</Paragraph>
+      {!!translation && (
+        <View style={[styles.translation, styles.translationBody]}>
+          <Paragraph>{translation}</Paragraph>
+          <Text style={chrome.creditText}>{chrome.translationCredit}</Text>
         </View>
       )}
     </View>
@@ -605,7 +648,10 @@ const WordToken = memo(function WordToken({
     <Pressable
       testID={`word-${word.id}`}
       accessibilityRole="button"
-      accessibilityLabel={`${word.arabic}, ${word.meaningUrdu}, ${word.posUrdu}, ${wordStudy}`}
+      accessibilityLabel={[quranText(word, fonts.quranFont), word.meaningUrdu, word.posUrdu]
+        .filter(Boolean)
+        .join('، ')}
+      accessibilityHint={wordStudy}
       accessibilityState={{ selected }}
       onPress={() => onOpen(word)}
       style={({ pressed }) => [
@@ -615,14 +661,18 @@ const WordToken = memo(function WordToken({
         !matched && styles.tokenDimmed,
       ]}
     >
-      <Text style={fonts.tokenArabic}>{word.arabic}</Text>
-      {showMeaning && <Text style={fonts.tokenMeaning}>
+      <Text style={fonts.tokenArabic}>
+        {quranText(word, fonts.quranFont)}
+        {quranWordSlack}
+      </Text>
+      {showMeaning && !!word.meaningUrdu && <Text style={fonts.tokenMeaning}>
           {word.meaningUrdu}
           {lineEndSlack}
         </Text>}
       {/* Stretch the label to the token: on Android a shrink-wrapped RTL label can be laid
-          out wider than it was measured, which clipped its last word (e.g. 56:2:2). */}
-      <View style={tone.wash}>
+          out wider than it was measured, which clipped its last word (e.g. 56:2:2). It sits at
+          the bottom so blocks without a meaning line up with their neighbours. */}
+      <View style={[tone.wash, styles.posLabel]}>
         <Text style={tone.text}>
           {word.posUrdu}
           {lineEndSlack}
@@ -648,6 +698,8 @@ function studyFonts(typography: Typography) {
       text: { ...posText, color },
     });
   return {
+    /** The Quran font in use: IndoPak fonts show the IndoPak text (see quranText). */
+    quranFont: typography.quranFont,
     ...StyleSheet.create({
       tokenArabic: { ...typography.arabic, textAlign: 'center' },
       tokenMeaning: { ...typography.small, color: colors.ink, textAlign: 'center', maxWidth: 180 },
@@ -735,6 +787,9 @@ const styles = StyleSheet.create({
   },
   ayahNumberText: { fontWeight: '700', textAlign: 'center' },
   ayahCaption: { color: colors.muted },
+  credit: { color: colors.muted, textAlign: 'right' },
+  translationBody: { gap: 2 },
+  posLabel: { marginTop: 'auto' },
   wordRow: { ...row, flexWrap: 'wrap', alignItems: 'stretch', gap: spacing.sm },
   translation: { borderTopWidth: 1, borderColor: colors.border, paddingTop: spacing.md },
   token: {

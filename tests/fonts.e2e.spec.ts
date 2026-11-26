@@ -1,5 +1,11 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
-import { defaultFontIds, fontsForRole, readingFonts, type ReadingFont } from '../packages/core/src/fonts';
+import {
+  defaultFontIds,
+  fontsForRole,
+  quranText,
+  readingFonts,
+  type ReadingFont,
+} from '../packages/core/src/fonts';
 
 // Every test receives a new browser context; reloads within a test retain its preferences.
 test.use({ storageState: { cookies: [], origins: [] } });
@@ -39,7 +45,12 @@ test('Quran and Urdu fonts are chosen in Settings, applied everywhere and persis
   page,
 }) => {
   await loadStudy(page);
-  const firstWord = (await page.locator('.quran-word .arabic').first().textContent())!;
+  // The first word's data: an IndoPak font previews its IndoPak text when the data has one.
+  const firstWord = (
+    (await (await page.request.get('/api/v1/surahs/1')).json()) as {
+      words: { arabic: string; arabicIndoPak?: string }[];
+    }
+  ).words[0]!;
   const translation = (await page.locator('.ayah-translation').first().textContent())!;
   const detail = page.locator('.word-detail');
   const explanation = detail.locator('.root-meaning p').first();
@@ -60,7 +71,9 @@ test('Quran and Urdu fonts are chosen in Settings, applied everywhere and persis
     for (const font of fontsForRole(role)) {
       // Each option previews the current chapter's first ayah in its own font.
       const preview = page.locator(`.font-option[data-font="${font.id}"] .font-preview-text`);
-      await expect(preview).toContainText(role === 'quran' ? firstWord : translation.slice(0, 12));
+      await expect(preview).toContainText(
+        role === 'quran' ? quranText(firstWord, font) : translation.slice(0, 12),
+      );
       await expectFamily(preview, font);
       if (font.coverageNote)
         await expect(page.locator(`.font-option[data-font="${font.id}"]`)).toContainText(
@@ -155,6 +168,133 @@ test('every registry font file loads when selected', async ({ page }) => {
       true,
     );
   }
+});
+
+/**
+ * Al-Fatihah in IndoPak orthography: Quran.com word field text_indopak (bidi controls and
+ * zero-width spaces removed), injected into the API response until the lessons carry it.
+ */
+const fatihahIndoPak: Readonly<Record<string, string>> = {
+  '1:1:1': 'بِسۡمِ',
+  '1:1:2': 'اللهِ',
+  '1:1:3': 'الرَّحۡمٰنِ',
+  '1:1:4': 'الرَّحِيۡمِ',
+  '1:2:1': 'اَلۡحَمۡدُ',
+  '1:2:2': 'لِلّٰهِ',
+  '1:2:3': 'رَبِّ',
+  '1:2:4': 'الۡعٰلَمِيۡنَۙ',
+  '1:3:1': 'الرَّحۡمٰنِ',
+  '1:3:2': 'الرَّحِيۡمِۙ',
+  '1:4:1': 'مٰلِكِ',
+  '1:4:2': 'يَوۡمِ',
+  '1:4:3': 'الدِّيۡنِؕ',
+  '1:5:1': 'اِيَّاكَ',
+  '1:5:2': 'نَعۡبُدُ',
+  '1:5:3': 'وَاِيَّاكَ',
+  '1:5:4': 'نَسۡتَعِيۡنُؕ',
+  '1:6:1': 'اِهۡدِنَا',
+  '1:6:2': 'الصِّرَاطَ',
+  '1:6:3': 'الۡمُسۡتَقِيۡمَۙ',
+  '1:7:1': 'صِرَاطَ',
+  '1:7:2': 'الَّذِيۡنَ',
+  '1:7:3': 'اَنۡعَمۡتَ',
+  '1:7:4': 'عَلَيۡهِمۡ ۙ',
+  '1:7:5': 'غَيۡرِ',
+  '1:7:6': 'الۡمَغۡضُوۡبِ',
+  '1:7:7': 'عَلَيۡهِمۡ',
+  '1:7:8': 'وَلَا',
+  '1:7:9': 'الضَّآلِّيۡنَ',
+};
+
+test('an IndoPak font shows the IndoPak text; Uthmani fonts keep the stored text', async ({
+  page,
+}) => {
+  await page.route('**/api/v1/surahs/1', async (route) => {
+    const response = await route.fetch();
+    const study = (await response.json()) as { words: { id: string; arabicIndoPak?: string }[] };
+    for (const word of study.words) word.arabicIndoPak = fatihahIndoPak[word.id];
+    await route.fulfill({ response, json: study });
+  });
+  await page.addInitScript((key) => localStorage.setItem(key, 'al-qalam-quran-majeed'), keys.quran);
+  await loadStudy(page);
+  const indoPak = Object.values(fatihahIndoPak);
+  const words = page.locator('.quran-word .arabic');
+  await expect(words).toHaveText(indoPak);
+  // No Madani alif wasla (U+0671) anywhere in the Quranic text.
+  for (const text of await words.allTextContents()) expect(text).not.toContain('\u0671');
+  await expect(page.locator('.word-detail #detail-title')).toHaveText(indoPak[0]!);
+  await expect(page.locator('.quran-word').first()).toHaveAttribute(
+    'aria-label',
+    new RegExp(`^${indoPak[0]}،`),
+  );
+
+  await nav(page, 'Settings');
+  const preview = (id: string) => page.locator(`.font-option[data-font="${id}"] .font-preview-text`);
+  await expect(preview('al-qalam-quran-majeed')).toContainText(indoPak.slice(0, 4).join(' '));
+  await expect(preview(defaultFontIds.quran)).toContainText('\u0671');
+  // Plain (continuous) text follows the font too.
+  await page.getByRole('switch', { name: /Word-by-word grammar/ }).uncheck();
+  await nav(page, 'Study');
+  await expect(page.locator('.plain-word')).toHaveText(indoPak);
+
+  // Switching to an Uthmani font restores the stored (Uthmani) text.
+  await nav(page, 'Settings');
+  await chooseFont(page, 'quran', defaults.quran);
+  await nav(page, 'Study');
+  await expect(page.locator('.plain-word').nth(4)).toHaveText(/^\u0671/);
+});
+
+test('an IndoPak font shows IndoPak text in topic examples and practice options', async ({
+  page,
+}) => {
+  await page.addInitScript((key) => localStorage.setItem(key, 'al-qalam-quran-majeed'), keys.quran);
+  await loadStudy(page);
+  const topic = (await (await page.request.get('/api/v1/topics/genitive')).json()) as {
+    examples: { wordId: string; wordArabicIndoPak: string; ayahArabic: string }[];
+    quranicExamples: { wordId: string; wordArabicIndoPak: string; ayahArabic: string }[];
+  };
+  expect(topic.examples.length).toBeGreaterThan(0);
+  expect(topic.quranicExamples.length).toBeGreaterThan(0);
+  // The stored (Uthmani) text of these examples has alif wasla; the IndoPak text has none.
+  expect(
+    [...topic.examples, ...topic.quranicExamples].some((example) =>
+      example.ayahArabic.includes('\u0671'),
+    ),
+  ).toBe(true);
+
+  await page.locator('.word-detail .grammar-rule[data-rule="genitive"]').click();
+  const dialog = page.locator('dialog.topic-dialog[open]');
+  await expect(dialog.locator('.topic-example')).toHaveCount(topic.examples.length);
+  await expectFamily(dialog.locator('.topic-ayah').first(), byId('al-qalam-quran-majeed'));
+  // Each annotated example highlights its own word inside the IndoPak ayah.
+  await expect(dialog.locator('.topic-example mark')).toHaveText(
+    topic.examples.map((example) => example.wordArabicIndoPak),
+  );
+  await expect(dialog.locator('.topic-more .arabic')).toHaveText(
+    topic.quranicExamples.map((example) => example.wordArabicIndoPak),
+  );
+  for (const text of await dialog.locator('.topic-ayah, .topic-more .arabic').allTextContents())
+    expect(text).not.toContain('\u0671');
+  await dialog.getByRole('button', { name: 'Close', exact: true }).click();
+
+  // Practice: Quranic word options use the IndoPak text (Al-Fatihah: ٱلْحَمْدُ → اَلۡحَمۡدُ).
+  await nav(page, 'Practice Grammar');
+  await page.locator('[data-practice="fatihah"]').click();
+  const fatihah = (await (await page.request.get('/api/v1/surahs/1')).json()) as {
+    words: { id: string; arabicIndoPak: string }[];
+  };
+  const indoPak = (id: string) => fatihah.words.find((word) => word.id === id)!.arabicIndoPak;
+  const options = page.locator('.practice-option[lang="ar"]');
+  await expect(options).toHaveText(['1:2:1', '1:5:2', '1:5:1'].map(indoPak));
+  for (const text of await options.allTextContents()) expect(text).not.toContain('\u0671');
+  await expectFamily(options.first(), byId('al-qalam-quran-majeed'));
+
+  // An Uthmani font keeps the stored text in both places.
+  await nav(page, 'Settings');
+  await chooseFont(page, 'quran', defaults.quran);
+  await nav(page, 'Practice Grammar');
+  // The open quiz is kept while switching tabs.
+  await expect(options.first()).toHaveText(/^\u0671/);
 });
 
 for (const width of [390, 1280]) {

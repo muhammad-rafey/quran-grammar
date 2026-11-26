@@ -1,10 +1,16 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { ActivityIndicator, Image, Pressable, Text, View } from 'react-native';
 import { Host, Switch } from '@expo/ui';
-import type { FontRole, ReadingFont } from '@quran-grammar/core';
+import {
+  quranText,
+  translationEditions,
+  translationText,
+  type FontRole,
+  type ReadingFont,
+} from '@quran-grammar/core';
 import { useInterface } from '@/state/preferences-provider';
 import { useStudy } from '@/state/study-provider';
-import { Action, DataStatus, Label, Section, StudyFooter } from '@/components/study-ui';
+import { AboutSection, Action, DataStatus, Label, Section } from '@/components/study-ui';
 import { colors, quranTextStyle, radius, spacing, urduTextStyle } from '@/theme/tokens';
 import { isFontReady, loadReadingFont, selectableFonts } from '@/theme/font-loading';
 
@@ -54,7 +60,8 @@ export function Settings() {
             >
               <Text
                 style={[
-                  labelStyle,
+                  // Each option in its own script: Latin set in the Urdu font fell back to a serif.
+                  item.value === 'en' ? latinLabel : labelStyle,
                   { textAlign: 'center', color: language === item.value ? '#fff' : colors.primary },
                 ]}
               >
@@ -103,15 +110,18 @@ export function Settings() {
           </Text>
         )}
       </Section>
+      <TranslationSettings />
       <FontSettings />
       <Section title={ui.dataStatus}>
         <Label muted>{ui.offline}</Label>
         <DataStatus />
       </Section>
-      <StudyFooter />
+      <AboutSection />
     </View>
   );
 }
+
+const latinLabel = { fontSize: 16, lineHeight: 24, writingDirection: 'ltr' } as const;
 
 /**
  * A labelled native switch. The label is a React Native Text rather than the @expo/ui Switch
@@ -130,8 +140,20 @@ export function ToggleRow({
   testID?: string;
 }) {
   const { controlRow, isUrdu } = useInterface();
+  // One accessibility element: screen readers announce the label with the switch state, and
+  // activating it toggles (the native switch alone was announced without its label).
   return (
-    <View style={[controlRow, { justifyContent: 'space-between', minHeight: 48 }]}>
+    <View
+      accessible
+      accessibilityRole="switch"
+      accessibilityLabel={label}
+      accessibilityState={{ checked: value }}
+      accessibilityActions={toggleActions}
+      onAccessibilityAction={(event) => {
+        if (event.nativeEvent.actionName === 'activate') onValueChange(!value);
+      }}
+      style={[controlRow, { justifyContent: 'space-between', minHeight: 48 }]}
+    >
       <Label style={{ flex: 1 }}>{label}</Label>
       <Host
         matchContents
@@ -145,9 +167,132 @@ export function ToggleRow({
   );
 }
 
+const toggleActions = [{ name: 'activate' }] as const;
+
+/** One option of a radio group: a bordered card with a radio mark, its name and any details. */
+function RadioCard({
+  testID,
+  label,
+  hint,
+  checked,
+  onPress,
+  children,
+}: {
+  testID: string;
+  label: string;
+  hint?: string;
+  checked: boolean;
+  onPress: () => void;
+  children?: ReactNode;
+}) {
+  const { controlRow } = useInterface();
+  return (
+    <Pressable
+      testID={testID}
+      accessibilityRole="radio"
+      accessibilityLabel={label}
+      accessibilityHint={hint}
+      accessibilityState={{ checked }}
+      onPress={onPress}
+      style={({ pressed }) => ({
+        minHeight: 64,
+        padding: spacing.md,
+        gap: spacing.xs,
+        borderRadius: radius.md,
+        borderWidth: 2,
+        borderColor: checked ? colors.primary : colors.border,
+        backgroundColor: checked ? colors.wash : pressed ? colors.mint : colors.paper,
+      })}
+    >
+      <View style={controlRow}>
+        <View
+          accessible={false}
+          style={{
+            width: 22,
+            height: 22,
+            borderRadius: radius.pill,
+            borderWidth: 2,
+            borderColor: checked ? colors.primary : colors.muted,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {checked ? (
+            <View
+              style={{
+                width: 10,
+                height: 10,
+                borderRadius: radius.pill,
+                backgroundColor: colors.primary,
+              }}
+            />
+          ) : null}
+        </View>
+        <Label style={{ flex: 1, fontWeight: checked ? '700' : '400' }}>{label}</Label>
+      </View>
+      {children}
+    </Pressable>
+  );
+}
+
+/**
+ * Whose Urdu ayah translation is shown (Quran.com editions, see translationEditions). Each option
+ * previews its translation of the first ayah of the chapter being studied, when the data has it.
+ */
+function TranslationSettings() {
+  const { ui, isUrdu, labelStyle, translationId, setTranslationId, translationError, activeFonts } =
+    useInterface();
+  const { study } = useStudy();
+  const first = study?.ayahs[0];
+  const previewStyle = useMemo(() => urduTextStyle(activeFonts.urdu, 16, 28), [activeFonts.urdu]);
+  return (
+    <Section title={ui.translator}>
+      <Label muted>{ui.translatorHelp}</Label>
+      <View
+        accessibilityRole="radiogroup"
+        accessibilityLabel={ui.translator}
+        style={{ gap: spacing.sm }}
+      >
+        {translationEditions.map((edition) => {
+          const name = isUrdu ? edition.nameUrdu : edition.nameEnglish;
+          const sample = first ? translationText(first.translations, edition.id) : '';
+          return (
+            <RadioCard
+              key={edition.id}
+              testID={`translation-${edition.id}`}
+              label={name}
+              checked={edition.id === translationId}
+              onPress={() => void setTranslationId(edition.id)}
+            >
+              {sample ? (
+                <Text
+                  accessibilityLabel={`${ui.fontPreview}: ${sample}`}
+                  numberOfLines={2}
+                  style={[
+                    previewStyle,
+                    { color: colors.muted, textAlign: 'right', writingDirection: 'rtl' },
+                  ]}
+                >
+                  {sample}
+                </Text>
+              ) : null}
+            </RadioCard>
+          );
+        })}
+      </View>
+      {translationError && (
+        <Text accessibilityRole="alert" style={labelStyle}>
+          {ui.preferenceError}
+        </Text>
+      )}
+    </Section>
+  );
+}
+
 /**
  * Quran and Urdu font choice. Each option previews the first ayah of the chapter being studied (its
- * words and Urdu translation from the study data) in that font; previews load the fonts on demand.
+ * words and the selected Urdu translation from the study data) in that font; previews load the
+ * fonts on demand.
  */
 function FontSettings() {
   const {
@@ -159,6 +304,7 @@ function FontSettings() {
     setUrduFont,
     fontSaveError,
     fontFailed,
+    translationId,
   } = useInterface();
   const { study } = useStudy();
   const preview = useMemo(() => {
@@ -166,11 +312,14 @@ function FontSettings() {
     if (!study || !first) return null;
     const words = study.words.filter((word) => word.ayah === first.number);
     return {
-      arabic: words.map((word) => word.arabic).join(' '),
-      // Source-first lessons have no ayah translation; preview with word meanings instead.
-      urdu: first.translationUrdu || words.map((word) => word.meaningUrdu).join('، '),
+      // Each Quran option previews the text it will show (IndoPak fonts: the IndoPak text).
+      arabic: (font: ReadingFont) => words.map((word) => quranText(word, font)).join(' '),
+      // An ayah without the selected translation is previewed with its word meanings instead.
+      urdu: () =>
+        translationText(first.translations, translationId) ||
+        words.map((word) => word.meaningUrdu).join('، '),
     };
-  }, [study]);
+  }, [study, translationId]);
   return (
     <Section title={ui.fonts}>
       <Label muted>{ui.fontsHelp}</Label>
@@ -211,10 +360,11 @@ function FontChoice({
   title: string;
   selected: string;
   failed: boolean;
-  sample: string | undefined;
+  /** The preview text for an option's font (absent while the chapter loads). */
+  sample: ((font: ReadingFont) => string) | undefined;
   onSelect: (id: string) => Promise<void>;
 }) {
-  const { ui, isUrdu, labelText, controlRow } = useInterface();
+  const { ui, isUrdu, labelText } = useInterface();
   const fonts = selectableFonts(role);
   // Load every option's font so its preview is drawn in it; a font that fails shows no preview.
   const [ready, setReady] = useState<ReadonlySet<string>>(
@@ -255,62 +405,27 @@ function FontChoice({
           const checked = font.id === selected;
           const name = isUrdu ? font.labelUrdu : font.label;
           const note = isUrdu ? (font.coverageNoteUrdu ?? font.coverageNote) : font.coverageNote;
+          const preview = sample?.(font);
           return (
-            <Pressable
+            <RadioCard
               key={font.id}
               testID={`font-${role}-${font.id}`}
-              accessibilityRole="radio"
-              accessibilityLabel={name}
-              accessibilityHint={note}
-              accessibilityState={{ checked }}
+              label={name}
+              hint={note}
+              checked={checked}
               onPress={() => void onSelect(font.id)}
-              style={({ pressed }) => ({
-                minHeight: 64,
-                padding: spacing.md,
-                gap: spacing.xs,
-                borderRadius: radius.md,
-                borderWidth: 2,
-                borderColor: checked ? colors.primary : colors.border,
-                backgroundColor: checked ? colors.wash : pressed ? colors.mint : colors.paper,
-              })}
             >
-              <View style={controlRow}>
-                <View
-                  accessible={false}
-                  style={{
-                    width: 22,
-                    height: 22,
-                    borderRadius: radius.pill,
-                    borderWidth: 2,
-                    borderColor: checked ? colors.primary : colors.muted,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {checked ? (
-                    <View
-                      style={{
-                        width: 10,
-                        height: 10,
-                        borderRadius: radius.pill,
-                        backgroundColor: colors.primary,
-                      }}
-                    />
-                  ) : null}
-                </View>
-                <Label style={{ flex: 1, fontWeight: checked ? '700' : '400' }}>{name}</Label>
-              </View>
-              {sample ? (
+              {preview ? (
                 ready.has(font.id) ? (
                   <Text
-                    accessibilityLabel={`${ui.fontPreview}: ${sample}`}
+                    accessibilityLabel={`${ui.fontPreview}: ${preview}`}
                     numberOfLines={2}
                     style={[
                       sampleStyles.get(font.id),
                       { color: colors.ink, textAlign: 'right', writingDirection: 'rtl' },
                     ]}
                   >
-                    {sample}
+                    {preview}
                   </Text>
                 ) : (
                   <ActivityIndicator color={colors.primary} style={{ alignSelf: 'flex-start' }} />
@@ -322,7 +437,7 @@ function FontChoice({
                   {ui.loadFailed}
                 </Label>
               ) : null}
-            </Pressable>
+            </RadioCard>
           );
         })}
       </View>

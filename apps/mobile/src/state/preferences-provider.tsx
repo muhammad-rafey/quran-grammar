@@ -16,6 +16,7 @@ import {
   getUiStrings,
   isUiLanguage,
   resolveFont,
+  resolveTranslationId,
   type FontRole,
   type ReadingFont,
   type UiLanguage,
@@ -27,6 +28,7 @@ import { isFontReady, loadReadingFont } from '@/theme/font-loading';
 
 const languageKey = 'quran-grammar:interface-language';
 const readingLayoutKey = 'quran-grammar:reading-layout';
+const translationKey = 'quran-grammar:translation';
 const fontKeys: Record<FontRole, string> = {
   quran: 'quran-grammar:quran-font',
   urdu: 'quran-grammar:urdu-font',
@@ -100,6 +102,10 @@ type Interface = {
   readingLayout: ReadingLayout;
   setReadingLayout: (change: Partial<ReadingLayout>) => Promise<void>;
   readingLayoutError: boolean;
+  /** The chosen ayah translation (an id from translationEditions). */
+  translationId: string;
+  setTranslationId: (id: string) => Promise<void>;
+  translationError: boolean;
   /** Chosen font ids (registry ids, see packages/core/src/fonts.ts). */
   quranFont: string;
   urduFont: string;
@@ -129,13 +135,21 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
   const [saveError, setSaveError] = useState(false);
   const [saving, setSaving] = useState(false);
   const [readingLayoutError, setReadingLayoutError] = useState(false);
+  const [translationId, updateTranslationId] = useState(() => resolveTranslationId(null));
+  const [translationError, setTranslationError] = useState(false);
   const [fontIds, updateFontIds] = useState<Record<FontRole, string>>(defaultFontIds);
   const [fontSaveError, setFontSaveError] = useState(false);
   const pending = useRef(false);
   const layoutRef = useRef(defaultReadingLayout);
   useEffect(() => {
     let active = true;
-    AsyncStorage.multiGet([languageKey, readingLayoutKey, fontKeys.quran, fontKeys.urdu])
+    AsyncStorage.multiGet([
+      languageKey,
+      readingLayoutKey,
+      translationKey,
+      fontKeys.quran,
+      fontKeys.urdu,
+    ])
       .then(async (entries) => {
         if (!active) return;
         const saved = new Map(entries);
@@ -144,6 +158,7 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
         const layout = parseReadingLayout(saved.get(readingLayoutKey) ?? null);
         layoutRef.current = layout;
         updateReadingLayout(layout);
+        updateTranslationId(resolveTranslationId(saved.get(translationKey)));
         const quran = resolveFont('quran', saved.get(fontKeys.quran));
         const urdu = resolveFont('urdu', saved.get(fontKeys.urdu));
         updateFontIds({ quran: quran.id, urdu: urdu.id });
@@ -196,6 +211,17 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  const setTranslationId = useCallback(async (id: string) => {
+    const next = resolveTranslationId(id);
+    updateTranslationId(next);
+    setTranslationError(false);
+    try {
+      await AsyncStorage.setItem(translationKey, next);
+    } catch {
+      setTranslationError(true);
+    }
+  }, []);
+
   const setFont = useCallback(async (role: FontRole, id: string) => {
     const font = resolveFont(role, id);
     updateFontIds((current) => ({ ...current, [role]: font.id }));
@@ -245,6 +271,9 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
       readingLayout,
       setReadingLayout,
       readingLayoutError,
+      translationId,
+      setTranslationId,
+      translationError,
       ui: getUiStrings(language),
       count: (input: number | string) => formatCount(input, language),
       isUrdu,
@@ -272,6 +301,9 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
     readingLayout,
     setReadingLayout,
     readingLayoutError,
+    translationId,
+    setTranslationId,
+    translationError,
     fontIds,
     setQuranFont,
     setUrduFont,

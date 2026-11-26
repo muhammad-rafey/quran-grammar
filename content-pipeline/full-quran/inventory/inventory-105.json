@@ -1,0 +1,31 @@
+{
+ "surah": 105,
+ "corpusSpellingDifferences": [
+  {
+   "id": "105:1:6",
+   "quranCom": "بِأَصْحَـٰبِ",
+   "corpus": "بِأَصْحَٰبِ"
+  },
+  {
+   "id": "105:2:5",
+   "quranCom": "تَضْلِيلٍۢ",
+   "corpus": "تَضْلِيلٍ"
+  },
+  {
+   "id": "105:4:2",
+   "quranCom": "بِحِجَارَةٍۢ",
+   "corpus": "بِحِجَارَةٍ"
+  },
+  {
+   "id": "105:4:4",
+   "quranCom": "سِجِّيلٍۢ",
+   "corpus": "سِجِّيلٍ"
+  },
+  {
+   "id": "105:5:2",
+   "quranCom": "كَعَصْفٍۢ",
+   "corpus": "كَعَصْفٍ"
+  }
+ ],
+ "excludedPauseSigns": []
+}

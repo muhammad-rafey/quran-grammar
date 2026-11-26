@@ -1,4 +1,10 @@
-import { buildGrammarContent, createWordContextLookup, listTopicSummaries, resolveGrammarTopic } from './grammar/build';
+import {
+  buildGrammarContent,
+  createPracticeResolver,
+  createWordContextLookup,
+  listTopicSummaries,
+  resolveGrammarTopic,
+} from './grammar/build';
 import type { GrammarContent, GrammarTopicSource } from './grammar/types';
 import type { PracticeQuestion } from './practice';
 import type { ContentRepository } from './repository';
@@ -26,6 +32,7 @@ export function createBundledRepository(options: BundledRepositoryOptions): Cont
       options.fatihahPractice ?? [],
     ));
   let lookup: ReturnType<typeof createWordContextLookup> | undefined;
+  let resolveQuestion: ReturnType<typeof createPracticeResolver> | undefined;
   return {
     async listSurahs() {
       return studies.map((study) => ({ ...study.surah }));
@@ -42,11 +49,14 @@ export function createBundledRepository(options: BundledRepositoryOptions): Cont
       return resolveGrammarTopic(content(), id, lookup);
     },
     async getPracticeQuestions(filter) {
-      return content().questions.filter((question) =>
-        'set' in filter
-          ? filter.set === 'fatihah' && question.kind === 'fatihah'
-          : question.topicId === filter.topicId,
-      );
+      resolveQuestion ??= createPracticeResolver(studies);
+      return content()
+        .questions.filter((question) =>
+          'set' in filter
+            ? filter.set === 'fatihah' && question.kind === 'fatihah'
+            : question.topicId === filter.topicId,
+        )
+        .map(resolveQuestion);
     },
   };
 }

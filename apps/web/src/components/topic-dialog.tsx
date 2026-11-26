@@ -1,34 +1,46 @@
 import { useEffect, useRef, type KeyboardEvent } from 'react';
 import { ArrowLeft, ArrowRight, Sparkles, X } from 'lucide-react';
 import {
+  exampleQuranText,
   formatCount,
   getSurahTitle,
   getUiStrings,
+  splitAyahAtWord,
+  translationText,
+  type ReadingFont,
   type ResolvedTopicExample,
   type UiLanguage,
 } from '@quran-grammar/core';
 import { useTopic } from '../use-api';
 import { LoadState } from './practice';
 
-/** Ayah Arabic with the example word highlighted; text always comes from the API data. */
-function AyahWithWord({ example }: { example: ResolvedTopicExample }) {
-  const words = example.ayahArabic.split(' ');
-  const position = Number(example.wordId.split(':')[2]) - 1;
-  const index = words[position] === example.wordArabic ? position : words.indexOf(example.wordArabic);
-  if (index < 0) {
+/**
+ * Ayah Arabic with the example word highlighted, in the selected Quran font's orthography (see
+ * exampleQuranText); text always comes from the API data.
+ */
+function AyahWithWord({
+  example,
+  quranFont,
+}: {
+  example: ResolvedTopicExample;
+  quranFont: ReadingFont;
+}) {
+  const text = exampleQuranText(example, quranFont);
+  const parts = splitAyahAtWord(text.ayah, text.word, Number(example.wordId.split(':')[2]));
+  if (!parts) {
     return (
       <p className="topic-ayah arabic" lang="ar" dir="rtl">
-        <mark>{example.wordArabic}</mark> — {example.ayahArabic}
+        <mark>{text.word}</mark> — {text.ayah}
       </p>
     );
   }
   return (
     <p className="topic-ayah arabic" lang="ar" dir="rtl">
-      {words.slice(0, index).join(' ')}
-      {index > 0 && ' '}
-      <mark>{words[index]}</mark>
-      {index < words.length - 1 && ' '}
-      {words.slice(index + 1).join(' ')}
+      {parts.before}
+      {parts.before && ' '}
+      <mark>{parts.word}</mark>
+      {parts.after && ' '}
+      {parts.after}
     </p>
   );
 }
@@ -48,8 +60,14 @@ export function TopicDialog({
   onClose,
   onWord,
   onPractice,
+  translationId,
+  quranFont,
 }: {
   topicId: string;
+  /** Selected Quran font: IndoPak fonts show the examples' IndoPak text. */
+  quranFont: ReadingFont;
+  /** Selected Urdu translation (Settings). */
+  translationId: string;
   language: UiLanguage;
   returnFocus: HTMLElement | null;
   onClose: () => void;
@@ -203,7 +221,7 @@ export function TopicDialog({
                   <ol className="topic-examples">
                     {topic.examples.map((example) => (
                       <li key={example.wordId} className="topic-example" data-example={example.wordId}>
-                        <AyahWithWord example={example} />
+                        <AyahWithWord example={example} quranFont={quranFont} />
                         <button
                           type="button"
                           className="topic-reference ui"
@@ -215,9 +233,9 @@ export function TopicDialog({
                           <bdi>{reference(example, language)}</bdi>
                           {language === 'ur' ? <ArrowLeft size={14} /> : <ArrowRight size={14} />}
                         </button>
-                        {example.translationUrdu && (
+                        {translationText(example.translations, translationId) && (
                           <p className="topic-translation" lang="ur" dir="rtl">
-                            {example.translationUrdu}
+                            {translationText(example.translations, translationId)}
                           </p>
                         )}
                         {example.noteUrdu && (
@@ -244,7 +262,7 @@ export function TopicDialog({
                           onClick={() => handOff(() => onWord(example.wordId))}
                         >
                           <span className="arabic" lang="ar" dir="rtl">
-                            {example.wordArabic}
+                            {exampleQuranText(example, quranFont).word}
                           </span>
                           <span className="topic-more-meaning" lang="ur" dir="rtl">
                             {example.meaningUrdu}

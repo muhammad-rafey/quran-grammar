@@ -5,7 +5,7 @@ import { mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import type { Server } from 'node:http';
-import { isStudyData } from '@quran-grammar/core';
+import { isStudyData, translationIds, type StudyData } from '@quran-grammar/core';
 import { getBundledRepository, getGrammarContent } from '@quran-grammar/core/content';
 import { createApp } from './app';
 
@@ -76,7 +76,7 @@ test('search uses the same root-aware filtering as both clients', async () => {
 test('invalid queries, missing content, and unknown API paths return JSON errors', async () => {
   const cases: Array<[string, number]> = [
     ['/api/v1/surahs/nope', 400],
-    ['/api/v1/surahs/3', 404],
+    ['/api/v1/surahs/115', 404],
     ['/api/v1/surahs/1/words/not-a-location', 400],
     ['/api/v1/surahs/1/words/1%3A8%3A1', 404],
     ['/api/v1/search?pos=invalid', 400],
@@ -148,66 +148,37 @@ test('production SPA fallback excludes API paths and missing static files', asyn
   assert.equal(configured.headers.get('access-control-allow-origin'), 'https://grammar.example');
 });
 
-test('every published chapter and word detail stays within its own lesson', async () => {
-  const expected = [
-    [1, 7, 29],
-    [2, 20, 230],
-    [4, 176, 3747],
-    [7, 206, 3320],
-    [18, 110, 1579],
-    [22, 78, 1274],
-    [23, 118, 1050],
-    [25, 77, 893],
-    [29, 69, 976],
-    [32, 30, 372],
-    [36, 83, 725],
-    [55, 78, 351],
-    [56, 96, 379],
-    [85, 22, 109],
-    [86, 17, 61],
-    [87, 19, 72],
-    [88, 26, 92],
-    [89, 30, 137],
-    [90, 20, 82],
-    [91, 15, 54],
-    [92, 21, 71],
-    [93, 11, 40],
-    [94, 8, 27],
-    [95, 8, 34],
-    [96, 19, 72],
-    [97, 5, 30],
-    [98, 8, 94],
-    [99, 8, 36],
-    [100, 11, 40],
-    [101, 11, 36],
-    [102, 8, 28],
-    [103, 3, 14],
-    [104, 9, 33],
-    [105, 5, 23],
-    [106, 4, 17],
-    [107, 7, 25],
-    [108, 3, 10],
-    [109, 6, 26],
-    [110, 3, 19],
-    [111, 5, 23],
-    [112, 4, 15],
-    [113, 5, 23],
-    [114, 6, 20],
-  ];
+test('every chapter and word detail stays within its own lesson', async () => {
   const list = await (await fetch(`${base}/api/v1/surahs`)).json();
+  const surahs = list.surahs as Array<{ number: number; ayahCount: number; wordCount: number }>;
   assert.deepEqual(
-    list.surahs.map((surah: { number: number }) => surah.number),
-    expected.map(([number]) => number),
+    surahs.map((surah) => surah.number),
+    Array.from({ length: 114 }, (_, index) => index + 1),
   );
-  for (const [number, ayahs, words] of expected) {
+  assert.equal(surahs.reduce((total, surah) => total + surah.ayahCount, 0), 6236);
+  assert.equal(surahs.reduce((total, surah) => total + surah.wordCount, 0), 77429);
+  for (const [number, ayahs, words] of [
+    [1, 7, 29],
+    [2, 286, 6116],
+    [3, 200, 3481],
+    [4, 176, 3747],
+    [114, 6, 20],
+  ])
+    assert.deepEqual([surahs[number - 1].ayahCount, surahs[number - 1].wordCount], [ayahs, words]);
+  const publishedChapters = new Set([1, 4, 7, 18, 22, 23, 25, 29, 32, 36, 55, 56, ...Array.from({ length: 30 }, (_, index) => 85 + index)]);
+  let checked = 0;
+  for (const { number, ayahCount, wordCount } of surahs) {
     const response = await fetch(`${base}/api/v1/surahs/${number}`);
     assert.equal(response.status, 200);
     const data = await response.json();
     assert.equal(isStudyData(data), true, `Surah ${number}`);
     assert.equal(data.surah.number, number);
-    assert.equal(data.ayahs.length, ayahs);
-    assert.equal(data.words.length, words);
-    for (const word of data.words) {
+    assert.equal(data.ayahs.length, ayahCount);
+    assert.equal(data.words.length, wordCount);
+    assert.deepEqual(Object.keys(data.ayahs[0].translations), translationIds, `Surah ${number}`);
+    // Every word with a published grammar layer, and every eighth source-only word plus each
+    // ayah's last word (the route is the same; 77k sequential requests would take ~10 s).
+    const check = async (word: StudyData['words'][number]) => {
       const detail = await (
         await fetch(`${base}/api/v1/surahs/${number}/words/${encodeURIComponent(word.id)}`)
       ).json();
@@ -218,8 +189,19 @@ test('every published chapter and word detail stays within its own lesson', asyn
         detail.rules.map((rule: { id: string }) => rule.id).sort(),
         [...word.ruleIds].sort(),
       );
-    }
+    };
+    const words = (data as StudyData).words.filter(
+      (word, index, all) =>
+        publishedChapters.has(number) ||
+        (number === 2 && word.ayah <= 20) ||
+        index % 8 === 0 ||
+        all[index + 1]?.ayah !== word.ayah,
+    );
+    checked += words.length;
+    for (let index = 0; index < words.length; index += 16)
+      await Promise.all(words.slice(index, index + 16).map(check));
   }
+  assert.ok(checked > 16288 + 61141 / 8, `${checked} word details checked`);
 });
 
 test('chapter-scoped search never returns another chapter and rejects invalid scope', async () => {
@@ -231,14 +213,20 @@ test('chapter-scoped search never returns another chapter and rejects invalid sc
       (word: { id: string; pos: string }) => word.id.startsWith('114:') && word.pos === 'verb',
     ),
   );
+  // A source-only chapter is searchable within its own scope.
+  const imran = await (await fetch(`${base}/api/v1/search?surah=3&pos=verb`)).json();
+  assert.equal(imran.surah, 3);
+  assert.ok(imran.words.length > 0);
+  assert.ok(imran.words.every((word: { id: string; pos: string }) => word.id.startsWith('3:') && word.pos === 'verb'));
   for (const [path, status] of [
+    ['/api/v1/surahs/17', 200],
     ['/api/v1/surahs/105/words/1%3A1%3A1', 404],
     ['/api/v1/surahs/1/words/105%3A1%3A1', 404],
     ['/api/v1/surahs/115', 404],
-    ['/api/v1/surahs/17', 404],
+    ['/api/v1/surahs/116', 404],
     ['/api/v1/surahs/18/words/36%3A1%3A1', 404],
     ['/api/v1/surahs/0', 400],
-    ['/api/v1/search?surah=3', 404],
+    ['/api/v1/search?surah=115', 404],
     ['/api/v1/search?surah=105&surah=106', 400],
     ['/api/v1/search?surah=nope', 400],
   ] as const)
@@ -305,4 +293,39 @@ test('practice endpoint serves one topic or the Al-Fatihah set and rejects ambig
     assert.equal(failed.status, status, path);
     assert.ok((await failed.json()).error.code);
   }
+});
+
+test('large lessons are gzipped for clients that accept it and plain otherwise', async () => {
+  const { request } = await import('node:http');
+  const { gunzipSync } = await import('node:zlib');
+  const get = (path: string, encoding?: string) =>
+    new Promise<{ headers: Record<string, string | string[] | undefined>; body: Buffer }>(
+      (resolve, reject) => {
+        const req = request(`${base}${path}`, {
+          headers: encoding ? { 'Accept-Encoding': encoding } : {},
+        });
+        req.on('response', (response) => {
+          const chunks: Buffer[] = [];
+          response.on('data', (chunk: Buffer) => chunks.push(chunk));
+          response.on('end', () =>
+            resolve({ headers: response.headers, body: Buffer.concat(chunks) }),
+          );
+        });
+        req.on('error', reject);
+        req.end();
+      },
+    );
+  const expected = await repository.getStudy(2);
+  const zipped = await get('/api/v1/surahs/2', 'gzip, deflate, br');
+  assert.equal(zipped.headers['content-encoding'], 'gzip');
+  assert.match(String(zipped.headers['content-type']), /^application\/json/);
+  assert.match(String(zipped.headers.vary), /Accept-Encoding/);
+  assert.ok(zipped.body.length < 1_000_000, `gzipped Al-Baqarah is ${zipped.body.length} bytes`);
+  assert.deepEqual(JSON.parse(gunzipSync(zipped.body).toString('utf8')), expected);
+  const plain = await get('/api/v1/surahs/2');
+  assert.equal(plain.headers['content-encoding'], undefined);
+  assert.deepEqual(JSON.parse(plain.body.toString('utf8')), expected);
+  // Small responses are not worth compressing.
+  const health = await get('/api/health', 'gzip');
+  assert.equal(health.headers['content-encoding'], undefined);
 });

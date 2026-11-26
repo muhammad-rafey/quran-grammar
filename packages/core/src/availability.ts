@@ -1,12 +1,8 @@
-/** Navigation metadata; kept in sync with the study registry by tests. */
-export const availableSurahNumbers: readonly number[] = [
-  1, 2, 4, 7, 18, 22, 23, 25, 29, 32, 36, 55, 56, 85, 86,
-  87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100,
-  101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114,
-];
+/** Navigation metadata: every chapter is available (kept in sync with the registry by tests). */
+export const availableSurahNumbers: readonly number[] = Array.from({ length: 114 }, (_, i) => i + 1);
 
 /**
- * Chapters built only from ayah 1 up to the given ayah (source-first pipeline,
- * content-pipeline/full-quran). Navigation never opens an ayah past this point.
+ * Chapters built only from ayah 1 up to the given ayah. Empty since the whole-Quran build
+ * (content-pipeline/full-quran, 2026-11-26); navigation never opens an ayah past this point.
  */
-export const partialSurahLastAyah: Readonly<Record<number, number>> = { 2: 20 };
+export const partialSurahLastAyah: Readonly<Record<number, number>> = {};

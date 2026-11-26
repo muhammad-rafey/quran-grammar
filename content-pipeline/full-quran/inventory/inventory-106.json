@@ -1,0 +1,26 @@
+{
+ "surah": 106,
+ "corpusSpellingDifferences": [
+  {
+   "id": "106:1:1",
+   "quranCom": "لِإِيلَـٰفِ",
+   "corpus": "لِإِيلَٰفِ"
+  },
+  {
+   "id": "106:2:1",
+   "quranCom": "إِۦلَـٰفِهِمْ",
+   "corpus": "إِۦلَٰفِهِمْ"
+  },
+  {
+   "id": "106:3:3",
+   "quranCom": "هَـٰذَا",
+   "corpus": "هَٰذَا"
+  },
+  {
+   "id": "106:4:4",
+   "quranCom": "جُوعٍۢ",
+   "corpus": "جُوعٍ"
+  }
+ ],
+ "excludedPauseSigns": []
+}

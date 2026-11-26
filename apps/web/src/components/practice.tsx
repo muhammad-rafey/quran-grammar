@@ -17,8 +17,10 @@ import {
   getUiStrings,
   gradePracticeAnswer,
   normalizeText,
+  practiceOptionText,
   type GrammarTopicSummary,
   type PracticeQuestion,
+  type ReadingFont,
   type UiLanguage,
 } from '@quran-grammar/core';
 import { usePractice, useTopics, type PracticeFilter } from '../use-api';
@@ -30,9 +32,12 @@ export function QuizRunner({
   title,
   subtitle,
   onBack,
+  quranFont,
 }: {
   questions: readonly PracticeQuestion[];
   language: UiLanguage;
+  /** Selected Quran font: IndoPak fonts show Quranic word options in IndoPak text. */
+  quranFont: ReadingFont;
   title: string;
   subtitle?: { text: string; lang: 'en' | 'ur' };
   onBack?: () => void;
@@ -156,11 +161,16 @@ export function QuizRunner({
                 aria-pressed={choice === option.id}
                 lang={option.language}
                 dir="rtl"
-                className={`practice-option ${choice === option.id ? 'selected' : ''} ${checked && option.id === question.correctOptionId ? 'correct' : ''}`}
+                className={`practice-option ${choice === option.id ? 'selected' : ''} ${checked && option.id === question.correctOptionId ? 'correct' : ''} ${checked && choice === option.id && option.id !== question.correctOptionId ? 'incorrect' : ''}`}
                 onClick={() => setChoice(option.id)}
               >
-                <span>{option.text}</span>
-                {checked && option.id === question.correctOptionId && <Check size={18} />}
+                <span>{practiceOptionText(option, quranFont)}</span>
+                {checked && option.id === question.correctOptionId && (
+                  <Check size={18} aria-hidden="true" />
+                )}
+                {checked && choice === option.id && option.id !== question.correctOptionId && (
+                  <X size={18} aria-hidden="true" />
+                )}
               </button>
             ))}
           </div>
@@ -238,11 +248,13 @@ function PracticeQuiz({
   filter,
   topic,
   language,
+  quranFont,
   onBack,
 }: {
   filter: PracticeFilter;
   topic: GrammarTopicSummary | undefined;
   language: UiLanguage;
+  quranFont: ReadingFont;
   onBack: () => void;
 }) {
   const ui = getUiStrings(language);
@@ -283,6 +295,7 @@ function PracticeQuiz({
       title={title}
       subtitle={subtitle}
       onBack={onBack}
+      quranFont={quranFont}
     />
   );
 }
@@ -293,11 +306,13 @@ function PracticeQuiz({
  */
 export function PracticeGrammar({
   language,
+  quranFont,
   selection,
   onSelect,
   onOpenTopic,
 }: {
   language: UiLanguage;
+  quranFont: ReadingFont;
   selection: PracticeFilter | null;
   onSelect: (filter: PracticeFilter | null) => void;
   onOpenTopic: (id: string, trigger: HTMLElement) => void;
@@ -341,8 +356,11 @@ export function PracticeGrammar({
         <PracticeQuiz
           key={selectionKey}
           filter={selection}
-          topic={'topicId' in selection ? topics?.find((t) => t.id === selection.topicId) : undefined}
+          topic={
+            'topicId' in selection ? topics?.find((t) => t.id === selection.topicId) : undefined
+          }
           language={language}
+          quranFont={quranFont}
           onBack={() => onSelect(null)}
         />
       </section>

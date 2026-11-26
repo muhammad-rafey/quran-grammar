@@ -53,9 +53,12 @@ function isExample(value: unknown): value is ResolvedTopicExample {
     isCount(value.surah) &&
     isCount(value.ayah) &&
     isText(value.wordArabic) &&
+    isString(value.wordArabicIndoPak) &&
     isString(value.meaningUrdu) &&
     isText(value.ayahArabic) &&
-    isString(value.translationUrdu) &&
+    isString(value.ayahArabicIndoPak) &&
+    isRecord(value.translations) &&
+    Object.values(value.translations).every(isString) &&
     (value.noteUrdu === null || isString(value.noteUrdu))
   );
 }
@@ -79,7 +82,8 @@ function isOption(value: unknown): value is PracticeOption {
     isRecord(value) &&
     isText(value.id) &&
     isText(value.text) &&
-    (value.language === 'ar' || value.language === 'ur')
+    (value.language === 'ar' || value.language === 'ur') &&
+    (value.textIndoPak === undefined || isText(value.textIndoPak))
   );
 }
 

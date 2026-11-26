@@ -1,5 +1,17 @@
 # Five-Surah expansion — plan, progress and handoff
 
+> **Current content build (owner decision 2026-11-26): the whole Quran, from sources only.**
+> All 114 Surahs are built by [`full-quran/`](full-quran/README.md) from Quran.com (Arabic text,
+> word IDs, Urdu word-by-word meanings, six Urdu ayah translations) and Quranic Arabic Corpus 0.4
+> (morphology, Arabic i‘rab), with no AI-written data in new chapters and no tafsir. Lessons are
+> JSON in `packages/core/data/lessons/`. Chapters published from this folder and the editions
+> below keep their grammar layer, take Quran.com word meanings, and lost their AI ayah
+> translation, theme and tafsir. Read `full-quran/README.md` and `full-quran/scope.json` before
+> content work. The records below remain the provenance of that retained layer; the
+> TypeScript lesson modules they mention (`packages/core/src/lessons/`, written by
+> `npm run publish:drafts`) were removed.
+> Scholarly review remains pending.
+>
 > **Later expansions live in their own work directories.** Surahs 4, 7, 25, 29 and 85–104
 > (807 ayahs, 10,098 words) are in [`edition-2/`](edition-2/README.md), and Al-Hajj and
 > Al-Waqi‘ah (174 ayahs, 1,653 words) are in [`edition-3/`](edition-3/README.md). Both were

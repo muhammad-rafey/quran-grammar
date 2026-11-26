@@ -10,7 +10,8 @@
     "ios": "node --disable-warning=ExperimentalWarning scripts/ensure-db.mjs && expo start --ios",
     "typecheck": "tsc --noEmit",
     "test": "node --disable-warning=ExperimentalWarning scripts/ensure-db.mjs && node --disable-warning=ExperimentalWarning --test tests/*.test.mjs",
-    "export": "node --disable-warning=ExperimentalWarning scripts/ensure-db.mjs && expo export --platform ios --platform android"
+    "export": "node --disable-warning=ExperimentalWarning scripts/ensure-db.mjs && expo export --platform ios --platform android",
+    "lint": "expo lint"
   },
   "dependencies": {
     "@expo/material-symbols": "^0.1.1",
@@ -35,6 +36,8 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
+    "eslint": "^9.0.0",
+    "eslint-config-expo": "~57.0.2",
     "typescript": "~6.0.3"
   }
 }

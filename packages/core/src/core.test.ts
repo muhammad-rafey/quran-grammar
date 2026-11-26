@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { formatCount, getUiStrings, isUiLanguage } from './interface';
+import type { StudyData } from './types';
+import { defaultTranslationId, translationEditions, translationIds, translationText } from './translations';
 import { fatihahPractice, fatihahStudy, getStudy, studies } from './content';
 import {
   isStudyData,
@@ -16,36 +18,55 @@ import {
   getSurahTitle,
   getJuzForAyah,
   getJuzStartAyah,
+  partialSurahLastAyah,
 } from './index';
 
 const lastTen = [105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
 const fiveSurahs = [18, 23, 32, 36, 55];
 const editionTwo = [4, 7, 25, 29, ...Array.from({ length: 20 }, (_, index) => 85 + index)];
 const editionThree = [22, 56];
-/** Source-first lessons (content-pipeline/full-quran): no ayah translation, tafsir or phrase cards. */
-const sourceFirst = new Set([2]);
-const expectedChapters = [1, 2, ...fiveSurahs, ...lastTen, ...editionTwo, ...editionThree].sort((a, b) => a - b);
+const allChapters = Array.from({ length: 114 }, (_, i) => i + 1);
+/**
+ * Chapters that keep their published grammar layer (dictionary notes, phrase cards, segment
+ * glosses, root meanings, paradigms). Every other word is source-only (content-pipeline/full-quran).
+ */
+const publishedChapters = new Set([1, ...fiveSurahs, ...lastTen, ...editionTwo, ...editionThree]);
+/** Al-Baqarah 2:1–20 keeps the pilot grammar layer (no phrase cards); 2:21–286 are source-only. */
+const pilot = { surah: 2, lastAyah: 20 };
+const hasGrammarLayer = (surah: number, ayah: number) =>
+  publishedChapters.has(surah) || (surah === pilot.surah && ayah <= pilot.lastAyah);
+const pipelineFile = (path: string) =>
+  JSON.parse(readFileSync(new URL(`../../../content-pipeline/full-quran/${path}`, import.meta.url), 'utf8'));
 
-test('navigation catalogs distinguish the available lesson from future content and partial juz', () => {
+test('navigation catalogs list every chapter and every complete juz', () => {
   assert.deepEqual(
     surahCatalog.map((surah) => surah.number),
-    Array.from({ length: 114 }, (_, i) => i + 1),
+    allChapters,
   );
-  assert.deepEqual(
-    surahCatalog.filter((surah) => surah.available).map((surah) => surah.number),
-    expectedChapters,
-  );
+  assert.ok(surahCatalog.every((surah) => surah.available));
+  assert.deepEqual(partialSurahLastAyah, {});
   assert.deepEqual(surahCatalog[0], {
     number: 1,
     nameArabic: 'الفاتحة',
     nameEnglish: 'Al-Fatihah',
+    meaningEnglish: 'The Opener',
+    ayahCount: 7,
     available: true,
   });
+  assert.equal(surahCatalog[1].meaningEnglish, 'The Cow');
+  assert.equal(surahCatalog[1].ayahCount, 286);
+  assert.ok(surahCatalog.every((surah) => surah.meaningEnglish.trim()));
+  // Ayah counts come from the juz boundaries and match every bundled lesson.
+  assert.deepEqual(
+    surahCatalog.map((surah) => surah.ayahCount),
+    studies.map((study) => study.surah.ayahCount),
+  );
+  assert.equal(surahCatalog.reduce((sum, surah) => sum + surah.ayahCount, 0), 6236);
   assert.equal(surahCatalog[113].nameArabic, 'الناس');
   assert.equal(surahCatalog[113].nameEnglish, 'An-Nas');
   assert.ok(
     surahCatalog.every(
-      (surah) => /[\u0600-\u06ff]/.test(surah.nameArabic) && surah.nameEnglish.trim(),
+      (surah) => /[؀-ۿ]/.test(surah.nameArabic) && surah.nameEnglish.trim(),
     ),
   );
   assert.equal(new Set(surahCatalog.map((surah) => surah.nameArabic)).size, 114);
@@ -53,49 +74,32 @@ test('navigation catalogs distinguish the available lesson from future content a
     juzCatalog.map((juz) => juz.number),
     Array.from({ length: 30 }, (_, i) => i + 1),
   );
-  const preview = (number: number, ranges: Array<[number, number, number]>, partial = true) => ({
-    number,
-    available: true,
-    partial,
-    previewSurahNumber: ranges[0][0],
-    surahNumbers: ranges.map(([surah]) => surah),
-    ranges: ranges.map(([surah, firstAyah, lastAyah]) => ({ surah, firstAyah, lastAyah })),
-  });
+  // Every juz is complete: no partial previews, and the ranges tile every ayah of every chapter
+  // exactly once, in mushaf order.
+  const covered: string[] = [];
+  for (const juz of juzCatalog) {
+    assert.equal(juz.available, true, `Juz ${juz.number}`);
+    assert.equal(juz.partial, false, `Juz ${juz.number}`);
+    assert.equal(juz.previewSurahNumber, juz.ranges[0].surah);
+    assert.deepEqual(juz.surahNumbers, juz.ranges.map((range) => range.surah));
+    for (const range of juz.ranges)
+      for (let ayah = range.firstAyah; ayah <= range.lastAyah; ayah += 1)
+        covered.push(`${range.surah}:${ayah}`);
+  }
   assert.deepEqual(
-    juzCatalog.filter((juz) => juz.available),
-    [
-      preview(1, [[1, 1, 7], [2, 1, 20]]),
-      preview(4, [[4, 1, 23]]),
-      preview(5, [[4, 24, 147]], false),
-      preview(6, [[4, 148, 176]]),
-      preview(8, [[7, 1, 87]]),
-      preview(9, [[7, 88, 206]]),
-      preview(15, [[18, 1, 74]]),
-      preview(16, [[18, 75, 110]]),
-      preview(17, [[22, 1, 78]]),
-      preview(18, [[23, 1, 118], [25, 1, 20]]),
-      preview(19, [[25, 21, 77]]),
-      preview(20, [[29, 1, 45]]),
-      preview(21, [[29, 46, 69], [32, 1, 30]]),
-      preview(22, [[36, 1, 27]]),
-      preview(23, [[36, 28, 83]]),
-      preview(27, [[55, 1, 78], [56, 1, 96]]),
-      preview(
-        30,
-        Array.from({ length: 30 }, (_, index) => 85 + index).map((surah) => [surah, 1, getStudy(surah)!.surah.ayahCount]),
-      ),
-    ],
+    covered,
+    studies.flatMap((study) => study.ayahs.map((ayah) => `${study.surah.number}:${ayah.number}`)),
   );
-  assert.ok(
-    juzCatalog
-      .filter((juz) => !juz.available)
-      .every(
-        (juz) =>
-          !juz.partial &&
-          juz.previewSurahNumber === undefined &&
-          juz.surahNumbers.length === 0 &&
-          juz.ranges.length === 0,
-      ),
+  const range = (juz: number) =>
+    juzCatalog[juz - 1].ranges.map(({ surah, firstAyah, lastAyah }) => [surah, firstAyah, lastAyah]);
+  assert.deepEqual(range(1), [[1, 1, 7], [2, 1, 141]]);
+  assert.deepEqual(range(3), [[2, 253, 286], [3, 1, 92]]);
+  assert.deepEqual(range(15), [[17, 1, 111], [18, 1, 74]]);
+  assert.deepEqual(range(16), [[18, 75, 110], [19, 1, 98], [20, 1, 135]]);
+  assert.deepEqual(range(27), [[51, 31, 60], [52, 1, 49], [53, 1, 62], [54, 1, 55], [55, 1, 78], [56, 1, 96], [57, 1, 29]]);
+  assert.deepEqual(
+    range(30),
+    Array.from({ length: 37 }, (_, index) => 78 + index).map((surah) => [surah, 1, getStudy(surah)!.surah.ayahCount]),
   );
   // Al-Kahf and Ya-Sin span two juz; the juz shown follows the ayah being read.
   for (const [surah, ayah, juz] of [
@@ -114,19 +118,24 @@ test('navigation catalogs distinguish the available lesson from future content a
     [1, 7, 1],
     [2, 1, 1],
     [2, 20, 1],
+    [2, 21, 1],
+    [2, 141, 1],
+    [2, 142, 2],
+    [2, 286, 3],
+    [3, 1, 3],
     [114, 6, 30],
   ] as const)
     assert.equal(getJuzForAyah(surah, ayah)?.number, juz, `${surah}:${ayah}`);
   for (const [surah, ayah] of [
     [18, 111],
     [36, 0],
-    [2, 21],
-    [2, 142],
-    [3, 1],
+    [2, 287],
+    [115, 1],
   ] as const)
     assert.equal(getJuzForAyah(surah, ayah), undefined, `${surah}:${ayah}`);
   assert.equal(getJuzStartAyah(15, 18), 1);
   assert.equal(getJuzStartAyah(16, 18), 75);
+  assert.equal(getJuzStartAyah(2, 2), 142);
   assert.equal(getJuzStartAyah(22, 36), 1);
   assert.equal(getJuzStartAyah(23, 36), 28);
   assert.equal(getJuzStartAyah(30, 114), 1);
@@ -136,10 +145,41 @@ test('navigation catalogs distinguish the available lesson from future content a
   assert.equal(getSurahTitle(114, 'ur'), 'الناس');
 });
 
-test('all available lessons have complete occurrence, rule and phrase coverage', () => {
+test('the whole Quran is bundled: 114 chapters, 6,236 ayahs, 77,429 unique word occurrences', () => {
+  assert.deepEqual([...availableSurahNumbers], allChapters);
+  assert.deepEqual(
+    studies.map((study) => study.surah.number),
+    allChapters,
+  );
+  assert.equal(
+    studies.reduce((total, study) => total + study.ayahs.length, 0),
+    6236,
+  );
+  assert.equal(
+    studies.reduce((total, study) => total + study.words.length, 0),
+    77429,
+  );
+  const occurrences = studies.flatMap((study) => study.words.map((word) => word.id));
+  assert.equal(new Set(occurrences).size, 77429);
+  // The pipeline's own summary and scope agree with the bundled lessons.
+  const summary = pipelineFile('inventory/sources.json').summary;
+  assert.equal(summary.surahs, 114);
+  assert.equal(summary.ayahs, 6236);
+  assert.equal(summary.words, 77429);
+  assert.equal(summary.publishedWords, 16288);
+  assert.equal(summary.sourceOnlyWords, 61141);
+  const scope = pipelineFile('scope.json');
+  assert.deepEqual(scope.existingLessons, [...publishedChapters].sort((a, b) => a - b));
+  assert.deepEqual(scope.partialPilot, { surah: pilot.surah, aiLayerThroughAyah: pilot.lastAyah });
+  assert.deepEqual(
+    scope.translations.map((edition: { id: string; resourceId: number }) => [edition.id, edition.resourceId]),
+    translationEditions.map((edition) => [edition.id, edition.resourceId]),
+  );
+  // Ayah and word counts of the published lessons are unchanged; Al-Baqarah is now complete.
   const counts = new Map([
     [1, [7, 29]],
-    [2, [20, 230]],
+    [2, [286, 6116]],
+    [3, [200, 3481]],
     [4, [176, 3747]],
     [7, [206, 3320]],
     [18, [110, 1579]],
@@ -182,56 +222,177 @@ test('all available lessons have complete occurrence, rule and phrase coverage',
     [113, [5, 23]],
     [114, [6, 20]],
   ]);
-  assert.deepEqual([...availableSurahNumbers], expectedChapters);
-  assert.deepEqual(
-    studies.map((study) => study.surah.number),
-    expectedChapters,
-  );
-  assert.equal(
-    studies.reduce((total, study) => total + study.ayahs.length, 0),
-    1475,
-  );
-  assert.equal(
-    studies.reduce((total, study) => total + study.words.length, 0),
-    16288,
-  );
-  const occurrences = studies.flatMap((study) => study.words.map((word) => word.id));
-  assert.equal(new Set(occurrences).size, 16288);
   for (const study of studies) {
     const chapter = study.surah.number;
     assert.equal(getStudy(chapter), study);
     assert.equal(isStudyData(study), true, `Surah ${chapter}: complete schema and relationships`);
-    assert.deepEqual([study.ayahs.length, study.words.length], counts.get(chapter));
-    const covered = new Set(
-      study.ayahs.flatMap((ayah) => ayah.phrases.flatMap((phrase) => phrase.wordIds)),
-    );
-    for (const word of study.words) {
-      // Source-first words get a rule only where a library card applies (none covers أَلَا).
-      if (!sourceFirst.has(chapter)) assert.ok(word.ruleIds.length > 0, `${word.id}: grammar rules`);
-      if (!sourceFirst.has(chapter)) assert.ok(covered.has(word.id), `${word.id}: phrase context`);
-    }
-    if (sourceFirst.has(chapter))
-      assert.ok(
-        study.ayahs.every(
-          (ayah) =>
-            ayah.phrases.length === 0 &&
-            ayah.translationUrdu === '' &&
-            ayah.themeUrdu === '' &&
-            ayah.tafsirUrdu === '',
-        ),
-        `Surah ${chapter}: source-first lessons carry no translation, theme, tafsir or phrases`,
-      );
-    else
-      assert.ok(
-        study.ayahs.every((ayah) => ayah.phrases.length > 0),
-        `Surah ${chapter}: phrase analysis`,
-      );
+    assert.equal(study.ayahs.length, study.surah.ayahCount, `Surah ${chapter}`);
+    assert.equal(study.words.length, study.surah.wordCount, `Surah ${chapter}`);
+    if (counts.has(chapter))
+      assert.deepEqual([study.ayahs.length, study.words.length], counts.get(chapter), `Surah ${chapter}`);
     assert.ok(
       !/https?:\/\//.test(JSON.stringify(study)),
       'Source links stay in the repository audit',
     );
   }
-  for (const number of [0, 3, 17, 84, 115, 105.5, NaN]) assert.equal(getStudy(number), undefined);
+  for (const number of [0, 115, 105.5, NaN]) assert.equal(getStudy(number), undefined);
+});
+
+test('every ayah has the six Quran.com translations in catalog order and no tafsir or theme', () => {
+  assert.deepEqual(translationIds, ['jalandhari', 'junagarhi', 'mahmud-al-hasan', 'israr-ahmad', 'maududi', 'wahiduddin-khan']);
+  assert.equal(defaultTranslationId, 'jalandhari');
+  const texts = new Map<string, Set<string>>(translationIds.map((id) => [id, new Set()]));
+  const stray: string[] = [];
+  for (const study of studies)
+    for (const ayah of study.ayahs) {
+      const key = `${study.surah.number}:${ayah.number}`;
+      assert.deepEqual(Object.keys(ayah), ['number', 'translations', 'phrases'], key);
+      assert.deepEqual(Object.keys(ayah.translations), translationIds, key);
+      for (const [id, text] of Object.entries(ayah.translations)) {
+        assert.ok(typeof text === 'string' && text.trim() === text && text.length > 0, `${key} ${id}`);
+        // Footnote markers and markup are removed; the text is Urdu, never Roman Urdu.
+        assert.ok(!/<|foot_?note/i.test(text), `${key} ${id}: markup`);
+        if (text.includes('>')) stray.push(`${key} ${id}`);
+        assert.ok(/[؀-ۿ]/.test(text), `${key} ${id}: Urdu script`);
+        texts.get(id)!.add(text);
+      }
+    }
+  // Markup debris is removed (Quran.com's 4:106 Junagarhi text ends in a lone '>').
+  assert.deepEqual(stray, []);
+  // Each edition is a real translation of the whole Quran, not one repeated placeholder.
+  for (const [id, distinct] of texts) assert.ok(distinct.size > 6000, `${id}: ${distinct.size} distinct ayahs`);
+  assert.equal(translationText(getStudy(1)!.ayahs[0].translations, 'maududi'), getStudy(1)!.ayahs[0].translations.maududi);
+  assert.equal(
+    translationText(getStudy(1)!.ayahs[0].translations, 'no-longer-offered'),
+    getStudy(1)!.ayahs[0].translations.jalandhari,
+  );
+  assert.equal(translationText(undefined, 'maududi'), '');
+});
+
+test('every word carries Quran.com IndoPak text and a Quran.com meaning except recorded gaps', () => {
+  const gaps = pipelineFile('inventory/sources.json').meaningGaps as {
+    sourceOnlyEmpty: string[];
+    publishedEmptied: string[];
+  };
+  const empty = { published: [] as string[], sourceOnly: [] as string[] };
+  for (const study of studies)
+    for (const word of study.words) {
+      assert.equal(typeof word.arabicIndoPak, 'string', word.id);
+      assert.ok(word.arabicIndoPak!.length > 0, `${word.id}: IndoPak text`);
+      // Clean Quran.com text: no byte-order marks, typographic spaces or edge whitespace.
+      assert.ok(!/[\ufeff\u2000-\u200a]|^\s|\s$/.test(word.arabicIndoPak!), `${word.id}: IndoPak whitespace`);
+      assert.ok(/[؀-ۿ]/.test(word.arabicIndoPak!), word.id);
+      assert.equal(word.meaningUrdu.trim(), word.meaningUrdu, word.id);
+      if (word.meaningUrdu === '')
+        (hasGrammarLayer(study.surah.number, word.ayah) ? empty.published : empty.sourceOnly).push(word.id);
+    }
+  // Empty meanings are exactly the Quran.com word-by-word gaps the pipeline recorded.
+  assert.deepEqual(empty.sourceOnly, gaps.sourceOnlyEmpty);
+  assert.deepEqual(empty.published, gaps.publishedEmptied);
+  assert.equal(empty.sourceOnly.length, 210);
+  assert.equal(empty.published.length, 70);
+});
+
+test('source-only words carry no AI-written fields; published lessons keep their grammar layer', () => {
+  let published = 0;
+  let sourceOnly = 0;
+  for (const study of studies) {
+    const chapter = study.surah.number;
+    const covered = new Set(
+      study.ayahs.flatMap((ayah) => ayah.phrases.flatMap((phrase) => phrase.wordIds)),
+    );
+    const rootLayers = new Map<string, boolean>();
+    for (const word of study.words) {
+      const layer = hasGrammarLayer(chapter, word.ayah);
+      if (word.root) rootLayers.set(word.root, (rootLayers.get(word.root) ?? false) || layer);
+      const verb = study.verbForms[word.id];
+      if (word.pos === 'verb') assert.ok(verb, `${word.id}: verb paradigm`);
+      assert.ok(word.morphologyUrdu && word.syntaxUrdu && word.posUrdu, `${word.id}: Corpus grammar`);
+      assert.ok(word.segments.length > 0, word.id);
+      if (layer) {
+        published += 1;
+        assert.ok(word.dictionaryUrdu, `${word.id}: dictionary note`);
+        assert.ok(word.segments.every((segment) => segment.meaningUrdu), `${word.id}: segment glosses`);
+        if (verb) assert.ok(verb.baabUrdu && verb.present && verb.pattern && verb.noteUrdu, `${word.id}: paradigm`);
+        if (publishedChapters.has(chapter)) {
+          assert.ok(word.ruleIds.length > 0, `${word.id}: grammar rules`);
+          assert.ok(covered.has(word.id), `${word.id}: phrase context`);
+        } else if (word.ruleIds.length === 0) {
+          // The pilot gets a rule only where a library card applies (none covers أَلَا).
+          assert.ok(['2:12:1', '2:13:13'].includes(word.id), `${word.id}: grammar rules`);
+        }
+      } else {
+        sourceOnly += 1;
+        assert.equal(word.dictionaryUrdu, '', `${word.id}: no dictionary note`);
+        assert.ok(word.segments.every((segment) => segment.meaningUrdu === ''), `${word.id}: no segment glosses`);
+        assert.ok(!covered.has(word.id), `${word.id}: no phrase card`);
+        if (verb) {
+          assert.equal(verb.present, '', `${word.id}: no present form`);
+          assert.equal(verb.noteUrdu, '', `${word.id}: no paradigm note`);
+          assert.ok(verb.formUrdu && verb.past, `${word.id}: Corpus form and lemma`);
+          // The Corpus gives no Form I vowel class, so Form I has no باب or pattern.
+          if (verb.formUrdu.endsWith('(I)')) assert.equal(verb.baabUrdu + verb.pattern, '', word.id);
+          else assert.ok(verb.baabUrdu, `${word.id}: derived-form باب`);
+        }
+      }
+    }
+    for (const [root, layer] of rootLayers) {
+      const entry = study.roots[root];
+      if (layer) assert.ok(entry.meaningUrdu && entry.noteUrdu, `${chapter} ${root}: root meaning`);
+      else assert.deepEqual(entry, { meaningUrdu: '', noteUrdu: '' }, `${chapter} ${root}: source-only root`);
+    }
+    for (const ayah of study.ayahs) {
+      if (publishedChapters.has(chapter)) assert.ok(ayah.phrases.length > 0, `${chapter}:${ayah.number}: phrases`);
+      else assert.deepEqual(ayah.phrases, [], `${chapter}:${ayah.number}: no phrase cards`);
+    }
+  }
+  assert.equal(published, 16288);
+  assert.equal(sourceOnly, 61141);
+});
+
+test('the Al-Baqarah pilot keeps its reviewed AI layer for 2:1–20 only', () => {
+  const study = getStudy(2)!;
+  const layer: Record<string, { arabic: string; segmentMeaningsUrdu: string[]; dictionaryUrdu: string }> = {};
+  for (const file of ['a01-10', 'a11-16', 'a17-20']) Object.assign(layer, pipelineFile(`words/2/${file}.json`));
+  const pilotWords = study.words.filter((word) => word.ayah <= pilot.lastAyah);
+  assert.equal(pilotWords.length, 230);
+  assert.deepEqual(Object.keys(layer), pilotWords.map((word) => word.id));
+  for (const word of pilotWords) {
+    assert.equal(word.arabic, layer[word.id].arabic, word.id);
+    assert.equal(word.dictionaryUrdu, layer[word.id].dictionaryUrdu, word.id);
+    assert.deepEqual(word.segments.map((segment) => segment.meaningUrdu), layer[word.id].segmentMeaningsUrdu, word.id);
+  }
+  assert.equal(study.words.find((word) => word.id === '2:21:1')!.dictionaryUrdu, '');
+});
+
+test('owner-authorized drafts keep their exact grammar layer; only replaced fields differ', () => {
+  const authorization = JSON.parse(
+    readFileSync(new URL('../../../content-pipeline/draft-publication.json', import.meta.url), 'utf8'),
+  ) as { surahs: Array<{ number: number; work?: string }> };
+  const layer = (study: Omit<StudyData, 'ayahs'> & { ayahs: Array<{ number: number; phrases: unknown }> }) =>
+    JSON.stringify({
+      keys: Object.keys(study),
+      surah: study.surah,
+      // Replaced 2026-11-26: meanings come from Quran.com; IndoPak text was added.
+      words: study.words.map(({ meaningUrdu: _meaning, arabicIndoPak: _indoPak, ...word }) => word),
+      // Replaced: the AI translation, theme and tafsir gave way to the six Quran.com translations.
+      ayahs: study.ayahs.map((ayah) => ({ number: ayah.number, phrases: ayah.phrases })),
+      rules: study.rules,
+      roots: study.roots,
+      verbForms: study.verbForms,
+    });
+  assert.equal(authorization.surahs.length, 31);
+  for (const entry of authorization.surahs) {
+    assert.ok(publishedChapters.has(entry.number), `Surah ${entry.number}`);
+    const draft = JSON.parse(
+      readFileSync(
+        new URL(`../../../${entry.work ?? 'content-pipeline'}/drafts/surah-${entry.number}.json`, import.meta.url),
+        'utf8',
+      ),
+    );
+    assert.equal(draft.reviewStatus, 'scholarly-review-pending');
+    assert.equal(layer(getStudy(entry.number)!), layer(draft.study), `Surah ${entry.number}`);
+  }
 });
 
 test('expansion lessons preserve every audited Uthmani word and occurrence boundary verbatim', () => {
@@ -301,6 +462,51 @@ test('last ten surahs preserve every audited Uthmani word and occurrence boundar
       .flatMap((study) => study.words.map((word) => [word.id, word.arabic])),
     inventory,
   );
+});
+
+test('Quran.com text differs from the audited and Corpus spellings only in marks', () => {
+  // Letters only: Quran.com's seated hamza (ـٔ) is QAC's ء; marks, tatweel, small waw/yeh and
+  // Quran.com's internal word spaces are spelling marks (content-pipeline/full-quran/scripts/build.py).
+  const letters = (text: string) =>
+    [...text.replace(/ـٔ|ـٕ/g, 'ء').normalize('NFD')]
+      .filter((ch) => !/\p{Mn}/u.test(ch) && !'ـۥۦ '.includes(ch))
+      .join('');
+  // The published Al-Fatihah now uses Quran.com's tatweel before the dagger alif.
+  const fatihah = new Map(fatihahStudy.words.map((word) => [word.id, word.arabic]));
+  // Audited (pre-2026-11-26) spellings, written as escapes so marks keep their stored order.
+  for (const [id, audited] of [
+    ['1:1:3', 'ٱلرَّحْمَٰنِ'],
+    ['1:2:4', 'ٱلْعَٰلَمِينَ'],
+    ['1:3:1', 'ٱلرَّحْمَٰنِ'],
+    ['1:4:1', 'مَٰلِكِ'],
+  ]) {
+    const quranCom = fatihah.get(id)!;
+    assert.equal(quranCom, audited.replace('َٰ', 'َـٰ'), `${id}: tatweel before the dagger alif`);
+    assert.equal(quranCom.replace('ـ', ''), audited, `${id}: tatweel is the only change`);
+  }
+  const fatihahChanged = fatihahStudy.words.filter((word) => word.arabic.includes('ـ')).map((word) => word.id);
+  assert.deepEqual(fatihahChanged, ['1:1:3', '1:2:4', '1:3:1', '1:4:1']);
+  // Every recorded Quran.com/Corpus difference is the stored word, and only marks differ except
+  // for the three genuine source spelling differences the pipeline lists.
+  const summary = pipelineFile('inventory/sources.json').summary;
+  assert.deepEqual(summary.corpusLetterDifferences, ['11:13:3', '12:39:1', '12:41:1']);
+  const letterDifferences: string[] = [];
+  let differences = 0;
+  for (const study of studies) {
+    const inventory = pipelineFile(`inventory/inventory-${study.surah.number}.json`) as {
+      surah: number;
+      corpusSpellingDifferences: Array<{ id: string; quranCom: string; corpus: string }>;
+    };
+    assert.equal(inventory.surah, study.surah.number);
+    const arabic = new Map(study.words.map((word) => [word.id, word.arabic]));
+    for (const entry of inventory.corpusSpellingDifferences) {
+      differences += 1;
+      assert.equal(arabic.get(entry.id), entry.quranCom, entry.id);
+      if (letters(entry.quranCom) !== letters(entry.corpus)) letterDifferences.push(entry.id);
+    }
+  }
+  assert.equal(differences, summary.corpusSpellingDifferences);
+  assert.deepEqual(letterDifferences, summary.corpusLetterDifferences);
 });
 
 test('new lessons preserve command particles, elided pronouns and non-triliteral roots', () => {
@@ -567,10 +773,54 @@ test('downloaded data validation rejects malformed nested fields and broken rela
     (value) => {
       value.verbForms['1:5:4'].past = [];
     },
+    (value) => {
+      value.words[0].arabicIndoPak = '';
+    },
+    (value) => {
+      value.words[0].arabicIndoPak = 7;
+    },
+    (value) => {
+      delete value.ayahs[0].translations.maududi;
+    },
+    (value) => {
+      value.ayahs[0].translations.maududi = '';
+    },
+    (value) => {
+      value.ayahs[0].translations.extra = 'نیا ترجمہ';
+    },
+    (value) => {
+      const { jalandhari, ...rest } = value.ayahs[0].translations;
+      value.ayahs[0].translations = { ...rest, jalandhari };
+    },
+    (value) => {
+      value.ayahs[0].translations = 'شروع';
+    },
+    (value) => {
+      value.words[0].meaningUrdu = null;
+    },
+    (value) => {
+      delete value.words[0].segments[0].meaningUrdu;
+    },
+    (value) => {
+      value.verbForms['1:5:4'].formUrdu = '';
+    },
   ];
   for (const mutate of mutations) {
     const value = structuredClone(fatihahStudy);
     mutate(value);
     assert.equal(isStudyData(value), false, mutate.toString());
   }
+  // Source-only shapes are accepted: empty Quran.com meaning gaps and no AI-written fields.
+  const sourceOnly = structuredClone(fatihahStudy);
+  sourceOnly.words[0].meaningUrdu = '';
+  sourceOnly.words[0].dictionaryUrdu = '';
+  sourceOnly.words[0].segments[0].meaningUrdu = '';
+  sourceOnly.roots['ع و ن'] = { meaningUrdu: '', noteUrdu: '' };
+  Object.assign(sourceOnly.verbForms['1:5:4'], { baabUrdu: '', present: '', pattern: '', noteUrdu: '' });
+  sourceOnly.ayahs[0].phrases = [];
+  assert.equal(isStudyData(sourceOnly), true);
+  // The optional IndoPak text is accepted when present.
+  const withIndoPak = structuredClone(fatihahStudy) as { words: { arabicIndoPak?: string }[] };
+  withIndoPak.words[0]!.arabicIndoPak = 'بِسۡمِ';
+  assert.equal(isStudyData(withIndoPak), true);
 });

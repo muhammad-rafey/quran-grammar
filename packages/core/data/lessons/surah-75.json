@@ -1,0 +1,6158 @@
+{
+ "schemaVersion": 1,
+ "surah": {
+  "number": 75,
+  "nameUrdu": "سورۃ القیامہ",
+  "nameArabic": "سورة القيامة",
+  "ayahCount": 40,
+  "wordCount": 164
+ },
+ "words": [
+  {
+   "id": "75:1:1",
+   "ayah": 1,
+   "position": 1,
+   "arabic": "لَآ",
+   "arabicIndoPak": "لَاۤ",
+   "meaningUrdu": "نہیں",
+   "pos": "particle",
+   "posUrdu": "حرفِ نفی",
+   "root": null,
+   "lemma": "لَا",
+   "morphologyUrdu": "حرفِ نفی، مبنی۔",
+   "syntaxUrdu": "حرف نفي",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "لَآ",
+     "roleUrdu": "حرفِ نفی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "negation"
+   ]
+  },
+  {
+   "id": "75:1:2",
+   "ayah": 1,
+   "position": 2,
+   "arabic": "أُقْسِمُ",
+   "arabicIndoPak": "اُقۡسِمُ",
+   "meaningUrdu": "میں قسم کھاتا ہوں",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "ق س م",
+   "lemma": "أَقْسَمُ",
+   "morphologyUrdu": "فعلِ مضارع، مرفوع، معروف، واحد متکلم، ثلاثی مزید فیہ — چہارم (IV)، بابِ إِفْعَال۔",
+   "syntaxUrdu": "فعل مضارع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أُقْسِمُ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "derived-form"
+   ]
+  },
+  {
+   "id": "75:1:3",
+   "ayah": 1,
+   "position": 3,
+   "arabic": "بِيَوْمِ",
+   "arabicIndoPak": "بِيَوۡمِ",
+   "meaningUrdu": "دن کی",
+   "pos": "noun",
+   "posUrdu": "اسم مجرور",
+   "root": "ي و م",
+   "lemma": "يَوْم",
+   "morphologyUrdu": "اسم، مذکر، مجرور۔ سابقہ: بِ (حرفِ جر)۔",
+   "syntaxUrdu": "جار ومجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بِ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "يَوْمِ",
+     "roleUrdu": "اسم مجرور",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition",
+    "genitive"
+   ]
+  },
+  {
+   "id": "75:1:4",
+   "ayah": 1,
+   "position": 4,
+   "arabic": "ٱلْقِيَـٰمَةِ",
+   "arabicIndoPak": "الۡقِيٰمَةِۙ",
+   "meaningUrdu": "قیامت کے",
+   "pos": "noun",
+   "posUrdu": "اسم مجرور",
+   "root": "ق و م",
+   "lemma": "قِيَٰمَة",
+   "morphologyUrdu": "اسم، مؤنث، ال کے ساتھ معرفہ، مجرور۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "قِيَـٰمَةِ",
+     "roleUrdu": "اسم مجرور",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "genitive"
+   ]
+  },
+  {
+   "id": "75:2:1",
+   "ayah": 2,
+   "position": 1,
+   "arabic": "وَلَآ",
+   "arabicIndoPak": "وَلَاۤ",
+   "meaningUrdu": "اور نہیں",
+   "pos": "particle",
+   "posUrdu": "حرفِ نفی",
+   "root": null,
+   "lemma": "لَا",
+   "morphologyUrdu": "حرفِ نفی، مبنی۔ سابقہ: وَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الواو عاطفة؛ حرف نفي",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "لَآ",
+     "roleUrdu": "حرفِ نفی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "negation"
+   ]
+  },
+  {
+   "id": "75:2:2",
+   "ayah": 2,
+   "position": 2,
+   "arabic": "أُقْسِمُ",
+   "arabicIndoPak": "اُقۡسِمُ",
+   "meaningUrdu": "میں قسم کھاتا ہوں",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "ق س م",
+   "lemma": "أَقْسَمُ",
+   "morphologyUrdu": "فعلِ مضارع، مرفوع، معروف، واحد متکلم، ثلاثی مزید فیہ — چہارم (IV)، بابِ إِفْعَال۔",
+   "syntaxUrdu": "فعل مضارع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أُقْسِمُ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "derived-form"
+   ]
+  },
+  {
+   "id": "75:2:3",
+   "ayah": 2,
+   "position": 3,
+   "arabic": "بِٱلنَّفْسِ",
+   "arabicIndoPak": "بِالنَّفۡسِ",
+   "meaningUrdu": "نفس کی",
+   "pos": "noun",
+   "posUrdu": "اسم مجرور",
+   "root": "ن ف س",
+   "lemma": "نَفْس",
+   "morphologyUrdu": "اسم، واحد مؤنث، ال کے ساتھ معرفہ، مجرور۔ سابقہ: بِ (حرفِ جر)؛ ٱل (حرفِ تعریف)۔",
+   "syntaxUrdu": "جار ومجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بِ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "ٱل",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "نَّفْسِ",
+     "roleUrdu": "اسم مجرور",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition",
+    "definite",
+    "genitive"
+   ]
+  },
+  {
+   "id": "75:2:4",
+   "ayah": 2,
+   "position": 4,
+   "arabic": "ٱللَّوَّامَةِ",
+   "arabicIndoPak": "اللَّوَّامَةِؕ",
+   "meaningUrdu": "جو ملامت کرنے والا ہے",
+   "pos": "adjective",
+   "posUrdu": "صفت مجرور",
+   "root": "ل و م",
+   "lemma": "لَوَّامَة",
+   "morphologyUrdu": "صفت، مؤنث، ال کے ساتھ معرفہ، مجرور۔ سابقہ: ٱل (حرفِ تعریف)۔",
+   "syntaxUrdu": "صفة مجرورة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱل",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "لَّوَّامَةِ",
+     "roleUrdu": "صفت مجرور",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "genitive"
+   ]
+  },
+  {
+   "id": "75:3:1",
+   "ayah": 3,
+   "position": 1,
+   "arabic": "أَيَحْسَبُ",
+   "arabicIndoPak": "اَيَحۡسَبُ",
+   "meaningUrdu": "کیا سمجھتا ہے",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "ح س ب",
+   "lemma": "حَسِبَ",
+   "morphologyUrdu": "فعلِ مضارع، مرفوع، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔ سابقہ: أَ (ہمزۂ استفہام)۔",
+   "syntaxUrdu": "الهمزة همزة استفهام؛ فعل مضارع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَ",
+     "roleUrdu": "ہمزۂ استفہام",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "يَحْسَبُ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "interrogative",
+    "imperfect"
+   ]
+  },
+  {
+   "id": "75:3:2",
+   "ayah": 3,
+   "position": 2,
+   "arabic": "ٱلْإِنسَـٰنُ",
+   "arabicIndoPak": "الۡاِنۡسَانُ",
+   "meaningUrdu": "انسان",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "أ ن س",
+   "lemma": "إِنسَٰن",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "إِنسَـٰنُ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:3:3",
+   "ayah": 3,
+   "position": 3,
+   "arabic": "أَلَّن",
+   "arabicIndoPak": "اَلَّنۡ",
+   "meaningUrdu": "کہ ہرگز نہیں",
+   "pos": "particle",
+   "posUrdu": "حرفِ مصدری + حرفِ نفی",
+   "root": null,
+   "lemma": "أَن",
+   "morphologyUrdu": "حرفِ مصدری + حرفِ نفی، مبنی۔",
+   "syntaxUrdu": "حرف مصدري؛ حرف نفي",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَ",
+     "roleUrdu": "حرفِ مصدری",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "لَّن",
+     "roleUrdu": "حرفِ نفی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "masdar-particle",
+    "lan-negation"
+   ]
+  },
+  {
+   "id": "75:3:4",
+   "ayah": 3,
+   "position": 4,
+   "arabic": "نَّجْمَعَ",
+   "arabicIndoPak": "نَّجۡمَعَ",
+   "meaningUrdu": "ہم جمع کریں گے",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "ج م ع",
+   "lemma": "جَمَعَ",
+   "morphologyUrdu": "فعلِ مضارع، منصوب، معروف، جمع متکلم، ثلاثی مجرد — اوّل (I)۔",
+   "syntaxUrdu": "فعل مضارع منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "نَّجْمَعَ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "subjunctive"
+   ]
+  },
+  {
+   "id": "75:3:5",
+   "ayah": 3,
+   "position": 5,
+   "arabic": "عِظَامَهُۥ",
+   "arabicIndoPak": "عِظَامَهٗؕ",
+   "meaningUrdu": "اس کی ہڈیوں کو",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب + ضمیرِ متصل",
+   "root": "ع ظ م",
+   "lemma": "عَظِيم",
+   "morphologyUrdu": "اسم، جمع مذکر، منصوب۔ لاحقہ: هُۥ ضمیرِ متصل، واحد مذکر غائب۔",
+   "syntaxUrdu": "اسم منصوب والهاء ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "عِظَامَ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هُۥ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "accusative",
+    "broken-plural"
+   ]
+  },
+  {
+   "id": "75:4:1",
+   "ayah": 4,
+   "position": 1,
+   "arabic": "بَلَىٰ",
+   "arabicIndoPak": "بَلٰى",
+   "meaningUrdu": "کیوں نہیں",
+   "pos": "particle",
+   "posUrdu": "حرفِ جواب",
+   "root": null,
+   "lemma": "بَلَىٰ",
+   "morphologyUrdu": "حرفِ جواب، مبنی۔",
+   "syntaxUrdu": "حرف جواب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بَلَىٰ",
+     "roleUrdu": "حرفِ جواب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "answer-particle"
+   ]
+  },
+  {
+   "id": "75:4:2",
+   "ayah": 4,
+   "position": 2,
+   "arabic": "قَـٰدِرِينَ",
+   "arabicIndoPak": "قٰدِرِيۡنَ",
+   "meaningUrdu": "قادر ہیں",
+   "pos": "noun",
+   "posUrdu": "اسمِ فاعل منصوب",
+   "root": "ق د ر",
+   "lemma": "قَادِر",
+   "morphologyUrdu": "اسمِ فاعل، جمع مذکر، منصوب۔",
+   "syntaxUrdu": "اسم منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "قَـٰدِرِينَ",
+     "roleUrdu": "اسمِ فاعل منصوب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "accusative",
+    "participle",
+    "sound-plural"
+   ]
+  },
+  {
+   "id": "75:4:3",
+   "ayah": 4,
+   "position": 3,
+   "arabic": "عَلَىٰٓ",
+   "arabicIndoPak": "عَلٰٓى",
+   "meaningUrdu": "اس بات پر",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر",
+   "root": null,
+   "lemma": "عَلَىٰ",
+   "morphologyUrdu": "حرفِ جر، مبنی۔",
+   "syntaxUrdu": "حرف جر",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "عَلَىٰٓ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition"
+   ]
+  },
+  {
+   "id": "75:4:4",
+   "ayah": 4,
+   "position": 4,
+   "arabic": "أَن",
+   "arabicIndoPak": "اَنۡ",
+   "meaningUrdu": "کہ",
+   "pos": "particle",
+   "posUrdu": "حرفِ مصدری",
+   "root": null,
+   "lemma": "أَن",
+   "morphologyUrdu": "حرفِ مصدری، مبنی۔",
+   "syntaxUrdu": "حرف مصدري",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَن",
+     "roleUrdu": "حرفِ مصدری",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "masdar-particle"
+   ]
+  },
+  {
+   "id": "75:4:5",
+   "ayah": 4,
+   "position": 5,
+   "arabic": "نُّسَوِّىَ",
+   "arabicIndoPak": "نُّسَوِّىَ",
+   "meaningUrdu": "ہم درست کردیں",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "س و ي",
+   "lemma": "سَوَّىٰ",
+   "morphologyUrdu": "فعلِ مضارع، منصوب، معروف، جمع متکلم، ثلاثی مزید فیہ — دوم (II)، بابِ تَفْعِيل۔",
+   "syntaxUrdu": "فعل مضارع منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "نُّسَوِّىَ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "subjunctive",
+    "derived-form",
+    "weak-verb"
+   ]
+  },
+  {
+   "id": "75:4:6",
+   "ayah": 4,
+   "position": 6,
+   "arabic": "بَنَانَهُۥ",
+   "arabicIndoPak": "بَنَانَهٗ",
+   "meaningUrdu": "اس کے پور پور کو",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب + ضمیرِ متصل",
+   "root": "ب ن ن",
+   "lemma": "بَنَان",
+   "morphologyUrdu": "اسم، مذکر، منصوب۔ لاحقہ: هُۥ ضمیرِ متصل، واحد مذکر غائب۔",
+   "syntaxUrdu": "اسم منصوب والهاء ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بَنَانَ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هُۥ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "accusative"
+   ]
+  },
+  {
+   "id": "75:5:1",
+   "ayah": 5,
+   "position": 1,
+   "arabic": "بَلْ",
+   "arabicIndoPak": "بَلۡ",
+   "meaningUrdu": "بلکہ",
+   "pos": "particle",
+   "posUrdu": "حرفِ اضراب",
+   "root": null,
+   "lemma": "بَل",
+   "morphologyUrdu": "حرفِ اضراب، مبنی۔",
+   "syntaxUrdu": "حرف اضراب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بَلْ",
+     "roleUrdu": "حرفِ اضراب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "retraction"
+   ]
+  },
+  {
+   "id": "75:5:2",
+   "ayah": 5,
+   "position": 2,
+   "arabic": "يُرِيدُ",
+   "arabicIndoPak": "يُرِيۡدُ",
+   "meaningUrdu": "چاہتا ہے",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "ر و د",
+   "lemma": "أَرَادَ",
+   "morphologyUrdu": "فعلِ مضارع، مرفوع، معروف، واحد مذکر غائب، ثلاثی مزید فیہ — چہارم (IV)، بابِ إِفْعَال۔",
+   "syntaxUrdu": "فعل مضارع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يُرِيدُ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "derived-form",
+    "weak-verb"
+   ]
+  },
+  {
+   "id": "75:5:3",
+   "ayah": 5,
+   "position": 3,
+   "arabic": "ٱلْإِنسَـٰنُ",
+   "arabicIndoPak": "الۡاِنۡسَانُ",
+   "meaningUrdu": "انسان",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "أ ن س",
+   "lemma": "إِنسَٰن",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "إِنسَـٰنُ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:5:4",
+   "ayah": 5,
+   "position": 4,
+   "arabic": "لِيَفْجُرَ",
+   "arabicIndoPak": "لِيَفۡجُرَ",
+   "meaningUrdu": "کہ گناہ کرتا ہے",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "ف ج ر",
+   "lemma": "يَفْجُرَ",
+   "morphologyUrdu": "فعلِ مضارع، منصوب، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔ سابقہ: لِ (لامِ تعلیل)۔",
+   "syntaxUrdu": "اللام لام التعليل؛ فعل مضارع منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "لِ",
+     "roleUrdu": "لامِ تعلیل",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "يَفْجُرَ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "purpose-lam",
+    "imperfect",
+    "subjunctive"
+   ]
+  },
+  {
+   "id": "75:5:5",
+   "ayah": 5,
+   "position": 5,
+   "arabic": "أَمَامَهُۥ",
+   "arabicIndoPak": "اَمَامَهٗۚ",
+   "meaningUrdu": "اپنے آگے",
+   "pos": "noun",
+   "posUrdu": "ظرفِ زمان منصوب + ضمیرِ متصل",
+   "root": "أ م م",
+   "lemma": "أَمَام",
+   "morphologyUrdu": "ظرفِ زمان، منصوب۔ لاحقہ: هُۥ ضمیرِ متصل، واحد مذکر غائب۔",
+   "syntaxUrdu": "ظرف زمان منصوب والهاء ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَمَامَ",
+     "roleUrdu": "ظرفِ زمان منصوب",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هُۥ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "adverb"
+   ]
+  },
+  {
+   "id": "75:6:1",
+   "ayah": 6,
+   "position": 1,
+   "arabic": "يَسْـَٔلُ",
+   "arabicIndoPak": "يَسۡـَٔـلُ",
+   "meaningUrdu": "پوچھتا ہے وہ",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "س أ ل",
+   "lemma": "سَأَلَ",
+   "morphologyUrdu": "فعلِ مضارع، مرفوع، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔",
+   "syntaxUrdu": "فعل مضارع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يَسْـَٔلُ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "hamzated"
+   ]
+  },
+  {
+   "id": "75:6:2",
+   "ayah": 6,
+   "position": 2,
+   "arabic": "أَيَّانَ",
+   "arabicIndoPak": "اَيَّانَ",
+   "meaningUrdu": "کب ہے",
+   "pos": "noun",
+   "posUrdu": "حرفِ استفہام",
+   "root": null,
+   "lemma": "أَيَّان",
+   "morphologyUrdu": "حرفِ استفہام۔",
+   "syntaxUrdu": "اسم استفهام",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَيَّانَ",
+     "roleUrdu": "حرفِ استفہام",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "interrogative"
+   ]
+  },
+  {
+   "id": "75:6:3",
+   "ayah": 6,
+   "position": 3,
+   "arabic": "يَوْمُ",
+   "arabicIndoPak": "يَوۡمُ",
+   "meaningUrdu": "دن",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "ي و م",
+   "lemma": "يَوْم",
+   "morphologyUrdu": "اسم، مذکر، مرفوع۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يَوْمُ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:6:4",
+   "ayah": 6,
+   "position": 4,
+   "arabic": "ٱلْقِيَـٰمَةِ",
+   "arabicIndoPak": "الۡقِيٰمَةِؕ",
+   "meaningUrdu": "قیامت کے",
+   "pos": "noun",
+   "posUrdu": "اسم مجرور",
+   "root": "ق و م",
+   "lemma": "قِيَٰمَة",
+   "morphologyUrdu": "اسم، مؤنث، ال کے ساتھ معرفہ، مجرور۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "قِيَـٰمَةِ",
+     "roleUrdu": "اسم مجرور",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "genitive"
+   ]
+  },
+  {
+   "id": "75:7:1",
+   "ayah": 7,
+   "position": 1,
+   "arabic": "فَإِذَا",
+   "arabicIndoPak": "فَاِذَا",
+   "meaningUrdu": "پھر جب",
+   "pos": "noun",
+   "posUrdu": "ظرفِ زمان",
+   "root": null,
+   "lemma": "إِذَا",
+   "morphologyUrdu": "ظرفِ زمان۔ سابقہ: فَ (حرفِ استئناف)۔",
+   "syntaxUrdu": "الفاء استئنافية؛ ظرف زمان",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "فَ",
+     "roleUrdu": "حرفِ استئناف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "إِذَا",
+     "roleUrdu": "ظرفِ زمان",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "resumption",
+    "condition"
+   ]
+  },
+  {
+   "id": "75:7:2",
+   "ayah": 7,
+   "position": 2,
+   "arabic": "بَرِقَ",
+   "arabicIndoPak": "بَرِقَ",
+   "meaningUrdu": "چندھیا جائیں گی",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "ب ر ق",
+   "lemma": "بَرِقَ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔",
+   "syntaxUrdu": "فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بَرِقَ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "perfect"
+   ]
+  },
+  {
+   "id": "75:7:3",
+   "ayah": 7,
+   "position": 3,
+   "arabic": "ٱلْبَصَرُ",
+   "arabicIndoPak": "الۡبَصَرُۙ",
+   "meaningUrdu": "نگاہیں۔ آنکھیں",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "ب ص ر",
+   "lemma": "بَصَر",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "بَصَرُ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:8:1",
+   "ayah": 8,
+   "position": 1,
+   "arabic": "وَخَسَفَ",
+   "arabicIndoPak": "وَخَسَفَ",
+   "meaningUrdu": "اور بےنور ہوجائے گا",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "خ س ف",
+   "lemma": "خَسَفَ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔ سابقہ: وَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الواو عاطفة؛ فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "خَسَفَ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "perfect"
+   ]
+  },
+  {
+   "id": "75:8:2",
+   "ayah": 8,
+   "position": 2,
+   "arabic": "ٱلْقَمَرُ",
+   "arabicIndoPak": "الۡقَمَرُۙ",
+   "meaningUrdu": "چاند",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "ق م ر",
+   "lemma": "قَمَر",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "قَمَرُ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:9:1",
+   "ayah": 9,
+   "position": 1,
+   "arabic": "وَجُمِعَ",
+   "arabicIndoPak": "وَجُمِعَ",
+   "meaningUrdu": "اور جمع کردئیے جائیں گے",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی مجہول",
+   "root": "ج م ع",
+   "lemma": "جَمَعَ",
+   "morphologyUrdu": "فعلِ ماضی مجہول، مجہول، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔ سابقہ: وَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الواو عاطفة؛ فعل ماض مبني للمجهول",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "جُمِعَ",
+     "roleUrdu": "فعلِ ماضی مجہول",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "perfect",
+    "passive"
+   ]
+  },
+  {
+   "id": "75:9:2",
+   "ayah": 9,
+   "position": 2,
+   "arabic": "ٱلشَّمْسُ",
+   "arabicIndoPak": "الشَّمۡسُ",
+   "meaningUrdu": "سورج",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "ش م س",
+   "lemma": "شَمْس",
+   "morphologyUrdu": "اسم، مؤنث، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱل (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱل",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "شَّمْسُ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:9:3",
+   "ayah": 9,
+   "position": 3,
+   "arabic": "وَٱلْقَمَرُ",
+   "arabicIndoPak": "وَالۡقَمَرُۙ",
+   "meaningUrdu": "اور چاند",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "ق م ر",
+   "lemma": "قَمَر",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: وَ (حرفِ عطف)؛ ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "الواو عاطفة؛ اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "قَمَرُ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "definite",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:10:1",
+   "ayah": 10,
+   "position": 1,
+   "arabic": "يَقُولُ",
+   "arabicIndoPak": "يَقُوۡلُ",
+   "meaningUrdu": "کہے",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "ق و ل",
+   "lemma": "قَالَ",
+   "morphologyUrdu": "فعلِ مضارع، مرفوع، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔",
+   "syntaxUrdu": "فعل مضارع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يَقُولُ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "weak-verb"
+   ]
+  },
+  {
+   "id": "75:10:2",
+   "ayah": 10,
+   "position": 2,
+   "arabic": "ٱلْإِنسَـٰنُ",
+   "arabicIndoPak": "الۡاِنۡسَانُ",
+   "meaningUrdu": "انسان",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "أ ن س",
+   "lemma": "إِنسَٰن",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "إِنسَـٰنُ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:10:3",
+   "ayah": 10,
+   "position": 3,
+   "arabic": "يَوْمَئِذٍ",
+   "arabicIndoPak": "يَوۡمَٮِٕذٍ",
+   "meaningUrdu": "اس دن",
+   "pos": "noun",
+   "posUrdu": "ظرفِ زمان",
+   "root": null,
+   "lemma": "يَوْمَئِذ",
+   "morphologyUrdu": "ظرفِ زمان۔",
+   "syntaxUrdu": "ظرف زمان",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يَوْمَئِذٍ",
+     "roleUrdu": "ظرفِ زمان",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "adverb"
+   ]
+  },
+  {
+   "id": "75:10:4",
+   "ayah": 10,
+   "position": 4,
+   "arabic": "أَيْنَ",
+   "arabicIndoPak": "اَيۡنَ",
+   "meaningUrdu": "کہاں ہے",
+   "pos": "noun",
+   "posUrdu": "حرفِ استفہام",
+   "root": null,
+   "lemma": "أَيْن",
+   "morphologyUrdu": "حرفِ استفہام۔",
+   "syntaxUrdu": "اسم استفهام",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَيْنَ",
+     "roleUrdu": "حرفِ استفہام",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "interrogative"
+   ]
+  },
+  {
+   "id": "75:10:5",
+   "ayah": 10,
+   "position": 5,
+   "arabic": "ٱلْمَفَرُّ",
+   "arabicIndoPak": "الۡمَفَرُّۚ",
+   "meaningUrdu": "فرار کی جگہ",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "ف ر ر",
+   "lemma": "مَفَرّ",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "مَفَرُّ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:11:1",
+   "ayah": 11,
+   "position": 1,
+   "arabic": "كَلَّا",
+   "arabicIndoPak": "كَلَّا",
+   "meaningUrdu": "ہرگز",
+   "pos": "particle",
+   "posUrdu": "حرفِ ردع",
+   "root": null,
+   "lemma": "كَلَّا",
+   "morphologyUrdu": "حرفِ ردع، مبنی۔",
+   "syntaxUrdu": "حرف ردع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "كَلَّا",
+     "roleUrdu": "حرفِ ردع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "deterrence"
+   ]
+  },
+  {
+   "id": "75:11:2",
+   "ayah": 11,
+   "position": 2,
+   "arabic": "لَا",
+   "arabicIndoPak": "لَا",
+   "meaningUrdu": "نہیں",
+   "pos": "particle",
+   "posUrdu": "حرفِ نفی",
+   "root": null,
+   "lemma": "لَا",
+   "morphologyUrdu": "حرفِ نفی، مبنی۔",
+   "syntaxUrdu": "نافية تعمل عمل «أن»",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "لَا",
+     "roleUrdu": "حرفِ نفی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "la-generic"
+   ]
+  },
+  {
+   "id": "75:11:3",
+   "ayah": 11,
+   "position": 3,
+   "arabic": "وَزَرَ",
+   "arabicIndoPak": "وَزَرَؕ",
+   "meaningUrdu": "کوئی پناہ کی جگہ نہیں",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب",
+   "root": "و ز ر",
+   "lemma": "وَزَر",
+   "morphologyUrdu": "اسم، مذکر، منصوب۔",
+   "syntaxUrdu": "اسم منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَزَرَ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "accusative"
+   ]
+  },
+  {
+   "id": "75:12:1",
+   "ayah": 12,
+   "position": 1,
+   "arabic": "إِلَىٰ",
+   "arabicIndoPak": "اِلٰى",
+   "meaningUrdu": "طرف",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر",
+   "root": null,
+   "lemma": "إِلَىٰ",
+   "morphologyUrdu": "حرفِ جر، مبنی۔",
+   "syntaxUrdu": "حرف جر",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "إِلَىٰ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition"
+   ]
+  },
+  {
+   "id": "75:12:2",
+   "ayah": 12,
+   "position": 2,
+   "arabic": "رَبِّكَ",
+   "arabicIndoPak": "رَبِّكَ",
+   "meaningUrdu": "تیرے رب کی",
+   "pos": "noun",
+   "posUrdu": "اسم مجرور + ضمیرِ متصل",
+   "root": "ر ب ب",
+   "lemma": "رَبّ",
+   "morphologyUrdu": "اسم، مذکر، مجرور۔ لاحقہ: كَ ضمیرِ متصل، واحد مذکر حاضر۔",
+   "syntaxUrdu": "اسم مجرور والكاف ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "رَبِّ",
+     "roleUrdu": "اسم مجرور",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "كَ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر حاضر)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "genitive"
+   ]
+  },
+  {
+   "id": "75:12:3",
+   "ayah": 12,
+   "position": 3,
+   "arabic": "يَوْمَئِذٍ",
+   "arabicIndoPak": "يَوۡمَٮِٕذِ",
+   "meaningUrdu": "اس دن",
+   "pos": "noun",
+   "posUrdu": "ظرفِ زمان",
+   "root": null,
+   "lemma": "يَوْمَئِذ",
+   "morphologyUrdu": "ظرفِ زمان۔",
+   "syntaxUrdu": "ظرف زمان",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يَوْمَئِذٍ",
+     "roleUrdu": "ظرفِ زمان",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "adverb"
+   ]
+  },
+  {
+   "id": "75:12:4",
+   "ayah": 12,
+   "position": 4,
+   "arabic": "ٱلْمُسْتَقَرُّ",
+   "arabicIndoPak": "اۨلۡمُسۡتَقَرُّؕ",
+   "meaningUrdu": "ٹھہرنا ہے",
+   "pos": "noun",
+   "posUrdu": "اسمِ مفعول مرفوع",
+   "root": "ق ر ر",
+   "lemma": "مُسْتَقَرّ",
+   "morphologyUrdu": "اسمِ مفعول، ثلاثی مزید فیہ — دہم (X)، بابِ اِسْتِفْعَال، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "مُسْتَقَرُّ",
+     "roleUrdu": "اسمِ مفعول مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative",
+    "participle"
+   ]
+  },
+  {
+   "id": "75:13:1",
+   "ayah": 13,
+   "position": 1,
+   "arabic": "يُنَبَّؤُا۟",
+   "arabicIndoPak": "يُنَبَّؤُا",
+   "meaningUrdu": "آگاہ کردیاجائے",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع مجہول",
+   "root": "ن ب أ",
+   "lemma": "نَبَّأَ",
+   "morphologyUrdu": "فعلِ مضارع مجہول، مرفوع، مجہول، واحد مذکر غائب، ثلاثی مزید فیہ — دوم (II)، بابِ تَفْعِيل۔",
+   "syntaxUrdu": "فعل مضارع مبني للمجهول",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يُنَبَّؤُا۟",
+     "roleUrdu": "فعلِ مضارع مجہول",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "passive",
+    "derived-form",
+    "hamzated"
+   ]
+  },
+  {
+   "id": "75:13:2",
+   "ayah": 13,
+   "position": 2,
+   "arabic": "ٱلْإِنسَـٰنُ",
+   "arabicIndoPak": "الۡاِنۡسَانُ",
+   "meaningUrdu": "انسان",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "أ ن س",
+   "lemma": "إِنسَٰن",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "إِنسَـٰنُ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:13:3",
+   "ayah": 13,
+   "position": 3,
+   "arabic": "يَوْمَئِذٍۭ",
+   "arabicIndoPak": "يَوۡمَٮِٕذٍۢ",
+   "meaningUrdu": "اس دن",
+   "pos": "noun",
+   "posUrdu": "ظرفِ زمان",
+   "root": null,
+   "lemma": "يَوْمَئِذ",
+   "morphologyUrdu": "ظرفِ زمان۔",
+   "syntaxUrdu": "ظرف زمان",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يَوْمَئِذٍۭ",
+     "roleUrdu": "ظرفِ زمان",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "adverb"
+   ]
+  },
+  {
+   "id": "75:13:4",
+   "ayah": 13,
+   "position": 4,
+   "arabic": "بِمَا",
+   "arabicIndoPak": "بِمَا",
+   "meaningUrdu": "ساتھ اس کے جو",
+   "pos": "pronoun",
+   "posUrdu": "اسمِ موصول",
+   "root": null,
+   "lemma": "مَا",
+   "morphologyUrdu": "اسمِ موصول، مبنی۔ سابقہ: بِ (حرفِ جر)۔",
+   "syntaxUrdu": "جار ومجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بِ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "مَا",
+     "roleUrdu": "اسمِ موصول",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition",
+    "relative"
+   ]
+  },
+  {
+   "id": "75:13:5",
+   "ayah": 13,
+   "position": 5,
+   "arabic": "قَدَّمَ",
+   "arabicIndoPak": "قَدَّمَ",
+   "meaningUrdu": "اس نے آگے بھیجا",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "ق د م",
+   "lemma": "قَدَّمَ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مزید فیہ — دوم (II)، بابِ تَفْعِيل۔",
+   "syntaxUrdu": "فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "قَدَّمَ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "perfect",
+    "derived-form"
+   ]
+  },
+  {
+   "id": "75:13:6",
+   "ayah": 13,
+   "position": 6,
+   "arabic": "وَأَخَّرَ",
+   "arabicIndoPak": "وَاَخَّرَؕ",
+   "meaningUrdu": "اور پیچھے چھوڑا",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "أ خ ر",
+   "lemma": "أَخَّرَ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مزید فیہ — دوم (II)، بابِ تَفْعِيل۔ سابقہ: وَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الواو عاطفة؛ فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "أَخَّرَ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "perfect",
+    "derived-form",
+    "hamzated"
+   ]
+  },
+  {
+   "id": "75:14:1",
+   "ayah": 14,
+   "position": 1,
+   "arabic": "بَلِ",
+   "arabicIndoPak": "بَلِ",
+   "meaningUrdu": "بلکہ",
+   "pos": "particle",
+   "posUrdu": "حرفِ اضراب",
+   "root": null,
+   "lemma": "بَل",
+   "morphologyUrdu": "حرفِ اضراب، مبنی۔",
+   "syntaxUrdu": "حرف اضراب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بَلِ",
+     "roleUrdu": "حرفِ اضراب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "retraction"
+   ]
+  },
+  {
+   "id": "75:14:2",
+   "ayah": 14,
+   "position": 2,
+   "arabic": "ٱلْإِنسَـٰنُ",
+   "arabicIndoPak": "الۡاِنۡسَانُ",
+   "meaningUrdu": "انسان",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "أ ن س",
+   "lemma": "إِنسَٰن",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "إِنسَـٰنُ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:14:3",
+   "ayah": 14,
+   "position": 3,
+   "arabic": "عَلَىٰ",
+   "arabicIndoPak": "عَلٰى",
+   "meaningUrdu": "پر",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر",
+   "root": null,
+   "lemma": "عَلَىٰ",
+   "morphologyUrdu": "حرفِ جر، مبنی۔",
+   "syntaxUrdu": "حرف جر",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "عَلَىٰ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition"
+   ]
+  },
+  {
+   "id": "75:14:4",
+   "ayah": 14,
+   "position": 4,
+   "arabic": "نَفْسِهِۦ",
+   "arabicIndoPak": "نَفۡسِهٖ",
+   "meaningUrdu": "اپنی ذات",
+   "pos": "noun",
+   "posUrdu": "اسم مجرور + ضمیرِ متصل",
+   "root": "ن ف س",
+   "lemma": "نَفْس",
+   "morphologyUrdu": "اسم، واحد مؤنث، مجرور۔ لاحقہ: هِۦ ضمیرِ متصل، واحد مذکر غائب۔",
+   "syntaxUrdu": "اسم مجرور والهاء ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "نَفْسِ",
+     "roleUrdu": "اسم مجرور",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هِۦ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "genitive"
+   ]
+  },
+  {
+   "id": "75:14:5",
+   "ayah": 14,
+   "position": 5,
+   "arabic": "بَصِيرَةٌۭ",
+   "arabicIndoPak": "بَصِيۡرَةٌۙ",
+   "meaningUrdu": "دیکھنے والا ہے۔ آگاہ ہے",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "ب ص ر",
+   "lemma": "بَصِيرَة",
+   "morphologyUrdu": "اسم، مؤنث، نکرہ (تنوین)، مرفوع۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بَصِيرَةٌۭ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "nominative",
+    "indefinite"
+   ]
+  },
+  {
+   "id": "75:15:1",
+   "ayah": 15,
+   "position": 1,
+   "arabic": "وَلَوْ",
+   "arabicIndoPak": "وَّلَوۡ",
+   "meaningUrdu": "اور اگرچہ",
+   "pos": "particle",
+   "posUrdu": "حرفِ مصدری",
+   "root": null,
+   "lemma": "لَو",
+   "morphologyUrdu": "حرفِ مصدری، مبنی۔ سابقہ: وَ (واوِ حالیہ)۔",
+   "syntaxUrdu": "الواو حالية؛ حرف مصدري",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "واوِ حالیہ",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "لَوْ",
+     "roleUrdu": "حرفِ مصدری",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "masdar-particle"
+   ]
+  },
+  {
+   "id": "75:15:2",
+   "ayah": 15,
+   "position": 2,
+   "arabic": "أَلْقَىٰ",
+   "arabicIndoPak": "اَلۡقٰى",
+   "meaningUrdu": "ڈالے",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "ل ق ي",
+   "lemma": "أَلْقَىٰٓ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مزید فیہ — چہارم (IV)، بابِ إِفْعَال۔",
+   "syntaxUrdu": "فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَلْقَىٰ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "perfect",
+    "derived-form",
+    "weak-verb"
+   ]
+  },
+  {
+   "id": "75:15:3",
+   "ayah": 15,
+   "position": 3,
+   "arabic": "مَعَاذِيرَهُۥ",
+   "arabicIndoPak": "مَعَاذِيۡرَهٗؕ",
+   "meaningUrdu": "اپنی معذرتیں",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب + ضمیرِ متصل",
+   "root": "ع ذ ر",
+   "lemma": "مَعَاذِير",
+   "morphologyUrdu": "اسم، مذکر، منصوب۔ لاحقہ: هُۥ ضمیرِ متصل، واحد مذکر غائب۔",
+   "syntaxUrdu": "اسم منصوب والهاء ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "مَعَاذِيرَ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هُۥ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "accusative"
+   ]
+  },
+  {
+   "id": "75:16:1",
+   "ayah": 16,
+   "position": 1,
+   "arabic": "لَا",
+   "arabicIndoPak": "لَا",
+   "meaningUrdu": "نہ",
+   "pos": "particle",
+   "posUrdu": "حرفِ نہی",
+   "root": null,
+   "lemma": "لَا",
+   "morphologyUrdu": "حرفِ نہی، مبنی۔",
+   "syntaxUrdu": "حرف نهي",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "لَا",
+     "roleUrdu": "حرفِ نہی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "prohibition"
+   ]
+  },
+  {
+   "id": "75:16:2",
+   "ayah": 16,
+   "position": 2,
+   "arabic": "تُحَرِّكْ",
+   "arabicIndoPak": "تُحَرِّكۡ",
+   "meaningUrdu": "آپ حرکت دیجئے",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "ح ر ك",
+   "lemma": "تُحَرِّكْ",
+   "morphologyUrdu": "فعلِ مضارع، مجزوم، معروف، واحد مذکر حاضر، ثلاثی مزید فیہ — دوم (II)، بابِ تَفْعِيل۔",
+   "syntaxUrdu": "فعل مضارع مجزوم",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "تُحَرِّكْ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "jussive",
+    "derived-form"
+   ]
+  },
+  {
+   "id": "75:16:3",
+   "ayah": 16,
+   "position": 3,
+   "arabic": "بِهِۦ",
+   "arabicIndoPak": "بِهٖ",
+   "meaningUrdu": "ساتھ اس کے",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر + ضمیرِ متصل",
+   "root": null,
+   "lemma": null,
+   "morphologyUrdu": "حرفِ جر + ضمیرِ متصل، واحد مذکر غائب، مبنی۔ سابقہ: بِ (حرفِ جر)۔",
+   "syntaxUrdu": "جار ومجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بِ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هِۦ",
+     "roleUrdu": "ضمیرِ متصل (مجرور)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition",
+    "pronoun"
+   ]
+  },
+  {
+   "id": "75:16:4",
+   "ayah": 16,
+   "position": 4,
+   "arabic": "لِسَانَكَ",
+   "arabicIndoPak": "لِسَانَكَ",
+   "meaningUrdu": "اپنی زبان کو",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب + ضمیرِ متصل",
+   "root": "ل س ن",
+   "lemma": "لِسَان",
+   "morphologyUrdu": "اسم، مذکر، منصوب۔ لاحقہ: كَ ضمیرِ متصل، واحد مذکر حاضر۔",
+   "syntaxUrdu": "اسم منصوب والكاف ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "لِسَانَ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "كَ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر حاضر)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "accusative"
+   ]
+  },
+  {
+   "id": "75:16:5",
+   "ayah": 16,
+   "position": 5,
+   "arabic": "لِتَعْجَلَ",
+   "arabicIndoPak": "لِتَعۡجَلَ",
+   "meaningUrdu": "تاکہ آپ جلدی کریں",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "ع ج ل",
+   "lemma": "عَجِلَ",
+   "morphologyUrdu": "فعلِ مضارع، منصوب، معروف، واحد مذکر حاضر، ثلاثی مجرد — اوّل (I)۔ سابقہ: لِ (لامِ تعلیل)۔",
+   "syntaxUrdu": "اللام لام التعليل؛ فعل مضارع منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "لِ",
+     "roleUrdu": "لامِ تعلیل",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "تَعْجَلَ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "purpose-lam",
+    "imperfect",
+    "subjunctive"
+   ]
+  },
+  {
+   "id": "75:16:6",
+   "ayah": 16,
+   "position": 6,
+   "arabic": "بِهِۦٓ",
+   "arabicIndoPak": "بِهٖؕ",
+   "meaningUrdu": "ساتھ اس کے",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر + ضمیرِ متصل",
+   "root": null,
+   "lemma": null,
+   "morphologyUrdu": "حرفِ جر + ضمیرِ متصل، واحد مذکر غائب، مبنی۔ سابقہ: بِ (حرفِ جر)۔",
+   "syntaxUrdu": "جار ومجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بِ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هِۦٓ",
+     "roleUrdu": "ضمیرِ متصل (مجرور)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition",
+    "pronoun"
+   ]
+  },
+  {
+   "id": "75:17:1",
+   "ayah": 17,
+   "position": 1,
+   "arabic": "إِنَّ",
+   "arabicIndoPak": "اِنَّ",
+   "meaningUrdu": "بیشک",
+   "pos": "particle",
+   "posUrdu": "حرفِ نصب",
+   "root": null,
+   "lemma": "إِنّ",
+   "morphologyUrdu": "حرفِ نصب، مبنی۔",
+   "syntaxUrdu": "حرف نصب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "إِنَّ",
+     "roleUrdu": "حرفِ نصب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "inna"
+   ]
+  },
+  {
+   "id": "75:17:2",
+   "ayah": 17,
+   "position": 2,
+   "arabic": "عَلَيْنَا",
+   "arabicIndoPak": "عَلَيۡنَا",
+   "meaningUrdu": "ہم پر",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر + ضمیرِ متصل",
+   "root": null,
+   "lemma": "عَلَىٰ",
+   "morphologyUrdu": "حرفِ جر، مبنی۔ لاحقہ: نَا ضمیرِ متصل، جمع متکلم۔",
+   "syntaxUrdu": "جار ومجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "عَلَيْ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "نَا",
+     "roleUrdu": "ضمیرِ متصل (جمع متکلم)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "preposition"
+   ]
+  },
+  {
+   "id": "75:17:3",
+   "ayah": 17,
+   "position": 3,
+   "arabic": "جَمْعَهُۥ",
+   "arabicIndoPak": "جَمۡعَهٗ",
+   "meaningUrdu": "اس کا جمع کرنا ہے",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب + ضمیرِ متصل",
+   "root": "ج م ع",
+   "lemma": "جَمْع",
+   "morphologyUrdu": "اسم، مذکر، منصوب۔ لاحقہ: هُۥ ضمیرِ متصل، واحد مذکر غائب۔",
+   "syntaxUrdu": "اسم منصوب والهاء ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "جَمْعَ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هُۥ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "accusative"
+   ]
+  },
+  {
+   "id": "75:17:4",
+   "ayah": 17,
+   "position": 4,
+   "arabic": "وَقُرْءَانَهُۥ",
+   "arabicIndoPak": "وَقُرۡاٰنَهٗۚۖ",
+   "meaningUrdu": "اور اس کا پڑھوانا ہے",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب + ضمیرِ متصل",
+   "root": "ق ر أ",
+   "lemma": "قُرْءَان",
+   "morphologyUrdu": "اسم، مذکر، منصوب۔ سابقہ: وَ (حرفِ عطف)۔ لاحقہ: هُۥ ضمیرِ متصل، واحد مذکر غائب۔",
+   "syntaxUrdu": "الواو عاطفة؛ اسم منصوب والهاء ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "قُرْءَانَ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هُۥ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "conjunction",
+    "accusative"
+   ]
+  },
+  {
+   "id": "75:18:1",
+   "ayah": 18,
+   "position": 1,
+   "arabic": "فَإِذَا",
+   "arabicIndoPak": "فَاِذَا",
+   "meaningUrdu": "پھر جب",
+   "pos": "noun",
+   "posUrdu": "ظرفِ زمان",
+   "root": null,
+   "lemma": "إِذَا",
+   "morphologyUrdu": "ظرفِ زمان۔ سابقہ: فَ (حرفِ استئناف)۔",
+   "syntaxUrdu": "الفاء استئنافية؛ ظرف زمان",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "فَ",
+     "roleUrdu": "حرفِ استئناف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "إِذَا",
+     "roleUrdu": "ظرفِ زمان",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "resumption",
+    "condition"
+   ]
+  },
+  {
+   "id": "75:18:2",
+   "ayah": 18,
+   "position": 2,
+   "arabic": "قَرَأْنَـٰهُ",
+   "arabicIndoPak": "قَرَاۡنٰهُ",
+   "meaningUrdu": "پڑھیں ہم اس کو",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی + ضمیرِ متصل",
+   "root": "ق ر أ",
+   "lemma": "قَرَأَ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، جمع متکلم، ثلاثی مجرد — اوّل (I)۔ لاحقہ: نَـٰ ضمیرِ فاعل، جمع متکلم؛ هُ ضمیرِ مفعول، واحد مذکر غائب۔",
+   "syntaxUrdu": "فعل ماض و«نا» ضمير متصل في محل رفع فاعل والهاء ضمير متصل في محل نصب مفعول به",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "قَرَأْ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "نَـٰ",
+     "roleUrdu": "ضمیرِ فاعل (جمع متکلم)",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هُ",
+     "roleUrdu": "ضمیرِ مفعول (واحد مذکر غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "subject-pronoun",
+    "object-pronoun",
+    "perfect",
+    "hamzated"
+   ]
+  },
+  {
+   "id": "75:18:3",
+   "ayah": 18,
+   "position": 3,
+   "arabic": "فَٱتَّبِعْ",
+   "arabicIndoPak": "فَاتَّبِعۡ",
+   "meaningUrdu": "تو پیروی کریں",
+   "pos": "verb",
+   "posUrdu": "فعلِ امر",
+   "root": "ت ب ع",
+   "lemma": "ٱتَّبَعَ",
+   "morphologyUrdu": "فعلِ امر، معروف، واحد مذکر حاضر، ثلاثی مزید فیہ — ہشتم (VIII)، بابِ اِفْتِعَال۔ سابقہ: فَ (فاءِ جزا)۔",
+   "syntaxUrdu": "الفاء واقعة في جواب الشرط؛ فعل أمر",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "فَ",
+     "roleUrdu": "فاءِ جزا",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "ٱتَّبِعْ",
+     "roleUrdu": "فعلِ امر",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "condition-answer",
+    "imperative",
+    "derived-form"
+   ]
+  },
+  {
+   "id": "75:18:4",
+   "ayah": 18,
+   "position": 4,
+   "arabic": "قُرْءَانَهُۥ",
+   "arabicIndoPak": "قُرۡاٰنَهٗۚ",
+   "meaningUrdu": "آپ کے پڑھنے کی",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب + ضمیرِ متصل",
+   "root": "ق ر أ",
+   "lemma": "قُرْءَان",
+   "morphologyUrdu": "اسم، مذکر، منصوب۔ لاحقہ: هُۥ ضمیرِ متصل، واحد مذکر غائب۔",
+   "syntaxUrdu": "اسم منصوب والهاء ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "قُرْءَانَ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هُۥ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "accusative"
+   ]
+  },
+  {
+   "id": "75:19:1",
+   "ayah": 19,
+   "position": 1,
+   "arabic": "ثُمَّ",
+   "arabicIndoPak": "ثُمَّ",
+   "meaningUrdu": "پھر",
+   "pos": "particle",
+   "posUrdu": "حرفِ عطف",
+   "root": null,
+   "lemma": "ثُمّ",
+   "morphologyUrdu": "حرفِ عطف، مبنی۔",
+   "syntaxUrdu": "حرف عطف",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ثُمَّ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction"
+   ]
+  },
+  {
+   "id": "75:19:2",
+   "ayah": 19,
+   "position": 2,
+   "arabic": "إِنَّ",
+   "arabicIndoPak": "اِنَّ",
+   "meaningUrdu": "بیشک",
+   "pos": "particle",
+   "posUrdu": "حرفِ نصب",
+   "root": null,
+   "lemma": "إِنّ",
+   "morphologyUrdu": "حرفِ نصب، مبنی۔",
+   "syntaxUrdu": "حرف نصب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "إِنَّ",
+     "roleUrdu": "حرفِ نصب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "inna"
+   ]
+  },
+  {
+   "id": "75:19:3",
+   "ayah": 19,
+   "position": 3,
+   "arabic": "عَلَيْنَا",
+   "arabicIndoPak": "عَلَيۡنَا",
+   "meaningUrdu": "ہمارے ذمہ ہے",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر + ضمیرِ متصل",
+   "root": null,
+   "lemma": "عَلَىٰ",
+   "morphologyUrdu": "حرفِ جر، مبنی۔ لاحقہ: نَا ضمیرِ متصل، جمع متکلم۔",
+   "syntaxUrdu": "جار ومجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "عَلَيْ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "نَا",
+     "roleUrdu": "ضمیرِ متصل (جمع متکلم)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "preposition"
+   ]
+  },
+  {
+   "id": "75:19:4",
+   "ayah": 19,
+   "position": 4,
+   "arabic": "بَيَانَهُۥ",
+   "arabicIndoPak": "بَيَانَهٗؕ",
+   "meaningUrdu": "اس کو بیان کرنا",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب + ضمیرِ متصل",
+   "root": "ب ي ن",
+   "lemma": "بَيَان",
+   "morphologyUrdu": "اسم، مذکر، منصوب۔ لاحقہ: هُۥ ضمیرِ متصل، واحد مذکر غائب۔",
+   "syntaxUrdu": "اسم منصوب والهاء ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بَيَانَ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هُۥ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "accusative"
+   ]
+  },
+  {
+   "id": "75:20:1",
+   "ayah": 20,
+   "position": 1,
+   "arabic": "كَلَّا",
+   "arabicIndoPak": "كَلَّا",
+   "meaningUrdu": "ہرگز نہیں",
+   "pos": "particle",
+   "posUrdu": "حرفِ ردع",
+   "root": null,
+   "lemma": "كَلَّا",
+   "morphologyUrdu": "حرفِ ردع، مبنی۔",
+   "syntaxUrdu": "حرف ردع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "كَلَّا",
+     "roleUrdu": "حرفِ ردع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "deterrence"
+   ]
+  },
+  {
+   "id": "75:20:2",
+   "ayah": 20,
+   "position": 2,
+   "arabic": "بَلْ",
+   "arabicIndoPak": "بَلۡ",
+   "meaningUrdu": "بلکہ",
+   "pos": "particle",
+   "posUrdu": "حرفِ اضراب",
+   "root": null,
+   "lemma": "بَل",
+   "morphologyUrdu": "حرفِ اضراب، مبنی۔",
+   "syntaxUrdu": "حرف اضراب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بَلْ",
+     "roleUrdu": "حرفِ اضراب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "retraction"
+   ]
+  },
+  {
+   "id": "75:20:3",
+   "ayah": 20,
+   "position": 3,
+   "arabic": "تُحِبُّونَ",
+   "arabicIndoPak": "تُحِبُّوۡنَ",
+   "meaningUrdu": "تم پسند کرتے ہو",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع + ضمیرِ متصل",
+   "root": "ح ب ب",
+   "lemma": "أَحْبَبْ",
+   "morphologyUrdu": "فعلِ مضارع، مرفوع، معروف، جمع مذکر حاضر، ثلاثی مزید فیہ — چہارم (IV)، بابِ إِفْعَال۔ لاحقہ: ونَ ضمیرِ فاعل، جمع مذکر حاضر۔",
+   "syntaxUrdu": "فعل مضارع والواو ضمير متصل في محل رفع فاعل",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "تُحِبُّ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "ونَ",
+     "roleUrdu": "ضمیرِ فاعل (جمع مذکر حاضر)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "subject-pronoun",
+    "imperfect",
+    "derived-form",
+    "doubled",
+    "five-verbs"
+   ]
+  },
+  {
+   "id": "75:20:4",
+   "ayah": 20,
+   "position": 4,
+   "arabic": "ٱلْعَاجِلَةَ",
+   "arabicIndoPak": "الۡعَاجِلَةَۙ",
+   "meaningUrdu": "جلدی ملنے والی چیز کو",
+   "pos": "noun",
+   "posUrdu": "اسمِ فاعل منصوب",
+   "root": "ع ج ل",
+   "lemma": "عَاجِلَة",
+   "morphologyUrdu": "اسمِ فاعل، مؤنث، ال کے ساتھ معرفہ، منصوب۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "عَاجِلَةَ",
+     "roleUrdu": "اسمِ فاعل منصوب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "accusative",
+    "participle"
+   ]
+  },
+  {
+   "id": "75:21:1",
+   "ayah": 21,
+   "position": 1,
+   "arabic": "وَتَذَرُونَ",
+   "arabicIndoPak": "وَتَذَرُوۡنَ",
+   "meaningUrdu": "اور تم چھوڑ دیتے ہو",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع + ضمیرِ متصل",
+   "root": "و ذ ر",
+   "lemma": "يَذَرَ",
+   "morphologyUrdu": "فعلِ مضارع، مرفوع، معروف، جمع مذکر حاضر، ثلاثی مجرد — اوّل (I)۔ سابقہ: وَ (حرفِ عطف)۔ لاحقہ: ونَ ضمیرِ فاعل، جمع مذکر حاضر۔",
+   "syntaxUrdu": "الواو عاطفة؛ فعل مضارع والواو ضمير متصل في محل رفع فاعل",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "تَذَرُ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "ونَ",
+     "roleUrdu": "ضمیرِ فاعل (جمع مذکر حاضر)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "subject-pronoun",
+    "conjunction",
+    "imperfect",
+    "weak-verb",
+    "five-verbs"
+   ]
+  },
+  {
+   "id": "75:21:2",
+   "ayah": 21,
+   "position": 2,
+   "arabic": "ٱلْـَٔاخِرَةَ",
+   "arabicIndoPak": "الۡاٰخِرَةَؕ",
+   "meaningUrdu": "بعد میں ملنے والی کو۔ آخری کو۔ بعد میں آنے والی کو",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب",
+   "root": "أ خ ر",
+   "lemma": "آخِر",
+   "morphologyUrdu": "اسم، واحد مؤنث، ال کے ساتھ معرفہ، منصوب۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "ـَٔاخِرَةَ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "accusative"
+   ]
+  },
+  {
+   "id": "75:22:1",
+   "ayah": 22,
+   "position": 1,
+   "arabic": "وُجُوهٌۭ",
+   "arabicIndoPak": "وُجُوۡهٌ",
+   "meaningUrdu": "کچھ چہرے",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "و ج ه",
+   "lemma": "وَجْه",
+   "morphologyUrdu": "اسم، جمع مذکر، نکرہ (تنوین)، مرفوع۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وُجُوهٌۭ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "nominative",
+    "indefinite",
+    "broken-plural"
+   ]
+  },
+  {
+   "id": "75:22:2",
+   "ayah": 22,
+   "position": 2,
+   "arabic": "يَوْمَئِذٍۢ",
+   "arabicIndoPak": "يَّوۡمَٮِٕذٍ",
+   "meaningUrdu": "اس روز",
+   "pos": "noun",
+   "posUrdu": "ظرفِ زمان",
+   "root": null,
+   "lemma": "يَوْمَئِذ",
+   "morphologyUrdu": "ظرفِ زمان۔",
+   "syntaxUrdu": "ظرف زمان",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يَوْمَئِذٍۢ",
+     "roleUrdu": "ظرفِ زمان",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "adverb"
+   ]
+  },
+  {
+   "id": "75:22:3",
+   "ayah": 22,
+   "position": 3,
+   "arabic": "نَّاضِرَةٌ",
+   "arabicIndoPak": "نَّاضِرَةٌۙ",
+   "meaningUrdu": "تروتازہ ہوں گے",
+   "pos": "noun",
+   "posUrdu": "اسمِ فاعل مرفوع",
+   "root": "ن ض ر",
+   "lemma": "نَاضِرَة",
+   "morphologyUrdu": "اسمِ فاعل، مؤنث، نکرہ (تنوین)، مرفوع۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "نَّاضِرَةٌ",
+     "roleUrdu": "اسمِ فاعل مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "nominative",
+    "indefinite",
+    "participle"
+   ]
+  },
+  {
+   "id": "75:23:1",
+   "ayah": 23,
+   "position": 1,
+   "arabic": "إِلَىٰ",
+   "arabicIndoPak": "اِلٰى",
+   "meaningUrdu": "طرف",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر",
+   "root": null,
+   "lemma": "إِلَىٰ",
+   "morphologyUrdu": "حرفِ جر، مبنی۔",
+   "syntaxUrdu": "حرف جر",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "إِلَىٰ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition"
+   ]
+  },
+  {
+   "id": "75:23:2",
+   "ayah": 23,
+   "position": 2,
+   "arabic": "رَبِّهَا",
+   "arabicIndoPak": "رَبِّهَا",
+   "meaningUrdu": "اپنے رب کی",
+   "pos": "noun",
+   "posUrdu": "اسم مجرور + ضمیرِ متصل",
+   "root": "ر ب ب",
+   "lemma": "رَبّ",
+   "morphologyUrdu": "اسم، مذکر، مجرور۔ لاحقہ: هَا ضمیرِ متصل، واحد مؤنث غائب۔",
+   "syntaxUrdu": "اسم مجرور و«ها» ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "رَبِّ",
+     "roleUrdu": "اسم مجرور",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هَا",
+     "roleUrdu": "ضمیرِ متصل (واحد مؤنث غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "genitive"
+   ]
+  },
+  {
+   "id": "75:23:3",
+   "ayah": 23,
+   "position": 3,
+   "arabic": "نَاظِرَةٌۭ",
+   "arabicIndoPak": "نَاظِرَةٌۚ",
+   "meaningUrdu": "دیکھنے والے ہوں گے",
+   "pos": "noun",
+   "posUrdu": "اسمِ فاعل مرفوع",
+   "root": "ن ظ ر",
+   "lemma": "نَاظِرَة",
+   "morphologyUrdu": "اسمِ فاعل، مؤنث، نکرہ (تنوین)، مرفوع۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "نَاظِرَةٌۭ",
+     "roleUrdu": "اسمِ فاعل مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "nominative",
+    "indefinite",
+    "participle"
+   ]
+  },
+  {
+   "id": "75:24:1",
+   "ayah": 24,
+   "position": 1,
+   "arabic": "وَوُجُوهٌۭ",
+   "arabicIndoPak": "وَوُجُوۡهٌ",
+   "meaningUrdu": "اور کچھ چہرے",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "و ج ه",
+   "lemma": "وَجْه",
+   "morphologyUrdu": "اسم، جمع مذکر، نکرہ (تنوین)، مرفوع۔ سابقہ: وَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الواو عاطفة؛ اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "وُجُوهٌۭ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "nominative",
+    "indefinite",
+    "broken-plural"
+   ]
+  },
+  {
+   "id": "75:24:2",
+   "ayah": 24,
+   "position": 2,
+   "arabic": "يَوْمَئِذٍۭ",
+   "arabicIndoPak": "يَّوۡمَٮِٕذٍۢ",
+   "meaningUrdu": "اس روز",
+   "pos": "noun",
+   "posUrdu": "ظرفِ زمان",
+   "root": null,
+   "lemma": "يَوْمَئِذ",
+   "morphologyUrdu": "ظرفِ زمان۔",
+   "syntaxUrdu": "ظرف زمان",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يَوْمَئِذٍۭ",
+     "roleUrdu": "ظرفِ زمان",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "adverb"
+   ]
+  },
+  {
+   "id": "75:24:3",
+   "ayah": 24,
+   "position": 3,
+   "arabic": "بَاسِرَةٌۭ",
+   "arabicIndoPak": "بَاسِرَةٌۙ",
+   "meaningUrdu": "بےرونق ہوں گے",
+   "pos": "noun",
+   "posUrdu": "اسمِ فاعل مرفوع",
+   "root": "ب س ر",
+   "lemma": "بَاسِرَة",
+   "morphologyUrdu": "اسمِ فاعل، مؤنث، نکرہ (تنوین)، مرفوع۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بَاسِرَةٌۭ",
+     "roleUrdu": "اسمِ فاعل مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "nominative",
+    "indefinite",
+    "participle"
+   ]
+  },
+  {
+   "id": "75:25:1",
+   "ayah": 25,
+   "position": 1,
+   "arabic": "تَظُنُّ",
+   "arabicIndoPak": "تَظُنُّ",
+   "meaningUrdu": "سمجھ رہے ہوں گے",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "ظ ن ن",
+   "lemma": "ظَنَّ",
+   "morphologyUrdu": "فعلِ مضارع، مرفوع، معروف، واحد مؤنث غائب، ثلاثی مجرد — اوّل (I)۔",
+   "syntaxUrdu": "فعل مضارع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "تَظُنُّ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "doubled"
+   ]
+  },
+  {
+   "id": "75:25:2",
+   "ayah": 25,
+   "position": 2,
+   "arabic": "أَن",
+   "arabicIndoPak": "اَنۡ",
+   "meaningUrdu": "کہ",
+   "pos": "particle",
+   "posUrdu": "حرفِ مصدری",
+   "root": null,
+   "lemma": "أَن",
+   "morphologyUrdu": "حرفِ مصدری، مبنی۔",
+   "syntaxUrdu": "حرف مصدري",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَن",
+     "roleUrdu": "حرفِ مصدری",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "masdar-particle"
+   ]
+  },
+  {
+   "id": "75:25:3",
+   "ayah": 25,
+   "position": 3,
+   "arabic": "يُفْعَلَ",
+   "arabicIndoPak": "يُّفۡعَلَ",
+   "meaningUrdu": "کیا جائے گا",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع مجہول",
+   "root": "ف ع ل",
+   "lemma": "فَعَلَ",
+   "morphologyUrdu": "فعلِ مضارع مجہول، منصوب، مجہول، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔",
+   "syntaxUrdu": "فعل مضارع مبني للمجهول منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يُفْعَلَ",
+     "roleUrdu": "فعلِ مضارع مجہول",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "passive",
+    "subjunctive"
+   ]
+  },
+  {
+   "id": "75:25:4",
+   "ayah": 25,
+   "position": 4,
+   "arabic": "بِهَا",
+   "arabicIndoPak": "بِهَا",
+   "meaningUrdu": "ساتھ ان کے",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر + ضمیرِ متصل",
+   "root": null,
+   "lemma": null,
+   "morphologyUrdu": "حرفِ جر + ضمیرِ متصل، واحد مؤنث غائب، مبنی۔ سابقہ: بِ (حرفِ جر)۔",
+   "syntaxUrdu": "جار ومجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بِ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هَا",
+     "roleUrdu": "ضمیرِ متصل (مجرور)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition",
+    "pronoun"
+   ]
+  },
+  {
+   "id": "75:25:5",
+   "ayah": 25,
+   "position": 5,
+   "arabic": "فَاقِرَةٌۭ",
+   "arabicIndoPak": "فَاقِرَةٌؕ",
+   "meaningUrdu": "کمر توڑ برتاؤ",
+   "pos": "noun",
+   "posUrdu": "اسمِ فاعل مرفوع",
+   "root": "ف ق ر",
+   "lemma": "فَاقِرَة",
+   "morphologyUrdu": "اسمِ فاعل، مؤنث، نکرہ (تنوین)، مرفوع۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "فَاقِرَةٌۭ",
+     "roleUrdu": "اسمِ فاعل مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "nominative",
+    "indefinite",
+    "participle"
+   ]
+  },
+  {
+   "id": "75:26:1",
+   "ayah": 26,
+   "position": 1,
+   "arabic": "كَلَّآ",
+   "arabicIndoPak": "كَلَّاۤ",
+   "meaningUrdu": "ہرگز نہیں",
+   "pos": "particle",
+   "posUrdu": "حرفِ ردع",
+   "root": null,
+   "lemma": "كَلَّا",
+   "morphologyUrdu": "حرفِ ردع، مبنی۔",
+   "syntaxUrdu": "حرف ردع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "كَلَّآ",
+     "roleUrdu": "حرفِ ردع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "deterrence"
+   ]
+  },
+  {
+   "id": "75:26:2",
+   "ayah": 26,
+   "position": 2,
+   "arabic": "إِذَا",
+   "arabicIndoPak": "اِذَا",
+   "meaningUrdu": "جب",
+   "pos": "noun",
+   "posUrdu": "ظرفِ زمان",
+   "root": null,
+   "lemma": "إِذَا",
+   "morphologyUrdu": "ظرفِ زمان۔",
+   "syntaxUrdu": "ظرف زمان",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "إِذَا",
+     "roleUrdu": "ظرفِ زمان",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "condition"
+   ]
+  },
+  {
+   "id": "75:26:3",
+   "ayah": 26,
+   "position": 3,
+   "arabic": "بَلَغَتِ",
+   "arabicIndoPak": "بَلَغَتِ",
+   "meaningUrdu": "پہنچ جائے گی",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "ب ل غ",
+   "lemma": "بَلَغَ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مؤنث غائب، ثلاثی مجرد — اوّل (I)۔",
+   "syntaxUrdu": "فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بَلَغَتِ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "perfect"
+   ]
+  },
+  {
+   "id": "75:26:4",
+   "ayah": 26,
+   "position": 4,
+   "arabic": "ٱلتَّرَاقِىَ",
+   "arabicIndoPak": "التَّرَاقِىَۙ",
+   "meaningUrdu": "حلق کو",
+   "pos": "noun",
+   "posUrdu": "مصدر منصوب",
+   "root": "ت ر ق",
+   "lemma": "تَرَاقِى",
+   "morphologyUrdu": "مصدر، ثلاثی مزید فیہ — ششم (VI)، بابِ تَفَاعُل، مذکر، ال کے ساتھ معرفہ، منصوب۔ سابقہ: ٱل (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱل",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "تَّرَاقِىَ",
+     "roleUrdu": "مصدر منصوب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "accusative",
+    "verbal-noun"
+   ]
+  },
+  {
+   "id": "75:27:1",
+   "ayah": 27,
+   "position": 1,
+   "arabic": "وَقِيلَ",
+   "arabicIndoPak": "وَقِيۡلَ",
+   "meaningUrdu": "اور کہہ دیاجائے گا",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی مجہول",
+   "root": "ق و ل",
+   "lemma": "قَالَ",
+   "morphologyUrdu": "فعلِ ماضی مجہول، مجہول، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔ سابقہ: وَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الواو عاطفة؛ فعل ماض مبني للمجهول",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "قِيلَ",
+     "roleUrdu": "فعلِ ماضی مجہول",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "perfect",
+    "passive",
+    "weak-verb"
+   ]
+  },
+  {
+   "id": "75:27:2",
+   "ayah": 27,
+   "position": 2,
+   "arabic": "مَنْ",
+   "arabicIndoPak": "مَنۡ",
+   "meaningUrdu": "کون ہے",
+   "pos": "noun",
+   "posUrdu": "حرفِ استفہام",
+   "root": null,
+   "lemma": "مَن",
+   "morphologyUrdu": "حرفِ استفہام۔",
+   "syntaxUrdu": "اسم استفهام",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "مَنْ",
+     "roleUrdu": "حرفِ استفہام",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "interrogative"
+   ]
+  },
+  {
+   "id": "75:27:3",
+   "ayah": 27,
+   "position": 3,
+   "arabic": "رَاقٍۢ",
+   "arabicIndoPak": "رَاقٍۙ",
+   "meaningUrdu": "جھاڑ پھونک کرنے والا",
+   "pos": "noun",
+   "posUrdu": "اسمِ فاعل مرفوع",
+   "root": "ر ق ي",
+   "lemma": "رَاق",
+   "morphologyUrdu": "اسمِ فاعل، مذکر، نکرہ (تنوین)، مرفوع۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "رَاقٍۢ",
+     "roleUrdu": "اسمِ فاعل مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "nominative",
+    "indefinite",
+    "participle"
+   ]
+  },
+  {
+   "id": "75:28:1",
+   "ayah": 28,
+   "position": 1,
+   "arabic": "وَظَنَّ",
+   "arabicIndoPak": "وَّظَنَّ",
+   "meaningUrdu": "اور وہ سمجھ لے گا",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "ظ ن ن",
+   "lemma": "ظَنَّ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔ سابقہ: وَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الواو عاطفة؛ فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "ظَنَّ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "perfect",
+    "doubled"
+   ]
+  },
+  {
+   "id": "75:28:2",
+   "ayah": 28,
+   "position": 2,
+   "arabic": "أَنَّهُ",
+   "arabicIndoPak": "اَنَّهُ",
+   "meaningUrdu": "کہ بیشک وہ",
+   "pos": "particle",
+   "posUrdu": "حرفِ نصب + ضمیرِ متصل",
+   "root": null,
+   "lemma": "أَنّ",
+   "morphologyUrdu": "حرفِ نصب، مبنی۔ لاحقہ: هُ ضمیرِ متصل، واحد مذکر غائب۔",
+   "syntaxUrdu": "حرف نصب من اخوات «ان» والهاء ضمير متصل في محل نصب اسم «ان»",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَنَّ",
+     "roleUrdu": "حرفِ نصب",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هُ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "inna-sisters"
+   ]
+  },
+  {
+   "id": "75:28:3",
+   "ayah": 28,
+   "position": 3,
+   "arabic": "ٱلْفِرَاقُ",
+   "arabicIndoPak": "الۡفِرَاقُۙ",
+   "meaningUrdu": "جدائی کا وقت ہے",
+   "pos": "noun",
+   "posUrdu": "مصدر مرفوع",
+   "root": "ف ر ق",
+   "lemma": "فِرَاق",
+   "morphologyUrdu": "مصدر، ثلاثی مزید فیہ — سوم (III)، بابِ مُفَاعَلَة، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "فِرَاقُ",
+     "roleUrdu": "مصدر مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative",
+    "verbal-noun"
+   ]
+  },
+  {
+   "id": "75:29:1",
+   "ayah": 29,
+   "position": 1,
+   "arabic": "وَٱلْتَفَّتِ",
+   "arabicIndoPak": "وَالۡتَفَّتِ",
+   "meaningUrdu": "اور جڑ جائے گی۔ لپٹ جائے گی",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "ل ف ف",
+   "lemma": "ٱلْتَفَّتِ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مؤنث غائب، ثلاثی مزید فیہ — ہشتم (VIII)، بابِ اِفْتِعَال۔ سابقہ: وَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الواو عاطفة؛ فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "ٱلْتَفَّتِ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "perfect",
+    "derived-form",
+    "doubled"
+   ]
+  },
+  {
+   "id": "75:29:2",
+   "ayah": 29,
+   "position": 2,
+   "arabic": "ٱلسَّاقُ",
+   "arabicIndoPak": "السَّاقُ",
+   "meaningUrdu": "پنڈلی",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "س و ق",
+   "lemma": "سَاق",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱل (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱل",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "سَّاقُ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:29:3",
+   "ayah": 29,
+   "position": 3,
+   "arabic": "بِٱلسَّاقِ",
+   "arabicIndoPak": "بِالسَّاقِۙ",
+   "meaningUrdu": "پنڈلی کے ساتھ",
+   "pos": "noun",
+   "posUrdu": "اسم مجرور",
+   "root": "س و ق",
+   "lemma": "سَاق",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، مجرور۔ سابقہ: بِ (حرفِ جر)؛ ٱل (حرفِ تعریف)۔",
+   "syntaxUrdu": "جار ومجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بِ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "ٱل",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "سَّاقِ",
+     "roleUrdu": "اسم مجرور",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition",
+    "definite",
+    "genitive"
+   ]
+  },
+  {
+   "id": "75:30:1",
+   "ayah": 30,
+   "position": 1,
+   "arabic": "إِلَىٰ",
+   "arabicIndoPak": "اِلٰى",
+   "meaningUrdu": "طرف",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر",
+   "root": null,
+   "lemma": "إِلَىٰ",
+   "morphologyUrdu": "حرفِ جر، مبنی۔",
+   "syntaxUrdu": "حرف جر",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "إِلَىٰ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition"
+   ]
+  },
+  {
+   "id": "75:30:2",
+   "ayah": 30,
+   "position": 2,
+   "arabic": "رَبِّكَ",
+   "arabicIndoPak": "رَبِّكَ",
+   "meaningUrdu": "تیرے رب کی",
+   "pos": "noun",
+   "posUrdu": "اسم مجرور + ضمیرِ متصل",
+   "root": "ر ب ب",
+   "lemma": "رَبّ",
+   "morphologyUrdu": "اسم، مذکر، مجرور۔ لاحقہ: كَ ضمیرِ متصل، واحد مذکر حاضر۔",
+   "syntaxUrdu": "اسم مجرور والكاف ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "رَبِّ",
+     "roleUrdu": "اسم مجرور",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "كَ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر حاضر)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "genitive"
+   ]
+  },
+  {
+   "id": "75:30:3",
+   "ayah": 30,
+   "position": 3,
+   "arabic": "يَوْمَئِذٍ",
+   "arabicIndoPak": "يَوۡمَٮِٕذِ",
+   "meaningUrdu": "اس روز",
+   "pos": "noun",
+   "posUrdu": "ظرفِ زمان",
+   "root": null,
+   "lemma": "يَوْمَئِذ",
+   "morphologyUrdu": "ظرفِ زمان۔",
+   "syntaxUrdu": "ظرف زمان",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يَوْمَئِذٍ",
+     "roleUrdu": "ظرفِ زمان",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "adverb"
+   ]
+  },
+  {
+   "id": "75:30:4",
+   "ayah": 30,
+   "position": 4,
+   "arabic": "ٱلْمَسَاقُ",
+   "arabicIndoPak": "اۨلۡمَسَاقُؕ",
+   "meaningUrdu": "روانگی ہے",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "س و ق",
+   "lemma": "مَسَاق",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "مَسَاقُ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:31:1",
+   "ayah": 31,
+   "position": 1,
+   "arabic": "فَلَا",
+   "arabicIndoPak": "فَلَا",
+   "meaningUrdu": "پس نہیں",
+   "pos": "particle",
+   "posUrdu": "حرفِ نفی",
+   "root": null,
+   "lemma": "لَا",
+   "morphologyUrdu": "حرفِ نفی، مبنی۔ سابقہ: فَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الفاء عاطفة؛ حرف نفي",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "فَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "لَا",
+     "roleUrdu": "حرفِ نفی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "negation"
+   ]
+  },
+  {
+   "id": "75:31:2",
+   "ayah": 31,
+   "position": 2,
+   "arabic": "صَدَّقَ",
+   "arabicIndoPak": "صَدَّقَ",
+   "meaningUrdu": "اس نے تصدیق کی",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "ص د ق",
+   "lemma": "صَدَّقَ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مزید فیہ — دوم (II)، بابِ تَفْعِيل۔",
+   "syntaxUrdu": "فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "صَدَّقَ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "perfect",
+    "derived-form"
+   ]
+  },
+  {
+   "id": "75:31:3",
+   "ayah": 31,
+   "position": 3,
+   "arabic": "وَلَا",
+   "arabicIndoPak": "وَلَا",
+   "meaningUrdu": "اور نہ",
+   "pos": "particle",
+   "posUrdu": "حرفِ نفی",
+   "root": null,
+   "lemma": "لَا",
+   "morphologyUrdu": "حرفِ نفی، مبنی۔ سابقہ: وَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الواو عاطفة؛ حرف نفي",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "لَا",
+     "roleUrdu": "حرفِ نفی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "negation"
+   ]
+  },
+  {
+   "id": "75:31:4",
+   "ayah": 31,
+   "position": 4,
+   "arabic": "صَلَّىٰ",
+   "arabicIndoPak": "صَلّٰىۙ",
+   "meaningUrdu": "نماز پڑھی",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "ص ل و",
+   "lemma": "صَلَّىٰ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مزید فیہ — دوم (II)، بابِ تَفْعِيل۔",
+   "syntaxUrdu": "فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "صَلَّىٰ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "perfect",
+    "derived-form",
+    "weak-verb"
+   ]
+  },
+  {
+   "id": "75:32:1",
+   "ayah": 32,
+   "position": 1,
+   "arabic": "وَلَـٰكِن",
+   "arabicIndoPak": "وَلٰڪِنۡ",
+   "meaningUrdu": "لیکن",
+   "pos": "particle",
+   "posUrdu": "حرفِ استدراک",
+   "root": null,
+   "lemma": "لَٰكِن",
+   "morphologyUrdu": "حرفِ استدراک، مبنی۔ سابقہ: وَ (حرفِ استئناف)۔",
+   "syntaxUrdu": "الواو استئنافية؛ حرف استدراك",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ استئناف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "لَـٰكِن",
+     "roleUrdu": "حرفِ استدراک",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "resumption"
+   ]
+  },
+  {
+   "id": "75:32:2",
+   "ayah": 32,
+   "position": 2,
+   "arabic": "كَذَّبَ",
+   "arabicIndoPak": "كَذَّبَ",
+   "meaningUrdu": "اس نے جھٹلایا",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "ك ذ ب",
+   "lemma": "كَذَّبَ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مزید فیہ — دوم (II)، بابِ تَفْعِيل۔",
+   "syntaxUrdu": "فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "كَذَّبَ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "perfect",
+    "derived-form"
+   ]
+  },
+  {
+   "id": "75:32:3",
+   "ayah": 32,
+   "position": 3,
+   "arabic": "وَتَوَلَّىٰ",
+   "arabicIndoPak": "وَتَوَلّٰىۙ",
+   "meaningUrdu": "اور منہ موڑ لیا",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "و ل ي",
+   "lemma": "تَوَلَّىٰ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مزید فیہ — پنجم (V)، بابِ تَفَعُّل۔ سابقہ: وَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الواو عاطفة؛ فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "تَوَلَّىٰ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "perfect",
+    "derived-form",
+    "weak-verb"
+   ]
+  },
+  {
+   "id": "75:33:1",
+   "ayah": 33,
+   "position": 1,
+   "arabic": "ثُمَّ",
+   "arabicIndoPak": "ثُمَّ",
+   "meaningUrdu": "پھر",
+   "pos": "particle",
+   "posUrdu": "حرفِ عطف",
+   "root": null,
+   "lemma": "ثُمّ",
+   "morphologyUrdu": "حرفِ عطف، مبنی۔",
+   "syntaxUrdu": "حرف عطف",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ثُمَّ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction"
+   ]
+  },
+  {
+   "id": "75:33:2",
+   "ayah": 33,
+   "position": 2,
+   "arabic": "ذَهَبَ",
+   "arabicIndoPak": "ذَهَبَ",
+   "meaningUrdu": "چلا گیا",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "ذ ه ب",
+   "lemma": "ذَهَبَ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔",
+   "syntaxUrdu": "فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ذَهَبَ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "perfect"
+   ]
+  },
+  {
+   "id": "75:33:3",
+   "ayah": 33,
+   "position": 3,
+   "arabic": "إِلَىٰٓ",
+   "arabicIndoPak": "اِلٰٓى",
+   "meaningUrdu": "طرف",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر",
+   "root": null,
+   "lemma": "إِلَىٰ",
+   "morphologyUrdu": "حرفِ جر، مبنی۔",
+   "syntaxUrdu": "حرف جر",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "إِلَىٰٓ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition"
+   ]
+  },
+  {
+   "id": "75:33:4",
+   "ayah": 33,
+   "position": 4,
+   "arabic": "أَهْلِهِۦ",
+   "arabicIndoPak": "اَهۡلِهٖ",
+   "meaningUrdu": "اپنے گھروالوں کی",
+   "pos": "noun",
+   "posUrdu": "اسم مجرور + ضمیرِ متصل",
+   "root": "أ ه ل",
+   "lemma": "أَهْل",
+   "morphologyUrdu": "اسم، مذکر، مجرور۔ لاحقہ: هِۦ ضمیرِ متصل، واحد مذکر غائب۔",
+   "syntaxUrdu": "اسم مجرور والهاء ضمير متصل في محل جر بالاضافة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَهْلِ",
+     "roleUrdu": "اسم مجرور",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هِۦ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "genitive"
+   ]
+  },
+  {
+   "id": "75:33:5",
+   "ayah": 33,
+   "position": 5,
+   "arabic": "يَتَمَطَّىٰٓ",
+   "arabicIndoPak": "يَتَمَطّٰىؕ",
+   "meaningUrdu": "اکڑتا ہوا۔ اتراتا ہوا",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "م ط و",
+   "lemma": "يَتَمَطَّىٰٓ",
+   "morphologyUrdu": "فعلِ مضارع، مرفوع، معروف، واحد مذکر غائب، ثلاثی مزید فیہ — پنجم (V)، بابِ تَفَعُّل۔",
+   "syntaxUrdu": "فعل مضارع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يَتَمَطَّىٰٓ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "derived-form",
+    "weak-verb"
+   ]
+  },
+  {
+   "id": "75:34:1",
+   "ayah": 34,
+   "position": 1,
+   "arabic": "أَوْلَىٰ",
+   "arabicIndoPak": "اَوۡلٰى",
+   "meaningUrdu": "افسوس",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "و ل ي",
+   "lemma": "أَوْلَىٰ",
+   "morphologyUrdu": "اسم، واحد مذکر، مرفوع۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَوْلَىٰ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:34:2",
+   "ayah": 34,
+   "position": 2,
+   "arabic": "لَكَ",
+   "arabicIndoPak": "لَكَ",
+   "meaningUrdu": "تجھ پر",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر + ضمیرِ متصل",
+   "root": null,
+   "lemma": null,
+   "morphologyUrdu": "حرفِ جر + ضمیرِ متصل، واحد مذکر حاضر، مبنی۔ سابقہ: لَ (حرفِ جر)۔",
+   "syntaxUrdu": "جار ومجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "لَ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "كَ",
+     "roleUrdu": "ضمیرِ متصل (مجرور)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition",
+    "pronoun"
+   ]
+  },
+  {
+   "id": "75:34:3",
+   "ayah": 34,
+   "position": 3,
+   "arabic": "فَأَوْلَىٰ",
+   "arabicIndoPak": "فَاَوۡلٰىۙ",
+   "meaningUrdu": "پھر افسوس",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "و ل ي",
+   "lemma": "أَوْلَىٰ",
+   "morphologyUrdu": "اسم، واحد مذکر، مرفوع۔ سابقہ: فَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الفاء عاطفة؛ اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "فَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "أَوْلَىٰ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:35:1",
+   "ayah": 35,
+   "position": 1,
+   "arabic": "ثُمَّ",
+   "arabicIndoPak": "ثُمَّ",
+   "meaningUrdu": "پھر",
+   "pos": "particle",
+   "posUrdu": "حرفِ عطف",
+   "root": null,
+   "lemma": "ثُمّ",
+   "morphologyUrdu": "حرفِ عطف، مبنی۔",
+   "syntaxUrdu": "حرف عطف",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ثُمَّ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction"
+   ]
+  },
+  {
+   "id": "75:35:2",
+   "ayah": 35,
+   "position": 2,
+   "arabic": "أَوْلَىٰ",
+   "arabicIndoPak": "اَوۡلٰى",
+   "meaningUrdu": "افسوس",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "و ل ي",
+   "lemma": "أَوْلَىٰ",
+   "morphologyUrdu": "اسم، واحد مذکر، مرفوع۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَوْلَىٰ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:35:3",
+   "ayah": 35,
+   "position": 3,
+   "arabic": "لَكَ",
+   "arabicIndoPak": "لَكَ",
+   "meaningUrdu": "تجھ پر،",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر + ضمیرِ متصل",
+   "root": null,
+   "lemma": null,
+   "morphologyUrdu": "حرفِ جر + ضمیرِ متصل، واحد مذکر حاضر، مبنی۔ سابقہ: لَ (حرفِ جر)۔",
+   "syntaxUrdu": "جار ومجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "لَ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "كَ",
+     "roleUrdu": "ضمیرِ متصل (مجرور)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition",
+    "pronoun"
+   ]
+  },
+  {
+   "id": "75:35:4",
+   "ayah": 35,
+   "position": 4,
+   "arabic": "فَأَوْلَىٰٓ",
+   "arabicIndoPak": "فَاَوۡلٰىؕ",
+   "meaningUrdu": "پھر افسوس",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "و ل ي",
+   "lemma": "أَوْلَىٰ",
+   "morphologyUrdu": "اسم، واحد مذکر، مرفوع۔ سابقہ: فَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الفاء عاطفة؛ اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "فَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "أَوْلَىٰٓ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:36:1",
+   "ayah": 36,
+   "position": 1,
+   "arabic": "أَيَحْسَبُ",
+   "arabicIndoPak": "اَيَحۡسَبُ",
+   "meaningUrdu": "کیا سمجھتا ہے",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "ح س ب",
+   "lemma": "حَسِبَ",
+   "morphologyUrdu": "فعلِ مضارع، مرفوع، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔ سابقہ: أَ (ہمزۂ استفہام)۔",
+   "syntaxUrdu": "الهمزة همزة استفهام؛ فعل مضارع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَ",
+     "roleUrdu": "ہمزۂ استفہام",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "يَحْسَبُ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "interrogative",
+    "imperfect"
+   ]
+  },
+  {
+   "id": "75:36:2",
+   "ayah": 36,
+   "position": 2,
+   "arabic": "ٱلْإِنسَـٰنُ",
+   "arabicIndoPak": "الۡاِنۡسَانُ",
+   "meaningUrdu": "انسان",
+   "pos": "noun",
+   "posUrdu": "اسم مرفوع",
+   "root": "أ ن س",
+   "lemma": "إِنسَٰن",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، مرفوع۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم مرفوع",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "إِنسَـٰنُ",
+     "roleUrdu": "اسم مرفوع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "nominative"
+   ]
+  },
+  {
+   "id": "75:36:3",
+   "ayah": 36,
+   "position": 3,
+   "arabic": "أَن",
+   "arabicIndoPak": "اَنۡ",
+   "meaningUrdu": "کہ",
+   "pos": "particle",
+   "posUrdu": "حرفِ مصدری",
+   "root": null,
+   "lemma": "أَن",
+   "morphologyUrdu": "حرفِ مصدری، مبنی۔",
+   "syntaxUrdu": "حرف مصدري",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَن",
+     "roleUrdu": "حرفِ مصدری",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "masdar-particle"
+   ]
+  },
+  {
+   "id": "75:36:4",
+   "ayah": 36,
+   "position": 4,
+   "arabic": "يُتْرَكَ",
+   "arabicIndoPak": "يُّتۡرَكَ",
+   "meaningUrdu": "چھوڑ دیا جائے گا",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع مجہول",
+   "root": "ت ر ك",
+   "lemma": "تَرَكَ",
+   "morphologyUrdu": "فعلِ مضارع مجہول، منصوب، مجہول، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔",
+   "syntaxUrdu": "فعل مضارع مبني للمجهول منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يُتْرَكَ",
+     "roleUrdu": "فعلِ مضارع مجہول",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "passive",
+    "subjunctive"
+   ]
+  },
+  {
+   "id": "75:36:5",
+   "ayah": 36,
+   "position": 5,
+   "arabic": "سُدًى",
+   "arabicIndoPak": "سُدًىؕ",
+   "meaningUrdu": "بےکار",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب",
+   "root": "س د ي",
+   "lemma": "سُدًى",
+   "morphologyUrdu": "اسم، مذکر، نکرہ (تنوین)، منصوب۔",
+   "syntaxUrdu": "اسم منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "سُدًى",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "accusative",
+    "indefinite"
+   ]
+  },
+  {
+   "id": "75:37:1",
+   "ayah": 37,
+   "position": 1,
+   "arabic": "أَلَمْ",
+   "arabicIndoPak": "اَلَمۡ",
+   "meaningUrdu": "کیا نہ تھا",
+   "pos": "particle",
+   "posUrdu": "حرفِ نفی",
+   "root": null,
+   "lemma": "لَم",
+   "morphologyUrdu": "حرفِ نفی، مبنی۔ سابقہ: أَ (ہمزۂ استفہام)۔",
+   "syntaxUrdu": "الهمزة همزة استفهام؛ حرف نفي",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَ",
+     "roleUrdu": "ہمزۂ استفہام",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "لَمْ",
+     "roleUrdu": "حرفِ نفی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "interrogative",
+    "lam-jussive"
+   ]
+  },
+  {
+   "id": "75:37:2",
+   "ayah": 37,
+   "position": 2,
+   "arabic": "يَكُ",
+   "arabicIndoPak": "يَكُ",
+   "meaningUrdu": "ایک",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "ك و ن",
+   "lemma": "كَانَ",
+   "morphologyUrdu": "فعلِ مضارع، مجزوم، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔",
+   "syntaxUrdu": "فعل مضارع مجزوم",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يَكُ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "kana",
+    "imperfect",
+    "jussive",
+    "weak-verb"
+   ]
+  },
+  {
+   "id": "75:37:3",
+   "ayah": 37,
+   "position": 3,
+   "arabic": "نُطْفَةًۭ",
+   "arabicIndoPak": "نُطۡفَةً",
+   "meaningUrdu": "نطفہ",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب",
+   "root": "ن ط ف",
+   "lemma": "نُطْفَة",
+   "morphologyUrdu": "اسم، مؤنث، نکرہ (تنوین)، منصوب۔",
+   "syntaxUrdu": "اسم منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "نُطْفَةًۭ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "accusative",
+    "indefinite"
+   ]
+  },
+  {
+   "id": "75:37:4",
+   "ayah": 37,
+   "position": 4,
+   "arabic": "مِّن",
+   "arabicIndoPak": "مِّنۡ",
+   "meaningUrdu": "کا",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر",
+   "root": null,
+   "lemma": "مِن",
+   "morphologyUrdu": "حرفِ جر، مبنی۔",
+   "syntaxUrdu": "حرف جر",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "مِّن",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition"
+   ]
+  },
+  {
+   "id": "75:37:5",
+   "ayah": 37,
+   "position": 5,
+   "arabic": "مَّنِىٍّۢ",
+   "arabicIndoPak": "مَّنِىٍّ",
+   "meaningUrdu": "منی",
+   "pos": "noun",
+   "posUrdu": "اسم مجرور",
+   "root": "م ن ي",
+   "lemma": "مَنِىّ",
+   "morphologyUrdu": "اسم، مذکر، نکرہ (تنوین)، مجرور۔",
+   "syntaxUrdu": "اسم مجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "مَّنِىٍّۢ",
+     "roleUrdu": "اسم مجرور",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "genitive",
+    "indefinite"
+   ]
+  },
+  {
+   "id": "75:37:6",
+   "ayah": 37,
+   "position": 6,
+   "arabic": "يُمْنَىٰ",
+   "arabicIndoPak": "يُّمۡنٰىۙ",
+   "meaningUrdu": "جو ٹپکائی جاتی ہے",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع مجہول",
+   "root": "م ن ي",
+   "lemma": "يُمْنَىٰ",
+   "morphologyUrdu": "فعلِ مضارع مجہول، مرفوع، مجہول، واحد مذکر غائب، ثلاثی مزید فیہ — چہارم (IV)، بابِ إِفْعَال۔",
+   "syntaxUrdu": "فعل مضارع مبني للمجهول",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يُمْنَىٰ",
+     "roleUrdu": "فعلِ مضارع مجہول",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "passive",
+    "derived-form",
+    "weak-verb"
+   ]
+  },
+  {
+   "id": "75:38:1",
+   "ayah": 38,
+   "position": 1,
+   "arabic": "ثُمَّ",
+   "arabicIndoPak": "ثُمَّ",
+   "meaningUrdu": "پھر",
+   "pos": "particle",
+   "posUrdu": "حرفِ عطف",
+   "root": null,
+   "lemma": "ثُمّ",
+   "morphologyUrdu": "حرفِ عطف، مبنی۔",
+   "syntaxUrdu": "حرف عطف",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ثُمَّ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction"
+   ]
+  },
+  {
+   "id": "75:38:2",
+   "ayah": 38,
+   "position": 2,
+   "arabic": "كَانَ",
+   "arabicIndoPak": "كَانَ",
+   "meaningUrdu": "تھا",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "ك و ن",
+   "lemma": "كَانَ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔",
+   "syntaxUrdu": "فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "كَانَ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "kana",
+    "perfect",
+    "weak-verb"
+   ]
+  },
+  {
+   "id": "75:38:3",
+   "ayah": 38,
+   "position": 3,
+   "arabic": "عَلَقَةًۭ",
+   "arabicIndoPak": "عَلَقَةً",
+   "meaningUrdu": "جما ہوا خون",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب",
+   "root": "ع ل ق",
+   "lemma": "عَلَقَة",
+   "morphologyUrdu": "اسم، مؤنث، نکرہ (تنوین)، منصوب۔",
+   "syntaxUrdu": "اسم منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "عَلَقَةًۭ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "accusative",
+    "indefinite"
+   ]
+  },
+  {
+   "id": "75:38:4",
+   "ayah": 38,
+   "position": 4,
+   "arabic": "فَخَلَقَ",
+   "arabicIndoPak": "فَخَلَقَ",
+   "meaningUrdu": "پھر اس نے پیدا کیا",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "خ ل ق",
+   "lemma": "خَلَقَ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔ سابقہ: فَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الفاء عاطفة؛ فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "فَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "خَلَقَ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "perfect"
+   ]
+  },
+  {
+   "id": "75:38:5",
+   "ayah": 38,
+   "position": 5,
+   "arabic": "فَسَوَّىٰ",
+   "arabicIndoPak": "فَسَوّٰىۙ",
+   "meaningUrdu": "پھر درست کردیا",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "س و ي",
+   "lemma": "سَوَّىٰ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مزید فیہ — دوم (II)، بابِ تَفْعِيل۔ سابقہ: فَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الفاء عاطفة؛ فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "فَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "سَوَّىٰ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "perfect",
+    "derived-form",
+    "weak-verb"
+   ]
+  },
+  {
+   "id": "75:39:1",
+   "ayah": 39,
+   "position": 1,
+   "arabic": "فَجَعَلَ",
+   "arabicIndoPak": "فَجَعَلَ",
+   "meaningUrdu": "پھر بنائیں",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "ج ع ل",
+   "lemma": "جَعَلَ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔ سابقہ: فَ (حرفِ عطف)۔",
+   "syntaxUrdu": "الفاء عاطفة؛ فعل ماض",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "فَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "جَعَلَ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "perfect"
+   ]
+  },
+  {
+   "id": "75:39:2",
+   "ayah": 39,
+   "position": 2,
+   "arabic": "مِنْهُ",
+   "arabicIndoPak": "مِنۡهُ",
+   "meaningUrdu": "اس سے",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر + ضمیرِ متصل",
+   "root": null,
+   "lemma": "مِن",
+   "morphologyUrdu": "حرفِ جر، مبنی۔ لاحقہ: هُ ضمیرِ متصل، واحد مذکر غائب۔",
+   "syntaxUrdu": "جار ومجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "مِنْ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "هُ",
+     "roleUrdu": "ضمیرِ متصل (واحد مذکر غائب)",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "pronoun",
+    "preposition"
+   ]
+  },
+  {
+   "id": "75:39:3",
+   "ayah": 39,
+   "position": 3,
+   "arabic": "ٱلزَّوْجَيْنِ",
+   "arabicIndoPak": "الزَّوۡجَيۡنِ",
+   "meaningUrdu": "دو قسمیں",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب",
+   "root": "ز و ج",
+   "lemma": "زَوْج",
+   "morphologyUrdu": "اسم، تثنیہ مذکر، ال کے ساتھ معرفہ، منصوب۔ سابقہ: ٱل (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱل",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "زَّوْجَيْنِ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "accusative",
+    "dual"
+   ]
+  },
+  {
+   "id": "75:39:4",
+   "ayah": 39,
+   "position": 4,
+   "arabic": "ٱلذَّكَرَ",
+   "arabicIndoPak": "الذَّكَرَ",
+   "meaningUrdu": "مرد",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب",
+   "root": "ذ ك ر",
+   "lemma": "ذَكَر",
+   "morphologyUrdu": "اسم، مذکر، ال کے ساتھ معرفہ، منصوب۔ سابقہ: ٱل (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱل",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "ذَّكَرَ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "accusative"
+   ]
+  },
+  {
+   "id": "75:39:5",
+   "ayah": 39,
+   "position": 5,
+   "arabic": "وَٱلْأُنثَىٰٓ",
+   "arabicIndoPak": "وَالۡاُنۡثٰىؕ",
+   "meaningUrdu": "اورعورت",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب",
+   "root": "أ ن ث",
+   "lemma": "أُنثَىٰ",
+   "morphologyUrdu": "اسم، مؤنث، ال کے ساتھ معرفہ، منصوب۔ سابقہ: وَ (حرفِ عطف)؛ ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "الواو عاطفة؛ اسم منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "وَ",
+     "roleUrdu": "حرفِ عطف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "أُنثَىٰٓ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "conjunction",
+    "definite",
+    "accusative"
+   ]
+  },
+  {
+   "id": "75:40:1",
+   "ayah": 40,
+   "position": 1,
+   "arabic": "أَلَيْسَ",
+   "arabicIndoPak": "اَلَيۡسَ",
+   "meaningUrdu": "کیا نہیں",
+   "pos": "verb",
+   "posUrdu": "فعلِ ماضی",
+   "root": "ل ي س",
+   "lemma": "لَيْسَ",
+   "morphologyUrdu": "فعلِ ماضی، معروف، واحد مذکر غائب، ثلاثی مجرد — اوّل (I)۔ سابقہ: أَ (ہمزۂ استفہام)۔",
+   "syntaxUrdu": "الهمزة همزة استفهام؛ فعل ماض من اخوات «كان»",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَ",
+     "roleUrdu": "ہمزۂ استفہام",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "لَيْسَ",
+     "roleUrdu": "فعلِ ماضی",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "interrogative",
+    "kana",
+    "perfect",
+    "weak-verb"
+   ]
+  },
+  {
+   "id": "75:40:2",
+   "ayah": 40,
+   "position": 2,
+   "arabic": "ذَٰلِكَ",
+   "arabicIndoPak": "ذٰلِكَ",
+   "meaningUrdu": "ہے",
+   "pos": "pronoun",
+   "posUrdu": "اسمِ اشارہ",
+   "root": null,
+   "lemma": "ذَٰلِك",
+   "morphologyUrdu": "اسمِ اشارہ، واحد مذکر، مبنی۔",
+   "syntaxUrdu": "اسم اشارة",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ذَٰلِكَ",
+     "roleUrdu": "اسمِ اشارہ",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "demonstrative"
+   ]
+  },
+  {
+   "id": "75:40:3",
+   "ayah": 40,
+   "position": 3,
+   "arabic": "بِقَـٰدِرٍ",
+   "arabicIndoPak": "بِقٰدِرٍ",
+   "meaningUrdu": "وہ قادر",
+   "pos": "noun",
+   "posUrdu": "اسمِ فاعل مجرور",
+   "root": "ق د ر",
+   "lemma": "قَادِر",
+   "morphologyUrdu": "اسمِ فاعل، مذکر، نکرہ (تنوین)، مجرور۔ سابقہ: بِ (حرفِ جر)۔",
+   "syntaxUrdu": "جار ومجرور",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "بِ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "قَـٰدِرٍ",
+     "roleUrdu": "اسمِ فاعل مجرور",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition",
+    "genitive",
+    "indefinite",
+    "participle"
+   ]
+  },
+  {
+   "id": "75:40:4",
+   "ayah": 40,
+   "position": 4,
+   "arabic": "عَلَىٰٓ",
+   "arabicIndoPak": "عَلٰٓى",
+   "meaningUrdu": "اس بات پر",
+   "pos": "particle",
+   "posUrdu": "حرفِ جر",
+   "root": null,
+   "lemma": "عَلَىٰ",
+   "morphologyUrdu": "حرفِ جر، مبنی۔",
+   "syntaxUrdu": "حرف جر",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "عَلَىٰٓ",
+     "roleUrdu": "حرفِ جر",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "preposition"
+   ]
+  },
+  {
+   "id": "75:40:5",
+   "ayah": 40,
+   "position": 5,
+   "arabic": "أَن",
+   "arabicIndoPak": "اَنۡ",
+   "meaningUrdu": "کہ",
+   "pos": "particle",
+   "posUrdu": "حرفِ مصدری",
+   "root": null,
+   "lemma": "أَن",
+   "morphologyUrdu": "حرفِ مصدری، مبنی۔",
+   "syntaxUrdu": "حرف مصدري",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "أَن",
+     "roleUrdu": "حرفِ مصدری",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "masdar-particle"
+   ]
+  },
+  {
+   "id": "75:40:6",
+   "ayah": 40,
+   "position": 6,
+   "arabic": "يُحْـِۧىَ",
+   "arabicIndoPak": "يُّحۡـىِۦَ",
+   "meaningUrdu": "وہ زندہ کردے",
+   "pos": "verb",
+   "posUrdu": "فعلِ مضارع",
+   "root": "ح ي ي",
+   "lemma": "أَحْيَا",
+   "morphologyUrdu": "فعلِ مضارع، منصوب، معروف، واحد مذکر غائب، ثلاثی مزید فیہ — چہارم (IV)، بابِ إِفْعَال۔",
+   "syntaxUrdu": "فعل مضارع منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "يُحْـِۧىَ",
+     "roleUrdu": "فعلِ مضارع",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "imperfect",
+    "subjunctive",
+    "derived-form",
+    "weak-verb",
+    "doubled"
+   ]
+  },
+  {
+   "id": "75:40:7",
+   "ayah": 40,
+   "position": 7,
+   "arabic": "ٱلْمَوْتَىٰ",
+   "arabicIndoPak": "الۡمَوۡتٰى",
+   "meaningUrdu": "مردوں کو",
+   "pos": "noun",
+   "posUrdu": "اسم منصوب",
+   "root": "م و ت",
+   "lemma": "مَيِّت",
+   "morphologyUrdu": "اسم، جمع، ال کے ساتھ معرفہ، منصوب۔ سابقہ: ٱلْ (حرفِ تعریف)۔",
+   "syntaxUrdu": "اسم منصوب",
+   "dictionaryUrdu": "",
+   "segments": [
+    {
+     "arabic": "ٱلْ",
+     "roleUrdu": "حرفِ تعریف",
+     "meaningUrdu": ""
+    },
+    {
+     "arabic": "مَوْتَىٰ",
+     "roleUrdu": "اسم منصوب",
+     "meaningUrdu": ""
+    }
+   ],
+   "ruleIds": [
+    "definite",
+    "accusative",
+    "broken-plural"
+   ]
+  }
+ ],
+ "ayahs": [
+  {
+   "number": 1,
+   "translations": {
+    "jalandhari": "ہم کو روز قیامت کی قسم",
+    "junagarhi": "میں قسم کھاتا ہوں قیامت کے دن کی.",
+    "mahmud-al-hasan": "قسم کھاتا ہوں قیامت کے دن کی",
+    "israr-ahmad": "نہیں ! میں قسم کھاتا ہوں قیامت کے دن کی۔",
+    "maududi": "نہیں، میں قسم کھاتا ہوں قیامت کے دن کی",
+    "wahiduddin-khan": "نہیں ، میں قسم کھاتا ہوں قیامت کے دن کی"
+   },
+   "phrases": []
+  },
+  {
+   "number": 2,
+   "translations": {
+    "jalandhari": "اور نفس لوامہ کی (کہ سب لوگ اٹھا کر) کھڑے کئے جائیں گے",
+    "junagarhi": "اور قسم کھاتا ہوں اس نفس کی جو ملامت کرنے واﻻ ہو.",
+    "mahmud-al-hasan": "اور قسم کھاتا ہوں جی کی کہ جو ملامت کرے برائی پر",
+    "israr-ahmad": "اور نہیں ! میں قسم کھاتا ہوں نفس لوامہ کی۔",
+    "maududi": "اور نہیں ، میں قسم کھاتا ہوں ملامت کرنے والے نفس کی،",
+    "wahiduddin-khan": "اور نہیں ، میں قسم کھاتا ہوں ملامت کرنے والے نفس کی"
+   },
+   "phrases": []
+  },
+  {
+   "number": 3,
+   "translations": {
+    "jalandhari": "کیا انسان یہ خیال کرتا ہے کہ ہم اس کی (بکھری ہوئی) ہڈیاں اکٹھی نہیں کریں گے؟",
+    "junagarhi": "کیا انسان یہ خیال کرتا ہے کہ ہم اس کی ہڈیاں جمع کریں گے ہی نہیں.",
+    "mahmud-al-hasan": "کیا خیال رکھتا ہے آدمی کہ جمع نہ کریں گے ہم اُسکی ہڈیاں",
+    "israr-ahmad": "کیا انسان یہ گمان کرتا ہے کہ ہم اس کی ہڈیاں جمع نہیں کرسکیں گے ؟",
+    "maududi": "کیا انسان یہ سمجھ رہا ہے کہ ہم اُس کی ہڈیوں کو جمع نہ کر سکیں گے؟",
+    "wahiduddin-khan": "کیاانسان خیال کرتا ہے کہ ہم اس کی ہڈیوں کو جمع نہ کریں گے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 4,
+   "translations": {
+    "jalandhari": "ضرور کریں گے (اور) ہم اس بات پر قادر ہیں کہ اس کی پور پور درست کردیں",
+    "junagarhi": "ہاں ضرور کریں گے ہم تو قادر ہیں کہ اس کی پور پور تک درست کردیں.",
+    "mahmud-al-hasan": "کیوں نہیں ہم ٹھیک کر سکتے ہیں اُسکی پوریاں",
+    "israr-ahmad": "کیوں نہیں ! ہم تو پوری طرح قادر ہیں اس پر بھی کہ ہم اس کی ایک ایک پور درست کردیں۔",
+    "maududi": "کیوں نہیں؟ ہم تو اس کی انگلیوں کی پور پور تک ٹھیک بنادینے پر قادر ہیں۔",
+    "wahiduddin-khan": "کیوں نہیں ، ہم اس پر قادر ہیں کہ اس کی انگلیوں کے پور پور تک درست کردیں"
+   },
+   "phrases": []
+  },
+  {
+   "number": 5,
+   "translations": {
+    "jalandhari": "مگر انسان چاہتا ہے کہ آگے کو خود سری کرتا جائے",
+    "junagarhi": "بلکہ انسان تو چاہتا ہے کہ آگے آگے نافرمانیاں کرتا جائے.",
+    "mahmud-al-hasan": "بلکہ چاہتا ہے آدمی کہ ڈھٹائی کرے اُسکے سامنے",
+    "israr-ahmad": "بلکہ انسان تو یہ چاہتا ہے کہ فسق و فجور آگے بھی جاری رکھے۔",
+    "maududi": "مگر انسان چاہتا یہ ہے کہ آگے بھی بداعمالیاں کرتا رہے۔",
+    "wahiduddin-khan": "بلکہ انسان چاہتا ہے کہ وہ ڈھٹائی کرے اس کے سامنے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 6,
+   "translations": {
+    "jalandhari": "پوچھتا ہے کہ قیامت کا دن کب ہوگا؟",
+    "junagarhi": "پوچھتا ہے کہ قیامت کا دن کب آئے گا.",
+    "mahmud-al-hasan": "پوچھتا ہے کب ہو گا دن قیامت کا",
+    "israr-ahmad": "وہ پوچھتا ہے : کب آئے گا قیامت کا دن ؟",
+    "maududi": "پوچھتا ہے”آخر کب آنا ہے وہ قیامت کا دن؟“",
+    "wahiduddin-khan": "وہ پوچھتا ہے کہ قیامت کا دن کب آئے گا"
+   },
+   "phrases": []
+  },
+  {
+   "number": 7,
+   "translations": {
+    "jalandhari": "جب آنکھیں چندھیا جائیں",
+    "junagarhi": "پس جس وقت کہ نگاه پتھرا جائے گی.",
+    "mahmud-al-hasan": "پھر جب چندھیانے لگے آنکھ",
+    "israr-ahmad": "پس جب نگاہیں چندھیا جائیں گی۔",
+    "maududi": "پھر جب دِیدے پتھرا جائیں گے",
+    "wahiduddin-khan": "پس جب آنکھیں خیرہ ہوجائیں گی"
+   },
+   "phrases": []
+  },
+  {
+   "number": 8,
+   "translations": {
+    "jalandhari": "اور چاند گہنا جائے",
+    "junagarhi": "اور چاند بے نور ہو جائے گا.",
+    "mahmud-al-hasan": "اور گہہ جائے چاند",
+    "israr-ahmad": "اور چاند بےنور ہوجائے گا۔",
+    "maududi": "اور چاند بے نور ہو جائیگا",
+    "wahiduddin-khan": "اور چاند بے نور ہوجائے گا"
+   },
+   "phrases": []
+  },
+  {
+   "number": 9,
+   "translations": {
+    "jalandhari": "اور سورج اور چاند جمع کردیئے جائیں",
+    "junagarhi": "اور سورج اور چاند جمع کردیئے جائیں گے.",
+    "mahmud-al-hasan": "اور اکٹھے ہوں سورج اور چاند",
+    "israr-ahmad": "اور سورج اور چاند یکجا کردیے جائیں گے۔",
+    "maududi": "اور چاند سُورج ملا کر ایک کر دیے جائیں گے",
+    "wahiduddin-khan": "اور سورج اور چاند اکھٹا کردئے جائیں گے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 10,
+   "translations": {
+    "jalandhari": "اس دن انسان کہے گا کہ (اب) کہاں بھاگ جاؤں؟",
+    "junagarhi": "اس دن انسان کہے گا کہ آج بھاگنے کی جگہ کہاں ہے؟",
+    "mahmud-al-hasan": "کہے گا آدمی اُس دن کہاں چلا جاؤں بھاگ کر",
+    "israr-ahmad": "اس دن انسان کہے گا : کہاں ہے کوئی بھاگ جانے کی جگہ ؟",
+    "maududi": "اُس وقت یہی انسان کہے گا \"کہاں بھاگ کر جاؤں؟\"",
+    "wahiduddin-khan": "اس دن انسان کہے گا کہ کہاں بھاگوں"
+   },
+   "phrases": []
+  },
+  {
+   "number": 11,
+   "translations": {
+    "jalandhari": "بےشک کہیں پناہ نہیں",
+    "junagarhi": "نہیں نہیں کوئی پناہ گاه نہیں.",
+    "mahmud-al-hasan": "کوئی نہیں کہیں نہیں ہے بچاؤ",
+    "israr-ahmad": "(کہا جائے گا :) ہرگز نہیں کوئی جائے پناہ نہیں ہے۔",
+    "maududi": "ہرگز نہیں، وہاں کوئی جائے پناہ نہ ہوگی",
+    "wahiduddin-khan": "ہرگز نہیں ،کہیں پناہ نہیں"
+   },
+   "phrases": []
+  },
+  {
+   "number": 12,
+   "translations": {
+    "jalandhari": "اس روز پروردگار ہی کے پاس ٹھکانا ہے",
+    "junagarhi": "آج تو تیرے پروردگار کی طرف ہی قرار گاه ہے.",
+    "mahmud-al-hasan": "تیرے رب تک ہے اُس دن جا ٹھہرنا",
+    "israr-ahmad": "اس روز تمہارے ربّ ہی کے حضور میں جا کر کھڑے ہونا ہے۔",
+    "maududi": "اُس روز تیرے رب ہی کے سامنے جا کر ٹھیرنا ہوگا",
+    "wahiduddin-khan": "اس دن تیرے رب ہی کے پاس ٹھکانا ہے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 13,
+   "translations": {
+    "jalandhari": "اس دن انسان کو جو (عمل) اس نے آگے بھیجے اور پیچھے چھوڑے ہوں گے سب بتا دیئے جائیں گے",
+    "junagarhi": "آج انسان کو اس کے آگے بھیجے ہوئے اور پیچھے چھوڑے ہوئے سے آگاه کیا جائے گا.",
+    "mahmud-al-hasan": "جتلا دیں گے انسان کو اُس دن جو اُس نے آگے بھیجا اور پیچھے چھوڑا",
+    "israr-ahmad": "جتلا دیا جائے گا انسان کو اس دن جو کچھ اس نے آگے بھیجا ہوگا اور جو کچھ پیچھے چھوڑا ہوگا۔",
+    "maududi": "اُس روز انسان کو اس کا سب اگلا پچھلا کیا کرایا بتا دیا جائے گا۔",
+    "wahiduddin-khan": "اس دن انسان کو بتایا جائے گا کہ اس نے کیا آگے بھیجا اور کیا پیچھے چھوڑا"
+   },
+   "phrases": []
+  },
+  {
+   "number": 14,
+   "translations": {
+    "jalandhari": "بلکہ انسان آپ اپنا گواہ ہے",
+    "junagarhi": "بلکہ انسان خود اپنے اوپر آپ حجت ہے.",
+    "mahmud-al-hasan": "بلکہ آدمی اپنے واسطے آپ دلیل ہے",
+    "israr-ahmad": "بلکہ انسان تو اپنے نفس کے احوال پر خود ہی خوب بصیرت رکھتا ہے۔",
+    "maududi": "بلکہ انسان خود ہی اپنے آپ کو خوب جانتا ہے",
+    "wahiduddin-khan": "بلکہ انسان خود اپنے آپ کو جانتا ہے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 15,
+   "translations": {
+    "jalandhari": "اگرچہ عذر ومعذرت کرتا رہے",
+    "junagarhi": "اگر چہ کتنے ہی بہانے پیش کرے.",
+    "mahmud-al-hasan": "اور پڑالا ڈالے اپنے بہانے",
+    "israr-ahmad": "اور چاہے وہ کتنے ہی بہانے پیش کرے۔",
+    "maududi": "چاہے وہ کتنی ہی معذرتیں پیش کرے",
+    "wahiduddin-khan": "چاہے وہ کتنے ہی بہانے پیش کرے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 16,
+   "translations": {
+    "jalandhari": "اور (اے محمدﷺ) وحی کے پڑھنے کے لئے اپنی زبان نہ چلایا کرو کہ اس کو جلد یاد کرلو",
+    "junagarhi": "(اے نبی) آپ قرآن کو جلدی (یاد کرنے) کے لیے اپنی زبان کو حرکت نہ دیں.",
+    "mahmud-al-hasan": "نہ چلا تو اُسکے پڑھنے پر اپنی زبان تاکہ جلدی اُسکو سیکھ لے",
+    "israr-ahmad": "آپ اس (قرآن) کے ساتھ اپنی زبان کو تیزی سے حرکت نہ دیں۔",
+    "maududi": "اے نبیؐ ، اِس وحی کو جلدی جلدی یاد کرنے کے لیے اپنی زبان کو حرکت نہ دو",
+    "wahiduddin-khan": "تم اس کے پڑھنے پراپنی زبان نہ چلاؤ تاکہ تم اس کوجلدی سیکھ لو"
+   },
+   "phrases": []
+  },
+  {
+   "number": 17,
+   "translations": {
+    "jalandhari": "اس کا جمع کرنا اور پڑھانا ہمارے ذمے ہے",
+    "junagarhi": "اس کا جمع کرنا اور (آپ کی زبان سے) پڑھنا ہمارے ذمہ ہے.",
+    "mahmud-al-hasan": "وہ تو ہمارا ذمہ ہے اُسکو جمع رکھنا تیرے سینہ میں اور پڑھنا تیری زبان سے",
+    "israr-ahmad": "اسے جمع کرنا اور پڑھوا دینا ہمارے ذمہ ہے۔",
+    "maududi": "اِس کو یاد کرا دینا اور پڑھوا دینا ہمارے ذمہ ہے",
+    "wahiduddin-khan": "ہمارے اوپر ہے اس کوجمع کرنا اوراس کوسنانا"
+   },
+   "phrases": []
+  },
+  {
+   "number": 18,
+   "translations": {
+    "jalandhari": "جب ہم وحی پڑھا کریں تو تم (اس کو سنا کرو اور) پھر اسی طرح پڑھا کرو",
+    "junagarhi": "ہم جب اسے پڑھ لیں تو آپ اس کے پڑھنے کی پیروی کریں.",
+    "mahmud-al-hasan": "پھر جب ہم پڑھنے لگیں فرشتہ کی زبانی تو ساتھ رہ اُسکے پڑھنے کے",
+    "israr-ahmad": "پھر جب ہم اسے پڑھوا دیں تو آپ اس کی قراءت کی پیروی کیجیے۔",
+    "maududi": "لہٰذا جب ہم اِسے پڑھ رہے ہوں اُس وقت تم اِس کی قراٴت کو غور سے سُنتے رہو",
+    "wahiduddin-khan": "پس جب ہم اس کوسنائیں تو تم اس سنانے کی پیروی کرو"
+   },
+   "phrases": []
+  },
+  {
+   "number": 19,
+   "translations": {
+    "jalandhari": "پھر اس (کے معانی) کا بیان بھی ہمارے ذمے ہے",
+    "junagarhi": "پھر اس کا واضح کر دینا ہمارے ذمہ ہے.",
+    "mahmud-al-hasan": "پھر مقرر ہمارا ذمہ ہے اُسکو کھول کر بتلانا",
+    "israr-ahmad": "پھر ہمارے ہی ذمے ہے اس کو واضح کردینا بھی۔",
+    "maududi": "پھر اس کا مطلب سمجھا دینا بھی ہمارے ہی ذمّہ ہے",
+    "wahiduddin-khan": "پھر ہمارے اوپر ہے اس کو بیان کردینا"
+   },
+   "phrases": []
+  },
+  {
+   "number": 20,
+   "translations": {
+    "jalandhari": "مگر (لوگو) تم دنیا کو دوست رکھتے ہو",
+    "junagarhi": "نہیں نہیں تم جلدی ملنے والی (دنیا) کی محبت رکھتے ہو.",
+    "mahmud-al-hasan": "کوئی نہیں پر تم چاہتے ہو جو جلد آئے",
+    "israr-ahmad": "ہرگز نہیں ! اصل بات یہ ہے کہ تم لوگ جلدی ملنے والی چیز (یعنی دنیا) سے محبت کرتے ہو۔",
+    "maududi": "ہر گز نہیں، اصل بات یہ ہے کہ تم لوگ جلدی حاصل ہونے والی چیز (یعنی دنیا)سے محبت رکھتے ہو",
+    "wahiduddin-khan": "ہر گز نہیں ،بلکہ تم چاہتے ہو جو جلد آئے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 21,
+   "translations": {
+    "jalandhari": "اور آخرت کو ترک کئے دیتے ہو",
+    "junagarhi": "اور آخرت کو چھوڑ بیٹھے ہو.",
+    "mahmud-al-hasan": "اور چھوڑتے ہو جو دیر میں آئے",
+    "israr-ahmad": "اور تم آخرت کو چھوڑ دیتے ہو۔",
+    "maududi": "اور آخرت کو چھوڑ دیتے ہو۔",
+    "wahiduddin-khan": "اور تم چھوڑتے ہو جو دیر میں آئے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 22,
+   "translations": {
+    "jalandhari": "اس روز بہت سے منہ رونق دار ہوں گے",
+    "junagarhi": "اس روز بہت سے چہرے تروتازه اور بارونق ہوں گے.",
+    "mahmud-al-hasan": "کتنے منہ اس دن تازہ ہیں",
+    "israr-ahmad": "بہت سے چہرے اس دن تروتازہ ہوں گے۔",
+    "maududi": "اُس روز کچھ چہرے ترو تازہ ہونگے،",
+    "wahiduddin-khan": "کچھ چہرے اس دن بارونق ہوں گے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 23,
+   "translations": {
+    "jalandhari": "اور) اپنے پروردگار کے محو دیدار ہوں گے",
+    "junagarhi": "اپنے رب کی طرف دیکھتے ہوں گے.",
+    "mahmud-al-hasan": "اپنے رب کی طرف دیکھنے والے",
+    "israr-ahmad": "اپنے رب کی طرف دیکھ رہے ہوں گے۔",
+    "maududi": "اپنے ربّ کی طرف دیکھ رہے ہوں گے۔",
+    "wahiduddin-khan": "اپنے رب کی طرف دیکھ رہے ہوں گے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 24,
+   "translations": {
+    "jalandhari": "اور بہت سے منہ اس دن اداس ہوں گے",
+    "junagarhi": "اور کتنے چہرے اس دن (بد رونق اور) اداس ہوں گے.",
+    "mahmud-al-hasan": "اور کتنے منہ اُس دن اداس ہیں",
+    "israr-ahmad": "اور بہت سے چہرے اس روز اترے ہوئے ہوں گے۔",
+    "maududi": "اور کچھ چہرے اداس ہوں گے",
+    "wahiduddin-khan": "اور کچھ چہرے اس دن اداس ہوں گے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 25,
+   "translations": {
+    "jalandhari": "خیال کریں گے کہ ان پر مصیبت واقع ہونے کو ہے",
+    "junagarhi": "سمجھتے ہوں گے کہ ان کے ساتھ کمر توڑ دینے واﻻ معاملہ کیا جائے گا.",
+    "mahmud-al-hasan": "خیال کرتے ہیں کہ اُن پر وہ آئے جس سے ٹوٹے کمر",
+    "israr-ahmad": "ان کو یقین ہوگا کہ اب ان کے ساتھ کمرتوڑ سلوک ہونے و الا ہے۔",
+    "maududi": "اور سمجھ رہے ہوں گے کہ اُن کے ساتھ کمر توڑ برتاؤ ہونے والا ہے",
+    "wahiduddin-khan": "گمان کررہے ہوں گے کہ ان کے ساتھ کمر توڑدینے والا معاملہ کیاجائے گا"
+   },
+   "phrases": []
+  },
+  {
+   "number": 26,
+   "translations": {
+    "jalandhari": "دیکھو جب جان گلے تک پہنچ جائے",
+    "junagarhi": "نہیں نہیں جب روح ہنسلی تک پہنچے گی.",
+    "mahmud-al-hasan": "ہرگز نہیں جس وقت جان پہنچے ہانس تک",
+    "israr-ahmad": "ہرگز نہیں ! جب کہ جان آکر پھنس جاتی ہے ہنسلیوں میں۔",
+    "maududi": "ہر گز نہیں، جب جان حلق تک پہنچ جائے گی",
+    "wahiduddin-khan": "ہرگز نہیں ،جب جان حلق تک پہنچ جائے گی"
+   },
+   "phrases": []
+  },
+  {
+   "number": 27,
+   "translations": {
+    "jalandhari": "اور لوگ کہنے لگیں (اس وقت) کون جھاڑ پھونک کرنے والا ہے",
+    "junagarhi": "اور کہا جائے گا کہ کوئی جھاڑ پھونک کرنے واﻻ ہے؟",
+    "mahmud-al-hasan": "اور لوگ کہیں کون ہے جھاڑنے والا",
+    "israr-ahmad": "اور کہا جاتا ہے کہ ہے کوئی جھاڑ پھونک کرنے والا ؟",
+    "maududi": "اور کہا جائے گا کہ ہے کوئی جھاڑ پھُونک کر نے والا،",
+    "wahiduddin-khan": "اور کہاجائے گا کہ کون ہے جھاڑ پھونک کرنے والا"
+   },
+   "phrases": []
+  },
+  {
+   "number": 28,
+   "translations": {
+    "jalandhari": "اور اس (جان بلب) نے سمجھا کہ اب سب سے جدائی ہے",
+    "junagarhi": "اور جان لیا اس نے کہ یہ وقت جدائی ہے.",
+    "mahmud-al-hasan": "اور وہ سمجھا کہ اب آیا وقت جدائی کا",
+    "israr-ahmad": "اور وہ سمجھ جاتا ہے کہ اب جدائی کی گھڑی آن پہنچی ہے۔",
+    "maududi": "اور آدمی سمجھ لے گا کہ یہ دنیا سے جدائی کا وقت ہے",
+    "wahiduddin-khan": "اور وہ گمان کرے گا کہ یہ جدائی کا وقت ہے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 29,
+   "translations": {
+    "jalandhari": "اور پنڈلی سے پنڈلی لپٹ جائے",
+    "junagarhi": "اور پنڈلی سے پنڈلی لپٹ جائے گی.",
+    "mahmud-al-hasan": "اور لپٹ گئ پنڈلی پر پنڈلی",
+    "israr-ahmad": "اور پنڈلی پنڈلی سے لپٹ جاتی ہے۔",
+    "maududi": "اور پنڈلی سے پنڈلی جُڑ جائے گی،",
+    "wahiduddin-khan": "اور پنڈلی سے پنڈلی لپٹ جائے گی"
+   },
+   "phrases": []
+  },
+  {
+   "number": 30,
+   "translations": {
+    "jalandhari": "اس دن تجھ کو اپنے پروردگار کی طرف چلنا ہے",
+    "junagarhi": "آج تیرے پروردگار کی طرف چلنا ہے.",
+    "mahmud-al-hasan": "تیرے رب کی طرف ہے اُس دن کھنچ کر چلا جانا",
+    "israr-ahmad": "اس دن تو تیرے رب ہی کی طرف دھکیلے جانا ہے۔",
+    "maududi": "وہ دن ہوگا تیرے رب کی طرف روانگی کا",
+    "wahiduddin-khan": "وہ دن ہوگا تیرے رب کی طرف جانے کا"
+   },
+   "phrases": []
+  },
+  {
+   "number": 31,
+   "translations": {
+    "jalandhari": "تو اس (ناعاقبت) اندیش نے نہ تو (کلام خدا) کی تصدیق کی نہ نماز پڑھی",
+    "junagarhi": "اس نے نہ تو تصدیق کی نہ نماز ادا کی.",
+    "mahmud-al-hasan": "پھر نہ یقین لایا اور نہ نماز پڑھی",
+    "israr-ahmad": "پس اس نے نہ تو تصدیق کی اور نہ نماز پڑھی۔",
+    "maududi": "مگر اُس نے نہ سچ مانا، اور نہ نماز پڑھی",
+    "wahiduddin-khan": "تو اس نے نہ سچ مانا اور نہ نماز پڑھی"
+   },
+   "phrases": []
+  },
+  {
+   "number": 32,
+   "translations": {
+    "jalandhari": "بلکہ جھٹلایا اور منہ پھیر لیا",
+    "junagarhi": "بلکہ جھٹلایا اور روگردانی کی.",
+    "mahmud-al-hasan": "پھر جھٹلایا اور منہ موڑا",
+    "israr-ahmad": "بلکہ اس نے جھٹلادیا اور پیٹھ موڑ لی۔",
+    "maududi": "بلکہ جھٹلایا اور پلٹ گیا",
+    "wahiduddin-khan": "بلکہ جھٹلایا اور منہ موڑا"
+   },
+   "phrases": []
+  },
+  {
+   "number": 33,
+   "translations": {
+    "jalandhari": "پھر اپنے گھر والوں کے پاس اکڑتا ہوا چل دیا",
+    "junagarhi": "پھر اپنے گھر والوں کے پاس اتراتا ہوا گیا.",
+    "mahmud-al-hasan": "پھر گیا اپنے گھر کو اکڑتا ہوا",
+    "israr-ahmad": "پھر چل دیا اپنے گھر والوں کے پاس اکڑتا ہوا۔",
+    "maududi": "پھر اکڑتا ہوا اپنے گھر والوں کی طرف چل دیا۔",
+    "wahiduddin-khan": "پھر اکڑتا ہوا اپنے لوگوں کی طرف چلاگیا"
+   },
+   "phrases": []
+  },
+  {
+   "number": 34,
+   "translations": {
+    "jalandhari": "افسوس ہے تجھ پر پھر افسوس ہے",
+    "junagarhi": "افسوس ہے تجھ پر حسرت ہے تجھ پر.",
+    "mahmud-al-hasan": "خرابی تیری خرابی پر خرابی تیری",
+    "israr-ahmad": "افسوس ہے تجھ پر افسوس ہے !",
+    "maududi": "یہ روش تیرے ہی لیے سزاوار ہے اور تجھی کو زیب دیتی ہے",
+    "wahiduddin-khan": "افسوس ہے تجھ پر افسوس ہے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 35,
+   "translations": {
+    "jalandhari": "پھر افسوس ہے تجھ پر پھر افسوس ہے",
+    "junagarhi": "وائے ہے اور خرابی ہے تیرے لیے.",
+    "mahmud-al-hasan": "پھر خرابی تیری خرابی پر خرابی تیری",
+    "israr-ahmad": "پھر افسوس ہے تجھ پر افسوس ہے !",
+    "maududi": "ہاں یہ روش تیرے ہی لیے سزاوار ہے اور تجھی کو زیب دیتی ہے۔",
+    "wahiduddin-khan": "پھرافسوس ہے تجھ پر افسوس ہے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 36,
+   "translations": {
+    "jalandhari": "کیا انسان خیال کرتا ہے کہ یوں ہی چھوڑ دیا جائے گا؟",
+    "junagarhi": "کیا انسان یہ سمجھتا ہے کہ اسے بیکار چھوڑ دیا جائے گا.",
+    "mahmud-al-hasan": "کیا خیال رکھتا ہے آدمی کہ چھوٹا رہے گا بے قید",
+    "israr-ahmad": "کیا انسان یہ سمجھتا ہے کہ اسے یوں ہی چھوڑ دیا جائے گا ؟",
+    "maududi": "کیا انسان نے یہ سمجھ رکھا ہے کہ وہ یُونہی مہمل چھوڑ دیا جائے گا؟",
+    "wahiduddin-khan": "کیا انسان خیال کرتا ہے کہ وہ بس یوں ہی چھوڑدیا جائے گا"
+   },
+   "phrases": []
+  },
+  {
+   "number": 37,
+   "translations": {
+    "jalandhari": "کیا وہ منی کا جو رحم میں ڈالی جاتی ہے ایک قطرہ نہ تھا؟",
+    "junagarhi": "کیا وه ایک گاڑھے پانی کا قطره نہ تھا جو ٹپکایا گیا تھا؟",
+    "mahmud-al-hasan": "بھلا نہ تھا وہ ایک بوند منی کی جو ٹپکی",
+    "israr-ahmad": "کیا وہ حقیر پانی کی ایک بوند نہیں تھا جو (رحم مادر میں) ٹپکائی جاتی ہے ؟",
+    "maududi": "کیا وہ ایک حقیر پانی کا نطفہ نہ تھا جو (رحم مادر میں) ٹپکایا جاتا ہے؟",
+    "wahiduddin-khan": "کیا وہ ٹپکائی ہوئی منی کی ایک بوند نہ تھا"
+   },
+   "phrases": []
+  },
+  {
+   "number": 38,
+   "translations": {
+    "jalandhari": "پھر لوتھڑا ہوا پھر (خدا نے) اس کو بنایا پھر (اس کے اعضا کو) درست کیا",
+    "junagarhi": "پھر وه لہو کا لوتھڑا ہوگیا پھر اللہ نے اسے پیدا کیا اور درست بنا دیا.",
+    "mahmud-al-hasan": "پھر تھا لہو جما ہوا پھر اُس نے بنایا اور ٹھیک کر اٹھایا",
+    "israr-ahmad": "پھر وہ ایک علقہ بنا پھر اللہ نے اس کو بنایا اور اس کے اعضاء درست کیے۔",
+    "maududi": "پھر وہ ایک لوتھڑا بنا، پھر اللہ نے اس کا جسم بنایا اور اس کے اعضا درست کیے",
+    "wahiduddin-khan": "پھر وہ علقہ ہوگیا،پھر اللہ نے بنایا، پھر اعضا درست کيے"
+   },
+   "phrases": []
+  },
+  {
+   "number": 39,
+   "translations": {
+    "jalandhari": "پھر اس کی دو قسمیں بنائیں (ایک) مرد اور (ایک) عورت",
+    "junagarhi": "پھر اس سے جوڑے یعنی نر وماده بنائے.",
+    "mahmud-al-hasan": "پھر کیا اُس میں جوڑا نر اور مادہ",
+    "israr-ahmad": "پھر اسی سے اس نے دو زوج بنائے نر اور مادہ۔",
+    "maududi": "پھر اس سے مرد اور عورت کی دو قسمیں بنائیں",
+    "wahiduddin-khan": "پھر اس کی دو قسمیں کردیں ، مرد اور عورت"
+   },
+   "phrases": []
+  },
+  {
+   "number": 40,
+   "translations": {
+    "jalandhari": "کیا اس خالق کو اس بات پر قدرت نہیں کہ مردوں کو جلا اُٹھائے؟",
+    "junagarhi": "کیا (اللہ تعالیٰ) اس (امر) پر قادر نہیں کہ مردے کو زنده کردے.",
+    "mahmud-al-hasan": "کیا یہ خدا زندہ نہیں کر سکتا مردوں کو",
+    "israr-ahmad": "تو کیا وہ اس پر قادر نہیں کہ ُ مردوں کو زندہ کردے ؟",
+    "maududi": "کیا وہ اِس پر قادر نہیں ہے کہ مرنے والوں کو پھر سے زندہ کردے؟",
+    "wahiduddin-khan": "کیا وہ اس پر قادر نہیں کہ مُردوں کو زندہ کردے"
+   },
+   "phrases": []
+  }
+ ],
+ "rules": [
+  {
+   "id": "negation",
+   "titleUrdu": "نفی: لَا، مَا اور لَيْسَ",
+   "explanationUrdu": "لَا اور مَا کسی خبر یا عمل کی نفی کرتے ہیں: لَا عموماً مضارع کے ساتھ، جیسے لَا يَعْلَمُ، اور مَا ماضی، مضارع یا جملۂ اسمیہ کے ساتھ، جیسے مَا عَلِمَ؛ یہ عام طور پر اعراب نہیں بدلتے۔ لَيْسَ نفی کا فعلِ ناقص ہے جو كَانَ کی طرح عمل کرتا ہے، اور مَا بھی کبھی اسی طرح خبر کو منصوب کرتا ہے۔",
+   "exampleUrdu": "لَآ — نہیں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "imperfect",
+   "titleUrdu": "فعلِ مضارع",
+   "explanationUrdu": "فعلِ مضارع حال یا مستقبل کے عمل کو، اور کبھی عادت یا جاری کیفیت کو، بیان کرتا ہے؛ درست مفہوم سیاق سے طے ہوتا ہے۔ اس کے شروع میں ہمزہ، نون، یاء یا تاء میں سے ایک علامت آتی ہے، اور ناصب یا جازم نہ ہو تو یہ مرفوع ہوتا ہے، جیسے يَكْتُبُ۔",
+   "exampleUrdu": "أُقْسِمُ — میں قسم کھاتا ہوں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "derived-form",
+   "titleUrdu": "ثلاثی مزید فیہ کے ابواب",
+   "explanationUrdu": "تین اصلی حروف پر ایک سے تین زائد حروف بڑھانے سے مزید فیہ کے ابواب بنتے ہیں، جیسے أَفْعَلَ، فَعَّلَ، فَاعَلَ، تَفَعَّلَ، تَفَاعَلَ، اِنْفَعَلَ، اِفْتَعَلَ اور اِسْتَفْعَلَ۔ ہر باب معنی میں خاص رنگ لاتا ہے، جیسے متعدی بنانا، کثرت، باہمی عمل یا طلب، مگر مادہ وہی تین حروف رہتا ہے۔",
+   "exampleUrdu": "أُقْسِمُ — میں قسم کھاتا ہوں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "preposition",
+   "titleUrdu": "حرفِ جر اور جار و مجرور",
+   "explanationUrdu": "حرفِ جر، جیسے مِنْ، إِلَى، عَنْ، عَلَى، فِي، بِ، لِ اور كَ، اپنے بعد کے اسم یا ضمیر کو مجرور کرتا ہے اور دونوں مل کر جار و مجرور بنتے ہیں۔ یہ ترکیب کسی فعل، مشتق اسم یا محذوف لفظ سے متعلق ہوتی ہے؛ ہر حرف کے کئی معانی ہیں، اس لیے ترجمہ سیاق سے کریں۔",
+   "exampleUrdu": "بِيَوْمِ — دن کی۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "genitive",
+   "titleUrdu": "جر اور اس کی علامات",
+   "explanationUrdu": "حرفِ جر کے بعد اور مضاف الیہ ہونے کی صورت میں اسم مجرور ہوتا ہے، اور اس کا تابع بھی جر لیتا ہے۔ اس کی اصل علامت کسرہ ہے؛ تثنیہ، جمع مذکر سالم اور اسماءِ خمسہ میں یاء، اور غیر منصرف اسم میں فتحہ جر کی علامت ہے۔ مبنی ضمیر یا اسم میں یہ حالت محلِ جر کہلاتی ہے۔",
+   "exampleUrdu": "بِيَوْمِ — دن کی۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "definite",
+   "titleUrdu": "معرفہ اور ال",
+   "explanationUrdu": "ال اسم کو معرفہ، یعنی متعین، بناتا ہے اور مادے کا حصہ نہیں ہوتا؛ اس کا ہمزہ وصلی ہے جو ملا کر پڑھنے میں ساقط ہو جاتا ہے۔ شمسی حرف سے پہلے لام مدغم ہو جاتا ہے مگر تعریف باقی رہتی ہے، اور ال والے اسم پر تنوین نہیں آتی۔",
+   "exampleUrdu": "ٱلْقِيَـٰمَةِ — قیامت کے۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "conjunction",
+   "titleUrdu": "عطف",
+   "explanationUrdu": "حروفِ عطف، جیسے وَ «اور»، فَ «پھر، تو»، ثُمَّ «پھر بعد میں»، أَوْ «یا» اور أَمْ «یا»، دو الفاظ یا جملوں کو ایک حکم میں جوڑتے ہیں۔ بعد والا لفظ معطوف کہلاتا ہے اور اعراب میں پہلے کی پیروی کرتا ہے؛ فَ ترتیب کے ساتھ فوراً بعد، اور ثُمَّ وقفے کے ساتھ بعد کا مفہوم دیتا ہے۔",
+   "exampleUrdu": "وَلَآ — اور نہیں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "interrogative",
+   "titleUrdu": "استفہام",
+   "explanationUrdu": "سوال کے لیے حرف أَ اور هَلْ، اور اسم مَنْ، مَا، مَاذَا، أَيُّ، كَيْفَ، أَنَّى، مَتَى اور أَيْنَ آتے ہیں؛ استفہام کے اسم أَيُّ کے سوا مبنی ہیں اور جملے میں اپنا محلِ اعراب رکھتے ہیں۔ قرآن میں سوال اکثر معلومات مانگنے کے بجائے انکار، تعجب، ملامت یا اقرار کرانے کے لیے ہوتا ہے۔",
+   "exampleUrdu": "أَيَحْسَبُ — کیا سمجھتا ہے۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "nominative",
+   "titleUrdu": "رفع اور اس کی علامات",
+   "explanationUrdu": "فاعل، نائبِ فاعل، مبتدا، خبر، اسمِ كَانَ اور خبرِ إِنَّ جیسے کرداروں میں اسم مرفوع ہوتا ہے۔ اس کی اصل علامت ضمہ ہے؛ جمع مذکر سالم اور اسماءِ خمسہ میں واو، اور تثنیہ میں الف رفع کی علامت ہے۔ جہاں حرکت ظاہر نہ ہو سکے وہاں رفع مقدر مانا جاتا ہے۔",
+   "exampleUrdu": "ٱلْإِنسَـٰنُ — انسان۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "masdar-particle",
+   "titleUrdu": "حروفِ مصدریہ: أَنْ، أَنَّ، مَا",
+   "explanationUrdu": "أَنْ، أَنَّ اور مَا مصدریہ اپنے بعد کے جملے کو ایک مصدر کے حکم میں بدل دیتے ہیں، جسے مصدرِ مؤول کہتے ہیں، جیسے أُرِيدُ أَنْ أَتَعَلَّمَ یعنی «میں سیکھنا چاہتا ہوں»۔ یہ مصدر جملے میں فاعل، مفعول، مبتدا یا مجرور کا کردار ادا کرتا ہے؛ أَنْ مضارع کو نصب بھی دیتا ہے۔",
+   "exampleUrdu": "أَلَّن — کہ ہرگز نہیں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "lan-negation",
+   "titleUrdu": "لَنْ: مستقبل کی نفی",
+   "explanationUrdu": "لَنْ مضارع کو منصوب کرتا ہے اور مستقبل میں کسی کام کی نفی کرتا ہے، اکثر زور کے ساتھ، جیسے لَنْ يَخْرُجَ «وہ ہرگز نہیں نکلے گا»۔ صحیح آخر پر فتحہ اور افعالِ خمسہ میں نون کا حذف اس کے نصب کی علامت ہے۔",
+   "exampleUrdu": "أَلَّن — کہ ہرگز نہیں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "subjunctive",
+   "titleUrdu": "نصبِ مضارع اور اس کے اسباب",
+   "explanationUrdu": "مضارع أَنْ، لَنْ، كَيْ اور إِذَنْ کے بعد منصوب ہوتا ہے، اور لامِ تعلیل، حَتَّى یا فاءِ سببیہ کے بعد بھی، جہاں أَنْ مقدر مانا جاتا ہے۔ صحیح آخر پر فتحہ (لَنْ يَكْتُبَ) اور افعالِ خمسہ میں نون کا حذف (أَنْ يَكْتُبُوا) نصب کی علامت ہے؛ الف پر ختم ہونے والے فعل میں فتحہ مقدر رہتا ہے۔",
+   "exampleUrdu": "نَّجْمَعَ — ہم جمع کریں گے۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "pronoun",
+   "titleUrdu": "ضمیرِ متصل",
+   "explanationUrdu": "متصل ضمیر کسی دوسرے لفظ کے آخر میں لگتی ہے، جیسے هُ، هَا، هُمْ، كَ، كُمْ اور نَا، اور اس کا کردار اسی لفظ سے طے ہوتا ہے جس سے وہ ملی ہو۔ اسم کے ساتھ یہ مضاف الیہ (رَبُّكَ)، حرفِ جر کے ساتھ مجرور (لَهُ)، اور إِنَّ کے ساتھ اس کا اسم (إِنَّهُ) ہوتی ہے؛ ضمیر مبنی ہے، اس لیے اس کا اعراب محلی ہوتا ہے۔",
+   "exampleUrdu": "عِظَامَهُۥ — اس کی ہڈیوں کو۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "accusative",
+   "titleUrdu": "نصب اور اس کی علامات",
+   "explanationUrdu": "مفعول، حال، تمییز، ظرف، اسمِ إِنَّ اور خبرِ كَانَ جیسے کرداروں میں اسم منصوب ہوتا ہے۔ اس کی اصل علامت فتحہ ہے؛ تثنیہ اور جمع مذکر سالم میں یاء، اسماءِ خمسہ میں الف، اور جمع مؤنث سالم میں کسرہ نصب کی علامت ہے۔ جہاں حرکت ظاہر نہ ہو وہاں نصب مقدر ہوتا ہے۔",
+   "exampleUrdu": "عِظَامَهُۥ — اس کی ہڈیوں کو۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "broken-plural",
+   "titleUrdu": "جمعِ تکسیر",
+   "explanationUrdu": "جمعِ تکسیر میں واحد کی بناوٹ اندر سے بدل جاتی ہے، جیسے عَبْدٌ سے عِبَادٌ اور قَلْبٌ سے قُلُوبٌ؛ اس کا اعراب عموماً واحد کی طرح حرکات سے ہوتا ہے۔ غیر عاقل چیزوں کی جمع کے لیے فعل، ضمیر اور صفت اکثر واحد مؤنث آتے ہیں، اور بعض اوزان غیر منصرف ہیں۔",
+   "exampleUrdu": "عِظَامَهُۥ — اس کی ہڈیوں کو۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "answer-particle",
+   "titleUrdu": "حروفِ جواب: بَلَى اور إِذًا",
+   "explanationUrdu": "بَلَى منفی سوال یا بات کے جواب میں اثبات کرتا ہے، یعنی «کیوں نہیں، ضرور»، جبکہ نَعَمْ پچھلی بات کی تصدیق کرتا ہے۔ إِذًا، جسے إِذَنْ بھی لکھا جاتا ہے، پچھلی بات کے نتیجے یا جزا کے طور پر «تب تو، اس صورت میں» کا معنی دیتا ہے اور کبھی مضارع کو نصب بھی دیتا ہے۔",
+   "exampleUrdu": "بَلَىٰ — کیوں نہیں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "participle",
+   "titleUrdu": "اسمِ فاعل اور اسمِ مفعول",
+   "explanationUrdu": "اسمِ فاعل کام کرنے والے کو اور اسمِ مفعول اس کو بتاتا ہے جس پر کام ہوا؛ ثلاثی مجرد میں ان کے وزن فَاعِلٌ اور مَفْعُولٌ ہیں، اور مزید فیہ میں یہ میمِ مضموم سے شروع ہوتے ہیں، جیسے مُؤْمِنٌ اور مُنْزَلٌ۔ یہ اسم ہیں، فعل نہیں، اگرچہ کبھی فعل کی طرح مفعول لیتے ہیں۔",
+   "exampleUrdu": "قَـٰدِرِينَ — قادر ہیں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "sound-plural",
+   "titleUrdu": "جمع مذکر سالم",
+   "explanationUrdu": "جمع مذکر سالم رفع میں واو اور نون، اور نصب و جر میں یاء اور نون پر ختم ہوتی ہے، جیسے الْمُؤْمِنُونَ اور الْمُؤْمِنِينَ؛ مضاف ہونے پر یہ نون گر جاتا ہے۔ أُولُو اور سِنِينَ جیسے الفاظ بھی اسی کے حکم میں ہیں؛ اسم کے اس نون کو افعالِ خمسہ کے نون سے الگ سمجھیں۔",
+   "exampleUrdu": "قَـٰدِرِينَ — قادر ہیں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "weak-verb",
+   "titleUrdu": "معتل فعل",
+   "explanationUrdu": "جس فعل کے اصلی حروف میں واو یا یاء ہو وہ معتل ہے: پہلا حرف ہو تو مثال (وَعَدَ)، درمیانی ہو تو اجوف (قَالَ)، آخری ہو تو ناقص (دَعَا)، اور دو ہوں تو لفیف (وَقَى)۔ یہ حروف بعض صیغوں میں بدل یا گر جاتے ہیں، جیسے يَعِدُ، قُلْ اور لَمْ يَدْعُ؛ اس لیے مادہ صرف نظر آنے والے حروف سے مقرر نہ کریں۔",
+   "exampleUrdu": "نُّسَوِّىَ — ہم درست کردیں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "retraction",
+   "titleUrdu": "اضراب: بَلْ اور أَمْ",
+   "explanationUrdu": "بَلْ پچھلی بات سے ہٹ کر اسے رد کرنے یا کسی نئی، زیادہ اہم بات کی طرف منتقل ہونے کے لیے آتا ہے، یعنی «بلکہ»۔ أَمْ منقطعہ بھی بَلْ اور سوالیہ ہمزہ کا مفہوم دیتا ہے، یعنی «بلکہ کیا…؟»؛ جملے سے پہلے آئیں تو یہ ابتدا کے حروف ہیں اور اعراب پر اثر نہیں ڈالتے۔",
+   "exampleUrdu": "بَلْ — بلکہ۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "purpose-lam",
+   "titleUrdu": "لامِ تعلیل اور كَيْ",
+   "explanationUrdu": "لامِ تعلیل «تاکہ» کے معنی میں مضارع سے پہلے آتا ہے اور اس کے بعد أَنْ مقدر مان کر فعل منصوب ہوتا ہے، جیسے لِيَعْلَمَ «تاکہ وہ جان لے»؛ كَيْ اور لِكَيْ بھی یہی معنی دیتے ہیں۔ اسے لامِ امر سے الگ رکھیں، جس کے بعد فعل مجزوم ہوتا ہے اور حکم کا معنی نکلتا ہے۔",
+   "exampleUrdu": "لِيَفْجُرَ — کہ گناہ کرتا ہے۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "adverb",
+   "titleUrdu": "ظرف (مفعول فیہ)",
+   "explanationUrdu": "ظرف وہ اسم ہے جو عمل کا وقت یا جگہ بتاتا ہے، جیسے يَوْمًا، غَدًا، عِنْدَ، بَيْنَ اور تَحْتَ؛ معرب ظرف منصوب ہوتا ہے اور اکثر بعد کے اسم یا جملے کی طرف مضاف ہوتا ہے۔ حَيْثُ اور لَدُنْ جیسے بعض ظرف مبنی ہیں؛ ظرف اور جار و مجرور کسی فعل یا محذوف لفظ سے متعلق ہوتے ہیں۔",
+   "exampleUrdu": "أَمَامَهُۥ — اپنے آگے۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "hamzated",
+   "titleUrdu": "مہموز فعل",
+   "explanationUrdu": "جس فعل کے اصلی حروف میں ہمزہ ہو وہ مہموز ہے، جیسے أَخَذَ، سَأَلَ اور قَرَأَ۔ ہمزہ لکھنے میں الف، واو یا یاء کی کرسی پر آتا ہے اور بعض صیغوں میں نرم یا حذف ہو جاتا ہے، جیسے خُذْ، كُلْ اور رَأَى کا مضارع يَرَى؛ پھر بھی مادے میں اسے شمار کیا جاتا ہے۔",
+   "exampleUrdu": "يَسْـَٔلُ — پوچھتا ہے وہ۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "resumption",
+   "titleUrdu": "استئناف: نئے جملے کا آغاز",
+   "explanationUrdu": "استئنافیہ وَ یا فَ پچھلے کلام سے ترکیب میں نہیں جڑتا بلکہ ایک نئے مستقل جملے کا آغاز کرتا ہے، جس کا کوئی محلِ اعراب نہیں ہوتا۔ معنی کا ربط باقی رہتا ہے، مگر بعد والا جملہ پچھلے کا معطوف نہیں سمجھا جاتا؛ عطف اور استئناف کا فیصلہ ترکیب اور سیاق سے ہوتا ہے۔",
+   "exampleUrdu": "فَإِذَا — پھر جب۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "condition",
+   "titleUrdu": "إِذَا: ظرف اور شرط",
+   "explanationUrdu": "إِذَا مستقبل کے وقت کا ظرف ہے جو اکثر شرط کا مفہوم بھی رکھتا ہے: «جب ایسا ہو تو…»؛ اس کے بعد کا جملہ اس کا مضاف الیہ اور شرط ہوتا ہے، اور یہ فعل کو جزم نہیں دیتا۔ اس کے بعد ماضی بھی مستقبل کا معنی دیتا ہے، اور جوابِ شرط پر ضرورت ہو تو فاء آتی ہے۔",
+   "exampleUrdu": "فَإِذَا — پھر جب۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "perfect",
+   "titleUrdu": "فعلِ ماضی",
+   "explanationUrdu": "فعلِ ماضی عموماً گزرے یا مکمل ہو چکے عمل کو بیان کرتا ہے، جیسے كَتَبَ «اس نے لکھا»۔ یہ مبنی ہے؛ فاعل کی ضمیریں آخر میں لگ کر شخص اور عدد بتاتی ہیں، جیسے كَتَبْتُ، كَتَبْنَا اور كَتَبُوا۔ شرط کے بعد یا آنے والے یقینی واقعے کے بیان میں سیاق اس کا مفہوم مستقبل کی طرف بھی لے جاتا ہے۔",
+   "exampleUrdu": "بَرِقَ — چندھیا جائیں گی۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "passive",
+   "titleUrdu": "فعلِ مجہول اور نائبِ فاعل",
+   "explanationUrdu": "فعلِ مجہول میں کام کرنے والے کا ذکر نہیں ہوتا اور اس کی جگہ نائبِ فاعل آتا ہے: عموماً مفعول مرفوع ہو کر، اور کبھی جار و مجرور یا مصدرِ مؤول محلِ رفع میں، جیسے نُفِخَ فِى ٱلصُّورِ۔ ماضی میں پہلا حرف مضموم اور آخری سے پہلا مکسور ہوتا ہے، جیسے كُتِبَ، جبکہ مضارع میں علامتِ مضارع مضموم اور آخری سے پہلا حرف مفتوح ہوتا ہے، جیسے يُكْتَبُ۔",
+   "exampleUrdu": "وَجُمِعَ — اور جمع کردئیے جائیں گے۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "deterrence",
+   "titleUrdu": "كَلَّا: ردع و زجر",
+   "explanationUrdu": "كَلَّا ایک حرف ہے جو پچھلی بات یا خواہش کو سختی سے رد کرتا اور ڈانٹتا ہے، یعنی «ہرگز نہیں»۔ بعض مفسرین کے نزدیک یہ بعض مقامات پر «حَقًّا»، یعنی «یقیناً»، کے معنی میں بھی آتا ہے؛ اس کا کوئی محلِ اعراب نہیں۔",
+   "exampleUrdu": "كَلَّا — ہرگز۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "la-generic",
+   "titleUrdu": "لائے نفیِ جنس",
+   "explanationUrdu": "لائے نفیِ جنس پوری جنس کی مکمل نفی کرتا ہے، جیسے لَا شَكَّ فِيهِ «اس میں کوئی بھی شک نہیں»۔ اس کا اسم نکرہ ہوتا ہے؛ مضاف یا شبیہ بالمضاف نہ ہو تو مفرد کہلاتا ہے اور اپنی علامتِ نصب پر مبنی ہوتا ہے۔ واحد اور جمعِ تکسیر میں فتحہ، تثنیہ اور جمع مذکر سالم میں یاء ہوتی ہے؛ جمع مؤنث سالم میں کسرہ یا فتحہ جائز ہے۔ مضاف اور شبیہ بالمضاف اسم منصوب ہوتا ہے، اور خبر مرفوع یا جار و مجرور ہوتی ہے۔",
+   "exampleUrdu": "لَا — نہیں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "relative",
+   "titleUrdu": "اسمِ موصول اور صلہ",
+   "explanationUrdu": "اسمِ موصول، جیسے الَّذِي، الَّتِي، الَّذِينَ، مَنْ اور مَا، اپنا معنی بعد کے جملے سے مکمل کرتا ہے جسے صلہ کہتے ہیں؛ صلے میں موصول کی طرف لوٹنے والی ضمیر ظاہر یا محذوف ہوتی ہے۔ موصول عموماً مبنی ہے اور اس کا محلِ اعراب جملے میں کردار سے طے ہوتا ہے، جبکہ صلے کا اپنا کوئی محلِ اعراب نہیں۔",
+   "exampleUrdu": "بِمَا — ساتھ اس کے جو۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "indefinite",
+   "titleUrdu": "نکرہ اور تنوین",
+   "explanationUrdu": "جو اسم کسی متعین فرد کو ظاہر نہ کرے وہ نکرہ ہے، اور معرب نکرہ کی عام علامت تنوین ہے، جیسے كِتَابٌ «ایک کتاب»۔ سیاق کے مطابق نکرہ عموم، تعظیم یا کمی کا مفہوم بھی دیتا ہے، اور اس کے بعد آنے والا جملہ اکثر اس کی صفت ہوتا ہے۔",
+   "exampleUrdu": "بَصِيرَةٌۭ — دیکھنے والا ہے۔ آگاہ ہے۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "prohibition",
+   "titleUrdu": "نہی: لَا ناہیہ",
+   "explanationUrdu": "لَا ناہیہ ایسا حرف ہے جو مضارع کو مجزوم کر کے کسی کام سے روکتا ہے، جیسے لَا تَقُلْ «نہ کہو»؛ آخر میں سکون، نون کا حذف یا حرفِ علت کا حذف جزم کی علامت ہوتا ہے۔ اسے لَا نافیہ سے الگ رکھیں، جس کے بعد مضارع مرفوع رہتا ہے اور صرف خبر کی نفی ہوتی ہے۔",
+   "exampleUrdu": "لَا — نہ۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "jussive",
+   "titleUrdu": "جزم اور اس کے اسباب",
+   "explanationUrdu": "مضارع لَمْ، لَمَّا، لامِ امر، لائے نہی اور جازم ادواتِ شرط کے بعد، یا امر کے جواب میں، مجزوم ہوتا ہے۔ صحیح آخر پر سکون (لَمْ يَكْتُبْ)، افعالِ خمسہ میں نون کا حذف، اور معتل آخر میں حرفِ علت کا حذف (لَمْ يَدْعُ) جزم کی علامت ہے؛ اجوف میں درمیانی حرف بھی گر سکتا ہے (لَمْ يَقُلْ)۔",
+   "exampleUrdu": "تُحَرِّكْ — آپ حرکت دیجئے۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "inna",
+   "titleUrdu": "إِنَّ اور اس کا عمل",
+   "explanationUrdu": "إِنَّ جملۂ اسمیہ پر آ کر تاکید کرتا ہے: اس کا اسم منصوب اور خبر مرفوع ہوتی ہے، اور جملہ خبر ہو تو محلِ رفع میں ہوتا ہے۔ اس سے ملی ضمیر بھی اس کا اسم بنتی ہے، جیسے إِنَّهُ اور إِنَّا؛ خبر یا مؤخر اسم پر آنے والا لام تاکید کو اور پختہ کرتا ہے۔",
+   "exampleUrdu": "إِنَّ — بیشک۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "subject-pronoun",
+   "titleUrdu": "ضمیر بطور فاعل",
+   "explanationUrdu": "فعل کا فاعل کبھی متصل ضمیر ہوتا ہے، جیسے كَتَبْتُ کی تاء، كَتَبُوا کی واو اور كَتَبْنَا کا نَا، اور کبھی صیغے میں پوشیدہ ہوتا ہے، جیسے اُكْتُبْ میں أَنْتَ اور نَكْتُبُ میں نَحْنُ۔ مجہول فعل کے ساتھ یہی ضمیر نائبِ فاعل ہوتی ہے، اور كَانَ یا كَادَ کے ساتھ ان کا اسم، جیسے كَانُوا کی واو؛ شخص اور عدد صیغے سے پہچانیں۔",
+   "exampleUrdu": "قَرَأْنَـٰهُ — پڑھیں ہم اس کو۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "object-pronoun",
+   "titleUrdu": "ضمیر بطور مفعول",
+   "explanationUrdu": "فعل کے آخر میں لگی مفعولی ضمیر، جیسے نَصَرَهُ میں هُ اور نَصَرَنِي میں یاء، اس کو بتاتی ہے جس پر عمل ہوا؛ یہ مفعول بہ اور محلِ نصب میں ہوتی ہے، جبکہ تُ اور وا جیسی ضمیریں فاعل ہوتی ہیں۔ الگ لکھی جانے والی إِيَّا والی ضمیر بھی مفعول بنتی ہے، جیسے إِيَّاكَ؛ حرفِ جر، اسم، اسمِ فاعل یا مصدر سے ملی اسی شکل کی ضمیر محلِ جر میں ہوتی ہے۔",
+   "exampleUrdu": "قَرَأْنَـٰهُ — پڑھیں ہم اس کو۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "condition-answer",
+   "titleUrdu": "جوابِ شرط اور فاءِ رابطہ",
+   "explanationUrdu": "شرطیہ جملے کا دوسرا حصہ جوابِ شرط ہے، جو بتاتا ہے کہ شرط پوری ہونے پر کیا ہوگا۔ جواب جملۂ اسمیہ، امر، نہی، قَدْ، سَ، سَوْفَ یا لَنْ وغیرہ سے شروع ہو تو اس پر فاء ضروری ہے، جسے فاءِ رابطہ کہتے ہیں؛ بعض اسمی جوابوں میں إِذَا فجائیہ اس فاء کی جگہ آتا ہے؛ کبھی جواب حذف ہوتا ہے اور سیاق اس پر دلالت کرتا ہے۔",
+   "exampleUrdu": "فَٱتَّبِعْ — تو پیروی کریں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "imperative",
+   "titleUrdu": "فعلِ امر",
+   "explanationUrdu": "فعلِ امر مخاطب سے کسی کام کا مطالبہ کرتا ہے؛ سیاق کے مطابق یہ حکم، دعا یا درخواست ہو سکتا ہے۔ یہ مبنی ہے: صحیح آخر پر سکون (اُكْتُبْ)، ناقص میں آخری حرفِ علت کا حذف (اُدْعُ) اور جمع میں نون کا حذف (اُكْتُبُوا)؛ واحد مذکر میں فاعل پوشیدہ أَنْتَ ہوتا ہے۔",
+   "exampleUrdu": "فَٱتَّبِعْ — تو پیروی کریں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "doubled",
+   "titleUrdu": "مضاعف فعل",
+   "explanationUrdu": "جس فعل کے دوسرے اور تیسرے اصلی حروف ایک جیسے ہوں وہ مضاعف ہے، جیسے مَدَّ اور ظَنَّ؛ اکثر صیغوں میں دونوں حرف مدغم ہو کر تشدید بن جاتے ہیں، اور اس تشدید کو بابِ تفعیل کی علامت نہ سمجھیں۔ تُ اور نَا جیسی فاعلی ضمیروں سے پہلے ادغام کھل جاتا ہے، جیسے مَدَدْتُ۔",
+   "exampleUrdu": "تُحِبُّونَ — تم پسند کرتے ہو۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "five-verbs",
+   "titleUrdu": "افعالِ خمسہ",
+   "explanationUrdu": "جس مضارع کے ساتھ الفِ تثنیہ، واوِ جماعت یا یائے مخاطبہ لگے، جیسے يَفْعَلَانِ، تَفْعَلُونَ اور تَفْعَلِينَ، اس کا رفع نون کے باقی رہنے سے ہوتا ہے۔ نصب اور جزم دونوں میں یہ نون گر جاتا ہے، جبکہ الف، واو یا یاء فاعل کی ضمیر رہتی ہے۔",
+   "exampleUrdu": "تُحِبُّونَ — تم پسند کرتے ہو۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "verbal-noun",
+   "titleUrdu": "مصدر",
+   "explanationUrdu": "مصدر کسی کام یا کیفیت کا نام ہے، جیسے ذِكْرٌ «یاد کرنا»؛ یہ زمانہ یا فاعل کا شخص نہیں بتاتا۔ ثلاثی مجرد کے مصادر سماعی ہیں جبکہ مزید فیہ کے مصادر مقرر اوزان پر آتے ہیں، جیسے إِنْذَارٌ اور تَكْذِيبٌ؛ میم سے شروع ہونے والا مصدرِ میمی بھی ہوتا ہے، اور مصدر کبھی اپنے فعل کی طرح مفعول لیتا ہے۔",
+   "exampleUrdu": "ٱلتَّرَاقِىَ — حلق کو۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "inna-sisters",
+   "titleUrdu": "إِنَّ کے اخوات",
+   "explanationUrdu": "أَنَّ «کہ»، كَأَنَّ «گویا»، لَٰكِنَّ «لیکن»، لَيْتَ «کاش» اور لَعَلَّ «شاید، تاکہ» بھی إِنَّ کی طرح اسم کو نصب اور خبر کو رفع دیتے ہیں؛ جب اللہ خود لَعَلَّ فرمائے تو یہ شک ظاہر نہیں کرتا۔ أَنَّ اپنے جملے کو مصدر کے حکم میں بدل دیتا ہے، اس لیے وہ جملہ کسی فعل کا فاعل یا مفعول بن سکتا ہے۔",
+   "exampleUrdu": "أَنَّهُ — کہ بیشک وہ۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "lam-jussive",
+   "titleUrdu": "لَمْ: ماضی کی نفی اور جزم",
+   "explanationUrdu": "لَمْ مضارع پر آ کر اسے مجزوم کرتا ہے اور معنی کو ماضی کی نفی میں بدل دیتا ہے، جیسے لَمْ يَكْتُبْ «اس نے نہیں لکھا»۔ صحیح آخر پر سکون، ناقص میں آخری حرفِ علت کا حذف اور افعالِ خمسہ میں نون کا حذف اس کی علامت ہے؛ أَلَمْ میں سوال کے ساتھ یہ اکثر اقرار کرانے کے لیے آتا ہے۔",
+   "exampleUrdu": "أَلَمْ — کیا نہ تھا۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "kana",
+   "titleUrdu": "كَانَ اور اس کے اخوات",
+   "explanationUrdu": "كَانَ اور اس کے اخوات، جیسے أَصْبَحَ، ظَلَّ، صَارَ، لَيْسَ اور مَا زَالَ، جملۂ اسمیہ پر آ کر اپنے اسم کو مرفوع اور خبر کو منصوب کرتے ہیں۔ یہ زمانہ، تبدیلی، نفی یا تسلسل کا مفہوم دیتے ہیں؛ كَانَ کے بعد مضارع ہو تو ماضی میں عادت یا جاری عمل کا معنی نکلتا ہے۔",
+   "exampleUrdu": "يَكُ — ایک۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "dual",
+   "titleUrdu": "تثنیہ",
+   "explanationUrdu": "دو کی تعداد بتانے کے لیے اسم کے آخر میں رفع کی حالت میں الف اور نون، اور نصب و جر میں یاء اور نون بڑھائے جاتے ہیں، جیسے جَنَّتَانِ اور جَنَّتَيْنِ۔ مضاف ہونے پر تثنیہ کا نون گر جاتا ہے؛ ضمیر میں هُمَا اور كُمَا، اور فعل میں الفِ تثنیہ دو کو ظاہر کرتے ہیں۔",
+   "exampleUrdu": "ٱلزَّوْجَيْنِ — دو قسمیں۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  },
+  {
+   "id": "demonstrative",
+   "titleUrdu": "اسمِ اشارہ",
+   "explanationUrdu": "اسمِ اشارہ کسی متعین شخص، چیز یا جگہ کی طرف اشارہ کرتا ہے: قریب کے لیے هَٰذَا، هَٰذِهِ اور هَٰؤُلَاءِ، اور دور کے لیے ذَٰلِكَ، تِلْكَ اور أُولَٰئِكَ۔ یہ عموماً مبنی ہے؛ آخر کا كَ خطاب کا حرف ہے، ضمیر نہیں، اور بعد میں آنے والا ال والا اسم اکثر اس کا بدل یا صفت ہوتا ہے۔",
+   "exampleUrdu": "ذَٰلِكَ — ہے۔ اس مقام کی تفصیل متعلقہ لفظ کے صرف و نحو میں دیکھیے۔"
+  }
+ ],
+ "roots": {
+  "ق س م": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ي و م": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ق و م": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ن ف س": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ل و م": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ح س ب": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "أ ن س": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ج م ع": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ع ظ م": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ق د ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "س و ي": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ب ن ن": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ر و د": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ف ج ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "أ م م": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "س أ ل": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ب ر ق": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ب ص ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "خ س ف": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ق م ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ش م س": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ق و ل": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ف ر ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "و ز ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ر ب ب": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ق ر ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ن ب أ": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ق د م": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "أ خ ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ل ق ي": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ع ذ ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ح ر ك": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ل س ن": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ع ج ل": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ق ر أ": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ت ب ع": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ب ي ن": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ح ب ب": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "و ذ ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "و ج ه": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ن ض ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ن ظ ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ب س ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ظ ن ن": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ف ع ل": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ف ق ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ب ل غ": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ت ر ق": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ر ق ي": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ف ر ق": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ل ف ف": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "س و ق": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ص د ق": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ص ل و": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ك ذ ب": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "و ل ي": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ذ ه ب": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "أ ه ل": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "م ط و": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ت ر ك": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "س د ي": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ك و ن": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ن ط ف": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "م ن ي": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ع ل ق": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "خ ل ق": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ج ع ل": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ز و ج": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ذ ك ر": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "أ ن ث": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ل ي س": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "ح ي ي": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  },
+  "م و ت": {
+   "meaningUrdu": "",
+   "noteUrdu": ""
+  }
+ },
+ "verbForms": {
+  "75:1:2": {
+   "baabUrdu": "بابِ إِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَقْسَمُ",
+   "present": "",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": ""
+  },
+  "75:2:2": {
+   "baabUrdu": "بابِ إِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَقْسَمُ",
+   "present": "",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": ""
+  },
+  "75:3:1": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "حَسِبَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:3:4": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "جَمَعَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:4:5": {
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "سَوَّىٰ",
+   "present": "",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": ""
+  },
+  "75:5:2": {
+   "baabUrdu": "بابِ إِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَرَادَ",
+   "present": "",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": ""
+  },
+  "75:5:4": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "يَفْجُرَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:6:1": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "سَأَلَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:7:2": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بَرِقَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:8:1": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "خَسَفَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:9:1": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "جَمَعَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:10:1": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "قَالَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:13:1": {
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "نَبَّأَ",
+   "present": "",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": ""
+  },
+  "75:13:5": {
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "قَدَّمَ",
+   "present": "",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": ""
+  },
+  "75:13:6": {
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "أَخَّرَ",
+   "present": "",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": ""
+  },
+  "75:15:2": {
+   "baabUrdu": "بابِ إِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَلْقَىٰٓ",
+   "present": "",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": ""
+  },
+  "75:16:2": {
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "تُحَرِّكْ",
+   "present": "",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": ""
+  },
+  "75:16:5": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "عَجِلَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:18:2": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "قَرَأَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:18:3": {
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "ٱتَّبَعَ",
+   "present": "",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": ""
+  },
+  "75:20:3": {
+   "baabUrdu": "بابِ إِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَحْبَبْ",
+   "present": "",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": ""
+  },
+  "75:21:1": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "يَذَرَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:25:1": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "ظَنَّ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:25:3": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "فَعَلَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:26:3": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "بَلَغَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:27:1": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "قَالَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:28:1": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "ظَنَّ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:29:1": {
+   "baabUrdu": "بابِ اِفْتِعَال",
+   "formUrdu": "ثلاثی مزید فیہ — ہشتم (VIII)",
+   "past": "ٱلْتَفَّتِ",
+   "present": "",
+   "pattern": "اِفْتَعَلَ — يَفْتَعِلُ",
+   "noteUrdu": ""
+  },
+  "75:31:2": {
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "صَدَّقَ",
+   "present": "",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": ""
+  },
+  "75:31:4": {
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "صَلَّىٰ",
+   "present": "",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": ""
+  },
+  "75:32:2": {
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "كَذَّبَ",
+   "present": "",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": ""
+  },
+  "75:32:3": {
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "تَوَلَّىٰ",
+   "present": "",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": ""
+  },
+  "75:33:2": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "ذَهَبَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:33:5": {
+   "baabUrdu": "بابِ تَفَعُّل",
+   "formUrdu": "ثلاثی مزید فیہ — پنجم (V)",
+   "past": "يَتَمَطَّىٰٓ",
+   "present": "",
+   "pattern": "تَفَعَّلَ — يَتَفَعَّلُ",
+   "noteUrdu": ""
+  },
+  "75:36:1": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "حَسِبَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:36:4": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "تَرَكَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:37:2": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "كَانَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:37:6": {
+   "baabUrdu": "بابِ إِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "يُمْنَىٰ",
+   "present": "",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": ""
+  },
+  "75:38:2": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "كَانَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:38:4": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "خَلَقَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:38:5": {
+   "baabUrdu": "بابِ تَفْعِيل",
+   "formUrdu": "ثلاثی مزید فیہ — دوم (II)",
+   "past": "سَوَّىٰ",
+   "present": "",
+   "pattern": "فَعَّلَ — يُفَعِّلُ",
+   "noteUrdu": ""
+  },
+  "75:39:1": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "جَعَلَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:40:1": {
+   "baabUrdu": "",
+   "formUrdu": "ثلاثی مجرد — اوّل (I)",
+   "past": "لَيْسَ",
+   "present": "",
+   "pattern": "",
+   "noteUrdu": ""
+  },
+  "75:40:6": {
+   "baabUrdu": "بابِ إِفْعَال",
+   "formUrdu": "ثلاثی مزید فیہ — چہارم (IV)",
+   "past": "أَحْيَا",
+   "present": "",
+   "pattern": "أَفْعَلَ — يُفْعِلُ",
+   "noteUrdu": ""
+  }
+ }
+}

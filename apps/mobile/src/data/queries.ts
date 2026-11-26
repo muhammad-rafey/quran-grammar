@@ -1,24 +1,27 @@
 /**
- * SQL for the bundled content database (schema v2) and the mapping back to the shared
- * StudyData / grammar-topic / practice shapes. Pure TypeScript with type-only imports, so the
- * same code runs on device (expo-sqlite) and in Node tests (node:sqlite).
+ * SQL for the bundled content database (schema v3) and the mapping back to the shared
+ * StudyData / grammar-topic / practice shapes. Pure TypeScript importing only the light core entry
+ * (shared shaping helpers), so the same code runs on device (expo-sqlite) and in Node tests
+ * (node:sqlite).
  *
  * Every query is keyed by an indexed column (words(surah), primary keys, topic_id) and a whole
  * chapter loads in a fixed number of statements, independent of its word count.
  */
-import type {
-  GrammarTopicDetail,
-  GrammarTopicSummary,
-  PracticeOption,
-  PracticeQuestion,
-  PracticeQuestionFilter,
-  PracticeQuestionKind,
-  ResolvedTopicExample,
-  StudyData,
-  TopicExampleKind,
+import {
+  joinIndoPak,
+  toResolvedOption,
+  type GrammarTopicDetail,
+  type GrammarTopicSummary,
+  type PracticeOption,
+  type PracticeQuestion,
+  type PracticeQuestionFilter,
+  type PracticeQuestionKind,
+  type ResolvedTopicExample,
+  type StudyData,
+  type TopicExampleKind,
 } from '@quran-grammar/core';
 
-export const MOBILE_DATABASE_SCHEMA_VERSION = 2;
+export const MOBILE_DATABASE_SCHEMA_VERSION = 3;
 
 export type SqlValue = string | number | null;
 
@@ -81,7 +84,31 @@ function groupBy<T, K>(rows: readonly T[], key: (row: T) => K): Map<K, T[]> {
   return map;
 }
 
-/** Rebuild one chapter's StudyData exactly (key and list order included). */
+/**
+ * Separators for values folded into one row with group_concat. Content text never contains these
+ * C0 control characters (a folded value with an unexpected field count is rejected).
+ */
+const unitSeparator = '\u001f';
+const recordSeparator = '\u001e';
+
+/** Split a group_concat of records (char(31)-separated) of fields (char(30)-separated). */
+function splitRecords(value: string | null, fields: number): string[][] {
+  if (value === null || value === '') return [];
+  return value.split(unitSeparator).map((record) => {
+    const parts = record.split(recordSeparator);
+    if (parts.length !== fields) throw new Error('Unexpected separator in folded content.');
+    return parts;
+  });
+}
+
+/**
+ * Rebuild one chapter's StudyData exactly (key and list order included).
+ *
+ * Per-word lists (segments, grammar-rule ids) and per-ayah translations are folded into their
+ * word / ayah row with `group_concat(... order by position)` (SQLite 3.44+; expo-sqlite bundles
+ * 3.49+). Al-Baqarah then reads ~8.5k rows instead of ~35k: on device each row becomes a JS
+ * object, so the row count, not the SQL, dominated a long chapter's load time.
+ */
 export async function loadStudy(exec: SqlExecutor, surah: number): Promise<StudyData | null> {
   const [surahRow] = await exec.all<SurahRow>(
     'select number, name_urdu, name_arabic, ayah_count, word_count from surahs where number = ?',
@@ -89,76 +116,77 @@ export async function loadStudy(exec: SqlExecutor, surah: number): Promise<Study
   );
   if (!surahRow) return null;
   const p = [surah];
-  const [ayahs, words, segments, wordRules, verbs, rules, roots, phrases, phraseWords] =
-    await Promise.all([
-      exec.all<{ number: number; translation_urdu: string; theme_urdu: string; tafsir_urdu: string }>(
-        'select number, translation_urdu, theme_urdu, tafsir_urdu from ayahs where surah = ? order by number',
-        p,
-      ),
-      exec.all<{
-        id: string;
-        ayah: number;
-        position: number;
-        arabic: string;
-        meaning_urdu: string;
-        pos: StudyData['words'][number]['pos'];
-        pos_urdu: string;
-        root: string | null;
-        lemma: string | null;
-        morphology_urdu: string;
-        syntax_urdu: string;
-        dictionary_urdu: string;
-      }>(
-        `select id, ayah, position, arabic, meaning_urdu, pos, pos_urdu, root, lemma,
-                morphology_urdu, syntax_urdu, dictionary_urdu
-           from words where surah = ? order by ayah, position`,
-        p,
-      ),
-      exec.all<{ word_id: string; arabic: string; role_urdu: string; meaning_urdu: string }>(
-        `select s.word_id, s.arabic, s.role_urdu, s.meaning_urdu
-           from words w join word_segments s on s.word_id = w.id
-          where w.surah = ? order by s.word_id, s.position`,
-        p,
-      ),
-      exec.all<{ word_id: string; rule_id: string }>(
-        'select word_id, rule_id from word_rules where surah = ? order by word_id, position',
-        p,
-      ),
-      exec.all<{
-        word_id: string;
-        baab_urdu: string;
-        form_urdu: string;
-        past: string;
-        present: string;
-        pattern: string;
-        note_urdu: string;
-      }>(
-        `select word_id, baab_urdu, form_urdu, past, present, pattern, note_urdu
-           from verb_forms where surah = ? order by position`,
-        p,
-      ),
-      exec.all<{ id: string; title_urdu: string; explanation_urdu: string; example_urdu: string }>(
-        'select id, title_urdu, explanation_urdu, example_urdu from rules where surah = ? order by position',
-        p,
-      ),
-      exec.all<{ root: string; meaning_urdu: string; note_urdu: string }>(
-        'select root, meaning_urdu, note_urdu from roots where surah = ? order by position',
-        p,
-      ),
-      exec.all<{ id: string; ayah: number; label_urdu: string; explanation_urdu: string }>(
-        'select id, ayah, label_urdu, explanation_urdu from phrases where surah = ? order by ayah, position',
-        p,
-      ),
-      exec.all<{ phrase_id: string; word_id: string }>(
-        `select pw.phrase_id, pw.word_id
-           from phrases ph join phrase_words pw on pw.phrase_id = ph.id
-          where ph.surah = ? order by pw.phrase_id, pw.position`,
-        p,
-      ),
-    ]);
+  const [ayahs, words, verbs, rules, roots, phrases, phraseWords] = await Promise.all([
+    // Translations keyed in catalog (position) order, as core's rowsToStudies builds them.
+    exec.all<{ number: number; translations: string | null }>(
+      `select a.number,
+              (select group_concat(t.translation_id || char(30) || t.text, char(31)
+                                   order by t.position)
+                 from ayah_translations t
+                where t.surah = a.surah and t.ayah = a.number) as translations
+         from ayahs a where a.surah = ? order by a.number`,
+      p,
+    ),
+    exec.all<{
+      id: string;
+      ayah: number;
+      position: number;
+      arabic: string;
+      arabic_indopak: string | null;
+      meaning_urdu: string;
+      pos: StudyData['words'][number]['pos'];
+      pos_urdu: string;
+      root: string | null;
+      lemma: string | null;
+      morphology_urdu: string;
+      syntax_urdu: string;
+      dictionary_urdu: string;
+      segments: string | null;
+      rule_ids: string | null;
+    }>(
+      `select w.id, w.ayah, w.position, w.arabic, w.arabic_indopak, w.meaning_urdu, w.pos,
+              w.pos_urdu, w.root, w.lemma, w.morphology_urdu, w.syntax_urdu, w.dictionary_urdu,
+              (select group_concat(s.arabic || char(30) || s.role_urdu || char(30) || s.meaning_urdu,
+                                   char(31) order by s.position)
+                 from word_segments s where s.word_id = w.id) as segments,
+              (select group_concat(r.rule_id, char(31) order by r.position)
+                 from word_rules r where r.word_id = w.id) as rule_ids
+         from words w where w.surah = ? order by w.ayah, w.position`,
+      p,
+    ),
+    exec.all<{
+      word_id: string;
+      baab_urdu: string;
+      form_urdu: string;
+      past: string;
+      present: string;
+      pattern: string;
+      note_urdu: string;
+    }>(
+      `select word_id, baab_urdu, form_urdu, past, present, pattern, note_urdu
+         from verb_forms where surah = ? order by position`,
+      p,
+    ),
+    exec.all<{ id: string; title_urdu: string; explanation_urdu: string; example_urdu: string }>(
+      'select id, title_urdu, explanation_urdu, example_urdu from rules where surah = ? order by position',
+      p,
+    ),
+    exec.all<{ root: string; meaning_urdu: string; note_urdu: string }>(
+      'select root, meaning_urdu, note_urdu from roots where surah = ? order by position',
+      p,
+    ),
+    exec.all<{ id: string; ayah: number; label_urdu: string; explanation_urdu: string }>(
+      'select id, ayah, label_urdu, explanation_urdu from phrases where surah = ? order by ayah, position',
+      p,
+    ),
+    exec.all<{ phrase_id: string; word_id: string }>(
+      `select pw.phrase_id, pw.word_id
+         from phrases ph join phrase_words pw on pw.phrase_id = ph.id
+        where ph.surah = ? order by ph.ayah, ph.position, pw.position`,
+      p,
+    ),
+  ]);
 
-  const segmentsByWord = groupBy(segments, (row) => row.word_id);
-  const rulesByWord = groupBy(wordRules, (row) => row.word_id);
   const phrasesByAyah = groupBy(phrases, (row) => row.ayah);
   const wordsByPhrase = groupBy(phraseWords, (row) => row.phrase_id);
 
@@ -170,6 +198,7 @@ export async function loadStudy(exec: SqlExecutor, surah: number): Promise<Study
       ayah: word.ayah,
       position: word.position,
       arabic: word.arabic,
+      ...(word.arabic_indopak === null ? {} : { arabicIndoPak: word.arabic_indopak }),
       meaningUrdu: word.meaning_urdu,
       pos: word.pos,
       posUrdu: word.pos_urdu,
@@ -178,18 +207,16 @@ export async function loadStudy(exec: SqlExecutor, surah: number): Promise<Study
       morphologyUrdu: word.morphology_urdu,
       syntaxUrdu: word.syntax_urdu,
       dictionaryUrdu: word.dictionary_urdu,
-      segments: (segmentsByWord.get(word.id) ?? []).map((segment) => ({
-        arabic: segment.arabic,
-        roleUrdu: segment.role_urdu,
-        meaningUrdu: segment.meaning_urdu,
+      segments: splitRecords(word.segments, 3).map(([arabic, roleUrdu, meaningUrdu]) => ({
+        arabic: arabic!,
+        roleUrdu: roleUrdu!,
+        meaningUrdu: meaningUrdu!,
       })),
-      ruleIds: (rulesByWord.get(word.id) ?? []).map((rule) => rule.rule_id),
+      ruleIds: word.rule_ids ? word.rule_ids.split(unitSeparator) : [],
     })),
     ayahs: ayahs.map((ayah) => ({
       number: ayah.number,
-      translationUrdu: ayah.translation_urdu,
-      themeUrdu: ayah.theme_urdu,
-      tafsirUrdu: ayah.tafsir_urdu,
+      translations: Object.fromEntries(splitRecords(ayah.translations, 2)),
       phrases: (phrasesByAyah.get(ayah.number) ?? []).map((phrase) => ({
         id: phrase.id,
         wordIds: (wordsByPhrase.get(phrase.id) ?? []).map((entry) => entry.word_id),
@@ -260,7 +287,7 @@ export async function loadTopic(exec: SqlExecutor, id: string): Promise<GrammarT
     [id],
   );
   if (!topic) return null;
-  const [points, examples, ayahWords] = await Promise.all([
+  const [points, examples, exampleTranslations, ayahWords] = await Promise.all([
     exec.all<{ text_urdu: string }>(
       'select text_urdu from grammar_topic_points where topic_id = ? order by position',
       [id],
@@ -272,21 +299,30 @@ export async function loadTopic(exec: SqlExecutor, id: string): Promise<GrammarT
       surah: number;
       ayah: number;
       arabic: string;
+      arabic_indopak: string | null;
       meaning_urdu: string;
-      translation_urdu: string;
     }>(
-      `select e.kind, e.word_id, e.note_urdu, w.surah, w.ayah, w.arabic, w.meaning_urdu,
-              a.translation_urdu
+      `select e.kind, e.word_id, e.note_urdu, w.surah, w.ayah, w.arabic, w.arabic_indopak,
+              w.meaning_urdu
          from grammar_topic_examples e
          join words w on w.id = e.word_id
-         join ayahs a on a.surah = w.surah and a.number = w.ayah
         where e.topic_id = ?
         order by e.kind, e.position`,
       [id],
     ),
+    // The translations of each example's ayah, in catalog (position) order.
+    exec.all<{ surah: number; ayah: number; translation_id: string; text: string }>(
+      `select distinct a.surah, a.ayah, a.position, a.translation_id, a.text
+         from grammar_topic_examples e
+         join words w on w.id = e.word_id
+         join ayah_translations a on a.surah = w.surah and a.ayah = w.ayah
+        where e.topic_id = ?
+        order by a.surah, a.ayah, a.position`,
+      [id],
+    ),
     // Every word of each example's ayah, to show the full ayah without retyping it.
-    exec.all<{ surah: number; ayah: number; arabic: string }>(
-      `select distinct w2.surah, w2.ayah, w2.position, w2.arabic
+    exec.all<{ surah: number; ayah: number; arabic: string; arabic_indopak: string | null }>(
+      `select distinct w2.surah, w2.ayah, w2.position, w2.arabic, w2.arabic_indopak
          from grammar_topic_examples e
          join words w on w.id = e.word_id
          join words w2 on w2.surah = w.surah and w2.ayah = w.ayah
@@ -295,22 +331,31 @@ export async function loadTopic(exec: SqlExecutor, id: string): Promise<GrammarT
       [id],
     ),
   ]);
-  const ayahArabic = new Map<string, string>();
+  const ayahArabic = new Map<string, { arabic: string; indoPak: string }>();
   for (const [key, words] of groupBy(ayahWords, (row) => `${row.surah}:${row.ayah}`))
-    ayahArabic.set(key, words.map((word) => word.arabic).join(' '));
-  const resolved = examples.map(
-    (row): ResolvedTopicExample => ({
+    ayahArabic.set(key, {
+      arabic: words.map((word) => word.arabic).join(' '),
+      indoPak: joinIndoPak(words.map((word) => word.arabic_indopak)),
+    });
+  const translations = new Map<string, Record<string, string>>();
+  for (const [key, rows] of groupBy(exampleTranslations, (row) => `${row.surah}:${row.ayah}`))
+    translations.set(key, Object.fromEntries(rows.map((row) => [row.translation_id, row.text])));
+  const resolved = examples.map((row): ResolvedTopicExample => {
+    const ayah = ayahArabic.get(`${row.surah}:${row.ayah}`);
+    return {
       kind: row.kind,
       wordId: row.word_id,
       surah: row.surah,
       ayah: row.ayah,
       wordArabic: row.arabic,
+      wordArabicIndoPak: row.arabic_indopak ?? '',
       meaningUrdu: row.meaning_urdu,
-      ayahArabic: ayahArabic.get(`${row.surah}:${row.ayah}`) ?? row.arabic,
-      translationUrdu: row.translation_urdu,
+      ayahArabic: ayah?.arabic ?? row.arabic,
+      ayahArabicIndoPak: ayah ? ayah.indoPak : (row.arabic_indopak ?? ''),
+      translations: translations.get(`${row.surah}:${row.ayah}`) ?? {},
       noteUrdu: row.note_urdu ?? null,
-    }),
-  );
+    };
+  });
   return {
     ...summaryFromRow(topic),
     explanationUrdu: topic.explanation_urdu,
@@ -343,9 +388,19 @@ export async function loadPracticeQuestions(
          from practice_questions q where ${where} order by q.position`,
       params,
     ),
-    exec.all<{ question_id: string; id: string; text: string; language: PracticeOption['language'] }>(
-      `select o.question_id, o.id, o.text, o.language
+    // Word options join the word whose id they carry, for its IndoPak text (toResolvedOption).
+    exec.all<{
+      question_id: string;
+      id: string;
+      text: string;
+      language: PracticeOption['language'];
+      word_arabic: string | null;
+      word_arabic_indopak: string | null;
+    }>(
+      `select o.question_id, o.id, o.text, o.language, w.arabic as word_arabic,
+              w.arabic_indopak as word_arabic_indopak
          from practice_questions q join practice_options o on o.question_id = q.id
+         left join words w on w.id = o.id
         where ${where} order by o.question_id, o.position`,
       params,
     ),
@@ -355,11 +410,14 @@ export async function loadPracticeQuestions(
     (row): PracticeQuestion => ({
       id: row.id,
       promptUrdu: row.prompt_urdu,
-      options: (optionsByQuestion.get(row.id) ?? []).map((option) => ({
-        id: option.id,
-        text: option.text,
-        language: option.language,
-      })),
+      options: (optionsByQuestion.get(row.id) ?? []).map((option) =>
+        toResolvedOption(
+          option,
+          option.word_arabic === null
+            ? null
+            : { arabic: option.word_arabic, arabicIndoPak: option.word_arabic_indopak },
+        ),
+      ),
       correctOptionId: row.correct_option_id,
       explanationUrdu: row.explanation_urdu,
       wordId: row.word_id,

@@ -258,7 +258,7 @@ function TopicIndex({
           ))}
           {filtered.length > visible.length ? (
             <Action quiet onPress={() => setLimit(limit + pageSize)}>
-              {`${ui.next} · ${count(visible.length)} / ${count(filtered.length)}`}
+              {`${ui.showMore} · ${count(visible.length)} / ${count(filtered.length)}`}
             </Action>
           ) : null}
         </View>

@@ -25,7 +25,10 @@ const icons = {
   }),
   check: Icon.select({ ios: 'checkmark', android: import('@expo/material-symbols/check.xml') }),
   close: Icon.select({ ios: 'xmark', android: import('@expo/material-symbols/close.xml') }),
-  lock: Icon.select({ ios: 'lock', android: import('@expo/material-symbols/lock.xml') }),
+  search: Icon.select({
+    ios: 'magnifyingglass',
+    android: import('@expo/material-symbols/search.xml'),
+  }),
   spark: Icon.select({ ios: 'sparkles', android: import('@expo/material-symbols/wand_stars.xml') }),
   chevronRight: Icon.select({
     ios: 'chevron.right',

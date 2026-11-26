@@ -1,7 +1,7 @@
 // Make sure the bundled SQLite content database exists before Metro bundles the app.
 //
 //   node scripts/ensure-db.mjs           generate assets/db/quran-grammar.db if it is missing, not
-//                                        schema v2, or older than the content/database sources
+//                                        schema v3, or older than the content/database sources
 //   node scripts/ensure-db.mjs --force   always regenerate it
 //
 // The database itself is produced by the repository's `npm run db:mobile` script.
@@ -25,7 +25,7 @@ import { DatabaseSync } from 'node:sqlite';
 import { fileURLToPath } from 'node:url';
 
 /** Must match MOBILE_DATABASE_SCHEMA_VERSION in src/data/queries.ts. */
-const SCHEMA_VERSION = 2;
+const SCHEMA_VERSION = 3;
 const mobile = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const root = resolve(mobile, '../..');
 const database = join(mobile, 'assets/db/quran-grammar.db');
@@ -62,6 +62,7 @@ function newestSource() {
     }
   };
   visit(join(root, 'packages/core/src'));
+  visit(join(root, 'packages/core/data'));
   visit(join(root, 'apps/api/src/db'));
   return newest;
 }

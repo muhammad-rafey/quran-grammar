@@ -1,0 +1,26 @@
+{
+ "surah": 87,
+ "corpusSpellingDifferences": [
+  {
+   "id": "87:17:1",
+   "quranCom": "وَٱلْـَٔاخِرَةُ",
+   "corpus": "وَٱلْءَاخِرَةُ"
+  },
+  {
+   "id": "87:17:2",
+   "quranCom": "خَيْرٌۭ",
+   "corpus": "خَيْرٌ"
+  },
+  {
+   "id": "87:18:2",
+   "quranCom": "هَـٰذَا",
+   "corpus": "هَٰذَا"
+  }
+ ],
+ "excludedPauseSigns": [
+  {
+   "id": "87:7:4",
+   "apiText": "ٱللَّهُ ۚ"
+  }
+ ]
+}

@@ -48,9 +48,11 @@ export function toResolvedExample(value: {
   surah: number;
   ayah: number;
   wordArabic: string;
+  wordArabicIndoPak: string;
   meaningUrdu: string;
   ayahArabic: string;
-  translationUrdu: string;
+  ayahArabicIndoPak: string;
+  translations: Readonly<Record<string, string>>;
   noteUrdu: string | null;
 }): ResolvedTopicExample {
   return {
@@ -59,9 +61,16 @@ export function toResolvedExample(value: {
     surah: value.surah,
     ayah: value.ayah,
     wordArabic: value.wordArabic,
+    wordArabicIndoPak: value.wordArabicIndoPak,
     meaningUrdu: value.meaningUrdu,
     ayahArabic: value.ayahArabic,
-    translationUrdu: value.translationUrdu,
+    ayahArabicIndoPak: value.ayahArabicIndoPak,
+    translations: value.translations,
     noteUrdu: value.noteUrdu,
   };
+}
+
+/** An ayah's IndoPak text: its words' IndoPak texts joined by spaces; '' unless all have one. */
+export function joinIndoPak(texts: readonly (string | null | undefined)[]): string {
+  return texts.length > 0 && texts.every((text) => text) ? texts.join(' ') : '';
 }

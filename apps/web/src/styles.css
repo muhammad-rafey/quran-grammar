@@ -20,7 +20,9 @@
   font-synthesis: none;
   color-scheme: light;
   --green: #205747;
-  --muted: #64776b;
+  --muted: #5c6f63;
+  /* Small secondary text that still meets 4.5:1 on the paper and mint surfaces. */
+  --quiet: #66765c;
   --line: #dfe7da;
   --noun: #39745d;
   --verb: #906324;
@@ -177,7 +179,28 @@ p {
   line-height: calc(1.8 * var(--quran-line-scale, 1));
 }
 .study-controls {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+}
+/* Surah/ayah selectors (and open filters) stay in view while reading a long chapter. */
+.study-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  margin: -10px -6px 4px;
+  padding: 10px 6px 0;
+  background: #f5f7f0;
+}
+.study-sticky::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  top: 100%;
+  height: 10px;
+  background: linear-gradient(#f5f7f0, #f5f7f000);
+  pointer-events: none;
+}
+.study-sticky .filter-panel {
+  margin-top: 0;
 }
 .lesson-toolbar {
   display: flex;
@@ -596,7 +619,19 @@ html.split-dragging * {
 .ayah {
   padding: 20px 22px 25px;
   border-bottom: 1px solid #e6ebdf;
-  scroll-margin-top: 16px;
+  scroll-margin-top: calc(var(--sticky-height, 0px) + 12px);
+}
+/* Long chapters (Al-Baqarah: 286 ayahs, 6,116 words) skip layout and paint off screen. The
+   placeholder height is estimated from the ayah's word count; reading.tsx sets the variables. */
+.reading-card.windowed .ayah {
+  content-visibility: auto;
+  contain-intrinsic-size: auto
+    calc(var(--ayah-base, 200px) + var(--ayah-words, 10) * var(--word-block, 25px));
+}
+.plain-ayah,
+.plain-word,
+.quran-word {
+  scroll-margin-top: calc(var(--sticky-height, 0px) + 12px);
 }
 .ayah:last-child {
   border-bottom: 0;
@@ -706,18 +741,50 @@ html.split-dragging * {
   border-color: #e8ecdf;
 }
 .quran-word.unmatched .word-meaning {
-  color: #6d7d64;
+  color: #65755c;
 }
 .ayah-translation {
   margin-top: 19px;
+  max-inline-size: 62em;
   font-size: calc(15px * var(--urdu-scale, 1));
-  color: #5e7354;
+  color: #4f6547;
   line-height: calc(2.1 * var(--urdu-line-scale, 1));
+}
+/* Names the selected translator under each ayah (changed in Settings → Translation). */
+.translation-credit {
+  margin-top: 2px;
+  max-inline-size: 62em;
+  text-align: right;
+  color: var(--quiet);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.translation-credit[lang='ur'] {
+  font-size: 12px;
+  line-height: 2;
+}
+/* Naskh reads smaller than Latin at the same size: lift the small Urdu interface labels. */
+.field-label.ui[lang='ur'],
+.detail-topline.ui[lang='ur'] {
+  font-size: 14px;
+}
+.detail-section h3.ui[lang='ur'] {
+  font-size: 19px;
+}
+.detail-section .grammar-fact h3.ui[lang='ur'] {
+  font-size: 15px;
+}
+.related-words small.ui[lang='ur'],
+.detail-navigation.ui[lang='ur'] small {
+  font-size: 13px;
+}
+.detail-navigation.ui[lang='ur'] button {
+  font-size: 15px;
 }
 .word-detail {
   position: sticky;
-  top: 20px;
-  max-height: calc(100dvh - 180px);
+  top: calc(var(--sticky-height, 0px) + 12px);
+  max-height: calc(100dvh - var(--sticky-height, 84px) - 108px);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -736,14 +803,14 @@ html.split-dragging * {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #7b8d72;
+  color: var(--quiet);
   font-size: 12px;
   min-height: 28px;
   gap: 8px;
 }
 .word-location {
   margin-inline-start: 10px;
-  color: #929c85;
+  color: var(--quiet);
   border: 1px solid #e6eadd;
   padding: 1px 5px;
   border-radius: 4px;
@@ -815,7 +882,7 @@ html.split-dragging * {
 }
 .detail-section h3 small {
   font-size: 12px;
-  color: #92a086;
+  color: var(--quiet);
   font-weight: 400;
 }
 .root-pair {
@@ -827,13 +894,36 @@ html.split-dragging * {
   border-radius: 7px;
   margin-bottom: 18px;
 }
+.root-pair:last-child {
+  margin-bottom: 0;
+}
+/* Grammar at a glance: sentence role (i'rab) and word formation, first in the panel. */
+.grammar-summary {
+  display: grid;
+  gap: 12px;
+}
+.grammar-fact {
+  padding: 10px 14px;
+  border-inline-start: 3px solid #cfdcc5;
+  border-radius: 4px;
+  background: #f7faf2;
+}
+.grammar-fact.syntax-fact {
+  border-inline-start-color: var(--green);
+  background: #eef5e9;
+}
+.detail-section .grammar-fact h3 {
+  margin-bottom: 2px;
+  font-size: 13px;
+  color: #3d5e47;
+}
 .root-pair > div + div {
   border-inline-start: 1px solid #dce5d1;
   padding-inline-start: 15px;
 }
 .field-label {
   display: block;
-  color: #667953;
+  color: #5f7155;
   font-size: 12px;
 }
 .root-pair strong {
@@ -912,7 +1002,7 @@ html.split-dragging * {
 }
 .segments small {
   font-size: 11px;
-  color: #8b9a7e;
+  color: var(--quiet);
 }
 .segments button.active {
   border-color: #a7c199;
@@ -957,7 +1047,7 @@ html.split-dragging * {
 }
 .related-words small {
   font-size: 11px;
-  color: #8c9b7e;
+  color: var(--quiet);
 }
 .detail-navigation {
   display: flex;
@@ -982,7 +1072,7 @@ html.split-dragging * {
 }
 .detail-navigation small {
   font-size: 12px;
-  color: #96a187;
+  color: var(--quiet);
 }
 .icon-button {
   display: grid;
@@ -1257,34 +1347,44 @@ html.split-dragging * {
   scrollbar-width: thin;
   scrollbar-color: #c3d6b6 transparent;
 }
+.topic-search.catalog-search {
+  flex: 0 0 auto;
+  min-width: 0;
+  margin: 0 20px 12px;
+}
+.catalog-search input {
+  font-size: 16px;
+}
 .catalog-entry {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 12px;
   width: 100%;
-  min-height: 74px;
-  padding: 10px 11px;
-  border: 1px solid transparent;
+  min-height: 66px;
+  padding: 9px 12px;
+  border: 1px solid #c5d9b8;
   border-radius: 16px;
   text-align: start;
-  color: #5f7356;
+  color: var(--green);
+  background: #edf5e6;
 }
 .catalog-entry + .catalog-entry {
   margin-top: 4px;
 }
-.catalog-entry.available {
-  color: var(--green);
-  border-color: #c5d9b8;
-  background: #edf5e6;
-}
-.catalog-entry.available:hover {
+.catalog-entry:hover {
   background: #e1efd7;
 }
-.catalog-entry:disabled {
-  opacity: 1;
+.catalog-entry:focus-visible {
+  outline: 3px solid #8fb57d;
+  outline-offset: 1px;
+}
+.catalog-entry.is-suggested {
+  border-color: #8fb57d;
+  box-shadow: 0 0 0 2px #dcebd1;
 }
 .catalog-entry > svg {
-  color: #78906b;
+  flex-shrink: 0;
+  color: #4d7a45;
 }
 .catalog-number {
   display: grid;
@@ -1293,13 +1393,48 @@ html.split-dragging * {
   width: 36px;
   height: 36px;
   border-radius: 12px;
-  background: #edf2e7;
-  color: #566e4b;
-  font-size: 13px;
-}
-.catalog-entry.available .catalog-number {
   background: #dcebd1;
   color: #315e35;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.catalog-entry[aria-current='true'] .catalog-number {
+  background: var(--green);
+  color: #fff;
+}
+.catalog-arabic {
+  flex-shrink: 0;
+  max-width: 40%;
+  font-family: Naskh, serif;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #2b5a3c;
+}
+.catalog-jump {
+  flex-shrink: 0;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.catalog-empty {
+  display: grid;
+  gap: 6px;
+  padding: 28px 12px;
+  text-align: center;
+}
+.catalog-empty p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--green);
+}
+.catalog-empty small {
+  font-size: 13px;
+  color: var(--muted);
 }
 .catalog-entry-copy {
   display: flex;
@@ -1319,8 +1454,11 @@ html.split-dragging * {
   line-height: 1.5;
 }
 .catalog-entry-copy small {
+  overflow: hidden;
   font-size: 12px;
   color: #65785b;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .practice-card {
   max-width: 690px;
@@ -1409,15 +1547,27 @@ html.split-dragging * {
   font-size: calc(29px * var(--quran-scale, 1));
   line-height: calc(2.1 * var(--quran-line-scale, 1));
 }
-.practice-option:hover:not(:disabled),
-.practice-option.selected {
+.practice-option:hover:not(:disabled) {
   border-color: #b0c69e;
   background: #eaf2df;
+}
+.practice-option.selected {
+  border-color: var(--green);
+  background: #e4efd9;
+  box-shadow: inset 0 0 0 1px var(--green);
+}
+/* After checking: the learner's wrong pick is marked, distinct from the correct answer. */
+.practice-option.incorrect {
+  border-color: #c98a6f;
+  background: #fbece4;
+  color: #8a3b22;
+  box-shadow: none;
 }
 .practice-option.correct {
   border-color: #80a96d;
   background: #dfefd5;
   color: #2b6335;
+  box-shadow: none;
 }
 .practice-option:disabled {
   opacity: 1;
@@ -1710,6 +1860,9 @@ html.split-dragging * {
   .catalog-list {
     padding-inline: 16px;
   }
+  .topic-search.catalog-search {
+    margin-inline: 16px;
+  }
   .practice-card {
     padding: 21px 18px;
     border-radius: 22px;
@@ -1804,6 +1957,7 @@ html.split-dragging * {
 }
 .catalog-entry[aria-current='true'] {
   border-color: var(--accent, #00755c);
+  background: #dcebd1;
 }
 
 .catalog-subheading h3 {
@@ -2409,6 +2563,14 @@ html.split-dragging * {
 [dir='rtl'] .layout-switch input:checked + .toggle-track:after {
   transform: translateX(-16px);
 }
+/* The meaning toggle follows the interface direction too: "on" moves the knob to the end. */
+[dir='ltr'] .meaning-toggle .toggle-track:after {
+  right: auto;
+  left: 3px;
+}
+[dir='ltr'] .meaning-toggle input:checked + .toggle-track:after {
+  transform: translateX(14px);
+}
 
 /* Reading: continuous (mushaf-like) Quranic text when word-by-word grammar is off */
 .plain-ayah {
@@ -2539,4 +2701,11 @@ span.plain-ayah {
 .font-option[data-font] .font-note {
   font-size: 12px;
   color: var(--muted);
+}
+
+/* Short landscape phones: a sticky toolbar would cover too much of the Quranic text. */
+@media (max-height: 520px) {
+  .study-sticky {
+    position: static;
+  }
 }

@@ -1,4 +1,17 @@
 {
-  "description": "Ayah ranges built by the full-Quran source-first pipeline. Each range starts at ayah 1 and grows; a chapter is published with the ayahs built so far.",
-  "ranges": [{ "surah": 2, "fromAyah": 1, "toAyah": 20, "nameUrdu": "سورۃ البقرہ", "nameArabic": "سُورَةُ الْبَقَرَةِ" }]
+  "description": "Source-only build of the whole Quran (owner decision 2026-11-26). Every chapter's Arabic text, word IDs and Urdu word-by-word meanings come from Quran.com; grammar from the Quranic Arabic Corpus. Chapters listed in `existingLessons` keep their published grammar layer and take only the Quran.com word meanings; every other chapter is built from the sources alone. `translations` are the Urdu ayah translations offered in Settings, in display order; the first is the default.",
+  "existingLessons": [1, 4, 7, 18, 22, 23, 25, 29, 32, 36, 55, 56, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114],
+  "partialPilot": { "surah": 2, "aiLayerThroughAyah": 20 },
+  "translations": [
+    { "id": "jalandhari", "resourceId": 234, "nameEnglish": "Fateh Muhammad Jalandhari", "nameUrdu": "فتح محمد جالندھری" },
+    { "id": "junagarhi", "resourceId": 54, "nameEnglish": "Muhammad Junagarhi", "nameUrdu": "محمد جوناگڑھی" },
+    { "id": "mahmud-al-hasan", "resourceId": 151, "nameEnglish": "Shaykh al-Hind Mahmud al-Hasan", "nameUrdu": "شیخ الہند محمود الحسن" },
+    { "id": "israr-ahmad", "resourceId": 158, "nameEnglish": "Dr. Israr Ahmad (Bayan-ul-Quran)", "nameUrdu": "ڈاکٹر اسرار احمد (بیان القرآن)" },
+    { "id": "maududi", "resourceId": 97, "nameEnglish": "Syed Abul A'la Maududi (Tafheem-ul-Quran)", "nameUrdu": "سید ابو الاعلیٰ مودودی (تفہیم القرآن)" },
+    { "id": "wahiduddin-khan", "resourceId": 819, "nameEnglish": "Maulana Wahiduddin Khan", "nameUrdu": "مولانا وحید الدین خان" }
+  ],
+  "excludedTranslations": [
+    { "resourceId": 156, "reason": "Fi Zilal al-Qur'an: some ayahs embed commentary (tafsir), e.g. 26:224" },
+    { "resourceId": 831, "reason": "Roman Urdu (Latin script)" }
+  ]
 }
