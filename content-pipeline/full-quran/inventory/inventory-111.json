@@ -1,0 +1,26 @@
+{
+ "surah": 111,
+ "corpusSpellingDifferences": [
+  {
+   "id": "111:1:4",
+   "quranCom": "لَهَبٍۢ",
+   "corpus": "لَهَبٍ"
+  },
+  {
+   "id": "111:3:2",
+   "quranCom": "نَارًۭا",
+   "corpus": "نَارًا"
+  },
+  {
+   "id": "111:3:4",
+   "quranCom": "لَهَبٍۢ",
+   "corpus": "لَهَبٍ"
+  },
+  {
+   "id": "111:5:3",
+   "quranCom": "حَبْلٌۭ",
+   "corpus": "حَبْلٌ"
+  }
+ ],
+ "excludedPauseSigns": []
+}

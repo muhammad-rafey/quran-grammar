@@ -26,7 +26,7 @@ export function createPostgresRepository(pool: Queryable): ContentRepository {
   return cachedRepository(createSqlRepository(postgresExecutor(pool), 'postgres'));
 }
 
-/** Throws unless the database holds a complete schema-v2 copy. */
+/** Throws unless the database holds a complete schema-v3 copy. */
 export async function checkPostgresContent(pool: Queryable): Promise<ContentVersion> {
   const version = await readContentVersion(postgresExecutor(pool), 'postgres');
   if (!version) throw new Error('quran_grammar.content_version is empty; run npm run db:sync');

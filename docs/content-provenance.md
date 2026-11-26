@@ -4,6 +4,59 @@ On 2026-11-13 the owner removed review labels from the web and native interfaces
 because scholarly review is pending across the collection. Settings retains the
 Quranic Arabic Corpus credit and link.
 
+## Full Quran from sources only (owner decision 2026-11-26)
+
+The app's focus is helping users understand the Quran and its grammar. The owner decided
+that all 114 Surahs (6,236 ayahs, 77,429 words) are populated from sources only, with no
+AI-written data in newly built chapters. This supersedes the 2026-11-22 pilot rules (no ayah
+translation; AI-written segment glosses, dictionary notes and new root/paradigm cards). The
+[full-Quran pipeline README](../content-pipeline/full-quran/README.md) and its `scope.json`
+record the method, commands and verification.
+
+- **Arabic text and word occurrence IDs:** Quran.com API v4 `/verses/by_chapter`
+  `text_uthmani`, with end-of-ayah markers and space-separated pause signs excluded. Every
+  word's letters are cross-checked against Quranic Arabic Corpus 0.4; the build fails on any
+  letter difference. Mark-only spelling differences and excluded signs are listed per chapter in
+  `content-pipeline/full-quran/inventory/inventory-N.json`.
+- **Urdu word-by-word meaning:** Quran.com API v4 word-by-word, `language=ur` (the Corpus has
+  only English glosses). Quran.com does not name the word-by-word translator in the API.
+- **Grammar:** Corpus 0.4 morphology (part of speech, root, lemma, segments and roles, with
+  morphology rendered through fixed Urdu term tables) and the Corpus's own Arabic i‘rab from the
+  corpus.quran.com word-by-word pages (`syntaxUrdu`, verbatim). Rule ids and verb form/pattern
+  come from deterministic tag mappings; rule card titles and explanations from the shared rule
+  library `content-pipeline/libs/rules.json`.
+- **Fields no source provides** — segment glosses, dictionary notes, root meanings, verb paradigm
+  present form and notes — are empty strings in source-only words; web and mobile hide them.
+- **Ayah translations (no tafsir):** six Quran.com Urdu translations, all offered through a
+  Settings switcher; the first is the default: 234 Fateh Muhammad Jalandhari, 54 Muhammad
+  Junagarhi, 151 Shaykh al-Hind Mahmud al-Hasan, 158 Dr. Israr Ahmad (Bayan-ul-Quran), 97 Syed
+  Abul A'la Maududi (Tafheem-ul-Quran) and 819 Maulana Wahiduddin Khan. Each was fetched from
+  `https://api.quran.com/api/v4/quran/translations/{id}?fields=verse_key`. Footnote markers
+  (`<sup foot_note>`, which point to tafsir notes) and markup were removed and whitespace
+  collapsed; the words are verbatim. Excluded: 156 Fi Zilal al-Qur'an (some ayahs embed
+  commentary, e.g. 26:224) and 831 (Roman Urdu, Latin script).
+
+The translations belong to their translators and publishers; Quran.com is the source. Settings →
+About credits Quran.com alongside the required Corpus credit and link. The copyright and
+permission status of these translations and of the Urdu word-by-word data is **not recorded**;
+no license or permission is claimed. See [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
+
+**Previously published chapters.** The 43 published lessons (1, 2:1–20, 4, 7, 18, 22, 23, 25,
+29, 32, 36, 55, 56, 85–114) keep their published grammar layer: morphology, i‘rab text,
+dictionary notes, phrase cards, roots, paradigms and rule cards. Their word meanings were
+replaced by the Quran.com Urdu word-by-word meanings, and their AI ayah translation, theme and
+tafsir were deleted. Al-Baqarah 2:1–20 keeps the pilot grammar layer; 2:21–286 are source-only.
+The sections below describe how that retained layer was authored; its AI-assisted Urdu
+explanations remain teaching drafts.
+
+**Storage.** Lessons are JSON in `packages/core/data/lessons/surah-1.json` … `surah-114.json`
+(the TypeScript lesson modules were removed), with source URLs, retrieval dates and the
+translation policy in `content-pipeline/full-quran/inventory/sources.json`. Database schema v3
+stores the translations in `translations` and `ayah_translations` tables.
+
+Scholarly review remains pending for the whole collection. Source fidelity checks are not
+scholarly approval.
+
 ## Edition 3 publication: Al-Hajj and Al-Waqi‘ah (2026-11-13)
 
 The owner requested complete lessons for Surahs 22 and 56 and authorized adding them to

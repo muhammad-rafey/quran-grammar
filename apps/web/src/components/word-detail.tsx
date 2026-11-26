@@ -83,24 +83,25 @@ export function WordDetail({ word, study, language, onSelect, onTopic, onClose }
               </strong>
             </div>
           </div>
-          {root ? (
+          {/* Source-only chapters have no root meaning; the card is hidden then. */}
+          {root && (root.meaningUrdu || root.noteUrdu) ? (
             <div className="root-meaning">
               <h3 className="ui" dir={uiDirection} lang={language}>
                 <GitBranch size={15} /> {strings.rootMeaning}
               </h3>
-              <p>{root.meaningUrdu}</p>
-              <p className="muted-note">{root.noteUrdu}</p>
+              {root.meaningUrdu && <p>{root.meaningUrdu}</p>}
+              {root.noteUrdu && <p className="muted-note">{root.noteUrdu}</p>}
             </div>
-          ) : (
+          ) : !root ? (
             <p className="muted-note">—</p>
-          )}
+          ) : null}
         </section>
         {verb && (
           <section className="detail-section verb-section" aria-label={strings.verbForm}>
             <span className="field-label ui" dir={uiDirection} lang={language}>
               {strings.verbForm}
             </span>
-            <h3 className="baab-title">{verb.baabUrdu}</h3>
+            {verb.baabUrdu && <h3 className="baab-title">{verb.baabUrdu}</h3>}
             <p className="muted-note">{verb.formUrdu}</p>
             <dl className="verb-paradigm">
               <div>
@@ -109,20 +110,24 @@ export function WordDetail({ word, study, language, onSelect, onTopic, onClose }
                 </dt>
                 <dd lang="ar">{verb.past}</dd>
               </div>
-              <div>
-                <dt className="ui" dir={uiDirection} lang={language}>
-                  {strings.present}
-                </dt>
-                <dd lang="ar">{verb.present}</dd>
-              </div>
-              <div className="pattern">
-                <dt className="ui" dir={uiDirection} lang={language}>
-                  {strings.pattern}
-                </dt>
-                <dd lang="ar">{verb.pattern}</dd>
-              </div>
+              {verb.present && (
+                <div>
+                  <dt className="ui" dir={uiDirection} lang={language}>
+                    {strings.present}
+                  </dt>
+                  <dd lang="ar">{verb.present}</dd>
+                </div>
+              )}
+              {verb.pattern && (
+                <div className="pattern">
+                  <dt className="ui" dir={uiDirection} lang={language}>
+                    {strings.pattern}
+                  </dt>
+                  <dd lang="ar">{verb.pattern}</dd>
+                </div>
+              )}
             </dl>
-            <p>{verb.noteUrdu}</p>
+            {verb.noteUrdu && <p>{verb.noteUrdu}</p>}
           </section>
         )}
         <section className="detail-section">
@@ -146,7 +151,10 @@ export function WordDetail({ word, study, language, onSelect, onTopic, onClose }
           </div>
           {segment !== null && (
             <p className="segment-explanation" role="status">
-              <strong>{word.segments[segment]?.roleUrdu}:</strong>{' '}
+              <strong>
+                {word.segments[segment]?.roleUrdu}
+                {word.segments[segment]?.meaningUrdu ? ':' : ''}
+              </strong>{' '}
               {word.segments[segment]?.meaningUrdu}
             </p>
           )}
@@ -163,12 +171,14 @@ export function WordDetail({ word, study, language, onSelect, onTopic, onClose }
           </h3>
           <p>{word.syntaxUrdu}</p>
         </section>
-        <section className="detail-section">
-          <h3 className="ui" dir={uiDirection} lang={language}>
-            {strings.dictionary}
-          </h3>
-          <p>{word.dictionaryUrdu}</p>
-        </section>
+        {word.dictionaryUrdu && (
+          <section className="detail-section">
+            <h3 className="ui" dir={uiDirection} lang={language}>
+              {strings.dictionary}
+            </h3>
+            <p>{word.dictionaryUrdu}</p>
+          </section>
+        )}
         <section className="detail-section">
           <h3 className="ui" dir={uiDirection} lang={language}>
             {strings.rules}

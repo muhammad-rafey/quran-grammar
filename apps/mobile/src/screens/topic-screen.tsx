@@ -2,7 +2,11 @@ import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Stack } from 'expo-router/stack';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import type { GrammarTopicDetail, ResolvedTopicExample } from '@quran-grammar/core';
+import {
+  translationText,
+  type GrammarTopicDetail,
+  type ResolvedTopicExample,
+} from '@quran-grammar/core';
 import { AppIcon } from '@/components/app-icon';
 import { Action, Label, Paragraph, Section } from '@/components/study-ui';
 import { useTopic } from '@/state/content-hooks';
@@ -196,8 +200,9 @@ function ExampleCard({
   onWord: (id: string) => void;
   compact?: boolean;
 }) {
-  const { ui, count, labelText, controlRow, isUrdu } = useInterface();
+  const { ui, count, labelText, controlRow, isUrdu, translationId } = useInterface();
   const type = useTypography();
+  const translation = translationText(example.translations, translationId);
   const { arabicText } = type;
   const parts = splitAyah(example);
   const reference = `${count(example.surah)}:${count(example.ayah)}`;
@@ -249,7 +254,7 @@ function ExampleCard({
           example.ayahArabic
         )}
       </Text>
-      {example.translationUrdu ? <Paragraph muted>{example.translationUrdu}</Paragraph> : null}
+      {translation ? <Paragraph muted>{translation}</Paragraph> : null}
       {example.noteUrdu ? (
         <View
           style={{

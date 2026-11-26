@@ -1,3 +1,4 @@
+import { translationIds } from './translations';
 import type { StudyData } from './types';
 
 type UnknownRecord = Record<string, unknown>;
@@ -8,6 +9,11 @@ const text = (value: unknown): value is string =>
 const integer = (value: unknown): value is number =>
   typeof value === 'number' && Number.isSafeInteger(value) && value > 0;
 const fields = (value: UnknownRecord, names: string[]) => names.every((name) => text(value[name]));
+/** May be empty: source-only words have no dictionary note, segment gloss or root meaning. */
+const optional = (value: unknown): value is string =>
+  typeof value === 'string' && value.length <= 20_000;
+const optionalFields = (value: UnknownRecord, names: string[]) =>
+  names.every((name) => optional(value[name]));
 const array = (value: unknown): value is unknown[] =>
   Array.isArray(value) && value.length <= 10_000;
 const stringArray = (value: unknown): value is string[] => array(value) && value.every(text);
@@ -48,12 +54,13 @@ export function isStudyData(value: unknown): value is StudyData {
   const ruleIds = rules.map((rule) => (rule as UnknownRecord).id);
   if (!unique(ruleIds)) return false;
   for (const root of Object.values(value.roots)) {
-    if (!record(root) || !fields(root, ['meaningUrdu', 'noteUrdu'])) return false;
+    if (!record(root) || !optionalFields(root, ['meaningUrdu', 'noteUrdu'])) return false;
   }
   for (const verb of Object.values(value.verbForms)) {
     if (
       !record(verb) ||
-      !fields(verb, ['baabUrdu', 'formUrdu', 'past', 'present', 'pattern', 'noteUrdu'])
+      !fields(verb, ['formUrdu', 'past']) ||
+      !optionalFields(verb, ['baabUrdu', 'present', 'pattern', 'noteUrdu'])
     )
       return false;
   }
@@ -63,12 +70,14 @@ export function isStudyData(value: unknown): value is StudyData {
       !fields(word, [
         'id',
         'arabic',
-        'meaningUrdu',
         'posUrdu',
         'morphologyUrdu',
         'syntaxUrdu',
-        'dictionaryUrdu',
       ]) ||
+      // Quran.com's Urdu word-by-word has a few gaps; those meanings are empty.
+      !(word.arabicIndoPak === undefined || text(word.arabicIndoPak)) ||
+      !optional(word.meaningUrdu) ||
+      !optional(word.dictionaryUrdu) ||
       !integer(word.ayah) ||
       word.ayah > surah.ayahCount ||
       !integer(word.position) ||
@@ -85,7 +94,10 @@ export function isStudyData(value: unknown): value is StudyData {
       return false;
     if (
       !word.segments.every(
-        (segment) => record(segment) && fields(segment, ['arabic', 'roleUrdu', 'meaningUrdu']),
+        (segment) =>
+          record(segment) &&
+          fields(segment, ['arabic', 'roleUrdu']) &&
+          optional(segment.meaningUrdu),
       )
     )
       return false;
@@ -109,10 +121,10 @@ export function isStudyData(value: unknown): value is StudyData {
     if (
       !record(ayah) ||
       ayah.number !== index + 1 ||
-      // Source-first lessons have no ayah translation, theme or tafsir: these may be empty strings.
-      !['translationUrdu', 'themeUrdu', 'tafsirUrdu'].every(
-        (name) => typeof ayah[name] === 'string' && (ayah[name] as string).length <= 20_000,
-      ) ||
+      // Every ayah carries every offered translation, in catalog order.
+      !record(ayah.translations) ||
+      Object.keys(ayah.translations).join('|') !== translationIds.join('|') ||
+      !Object.values(ayah.translations).every(text) ||
       !array(ayah.phrases)
     )
       return false;

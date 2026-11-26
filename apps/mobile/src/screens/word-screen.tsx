@@ -149,8 +149,9 @@ export default function WordScreen() {
               >
                 {word.root}
               </Text>
-              <Paragraph>{root.meaningUrdu}</Paragraph>
-              <Paragraph muted>{root.noteUrdu}</Paragraph>
+              {/* Source-only chapters may have no root meaning or note; empty fields are hidden. */}
+              {root.meaningUrdu ? <Paragraph>{root.meaningUrdu}</Paragraph> : null}
+              {root.noteUrdu ? <Paragraph muted>{root.noteUrdu}</Paragraph> : null}
             </>
           ) : (
             <Label muted>{ui.noRoot}</Label>
@@ -161,13 +162,15 @@ export default function WordScreen() {
               <Paragraph>{word.lemma}</Paragraph>
             </View>
           )}
-          <Paragraph>{word.dictionaryUrdu}</Paragraph>
+          {word.dictionaryUrdu ? <Paragraph>{word.dictionaryUrdu}</Paragraph> : null}
         </Section>
         {verb && (
           <Section title={ui.verbForm}>
-            <Text selectable style={[type.heading, { color: colors.primary }]}>
-              {verb.baabUrdu}
-            </Text>
+            {verb.baabUrdu ? (
+              <Text selectable style={[type.heading, { color: colors.primary }]}>
+                {verb.baabUrdu}
+              </Text>
+            ) : null}
             <Paragraph muted>{verb.formUrdu}</Paragraph>
             <View style={{ ...row, flexWrap: 'wrap' }}>
               <View style={{ ...card, flexGrow: 1, backgroundColor: colors.wash }}>
@@ -176,18 +179,24 @@ export default function WordScreen() {
                   {verb.past}
                 </Text>
               </View>
-              <View style={{ ...card, flexGrow: 1, backgroundColor: colors.wash }}>
-                <Label muted>{ui.present}</Label>
-                <Text selectable style={type.arabic}>
-                  {verb.present}
-                </Text>
-              </View>
+              {verb.present ? (
+                <View style={{ ...card, flexGrow: 1, backgroundColor: colors.wash }}>
+                  <Label muted>{ui.present}</Label>
+                  <Text selectable style={type.arabic}>
+                    {verb.present}
+                  </Text>
+                </View>
+              ) : null}
             </View>
-            <Label muted>{ui.pattern}</Label>
-            <Text selectable style={[type.arabic, arabicText(26)]}>
-              {verb.pattern}
-            </Text>
-            <Paragraph>{verb.noteUrdu}</Paragraph>
+            {verb.pattern ? (
+              <>
+                <Label muted>{ui.pattern}</Label>
+                <Text selectable style={[type.arabic, arabicText(26)]}>
+                  {verb.pattern}
+                </Text>
+              </>
+            ) : null}
+            {verb.noteUrdu ? <Paragraph>{verb.noteUrdu}</Paragraph> : null}
           </Section>
         )}
         <Section title={ui.segments}>
@@ -222,7 +231,9 @@ export default function WordScreen() {
           {selectedSegment && (
             <View accessibilityLiveRegion="polite" style={{ gap: 2 }}>
               <Paragraph>{selectedSegment.roleUrdu}</Paragraph>
-              <Paragraph muted>{selectedSegment.meaningUrdu}</Paragraph>
+              {selectedSegment.meaningUrdu ? (
+                <Paragraph muted>{selectedSegment.meaningUrdu}</Paragraph>
+              ) : null}
             </View>
           )}
         </Section>

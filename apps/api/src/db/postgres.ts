@@ -25,7 +25,7 @@ export function literal(value: string | number | null): string {
 }
 
 /**
- * One transaction that creates the schema (and any new schema-v2 tables) if needed and replaces
+ * One transaction that creates the schema (and any new schema-v3 tables) if needed and replaces
  * all study, grammar topic and practice content.
  * The schema is private: it is not added to Supabase's REST-exposed schemas and grants nothing.
  */
@@ -42,6 +42,10 @@ export function buildPostgresSql(
     'begin;',
     `create schema if not exists ${s};`,
     `revoke all on schema ${s} from public;`,
+    // Schema v2 → v3: the AI ayah translation, theme and tafsir columns are gone (translations
+    // now live in ayah_translations).
+    `alter table if exists ${s}.ayahs drop column if exists translation_urdu, drop column if exists theme_urdu, drop column if exists tafsir_urdu;`,
+    `alter table if exists ${s}.words add column if not exists arabic_indopak text;`,
     ...createTableStatements('postgres').map((statement) => `${statement};`),
     `truncate ${TABLES_CHILD_FIRST.map((table) => `${s}.${table}`).join(', ')};`,
   ];

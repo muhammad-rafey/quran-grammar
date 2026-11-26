@@ -9,7 +9,7 @@ export type Dialect = 'sqlite' | 'postgres';
 export const POSTGRES_SCHEMA = 'quran_grammar';
 
 /** Increment when the table layout changes. */
-export const DATABASE_SCHEMA_VERSION = 2;
+export const DATABASE_SCHEMA_VERSION = 3;
 
 /** Child tables first, so deletes and truncation never violate foreign keys. */
 export const TABLES_CHILD_FIRST = [
@@ -26,8 +26,10 @@ export const TABLES_CHILD_FIRST = [
   'words',
   'roots',
   'rules',
+  'ayah_translations',
   'ayahs',
   'surahs',
+  'translations',
   'content_version',
 ] as const;
 
@@ -56,10 +58,24 @@ export function createTableStatements(dialect: Dialect): string[] {
     `create table if not exists ${p}ayahs (
   surah integer not null references ${p}surahs (number) on delete cascade,
   number integer not null check (number > 0),
-  translation_urdu ${text},
-  theme_urdu ${text},
-  tafsir_urdu ${text},
   primary key (surah, number)
+)`,
+    `create table if not exists ${p}translations (
+  id text primary key,
+  position integer not null unique check (position > 0),
+  resource_id integer not null,
+  name_english ${text},
+  name_urdu ${text}
+)`,
+    `create table if not exists ${p}ayah_translations (
+  surah integer not null,
+  ayah integer not null,
+  position integer not null check (position > 0),
+  translation_id text not null references ${p}translations (id),
+  text ${text},
+  primary key (surah, ayah, translation_id),
+  unique (surah, ayah, position),
+  foreign key (surah, ayah) references ${p}ayahs (surah, number) on delete cascade
 )`,
     `create table if not exists ${p}rules (
   surah integer not null references ${p}surahs (number) on delete cascade,
@@ -86,6 +102,7 @@ export function createTableStatements(dialect: Dialect): string[] {
   ayah integer not null,
   position integer not null check (position > 0),
   arabic ${text},
+  arabic_indopak text,
   meaning_urdu ${text},
   pos text not null check (pos in ('noun', 'adjective', 'verb', 'particle', 'pronoun')),
   pos_urdu ${text},

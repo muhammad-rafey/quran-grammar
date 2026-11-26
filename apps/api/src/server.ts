@@ -20,7 +20,7 @@ for (const origin of allowedOrigins ?? []) {
 }
 /**
  * DATABASE_URL set: read the Supabase Postgres copy (schema quran_grammar) through a read-only
- * role. If it is unreachable or not a schema-v2 copy, serve the bundled lessons instead (the
+ * role. If it is unreachable or not a schema-v3 copy, serve the bundled lessons instead (the
  * same content) and report `source: "bundled"` from /api/health.
  */
 async function chooseRepository(): Promise<{ repository: ContentRepository; source: ContentSource }> {

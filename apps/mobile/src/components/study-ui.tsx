@@ -161,22 +161,49 @@ export function InitialDataState({
   );
 }
 
-export function StudyFooter() {
+/** One source credit in Settings → About: a link of at least the minimum touch height. */
+function CreditLink({
+  url,
+  style,
+  children,
+}: {
+  url: string;
+  style: TextStyle;
+  children: ReactNode;
+}) {
   return (
-    <View style={{ paddingTop: 10, paddingBottom: 16 }}>
-      <Text
-        onPress={() => void Linking.openURL('https://corpus.quran.com')}
-        accessibilityRole="link"
-        style={{
-          fontSize: 11,
-          color: colors.muted,
-          textAlign: 'center',
-          padding: 12,
-          minHeight: 44,
-        }}
+    <Text
+      onPress={() => void Linking.openURL(url)}
+      accessibilityRole="link"
+      style={[style, { color: colors.muted, paddingVertical: 10, minHeight: 44 }]}
+    >
+      {children}
+      {lineEndSlack}
+    </Text>
+  );
+}
+
+const linkText = { color: colors.primary, textDecorationLine: 'underline' } as const;
+
+/**
+ * Settings → About: the required Quranic Arabic Corpus credit (morphology and grammar) and the
+ * Quran.com credit for the ayah translations and Urdu word-by-word meanings.
+ */
+export function AboutSection() {
+  const { ui, labelText } = useInterface();
+  return (
+    <Section title={ui.about}>
+      <CreditLink
+        url="https://corpus.quran.com"
+        style={{ fontSize: 14, lineHeight: 20, textAlign: 'left', writingDirection: 'ltr' }}
       >
-        Morphology: Quranic Arabic Corpus
-      </Text>
-    </View>
+        {'Morphology: '}
+        <Text style={linkText}>Quranic Arabic Corpus</Text>
+      </CreditLink>
+      <CreditLink url="https://quran.com" style={labelText(14)}>
+        {`${ui.translationSource}: `}
+        <Text style={linkText}>Quran.com</Text>
+      </CreditLink>
+    </Section>
   );
 }

@@ -28,8 +28,11 @@ export function contentQueries(dialect: Dialect) {
     contentVersion: `select database_schema_version, study_schema_version, content_sha256, source_commit, synced_at, surah_count, ayah_count, word_count from ${t('content_version')} where id = 1`,
     surahs: `select number, name_urdu, name_arabic, ayah_count, word_count from ${t('surahs')} order by number`,
     study: {
+      /** Not per Surah: run without a parameter. */
+      translations: `select * from ${t('translations')} order by position`,
       surahs: `select * from ${t('surahs')} where number = ${p}`,
       ayahs: `select * from ${t('ayahs')} where surah = ${p} order by number`,
+      ayah_translations: `select * from ${t('ayah_translations')} where surah = ${p} order by ayah, position`,
       rules: `select * from ${t('rules')} where surah = ${p} order by position`,
       roots: `select * from ${t('roots')} where surah = ${p} order by position`,
       words: `select * from ${t('words')} where surah = ${p} order by ayah, position`,
@@ -42,7 +45,8 @@ export function contentQueries(dialect: Dialect) {
     topics: `select t.id, t.position, t.title_urdu, t.title_english, t.summary_urdu, t.explanation_urdu, t.occurrence_count, (select cast(count(*) as integer) from ${t('practice_questions')} q where q.topic_id = t.id) as question_count from ${t('grammar_topics')} t order by t.position`,
     topic: `select t.id, t.position, t.title_urdu, t.title_english, t.summary_urdu, t.explanation_urdu, t.occurrence_count, (select cast(count(*) as integer) from ${t('practice_questions')} q where q.topic_id = t.id) as question_count from ${t('grammar_topics')} t where t.id = ${p}`,
     topicPoints: `select topic_id, position, text_urdu from ${t('grammar_topic_points')} where topic_id = ${p} order by position`,
-    topicExamples: `select e.kind, e.position, e.word_id, e.note_urdu, w.surah, w.ayah, w.arabic, w.meaning_urdu, a.translation_urdu from ${t('grammar_topic_examples')} e join ${t('words')} w on w.id = e.word_id join ${t('ayahs')} a on a.surah = w.surah and a.number = w.ayah where e.topic_id = ${p} order by e.kind, e.position`,
+    topicExamples: `select e.kind, e.position, e.word_id, e.note_urdu, w.surah, w.ayah, w.arabic, w.meaning_urdu from ${t('grammar_topic_examples')} e join ${t('words')} w on w.id = e.word_id where e.topic_id = ${p} order by e.kind, e.position`,
+    topicExampleTranslations: `select distinct a.surah, a.ayah, a.position, a.translation_id, a.text from ${t('grammar_topic_examples')} e join ${t('words')} x on x.id = e.word_id join ${t('ayah_translations')} a on a.surah = x.surah and a.ayah = x.ayah where e.topic_id = ${p} order by a.surah, a.ayah, a.position`,
     topicExampleAyahWords: `select distinct w.surah, w.ayah, w.position, w.arabic from ${t('grammar_topic_examples')} e join ${t('words')} x on x.id = e.word_id join ${t('words')} w on w.surah = x.surah and w.ayah = x.ayah where e.topic_id = ${p} order by w.surah, w.ayah, w.position`,
     topicQuestions: `select id, position, topic_id, kind, prompt_urdu, correct_option_id, explanation_urdu, word_id from ${t('practice_questions')} where topic_id = ${p} order by position`,
     topicOptions: `select o.question_id, o.position, o.id, o.text, o.language from ${t('practice_options')} o join ${t('practice_questions')} q on q.id = o.question_id where q.topic_id = ${p} order by q.position, o.position`,
@@ -73,7 +77,7 @@ export async function readContentVersion(
 }
 
 /**
- * Repository over a schema-v2 database. Not cached: wrap it in cachedRepository() when the
+ * Repository over a schema-v3 database. Not cached: wrap it in cachedRepository() when the
  * database is static for the lifetime of the process (it is for both the API and the app).
  */
 export function createSqlRepository(executor: SqlExecutor, dialect: Dialect): ContentRepository {
@@ -112,8 +116,9 @@ export function createSqlRepository(executor: SqlExecutor, dialect: Dialect): Co
       const table = {} as Record<keyof StudyRows, unknown[]>;
       table.surahs = [surahRow];
       // Sequential on purpose: SQLite serializes anyway, and a Postgres pool stays available.
+      table.translations = [];
       for (const key of Object.keys(q.study) as (keyof StudyRows)[]) {
-        if (key === 'surahs') continue;
+        if (key === 'surahs' || key === 'translations') continue;
         table[key] = await rows(q.study[key], [surah]);
       }
       return rowsToStudies(table as unknown as StudyRows)[0] ?? null;
@@ -140,8 +145,21 @@ export function createSqlRepository(executor: SqlExecutor, dialect: Dialect): Co
         ayah: number;
         arabic: string;
         meaning_urdu: string;
-        translation_urdu: string;
       }>(q.topicExamples, [id]);
+      const translationRows = await rows<{
+        surah: number;
+        ayah: number;
+        position: number;
+        translation_id: string;
+        text: string;
+      }>(q.topicExampleTranslations, [id]);
+      const translations = new Map<string, Record<string, string>>();
+      for (const row of translationRows) {
+        const key = `${int(row.surah)}:${int(row.ayah)}`;
+        const entry = translations.get(key) ?? {};
+        entry[row.translation_id] = row.text;
+        translations.set(key, entry);
+      }
       const ayahWords = await rows<{ surah: number; ayah: number; position: number; arabic: string }>(
         q.topicExampleAyahWords,
         [id],
@@ -165,7 +183,7 @@ export function createSqlRepository(executor: SqlExecutor, dialect: Dialect): Co
             wordArabic: row.arabic,
             meaningUrdu: row.meaning_urdu,
             ayahArabic: (ayahText.get(`${int(row.surah)}:${int(row.ayah)}`) ?? []).join(' '),
-            translationUrdu: row.translation_urdu,
+            translations: translations.get(`${int(row.surah)}:${int(row.ayah)}`) ?? {},
             noteUrdu: row.note_urdu ?? null,
           }),
         ),

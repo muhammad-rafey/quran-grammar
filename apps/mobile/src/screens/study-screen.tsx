@@ -23,6 +23,7 @@ import {
   getJuzForAyah,
   getSurahTitle,
   juzCatalog,
+  translationText,
   type Ayah,
   type PartOfSpeechFilter,
   type StudyData,
@@ -67,7 +68,8 @@ const keepVisibleContent = { minIndexForVisible: 0 };
 
 export default function StudyScreen() {
   const { study, selectedSurah, selectSurah } = useStudy();
-  const { ui, count, language, labelText, controlRow, readingLayout } = useInterface();
+  const { ui, count, language, labelText, controlRow, readingLayout, translationId } =
+    useInterface();
   const typography = useTypography();
   const router = useRouter();
   const insets = useSafeAreaInsets();
@@ -94,8 +96,9 @@ export default function StudyScreen() {
   const jumpFailed = useRef(false);
   const listSurah = study?.surah.number ?? null;
   const itemCount = study?.ayahs.length ?? 0;
-  // A new list instance per Surah, reading layout or fonts (different cell heights) and far jump.
-  const layoutKey = `${grammar ? 'grammar' : 'plain'}:${showTranslation ? 'translation' : 'arabic'}:${typography.quranFont.id}:${typography.urduFont.id}`;
+  // A new list instance per Surah, reading layout, translation or fonts (different cell heights)
+  // and far jump.
+  const layoutKey = `${grammar ? 'grammar' : 'plain'}:${showTranslation ? `translation-${translationId}` : 'arabic'}:${typography.quranFont.id}:${typography.urduFont.id}`;
   // Unique per list instance (returning to a chapter must not reuse an old instance's slice).
   const listKey = useMemo(
     () => `${listSurah}:${layoutKey}:${generation}:${(listInstances += 1)}`,
@@ -234,6 +237,7 @@ export default function StudyScreen() {
           pos={pos}
           showMeanings={showMeanings}
           showTranslation={showTranslation}
+          translationId={translationId}
           grammar={grammar}
           chrome={chrome}
           onOpen={openWord}
@@ -247,6 +251,7 @@ export default function StudyScreen() {
       pos,
       showMeanings,
       showTranslation,
+      translationId,
       grammar,
       chrome,
       openWord,
@@ -512,6 +517,8 @@ type AyahCardProps = {
   pos: PartOfSpeechFilter;
   showMeanings: boolean;
   showTranslation: boolean;
+  /** The selected ayah translation (shown when showTranslation and the ayah has its text). */
+  translationId: string;
   grammar: boolean;
   chrome: CardChrome;
   onOpen: (word: Word) => void;
@@ -525,10 +532,12 @@ const AyahCard = memo(function AyahCard({
   pos,
   showMeanings,
   showTranslation,
+  translationId,
   grammar,
   chrome,
   onOpen,
 }: AyahCardProps) {
+  const translation = showTranslation ? translationText(ayah.translations, translationId) : '';
   if (!grammar) {
     return (
       <View style={styles.plainAyah} testID={`ayah-${ayah.number}`}>
@@ -546,7 +555,7 @@ const AyahCard = memo(function AyahCard({
           ))}
           <Text style={styles.ayahEnd}>{` ۝${formatCount(ayah.number, 'ur')}`}</Text>
         </Text>
-        {showTranslation && !!ayah.translationUrdu && <Paragraph>{ayah.translationUrdu}</Paragraph>}
+        {!!translation && <Paragraph>{translation}</Paragraph>}
       </View>
     );
   }
@@ -574,9 +583,9 @@ const AyahCard = memo(function AyahCard({
           />
         ))}
       </View>
-      {showTranslation && !!ayah.translationUrdu && (
+      {!!translation && (
         <View style={styles.translation}>
-          <Paragraph>{ayah.translationUrdu}</Paragraph>
+          <Paragraph>{translation}</Paragraph>
         </View>
       )}
     </View>

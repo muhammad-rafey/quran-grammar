@@ -84,12 +84,25 @@ test('content database: version, studies, topics and practice', { skip }, async 
     for (const { number } of surahs) {
       const before = env.queryCount();
       const study = await repository.getStudy(number);
-      assert.ok(env.queryCount() - before <= 10, `Surah ${number} used too many queries`);
+      assert.ok(env.queryCount() - before <= 11, `Surah ${number} used too many queries`);
       assert.ok(core.isStudyData(study), `Surah ${number} is not valid StudyData`);
+      for (const ayah of study.ayahs) {
+        // Translation keys follow the catalog order (translations.position).
+        const keys = Object.keys(ayah.translations);
+        assert.deepEqual(
+          keys,
+          core.translationIds.filter((id) => keys.includes(id)),
+          `Surah ${number}:${ayah.number} translation order`,
+        );
+        assert.equal(
+          core.translationText(ayah.translations, core.defaultTranslationId),
+          ayah.translations[core.defaultTranslationId] ?? '',
+        );
+      }
       if (bundled) assert.deepEqual(study, bundled.get(number), `Surah ${number} differs`);
     }
-    assert.equal(await repository.getStudy(3), null);
     assert.equal(await repository.getStudy(0), null);
+    assert.equal(await repository.getStudy(115), null);
   });
 
   await t.test('An-Nisa loads quickly and is cached', async (tt) => {
@@ -128,6 +141,7 @@ test('content database: version, studies, topics and practice', { skip }, async 
       assert.ok(topic.examples.every((example) => example.kind === 'annotated'));
       assert.ok(topic.quranicExamples.every((example) => example.kind === 'quranic'));
       for (const example of [...topic.examples, ...topic.quranicExamples]) {
+        assert.equal(typeof example.translations, 'object', example.wordId);
         const word = wordQuery.get(example.wordId);
         assert.equal(example.wordArabic, word.arabic);
         assert.equal(

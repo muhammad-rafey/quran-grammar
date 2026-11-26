@@ -1,5 +1,5 @@
 /**
- * Content database commands (schema v2: study tables + grammar topics + practice questions).
+ * Content database commands (schema v3: study tables + translations + grammar topics + practice questions).
  * The API reads Postgres when DATABASE_URL is set; the mobile app bundles the SQLite file.
  *
  *   sqlite [file]          build the local SQLite database (default build/db/quran-grammar.sqlite)
@@ -19,7 +19,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isStudyData, type GrammarContent, type StudyData } from '@quran-grammar/core';
 import { getGrammarContent, studies } from '@quran-grammar/core/content';
-import { rowsToGrammar, rowsToStudies, type ContentRows } from '@quran-grammar/core/db';
+import { rowsToGrammar, rowsToStudies, studiesToRows, type ContentRows } from '@quran-grammar/core/db';
 import { readSqlite, writeSqlite } from './sqlite';
 import { buildPostgresSql, readPostgres, runPsql } from './postgres';
 import { contentSha256, contentVersion, type ContentVersion } from './version';
@@ -65,6 +65,10 @@ export function verifyCopy(
       `${label}: content differs from the bundled lessons (first mismatch: Surah ${first?.surah.number ?? '?'})`,
     );
   }
+  const catalog = studiesToRows([]).translations;
+  const stored = copy.rows.translations.map((row) => ({ ...row, position: Number(row.position), resource_id: Number(row.resource_id) }));
+  if (JSON.stringify(stored) !== JSON.stringify(catalog))
+    throw new Error(`${label}: translation catalog differs from the bundled build`);
   const grammar = rowsToGrammar(copy.rows);
   if (JSON.stringify(grammar) !== JSON.stringify(expectedGrammar)) {
     const part = (['topics', 'topicExamples', 'questions'] as const).find(

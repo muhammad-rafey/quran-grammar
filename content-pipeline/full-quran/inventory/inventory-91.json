@@ -1,0 +1,21 @@
+{
+ "surah": 91,
+ "corpusSpellingDifferences": [
+  {
+   "id": "91:7:1",
+   "quranCom": "وَنَفْسٍۢ",
+   "corpus": "وَنَفْسٍ"
+  },
+  {
+   "id": "91:13:7",
+   "quranCom": "وَسُقْيَـٰهَا",
+   "corpus": "وَسُقْيَٰهَا"
+  },
+  {
+   "id": "91:15:3",
+   "quranCom": "عُقْبَـٰهَا",
+   "corpus": "عُقْبَٰهَا"
+  }
+ ],
+ "excludedPauseSigns": []
+}

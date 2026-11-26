@@ -1,0 +1,31 @@
+{
+ "surah": 93,
+ "corpusSpellingDifferences": [
+  {
+   "id": "93:4:1",
+   "quranCom": "وَلَلْـَٔاخِرَةُ",
+   "corpus": "وَلَلْءَاخِرَةُ"
+  },
+  {
+   "id": "93:4:2",
+   "quranCom": "خَيْرٌۭ",
+   "corpus": "خَيْرٌ"
+  },
+  {
+   "id": "93:6:3",
+   "quranCom": "يَتِيمًۭا",
+   "corpus": "يَتِيمًا"
+  },
+  {
+   "id": "93:7:2",
+   "quranCom": "ضَآلًّۭا",
+   "corpus": "ضَآلًّا"
+  },
+  {
+   "id": "93:8:2",
+   "quranCom": "عَآئِلًۭا",
+   "corpus": "عَآئِلًا"
+  }
+ ],
+ "excludedPauseSigns": []
+}

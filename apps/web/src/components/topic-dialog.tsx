@@ -4,6 +4,7 @@ import {
   formatCount,
   getSurahTitle,
   getUiStrings,
+  translationText,
   type ResolvedTopicExample,
   type UiLanguage,
 } from '@quran-grammar/core';
@@ -48,8 +49,11 @@ export function TopicDialog({
   onClose,
   onWord,
   onPractice,
+  translationId,
 }: {
   topicId: string;
+  /** Selected Urdu translation (Settings). */
+  translationId: string;
   language: UiLanguage;
   returnFocus: HTMLElement | null;
   onClose: () => void;
@@ -215,9 +219,9 @@ export function TopicDialog({
                           <bdi>{reference(example, language)}</bdi>
                           {language === 'ur' ? <ArrowLeft size={14} /> : <ArrowRight size={14} />}
                         </button>
-                        {example.translationUrdu && (
+                        {translationText(example.translations, translationId) && (
                           <p className="topic-translation" lang="ur" dir="rtl">
-                            {example.translationUrdu}
+                            {translationText(example.translations, translationId)}
                           </p>
                         )}
                         {example.noteUrdu && (

@@ -2,8 +2,8 @@
 
 The single read-only backend serves study content, grammar topics and practice questions to the React web app. It has no accounts or API keys. Its content comes from a `ContentRepository`:
 
-- `DATABASE_URL` set: the home-server Supabase Postgres copy (schema `quran_grammar`, schema version 2) through a read-only role, a pool of at most 4 connections, read-only sessions and a 5 s statement timeout. Results are cached in memory, since the content only changes with a sync and redeploy.
-- otherwise, or when Postgres is unreachable or not a schema-v2 copy at startup: the bundled lessons from `@quran-grammar/core/content`. These hold the same content.
+- `DATABASE_URL` set: the home-server Supabase Postgres copy (schema `quran_grammar`, schema version 3) through a read-only role, a pool of at most 4 connections, read-only sessions and a 5 s statement timeout. Results are cached in memory, since the content only changes with a sync and redeploy.
+- otherwise, or when Postgres is unreachable or not a schema-v3 copy at startup: the bundled lessons from `@quran-grammar/core/content`. These hold the same content. They are the JSON files `packages/core/data/lessons/surah-1.json` … `surah-114.json`, read from disk; `npm run build` copies them to `dist/data/lessons` next to `dist/server.js`, and `QG_LESSONS_DIR` overrides the location.
 
 `/api/health` reports which one is in use as `source` (`"postgres"` or `"bundled"`). The Expo app does not use this API: it reads the bundled SQLite file built by `npm run db:mobile`.
 
@@ -24,6 +24,7 @@ Environment variables:
 | `ALLOWED_ORIGINS` | `http://localhost:5173,http://127.0.0.1:5173` | Comma-separated browser origins; no wildcards or paths                          |
 | `WEB_DIST`        | unset                                         | Absolute or process-relative web build folder containing `index.html`; optional |
 | `DATABASE_URL`    | unset                                         | Postgres content source, e.g. `postgresql://quran_grammar_reader:<pw>@supabase-db:5432/postgres` |
+| `QG_LESSONS_DIR`  | unset                                         | Directory holding `surah-N.json` lessons; defaults to `dist/data/lessons` or `packages/core/data/lessons` |
 
 Native requests without an Origin header are accepted. CORS is a browser policy, not authentication; this is a public read-only API. Set the deployed web origin explicitly if using different web and API origins.
 
@@ -31,7 +32,7 @@ Native requests without an Origin header are accepted. CORS is a browser policy,
 | ----------------------------------- | ------------------------------------------------------------- |
 | `/api/health`                       | Health status, schema version and content `source`            |
 | `/api/v1/surahs`                    | `{ surahs: [summary] }`                                       |
-| `/api/v1/surahs/1`                  | Direct `StudyData` object                                     |
+| `/api/v1/surahs/1`                  | Direct `StudyData` object; each ayah has `translations` keyed by translation id |
 | `/api/v1/surahs/1/words/1%3A5%3A2`  | `{ word, root, verbForm, rules }`; absent root/form is `null` |
 | `/api/v1/search?q=استفعال&pos=verb` | `{ query, pos, total, words }`                                |
 | `/api/v1/topics`                    | `{ topics: GrammarTopicSummary[] }` in display order          |
@@ -45,9 +46,11 @@ Search accepts up to 120 characters, normalizes Arabic diacritics and common Urd
 
 When `WEB_DIST` is set, non-API page routes fall back to the SPA entry point. Missing files and unknown API routes still return 404; API errors never silently become HTML.
 
-## Content databases (schema v2)
+## Content databases (schema v3)
 
 `@quran-grammar/core/db` holds the shared table definitions, row mapping and SQL; `src/db/cli.ts` builds and verifies the copies. Every command verifies the copy by reading every table back and comparing it with the bundled lessons and the built grammar content.
+
+Schema v3 stores ayah translations separately: `ayahs` keeps only `(surah, number)`; `translations (id, position, resource_id, name_english, name_urdu)` is the catalog (`translationEditions` in `packages/core/src/translations.ts`, in display order) and `ayah_translations (surah, ayah, position, translation_id, text)` holds the text. The Postgres sync drops the v2 `translation_urdu`, `theme_urdu` and `tafsir_urdu` columns from `ayahs`.
 
 | Command (repository root)                          | Result                                                                |
 | -------------------------------------------------- | --------------------------------------------------------------------- |
@@ -55,6 +58,7 @@ When `WEB_DIST` is set, non-API page routes fall back to the SPA entry point. Mi
 | `npm run db:mobile`                                | `apps/mobile/assets/db/quran-grammar.db` (git-ignored app asset)      |
 | `npm run db:verify-sqlite -w @quran-grammar/api`   | Verify a SQLite file                                                  |
 | `npm run db:sync`                                  | Load and verify Postgres through `QG_PSQL` (one transaction)          |
+| `npm run db:verify`                                | Verify the SQLite copy, then Postgres through `QG_PSQL`               |
 | `npm run db:verify-postgres -w @quran-grammar/api` | Verify Postgres through `QG_PSQL`                                     |
 | `npm run db:postgres-role-sql -w @quran-grammar/api` | Print the read-only role SQL below                                  |
 

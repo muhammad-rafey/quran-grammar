@@ -12,6 +12,8 @@ export interface Word {
   ayah: number;
   position: number;
   arabic: string;
+  /** Quran.com text_indopak for this word (IndoPak orthography); absent in older data. */
+  arabicIndoPak?: string;
   meaningUrdu: string;
   pos: PartOfSpeech;
   posUrdu: string;
@@ -33,9 +35,11 @@ export interface Phrase {
 
 export interface Ayah {
   number: number;
-  translationUrdu: string;
-  themeUrdu: string;
-  tafsirUrdu: string;
+  /**
+   * Urdu ayah translations keyed by translation id, in `translationEditions` order (Quran.com,
+   * footnote markers removed). Every ayah has every translation.
+   */
+  translations: Record<string, string>;
   phrases: Phrase[];
 }
 

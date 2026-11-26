@@ -52,8 +52,10 @@ export type ContentRows = StudyRows & GrammarRows;
 
 /** Insertion order: parents before children. */
 export const TABLES_PARENT_FIRST = [
+  'translations',
   'surahs',
   'ayahs',
+  'ayah_translations',
   'rules',
   'roots',
   'words',
@@ -71,8 +73,10 @@ export const TABLES_PARENT_FIRST = [
 
 /** Read order for every table; reproduces the bundled list order. */
 export const ORDER_BY: Record<keyof ContentRows, string> = {
+  translations: 'position',
   surahs: 'number',
   ayahs: 'surah, number',
+  ayah_translations: 'surah, ayah, position',
   rules: 'surah, position',
   roots: 'surah, position',
   words: 'surah, ayah, position',

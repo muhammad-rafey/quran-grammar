@@ -1,0 +1,1028 @@
+{
+ "generatedAt": "2026-11-26T10:26:27",
+ "verifier": "content-pipeline/full-quran/scripts/verify.py (independent of build.py)",
+ "ok": true,
+ "options": {
+  "surahs": "all",
+  "lessons": "packages/core/data/lessons",
+  "allowIncompleteSources": false
+ },
+ "sources": {
+  "qacDistinctWords": 77429,
+  "expectedWordsInScope": 77429,
+  "expectedAyahsInScope": 6236,
+  "translationKeyMode": {
+   "234": "verse_key",
+   "54": "verse_key",
+   "151": "verse_key",
+   "158": "verse_key",
+   "97": "verse_key",
+   "819": "verse_key"
+  },
+  "excludedResourcesCompared": [],
+  "incompleteChapters": {}
+ },
+ "totals": {
+  "ayahs": 6236,
+  "pauseOrHizbMarkRemoved": 4576,
+  "sourceOnlyWords": 61141,
+  "translations.exact": 37130,
+  "translations.marker-space": 286,
+  "words": 77429
+ },
+ "lessonsChecked": 114,
+ "chapters": {
+  "1": {
+   "published": "published",
+   "ayahs": 7,
+   "words": 29,
+   "phrases": 14
+  },
+  "2": {
+   "published": "partial",
+   "ayahs": 286,
+   "words": 6116,
+   "phrases": 0,
+   "pilotPhrases": 0
+  },
+  "3": {
+   "published": "source-only",
+   "ayahs": 200,
+   "words": 3481,
+   "phrases": 0
+  },
+  "4": {
+   "published": "published",
+   "ayahs": 176,
+   "words": 3747,
+   "phrases": 1106
+  },
+  "5": {
+   "published": "source-only",
+   "ayahs": 120,
+   "words": 2804,
+   "phrases": 0
+  },
+  "6": {
+   "published": "source-only",
+   "ayahs": 165,
+   "words": 3050,
+   "phrases": 0
+  },
+  "7": {
+   "published": "published",
+   "ayahs": 206,
+   "words": 3320,
+   "phrases": 985
+  },
+  "8": {
+   "published": "source-only",
+   "ayahs": 75,
+   "words": 1233,
+   "phrases": 0
+  },
+  "9": {
+   "published": "source-only",
+   "ayahs": 129,
+   "words": 2498,
+   "phrases": 0
+  },
+  "10": {
+   "published": "source-only",
+   "ayahs": 109,
+   "words": 1833,
+   "phrases": 0
+  },
+  "11": {
+   "published": "source-only",
+   "ayahs": 123,
+   "words": 1917,
+   "phrases": 0
+  },
+  "12": {
+   "published": "source-only",
+   "ayahs": 111,
+   "words": 1777,
+   "phrases": 0
+  },
+  "13": {
+   "published": "source-only",
+   "ayahs": 43,
+   "words": 853,
+   "phrases": 0
+  },
+  "14": {
+   "published": "source-only",
+   "ayahs": 52,
+   "words": 830,
+   "phrases": 0
+  },
+  "15": {
+   "published": "source-only",
+   "ayahs": 99,
+   "words": 655,
+   "phrases": 0
+  },
+  "16": {
+   "published": "source-only",
+   "ayahs": 128,
+   "words": 1844,
+   "phrases": 0
+  },
+  "17": {
+   "published": "source-only",
+   "ayahs": 111,
+   "words": 1556,
+   "phrases": 0
+  },
+  "18": {
+   "published": "published",
+   "ayahs": 110,
+   "words": 1579,
+   "phrases": 490
+  },
+  "19": {
+   "published": "source-only",
+   "ayahs": 98,
+   "words": 961,
+   "phrases": 0
+  },
+  "20": {
+   "published": "source-only",
+   "ayahs": 135,
+   "words": 1335,
+   "phrases": 0
+  },
+  "21": {
+   "published": "source-only",
+   "ayahs": 112,
+   "words": 1169,
+   "phrases": 0
+  },
+  "22": {
+   "published": "published",
+   "ayahs": 78,
+   "words": 1274,
+   "phrases": 364
+  },
+  "23": {
+   "published": "published",
+   "ayahs": 118,
+   "words": 1050,
+   "phrases": 380
+  },
+  "24": {
+   "published": "source-only",
+   "ayahs": 64,
+   "words": 1316,
+   "phrases": 0
+  },
+  "25": {
+   "published": "published",
+   "ayahs": 77,
+   "words": 893,
+   "phrases": 373
+  },
+  "26": {
+   "published": "source-only",
+   "ayahs": 227,
+   "words": 1318,
+   "phrases": 0
+  },
+  "27": {
+   "published": "source-only",
+   "ayahs": 93,
+   "words": 1151,
+   "phrases": 0
+  },
+  "28": {
+   "published": "source-only",
+   "ayahs": 88,
+   "words": 1430,
+   "phrases": 0
+  },
+  "29": {
+   "published": "published",
+   "ayahs": 69,
+   "words": 976,
+   "phrases": 328
+  },
+  "30": {
+   "published": "source-only",
+   "ayahs": 60,
+   "words": 817,
+   "phrases": 0
+  },
+  "31": {
+   "published": "source-only",
+   "ayahs": 34,
+   "words": 546,
+   "phrases": 0
+  },
+  "32": {
+   "published": "published",
+   "ayahs": 30,
+   "words": 372,
+   "phrases": 120
+  },
+  "33": {
+   "published": "source-only",
+   "ayahs": 73,
+   "words": 1287,
+   "phrases": 0
+  },
+  "34": {
+   "published": "source-only",
+   "ayahs": 54,
+   "words": 883,
+   "phrases": 0
+  },
+  "35": {
+   "published": "source-only",
+   "ayahs": 45,
+   "words": 775,
+   "phrases": 0
+  },
+  "36": {
+   "published": "published",
+   "ayahs": 83,
+   "words": 725,
+   "phrases": 257
+  },
+  "37": {
+   "published": "source-only",
+   "ayahs": 182,
+   "words": 860,
+   "phrases": 0
+  },
+  "38": {
+   "published": "source-only",
+   "ayahs": 88,
+   "words": 733,
+   "phrases": 0
+  },
+  "39": {
+   "published": "source-only",
+   "ayahs": 75,
+   "words": 1172,
+   "phrases": 0
+  },
+  "40": {
+   "published": "source-only",
+   "ayahs": 85,
+   "words": 1219,
+   "phrases": 0
+  },
+  "41": {
+   "published": "source-only",
+   "ayahs": 54,
+   "words": 794,
+   "phrases": 0
+  },
+  "42": {
+   "published": "source-only",
+   "ayahs": 53,
+   "words": 860,
+   "phrases": 0
+  },
+  "43": {
+   "published": "source-only",
+   "ayahs": 89,
+   "words": 830,
+   "phrases": 0
+  },
+  "44": {
+   "published": "source-only",
+   "ayahs": 59,
+   "words": 346,
+   "phrases": 0
+  },
+  "45": {
+   "published": "source-only",
+   "ayahs": 37,
+   "words": 488,
+   "phrases": 0
+  },
+  "46": {
+   "published": "source-only",
+   "ayahs": 35,
+   "words": 643,
+   "phrases": 0
+  },
+  "47": {
+   "published": "source-only",
+   "ayahs": 38,
+   "words": 539,
+   "phrases": 0
+  },
+  "48": {
+   "published": "source-only",
+   "ayahs": 29,
+   "words": 560,
+   "phrases": 0
+  },
+  "49": {
+   "published": "source-only",
+   "ayahs": 18,
+   "words": 347,
+   "phrases": 0
+  },
+  "50": {
+   "published": "source-only",
+   "ayahs": 45,
+   "words": 373,
+   "phrases": 0
+  },
+  "51": {
+   "published": "source-only",
+   "ayahs": 60,
+   "words": 360,
+   "phrases": 0
+  },
+  "52": {
+   "published": "source-only",
+   "ayahs": 49,
+   "words": 312,
+   "phrases": 0
+  },
+  "53": {
+   "published": "source-only",
+   "ayahs": 62,
+   "words": 360,
+   "phrases": 0
+  },
+  "54": {
+   "published": "source-only",
+   "ayahs": 55,
+   "words": 342,
+   "phrases": 0
+  },
+  "55": {
+   "published": "published",
+   "ayahs": 78,
+   "words": 351,
+   "phrases": 175
+  },
+  "56": {
+   "published": "published",
+   "ayahs": 96,
+   "words": 379,
+   "phrases": 187
+  },
+  "57": {
+   "published": "source-only",
+   "ayahs": 29,
+   "words": 574,
+   "phrases": 0
+  },
+  "58": {
+   "published": "source-only",
+   "ayahs": 22,
+   "words": 472,
+   "phrases": 0
+  },
+  "59": {
+   "published": "source-only",
+   "ayahs": 24,
+   "words": 445,
+   "phrases": 0
+  },
+  "60": {
+   "published": "source-only",
+   "ayahs": 13,
+   "words": 348,
+   "phrases": 0
+  },
+  "61": {
+   "published": "source-only",
+   "ayahs": 14,
+   "words": 221,
+   "phrases": 0
+  },
+  "62": {
+   "published": "source-only",
+   "ayahs": 11,
+   "words": 175,
+   "phrases": 0
+  },
+  "63": {
+   "published": "source-only",
+   "ayahs": 11,
+   "words": 180,
+   "phrases": 0
+  },
+  "64": {
+   "published": "source-only",
+   "ayahs": 18,
+   "words": 241,
+   "phrases": 0
+  },
+  "65": {
+   "published": "source-only",
+   "ayahs": 12,
+   "words": 287,
+   "phrases": 0
+  },
+  "66": {
+   "published": "source-only",
+   "ayahs": 12,
+   "words": 249,
+   "phrases": 0
+  },
+  "67": {
+   "published": "source-only",
+   "ayahs": 30,
+   "words": 333,
+   "phrases": 0
+  },
+  "68": {
+   "published": "source-only",
+   "ayahs": 52,
+   "words": 300,
+   "phrases": 0
+  },
+  "69": {
+   "published": "source-only",
+   "ayahs": 52,
+   "words": 258,
+   "phrases": 0
+  },
+  "70": {
+   "published": "source-only",
+   "ayahs": 44,
+   "words": 217,
+   "phrases": 0
+  },
+  "71": {
+   "published": "source-only",
+   "ayahs": 28,
+   "words": 226,
+   "phrases": 0
+  },
+  "72": {
+   "published": "source-only",
+   "ayahs": 28,
+   "words": 285,
+   "phrases": 0
+  },
+  "73": {
+   "published": "source-only",
+   "ayahs": 20,
+   "words": 199,
+   "phrases": 0
+  },
+  "74": {
+   "published": "source-only",
+   "ayahs": 56,
+   "words": 255,
+   "phrases": 0
+  },
+  "75": {
+   "published": "source-only",
+   "ayahs": 40,
+   "words": 164,
+   "phrases": 0
+  },
+  "76": {
+   "published": "source-only",
+   "ayahs": 31,
+   "words": 243,
+   "phrases": 0
+  },
+  "77": {
+   "published": "source-only",
+   "ayahs": 50,
+   "words": 181,
+   "phrases": 0
+  },
+  "78": {
+   "published": "source-only",
+   "ayahs": 40,
+   "words": 173,
+   "phrases": 0
+  },
+  "79": {
+   "published": "source-only",
+   "ayahs": 46,
+   "words": 179,
+   "phrases": 0
+  },
+  "80": {
+   "published": "source-only",
+   "ayahs": 42,
+   "words": 133,
+   "phrases": 0
+  },
+  "81": {
+   "published": "source-only",
+   "ayahs": 29,
+   "words": 104,
+   "phrases": 0
+  },
+  "82": {
+   "published": "source-only",
+   "ayahs": 19,
+   "words": 80,
+   "phrases": 0
+  },
+  "83": {
+   "published": "source-only",
+   "ayahs": 36,
+   "words": 169,
+   "phrases": 0
+  },
+  "84": {
+   "published": "source-only",
+   "ayahs": 25,
+   "words": 107,
+   "phrases": 0
+  },
+  "85": {
+   "published": "published",
+   "ayahs": 22,
+   "words": 109,
+   "phrases": 57
+  },
+  "86": {
+   "published": "published",
+   "ayahs": 17,
+   "words": 61,
+   "phrases": 42
+  },
+  "87": {
+   "published": "published",
+   "ayahs": 19,
+   "words": 72,
+   "phrases": 35
+  },
+  "88": {
+   "published": "published",
+   "ayahs": 26,
+   "words": 92,
+   "phrases": 54
+  },
+  "89": {
+   "published": "published",
+   "ayahs": 30,
+   "words": 137,
+   "phrases": 79
+  },
+  "90": {
+   "published": "published",
+   "ayahs": 20,
+   "words": 82,
+   "phrases": 52
+  },
+  "91": {
+   "published": "published",
+   "ayahs": 15,
+   "words": 54,
+   "phrases": 38
+  },
+  "92": {
+   "published": "published",
+   "ayahs": 21,
+   "words": 71,
+   "phrases": 41
+  },
+  "93": {
+   "published": "published",
+   "ayahs": 11,
+   "words": 40,
+   "phrases": 17
+  },
+  "94": {
+   "published": "published",
+   "ayahs": 8,
+   "words": 27,
+   "phrases": 20
+  },
+  "95": {
+   "published": "published",
+   "ayahs": 8,
+   "words": 34,
+   "phrases": 19
+  },
+  "96": {
+   "published": "published",
+   "ayahs": 19,
+   "words": 72,
+   "phrases": 40
+  },
+  "97": {
+   "published": "published",
+   "ayahs": 5,
+   "words": 30,
+   "phrases": 20
+  },
+  "98": {
+   "published": "published",
+   "ayahs": 8,
+   "words": 94,
+   "phrases": 43
+  },
+  "99": {
+   "published": "published",
+   "ayahs": 8,
+   "words": 36,
+   "phrases": 25
+  },
+  "100": {
+   "published": "published",
+   "ayahs": 11,
+   "words": 40,
+   "phrases": 15
+  },
+  "101": {
+   "published": "published",
+   "ayahs": 11,
+   "words": 36,
+   "phrases": 26
+  },
+  "102": {
+   "published": "published",
+   "ayahs": 8,
+   "words": 28,
+   "phrases": 17
+  },
+  "103": {
+   "published": "published",
+   "ayahs": 3,
+   "words": 14,
+   "phrases": 8
+  },
+  "104": {
+   "published": "published",
+   "ayahs": 9,
+   "words": 33,
+   "phrases": 18
+  },
+  "105": {
+   "published": "published",
+   "ayahs": 5,
+   "words": 23,
+   "phrases": 8
+  },
+  "106": {
+   "published": "published",
+   "ayahs": 4,
+   "words": 17,
+   "phrases": 7
+  },
+  "107": {
+   "published": "published",
+   "ayahs": 7,
+   "words": 25,
+   "phrases": 11
+  },
+  "108": {
+   "published": "published",
+   "ayahs": 3,
+   "words": 10,
+   "phrases": 5
+  },
+  "109": {
+   "published": "published",
+   "ayahs": 6,
+   "words": 26,
+   "phrases": 12
+  },
+  "110": {
+   "published": "published",
+   "ayahs": 3,
+   "words": 19,
+   "phrases": 9
+  },
+  "111": {
+   "published": "published",
+   "ayahs": 5,
+   "words": 23,
+   "phrases": 11
+  },
+  "112": {
+   "published": "published",
+   "ayahs": 4,
+   "words": 15,
+   "phrases": 6
+  },
+  "113": {
+   "published": "published",
+   "ayahs": 5,
+   "words": 23,
+   "phrases": 9
+  },
+  "114": {
+   "published": "published",
+   "ayahs": 6,
+   "words": 20,
+   "phrases": 9
+  }
+ },
+ "failures": {},
+ "warnings": {
+  "8 lemma differs from QAC LEM only by tanween/shadda normalisation": {
+   "count": 1903,
+   "examples": [
+    {
+     "id": "2:21:2",
+     "built": "نَاس",
+     "qac": "نَّاس"
+    },
+    {
+     "id": "2:24:10",
+     "built": "نَاس",
+     "qac": "نَّاس"
+    },
+    {
+     "id": "2:25:5",
+     "built": "صَٰلِحَٰت",
+     "qac": "صَّٰلِحَٰت"
+    },
+    {
+     "id": "2:25:31",
+     "built": "مُطَهَّرَة",
+     "qac": "مُّطَهَّرَة"
+    },
+    {
+     "id": "2:27:7",
+     "built": "مِيثَٰق",
+     "qac": "مِّيثَٰق"
+    }
+   ]
+  },
+  "8 verbForms.past differs from QAC lemma only by assimilation shadda": {
+   "count": 284,
+   "examples": [
+    "2:50:10",
+    "2:55:14",
+    "2:104:8",
+    "2:113:3",
+    "2:113:9"
+   ]
+  },
+  "8 elided Corpus segment merged into the previous segment": {
+   "count": 176,
+   "examples": [
+    "2:54:5",
+    "2:126:4",
+    "2:132:6",
+    "2:260:4",
+    "3:35:5"
+   ]
+  },
+  "4 letters differ from QAC only by small-yeh spelling (ـۧ vs ۦ)": {
+   "count": 38,
+   "examples": [
+    {
+     "id": "2:61:52",
+     "arabic": "ٱلنَّبِيِّـۧنَ",
+     "corpus": "ٱلنَّبِيِّۦنَ",
+     "published": false
+    },
+    {
+     "id": "2:124:3",
+     "arabic": "إِبْرَٰهِـۧمَ",
+     "corpus": "إِبْرَٰهِۦمَ",
+     "published": false
+    },
+    {
+     "id": "2:125:10",
+     "arabic": "إِبْرَٰهِـۧمَ",
+     "corpus": "إِبْرَٰهِۦمَ",
+     "published": false
+    },
+    {
+     "id": "2:125:14",
+     "arabic": "إِبْرَٰهِـۧمَ",
+     "corpus": "إِبْرَٰهِۦمَ",
+     "published": false
+    },
+    {
+     "id": "2:126:3",
+     "arabic": "إِبْرَٰهِـۧمُ",
+     "corpus": "إِبْرَٰهِۦمُ",
+     "published": false
+    }
+   ]
+  },
+  "5 Quran.com meaning empty; meaning left empty": {
+   "count": 280,
+   "examples": [
+    "2:74:5",
+    "2:75:14",
+    "2:83:12",
+    "2:87:6",
+    "2:92:8"
+   ]
+  },
+  "4 letters equal QAC only ignoring an internal space (Quran.com splits the word)": {
+   "count": 5,
+   "examples": [
+    {
+     "id": "2:181:3",
+     "arabic": "بَعْدَ مَا",
+     "corpus": "بَعْدَمَا",
+     "published": false
+    },
+    {
+     "id": "5:52:12",
+     "arabic": "دَآئِرَ ةٌۭ",
+     "corpus": "دَآئِرَةٌ",
+     "published": false
+    },
+    {
+     "id": "8:6:4",
+     "arabic": "بَعْدَ مَا",
+     "corpus": "بَعْدَمَا",
+     "published": false
+    },
+    {
+     "id": "11:31:27",
+     "arabic": "أَنفُسِهِمْ ",
+     "corpus": "أَنفُسِهِمْ",
+     "published": false
+    },
+    {
+     "id": "13:37:8",
+     "arabic": "بَعْدَ مَا",
+     "corpus": "بَعْدَمَا",
+     "published": false
+    }
+   ]
+  },
+  "8 segment Arabic does not concatenate to word Arabic": {
+   "count": 7,
+   "examples": [
+    {
+     "id": "2:181:3",
+     "arabic": "بَعْدَ مَا",
+     "segments": [
+      "بَعْدَ",
+      "مَا"
+     ]
+    },
+    {
+     "id": "8:6:4",
+     "arabic": "بَعْدَ مَا",
+     "segments": [
+      "بَعْدَ",
+      "مَا"
+     ]
+    },
+    {
+     "id": "11:13:3",
+     "arabic": "افْتَرَاهُ",
+     "segments": [
+      "ٱفْتَرَىٰ",
+      "هُ"
+     ]
+    },
+    {
+     "id": "11:31:27",
+     "arabic": "أَنفُسِهِمْ ",
+     "segments": [
+      "أَنفُسِ",
+      "هِمْ"
+     ]
+    },
+    {
+     "id": "12:39:1",
+     "arabic": "يَـٰصَـٰحِبَىِ",
+     "segments": [
+      "يَٰ",
+      "صَىٰحِبَ",
+      "ىِ"
+     ]
+    }
+   ]
+  },
+  "6 stray '>' in translation (check the source text)": {
+   "count": 1,
+   "examples": [
+    {
+     "ayah": "4:106",
+     "id": "junagarhi",
+     "text": "مانگو! بے شک اللہ تعالیٰ بخشش کرنے واﻻ، مہربانی کرنے واﻻ ہے>"
+    }
+   ]
+  },
+  "4 letters != QAC segment forms (source spelling difference)": {
+   "count": 3,
+   "examples": [
+    {
+     "id": "11:13:3",
+     "arabic": "افْتَرَاهُ",
+     "corpus": "ٱفْتَرَىٰهُ",
+     "published": false
+    },
+    {
+     "id": "12:39:1",
+     "arabic": "يَـٰصَـٰحِبَىِ",
+     "corpus": "يَٰصَىٰحِبَىِ",
+     "published": false
+    },
+    {
+     "id": "12:41:1",
+     "arabic": "يَـٰصَـٰحِبَىِ",
+     "corpus": "يَٰصَىٰحِبَىِ",
+     "published": false
+    }
+   ]
+  },
+  "4 letters equal QAC only after NFD (precomposed letter, e.g. آ U+0622 vs ا+ٓ)": {
+   "count": 4,
+   "examples": [
+    {
+     "id": "70:1:2",
+     "arabic": "سَآئِلٌۢ",
+     "corpus": "سَآئِلٌۢ",
+     "published": false
+    },
+    {
+     "id": "80:25:1",
+     "arabic": "اَنَّا",
+     "corpus": "أَنَّا",
+     "published": false
+    },
+    {
+     "id": "82:1:2",
+     "arabic": "ٱلسَّمَآءُ",
+     "corpus": "ٱلسَّمَآءُ",
+     "published": false
+    },
+    {
+     "id": "108:1:1",
+     "arabic": "إِنَّآ",
+     "corpus": "إِنَّآ",
+     "published": true
+    }
+   ]
+  }
+ },
+ "info": {
+  "6 excluded-resource text comparison not possible (no translation-156/831 source files); checked by key set only": {
+   "count": 1,
+   "examples": []
+  },
+  "6 differs from strict cleaning only in whitespace at a removed footnote marker": {
+   "count": 286,
+   "examples": [
+    {
+     "ayah": "1:7",
+     "id": "maududi"
+    },
+    {
+     "ayah": "2:6",
+     "id": "maududi"
+    },
+    {
+     "ayah": "2:10",
+     "id": "maududi"
+    },
+    {
+     "ayah": "2:24",
+     "id": "maududi"
+    },
+    {
+     "ayah": "2:26",
+     "id": "maududi"
+    }
+   ]
+  },
+  "3 source: Quran.com word contains an internal space": {
+   "count": 6,
+   "examples": [
+    {
+     "id": "2:181:3",
+     "arabic": "بَعْدَ مَا"
+    },
+    {
+     "id": "5:52:12",
+     "arabic": "دَآئِرَ ةٌۭ"
+    },
+    {
+     "id": "8:6:4",
+     "arabic": "بَعْدَ مَا"
+    },
+    {
+     "id": "11:31:27",
+     "arabic": "أَنفُسِهِمْ "
+    },
+    {
+     "id": "13:37:8",
+     "arabic": "بَعْدَ مَا"
+    }
+   ]
+  },
+  "3 source: pause token carries a bidi mark (treated as a pause token)": {
+   "count": 1,
+   "examples": [
+    {
+     "id": "27:26:8",
+     "apiText": "ٱلْعَظِيمِ ۩‏"
+    }
+   ]
+  }
+ },
+ "seconds": 4.5
+}

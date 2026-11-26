@@ -649,7 +649,8 @@ export interface ExampleWordContext {
   readonly wordArabic: string;
   readonly meaningUrdu: string;
   readonly ayahArabic: string;
-  readonly translationUrdu: string;
+  /** The ayah's translations keyed by translation id. */
+  readonly translations: Readonly<Record<string, string>>;
 }
 
 /** Word-context lookup over study data (ayah Arabic = the ayah's words joined by spaces). */
@@ -670,7 +671,7 @@ export function createWordContextLookup(
       ayahArabic: (index.ayahWords.get(ayahKey(study.surah.number, word.ayah)) ?? [])
         .map((entry) => entry.arabic)
         .join(' '),
-      translationUrdu: ayah?.translationUrdu ?? '',
+      translations: ayah?.translations ?? {},
     };
   };
 }

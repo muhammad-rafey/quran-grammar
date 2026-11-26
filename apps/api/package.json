@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "esbuild src/server.ts --bundle --platform=node --format=esm --target=node24 --charset=utf8 --external:express --external:cors --external:pg --outfile=dist/server.js",
+    "build": "esbuild src/server.ts --bundle --platform=node --format=esm --target=node24 --charset=utf8 --external:express --external:cors --external:pg --outfile=dist/server.js && node -e \"require('node:fs').cpSync('../../packages/core/data/lessons', 'dist/data/lessons', { recursive: true })\"",
     "start": "node dist/server.js",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test src/app.test.ts src/db/db.test.ts",

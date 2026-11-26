@@ -55,7 +55,8 @@ export interface ResolvedTopicExample {
   readonly meaningUrdu: string;
   /** Full ayah Arabic (the ayah's words joined by spaces). */
   readonly ayahArabic: string;
-  readonly translationUrdu: string;
+  /** The ayah's translations keyed by translation id (`translationEditions`). */
+  readonly translations: Readonly<Record<string, string>>;
   /** Present for annotated examples. */
   readonly noteUrdu: string | null;
 }

@@ -55,7 +55,8 @@ function isExample(value: unknown): value is ResolvedTopicExample {
     isText(value.wordArabic) &&
     isString(value.meaningUrdu) &&
     isText(value.ayahArabic) &&
-    isString(value.translationUrdu) &&
+    isRecord(value.translations) &&
+    Object.values(value.translations).every(isString) &&
     (value.noteUrdu === null || isString(value.noteUrdu))
   );
 }

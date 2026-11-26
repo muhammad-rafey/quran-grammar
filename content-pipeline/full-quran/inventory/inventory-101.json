@@ -1,0 +1,21 @@
+{
+ "surah": 101,
+ "corpusSpellingDifferences": [
+  {
+   "id": "101:7:3",
+   "quranCom": "عِيشَةٍۢ",
+   "corpus": "عِيشَةٍ"
+  },
+  {
+   "id": "101:7:4",
+   "quranCom": "رَّاضِيَةٍۢ",
+   "corpus": "رَّاضِيَةٍ"
+  },
+  {
+   "id": "101:9:2",
+   "quranCom": "هَاوِيَةٌۭ",
+   "corpus": "هَاوِيَةٌ"
+  }
+ ],
+ "excludedPauseSigns": []
+}

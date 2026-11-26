@@ -11,6 +11,7 @@ import {
 import { AyahPicker } from './components/ayah-picker';
 import { CollectionPicker, type CollectionMode } from './components/collection-picker';
 import { FontSettings } from './components/font-settings';
+import { TranslationSettings } from './components/translation-settings';
 import { PracticeGrammar } from './components/practice';
 import { Reading } from './components/reading';
 import { SplitPane } from './components/split-pane';
@@ -19,6 +20,7 @@ import { WordDetail } from './components/word-detail';
 import { useMobileLayout, useStudy } from './use-study';
 import { useInterfaceLanguage } from './use-interface-language';
 import { useReadingLayout, type ReadingLayout } from './use-reading-layout';
+import { useTranslationChoice } from './use-translation';
 import { useFonts } from './use-fonts';
 import type { PracticeFilter } from './use-api';
 
@@ -47,6 +49,11 @@ export function App() {
   const { language, changeLanguage, saveError } = useInterfaceLanguage();
   const { layout, changeLayout, saveError: layoutSaveError } = useReadingLayout();
   const { quranFont, urduFont, changeFont, saveError: fontSaveError } = useFonts();
+  const {
+    translationId,
+    changeTranslation,
+    saveError: translationSaveError,
+  } = useTranslationChoice();
   const ui = getUiStrings(language);
   const direction = language === 'ur' ? 'rtl' : 'ltr';
   const filters: { id: PartOfSpeechFilter; label: string }[] = [
@@ -331,11 +338,19 @@ export function App() {
                 </p>
               )}
             </div>
+            <TranslationSettings
+              language={language}
+              study={study ?? null}
+              translationId={translationId}
+              onChange={changeTranslation}
+              saveError={translationSaveError}
+            />
             <FontSettings
               language={language}
               study={study ?? null}
               quranFont={quranFont}
               urduFont={urduFont}
+              translationId={translationId}
               onChange={changeFont}
               saveError={fontSaveError}
             />
@@ -345,6 +360,18 @@ export function App() {
                 Linguistic data:{' '}
                 <a href="https://corpus.quran.com" target="_blank" rel="noopener noreferrer">
                   Quranic Arabic Corpus
+                </a>
+              </p>
+              <p lang="en" dir="ltr">
+                {language === 'ur' ? (
+                  <span lang="ur" dir="rtl">
+                    {ui.translationSource}:{' '}
+                  </span>
+                ) : (
+                  `${ui.translationSource}: `
+                )}
+                <a href="https://quran.com" target="_blank" rel="noopener noreferrer">
+                  Quran.com
                 </a>
               </p>
             </div>
@@ -450,6 +477,7 @@ export function App() {
                     filtering={filtering}
                     matches={matches}
                     layout={layout}
+                    translationId={translationId}
                     onSelect={selectWord}
                   />
                 </div>
@@ -505,6 +533,7 @@ export function App() {
             onClose={() => setTopic(null)}
             onWord={openWord}
             onPractice={practiseTopic}
+            translationId={translationId}
           />
         )}
       </main>

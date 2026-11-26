@@ -50,7 +50,7 @@ export function toResolvedExample(value: {
   wordArabic: string;
   meaningUrdu: string;
   ayahArabic: string;
-  translationUrdu: string;
+  translations: Readonly<Record<string, string>>;
   noteUrdu: string | null;
 }): ResolvedTopicExample {
   return {
@@ -61,7 +61,7 @@ export function toResolvedExample(value: {
     wordArabic: value.wordArabic,
     meaningUrdu: value.meaningUrdu,
     ayahArabic: value.ayahArabic,
-    translationUrdu: value.translationUrdu,
+    translations: value.translations,
     noteUrdu: value.noteUrdu,
   };
 }

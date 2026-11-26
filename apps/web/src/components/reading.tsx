@@ -2,6 +2,7 @@ import {
   formatCount,
   getUiStrings,
   getSurahTitle,
+  translationText,
   type StudyData,
   type UiLanguage,
   type Word,
@@ -19,6 +20,8 @@ interface Props {
   filtering: boolean;
   matches: Set<string>;
   layout: ReadingLayout;
+  /** Selected Urdu translation (Settings). */
+  translationId: string;
   onSelect: (id: string, trigger: HTMLButtonElement) => void;
 }
 
@@ -30,9 +33,12 @@ export function Reading({
   filtering,
   matches,
   layout,
+  translationId,
   onSelect,
 }: Props) {
   const strings = getUiStrings(language);
+  const translation = (ayah: StudyData['ayahs'][number]) =>
+    translationText(ayah.translations, translationId);
   const label = (word: Word) =>
     word.pos === 'verb'
       ? word.posUrdu.includes('مضارع')
@@ -97,7 +103,7 @@ export function Reading({
             <p className="ayah-text arabic" lang="ar" dir="rtl">
               {plainWords(ayah.number)}
             </p>
-            {ayah.translationUrdu && <p className="ayah-translation">{ayah.translationUrdu}</p>}
+            {translation(ayah) && <p className="ayah-translation">{translation(ayah)}</p>}
           </article>
         ))
       ) : (
@@ -137,8 +143,8 @@ export function Reading({
                 </button>
               ))}
           </div>
-          {layout.translation && ayah.translationUrdu && (
-            <p className="ayah-translation">{ayah.translationUrdu}</p>
+          {layout.translation && translation(ayah) && (
+            <p className="ayah-translation">{translation(ayah)}</p>
           )}
         </article>
         ))

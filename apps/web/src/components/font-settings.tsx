@@ -2,6 +2,7 @@ import type { CSSProperties } from 'react';
 import {
   fontsForRole,
   getUiStrings,
+  translationText,
   type FontRole,
   type ReadingFont,
   type StudyData,
@@ -18,6 +19,8 @@ interface Props {
   study: StudyData | null;
   quranFont: ReadingFont;
   urduFont: ReadingFont;
+  /** The Urdu font previews this translation of the first ayah. */
+  translationId: string;
   onChange: (role: FontRole, id: string) => void;
   saveError: boolean;
 }
@@ -27,12 +30,19 @@ const coverageNote = (font: ReadingFont, language: UiLanguage) =>
   (language === 'ur' && font.coverageNoteUrdu) || font.coverageNote;
 
 /** Settings card with one radio group per role; each option previews its own font. */
-export function FontSettings({ language, study, quranFont, urduFont, onChange, saveError }: Props) {
+export function FontSettings({
+  language,
+  study,
+  quranFont,
+  urduFont,
+  translationId,
+  onChange,
+  saveError,
+}: Props) {
   const ui = getUiStrings(language);
   const firstAyah = study?.ayahs[0];
-  // Source-first lessons have no ayah translation; preview the Urdu font with word meanings.
   const urduSample =
-    firstAyah?.translationUrdu ||
+    translationText(firstAyah?.translations, translationId) ||
     (study?.words ?? [])
       .slice(0, previewWords)
       .map((word) => word.meaningUrdu)

@@ -32,7 +32,8 @@ def root_to_ar(root_bw):
     return ' '.join(letters)
 
 
-LINE = re.compile(r'^\((\d+):(\d+):(\d+):(\d+)\)\t(\S*)\t(\S+)\t(\S+)$')
+# The form column can contain a space (37:130:3 `<ilo yaAsiyna`), so it is any non-tab text.
+LINE = re.compile(r'^\((\d+):(\d+):(\d+):(\d+)\)\t([^\t]*)\t(\S+)\t(\S+)$')
 
 
 def load_qac(path, surahs=None):

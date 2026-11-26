@@ -1,6 +1,6 @@
 # Quran Grammar · قرآن گرامر
 
-A grammar-focused Quran study app with Urdu explanations, covering Surahs 1, 4, 7, 18, 22, 23, 25, 29, 32, 36, 55, 56 and 85–114. The content is awaiting scholarly review. The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
+A Quran study app that helps users understand the Quran and its grammar, covering all 114 Surahs with Urdu word-by-word meanings, six Urdu ayah translations and Corpus-based grammar. All newly built content comes from published sources (Quran.com and the Quranic Arabic Corpus); it is awaiting scholarly review. The interface opens in English; Settings can switch buttons, navigation, headings and counts to Urdu. Quranic Arabic, the Urdu translations and Urdu learning content stay unchanged. One shared study model and Node API support a React web app and native Android/iOS apps.
 
 ## Project
 
@@ -9,24 +9,24 @@ A grammar-focused Quran study app with Urdu explanations, covering Surahs 1, 4, 
 | `apps/web`      | React + Vite; responsive reader and mobile word-detail sheet                                  |
 | `apps/mobile`   | Expo SDK 57 / React Native; Android and iOS study screens                                     |
 | `apps/api`      | Express / Node.js 24 API; also serves the production web build                                |
-| `packages/core` | Typed content, validation, Arabic/Urdu search, shared interface strings and number formatting |
+| `packages/core` | Typed content (lesson JSON in `data/lessons`), validation, Arabic/Urdu search, shared interface strings and number formatting |
 
 The web app uses React with Vite because the current product is an interactive study workspace with a separate shared backend. Next.js is useful when server rendering and public content discovery become product requirements; those features do not currently justify another server framework. Both clients use the same content contract. See [architecture](docs/architecture.md).
 
 ## Features
 
-- All 16,058 word occurrences across 1,455 ayahs in 42 Surahs, with contextual Urdu meanings and grammatical segments.
-- Root-family meanings and a paradigm for every finite verb, including باب، ماضی، مضارع and patterns.
-- Occurrence-specific morphology, syntax, dictionary explanations, grammar rules, and related-root navigation.
-- Phrase constructions and concise tafsir notes for every ayah, using the same data format as Al-Fatihah.
-- Floating bottom navigation, a Surah/Juz catalog, and an ayah selector. The catalog marks unavailable chapters Coming soon and identifies partial Juz ranges. Juz 5 opens An-Nisa at ayah 24, Juz 9 opens Al-A‘raf at ayah 88, and Juz 30 contains 30 available chapters.
+- All 77,429 word occurrences across 6,236 ayahs in 114 Surahs, with Quran.com Urdu word-by-word meanings and Corpus grammatical segments.
+- Six Urdu ayah translations from Quran.com, chosen in Settings (Fateh Muhammad Jalandhari by default; also Muhammad Junagarhi, Shaykh al-Hind Mahmud al-Hasan, Dr. Israr Ahmad, Syed Abul A'la Maududi and Maulana Wahiduddin Khan). No tafsir.
+- Occurrence-specific Corpus morphology, the Corpus's Arabic i‘rab, grammar rules, verb forms and related-root navigation.
+- The 43 previously published chapters (1, 2:1–20, 4, 7, 18, 22, 23, 25, 29, 32, 36, 55, 56, 85–114) keep their published dictionary notes, phrase constructions, root meanings and verb paradigms. Elsewhere, fields no source provides are hidden.
+- Floating bottom navigation, a Surah/Juz catalog, and an ayah selector.
 - Part-of-speech filters and the meaning toggle stay behind a collapsed Filters button. Search is currently hidden in both apps; the shared API retains its search endpoint.
 - Three Al-Fatihah grammar practice questions, explanations and an honest attempt score, with a restart option.
 - English interface and counts by default; Settings saves an English/Urdu preference on the current browser or device. Language changes affect interface text and numbers only.
 - Mobile web detail sheet with focus trapping, dismiss/back controls, and preserved reading position; desktop side inspector.
 - Native study and word-detail screens, bundled fonts, explicit offline content option, and API loading/error/retry states.
 
-There is no References tab or repeated source-link UI. Settings → About contains the compact Quranic Arabic Corpus credit and link required by its published attribution terms. The [content provenance](docs/content-provenance.md) records the Urdu authorship and review status. [Third-party notices](THIRD_PARTY_NOTICES.md) records source attribution and font licenses.
+There is no References tab or repeated source-link UI. Settings → About contains the compact Quranic Arabic Corpus credit and link required by its published attribution terms, and credits Quran.com for the Arabic text, Urdu word-by-word meanings and translations. The [content provenance](docs/content-provenance.md) records the sources, Urdu authorship and review status. [Third-party notices](THIRD_PARTY_NOTICES.md) records source attribution and font licenses.
 
 ## Run locally
 
@@ -62,7 +62,7 @@ cp apps/mobile/.env.example apps/mobile/.env
 npm run dev:mobile
 ```
 
-Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app uses its bundled 42-Surah edition. See [native setup](apps/mobile/README.md).
+Open with a matching SDK 57 Expo Go client. A physical phone needs the computer's LAN IP instead of `localhost`; a deployed HTTPS origin also works. If no API origin is configured, the app uses its bundled 114-Surah edition. See [native setup](apps/mobile/README.md).
 
 The APK command builds locally with JDK 17+, Android SDK Platform 36 and Build-Tools 36. It bundles JavaScript and fonts, so the installed APK does not require Metro or Expo Go. It uses Expo's debug signing key for local testing, **not a Play Store release**. Each build applies the current app config and launcher icons through incremental Expo Prebuild, retaining the native directory and build caches. See [APK build setup and options](docs/android-build.md).
 
@@ -95,14 +95,25 @@ The production Node process serves both the web app and `/api` on localhost port
 
 ## Content and future work
 
-**Current release (2026-11-13):** the owner authorized publishing all 24 Edition 2
+**Full Quran, source-only (owner decision 2026-11-26):** every Surah is built from
+Quran.com (Arabic text, word IDs, Urdu word-by-word meanings, six Urdu ayah
+translations) and the Quranic Arabic Corpus 0.4 (morphology and Arabic i‘rab), with
+no AI-written data in newly built chapters. The 43 previously published chapters keep
+their grammar layer, take Quran.com word meanings, and no longer carry their AI ayah
+translation, theme or tafsir. Lessons are JSON in `packages/core/data/lessons/`.
+[`content-pipeline/full-quran`](content-pipeline/full-quran/README.md) documents the
+sources, commands and verification. Scholarly review remains pending. The paragraphs
+below record earlier releases.
+
+**Release of 2026-11-13:** the owner authorized publishing all 24 Edition 2
 lessons and the Edition 3 lessons for Al-Hajj and Al-Waqi‘ah
 ([handoff](content-pipeline/edition-3/README.md)). The app, PostgreSQL copy and
 SQLite copy use the same 42-Surah registry. See
 [`draft-publication.json`](content-pipeline/draft-publication.json) for exact hashes
-and authorization, and `npm run publish:drafts` to reproduce the runtime modules.
-Scholarly approvals remain pending. The following paragraphs record the earlier
-pre-publication review and private testing snapshot.
+and authorization; `npm run publish:drafts` reproduced the former TypeScript
+runtime modules, now superseded by the full-Quran JSON lessons. Scholarly approvals
+remain pending. The following paragraphs record the earlier pre-publication review
+and private testing snapshot.
 
 This edition contains Al-Fatihah, Al-Fil, Quraysh, Al-Maʿun, Al-Kawthar, Al-Kafirun, An-Nasr, Al-Masad, Al-Ikhlas, Al-Falaq and An-Nas. The app is read-only; no account system or scholar-editing interface is implied. Stable word occurrence IDs and a versioned API leave room for reviewed content expansion without duplicating the data between platforms.
 
