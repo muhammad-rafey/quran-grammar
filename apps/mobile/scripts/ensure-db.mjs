@@ -62,6 +62,7 @@ function newestSource() {
     }
   };
   visit(join(root, 'packages/core/src'));
+  visit(join(root, 'packages/core/data'));
   visit(join(root, 'apps/api/src/db'));
   return newest;
 }

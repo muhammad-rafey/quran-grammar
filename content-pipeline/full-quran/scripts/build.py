@@ -506,7 +506,8 @@ def source_words(surah):
 def indopak(text):
     """Quran.com text_indopak, without bidi controls or a leading ۞ (as for the Uthmani text);
     attached waqf signs stay, as in IndoPak print."""
-    text = re.sub(r'[\u200b\u200e\u200f\u061c\u202a-\u202e\u2066-\u2069]', '', text or '')
+    text = re.sub(r'[\u200b\u200e\u200f\u061c\u202a-\u202e\u2066-\u2069\ufeff]', '', text or '')
+    text = re.sub(r'\s+', ' ', text)  # en spaces / doubled spaces left by removed controls
     text = re.sub(r'^۞\s*', '', text).strip()
     # A waqf sign is part of the word in IndoPak print: no space before it (1:7:4 عَلَيۡهِمۡ ۙ).
     return re.sub(r'\s+(?=[\u0610-\u061a\u06d6-\u06ed]+$)', '', text)
@@ -527,10 +528,13 @@ def with_indopak(word, text):
 def clean_translation(text):
     """Remove footnote markers (they point at tafsir notes) and markup; keep the words verbatim."""
     def footnote(m):
+        # Remove only the marker; the source's own spaces stay. A marker glued between a word and
+        # the next word (ہے۔<sup>1</sup>نہ) becomes one space so the words do not run together.
         before = m.string[m.start() - 1] if m.start() else ''
         after = m.string[m.end()] if m.end() < len(m.string) else ''
-        return '' if not before or not after or after in '۔،؟!:؛,.)]»' else ' '
-    text = re.sub(r'\s*<sup\b[^>]*>.*?</sup>\s*', footnote, text, flags=re.S)
+        glued = before and after and not before.isspace() and not after.isspace()
+        return ' ' if glued and after not in '۔،؟!:؛,.)]»' else ''
+    text = re.sub(r'<sup\b[^>]*>.*?</sup>', footnote, text, flags=re.S)
     text = re.sub(r'<[^>]+>', '', text)
     return re.sub(r'\s+', ' ', text).strip()
 
