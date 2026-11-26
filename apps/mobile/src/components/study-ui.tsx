@@ -1,4 +1,12 @@
-import { ActivityIndicator, Linking, Pressable, Text, View, type TextStyle } from 'react-native';
+import {
+  ActivityIndicator,
+  Linking,
+  Platform,
+  Pressable,
+  Text,
+  View,
+  type TextStyle,
+} from 'react-native';
 import type { ReactNode } from 'react';
 import { useStudy } from '@/state/study-provider';
 import { useInterface } from '@/state/preferences-provider';
@@ -11,16 +19,19 @@ export function Action({
   disabled = false,
   quiet = false,
   label,
+  testID,
 }: {
   children: ReactNode;
   onPress: () => void;
   disabled?: boolean;
   quiet?: boolean;
   label?: string;
+  testID?: string;
 }) {
   const { labelStyle } = useInterface();
   return (
     <Pressable
+      testID={testID}
       accessibilityRole="button"
       accessibilityLabel={label}
       accessibilityState={{ disabled }}
@@ -184,6 +195,11 @@ function CreditLink({
 }
 
 const linkText = { color: colors.primary, textDecorationLine: 'underline' } as const;
+// "Quran.com" inside an Urdu credit: the Urdu font has no Latin, and Android's fallback is serif.
+const latinLinkText: TextStyle = {
+  ...linkText,
+  ...(Platform.OS === 'android' ? { fontFamily: 'sans-serif' } : null),
+};
 
 /**
  * Settings → About: the required Quranic Arabic Corpus credit (morphology and grammar) and the
@@ -202,7 +218,7 @@ export function AboutSection() {
       </CreditLink>
       <CreditLink url="https://quran.com" style={labelText(14)}>
         {`${ui.translationSource}: `}
-        <Text style={linkText}>Quran.com</Text>
+        <Text style={latinLinkText}>Quran.com</Text>
       </CreditLink>
     </Section>
   );

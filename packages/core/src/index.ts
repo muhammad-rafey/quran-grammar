@@ -55,6 +55,7 @@ export {
   defaultTranslationId,
   isTranslationId,
   resolveTranslationId,
+  getTranslationEdition,
   translationText,
 } from './translations';
 export type { FontRole, FontStyleKind, FontMetrics, QuranScript, ReadingFont } from './fonts';
