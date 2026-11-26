@@ -4,6 +4,18 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isStudyData } from '../packages/core/src/validate';
 
+// Superseded (2026-11-26): lessons are packages/core/data/lessons/surah-N.json, built for all 114
+// Surahs by content-pipeline/full-quran (which carries the published lessons' grammar layer over).
+// The TypeScript lesson modules this script wrote (packages/core/src/lessons/) no longer exist, so
+// it refuses to run; the original implementation is kept below for reference.
+console.error(
+  'npm run publish:drafts is superseded by content-pipeline/full-quran.\n' +
+    'Lessons now live in packages/core/data/lessons/surah-N.json; packages/core/src/lessons/ was removed.\n' +
+    'Rebuild them with: python3 -I content-pipeline/full-quran/scripts/build.py content-pipeline/full-quran assemble .\n' +
+    'See content-pipeline/full-quran/README.md. Nothing was written.',
+);
+process.exit(1);
+
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const authorization = JSON.parse(
   await readFile(resolve(root, 'content-pipeline/draft-publication.json'), 'utf8'),

@@ -536,6 +536,8 @@ def clean_translation(text):
         return ' ' if glued and after not in '۔،؟!:؛,.)]»' else ''
     text = re.sub(r'<sup\b[^>]*>.*?</sup>', footnote, text, flags=re.S)
     text = re.sub(r'<[^>]+>', '', text)
+    # Markup debris: 4:106 Junagarhi ends in a lone '>' left from a footnote tag.
+    text = re.sub(r'\s*[<>]\s*$', '', text)
     return re.sub(r'\s+', ' ', text).strip()
 
 

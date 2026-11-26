@@ -5,6 +5,7 @@ import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { getGrammarContent, studies } from './content';
 import {
+  DATABASE_SCHEMA_VERSION,
   ORDER_BY,
   TABLES_CHILD_FIRST,
   TABLES_PARENT_FIRST,
@@ -19,7 +20,7 @@ import {
 const src = dirname(fileURLToPath(import.meta.url));
 
 /** Runtime (non-type) relative imports reachable from an entry file. */
-function runtimeGraph(entry: string): Set<string> {
+function runtimeGraph(entry: string, { allowNode = false } = {}): Set<string> {
   const seen = new Set<string>();
   const visit = (file: string) => {
     if (seen.has(file)) return;
@@ -28,7 +29,8 @@ function runtimeGraph(entry: string): Set<string> {
     const pattern = /^\s*(?:import|export)\s+(?!type\b)(?:[^'"]*?\sfrom\s+)?['"]([^'"]+)['"]/gm;
     for (const [, specifier] of source.matchAll(pattern)) {
       if (!specifier.startsWith('.')) {
-        assert.ok(!specifier.startsWith('node:'), `${relative(src, file)} imports ${specifier}`);
+        if (!allowNode)
+          assert.ok(!specifier.startsWith('node:'), `${relative(src, file)} imports ${specifier}`);
         continue;
       }
       const base = resolve(dirname(file), specifier);
@@ -51,12 +53,20 @@ test('light and db entries never pull lessons, the registry or the topic library
     );
     assert.deepEqual(heavy, [], `${entry} reaches ${heavy.join(', ')}`);
   }
-  assert.ok(runtimeGraph('content.ts').has('registry.ts'));
+  // The heavy entry is Node-only: the registry reads the lesson JSON from disk.
+  assert.ok(runtimeGraph('content.ts', { allowNode: true }).has('registry.ts'));
+  assert.match(readFileSync(resolve(src, 'registry.ts'), 'utf8'), /from 'node:fs'/);
 });
 
-test('schema v2 creates every table in both dialects, children after parents', () => {
+test('schema v3 creates every table in both dialects, children after parents', () => {
+  assert.equal(DATABASE_SCHEMA_VERSION, 3);
   for (const dialect of ['sqlite', 'postgres'] as const) {
     const sql = createTableStatements(dialect).join('\n');
+    // Translations live in their own tables; ayahs keep no translation, theme or tafsir columns.
+    const ayahs = sql.match(/create table if not exists (?:quran_grammar\.)?ayahs \(([\s\S]*?)\n\)/)![1];
+    assert.doesNotMatch(ayahs, /translation_urdu|theme_urdu|tafsir_urdu/);
+    assert.match(sql, /create table if not exists (quran_grammar\.)?ayah_translations \([\s\S]*?translation_id text not null references/);
+    assert.match(sql, /\n  arabic_indopak text,\n/);
     for (const table of TABLES_CHILD_FIRST)
       assert.match(sql, new RegExp(`create table if not exists (quran_grammar\\.)?${table} \\(`));
     assert.match(sql, /practice_questions_topic_idx/);
@@ -81,6 +91,9 @@ test('grammar rows round-trip losslessly, including order', () => {
   assert.equal(JSON.stringify(rowsToGrammar(reversed)), JSON.stringify(grammar));
   const all = contentToRows(studies, grammar);
   assert.equal(JSON.stringify(rowsToStudies(all)), JSON.stringify(studies));
+  assert.equal(all.translations.length, 6);
+  assert.equal(all.ayah_translations.length, 6236 * 6);
+  assert.equal(all.words.filter((word) => !word.arabic_indopak).length, 0);
 });
 
 test('SQL helpers use dialect placeholders and the private Postgres schema', () => {

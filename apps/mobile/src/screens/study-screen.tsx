@@ -626,7 +626,7 @@ const WordToken = memo(function WordToken({
       ]}
     >
       <Text style={fonts.tokenArabic}>{quranText(word, fonts.quranFont)}</Text>
-      {showMeaning && <Text style={fonts.tokenMeaning}>
+      {showMeaning && !!word.meaningUrdu && <Text style={fonts.tokenMeaning}>
           {word.meaningUrdu}
           {lineEndSlack}
         </Text>}

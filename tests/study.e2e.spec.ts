@@ -1,4 +1,10 @@
+import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
+import type { StudyData } from '../packages/core/src/types';
+
+/** The bundled lesson the API serves (packages/core/data/lessons). */
+const lesson = (surah: number): StudyData =>
+  JSON.parse(readFileSync(new URL(`../packages/core/data/lessons/surah-${surah}.json`, import.meta.url), 'utf8'));
 
 const word = (page: Page, id: string) => page.locator(`[data-word-id="${id}"]`);
 const detail = (page: Page) => page.locator('.word-detail, .word-sheet[open]');
@@ -92,19 +98,18 @@ test('surah and juz catalogs expose available lessons and preserve picker focus'
   const catalog = page.getByRole('dialog', { name: 'Select surah', exact: true });
   await expect(catalog).toBeVisible();
   await expect(catalog.locator('[data-surah]')).toHaveCount(114);
-  await expect(catalog.locator('[data-surah]:disabled')).toHaveCount(71);
+  // Every chapter is available; none is labelled as future content.
+  await expect(catalog.locator('[data-surah]:disabled')).toHaveCount(0);
+  await expect(catalog.locator('[data-surah]', { hasText: 'Coming soon' })).toHaveCount(0);
   expect(
     await catalog
       .locator('[data-surah]')
-      .evaluateAll((nodes) =>
-        nodes.slice(0, 43).map((node) => Number(node.getAttribute('data-surah'))),
-      ),
-  ).toEqual([1, 2, 4, 7, 18, 22, 23, 25, 29, 32, 36, 55, 56, ...Array.from({ length: 30 }, (_, index) => 85 + index)]);
+      .evaluateAll((nodes) => nodes.map((node) => Number(node.getAttribute('data-surah')))),
+  ).toEqual(Array.from({ length: 114 }, (_, index) => index + 1));
   await expect(catalog.locator('[data-surah="1"]')).toBeEnabled();
-  await expect(catalog.locator('[data-surah="3"]')).toContainText('Coming soon');
+  await expect(catalog.locator('[data-surah="3"]')).toBeEnabled();
+  await expect(catalog.locator('[data-surah="3"]')).toContainText('Available');
   await expect(catalog.locator('[data-surah="114"]')).toContainText('An-Nas');
-  await catalog.locator('[data-surah="3"]').evaluate((node: HTMLButtonElement) => node.click());
-  await expect(catalog).toBeVisible();
   await expect(
     page.getByRole('button', { name: 'Select ayah', includeHidden: true }),
   ).toHaveAttribute('data-ayah', '1');
@@ -126,18 +131,10 @@ test('surah and juz catalogs expose available lessons and preserve picker focus'
   await page.getByRole('dialog').getByRole('button', { name: 'Juz', exact: true }).click();
   const juz = page.getByRole('dialog', { name: 'Select juz', exact: true });
   await expect(juz.locator('[data-juz]')).toHaveCount(30);
-  await expect(juz.locator('[data-juz]:disabled')).toHaveCount(13);
-  expect(
-    await juz
-      .locator('[data-juz]')
-      .evaluateAll((nodes) =>
-        nodes.slice(0, 17).map((node) => Number(node.getAttribute('data-juz'))),
-      ),
-  ).toEqual([1, 4, 5, 6, 8, 9, 15, 16, 17, 18, 19, 20, 21, 22, 23, 27, 30]);
-  await expect(juz.locator('[data-juz="1"]')).toContainText('Partial preview');
-  await juz.locator('[data-juz="29"]').evaluate((node: HTMLButtonElement) => node.click());
-  await expect(juz).toBeVisible();
-  // Juz 1 holds Al-Fatihah and the built ayahs of Al-Baqarah, so it lists its chapters first.
+  await expect(juz.locator('[data-juz]:disabled')).toHaveCount(0);
+  await expect(juz.locator('[data-juz]', { hasText: 'Partial preview' })).toHaveCount(0);
+  await expect(juz.locator('[data-juz="1"]')).toContainText('Available');
+  // Juz 1 holds Al-Fatihah and Al-Baqarah 1–141, so it lists its chapters first.
   await juz.locator('[data-juz="1"]').click();
   await expect(juz.locator('[data-surah]')).toHaveCount(2);
   await juz.locator('[data-surah="1"]').click();
@@ -493,11 +490,10 @@ test('practice grammar replaces the per-ayah grammar cards, with no references i
     page.locator('.page-footer, .reading-caption, .surah-stats, .breadcrumb'),
   ).toHaveCount(0);
   await page.getByRole('button', { name: 'Settings', exact: true }).click();
-  await expect(page.locator('.settings-view a')).toHaveCount(1);
-  await expect(page.locator('.settings-view a')).toHaveAttribute(
-    'href',
-    'https://corpus.quran.com',
-  );
+  // About credits exactly the two sources: the required Corpus link and Quran.com.
+  expect(
+    await page.locator('.settings-view a').evaluateAll((links) => links.map((link) => link.getAttribute('href'))),
+  ).toEqual(['https://corpus.quran.com', 'https://quran.com']);
   await openPracticeGrammar(page);
   await expect(page.getByText('مختصر تفسیری نوٹ')).toHaveCount(0);
   await expect(page.getByText('نحوی ترکیب')).toHaveCount(0);
@@ -838,7 +834,8 @@ test('interface language persists while Arabic text and Urdu study content stay 
   await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'سورت منتخب کریں', exact: true }).click();
   await expect(page.locator('[data-surah="1"]')).toContainText('الفاتحة');
-  await expect(page.locator('[data-surah="3"]')).toContainText('جلد دستیاب ہوگا');
+  await expect(page.locator('[data-surah="3"]')).toContainText('دستیاب');
+  await expect(page.locator('[data-surah="3"]')).not.toContainText('جلد دستیاب ہوگا');
   await page.keyboard.press('Escape');
   await openFatihahPractice(page, 'گرامر کی مشق');
   const practice = page.getByRole('region', { name: 'مختصر مشق', exact: true });
@@ -1065,15 +1062,21 @@ test('juz previews open a chapter at its first ayah inside that juz', async ({ p
   await loadStudy(page);
   const trigger = page.locator('.collection-trigger');
   const selector = ayahChip(page);
-  const openJuz = async (number: number) => {
+  // Complete juz hold several chapters, so the juz lists them and one is chosen.
+  const openJuz = async (number: number, surah: number, chapters: number[]) => {
     await trigger.click();
     await page.getByRole('dialog').getByRole('button', { name: 'Juz', exact: true }).click();
     const catalog = page.getByRole('dialog', { name: 'Select juz', exact: true });
-    await expect(catalog.locator(`[data-juz="${number}"]`)).toContainText('Partial preview');
+    await expect(catalog.locator(`[data-juz="${number}"]`)).toContainText('Available');
+    await expect(catalog.locator(`[data-juz="${number}"]`)).not.toContainText('Partial preview');
     await catalog.locator(`[data-juz="${number}"]`).click();
+    expect(
+      await catalog.locator('[data-surah]').evaluateAll((nodes) => nodes.map((node) => Number(node.getAttribute('data-surah')))),
+    ).toEqual(chapters);
+    await catalog.locator(`[data-surah="${surah}"]`).click();
     await expect(catalog).not.toBeVisible();
   };
-  await openJuz(16);
+  await openJuz(16, 18, [18, 19, 20]);
   await expect(page.locator('.quran-word')).toHaveCount(1579);
   await expect(selector).toHaveAttribute('data-ayah', '75');
   await expect(word(page, '18:75:1')).toHaveAttribute('aria-pressed', 'true');
@@ -1083,10 +1086,10 @@ test('juz previews open a chapter at its first ayah inside that juz', async ({ p
   expect(page.url()).toContain('#surah=18&ayah=75');
   await chooseAyah(page, '74');
   await expect(trigger).toContainText('Juz 15');
-  await openJuz(15);
+  await openJuz(15, 18, [17, 18]);
   await expect(selector).toHaveAttribute('data-ayah', '1');
   await expect(trigger).toContainText('Juz 15');
-  await openJuz(23);
+  await openJuz(23, 36, [36, 37, 38, 39]);
   await expect(page.locator('.quran-word')).toHaveCount(725);
   await expect(selector).toHaveAttribute('data-ayah', '28');
   await expect(word(page, '36:28:1')).toHaveAttribute('aria-pressed', 'true');
@@ -1098,7 +1101,7 @@ test('juz previews open a chapter at its first ayah inside that juz', async ({ p
   await expectNoOverflow(page);
 });
 
-test('Juz 30 exposes its thirty available chapters without claiming the entire Juz', async ({
+test('Juz 30 lists all thirty-seven of its chapters as a complete Juz', async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
@@ -1106,9 +1109,13 @@ test('Juz 30 exposes its thirty available chapters without claiming the entire J
   await page.getByRole('button', { name: 'Select surah', exact: true }).click();
   await page.getByRole('dialog').getByRole('button', { name: 'Juz', exact: true }).click();
   const catalog = page.getByRole('dialog');
-  await expect(catalog.locator('[data-juz="30"]')).toContainText('Partial preview');
+  await expect(catalog.locator('[data-juz="30"]')).toContainText('Available');
+  await expect(catalog.locator('[data-juz="30"]')).not.toContainText('Partial preview');
   await catalog.locator('[data-juz="30"]').click();
-  await expect(catalog.locator('[data-surah]')).toHaveCount(30);
+  await expect(catalog.locator('[data-surah]')).toHaveCount(37);
+  expect(
+    await catalog.locator('[data-surah]').evaluateAll((nodes) => nodes.map((node) => Number(node.getAttribute('data-surah')))),
+  ).toEqual(Array.from({ length: 37 }, (_, index) => 78 + index));
   await expect(catalog).toContainText('Available surahs');
   await expect(catalog.locator('.catalog-subheading h3')).toBeFocused();
   await catalog.locator('.catalog-subheading button').click();
@@ -1167,8 +1174,9 @@ test('cross-chapter deep links and failed requests never show the previous chapt
   });
   await expect(word(page, '114:5:2')).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('.quran-word')).toHaveCount(20);
+  // A chapter that does not exist falls back to Al-Fatihah.
   await page.evaluate(() => {
-    location.hash = 'surah=3';
+    location.hash = 'surah=115';
   });
   await expect(word(page, '1:1:1')).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('.quran-word')).toHaveCount(29);
@@ -1212,4 +1220,131 @@ test('skip navigation keeps the selected chapter and word URL', async ({ page })
   await expect(page.locator('#main')).toBeFocused();
   await expect(page.locator('.quran-word')).toHaveCount(15);
   await expect(page).toHaveURL(/word=112%3A3%3A4/);
+});
+
+test('the Settings translation switcher changes every ayah translation and persists across reloads', async ({
+  page,
+}) => {
+  const fatihah = lesson(1);
+  const ofEdition = (study: StudyData, id: string) => study.ayahs.map((ayah) => ayah.translations[id]);
+  await loadStudy(page);
+  // Jalandhari is the default translation.
+  await expect(page.locator('.ayah-translation')).toHaveText(ofEdition(fatihah, 'jalandhari'));
+  await page.getByRole('button', { name: 'Settings', exact: true }).click();
+  const options = page.locator('.translation-settings [data-translation]');
+  await expect(options).toHaveCount(6);
+  expect(await options.evaluateAll((nodes) => nodes.map((node) => node.getAttribute('data-translation')))).toEqual([
+    'jalandhari',
+    'junagarhi',
+    'mahmud-al-hasan',
+    'israr-ahmad',
+    'maududi',
+    'wahiduddin-khan',
+  ]);
+  await expect(options.locator('input:checked')).toHaveCount(1);
+  await expect(page.locator('[data-translation="jalandhari"] input')).toBeChecked();
+  // Each option previews the chapter's first ayah in that translation.
+  await expect(page.locator('[data-translation="maududi"] .translation-preview')).toHaveText(
+    fatihah.ayahs[0].translations.maududi,
+  );
+  await page.getByRole('radio', { name: "Syed Abul A'la Maududi (Tafheem-ul-Quran)", exact: true }).check();
+  await expect(page.locator('[data-translation="maududi"] input')).toBeChecked();
+  expect(await page.evaluate(() => localStorage.getItem('quran-grammar.translation'))).toBe('maududi');
+  await page.getByRole('button', { name: 'Study', exact: true }).click();
+  await expect(page.locator('.ayah-translation')).toHaveText(ofEdition(fatihah, 'maududi'));
+  expect(ofEdition(fatihah, 'maududi')).not.toEqual(ofEdition(fatihah, 'jalandhari'));
+  // The choice survives a reload and applies to every chapter.
+  await page.reload();
+  await expect(page.locator('.quran-word')).toHaveCount(29);
+  await expect(page.locator('.ayah-translation')).toHaveText(ofEdition(fatihah, 'maududi'));
+  await page.goto('/#surah=114');
+  await expect(page.locator('.quran-word')).toHaveCount(20);
+  await expect(page.locator('.ayah-translation')).toHaveText(ofEdition(lesson(114), 'maududi'));
+  await page.getByRole('button', { name: 'Settings', exact: true }).click();
+  await expect(page.locator('[data-translation="maududi"] input')).toBeChecked();
+  // The Urdu interface names the translators in Urdu; the translation text is unchanged.
+  await page.getByRole('button', { name: 'اردو', exact: true }).click();
+  await expect(page.locator('[data-translation="maududi"] strong')).toHaveText('سید ابو الاعلیٰ مودودی (تفہیم القرآن)');
+  await page.getByRole('radio', { name: 'محمد جوناگڑھی', exact: true }).check();
+  await page.getByRole('button', { name: 'مطالعہ', exact: true }).click();
+  await expect(page.locator('.ayah-translation')).toHaveText(ofEdition(lesson(114), 'junagarhi'));
+  // A stored id that is no longer offered falls back to the default.
+  await page.evaluate(() => localStorage.setItem('quran-grammar.translation', 'not-offered'));
+  await page.goto('/');
+  await page.reload();
+  await expect(page.locator('.quran-word')).toHaveCount(29);
+  await expect(page.locator('.ayah-translation')).toHaveText(ofEdition(fatihah, 'jalandhari'));
+});
+
+test('a source-only chapter word panel hides the empty dictionary, root-meaning and paradigm fields', async ({
+  page,
+}) => {
+  const imran = lesson(3);
+  const panel = detail(page);
+  const open = async (id: string) => {
+    await page.goto(`/#word=${encodeURIComponent(id)}`);
+    await expect(page.locator('.quran-word')).toHaveCount(imran.words.length, { timeout: 20_000 });
+    await expect(word(page, id)).toHaveAttribute('aria-pressed', 'true');
+    await expect(panel.locator('#detail-title')).toHaveText(imran.words.find((entry) => entry.id === id)!.arabic);
+  };
+  // Al Imran is source-only: Corpus grammar and Quran.com meanings, no AI-written fields.
+  await open('3:4:9');
+  const verb = imran.words.find((entry) => entry.id === '3:4:9')!;
+  await expect(panel.locator('.detail-translation')).toHaveText(verb.meaningUrdu);
+  await expect(panel.locator('.root-pair')).toContainText('ك ف ر');
+  await expect(panel.locator('.root-meaning')).toHaveCount(0);
+  await expect(panel.getByRole('heading', { name: 'Root meaning' })).toHaveCount(0);
+  await expect(panel.getByRole('heading', { name: 'Dictionary meaning' })).toHaveCount(0);
+  await expect(panel.getByText(verb.morphologyUrdu, { exact: true })).toBeVisible();
+  await expect(panel.getByText(verb.syntaxUrdu, { exact: true })).toBeVisible();
+  // Form I: the Corpus gives no vowel class, so no باب, present form, pattern or note.
+  await expect(panel.locator('.verb-section')).toBeVisible();
+  await expect(panel.locator('.baab-title')).toHaveCount(0);
+  await expect(panel.locator('.verb-paradigm dd')).toHaveText([imran.verbForms['3:4:9'].past]);
+  await expect(panel.locator('.verb-section > p')).toHaveText([imran.verbForms['3:4:9'].formUrdu]);
+  // A segment shows its role only, with no dangling separator for the missing gloss.
+  await panel.locator('[data-segment="0"]').click();
+  await expect(panel.locator('.segment-explanation')).toHaveText('فعلِ ماضی');
+  // A derived form keeps its باب and pattern but no present form or note.
+  await open('3:3:1');
+  const derived = imran.verbForms['3:3:1'];
+  expect(derived.formUrdu).toContain('(II)');
+  expect([derived.present, derived.noteUrdu]).toEqual(['', '']);
+  await expect(panel.locator('.baab-title')).toHaveText(derived.baabUrdu);
+  await expect(panel.locator('.verb-paradigm dd')).toHaveText([derived.past, derived.pattern]);
+  await expect(panel.locator('.verb-paradigm')).not.toContainText('Present');
+  await expect(panel.getByRole('heading', { name: 'Dictionary meaning' })).toHaveCount(0);
+  await expectNoOverflow(page);
+  // Published lessons still show the sections the source-only chapter hides.
+  await page.goto('/#word=1%3A5%3A4');
+  await expect(word(page, '1:5:4')).toHaveAttribute('aria-pressed', 'true');
+  await expect(panel.locator('.root-meaning p').first()).toHaveText(lesson(1).roots['ع و ن'].meaningUrdu);
+  await expect(panel.getByRole('heading', { name: 'Dictionary meaning' })).toBeVisible();
+  await expect(panel.locator('.verb-paradigm dd')).toHaveCount(3);
+});
+
+test('Al-Baqarah opens complete: 286 ayahs, the pilot grammar layer through 2:20 and source-only after', async ({
+  page,
+}) => {
+  test.setTimeout(60_000);
+  const baqarah = lesson(2);
+  await page.goto('/#word=2%3A20%3A1');
+  await expect(page.locator('.quran-word')).toHaveCount(6116, { timeout: 20_000 });
+  await expect(page.locator('.reading-card article.ayah')).toHaveCount(286);
+  await expect(page.locator('.ayah-translation')).toHaveCount(286);
+  await expect(page.locator('#ayah-286 .ayah-translation')).toHaveText(baqarah.ayahs[285].translations.jalandhari);
+  await expectAyahNumbers(page, 286);
+  const panel = detail(page);
+  await expect(word(page, '2:20:1')).toHaveAttribute('aria-pressed', 'true');
+  await expect(panel.getByRole('heading', { name: 'Dictionary meaning' })).toBeVisible();
+  await expect(panel.getByText(baqarah.words.find((entry) => entry.id === '2:20:1')!.dictionaryUrdu)).toBeVisible();
+  await page.evaluate(() => {
+    location.hash = 'word=2%3A21%3A1';
+  });
+  await expect(word(page, '2:21:1')).toHaveAttribute('aria-pressed', 'true');
+  await expect(panel.locator('#detail-title')).toHaveText(baqarah.words.find((entry) => entry.id === '2:21:1')!.arabic);
+  await expect(panel.getByRole('heading', { name: 'Dictionary meaning' })).toHaveCount(0);
+  await chooseAyah(page, '286');
+  await expect(page.locator('#ayah-286')).toBeInViewport();
+  await expect(page.locator('.collection-trigger')).toContainText('Al-Baqarah');
 });

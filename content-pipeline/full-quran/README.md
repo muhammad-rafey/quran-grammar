@@ -110,3 +110,21 @@ with owner permission — `npm run db:sync` (`QG_PSQL`) and `npm run db:verify`.
 - Quran.com spells some marks differently from the Corpus (tatweel before dagger alif, small-meem
   tanwīn ۭ/ۢ, ـٔ vs ء). Letters must agree; mark differences are recorded, not "fixed".
 - QuranAcademy is a separate project and database; never touch it.
+- **Quran.com word-meaning gaps (280 words, e.g. 2:74:5):** Quran.com's Urdu word-by-word is empty
+  there, so `meaningUrdu` is empty (the apps hide it). This includes 70 previously published words
+  whose old AI meaning was removed (owner rule 2026-11-26: no AI-written meanings). Lists:
+  `inventory/sources.json` → `meaningGaps`.
+- **Quran.com vs Corpus quirks handled by the build:** small yeh written `ـۧ` vs `ۦ`; precomposed
+  `آ` (compared after NFD); words written with an internal space (2:181:3 بَعْدَ مَا); a Corpus form
+  containing a space (37:130:3, fixed in `../scripts/qac.py`); Corpus segments with no written
+  form (elided pronouns) merged into the previous segment card; three genuine letter differences
+  (11:13:3, 12:39:1, 12:41:1) where the segment cards use the Corpus spelling.
+- **Translation cleaning:** only `<sup foot_note>` markers and markup are removed; the source's own
+  spaces stay (a marker glued between two words becomes one space). Markup debris at the end of a
+  text (4:106 Junagarhi `>`) is removed.
+- **IndoPak text:** `text_indopak` minus bidi controls, U+200B and U+FEFF, with whitespace collapsed
+  and no space before a trailing waqf sign; Quran.com's private-use waqf glyphs (U+E01A–E022) stay
+  verbatim and render with Al Qalam Quran Majeed.
+- **Verification:** `scripts/verify.py --write` (independent of build.py) must report `RESULT: OK`;
+  on 2026-11-26 a separate live re-check against fresh Quran.com data found 0 content differences in
+  Arabic, IndoPak text, word meanings and all 37,416 translation texts.

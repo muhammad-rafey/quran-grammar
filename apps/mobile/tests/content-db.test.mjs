@@ -66,6 +66,15 @@ test('content database: version, studies, topics and practice', { skip }, async 
   const version = await env.readContentVersion(env.exec);
   assert.equal(version.database_schema_version, env.schemaVersion);
   assert.match(version.content_sha256, /^[0-9a-f]{64}$/);
+  assert.deepEqual(
+    [version.surah_count, version.ayah_count, version.word_count],
+    [114, 6236, 77429],
+  );
+  // The stored catalog is the shared one, in display order.
+  assert.deepEqual(
+    env.db.prepare('select id from translations order by position').all().map((row) => row.id),
+    [...core.translationIds],
+  );
 
   t.diagnostic(
     content ? 'comparing with @quran-grammar/core/content' : 'content entry unavailable; no exact comparison',
@@ -81,26 +90,38 @@ test('content database: version, studies, topics and practice', { skip }, async 
 
   await t.test('every chapter rebuilds as valid StudyData in a fixed number of queries', async () => {
     const bundled = content ? new Map(content.studies.map((s) => [s.surah.number, s])) : null;
+    let words = 0;
+    let ayahs = 0;
     for (const { number } of surahs) {
       const before = env.queryCount();
       const study = await repository.getStudy(number);
       assert.ok(env.queryCount() - before <= 11, `Surah ${number} used too many queries`);
       assert.ok(core.isStudyData(study), `Surah ${number} is not valid StudyData`);
       for (const ayah of study.ayahs) {
-        // Translation keys follow the catalog order (translations.position).
-        const keys = Object.keys(ayah.translations);
+        // Every ayah has all six translations, in catalog order (translations.position).
         assert.deepEqual(
-          keys,
-          core.translationIds.filter((id) => keys.includes(id)),
+          Object.keys(ayah.translations),
+          [...core.translationIds],
           `Surah ${number}:${ayah.number} translation order`,
+        );
+        assert.ok(
+          Object.values(ayah.translations).every((text) => text.length > 0),
+          `Surah ${number}:${ayah.number} empty translation`,
         );
         assert.equal(
           core.translationText(ayah.translations, core.defaultTranslationId),
           ayah.translations[core.defaultTranslationId] ?? '',
         );
       }
+      assert.ok(
+        study.words.every((word) => typeof word.arabicIndoPak === 'string' && word.arabicIndoPak),
+        `Surah ${number}: IndoPak text`,
+      );
+      words += study.words.length;
+      ayahs += study.ayahs.length;
       if (bundled) assert.deepEqual(study, bundled.get(number), `Surah ${number} differs`);
     }
+    assert.deepEqual([surahs.length, ayahs, words], [114, 6236, 77429]);
     assert.equal(await repository.getStudy(0), null);
     assert.equal(await repository.getStudy(115), null);
   });

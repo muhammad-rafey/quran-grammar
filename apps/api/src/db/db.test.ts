@@ -4,6 +4,7 @@ import { DatabaseSync } from 'node:sqlite';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test, { after, before } from 'node:test';
+import { translationIds } from '@quran-grammar/core';
 import { createBundledRepository, getGrammarContent, studies } from '@quran-grammar/core/content';
 import {
   POSTGRES_SCHEMA,
@@ -49,7 +50,16 @@ test('SQLite copy reproduces every lesson, topic and question exactly and record
   assert.equal(JSON.stringify(rowsToStudies(copy.rows)), JSON.stringify(studies));
   assert.equal(JSON.stringify(rowsToGrammar(copy.rows)), JSON.stringify(grammar));
   assert.equal(copy.version.content_sha256, contentSha256(studies, grammar));
-  assert.equal(copy.version.database_schema_version, 2);
+  assert.equal(copy.version.database_schema_version, 3);
+  assert.deepEqual(
+    [copy.version.surah_count, copy.version.ayah_count, copy.version.word_count],
+    [114, 6236, 77429],
+  );
+  assert.equal(copy.rows.ayah_translations.length, 6236 * 6);
+  assert.deepEqual(
+    copy.rows.translations.map((row) => row.id),
+    [...translationIds],
+  );
   assert.equal(copy.version.source_commit, 'test-commit');
   assert.equal(copy.version.word_count, version.word_count);
   assert.equal(copy.rows.practice_questions.length, grammar.questions.length);
@@ -70,11 +80,12 @@ test('content checksum changes when topics or questions change', () => {
 /** Compare every repository method against the bundled repository. */
 async function assertSameAsBundled(label: string, repository: typeof bundled) {
   assert.deepEqual(await repository.listSurahs(), await bundled.listSurahs(), label);
-  for (const surah of [1, 4, 36, 114]) {
+  // Published, mixed (2:1–20 pilot + source-only), source-only and short chapters.
+  for (const surah of [1, 2, 3, 4, 36, 114]) {
     const [actual, expected] = [await repository.getStudy(surah), await bundled.getStudy(surah)];
     assert.equal(JSON.stringify(actual), JSON.stringify(expected), `${label} Surah ${surah}`);
   }
-  assert.equal(await repository.getStudy(3), null);
+  assert.equal(await repository.getStudy(115), null);
   assert.equal(JSON.stringify(await repository.listTopics()), JSON.stringify(await bundled.listTopics()));
   for (const topic of grammar.topics.filter((_, index) => index % 10 === 0)) {
     assert.equal(
@@ -127,7 +138,7 @@ test('Postgres repository maps quran_grammar rows to the same values and caches 
   const pool = fakePostgres(file);
   try {
     const version = await checkPostgresContent(pool);
-    assert.equal(version.database_schema_version, 2);
+    assert.equal(version.database_schema_version, 3);
     const repository = createPostgresRepository(pool);
     await assertSameAsBundled('Postgres', repository);
     assert.ok(pool.queries.every((sql) => sql.includes(`${POSTGRES_SCHEMA}.`)));
@@ -145,6 +156,8 @@ test('Postgres repository maps quran_grammar rows to the same values and caches 
   await assert.rejects(checkPostgresContent(empty), /content_version is empty/);
   const old = { query: async () => ({ rows: [{ database_schema_version: 1 }] }) };
   await assert.rejects(checkPostgresContent(old), /schema version 1/);
+  const v2 = { query: async () => ({ rows: [{ database_schema_version: 2 }] }) };
+  await assert.rejects(checkPostgresContent(v2), /schema version 2/);
 });
 
 test('Postgres load script is one transaction with escaped literals in a private schema', () => {
@@ -172,6 +185,8 @@ test('Postgres load script is one transaction with escaped literals in a private
       .reduce((total, rows) => total + rows, 0);
   const rows = contentToRows(studies, grammar);
   assert.equal(count('words'), rows.words.length);
+  assert.equal(count('translations'), 6);
+  assert.equal(count('ayah_translations'), rows.ayah_translations.length);
   assert.equal(count('grammar_topics'), rows.grammar_topics.length);
   assert.equal(count('practice_questions'), rows.practice_questions.length);
   assert.equal(count('practice_options'), rows.practice_options.length);

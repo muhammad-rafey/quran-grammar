@@ -187,7 +187,9 @@ def clean_translation(raw):
         count += sum(1 for ch in chunk if not ch.isspace())
         if i < len(chunks) - 1:
             boundaries.add(count)
-    return collapse(''.join(chunks)), boundaries
+    # A lone '<' or '>' at the very end is markup debris (4:106 Junagarhi); it is dropped too.
+    text = re.sub(r'\s*[<>]\s*$', '', ''.join(chunks))
+    return collapse(text), boundaries
 
 
 def space_profile(text):
@@ -600,7 +602,7 @@ def verify_chapter(s, lesson, ctx, rep, stats):
             if '<' in text or 'foot_note' in text:
                 rep.fail('6 markup/foot_note left in translation', {'ayah': key, 'id': tid, 'text': text[:120]})
             elif '>' in text:
-                rep.warn("6 stray '>' in translation (check the source text)", {'ayah': key, 'id': tid, 'text': text[-60:]})
+                rep.fail("6 stray '>' left in translation", {'ayah': key, 'id': tid, 'text': text[-60:]})
             if re.search(r'&(#\d+|#x[0-9a-f]+|[a-z]+);', text, re.I):
                 rep.warn('6 HTML entity in translation', {'ayah': key, 'id': tid})
             raw = ctx['translation_src'][tid].get(key)

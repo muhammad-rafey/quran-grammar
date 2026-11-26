@@ -22,14 +22,38 @@ const chapterLoadTimeout = 20_000;
 const { surahs: authorizedDrafts } = JSON.parse(
   readFileSync(new URL('../content-pipeline/draft-publication.json', import.meta.url), 'utf8'),
 ) as { surahs: Array<{ number: number; work?: string }> };
-function loadDraft(number: number): StudyData {
+/**
+ * A pinned draft snapshot. Drafts predate the whole-Quran build (2026-11-26): their ayahs still
+ * carry the removed AI translation, theme and tafsir, and their word meanings are the drafts'.
+ */
+type DraftStudy = Omit<StudyData, 'ayahs'> & {
+  ayahs: Array<Pick<StudyData['ayahs'][number], 'number' | 'phrases'> & Record<string, unknown>>;
+};
+function loadDraft(number: number): DraftStudy {
   const entry = authorizedDrafts.find((draft) => draft.number === number);
   expect(entry, `Surah ${number} has a pinned draft`).toBeDefined();
   const work = entry?.work ?? 'content-pipeline';
   const wrapper = JSON.parse(readFileSync(new URL(`../${work}/drafts/surah-${number}.json`, import.meta.url), 'utf8'));
   expect(wrapper.reviewStatus).toBe('scholarly-review-pending');
-  expect(isStudyData(wrapper.study)).toBe(true);
+  expect(wrapper.study.surah.number).toBe(number);
   return wrapper.study;
+}
+/**
+ * The published grammar layer: everything except the fields the whole-Quran build replaced
+ * (word meanings now from Quran.com, IndoPak text added, ayah translation/theme/tafsir replaced
+ * by the six Quran.com translations).
+ */
+function grammarLayer(study: DraftStudy | StudyData) {
+  return {
+    keys: Object.keys(study),
+    schemaVersion: study.schemaVersion,
+    surah: study.surah,
+    words: study.words.map(({ meaningUrdu: _meaning, arabicIndoPak: _indoPak, ...word }) => word),
+    ayahs: study.ayahs.map((ayah) => ({ number: ayah.number, phrases: ayah.phrases })),
+    rules: study.rules,
+    roots: study.roots,
+    verbForms: study.verbForms,
+  };
 }
 
 // The ayah chip opens a dialog with a number search and a grid of ayah buttons.
@@ -63,12 +87,17 @@ async function chooseJuz(page: Page, number: number, surah: number) {
   await expect(juzCatalog).not.toBeVisible();
 }
 
-test('published lesson APIs contain the exact authorized snapshots', async ({ request }) => {
+test('published lesson APIs keep the exact authorized grammar layer', async ({ request }) => {
   test.setTimeout(120_000);
   for (const chapter of authorizedDrafts) {
     const response = await request.get('/api/v1/surahs/' + chapter.number);
     expect(response.status(), `Surah ${chapter.number}`).toBe(200);
-    expect(await response.json()).toEqual(loadDraft(chapter.number));
+    const study = (await response.json()) as StudyData;
+    expect(isStudyData(study), `Surah ${chapter.number}`).toBe(true);
+    expect(grammarLayer(study)).toEqual(grammarLayer(loadDraft(chapter.number)));
+    // Only the replaced fields differ: no AI ayah translation, theme or tafsir is served.
+    for (const ayah of study.ayahs) expect(Object.keys(ayah)).toEqual(['number', 'translations', 'phrases']);
+    expect(study.words.every((word) => word.arabicIndoPak)).toBe(true);
   }
 });
 

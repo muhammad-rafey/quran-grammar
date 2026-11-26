@@ -73,7 +73,7 @@ export function WordDetail({
           </h2>
           <span className={`pos-badge ${word.pos}`}>{word.posUrdu}</span>
         </div>
-        <p className="detail-translation">{word.meaningUrdu}</p>
+        {word.meaningUrdu && <p className="detail-translation">{word.meaningUrdu}</p>}
       </header>
       <div className="detail-scroll" ref={scroll} dir="rtl" lang="ur">
         <section className="detail-section root-section">

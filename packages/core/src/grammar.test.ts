@@ -12,8 +12,9 @@ import {
   grammarTopicSources,
   studies,
 } from './content';
-import { gradePracticeAnswer, normalizeText } from './index';
+import { gradePracticeAnswer, normalizeText, translationIds } from './index';
 
+const studyBySurah = new Map(studies.map((study) => [study.surah.number, study]));
 const words = new Map(studies.flatMap((study) => study.words.map((word) => [word.id, word])));
 const ruleIds = new Set(studies.flatMap((study) => study.rules.map((rule) => rule.id)));
 const grammar = getGrammarContent();
@@ -159,6 +160,10 @@ test('bundled repository resolves topic details, summaries and practice sets', a
     assert.equal(example.wordArabic, word.arabic);
     assert.ok(example.ayahArabic.split(' ').includes(word.arabic));
     assert.equal(`${example.surah}:${example.ayah}`, example.wordId.split(':').slice(0, 2).join(':'));
+    // Examples carry the ayah's six translations, in catalog order, from the lesson itself.
+    const ayah = studyBySurah.get(example.surah)!.ayahs[example.ayah - 1];
+    assert.deepEqual(Object.keys(example.translations), translationIds);
+    assert.deepEqual(example.translations, ayah.translations);
   }
   assert.ok(detail.examples.every((example) => example.kind === 'annotated' && example.noteUrdu));
   assert.ok(detail.quranicExamples.every((example) => example.kind === 'quranic'));
@@ -168,6 +173,7 @@ test('bundled repository resolves topic details, summaries and practice sets', a
   const practice = await repository.getPracticeQuestions({ topicId: first.id });
   assert.equal(practice.length, first.questionCount);
   assert.deepEqual(await repository.getPracticeQuestions({ topicId: 'nope' }), []);
-  assert.equal(await repository.getStudy(3), null);
+  assert.equal(await repository.getStudy(115), null);
   assert.equal((await repository.getStudy(1))!.words.length, 29);
+  assert.equal((await repository.getStudy(3))!.words.length, 3481);
 });

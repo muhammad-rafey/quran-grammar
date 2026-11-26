@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-26T10:35:48",
+ "generatedAt": "2026-11-26T10:52:02",
  "verifier": "content-pipeline/full-quran/scripts/verify.py (independent of build.py)",
  "ok": true,
  "options": {
@@ -896,16 +896,6 @@
     }
    ]
   },
-  "6 stray '>' in translation (check the source text)": {
-   "count": 1,
-   "examples": [
-    {
-     "ayah": "4:106",
-     "id": "junagarhi",
-     "text": "مانگو! بے شک اللہ تعالیٰ بخشش کرنے واﻻ، مہربانی کرنے واﻻ ہے>"
-    }
-   ]
-  },
   "4 letters != QAC segment forms (source spelling difference)": {
    "count": 3,
    "examples": [
@@ -1024,5 +1014,5 @@
    ]
   }
  },
- "seconds": 3.9
+ "seconds": 3.7
 }

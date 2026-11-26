@@ -109,9 +109,11 @@ export default function WordScreen() {
           >
             {quranText(word, type.quranFont)}
           </Text>
-          <Paragraph style={{ ...type.urduText(22, 38), textAlign: 'center' }}>
-            {word.meaningUrdu}
-          </Paragraph>
+          {word.meaningUrdu ? (
+            <Paragraph style={{ ...type.urduText(22, 38), textAlign: 'center' }}>
+              {word.meaningUrdu}
+            </Paragraph>
+          ) : null}
           <View
             style={{
               paddingHorizontal: 14,

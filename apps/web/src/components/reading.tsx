@@ -140,7 +140,9 @@ export function Reading({
                   <span className="arabic" lang="ar">
                     {quranText(word, quranFont)}
                   </span>
-                  {meanings && <span className="word-meaning">{word.meaningUrdu}</span>}
+                  {meanings && word.meaningUrdu && (
+                    <span className="word-meaning">{word.meaningUrdu}</span>
+                  )}
                   <span className="word-kind">
                     <i aria-hidden="true" />
                     {label(word)}
