@@ -13,6 +13,14 @@ already-reviewed Buckwalter table and POS helper from content-pipeline/scripts/q
 Sources: content-pipeline/full-quran/sources/ (fetch.py), content-pipeline/qac/qac04-lfs.txt,
 content-pipeline/full-quran/scope.json.
 
+Grammar layer (owner decision 2026-11-26): words/<surah>/*.json and phrases/<surah>/*.json under
+--layer (default content-pipeline/full-quran) are the authored words and ayahs; the root and
+verb-paradigm libraries are the roots/ and lexemes/ files of the --libs directories (later
+directories win). Rule 8 checks that authored words carry exactly their authored notes, that every
+other unpublished word carries none, and that unpublished roots/paradigms equal their library entry
+(or stay empty without one); rule 10 does the same for phrase cards. Meanings, translations and
+Arabic (rules 3-7) never come from the grammar layer.
+
 Prints a human summary; with --write also writes full-quran/inventory/verification.json.
 Exit code 1 on any failure. With --allow-incomplete-sources, chapters whose QAC word-by-word file
 is missing or incomplete are reported as "source incomplete" and their Corpus-i'rab checks are
@@ -41,6 +49,10 @@ PAUSE_CHARS = {chr(c) for c in range(0x06D6, 0x06DD)} | {'۩'}
 FORBIDDEN_KEYS = {'translationUrdu', 'themeUrdu', 'tafsirUrdu'}
 AYAH_KEYS = ('number', 'translations', 'phrases')
 TATWEEL = 'ـ'
+LATIN = re.compile(r'[A-Za-z]|https?:')
+PARADIGM_FIELDS = ('baabUrdu', 'formUrdu', 'past', 'present', 'pattern', 'noteUrdu')
+DEFAULT_LIBS = [os.path.join(PIPE, 'libs'), os.path.join(PIPE, 'edition-2', 'libs'),
+                os.path.join(PIPE, 'edition-3', 'libs'), os.path.join(FQ, 'libs')]
 BIDI = {'\u200e', '\u200f', '\u061c'}  # LRM/RLM/ALM: seen glued to a sajdah sign (27:26:8 '۩\u200f')
 
 
@@ -240,6 +252,51 @@ def load_translation(path, keys, rep, rid):
     return texts, mode
 
 
+# ---------------------------------------------------------------- grammar layer
+def _json_files(directory):
+    if not os.path.isdir(directory):
+        return []
+    return [os.path.join(directory, n) for n in sorted(os.listdir(directory)) if n.endswith('.json')]
+
+
+def load_layer(layer_dir, rep):
+    """-> (word id -> authored entry, 'surah:ayah' -> authored phrase cards)."""
+    words, phrases = {}, {}
+    for kind, target in (('words', words), ('phrases', phrases)):
+        base = os.path.join(layer_dir, kind)
+        if not os.path.isdir(base):
+            continue
+        for sub in sorted(os.listdir(base)):
+            for path in _json_files(os.path.join(base, sub)):
+                for key, value in load_json(path).items():
+                    if key in target:
+                        rep.fail(f'8 grammar layer: duplicated {kind} entry', key)
+                    target[key] = value
+    return words, phrases
+
+
+def load_libraries(dirs):
+    """-> (root -> entry, lexeme key -> entry); later directories and file names win."""
+    roots, lexemes = {}, {}
+    for d in dirs:
+        for path in _json_files(os.path.join(d, 'roots')):
+            for e in load_json(path)['entries']:
+                roots[e['root']] = e
+        for path in _json_files(os.path.join(d, 'lexemes')):
+            for e in load_json(path)['entries']:
+                lexemes[e['key']] = e
+    return roots, lexemes
+
+
+def qac_lexeme_key(segs):
+    """'LEM|form|ACT/PASS' of the verb stem, from the QAC features (e.g. '>anzala|IV|PASS')."""
+    for _s, kind, tag, _form, f in segs:
+        if kind == 'STEM' and tag == 'V':
+            form = next((k[1:-1] for k in f if isinstance(k, str) and re.fullmatch(r'\([IVX]+\)', k)), 'I')
+            return f"{f.get('LEM')}|{form}|{'PASS' if f.get('PASS') else 'ACT'}"
+    return None
+
+
 # ---------------------------------------------------------------- chapter checks
 def walk_keys(value, path, found):
     if isinstance(value, dict):
@@ -301,6 +358,9 @@ def verify_chapter(s, lesson, ctx, rep, stats):
     def published(a):
         return published_chapter or (s == pilot['surah'] and a <= pilot['aiLayerThroughAyah'])
 
+    layer_words, layer_phrases = ctx['layer_words'], ctx['layer_phrases']
+    lib_roots, lib_lexemes = ctx['lib_roots'], ctx['lib_lexemes']
+    authored_word_ayahs = {int(k.split(':')[1]) for k in layer_words if k.split(':')[0] == str(s)}
     n_ayahs = chapters[s]['verses_count']
     cs = stats.setdefault(s, OrderedDict(published='published' if published_chapter else (
         'partial' if s == pilot['surah'] else 'source-only')))
@@ -458,17 +518,49 @@ def verify_chapter(s, lesson, ctx, rep, stats):
             if rid not in rule_ids:
                 rep.fail('9 ruleId not in chapter rules', {'id': wid, 'ruleId': rid})
 
-        # --- rule 8: source-only words
+        # --- rule 8: unpublished words (grammar layer or source-only)
+        authored = layer_words.get(wid)
+        if pub and authored is not None:
+            if published_chapter:
+                rep.fail('8 grammar layer entry for a published word', wid)
+            else:
+                # words/2/a01-10.json … a17-20.json: the 2:1-20 pilot's own authoring records,
+                # already part of the published lesson; the build does not re-apply them.
+                stats['_totals']['pilotProvenanceEntries'] += 1
         if pub or segs is None:
             continue
-        stats['_totals']['sourceOnlyWords'] += 1
-        if w.get('dictionaryUrdu', None) != '':
-            rep.fail('8 source-only dictionaryUrdu not empty (AI text)', {'id': wid, 'value': w.get('dictionaryUrdu')})
+        stats['_totals']['unpublishedWords'] += 1
         seg_list = w.get('segments') or []
-        for seg in seg_list:
-            if seg.get('meaningUrdu', None) != '':
-                rep.fail('8 source-only segment meaningUrdu not empty (AI text)',
-                         {'id': wid, 'segment': seg.get('arabic'), 'value': seg.get('meaningUrdu')})
+        if authored is None:
+            stats['_totals']['sourceOnlyWords'] += 1
+            if w.get('dictionaryUrdu', None) != '':
+                rep.fail('8 source-only dictionaryUrdu not empty (AI text)', {'id': wid, 'value': w.get('dictionaryUrdu')})
+            for seg in seg_list:
+                if seg.get('meaningUrdu', None) != '':
+                    rep.fail('8 source-only segment meaningUrdu not empty (AI text)',
+                             {'id': wid, 'segment': seg.get('arabic'), 'value': seg.get('meaningUrdu')})
+        else:
+            stats['_totals']['grammarLayerWords'] += 1
+            if authored.get('arabic') != arabic:
+                rep.fail('8 grammar layer entry Arabic != word Arabic',
+                         {'id': wid, 'entry': authored.get('arabic'), 'arabic': arabic})
+            note = w.get('dictionaryUrdu')
+            if not isinstance(note, str) or not note.strip():
+                rep.fail('8 grammar-layer dictionaryUrdu empty', wid)
+            elif note != (authored.get('dictionaryUrdu') or '').strip():
+                rep.fail('8 dictionaryUrdu != authored grammar entry', {'id': wid, 'built': note[:80]})
+            glosses = [x.strip() if isinstance(x, str) else x for x in authored.get('segmentMeaningsUrdu') or []]
+            built = [seg.get('meaningUrdu') for seg in seg_list]
+            if any(not isinstance(x, str) or not x.strip() for x in built):
+                rep.fail('8 grammar-layer segment meaningUrdu empty', {'id': wid, 'segments': built})
+            elif built != glosses:
+                rep.fail('8 segment glosses != authored grammar entry', {'id': wid, 'built': built, 'authored': glosses})
+            texts = [note if isinstance(note, str) else ''] + [b for b in built if isinstance(b, str)]
+            if any(LATIN.search(x) for x in texts):
+                rep.fail('8 Latin text or URL in a grammar-layer word', wid)
+            missing_rules = [r for r in authored.get('addRuleIds') or [] if r not in (w.get('ruleIds') or [])]
+            if missing_rules:
+                rep.fail('8 authored addRuleIds missing from ruleIds', {'id': wid, 'missing': missing_rules})
         # Segments written only as a small waw/yeh (ۥ ۦ) or not at all have no letters of their own.
         written = [x for x in segs if letters(bw2ar(x[3])).replace('ۥ', '').replace('ۦ', '')]
         if len(seg_list) != len(segs):
@@ -521,7 +613,14 @@ def verify_chapter(s, lesson, ctx, rep, stats):
         main = next((x for x in stems(segs) if x[2] in ('V', 'N', 'PN', 'ADJ', 'IMPN')), (stems(segs) or [None])[0])
         lem = main[4].get('LEM') if main else None
         exp_lemma = bw2ar(lem) if isinstance(lem, str) else None
-        if w.get('lemma') != exp_lemma:
+        lex_key = qac_lexeme_key(segs) if 'V' in stem_tags else None
+        paradigm = lib_lexemes.get(lex_key) if lex_key else None
+        if authored is not None and paradigm is not None:
+            # A grammar-layer verb is listed under its paradigm's past form (as in published lessons).
+            if w.get('lemma') != paradigm.get('past'):
+                rep.fail('8 grammar-layer verb lemma != library paradigm past',
+                         {'id': wid, 'built': w.get('lemma'), 'expected': paradigm.get('past'), 'key': lex_key})
+        elif w.get('lemma') != exp_lemma:
             norm = (re.sub('[ًٌٍ]+$', '', exp_lemma) if exp_lemma else exp_lemma)
             if norm and len(norm) > 1 and norm[1] == 'ّ':
                 norm = norm[0] + norm[2:]
@@ -535,6 +634,12 @@ def verify_chapter(s, lesson, ctx, rep, stats):
             exp_past = qac_verb_lemma(segs)
             if vf is None:
                 rep.fail('8 verb word without verbForms entry', wid)
+            elif paradigm is not None:
+                stats['_totals']['libraryVerbParadigms'] += 1
+                diff = [f for f in PARADIGM_FIELDS if vf.get(f) != paradigm.get(f)]
+                if diff or set(vf) - set(PARADIGM_FIELDS):
+                    rep.fail('8 verbForms != library paradigm',
+                             {'id': wid, 'key': lex_key, 'fields': diff or sorted(set(vf) - set(PARADIGM_FIELDS))})
             else:
                 if vf.get('past') != exp_past:
                     norm = exp_past
@@ -550,6 +655,12 @@ def verify_chapter(s, lesson, ctx, rep, stats):
                         rep.fail(f'8 source-only verbForms.{field} not empty (no source)',
                                  {'id': wid, 'value': vf.get(field)})
 
+    for k in sorted(k for k in layer_words if k.split(':')[0] == str(s) and k not in word_by_id):
+        rep.fail('8 grammar layer entry for an unknown word id', k)
+    for k in sorted(k for k in layer_phrases if k.split(':')[0] == str(s)
+                    and not (k.split(':')[1].isdigit() and 1 <= int(k.split(':')[1]) <= n_ayahs)):
+        rep.fail('10 grammar layer phrase cards for an unknown ayah', k)
+
     # --- rule 9: referential integrity
     for r in sorted(set(used_roots) - set(roots)):
         rep.fail('9 root used by a word but missing from roots', {'surah': s, 'root': r})
@@ -559,11 +670,19 @@ def verify_chapter(s, lesson, ctx, rep, stats):
         rep.fail('9 verbForms key is not a verb word', {'surah': s, 'id': k})
     for k in sorted(verb_word_ids - set(verb_forms)):
         rep.fail('9 verb word missing from verbForms', {'surah': s, 'id': k})
-    # source-only roots carry no meaning text
+    # unpublished roots: the library card, or empty when no library has the root
     for r, entry in roots.items():
-        source_only_root = not published_chapter and r not in published_roots
-        if source_only_root and ((entry or {}).get('meaningUrdu') or (entry or {}).get('noteUrdu')):
-            rep.fail('8 source-only roots entry has meaningUrdu/noteUrdu (AI text)', {'surah': s, 'root': r})
+        if published_chapter or r in published_roots:
+            continue
+        lib = lib_roots.get(r)
+        got = ((entry or {}).get('meaningUrdu'), (entry or {}).get('noteUrdu'))
+        if lib is None:
+            if got[0] or got[1]:
+                rep.fail('8 source-only roots entry has meaningUrdu/noteUrdu (AI text)', {'surah': s, 'root': r})
+        else:
+            stats['_totals']['libraryRoots'] += 1
+            if got != (lib.get('meaningUrdu'), lib.get('noteUrdu')):
+                rep.fail('8 roots entry != library root card', {'surah': s, 'root': r})
 
     # --- rules 6, 7, 10: ayahs
     tids = ctx['translation_ids']
@@ -578,8 +697,34 @@ def verify_chapter(s, lesson, ctx, rep, stats):
             rep.fail('10 ayah phrases missing/not a list', f'{s}:{n}')
             phrases = []
         phrases_total += len(phrases)
-        if phrases and isinstance(n, int) and not published(n):
-            rep.fail('10 source-only ayah has phrases (AI grammar cards)', {'ayah': f'{s}:{n}', 'count': len(phrases)})
+        authored_cards = layer_phrases.get(f'{s}:{n}')
+        if isinstance(n, int) and published(n):
+            if authored_cards is not None:
+                rep.fail('10 grammar layer phrase cards for a published ayah', f'{s}:{n}')
+        elif isinstance(n, int) and authored_cards is None:
+            if phrases:
+                rep.fail('10 source-only ayah has phrases (AI grammar cards)', {'ayah': f'{s}:{n}', 'count': len(phrases)})
+            if n in authored_word_ayahs:
+                rep.warn('10 ayah has grammar-layer words but no phrase cards', f'{s}:{n}')
+        elif isinstance(n, int):
+            stats['_totals']['grammarLayerAyahs'] += 1
+            stats['_totals']['grammarLayerPhrases'] += len(phrases)
+            expected = [OrderedDict(id=f'{s}:{n}:phrase:{i}', wordIds=list(c.get('wordIds') or []),
+                                    labelUrdu=(c.get('labelUrdu') or '').strip(),
+                                    explanationUrdu=(c.get('explanationUrdu') or '').strip())
+                        for i, c in enumerate(authored_cards, start=1)]
+            if not phrases:
+                rep.fail('10 grammar-layer ayah has no phrase cards', f'{s}:{n}')
+            elif [dict(p) for p in phrases] != [dict(p) for p in expected]:
+                rep.fail('10 phrase cards != authored grammar layer', f'{s}:{n}')
+            for p in phrases:
+                ids = p.get('wordIds') or []
+                if not ids or any(not isinstance(x, str) or x.split(':')[:2] != [str(s), str(n)] for x in ids):
+                    rep.fail('10 grammar-layer phrase card word ids not from its ayah', {'phrase': p.get('id'), 'wordIds': ids})
+                if not (p.get('labelUrdu') or '').strip() or not (p.get('explanationUrdu') or '').strip():
+                    rep.fail('10 grammar-layer phrase card label/explanation empty', p.get('id'))
+                if LATIN.search((p.get('labelUrdu') or '') + (p.get('explanationUrdu') or '')):
+                    rep.fail('10 Latin text or URL in a grammar-layer phrase card', p.get('id'))
         for p in phrases:
             for pw in p.get('wordIds') or []:
                 if pw not in word_by_id:
@@ -647,6 +792,9 @@ def run(argv=None, quiet=False):
     ap.add_argument('--sources', default=os.path.join(FQ, 'sources'))
     ap.add_argument('--qac', default=os.path.join(PIPE, 'qac', 'qac04-lfs.txt'))
     ap.add_argument('--scope', default=os.path.join(FQ, 'scope.json'))
+    ap.add_argument('--layer', default=FQ, help='directory holding the grammar layer words/ and phrases/')
+    ap.add_argument('--libs', default=','.join(DEFAULT_LIBS),
+                    help='comma-separated library directories (roots/, lexemes/), later wins')
     ap.add_argument('--write', action='store_true', help='write inventory/verification.json')
     ap.add_argument('--out', default=os.path.join(FQ, 'inventory', 'verification.json'))
     ap.add_argument('--allow-incomplete-sources', action='store_true')
@@ -740,7 +888,10 @@ def run(argv=None, quiet=False):
         else:
             rep.fail(cls, f'{s}: ' + '; '.join(why))
 
+    layer_words, layer_phrases = load_layer(args.layer, rep)
+    lib_roots, lib_lexemes = load_libraries([d for d in args.libs.split(',') if d])
     ctx = dict(scope=scope, chapters=chapters, qac=qac, qac_ayah=qac_ayah, verses=verses, wbw=wbw,
+               layer_words=layer_words, layer_phrases=layer_phrases, lib_roots=lib_roots, lib_lexemes=lib_lexemes,
                wbw_complete=wbw_complete, existing=set(scope['existingLessons']),
                translation_ids=translation_ids, translation_by_id={t['id']: t for t in scope['translations']},
                translation_src=translation_src, translation_clean=translation_clean,
@@ -781,7 +932,11 @@ def run(argv=None, quiet=False):
         verifier='content-pipeline/full-quran/scripts/verify.py (independent of build.py)',
         ok=not failed,
         options=OrderedDict(surahs='all' if full else surahs, lessons=os.path.relpath(args.lessons, REPO),
-                            allowIncompleteSources=args.allow_incomplete_sources),
+                            allowIncompleteSources=args.allow_incomplete_sources,
+                            layer=os.path.relpath(args.layer, REPO),
+                            libs=[os.path.relpath(d, REPO) for d in args.libs.split(',') if d]),
+        grammarLayer=OrderedDict(authoredWordEntries=len(layer_words), authoredPhraseAyahs=len(layer_phrases),
+                                 libraryRoots=len(lib_roots), libraryLexemes=len(lib_lexemes)),
         sources=OrderedDict(qacDistinctWords=qac_total, expectedWordsInScope=exp_words,
                             expectedAyahsInScope=exp_ayahs, translationKeyMode=src_mode,
                             excludedResourcesCompared=excluded_seen,
@@ -800,6 +955,10 @@ def run(argv=None, quiet=False):
           f'(expected {exp_words} / {exp_ayahs}; QAC 0.4 distinct words {qac_total}) '
           f'in {report["seconds"]}s', file=out)
     print('translation sources: ' + ', '.join(f'{k}={v}' for k, v in src_mode.items()), file=out)
+    print(f'grammar layer: {totals["grammarLayerWords"]} authored words, {totals["grammarLayerAyahs"]} ayahs with '
+          f'{totals["grammarLayerPhrases"]} phrase cards, {totals["libraryRoots"]} library root cards, '
+          f'{totals["libraryVerbParadigms"]} library verb paradigms; {totals["sourceOnlyWords"]} source-only words',
+          file=out)
     if incomplete:
         print(f'source incomplete ({"allowed" if args.allow_incomplete_sources else "FAIL"}): '
               + ', '.join(f'{k} ({"; ".join(v)})' for k, v in list(incomplete.items())[:12])

@@ -258,7 +258,7 @@ function WordDetail({
               >
                 {word.root}
               </Text>
-              {/* Source-only chapters may have no root meaning or note; empty fields are hidden. */}
+              {/* A root without a library card has no meaning or note; empty fields are hidden. */}
               {root.meaningUrdu ? <Paragraph>{root.meaningUrdu}</Paragraph> : null}
               {root.noteUrdu ? <Paragraph muted>{root.noteUrdu}</Paragraph> : null}
             </>

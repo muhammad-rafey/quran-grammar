@@ -25,8 +25,8 @@ record the method, commands and verification.
   corpus.quran.com word-by-word pages (`syntaxUrdu`, verbatim). Rule ids and verb form/pattern
   come from deterministic tag mappings; rule card titles and explanations from the shared rule
   library `content-pipeline/libs/rules.json`.
-- **Fields no source provides** — segment glosses, dictionary notes, root meanings, verb paradigm
-  present form and notes — are empty strings in source-only words; web and mobile hide them.
+- **Grammar layer (AI-authored, owner decision later on 2026-11-26)** — see the next section.
+  Fields with neither a source nor an authored entry are empty strings; web and mobile hide them.
 - **Ayah translations (no tafsir):** six Quran.com Urdu translations, all offered through a
   Settings switcher; the first is the default: 234 Fateh Muhammad Jalandhari, 54 Muhammad
   Junagarhi, 151 Shaykh al-Hind Mahmud al-Hasan, 158 Dr. Israr Ahmad (Bayan-ul-Quran), 97 Syed
@@ -41,12 +41,29 @@ About credits Quran.com alongside the required Corpus credit and link. The copyr
 permission status of these translations and of the Urdu word-by-word data is **not recorded**;
 no license or permission is claimed. See [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
 
+**AI-authored grammar layer for every chapter (owner decision 2026-11-26).** The owner then
+decided that every chapter gets the same grammar analysis as the published lessons. It is
+written with AI assistance, in Urdu, in waves (`content-pipeline/full-quran/GRAMMAR-GUIDE.md`):
+per word a segment gloss for each Corpus segment, a short dictionary note and extra grammar
+rule ids (`full-quran/words/<surah>/*.json`); per ayah phrase cards
+(`full-quran/phrases/<surah>/*.json`); and root and verb-paradigm library cards
+(`full-quran/libs/roots/`, `full-quran/libs/lexemes/`), which apply to every unpublished word with
+that root or lexeme in every chapter. Wave 1 (2026-11-26) authored Al-Baqarah 2:21–286 and Al Imran
+(9,367 words, 466 ayahs, 2,019 phrase cards) and completed the libraries (596 roots, 840 verb
+paradigms), so root and paradigm cards now appear across all chapters. **Word meanings and the
+six ayah translations are never AI-written; they stay Quran.com's** (an empty Quran.com meaning
+stays empty), as do the Arabic text, word IDs and the Corpus grammar. `full-quran/scripts/verify.py`
+checks that each unpublished word carries exactly its authored entry or nothing, and that roots,
+paradigms and phrase cards equal their library or authored records. The grammar layer is a
+teaching draft: **scholarly review is pending** and it is not scholarly approved.
+`inventory/sources.json` → `grammarLayer` lists the authored words and ayahs per chapter.
+
 **Previously published chapters.** The 43 published lessons (1, 2:1–20, 4, 7, 18, 22, 23, 25,
 29, 32, 36, 55, 56, 85–114) keep their published grammar layer: morphology, i‘rab text,
 dictionary notes, phrase cards, roots, paradigms and rule cards. Their word meanings were
 replaced by the Quran.com Urdu word-by-word meanings, and their AI ayah translation, theme and
-tafsir were deleted. Al-Baqarah 2:1–20 keeps the pilot grammar layer; 2:21–286 are source-only.
-The sections below describe how that retained layer was authored; its AI-assisted Urdu
+tafsir were deleted. Al-Baqarah 2:1–20 keeps the pilot grammar layer; 2:21–286 take the
+full-Quran grammar layer above. The sections below describe how that retained layer was authored; its AI-assisted Urdu
 explanations remain teaching drafts.
 
 **Storage.** Lessons are JSON in `packages/core/data/lessons/surah-1.json` … `surah-114.json`

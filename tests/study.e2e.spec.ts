@@ -6,6 +6,21 @@ import type { StudyData } from '../packages/core/src/types';
 const lesson = (surah: number): StudyData =>
   JSON.parse(readFileSync(new URL(`../packages/core/data/lessons/surah-${surah}.json`, import.meta.url), 'utf8'));
 
+/** Pipeline records: the scope and the grammar-layer summary written by build.py. */
+const pipelineFile = (path: string) =>
+  JSON.parse(readFileSync(new URL(`../content-pipeline/full-quran/${path}`, import.meta.url), 'utf8'));
+const scope = pipelineFile('scope.json') as { existingLessons: number[]; partialPilot: { surah: number } };
+const grammarChapters = pipelineFile('inventory/sources.json').grammarLayer.chapters as Record<string, unknown>;
+/** The first chapter neither published nor touched by the grammar layer (null once all are authored). */
+const plainChapter =
+  Array.from({ length: 114 }, (_, index) => index + 1).find(
+    (n) => !scope.existingLessons.includes(n) && n !== scope.partialPilot.surah && !(String(n) in grammarChapters),
+  ) ?? null;
+/** A chapter with authored grammar notes beyond the Al-Baqarah pilot (Al Imran in wave 1). */
+const authoredChapter = Number(
+  Object.keys(grammarChapters).find((n) => Number(n) !== scope.partialPilot.surah) ?? scope.partialPilot.surah,
+);
+
 const word = (page: Page, id: string) => page.locator(`[data-word-id="${id}"]`);
 const detail = (page: Page) => page.locator('.word-detail, .word-sheet[open]');
 const withoutMarks = (text: string | null) => (text || '').replace(/[\u064b-\u065f\u0670]/g, '');
@@ -1434,46 +1449,78 @@ test('the Settings translation switcher changes every ayah translation and persi
   await expect(page.locator('.ayah-translation')).toHaveText(ofEdition(fatihah, 'jalandhari'));
 });
 
-test('a source-only chapter word panel hides the empty dictionary, root-meaning and paradigm fields', async ({
+test('a chapter without authored notes shows library root and paradigm cards, no dictionary note or glosses', async ({
   page,
 }) => {
-  const imran = lesson(3);
+  test.skip(plainChapter === null, 'every chapter has authored grammar notes');
+  const study = lesson(plainChapter!);
   const panel = detail(page);
   const open = async (id: string) => {
     await page.goto(`/#word=${encodeURIComponent(id)}`);
-    await expect(page.locator('.quran-word')).toHaveCount(imran.words.length, { timeout: 20_000 });
+    await expect(page.locator('.quran-word')).toHaveCount(study.words.length, { timeout: 20_000 });
     await expect(word(page, id)).toHaveAttribute('aria-pressed', 'true');
-    await expect(panel.locator('#detail-title')).toHaveText(imran.words.find((entry) => entry.id === id)!.arabic);
+    await expect(panel.locator('#detail-title')).toHaveText(study.words.find((entry) => entry.id === id)!.arabic);
   };
-  // Al Imran is source-only: Corpus grammar and Quran.com meanings, no AI-written fields.
-  await open('3:4:9');
-  const verb = imran.words.find((entry) => entry.id === '3:4:9')!;
+  // Corpus grammar, Quran.com meaning and the shared library cards; no AI-written word note.
+  const verb = study.words.find(
+    (entry) => entry.pos === 'verb' && entry.root && study.verbForms[entry.id]?.present && entry.ayah > 1,
+  )!;
+  const paradigm = study.verbForms[verb.id];
+  expect(verb.dictionaryUrdu).toBe('');
+  await open(verb.id);
   await expect(panel.locator('.detail-translation')).toHaveText(verb.meaningUrdu);
-  await expect(panel.locator('.root-pair')).toContainText('ك ف ر');
-  await expect(panel.locator('.root-meaning')).toHaveCount(0);
-  await expect(panel.getByRole('heading', { name: 'Root meaning' })).toHaveCount(0);
+  await expect(panel.locator('.root-pair')).toContainText(verb.root!);
+  await expect(panel.locator('.root-meaning p').first()).toHaveText(study.roots[verb.root!].meaningUrdu);
   await expect(panel.getByRole('heading', { name: 'Dictionary meaning' })).toHaveCount(0);
   await expect(panel.getByText(verb.morphologyUrdu, { exact: true })).toBeVisible();
   await expect(panel.getByText(verb.syntaxUrdu, { exact: true })).toBeVisible();
-  // Form I: the Corpus gives no vowel class, so no باب, present form, pattern or note.
-  await expect(panel.locator('.verb-section')).toBeVisible();
-  await expect(panel.locator('.baab-title')).toHaveCount(0);
-  await expect(panel.locator('.verb-paradigm dd')).toHaveText([imran.verbForms['3:4:9'].past]);
-  await expect(panel.locator('.verb-section > p')).toHaveText([imran.verbForms['3:4:9'].formUrdu]);
+  await expect(panel.locator('.baab-title')).toHaveText(paradigm.baabUrdu);
+  await expect(panel.locator('.verb-paradigm dd')).toHaveText([paradigm.past, paradigm.present, paradigm.pattern]);
   // A segment shows its role only, with no dangling separator for the missing gloss.
   await panel.locator('[data-segment="0"]').click();
-  await expect(panel.locator('.segment-explanation')).toHaveText('فعلِ ماضی');
-  // A derived form keeps its باب and pattern but no present form or note.
-  await open('3:3:1');
-  const derived = imran.verbForms['3:3:1'];
-  expect(derived.formUrdu).toContain('(II)');
-  expect([derived.present, derived.noteUrdu]).toEqual(['', '']);
-  await expect(panel.locator('.baab-title')).toHaveText(derived.baabUrdu);
-  await expect(panel.locator('.verb-paradigm dd')).toHaveText([derived.past, derived.pattern]);
-  await expect(panel.locator('.verb-paradigm')).not.toContainText('Present');
-  await expect(panel.getByRole('heading', { name: 'Dictionary meaning' })).toHaveCount(0);
+  await expect(panel.locator('.segment-explanation')).toHaveText(verb.segments[0]!.roleUrdu);
   await expectNoOverflow(page);
-  // Published lessons still show the sections the source-only chapter hides.
+  // Empty root and paradigm fields (a root or lexeme without a library card) are hidden too.
+  const blank: StudyData = JSON.parse(JSON.stringify(study));
+  blank.roots[verb.root!] = { meaningUrdu: '', noteUrdu: '' };
+  blank.verbForms[verb.id] = { ...paradigm, baabUrdu: '', present: '', pattern: '', noteUrdu: '' };
+  await page.route(`**/api/v1/surahs/${plainChapter}`, (route) => route.fulfill({ json: blank }));
+  await page.goto('about:blank');
+  await open(verb.id);
+  await expect(panel.locator('.root-meaning')).toHaveCount(0);
+  await expect(panel.getByRole('heading', { name: 'Root meaning' })).toHaveCount(0);
+  await expect(panel.locator('.verb-section')).toBeVisible();
+  await expect(panel.locator('.baab-title')).toHaveCount(0);
+  await expect(panel.locator('.verb-paradigm dd')).toHaveText([paradigm.past]);
+  await expect(panel.locator('.verb-section > p')).toHaveText([paradigm.formUrdu]);
+  await expect(panel.locator('.verb-paradigm')).not.toContainText('Present');
+});
+
+test('an authored chapter word panel shows its grammar note, segment glosses and library cards', async ({
+  page,
+}) => {
+  const study = lesson(authoredChapter);
+  const panel = detail(page);
+  const verb = study.words.find(
+    (entry) => entry.pos === 'verb' && entry.dictionaryUrdu && entry.root && study.verbForms[entry.id]?.present,
+  )!;
+  const paradigm = study.verbForms[verb.id];
+  await page.goto(`/#word=${encodeURIComponent(verb.id)}`);
+  await expect(page.locator('.quran-word')).toHaveCount(study.words.length, { timeout: 20_000 });
+  await expect(word(page, verb.id)).toHaveAttribute('aria-pressed', 'true');
+  await expect(panel.locator('#detail-title')).toHaveText(verb.arabic);
+  // The word meaning stays Quran.com's; the grammar layer adds the note and the glosses.
+  await expect(panel.locator('.detail-translation')).toHaveText(verb.meaningUrdu);
+  await expect(panel.getByRole('heading', { name: 'Dictionary meaning' })).toBeVisible();
+  await expect(panel.getByText(verb.dictionaryUrdu, { exact: true })).toBeVisible();
+  await expect(panel.locator('.root-meaning p').first()).toHaveText(study.roots[verb.root!].meaningUrdu);
+  await expect(panel.locator('.baab-title')).toHaveText(paradigm.baabUrdu);
+  await expect(panel.locator('.verb-paradigm dd')).toHaveText([paradigm.past, paradigm.present, paradigm.pattern]);
+  await panel.locator('[data-segment="0"]').click();
+  const segment = verb.segments[0]!;
+  await expect(panel.locator('.segment-explanation')).toHaveText(`${segment.roleUrdu}: ${segment.meaningUrdu}`);
+  await expectNoOverflow(page);
+  // Published lessons keep their own sections.
   await page.goto('/#word=1%3A5%3A4');
   await expect(word(page, '1:5:4')).toHaveAttribute('aria-pressed', 'true');
   await expect(panel.locator('.root-meaning p').first()).toHaveText(lesson(1).roots['ع و ن'].meaningUrdu);
@@ -1481,7 +1528,7 @@ test('a source-only chapter word panel hides the empty dictionary, root-meaning 
   await expect(panel.locator('.verb-paradigm dd')).toHaveCount(3);
 });
 
-test('Al-Baqarah opens complete: 286 ayahs, the pilot grammar layer through 2:20 and source-only after', async ({
+test('Al-Baqarah opens complete: 286 ayahs, the pilot grammar layer through 2:20 and the full-Quran layer after', async ({
   page,
 }) => {
   test.setTimeout(60_000);
@@ -1499,9 +1546,12 @@ test('Al-Baqarah opens complete: 286 ayahs, the pilot grammar layer through 2:20
   await page.evaluate(() => {
     location.hash = 'word=2%3A21%3A1';
   });
+  const next = baqarah.words.find((entry) => entry.id === '2:21:1')!;
   await expect(word(page, '2:21:1')).toHaveAttribute('aria-pressed', 'true');
-  await expect(panel.locator('#detail-title')).toHaveText(baqarah.words.find((entry) => entry.id === '2:21:1')!.arabic);
-  await expect(panel.getByRole('heading', { name: 'Dictionary meaning' })).toHaveCount(0);
+  await expect(panel.locator('#detail-title')).toHaveText(next.arabic);
+  // 2:21 onward: the full-Quran grammar layer where it is authored, otherwise no note.
+  if (next.dictionaryUrdu) await expect(panel.getByText(next.dictionaryUrdu, { exact: true })).toBeVisible();
+  else await expect(panel.getByRole('heading', { name: 'Dictionary meaning' })).toHaveCount(0);
   await chooseAyah(page, '286');
   await expect(page.locator('#ayah-286')).toBeInViewport();
   await expect(page.locator('.collection-trigger')).toContainText('Al-Baqarah');

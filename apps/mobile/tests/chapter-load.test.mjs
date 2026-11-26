@@ -47,9 +47,10 @@ test('Al-Baqarah loads in few statements, few rows and without temporary sorts',
   const rows = statements.reduce((sum, statement) => sum + statement.rows, 0);
   t.diagnostic(`${statements.length} statements, ${rows} rows, ${elapsed.toFixed(1)} ms`);
   assert.ok(statements.length <= 8, `${statements.length} statements`);
-  // One row per word and per ayah plus verbs, roots and rules; segments, rule ids and
-  // translations are folded into their word / ayah rows (~35,000 rows before).
-  assert.ok(rows < 9000, `${rows} rows`);
+  // One row per word, ayah, verb, root, rule and phrase card; segments, rule ids, translations
+  // and phrase word ids are folded into their rows (~41,000 rows unfolded; ~9,800 with the
+  // grammar layer's 1,179 Al-Baqarah phrase cards).
+  assert.ok(rows < 11000, `${rows} rows`);
 
   for (const { sql, params } of statements) {
     const plan = db

@@ -124,7 +124,7 @@ export function WordDetail({
               </strong>
             </div>
           </div>
-          {/* Source-only chapters have no root meaning; the card is hidden then. */}
+          {/* A root without a library card has no meaning or note; the card is hidden then. */}
           {root && (root.meaningUrdu || root.noteUrdu) ? (
             <div className="root-meaning">
               <h3 className="ui" dir={uiDirection} lang={language}>

@@ -1,11 +1,24 @@
 {
- "generatedAt": "2026-11-26T15:43:40",
+ "generatedAt": "2026-11-26T18:44:34",
  "verifier": "content-pipeline/full-quran/scripts/verify.py (independent of build.py)",
  "ok": true,
  "options": {
   "surahs": "all",
   "lessons": "packages/core/data/lessons",
-  "allowIncompleteSources": false
+  "allowIncompleteSources": false,
+  "layer": "content-pipeline/full-quran",
+  "libs": [
+   "content-pipeline/libs",
+   "content-pipeline/edition-2/libs",
+   "content-pipeline/edition-3/libs",
+   "content-pipeline/full-quran/libs"
+  ]
+ },
+ "grammarLayer": {
+  "authoredWordEntries": 9597,
+  "authoredPhraseAyahs": 466,
+  "libraryRoots": 1630,
+  "libraryLexemes": 1693
  },
  "sources": {
   "qacDistinctWords": 77429,
@@ -24,10 +37,17 @@
  },
  "totals": {
   "ayahs": 6236,
+  "grammarLayerAyahs": 466,
+  "grammarLayerPhrases": 2019,
+  "grammarLayerWords": 9367,
+  "libraryRoots": 13706,
+  "libraryVerbParadigms": 15172,
   "pauseOrHizbMarkRemoved": 4576,
-  "sourceOnlyWords": 61141,
+  "pilotProvenanceEntries": 230,
+  "sourceOnlyWords": 51774,
   "translations.exact": 37322,
   "translations.marker-space": 94,
+  "unpublishedWords": 61141,
   "words": 77429
  },
  "lessonsChecked": 114,
@@ -42,14 +62,14 @@
    "published": "partial",
    "ayahs": 286,
    "words": 6116,
-   "phrases": 0,
+   "phrases": 1179,
    "pilotPhrases": 0
   },
   "3": {
    "published": "source-only",
    "ayahs": 200,
    "words": 3481,
-   "phrases": 0
+   "phrases": 840
   },
   "4": {
    "published": "published",
@@ -721,7 +741,7 @@
  "failures": {},
  "warnings": {
   "8 lemma differs from QAC LEM only by tanween/shadda normalisation": {
-   "count": 1903,
+   "count": 1855,
    "examples": [
     {
      "id": "2:21:2",
@@ -748,16 +768,6 @@
      "built": "مِيثَٰق",
      "qac": "مِّيثَٰق"
     }
-   ]
-  },
-  "8 verbForms.past differs from QAC lemma only by assimilation shadda": {
-   "count": 284,
-   "examples": [
-    "2:50:10",
-    "2:55:14",
-    "2:104:8",
-    "2:113:3",
-    "2:113:9"
    ]
   },
   "8 elided Corpus segment merged into the previous segment": {
@@ -1014,5 +1024,5 @@
    ]
   }
  },
- "seconds": 3.9
+ "seconds": 4.4
 }

@@ -80,8 +80,9 @@ test('content checksum changes when topics or questions change', () => {
 /** Compare every repository method against the bundled repository. */
 async function assertSameAsBundled(label: string, repository: typeof bundled) {
   assert.deepEqual(await repository.listSurahs(), await bundled.listSurahs(), label);
-  // Published, mixed (2:1–20 pilot + source-only), source-only and short chapters.
-  for (const surah of [1, 2, 3, 4, 36, 114]) {
+  // Published, mixed (2:1–20 pilot + grammar layer), grammar-layer, library-cards-only (e.g. 5)
+  // and short chapters.
+  for (const surah of [1, 2, 3, 4, 5, 36, 114]) {
     const [actual, expected] = [await repository.getStudy(surah), await bundled.getStudy(surah)];
     assert.equal(JSON.stringify(actual), JSON.stringify(expected), `${label} Surah ${surah}`);
   }
