@@ -10,7 +10,8 @@ import { AppIcon } from '@/components/app-icon';
 import { Action, Label, Paragraph } from '@/components/study-ui';
 import { useInterface } from '@/state/preferences-provider';
 import { parseWordLocation } from '@/state/word-location';
-import { card, colors, lineEndSlack, radius, spacing } from '@/theme/tokens';
+import { cardStyle, lineEndSlack, radius, spacing } from '@/theme/tokens';
+import { themed, useTheme } from '@/theme/theme';
 import { useTypography } from '@/theme/typography';
 
 /**
@@ -34,6 +35,8 @@ export function QuizRunner({
   onWord?: (id: string) => void;
 }) {
   const { ui, count, labelStyle, labelText, controlRow } = useInterface();
+  const { colors } = useTheme();
+  const styles = quizStyles(colors);
   const type = useTypography();
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
@@ -215,13 +218,16 @@ export function QuizRunner({
   );
 }
 
-const styles = {
-  shell: {
-    ...card,
-    backgroundColor: colors.wash,
-    borderColor: colors.edge,
-    borderBottomWidth: 4,
-    gap: spacing.lg,
-  },
-  titleLtr: { fontWeight: '700' },
-} as const;
+const quizStyles = themed(
+  (colors) =>
+    ({
+      shell: {
+        ...cardStyle(colors),
+        backgroundColor: colors.wash,
+        borderColor: colors.edge,
+        borderBottomWidth: 4,
+        gap: spacing.lg,
+      },
+      titleLtr: { fontWeight: '700' },
+    }) as const,
+);

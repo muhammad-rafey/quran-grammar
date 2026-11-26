@@ -5,13 +5,15 @@ import {
   quranText,
   translationEditions,
   translationText,
+  themePreferences,
   type FontRole,
   type ReadingFont,
 } from '@quran-grammar/core';
 import { useInterface } from '@/state/preferences-provider';
 import { useStudy } from '@/state/study-provider';
 import { AboutSection, Action, DataStatus, Label, Section } from '@/components/study-ui';
-import { colors, quranTextStyle, radius, spacing, urduTextStyle } from '@/theme/tokens';
+import { lineEndSlack, quranTextStyle, radius, spacing, urduTextStyle } from '@/theme/tokens';
+import { useTheme } from '@/theme/theme';
 import { isFontReady, loadReadingFont, selectableFonts } from '@/theme/font-loading';
 
 export function Settings() {
@@ -27,6 +29,7 @@ export function Settings() {
     setReadingLayout,
     readingLayoutError,
   } = useInterface();
+  const { colors } = useTheme();
   return (
     <View style={{ gap: 16 }}>
       <Image
@@ -62,7 +65,7 @@ export function Settings() {
                 style={[
                   // Each option in its own script: Latin set in the Urdu font fell back to a serif.
                   item.value === 'en' ? latinLabel : labelStyle,
-                  { textAlign: 'center', color: language === item.value ? '#fff' : colors.primary },
+                  { textAlign: 'center', color: language === item.value ? colors.onPrimary : colors.primary },
                 ]}
               >
                 {item.label}
@@ -82,6 +85,7 @@ export function Settings() {
           </View>
         )}
       </Section>
+      <ThemeSettings />
       <Section title={ui.readingLayout}>
         <Label muted>{ui.readingLayoutHelp}</Label>
         {(
@@ -123,6 +127,54 @@ export function Settings() {
 
 const latinLabel = { fontSize: 16, lineHeight: 24, writingDirection: 'ltr' } as const;
 
+/** Light, dark or the device's setting (System, the default); the same choice pattern as the language. */
+function ThemeSettings() {
+  const { ui, labelStyle, controlRow } = useInterface();
+  const { colors, preference, setPreference, saveError } = useTheme();
+  const labels = { system: ui.themeSystem, light: ui.themeLight, dark: ui.themeDark } as const;
+  return (
+    <Section title={ui.theme}>
+      <View accessibilityRole="radiogroup" style={{ ...controlRow, flexWrap: 'wrap' }}>
+        {themePreferences.map((value) => {
+          const checked = preference === value;
+          return (
+            <Pressable
+              testID={`theme-${value}`}
+              key={value}
+              accessibilityRole="radio"
+              accessibilityState={{ checked }}
+              onPress={() => void setPreference(value)}
+              style={({ pressed }) => ({
+                flexGrow: 1,
+                minHeight: 52,
+                padding: 12,
+                borderRadius: 12,
+                backgroundColor: checked ? colors.primary : pressed ? colors.lime : colors.wash,
+              })}
+            >
+              <Text
+                style={[
+                  labelStyle,
+                  { textAlign: 'center', color: checked ? colors.onPrimary : colors.primary },
+                ]}
+              >
+                {labels[value]}
+                {lineEndSlack}
+              </Text>
+            </Pressable>
+          );
+        })}
+      </View>
+      <Label muted>{ui.themeHelp}</Label>
+      {saveError && (
+        <Text accessibilityRole="alert" style={labelStyle}>
+          {ui.preferenceError}
+        </Text>
+      )}
+    </Section>
+  );
+}
+
 /**
  * A labelled native switch. The label is a React Native Text rather than the @expo/ui Switch
  * `label`: that variant lays its Compose Row out with an intrinsic-size width modifier which the
@@ -140,6 +192,7 @@ export function ToggleRow({
   testID?: string;
 }) {
   const { controlRow, isUrdu } = useInterface();
+  const { colors, scheme } = useTheme();
   // One accessibility element: screen readers announce the label with the switch state, and
   // activating it toggles (the native switch alone was announced without its label).
   return (
@@ -157,7 +210,7 @@ export function ToggleRow({
       <Label style={{ flex: 1 }}>{label}</Label>
       <Host
         matchContents
-        colorScheme="light"
+        colorScheme={scheme}
         layoutDirection={isUrdu ? 'rightToLeft' : 'leftToRight'}
         seedColor={colors.primary}
       >
@@ -186,6 +239,7 @@ function RadioCard({
   children?: ReactNode;
 }) {
   const { controlRow } = useInterface();
+  const { colors } = useTheme();
   return (
     <Pressable
       testID={testID}
@@ -242,6 +296,7 @@ function RadioCard({
 function TranslationSettings() {
   const { ui, isUrdu, labelStyle, translationId, setTranslationId, translationError, activeFonts } =
     useInterface();
+  const { colors } = useTheme();
   const { study } = useStudy();
   const first = study?.ayahs[0];
   const previewStyle = useMemo(() => urduTextStyle(activeFonts.urdu, 16, 28), [activeFonts.urdu]);
@@ -365,6 +420,7 @@ function FontChoice({
   onSelect: (id: string) => Promise<void>;
 }) {
   const { ui, isUrdu, labelText } = useInterface();
+  const { colors } = useTheme();
   const fonts = selectableFonts(role);
   // Load every option's font so its preview is drawn in it; a font that fails shows no preview.
   const [ready, setReady] = useState<ReadonlySet<string>>(

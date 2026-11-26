@@ -18,7 +18,8 @@ import { Action, InitialDataState, Label, Paragraph, Section } from '@/component
 import { useInterface } from '@/state/preferences-provider';
 import { useStudy, useSurahStudy } from '@/state/study-provider';
 import { parseWordLocation } from '@/state/word-location';
-import { card, colors, lineEndSlack, quranWordSlack, row } from '@/theme/tokens';
+import { cardStyle, lineEndSlack, quranWordSlack, row } from '@/theme/tokens';
+import { themed, useTheme } from '@/theme/theme';
 import { useTypography } from '@/theme/typography';
 
 /** Words sharing a root shown before "Show all": a common root (اللہ) has ~290 in Al-Baqarah. */
@@ -89,6 +90,9 @@ function WordDetail({
   const { ui, count, language, labelStyle, labelText, controlRow, translationId, isUrdu } =
     useInterface();
   const type = useTypography();
+  const { colors } = useTheme();
+  const card = cardStyle(colors);
+  const styles = wordStyles(colors);
   const { arabicText } = type;
   const router = useRouter();
   const insets = useSafeAreaInsets();
@@ -329,7 +333,7 @@ function WordDetail({
                     arabicText(25),
                     {
                       textAlign: 'center',
-                      color: segment === itemIndex ? colors.white : colors.primary,
+                      color: segment === itemIndex ? colors.onPrimary : colors.primary,
                     },
                   ]}
                 >
@@ -415,13 +419,14 @@ function WordDetail({
   );
 }
 
-const styles = {
+const wordStyles = themed((colors) => ({
   contextWord: { color: colors.primary, backgroundColor: colors.lime },
-} as const;
+}));
 
 function RuleLink({ rule, onPress }: { rule: Rule; onPress: () => void }) {
   const { ui } = useInterface();
   const type = useTypography();
+  const { colors } = useTheme();
   // The row is laid out right-to-left for the Urdu title, so the chevron points left.
   // Rules open their full grammar topic screen instead of expanding inline.
   return (

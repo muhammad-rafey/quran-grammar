@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { formatCount, getUiStrings, isUiLanguage } from './interface';
+import { contrastRatio, isThemePreference, resolveColorScheme, themePreferences } from './theme';
 import type { StudyData } from './types';
 import { defaultTranslationId, translationEditions, translationIds, translationText } from './translations';
 import { fatihahPractice, fatihahStudy, getStudy, studies } from './content';
@@ -626,6 +627,23 @@ test('interface preferences accept only supported persisted language values', ()
   assert.equal(getUiStrings('en').settings, 'Settings');
   assert.equal(getUiStrings('ur').settings, 'ترتیبات');
   assert.deepEqual(Object.keys(getUiStrings('en')).sort(), Object.keys(getUiStrings('ur')).sort());
+});
+
+test('theme preference validates stored values and resolves System from the OS scheme', () => {
+  for (const value of themePreferences) assert.equal(isThemePreference(value), true);
+  for (const value of [null, undefined, '', 'Dark', 'auto', 1, {}]) {
+    assert.equal(isThemePreference(value), false);
+  }
+  assert.equal(resolveColorScheme('system', 'dark'), 'dark');
+  assert.equal(resolveColorScheme('system', 'light'), 'light');
+  assert.equal(resolveColorScheme('system', null), 'light');
+  assert.equal(resolveColorScheme('light', 'dark'), 'light');
+  assert.equal(resolveColorScheme('dark', 'light'), 'dark');
+  assert.equal(contrastRatio('#000000', '#ffffff'), 21);
+  assert.equal(contrastRatio('#fff', '#fff'), 1);
+  assert.ok(Math.abs(contrastRatio('#767676', '#ffffff') - 4.54) < 0.01);
+  // Translucent colours are composited over the background first.
+  assert.equal(contrastRatio('#00000000', '#ffffff'), 1);
 });
 
 test('interface number formatting is independent of platform and input digit script', () => {

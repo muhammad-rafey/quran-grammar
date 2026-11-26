@@ -14,7 +14,8 @@ import {
 import { AppIcon } from '@/components/app-icon';
 import { Label } from '@/components/study-ui';
 import { useInterface } from '@/state/preferences-provider';
-import { colors, lineEndSlack, radius, spacing } from '@/theme/tokens';
+import { lineEndSlack, radius, spacing } from '@/theme/tokens';
+import { useTheme } from '@/theme/theme';
 import { useTypography } from '@/theme/typography';
 
 export type BrowseMode = 'surah' | 'juz';
@@ -45,6 +46,7 @@ type StudyPickerProps = {
 };
 
 export function StudyPicker(props: StudyPickerProps) {
+  const { colors } = useTheme();
   return (
     <BottomSheet
       isPresented={props.kind !== null}
@@ -77,6 +79,7 @@ function PickerContent({
   onChooseSurah,
 }: StudyPickerProps) {
   const { ui, count, isUrdu, language, labelStyle, labelText, controlRow } = useInterface();
+  const { colors, scheme } = useTheme();
   const typography = useTypography();
   const { height } = useWindowDimensions();
   const insets = useSafeAreaInsets();
@@ -214,7 +217,7 @@ function PickerContent({
                     labelStyle,
                     {
                       textAlign: 'center',
-                      color: mode === item ? colors.white : colors.primary,
+                      color: mode === item ? colors.onPrimary : colors.primary,
                       fontWeight: '600',
                     },
                   ]}
@@ -250,6 +253,8 @@ function PickerContent({
               }}
               placeholder={ui.searchSurah}
               placeholderTextColor={colors.muted}
+              selectionColor={colors.primary}
+              keyboardAppearance={scheme}
               accessibilityLabel={ui.searchSurahLabel}
               keyboardType="default"
               returnKeyType="search"
@@ -385,7 +390,7 @@ function PickerContent({
                         paddingVertical: 2,
                       }}
                     >
-                      <Text style={[labelText(12), { color: colors.white, fontWeight: '600' }]}>
+                      <Text style={[labelText(12), { color: colors.onPrimary, fontWeight: '600' }]}>
                         {ui.ayah} {count(item.jumpAyah)}
                         {lineEndSlack}
                       </Text>
@@ -436,6 +441,7 @@ function AyahGrid({
   onChooseAyah: (ayah: number) => void;
 }) {
   const { ui, count, labelStyle, controlRow } = useInterface();
+  const { colors, scheme } = useTheme();
   const [query, setQuery] = useState('');
   const [grid, setGrid] = useState({ width: 0, height: 0 });
   const { width } = grid;
@@ -489,6 +495,8 @@ function AyahGrid({
           }}
           placeholder={ui.searchAyah}
           placeholderTextColor={colors.muted}
+          selectionColor={colors.primary}
+          keyboardAppearance={scheme}
           accessibilityLabel={ui.searchAyah}
           keyboardType="number-pad"
           returnKeyType="go"

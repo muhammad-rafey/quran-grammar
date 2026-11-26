@@ -36,7 +36,8 @@ import { AppIcon } from '@/components/app-icon';
 import { Action, DataStatus, InitialDataState, Label, Paragraph } from '@/components/study-ui';
 import { useStudy } from '@/state/study-provider';
 import { useInterface } from '@/state/preferences-provider';
-import { card, colors, lineEndSlack, quranWordSlack, radius, row, spacing } from '@/theme/tokens';
+import { cardStyle, lineEndSlack, quranWordSlack, radius, row, spacing } from '@/theme/tokens';
+import { themed, useTheme } from '@/theme/theme';
 import { fontStyles, useTypography, type Typography } from '@/theme/typography';
 import { FloatingNavigation, type StudyView } from './study-navigation';
 import { StudyPicker, type BrowseMode, type PickerKind } from './study-picker';
@@ -76,6 +77,8 @@ export default function StudyScreen() {
   const { ui, count, language, isUrdu, labelText, controlRow, readingLayout, translationId } =
     useInterface();
   const typography = useTypography();
+  const { colors } = useTheme();
+  const styles = studyStyles(colors);
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const [view, setView] = useState<StudyView>('words');
@@ -243,7 +246,7 @@ export default function StudyScreen() {
       ayahCaption: [labelText(12), styles.ayahCaption],
       creditText: [labelText(12), styles.credit],
     };
-  }, [language, isUrdu, ui, labelText, controlRow, typography, translationId]);
+  }, [language, isUrdu, ui, labelText, controlRow, typography, translationId, styles]);
   const selectedId = selectedWord?.id ?? null;
   const selectedAyah = selectedWord?.ayah ?? null;
   const renderItem = useCallback<ListRenderItem<Ayah>>(
@@ -314,7 +317,7 @@ export default function StudyScreen() {
                   <Text
                     style={[
                       labelText(14),
-                      { color: pos === filter.value ? colors.white : colors.ink },
+                      { color: pos === filter.value ? colors.onPrimary : colors.ink },
                     ]}
                   >
                     {filter.label}
@@ -341,11 +344,11 @@ export default function StudyScreen() {
         )}
       </View>
     ),
-    [study, grammar, filtersOpen, ui, controlRow, filters, pos, labelText, showMeanings],
+    [study, grammar, filtersOpen, ui, controlRow, filters, pos, labelText, showMeanings, styles, colors],
   );
   const listContent = useMemo(
     () => [styles.listContent, { paddingBottom: Math.max(insets.bottom, 12) + 100 }],
-    [insets.bottom],
+    [insets.bottom, styles],
   );
 
   // --- Header and navigation -------------------------------------------------------------
@@ -564,6 +567,7 @@ const AyahCard = memo(function AyahCard({
   chrome,
   onOpen,
 }: AyahCardProps) {
+  const styles = studyStyles(useTheme().colors);
   const translation = showTranslation ? translationText(ayah.translations, translationId) : '';
   if (!grammar) {
     return (
@@ -643,6 +647,7 @@ const WordToken = memo(function WordToken({
   fonts: StudyFonts;
   onOpen: (word: Word) => void;
 }) {
+  const styles = studyStyles(useTheme().colors);
   const tone = word.pos === 'verb' ? fonts.verb : word.pos === 'particle' ? fonts.particle : fonts.noun;
   return (
     <Pressable
@@ -691,6 +696,7 @@ const posLabel = {
 
 /** The study cards' font-dependent styles, built once per font pair (see fontStyles). */
 function studyFonts(typography: Typography) {
+  const { colors } = typography;
   const posText = { ...typography.small, ...typography.urduText(13, 22), textAlign: 'center' } as const;
   const tone = (backgroundColor: string, color: string) =>
     StyleSheet.create({
@@ -712,7 +718,7 @@ function studyFonts(typography: Typography) {
 }
 type StudyFonts = ReturnType<typeof studyFonts>;
 
-const styles = StyleSheet.create({
+const studyStyles = themed((colors) => StyleSheet.create({
   fill: { flex: 1 },
   hidden: { display: 'none' },
   header: {
@@ -763,7 +769,7 @@ const styles = StyleSheet.create({
     gap: spacing.md,
     paddingBottom: spacing.xs,
   },
-  filterPanel: { ...card, backgroundColor: colors.mint, gap: spacing.md, marginBottom: spacing.md },
+  filterPanel: { ...cardStyle(colors), backgroundColor: colors.mint, gap: spacing.md, marginBottom: spacing.md },
   filterChip: {
     minHeight: 44,
     paddingHorizontal: spacing.md,
@@ -775,7 +781,7 @@ const styles = StyleSheet.create({
   filterChipActive: { backgroundColor: colors.primary },
   pressedFade: { opacity: 0.7 },
   // Cells carry their own spacing: a container gap would also space FlatList's spacer views.
-  ayahCard: { ...card, gap: spacing.md, marginBottom: spacing.lg },
+  ayahCard: { ...cardStyle(colors), gap: spacing.md, marginBottom: spacing.lg },
   ayahNumber: {
     minWidth: 30,
     minHeight: 30,
@@ -822,4 +828,4 @@ const styles = StyleSheet.create({
   },
   plainSelected: { color: colors.primary },
   ayahEnd: { color: colors.primary },
-});
+}));
