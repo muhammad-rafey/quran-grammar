@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { ActivityIndicator, Image, Pressable, Text, View } from 'react-native';
 import { Host, Switch } from '@expo/ui';
 import {
+  quranText,
   translationEditions,
   translationText,
   type FontRole,
@@ -294,9 +295,10 @@ function FontSettings() {
     if (!study || !first) return null;
     const words = study.words.filter((word) => word.ayah === first.number);
     return {
-      arabic: words.map((word) => word.arabic).join(' '),
+      // Each Quran option previews the text it will show (IndoPak fonts: the IndoPak text).
+      arabic: (font: ReadingFont) => words.map((word) => quranText(word, font)).join(' '),
       // An ayah without the selected translation is previewed with its word meanings instead.
-      urdu:
+      urdu: () =>
         translationText(first.translations, translationId) ||
         words.map((word) => word.meaningUrdu).join('، '),
     };
@@ -341,7 +343,8 @@ function FontChoice({
   title: string;
   selected: string;
   failed: boolean;
-  sample: string | undefined;
+  /** The preview text for an option's font (absent while the chapter loads). */
+  sample: ((font: ReadingFont) => string) | undefined;
   onSelect: (id: string) => Promise<void>;
 }) {
   const { ui, isUrdu, labelText } = useInterface();
@@ -385,6 +388,7 @@ function FontChoice({
           const checked = font.id === selected;
           const name = isUrdu ? font.labelUrdu : font.label;
           const note = isUrdu ? (font.coverageNoteUrdu ?? font.coverageNote) : font.coverageNote;
+          const preview = sample?.(font);
           return (
             <RadioCard
               key={font.id}
@@ -394,17 +398,17 @@ function FontChoice({
               checked={checked}
               onPress={() => void onSelect(font.id)}
             >
-              {sample ? (
+              {preview ? (
                 ready.has(font.id) ? (
                   <Text
-                    accessibilityLabel={`${ui.fontPreview}: ${sample}`}
+                    accessibilityLabel={`${ui.fontPreview}: ${preview}`}
                     numberOfLines={2}
                     style={[
                       sampleStyles.get(font.id),
                       { color: colors.ink, textAlign: 'right', writingDirection: 'rtl' },
                     ]}
                   >
-                    {sample}
+                    {preview}
                   </Text>
                 ) : (
                   <ActivityIndicator color={colors.primary} style={{ alignSelf: 'flex-start' }} />

@@ -567,10 +567,20 @@ test('downloaded data validation rejects malformed nested fields and broken rela
     (value) => {
       value.verbForms['1:5:4'].past = [];
     },
+    (value) => {
+      value.words[0].arabicIndoPak = '';
+    },
+    (value) => {
+      value.words[0].arabicIndoPak = 7;
+    },
   ];
   for (const mutate of mutations) {
     const value = structuredClone(fatihahStudy);
     mutate(value);
     assert.equal(isStudyData(value), false, mutate.toString());
   }
+  // The optional IndoPak text is accepted when present.
+  const withIndoPak = structuredClone(fatihahStudy) as { words: { arabicIndoPak?: string }[] };
+  withIndoPak.words[0]!.arabicIndoPak = 'بِسۡمِ';
+  assert.equal(isStudyData(withIndoPak), true);
 });

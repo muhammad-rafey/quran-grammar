@@ -3,7 +3,7 @@ import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Stack } from 'expo-router/stack';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { availableSurahNumbers, type Rule } from '@quran-grammar/core';
+import { availableSurahNumbers, quranText, type Rule } from '@quran-grammar/core';
 import { AppIcon } from '@/components/app-icon';
 import { Action, InitialDataState, Label, Paragraph, Section } from '@/components/study-ui';
 import { useInterface } from '@/state/preferences-provider';
@@ -107,7 +107,7 @@ export default function WordScreen() {
             selectable
             style={[type.arabic, arabicText(46), { textAlign: 'center' }]}
           >
-            {word.arabic}
+            {quranText(word, type.quranFont)}
           </Text>
           <Paragraph style={{ ...type.urduText(22, 38), textAlign: 'center' }}>
             {word.meaningUrdu}
@@ -199,6 +199,7 @@ export default function WordScreen() {
             {verb.noteUrdu ? <Paragraph>{verb.noteUrdu}</Paragraph> : null}
           </Section>
         )}
+        {/* Corpus segments split the Uthmani word and stay Uthmani (no IndoPak segmentation). */}
         <Section title={ui.segments}>
           <View style={{ ...row, flexWrap: 'wrap' }}>
             {word.segments.map((item, itemIndex) => (
@@ -260,7 +261,7 @@ export default function WordScreen() {
               {related.map((entry) => (
                 <Pressable
                   accessibilityRole="button"
-                  accessibilityLabel={`${entry.arabic}, ${ui.ayah} ${count(entry.ayah)}`}
+                  accessibilityLabel={`${quranText(entry, type.quranFont)}, ${ui.ayah} ${count(entry.ayah)}`}
                   key={entry.id}
                   onPress={() => router.setParams({ id: entry.id })}
                   style={{
@@ -273,7 +274,7 @@ export default function WordScreen() {
                   <Text
                     style={[type.arabic, arabicText(24), { color: colors.primary }]}
                   >
-                    {entry.arabic}
+                    {quranText(entry, type.quranFont)}
                   </Text>
                   <Label muted style={{ textAlign: 'center' }}>
                     {ui.ayah} {count(entry.ayah)}

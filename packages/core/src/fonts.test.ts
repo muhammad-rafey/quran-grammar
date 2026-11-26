@@ -1,7 +1,14 @@
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import test from 'node:test';
-import { defaultFontIds, fontsForRole, readingFonts, resolveFont, type FontRole } from './fonts';
+import {
+  defaultFontIds,
+  fontsForRole,
+  quranText,
+  readingFonts,
+  resolveFont,
+  type FontRole,
+} from './fonts';
 
 const root = new URL('../../../', import.meta.url);
 const folders = ['apps/web/public/fonts/', 'apps/mobile/assets/fonts/'].map(
@@ -107,4 +114,27 @@ test('mobile font assets and web @font-face cover every registry family', () => 
     assert.match(css, face, `fonts.css lacks ${family}`);
   }
   assert.equal(css.match(/@font-face {/g)?.length, families.length);
+});
+
+test('every Quran font declares its orthography; Urdu fonts do not', () => {
+  for (const font of readingFonts) {
+    if (font.role === 'quran') assert.ok(font.script, `${font.id} has no script`);
+    else assert.equal(font.script, undefined, `${font.id} is not a Quran font`);
+  }
+  assert.equal(resolveFont('quran', 'al-qalam-quran-majeed').script, 'indopak');
+  // The default must show the stored (Uthmani) text.
+  assert.equal(resolveFont('quran', null).script, 'uthmani');
+});
+
+test('quranText picks the IndoPak text only for IndoPak fonts that have it', () => {
+  // Al-Fatihah 1:2 word 1 from Quran.com (text_uthmani / text_indopak).
+  const word = { arabic: '\u0671\u0644\u0652\u062D\u064E\u0645\u0652\u062F\u064F', arabicIndoPak: 'اَلۡحَمۡدُ' };
+  const indoPak = resolveFont('quran', 'al-qalam-quran-majeed');
+  assert.equal(quranText(word, indoPak), 'اَلۡحَمۡدُ');
+  assert.ok(!quranText(word, indoPak).includes('\u0671'));
+  for (const font of fontsForRole('quran').filter((entry) => entry.script === 'uthmani'))
+    assert.equal(quranText(word, font), word.arabic, font.id);
+  // Older data without the field (or an empty value) keeps the Uthmani text.
+  assert.equal(quranText({ arabic: word.arabic }, indoPak), word.arabic);
+  assert.equal(quranText({ arabic: word.arabic, arabicIndoPak: '' }, indoPak), word.arabic);
 });
