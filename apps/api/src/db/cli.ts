@@ -66,7 +66,14 @@ export function verifyCopy(
     );
   }
   const catalog = studiesToRows([]).translations;
-  const stored = copy.rows.translations.map((row) => ({ ...row, position: Number(row.position), resource_id: Number(row.resource_id) }));
+  // Fixed key order: Postgres jsonb reorders object keys.
+  const stored = copy.rows.translations.map((row) => ({
+    id: row.id,
+    position: Number(row.position),
+    resource_id: Number(row.resource_id),
+    name_english: row.name_english,
+    name_urdu: row.name_urdu,
+  }));
   if (JSON.stringify(stored) !== JSON.stringify(catalog))
     throw new Error(`${label}: translation catalog differs from the bundled build`);
   const grammar = rowsToGrammar(copy.rows);
