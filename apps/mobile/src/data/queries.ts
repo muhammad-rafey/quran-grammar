@@ -105,8 +105,9 @@ function splitRecords(value: string | null, fields: number): string[][] {
  * Rebuild one chapter's StudyData exactly (key and list order included).
  *
  * Per-word lists (segments, grammar-rule ids) and per-ayah translations are folded into their
- * word / ayah row with `group_concat(... order by position)` (SQLite 3.44+; expo-sqlite bundles
- * 3.49+). Al-Baqarah then reads ~8.5k rows instead of ~35k: on device each row becomes a JS
+ * word / ayah row, and phrase word ids into their phrase row, with `group_concat(... order by
+ * position)` (SQLite 3.44+; expo-sqlite bundles 3.49+). Al-Baqarah then reads ~10k rows instead
+ * of ~41k: on device each row becomes a JS
  * object, so the row count, not the SQL, dominated a long chapter's load time.
  */
 export async function loadStudy(exec: SqlExecutor, surah: number): Promise<StudyData | null> {
@@ -116,7 +117,7 @@ export async function loadStudy(exec: SqlExecutor, surah: number): Promise<Study
   );
   if (!surahRow) return null;
   const p = [surah];
-  const [ayahs, words, verbs, rules, roots, phrases, phraseWords] = await Promise.all([
+  const [ayahs, words, verbs, rules, roots, phrases] = await Promise.all([
     // Translations keyed in catalog (position) order, as core's rowsToStudies builds them.
     exec.all<{ number: number; translations: string | null }>(
       `select a.number,
@@ -175,20 +176,23 @@ export async function loadStudy(exec: SqlExecutor, surah: number): Promise<Study
       'select root, meaning_urdu, note_urdu from roots where surah = ? order by position',
       p,
     ),
-    exec.all<{ id: string; ayah: number; label_urdu: string; explanation_urdu: string }>(
-      'select id, ayah, label_urdu, explanation_urdu from phrases where surah = ? order by ayah, position',
-      p,
-    ),
-    exec.all<{ phrase_id: string; word_id: string }>(
-      `select pw.phrase_id, pw.word_id
-         from phrases ph join phrase_words pw on pw.phrase_id = ph.id
-        where ph.surah = ? order by ph.ayah, ph.position, pw.position`,
+    // Phrase word ids are folded into their phrase row like segments into word rows.
+    exec.all<{
+      id: string;
+      ayah: number;
+      label_urdu: string;
+      explanation_urdu: string;
+      word_ids: string | null;
+    }>(
+      `select ph.id, ph.ayah, ph.label_urdu, ph.explanation_urdu,
+              (select group_concat(pw.word_id, char(31) order by pw.position)
+                 from phrase_words pw where pw.phrase_id = ph.id) as word_ids
+         from phrases ph where ph.surah = ? order by ph.ayah, ph.position`,
       p,
     ),
   ]);
 
   const phrasesByAyah = groupBy(phrases, (row) => row.ayah);
-  const wordsByPhrase = groupBy(phraseWords, (row) => row.phrase_id);
 
   return {
     schemaVersion: 1,
@@ -219,7 +223,7 @@ export async function loadStudy(exec: SqlExecutor, surah: number): Promise<Study
       translations: Object.fromEntries(splitRecords(ayah.translations, 2)),
       phrases: (phrasesByAyah.get(ayah.number) ?? []).map((phrase) => ({
         id: phrase.id,
-        wordIds: (wordsByPhrase.get(phrase.id) ?? []).map((entry) => entry.word_id),
+        wordIds: phrase.word_ids ? phrase.word_ids.split(unitSeparator) : [],
         labelUrdu: phrase.label_urdu,
         explanationUrdu: phrase.explanation_urdu,
       })),

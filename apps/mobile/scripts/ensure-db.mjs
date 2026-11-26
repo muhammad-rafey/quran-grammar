@@ -5,6 +5,9 @@
 //   node scripts/ensure-db.mjs --force   always regenerate it
 //
 // The database itself is produced by the repository's `npm run db:mobile` script.
+// The repository commits it gzip-compressed (assets/db/quran-grammar.db.gz): the whole-Quran
+// database is larger than GitHub's 100 MB file limit. The uncompressed .db is git-ignored and is
+// unpacked from the archive here, before Metro bundles it.
 // Afterwards this writes assets/db/quran-grammar.json, the small version manifest the app
 // bundles as JavaScript: it compares its content_sha256 with the installed device copy to
 // decide whether to import the database asset again.
@@ -23,6 +26,7 @@ import {
 import { dirname, join, resolve } from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
 import { fileURLToPath } from 'node:url';
+import { constants, gunzipSync, gzipSync } from 'node:zlib';
 
 /** Must match MOBILE_DATABASE_SCHEMA_VERSION in src/data/queries.ts. */
 const SCHEMA_VERSION = 3;
@@ -30,6 +34,31 @@ const mobile = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const root = resolve(mobile, '../..');
 const database = join(mobile, 'assets/db/quran-grammar.db');
 const manifest = join(mobile, 'assets/db/quran-grammar.json');
+const archive = `${database}.gz`;
+
+/** Content sha recorded with the committed archive (the manifest is committed alongside it). */
+function committedSha() {
+  try {
+    return JSON.parse(readFileSync(manifest, 'utf8')).contentSha256 ?? null;
+  } catch {
+    return null;
+  }
+}
+
+/** Unpack the committed archive (atomically) into the git-ignored database file. */
+function unpack() {
+  const temporary = `${database}.unpack.tmp`;
+  writeFileSync(temporary, gunzipSync(readFileSync(archive)));
+  renameSync(temporary, database);
+  const now = new Date();
+  utimesSync(database, now, now);
+}
+
+/** Deterministic archive (no timestamp in the gzip header), rewritten only when it changes. */
+function pack() {
+  const next = gzipSync(readFileSync(database), { level: constants.Z_BEST_COMPRESSION });
+  if (!existsSync(archive) || !readFileSync(archive).equals(next)) writeFileSync(archive, next);
+}
 
 function readVersion(file = database) {
   if (!existsSync(file)) return null;
@@ -85,6 +114,11 @@ function generate(target) {
 // committed copy only when the content itself changed (its content_sha256), so timestamps or a
 // fresh checkout never produce a modified database file.
 let version = readVersion();
+// A fresh checkout (or a pull with new content) has only the archive: unpack it first.
+if (existsSync(archive) && (!version || version.content_sha256 !== committedSha())) {
+  unpack();
+  version = readVersion();
+}
 if (
   process.argv.includes('--force') ||
   version?.database_schema_version !== SCHEMA_VERSION ||
@@ -108,6 +142,7 @@ if (
   }
   version = readVersion();
 }
+if (version && version.database_schema_version === SCHEMA_VERSION) pack();
 if (!version || version.database_schema_version !== SCHEMA_VERSION)
   throw new Error(
     `${database} is missing or is not a schema v${SCHEMA_VERSION} content database.`,

@@ -369,6 +369,31 @@
    "90:16:3"
   ]
  },
+ "grammarLayer": {
+  "note": "AI-authored grammar layer (owner decision 2026-11-26), scholarly review pending: segment glosses, dictionary notes and extra rule ids from words/<surah>/*.json, phrase cards from phrases/<surah>/*.json, root and verb-paradigm cards from the libraries (applied to every unpublished word whose root or lexeme they cover). Word meanings and ayah translations are never part of it. `chapters` lists, per chapter, the number of authored words and the authored ayahs as [from, to] ranges.",
+  "authoredWords": 9367,
+  "authoredAyahs": 466,
+  "chapters": {
+   "2": {
+    "words": 5886,
+    "ayahs": [
+     [
+      21,
+      286
+     ]
+    ]
+   },
+   "3": {
+    "words": 3481,
+    "ayahs": [
+     [
+      1,
+      200
+     ]
+    ]
+   }
+  }
+ },
  "summary": {
   "surahs": 114,
   "ayahs": 6236,
@@ -396,6 +421,10 @@
   "excludedPauseSigns": 4576,
   "sourceOnlyWordsWithoutQuranComMeaning": 210,
   "publishedWordsWithoutQuranComMeaning": 70,
+  "grammarLayerWords": 9367,
+  "grammarLayerAyahs": 466,
+  "libraryRootEntries": 13706,
+  "libraryVerbParadigms": 15172,
   "problems": 0
  }
 }

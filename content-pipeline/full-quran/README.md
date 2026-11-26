@@ -1,16 +1,20 @@
-# Full Quran — source-only grammar, word-by-word and translation pipeline
+# Full Quran — sourced text, meanings and translations plus an AI-authored grammar layer
 
-**Status (2026-11-26): all 114 Surahs (6,236 ayahs, 77,429 words) are built from sources only.**
-Scholarly review pending; never describe this content as scholarly approved. Syncing the
-home-server Supabase copy still needs the owner's permission.
+**Status (2026-11-26): all 114 Surahs (6,236 ayahs, 77,429 words) are built from sources; the
+grammar layer (§5) covers Al-Baqarah 2:21–286 and Al Imran (wave 1), and its root and
+verb-paradigm libraries cover every word.** Scholarly review pending; never describe this content
+as scholarly approved. Syncing the home-server Supabase copy still needs the owner's permission.
 
 ## 1. Goal and content policy (owner decisions)
 
 The app's focus is helping users understand the Quran and its grammar. On 2026-11-26 the owner
 decided, superseding the 2026-11-22 pilot rules ("no ayah translation", AI-written gap fields):
 
-- **The whole Quran is populated from sources only. Newly built chapters contain no AI-written data.**
-  Fields no source provides are empty strings, and the web and mobile apps hide them.
+- **Text, word meanings and ayah translations come from sources only, never from AI.** Fields
+  that neither a source nor the grammar layer provides are empty strings; the apps hide them.
+- **Grammar layer (owner decision later on 2026-11-26):** every chapter gets the same grammar
+  analysis as the published lessons — segment glosses, dictionary notes, extra rule ids, phrase
+  cards per ayah, root and verb-paradigm library cards — authored with AI in waves (§5).
 - **Quranic text is Quran.com's `text_uthmani`, unchanged** (decision of 2026-11-22, still in force:
   use the ready-made published text; do not construct it).
 - **Ayah translations are compulsory, tafsir is excluded.** Six Quran.com Urdu translations are
@@ -31,7 +35,8 @@ decided, superseding the 2026-11-22 pilot rules ("no ayah translation", AI-writt
 | `ruleIds`, verb form (باب) and pattern | Deterministic Corpus-tag mappings (fixed tables in `scripts/build.py`) |
 | Rule cards (title, explanation) | Shared rule library `../libs/rules.json`; the example line is the word and its Quran.com meaning |
 | `ayahs[].translations` | Six Quran.com Urdu translations (§3) |
-| `segments[].meaningUrdu`, `dictionaryUrdu`, root `meaningUrdu`/`noteUrdu`, verb `present`/`noteUrdu` | No source: empty strings in source-only words; the apps hide them |
+| `segments[].meaningUrdu`, `dictionaryUrdu`, extra `ruleIds`, `ayahs[].phrases` | Grammar layer `words/` and `phrases/` (§5); empty / none where no entry is authored yet |
+| root `meaningUrdu`/`noteUrdu`; verb `baabUrdu`/`present`/`pattern`/`noteUrdu` (and an authored verb's `lemma` = paradigm past) | Library cards (§5) for every unpublished word whose root/lexeme they cover; otherwise empty (Form I: no باب/pattern) |
 
 ## 3. Ayah translations
 
@@ -65,10 +70,46 @@ published grammar layer — morphology, i‘rab text, dictionary notes, phrase c
 paradigms and rule cards — and their word IDs must equal Quran.com's. Only `meaningUrdu` is
 replaced by the Quran.com Urdu word-by-word meaning, and the ayah gets the six translations;
 the AI ayah translation, theme and tafsir were deleted. Al-Baqarah 2:1–20 keeps the pilot grammar
-layer; 2:21–286 are source-only. The pilot's AI layer files (`words/2/*.json`, `libs/roots/`,
-`libs/lexemes/`) remain as its provenance; the current build does not read them.
+layer; 2:21–286 take the grammar layer of §5. The pilot's word files (`words/2/a01-10.json`,
+`a11-16.json`, `a17-20.json`) remain as its provenance and are not re-applied (their words are
+published); its library files `libs/roots/root-2a.json` and `libs/lexemes/lex-2a.json` are part of
+the libraries. Only the pilot's own roots, rule cards and phrases carry over; later ayahs' entries
+are rebuilt on every assemble.
 
-## 5. Commands
+## 5. Grammar layer (AI-authored, waves)
+
+Owner decision 2026-11-26: every chapter gets the grammar analysis of the published lessons. It is
+written with AI assistance in **waves**, following [GRAMMAR-GUIDE.md](GRAMMAR-GUIDE.md); word
+meanings and ayah translations are never part of it.
+
+- `build.py … packets` writes `packets/` (git-ignored work packets: chunks of consecutive ayahs
+  with each word's Arabic, Quran.com meaning, Corpus tags and i‘rab, plus the roots and lexemes
+  still missing from the libraries).
+- Authors write `words/<surah>/SSS-AAA-BBB.json` (per word: `arabic`, one `segmentMeaningsUrdu`
+  gloss per segment, `dictionaryUrdu`, `addRuleIds`) and `phrases/<surah>/SSS-AAA-BBB.json` (per
+  ayah 1–6 cards: `wordIds`, `labelUrdu`, `explanationUrdu`), and library batches
+  `libs/roots/*.json` and `libs/lexemes/*.json`. A chunk without files simply stays source-only.
+- `build.py` merges them: authored words get their glosses, note and extra rules; authored ayahs
+  get their phrase cards (`s:a:phrase:N`); every unpublished word whose root or lexeme is in a
+  library gets that card (library order `../libs`, `../edition-2/libs`, `../edition-3/libs`,
+  `libs/`; later wins), and an authored verb's lemma becomes the paradigm's past form. It reports
+  a problem for a wrong Arabic copy, a missing/extra word or ayah in a chunk, an empty gloss or
+  note, Latin text, an unknown rule id or a phrase word outside its ayah.
+- `inventory/sources.json` → `grammarLayer` lists the authored words and ayah ranges per chapter
+  (tests derive the authored/unauthored sets from these files, so new waves need no test edits).
+- Wave 1 (2026-11-26): Al-Baqarah 2:21–286 and Al Imran — 9,367 words, 466 ayahs, 2,019 phrase
+  cards — and the complete libraries (596 roots, 840 verb paradigms), so 13,706 root cards and
+  15,172 verb paradigms of unpublished words are filled in all 71 unpublished chapters.
+
+`verify.py` rule 8 (words) and rule 10 (phrases) check the layer independently: an authored word
+carries exactly its authored glosses and note (non-empty, no Latin text) and its `addRuleIds`; a
+word without an entry has no note and no glosses; an unpublished root or verb paradigm equals its
+library card (or is empty without one); an authored ayah has exactly its authored cards (at least
+one, word ids from that ayah); any other unpublished ayah has none; entries for published or
+unknown words fail. Rules 1–7 (text, ids, meanings, translations, no tafsir) are unaffected: an
+authored word's meaning is still compared with Quran.com.
+
+## 6. Commands
 
 From the repository root (`npm ci`, and the Corpus file `content-pipeline/qac/qac04-lfs.txt`):
 
@@ -77,6 +118,7 @@ work=content-pipeline/full-quran
 python3 -I $work/scripts/fetch.py $work [--workers N]  # sources/ (git-ignored); resumable
 python3 -I $work/scripts/build.py $work check           # build all 114 chapters in memory, report
 python3 -I $work/scripts/build.py $work assemble .      # write lessons + inventory
+python3 -I $work/scripts/build.py $work packets         # grammar-layer work packets (§5)
 python3 -I $work/scripts/verify.py …                    # independent cross-check; arguments in its usage line
 ```
 
@@ -84,8 +126,8 @@ python3 -I $work/scripts/verify.py …                    # independent cross-ch
   word-by-word, every chapter), `translation-ID.json` (one per `translations` entry) and
   `sources/qac-wbw/wbw-N.json` (Corpus word-by-word pages: English gloss, morphology and Arabic
   i‘rab per word). Complete files are reused, so an interrupted fetch resumes.
-- `build.py … check` builds every chapter and prints a summary (words, published vs source-only
-  words, meanings replaced, Corpus spelling differences, excluded pause signs). It exits non-zero
+- `build.py … check` builds every chapter and prints a summary (words, published vs unpublished
+  words, grammar-layer words/ayahs, library root/paradigm cards, meanings replaced, Corpus spelling differences, excluded pause signs). It exits non-zero
   on any problem: a letter difference, a word-count or word-ID mismatch with the Corpus or a
   published lesson, a missing Urdu meaning or i‘rab, or an incomplete translation.
 - `build.py … assemble <repo-root>` runs the same build, then writes
@@ -93,12 +135,13 @@ python3 -I $work/scripts/verify.py …                    # independent cross-ch
   URLs, retrieval dates, translation policy, summary) and `inventory/inventory-N.json`
   (per-chapter spelling differences and excluded pause signs).
 - `scripts/verify.py` is the verification step: an independent cross-check of the assembled
-  lessons against the raw sources. Read its usage line before running it.
+  lessons against the raw sources and the grammar-layer files (`--layer`, `--libs`). Read its
+  usage line before running it.
 
 Then run `npm run verify`, `npm run test:e2e`, `npm run db:sqlite`, `npm run db:mobile`, and —
 with owner permission — `npm run db:sync` (`QG_PSQL`) and `npm run db:verify`.
 
-## 6. Pitfalls
+## 7. Pitfalls
 
 - Corpus lemma ids are sometimes inflected forms (`yuxa`diEu`, `rabiHat`): the lexeme key is an
   opaque handle. A source-only verb's lemma and paradigm past form are the Corpus's Arabic lemma

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import test from 'node:test';
 import { formatCount, getUiStrings, isUiLanguage } from './interface';
 import { contrastRatio, isThemePreference, resolveColorScheme, themePreferences } from './theme';
@@ -29,15 +29,45 @@ const editionThree = [22, 56];
 const allChapters = Array.from({ length: 114 }, (_, i) => i + 1);
 /**
  * Chapters that keep their published grammar layer (dictionary notes, phrase cards, segment
- * glosses, root meanings, paradigms). Every other word is source-only (content-pipeline/full-quran).
+ * glosses, root meanings, paradigms). Every other word is built by content-pipeline/full-quran.
  */
 const publishedChapters = new Set([1, ...fiveSurahs, ...lastTen, ...editionTwo, ...editionThree]);
-/** Al-Baqarah 2:1–20 keeps the pilot grammar layer (no phrase cards); 2:21–286 are source-only. */
+/** Al-Baqarah 2:1–20 keeps the pilot grammar layer (no phrase cards). */
 const pilot = { surah: 2, lastAyah: 20 };
-const hasGrammarLayer = (surah: number, ayah: number) =>
+const isPublished = (surah: number, ayah: number) =>
   publishedChapters.has(surah) || (surah === pilot.surah && ayah <= pilot.lastAyah);
-const pipelineFile = (path: string) =>
-  JSON.parse(readFileSync(new URL(`../../../content-pipeline/full-quran/${path}`, import.meta.url), 'utf8'));
+const pipelineUrl = (path: string) => new URL(`../../../content-pipeline/${path}`, import.meta.url);
+const pipelineFile = (path: string) => JSON.parse(readFileSync(pipelineUrl(`full-quran/${path}`), 'utf8'));
+
+/**
+ * The AI-authored grammar layer of unpublished words (owner decision 2026-11-26), read from the
+ * pipeline's chunk files so that later authoring waves need no test edits: words/<s>/SSS-AAA-BBB.json
+ * (segment glosses, dictionary note, extra rule ids) and phrases/<s>/SSS-AAA-BBB.json (phrase cards).
+ * The pilot's own records (words/2/a01-10.json …) are not chunk files.
+ */
+type AuthoredWord = { arabic: string; segmentMeaningsUrdu: string[]; dictionaryUrdu: string; addRuleIds?: string[] };
+type AuthoredPhrase = { wordIds: string[]; labelUrdu: string; explanationUrdu: string };
+function layerChunks<T>(kind: 'words' | 'phrases'): Record<string, T> {
+  const out: Record<string, T> = {};
+  const base = pipelineUrl(`full-quran/${kind}/`);
+  for (const dir of readdirSync(base))
+    for (const name of readdirSync(new URL(`${dir}/`, base)).sort())
+      if (/^\d{3}-\d{3}-\d{3}\.json$/.test(name)) Object.assign(out, pipelineFile(`${kind}/${dir}/${name}`));
+  return out;
+}
+const authoredWords = layerChunks<AuthoredWord>('words');
+const authoredPhrases = layerChunks<AuthoredPhrase[]>('phrases');
+/** Root and verb-paradigm library cards; later directories win (as in the build). */
+function libraryRoots(): Map<string, { meaningUrdu: string; noteUrdu: string }> {
+  const roots = new Map<string, { meaningUrdu: string; noteUrdu: string }>();
+  for (const dir of ['libs', 'edition-2/libs', 'edition-3/libs', 'full-quran/libs']) {
+    const base = pipelineUrl(`${dir}/roots/`);
+    for (const name of readdirSync(base).filter((n) => n.endsWith('.json')).sort())
+      for (const entry of JSON.parse(readFileSync(new URL(name, base), 'utf8')).entries)
+        roots.set(entry.root, { meaningUrdu: entry.meaningUrdu, noteUrdu: entry.noteUrdu });
+  }
+  return roots;
+}
 
 test('navigation catalogs list every chapter and every complete juz', () => {
   assert.deepEqual(
@@ -169,6 +199,10 @@ test('the whole Quran is bundled: 114 chapters, 6,236 ayahs, 77,429 unique word 
   assert.equal(summary.words, 77429);
   assert.equal(summary.publishedWords, 16288);
   assert.equal(summary.sourceOnlyWords, 61141);
+  // Grammar-layer summary: the authored chunk files of unpublished words and ayahs.
+  const grammarLayer = pipelineFile('inventory/sources.json').grammarLayer;
+  assert.equal(grammarLayer.authoredWords, Object.keys(authoredWords).length);
+  assert.equal(grammarLayer.authoredAyahs, Object.keys(authoredPhrases).length);
   const scope = pipelineFile('scope.json');
   assert.deepEqual(scope.existingLessons, [...publishedChapters].sort((a, b) => a - b));
   assert.deepEqual(scope.partialPilot, { surah: pilot.surah, aiLayerThroughAyah: pilot.lastAyah });
@@ -285,7 +319,7 @@ test('every word carries Quran.com IndoPak text and a Quran.com meaning except r
       assert.ok(/[؀-ۿ]/.test(word.arabicIndoPak!), word.id);
       assert.equal(word.meaningUrdu.trim(), word.meaningUrdu, word.id);
       if (word.meaningUrdu === '')
-        (hasGrammarLayer(study.surah.number, word.ayah) ? empty.published : empty.sourceOnly).push(word.id);
+        (isPublished(study.surah.number, word.ayah) ? empty.published : empty.sourceOnly).push(word.id);
     }
   // Empty meanings are exactly the Quran.com word-by-word gaps the pipeline recorded.
   assert.deepEqual(empty.sourceOnly, gaps.sourceOnlyEmpty);
@@ -294,9 +328,11 @@ test('every word carries Quran.com IndoPak text and a Quran.com meaning except r
   assert.equal(empty.published.length, 70);
 });
 
-test('source-only words carry no AI-written fields; published lessons keep their grammar layer', () => {
+test('unpublished words carry exactly the authored grammar layer or none; published lessons keep theirs', () => {
   let published = 0;
+  let authored = 0;
   let sourceOnly = 0;
+  const library = libraryRoots();
   for (const study of studies) {
     const chapter = study.surah.number;
     const covered = new Set(
@@ -304,12 +340,13 @@ test('source-only words carry no AI-written fields; published lessons keep their
     );
     const rootLayers = new Map<string, boolean>();
     for (const word of study.words) {
-      const layer = hasGrammarLayer(chapter, word.ayah);
+      const layer = isPublished(chapter, word.ayah);
       if (word.root) rootLayers.set(word.root, (rootLayers.get(word.root) ?? false) || layer);
       const verb = study.verbForms[word.id];
       if (word.pos === 'verb') assert.ok(verb, `${word.id}: verb paradigm`);
       assert.ok(word.morphologyUrdu && word.syntaxUrdu && word.posUrdu, `${word.id}: Corpus grammar`);
       assert.ok(word.segments.length > 0, word.id);
+      const entry = layer ? undefined : authoredWords[word.id];
       if (layer) {
         published += 1;
         assert.ok(word.dictionaryUrdu, `${word.id}: dictionary note`);
@@ -322,33 +359,73 @@ test('source-only words carry no AI-written fields; published lessons keep their
           // The pilot gets a rule only where a library card applies (none covers أَلَا).
           assert.ok(['2:12:1', '2:13:13'].includes(word.id), `${word.id}: grammar rules`);
         }
+      } else if (entry) {
+        authored += 1;
+        assert.equal(entry.arabic, word.arabic, `${word.id}: authored entry Arabic`);
+        assert.equal(word.dictionaryUrdu, entry.dictionaryUrdu.trim(), `${word.id}: authored dictionary note`);
+        assert.ok(word.dictionaryUrdu, `${word.id}: dictionary note`);
+        assert.deepEqual(
+          word.segments.map((segment) => segment.meaningUrdu),
+          entry.segmentMeaningsUrdu.map((gloss) => gloss.trim()),
+          `${word.id}: authored segment glosses`,
+        );
+        assert.ok(word.segments.every((segment) => segment.meaningUrdu), `${word.id}: segment glosses`);
+        for (const text of [word.dictionaryUrdu, ...word.segments.map((segment) => segment.meaningUrdu)])
+          assert.ok(!/[A-Za-z]/.test(text), `${word.id}: Urdu only`);
+        for (const rule of entry.addRuleIds ?? []) assert.ok(word.ruleIds.includes(rule), `${word.id}: rule ${rule}`);
+        // An authored verb is listed under its library paradigm's past form, as published verbs are.
+        if (verb && verb.present) assert.equal(word.lemma, verb.past, `${word.id}: lemma = paradigm past`);
       } else {
         sourceOnly += 1;
         assert.equal(word.dictionaryUrdu, '', `${word.id}: no dictionary note`);
         assert.ok(word.segments.every((segment) => segment.meaningUrdu === ''), `${word.id}: no segment glosses`);
         assert.ok(!covered.has(word.id), `${word.id}: no phrase card`);
-        if (verb) {
-          assert.equal(verb.present, '', `${word.id}: no present form`);
+      }
+      if (!layer && verb) {
+        // Library paradigm (every lexeme of the Quran is in the libraries) or the Corpus form only.
+        if (verb.present) {
+          assert.ok(verb.baabUrdu && verb.formUrdu && verb.past && verb.pattern && verb.noteUrdu, `${word.id}: paradigm`);
+        } else {
           assert.equal(verb.noteUrdu, '', `${word.id}: no paradigm note`);
           assert.ok(verb.formUrdu && verb.past, `${word.id}: Corpus form and lemma`);
-          // The Corpus gives no Form I vowel class, so Form I has no باب or pattern.
-          if (verb.formUrdu.endsWith('(I)')) assert.equal(verb.baabUrdu + verb.pattern, '', word.id);
-          else assert.ok(verb.baabUrdu, `${word.id}: derived-form باب`);
         }
       }
     }
     for (const [root, layer] of rootLayers) {
       const entry = study.roots[root];
       if (layer) assert.ok(entry.meaningUrdu && entry.noteUrdu, `${chapter} ${root}: root meaning`);
-      else assert.deepEqual(entry, { meaningUrdu: '', noteUrdu: '' }, `${chapter} ${root}: source-only root`);
+      else
+        assert.deepEqual(
+          entry,
+          library.get(root) ?? { meaningUrdu: '', noteUrdu: '' },
+          `${chapter} ${root}: library root card or none`,
+        );
     }
     for (const ayah of study.ayahs) {
-      if (publishedChapters.has(chapter)) assert.ok(ayah.phrases.length > 0, `${chapter}:${ayah.number}: phrases`);
-      else assert.deepEqual(ayah.phrases, [], `${chapter}:${ayah.number}: no phrase cards`);
+      const key = `${chapter}:${ayah.number}`;
+      if (publishedChapters.has(chapter)) assert.ok(ayah.phrases.length > 0, `${key}: phrases`);
+      else if (!isPublished(chapter, ayah.number)) {
+        const cards = authoredPhrases[key];
+        assert.deepEqual(
+          ayah.phrases,
+          (cards ?? []).map((card, index) => ({
+            id: `${key}:phrase:${index + 1}`,
+            wordIds: card.wordIds,
+            labelUrdu: card.labelUrdu.trim(),
+            explanationUrdu: card.explanationUrdu.trim(),
+          })),
+          `${key}: authored phrase cards or none`,
+        );
+        for (const phrase of ayah.phrases)
+          assert.ok(phrase.wordIds.every((id) => id.startsWith(`${key}:`)), `${phrase.id}: words of its ayah`);
+        if (cards) assert.ok(ayah.phrases.length > 0, `${key}: phrases`);
+      }
     }
   }
   assert.equal(published, 16288);
-  assert.equal(sourceOnly, 61141);
+  assert.equal(authored + sourceOnly, 61141);
+  assert.equal(authored, Object.keys(authoredWords).length);
+  assert.ok(authored > 0, 'the grammar layer is applied');
 });
 
 test('the Al-Baqarah pilot keeps its reviewed AI layer for 2:1–20 only', () => {
@@ -363,7 +440,9 @@ test('the Al-Baqarah pilot keeps its reviewed AI layer for 2:1–20 only', () =>
     assert.equal(word.dictionaryUrdu, layer[word.id].dictionaryUrdu, word.id);
     assert.deepEqual(word.segments.map((segment) => segment.meaningUrdu), layer[word.id].segmentMeaningsUrdu, word.id);
   }
-  assert.equal(study.words.find((word) => word.id === '2:21:1')!.dictionaryUrdu, '');
+  // 2:21 onward take the full-Quran grammar layer (or stay source-only), never the pilot files.
+  const next = study.words.find((word) => word.id === '2:21:1')!;
+  assert.equal(next.dictionaryUrdu, authoredWords['2:21:1']?.dictionaryUrdu.trim() ?? '');
 });
 
 test('owner-authorized drafts keep their exact grammar layer; only replaced fields differ', () => {

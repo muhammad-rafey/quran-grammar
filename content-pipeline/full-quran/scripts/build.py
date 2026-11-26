@@ -140,6 +140,64 @@ def gender_number(feats):
 # Published libraries: later editions win (they were seeded from earlier ones and corrected).
 RULES = {r['id']: r for r in load(os.path.join(PIPE, 'libs', 'rules.json'))['rules']}
 
+# ---------------------------------------------------------------- grammar layer (owner 2026-11-26)
+# The owner asked for the published grammar analysis for the whole Quran, in the existing pattern:
+# root and verb-paradigm library cards, per-word segment glosses + dictionary note + extra rule
+# ids, and phrase cards per ayah. Word meanings and ayah translations stay Quran.com's.
+# Libraries: earlier editions first, this pipeline's own entries last (later wins).
+import glob  # noqa: E402
+LIB_DIRS = [os.path.join(PIPE, 'libs'), os.path.join(PIPE, 'edition-2', 'libs'),
+            os.path.join(PIPE, 'edition-3', 'libs'), os.path.join(WORK, 'libs')]
+LIB_ROOTS, LIB_LEXEMES = {}, {}
+for _d in LIB_DIRS:
+    for _name in sorted(glob.glob(os.path.join(_d, 'roots', '*.json'))):
+        for _e in load(_name)['entries']:
+            LIB_ROOTS[_e['root']] = _e
+    for _name in sorted(glob.glob(os.path.join(_d, 'lexemes', '*.json'))):
+        for _e in load(_name)['entries']:
+            LIB_LEXEMES[_e['key']] = _e
+
+
+CHUNK_FILES = []
+
+
+problems = []  # collected everywhere below; reported at the end
+# This pipeline's own library entries must be complete (earlier editions were reviewed already).
+for _name in sorted(glob.glob(os.path.join(WORK, 'libs', 'roots', '*.json'))):
+    for _e in load(_name)['entries']:
+        if not all(isinstance(_e.get(k), str) and _e[k].strip() for k in ('root', 'meaningUrdu', 'noteUrdu')) \
+                or re.search(r'[A-Za-z]|https?:', _e.get('meaningUrdu', '') + _e.get('noteUrdu', '')):
+            problems.append(f"{os.path.basename(_name)}: root {_e.get('root')} incomplete or has Latin text")
+for _name in sorted(glob.glob(os.path.join(WORK, 'libs', 'lexemes', '*.json'))):
+    for _e in load(_name)['entries']:
+        if not all(isinstance(_e.get(k), str) and _e[k].strip() for k in ('key', 'baabUrdu', 'formUrdu', 'past', 'present', 'pattern', 'noteUrdu')) \
+                or re.search(r'[A-Za-z]|https?:', _e.get('baabUrdu', '') + _e.get('noteUrdu', '')):
+            problems.append(f"{os.path.basename(_name)}: paradigm {_e.get('key')} incomplete or has Latin text")
+
+
+def grammar_layer(surah):
+    """words/<surah>/*.json (word id -> entry) and phrases/<surah>/*.json ('s:a' -> cards)."""
+    words, phrases = {}, {}
+    only = os.environ.get('QG_LAYER_FILE')  # e.g. 002-021-035: check one author's files alone
+    pick = lambda names: [n for n in names if not only or os.path.basename(n) == f'{only}.json']  # noqa: E731
+    for name in pick(sorted(glob.glob(os.path.join(WORK, 'words', str(surah), '*.json')))):
+        m = re.fullmatch(r'(\d{3})-(\d{3})-(\d{3})\.json', os.path.basename(name))
+        if m:
+            CHUNK_FILES.append((surah, int(m.group(2)), int(m.group(3)), 'words', name))
+        for key, value in load(name).items():
+            if key in words:
+                problems.append(f'{key}: grammar entry duplicated ({os.path.basename(name)})')
+            words[key] = value
+    for name in pick(sorted(glob.glob(os.path.join(WORK, 'phrases', str(surah), '*.json')))):
+        m = re.fullmatch(r'(\d{3})-(\d{3})-(\d{3})\.json', os.path.basename(name))
+        if m:
+            CHUNK_FILES.append((surah, int(m.group(2)), int(m.group(3)), 'phrases', name))
+        for key, value in load(name).items():
+            if key in phrases:
+                problems.append(f'{key}: phrase cards duplicated ({os.path.basename(name)})')
+            phrases[key] = value
+    return words, phrases
+
 
 def segment_split(stored, segs):
     """Split the stored Quran.com word at QAC segment boundaries by matching base letters."""
@@ -431,7 +489,7 @@ def build_word(wid, stored, segs, wbw, ur_gloss):
 
 # ---------------------------------------------------------------- source words, translations
 PAUSE = re.compile(r'(?: [ۖ-ۜ۩]+)+$')
-text_diffs, excluded_marks, problems = {}, {}, []
+text_diffs, excluded_marks = {}, {}
 missing_meanings, kept_meanings, letter_mismatches, merged_words, arabic_updates = [], [], [], [], []
 
 
@@ -587,6 +645,42 @@ def source_only_word(w):
     )
 
 
+PARADIGM_FIELDS = ('baabUrdu', 'formUrdu', 'past', 'present', 'pattern', 'noteUrdu')
+LATIN = re.compile(r'[A-Za-z]|https?:')
+
+
+def authored_word(w, entry):
+    """Source word plus its grammar layer (segment glosses, dictionary note, extra rules)."""
+    word = source_only_word(w)
+    if entry.get('arabic') != w['arabic']:
+        problems.append(f"{w['id']}: grammar entry Arabic {entry.get('arabic')} ≠ {w['arabic']}")
+    glosses = entry.get('segmentMeaningsUrdu')
+    if not isinstance(glosses, list) or len(glosses) != len(word['segments']) or not all(
+            isinstance(x, str) and x.strip() for x in glosses):
+        problems.append(f"{w['id']}: segmentMeaningsUrdu needs {len(word['segments'])} non-empty glosses")
+        glosses = [''] * len(word['segments'])
+    note = entry.get('dictionaryUrdu')
+    if not isinstance(note, str) or not note.strip():
+        problems.append(f"{w['id']}: dictionaryUrdu missing")
+        note = ''
+    for text in [note, *glosses]:
+        if LATIN.search(text or ''):
+            problems.append(f"{w['id']}: Latin text or URL in the grammar entry")
+    extra = entry.get('addRuleIds', [])
+    if not isinstance(extra, list) or any(r not in RULES for r in extra):
+        problems.append(f"{w['id']}: unknown addRuleIds {extra}")
+        extra = []
+    word['dictionaryUrdu'] = note.strip()
+    for seg, gloss in zip(word['segments'], glosses):
+        seg['meaningUrdu'] = gloss.strip()
+    word['ruleIds'] = list(dict.fromkeys(word['ruleIds'] + extra))
+    authored_ids.add(w['id'])
+    return word
+
+
+authored_ids = set()
+
+
 def source_verb_form(w):
     form = w['lexemeKey'].split('|')[1] if w['lexemeKey'] else 'I'
     return OrderedDict(
@@ -616,8 +710,16 @@ def build_chapter(surah):
         # Only the pilot's ayahs carry a published layer; later ayahs are rebuilt from sources
         # (keeps `assemble` idempotent once surah-2.json holds the whole chapter).
         kept = min(kept, SCOPE['partialPilot']['aiLayerThroughAyah'])
-        base = dict(base, words=[w for w in base['words'] if w['ayah'] <= kept],
-                    verbForms={k: v for k, v in base['verbForms'].items() if int(k.split(':')[1]) <= kept})
+        pilot_words = [w for w in base['words'] if w['ayah'] <= kept]
+        pilot_roots = {w['root'] for w in pilot_words if w['root']}
+        pilot_rules = {r for w in pilot_words for r in w['ruleIds']}
+        # The pilot's published layer is what its own words use; root, rule and phrase entries
+        # that only later ayahs use are rebuilt (library cards, authored phrases) every time.
+        base = dict(base, words=pilot_words,
+                    verbForms={k: v for k, v in base['verbForms'].items() if int(k.split(':')[1]) <= kept},
+                    roots=OrderedDict((r, v) for r, v in base['roots'].items() if r in pilot_roots),
+                    rules=[r for r in base['rules'] if r['id'] in pilot_rules],
+                    ayahs=[a for a in base['ayahs'] if a['number'] <= kept])
     if base and surah in SCOPE['existingLessons'] and kept != count:
         raise SystemExit(f'{surah}: existing lesson has {kept} of {count} ayahs')
     words, verb_forms = [], OrderedDict()
@@ -646,12 +748,39 @@ def build_chapter(surah):
                 word['meaningUrdu'] = ''
             words.append(word)
         verb_forms.update(base['verbForms'])
+    layer, layer_phrases = grammar_layer(surah)
+    # The 2:1–20 pilot entries are already part of the published lesson (base).
+    for s_, a1, a2, kind, name in [c for c in CHUNK_FILES if c[0] == surah]:
+        have = load(name)
+        if kind == 'words':
+            want = [w['id'] for w in src if a1 <= w['ayah'] <= a2]
+            missing = [x for x in want if x not in have]
+            extra = [x for x in have if x not in want]
+        else:
+            want = [f'{surah}:{n}' for n in range(a1, a2 + 1)]
+            missing = [x for x in want if not have.get(x)]
+            extra = [x for x in have if x not in want]
+        if missing or extra:
+            problems.append(f'{os.path.relpath(name, WORK)}: missing {missing[:5]} extra {extra[:5]}')
+    unknown = {k for k in layer if int(k.split(':')[1]) > kept} - {w['id'] for w in src}
+    if unknown:
+        problems.append(f'{surah}: grammar entries for unknown or published words {sorted(unknown)[:5]}')
+    authored_words, authored_ayahs = 0, set()
     for w in src:
         if w['ayah'] <= kept:
             continue
-        words.append(source_only_word(w))
+        entry = layer.get(w['id'])
+        if entry is not None:
+            authored_words += 1
+            authored_ayahs.add(w['ayah'])
+        word = source_only_word(w) if entry is None else authored_word(w, entry)
+        words.append(word)
         if w['pos'] == 'verb':
-            verb_forms[w['id']] = source_verb_form(w)
+            lex = LIB_LEXEMES.get(w['lexemeKey'])
+            verb_forms[w['id']] = (OrderedDict((k, lex[k]) for k in PARADIGM_FIELDS) if lex
+                                   else source_verb_form(w))
+            if lex and entry is not None:
+                word['lemma'] = lex['past']
 
     # rules: published rule cards first (unchanged), then library cards for new rule ids
     rules = list(base['rules']) if base else []
@@ -668,8 +797,28 @@ def build_chapter(surah):
     roots = OrderedDict(base['roots']) if base else OrderedDict()
     for w in words:
         if w['root'] and w['root'] not in roots:
-            roots[w['root']] = OrderedDict(meaningUrdu='', noteUrdu='')
+            lib = LIB_ROOTS.get(w['root'])
+            roots[w['root']] = OrderedDict(meaningUrdu=lib['meaningUrdu'] if lib else '',
+                                           noteUrdu=lib['noteUrdu'] if lib else '')
     phrases = {a['number']: a['phrases'] for a in base['ayahs']} if base else {}
+    ids = {w['id'] for w in words}
+    for key, cards in layer_phrases.items():
+        n = int(key.split(':')[1])
+        if not key.startswith(f'{surah}:') or n <= kept or n > count:
+            problems.append(f'{key}: phrase cards outside the chapter\'s unpublished ayahs')
+            continue
+        out = []
+        for i, card in enumerate(cards, start=1):
+            bad = [x for x in card.get('wordIds', []) if x not in ids or int(x.split(':')[1]) != n]
+            if bad or not card.get('wordIds') or not all(
+                    isinstance(card.get(f), str) and card[f].strip() for f in ('labelUrdu', 'explanationUrdu')):
+                problems.append(f'{key}: phrase card {i} invalid (word ids {bad or card.get("wordIds")})')
+                continue
+            out.append(OrderedDict(id=f'{key}:phrase:{i}', wordIds=list(card['wordIds']),
+                                   labelUrdu=card['labelUrdu'].strip(),
+                                   explanationUrdu=card['explanationUrdu'].strip()))
+        phrases[n] = out
+        authored_ayahs.add(n)
     ayahs = [OrderedDict(number=n, translations=ayah_translations(surah, n), phrases=phrases.get(n, []))
              for n in range(1, count + 1)]
     if base:
@@ -684,14 +833,95 @@ def build_chapter(surah):
         words=words, ayahs=ayahs, rules=rules, roots=roots, verbForms=verb_forms,
     )
     stats = {'words': len(words), 'publishedWords': len([w for w in base['words']]) if base else 0,
-             'meaningsReplaced': meaning_changes}
+             'meaningsReplaced': meaning_changes,
+             'authoredWords': authored_words, 'authoredAyahs': sorted(authored_ayahs),
+             'libraryRoots': sum(1 for r in roots if r not in (base['roots'] if base else {}) and r in LIB_ROOTS),
+             'libraryParadigms': sum(1 for k, v in verb_forms.items()
+                                     if int(k.split(':')[1]) > kept and v.get('present'))}
     return study, stats
 
+
+ONLY_PACKETS = [int(x) for x in os.environ['QG_SURAHS'].split(',')] if os.environ.get('QG_SURAHS') else None
+# ---------------------------------------------------------------- grammar work packets
+if MODE == 'packets':
+    # Chunk plan: consecutive ayahs of the unpublished part of each chapter, about TARGET words
+    # each (an ayah is never split). Packets carry everything a grammar author needs.
+    TARGET = int(os.environ.get('QG_CHUNK_WORDS', '220'))
+    out_dir = os.path.join(WORK, 'packets')
+    os.makedirs(out_dir, exist_ok=True)
+    plan, need_roots, need_lex = [], OrderedDict(), OrderedDict()
+    for surah in ONLY_PACKETS or range(1, 115):
+        if surah in SCOPE['existingLessons']:
+            continue
+        start = SCOPE['partialPilot']['aiLayerThroughAyah'] + 1 if surah == SCOPE['partialPilot']['surah'] else 1
+        src = [w for w in source_words(surah) if w['ayah'] >= start]
+        by_ayah = OrderedDict()
+        for w in src:
+            by_ayah.setdefault(w['ayah'], []).append(w)
+        chunk = []
+        def flush():
+            if not chunk:
+                return
+            a1, a2 = chunk[0]['ayah'], chunk[-1]['ayah']
+            cid = f'{surah:03d}-{a1:03d}-{a2:03d}'
+            packet = OrderedDict(
+                chunk=cid, surah=surah, fromAyah=a1, toAyah=a2,
+                ayahs=[OrderedDict(key=f'{surah}:{n}', arabic=' '.join(w['arabic'] for w in by_ayah[n]),
+                                   translationUrdu=TRANSLATIONS['jalandhari'][f'{surah}:{n}'])
+                       for n in range(a1, a2 + 1)],
+                words=[OrderedDict(
+                    id=w['id'], arabic=w['arabic'], meaningUrdu=w['meaningUrdu'], pos=w['pos'],
+                    posUrdu=w['posUrdu'], root=w['root'], lemma=w['lemma'], lexemeKey=w['lexemeKey'],
+                    morphologyUrdu=w['morphologyUrdu'], irabArabic=w['syntaxUrdu'],
+                    segments=[OrderedDict(arabic=x['arabic'], roleUrdu=x['roleUrdu']) for x in w['segments']],
+                    ruleIds=w['ruleIds'], glossEnglishCorpus=w['reference']['glossEnglishQac'],
+                    morphologyEnglishCorpus=w['reference']['qacMorphologyEnglish'],
+                ) for w in chunk],
+            )
+            dump(os.path.join(out_dir, f'words-{cid}.json'), packet)
+            plan.append(OrderedDict(chunk=cid, surah=surah, fromAyah=a1, toAyah=a2, words=len(chunk)))
+            chunk.clear()
+        for n, ws in by_ayah.items():
+            if chunk and len(chunk) + len(ws) > TARGET:
+                flush()
+            chunk.extend(ws)
+        flush()
+        for w in src:
+            if w['root'] and w['root'] not in LIB_ROOTS:
+                r = need_roots.setdefault(w['root'], OrderedDict(root=w['root'], occurrences=[]))
+                if len(r['occurrences']) < 12:
+                    r['occurrences'].append(OrderedDict(id=w['id'], arabic=w['arabic'], lemma=w['lemma'],
+                                                        meaningUrdu=w['meaningUrdu'],
+                                                        glossEnglish=w['reference']['glossEnglishQac']))
+            if w['pos'] == 'verb' and w['lexemeKey'] not in LIB_LEXEMES:
+                lemma_bw, form, voice = w['lexemeKey'].split('|')
+                x = need_lex.setdefault(w['lexemeKey'], OrderedDict(
+                    key=w['lexemeKey'], lemmaCorpus=w['lemma'], form=form, voice=voice, root=w['root'],
+                    occurrences=[]))
+                if len(x['occurrences']) < 8:
+                    x['occurrences'].append(OrderedDict(id=w['id'], arabic=w['arabic'], meaningUrdu=w['meaningUrdu'],
+                                                        morphologyEnglishCorpus=w['reference']['qacMorphologyEnglish']))
+    dump(os.path.join(out_dir, 'needs-roots.json'), list(need_roots.values()))
+    dump(os.path.join(out_dir, 'needs-lexemes.json'), list(need_lex.values()))
+    dump(os.path.join(out_dir, 'plan.json'), plan)
+    print(json.dumps({'chunks': len(plan), 'words': sum(c['words'] for c in plan),
+                      'missingRoots': len(need_roots), 'missingLexemes': len(need_lex)}, indent=1))
+    sys.exit(0)
 
 # QG_SURAHS=1,2,3 limits a `check` run while sources are still downloading (never for assemble).
 ONLY = [int(x) for x in os.environ['QG_SURAHS'].split(',')] if os.environ.get('QG_SURAHS') else None
 if ONLY and MODE == 'assemble':
     raise SystemExit('assemble always builds all 114 chapters; unset QG_SURAHS')
+def ranges(numbers):
+    out = []
+    for n in numbers:
+        if out and out[-1][1] == n - 1:
+            out[-1][1] = n
+        else:
+            out.append([n, n])
+    return out
+
+
 studies, report = {}, {}
 for surah in ONLY or range(1, 115):
     studies[surah], report[surah] = build_chapter(surah)
@@ -710,6 +940,10 @@ summary = OrderedDict(
     excludedPauseSigns=sum(len(v) for v in excluded_marks.values()),
     sourceOnlyWordsWithoutQuranComMeaning=len(missing_meanings),
     publishedWordsWithoutQuranComMeaning=len(kept_meanings),
+    grammarLayerWords=sum(r['authoredWords'] for r in report.values()),
+    grammarLayerAyahs=sum(len(r['authoredAyahs']) for r in report.values()),
+    libraryRootEntries=sum(r['libraryRoots'] for r in report.values()),
+    libraryVerbParadigms=sum(r['libraryParadigms'] for r in report.values()),
     problems=len(problems),
 )
 if not ONLY and total_words != len(qac):
@@ -745,6 +979,17 @@ if MODE == 'assemble':
         meaningGaps=OrderedDict(
             note='Quran.com word-by-word Urdu is empty for these words, so their meaning is empty (hidden in the apps); no AI-written meaning is used.',
             sourceOnlyEmpty=missing_meanings, publishedEmptied=kept_meanings,
+        ),
+        grammarLayer=OrderedDict(
+            note=('AI-authored grammar layer (owner decision 2026-11-26), scholarly review pending: '
+                  'segment glosses, dictionary notes and extra rule ids from words/<surah>/*.json, phrase '
+                  'cards from phrases/<surah>/*.json, root and verb-paradigm cards from the libraries '
+                  '(applied to every unpublished word whose root or lexeme they cover). Word meanings and '
+                  'ayah translations are never part of it. `chapters` lists, per chapter, the number of '
+                  'authored words and the authored ayahs as [from, to] ranges.'),
+            authoredWords=summary['grammarLayerWords'], authoredAyahs=summary['grammarLayerAyahs'],
+            chapters=OrderedDict((str(s_), OrderedDict(words=r['authoredWords'], ayahs=ranges(r['authoredAyahs'])))
+                                 for s_, r in report.items() if r['authoredWords'] or r['authoredAyahs']),
         ),
         summary=summary,
     ))

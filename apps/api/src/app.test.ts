@@ -176,8 +176,8 @@ test('every chapter and word detail stays within its own lesson', async () => {
     assert.equal(data.ayahs.length, ayahCount);
     assert.equal(data.words.length, wordCount);
     assert.deepEqual(Object.keys(data.ayahs[0].translations), translationIds, `Surah ${number}`);
-    // Every word with a published grammar layer, and every eighth source-only word plus each
-    // ayah's last word (the route is the same; 77k sequential requests would take ~10 s).
+    // Every word with a published or authored grammar layer, and every eighth source-only word
+    // plus each ayah's last word (the route is the same; 77k sequential requests would take ~10 s).
     const check = async (word: StudyData['words'][number]) => {
       const detail = await (
         await fetch(`${base}/api/v1/surahs/${number}/words/${encodeURIComponent(word.id)}`)
@@ -194,6 +194,7 @@ test('every chapter and word detail stays within its own lesson', async () => {
       (word, index, all) =>
         publishedChapters.has(number) ||
         (number === 2 && word.ayah <= 20) ||
+        word.dictionaryUrdu !== '' ||
         index % 8 === 0 ||
         all[index + 1]?.ayah !== word.ayah,
     );
@@ -213,7 +214,7 @@ test('chapter-scoped search never returns another chapter and rejects invalid sc
       (word: { id: string; pos: string }) => word.id.startsWith('114:') && word.pos === 'verb',
     ),
   );
-  // A source-only chapter is searchable within its own scope.
+  // Another long chapter (Al Imran) is searchable within its own scope.
   const imran = await (await fetch(`${base}/api/v1/search?surah=3&pos=verb`)).json();
   assert.equal(imran.surah, 3);
   assert.ok(imran.words.length > 0);
@@ -320,7 +321,9 @@ test('large lessons are gzipped for clients that accept it and plain otherwise',
   assert.equal(zipped.headers['content-encoding'], 'gzip');
   assert.match(String(zipped.headers['content-type']), /^application\/json/);
   assert.match(String(zipped.headers.vary), /Accept-Encoding/);
-  assert.ok(zipped.body.length < 1_000_000, `gzipped Al-Baqarah is ${zipped.body.length} bytes`);
+  // With the full grammar layer (notes, glosses, phrase cards, library cards) Al-Baqarah is
+  // ~8.8 MB of JSON and ~1.2 MB gzipped.
+  assert.ok(zipped.body.length < 1_500_000, `gzipped Al-Baqarah is ${zipped.body.length} bytes`);
   assert.deepEqual(JSON.parse(gunzipSync(zipped.body).toString('utf8')), expected);
   const plain = await get('/api/v1/surahs/2');
   assert.equal(plain.headers['content-encoding'], undefined);
