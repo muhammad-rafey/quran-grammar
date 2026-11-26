@@ -45,5 +45,5 @@ export type { ContentRepository, PracticeQuestionFilter, SurahSummary } from './
 export { cachedRepository } from './repository';
 
 export { availableSurahNumbers, partialSurahLastAyah } from './availability';
-export type { FontRole, FontStyleKind, FontMetrics, ReadingFont } from './fonts';
-export { readingFonts, defaultFontIds, fontsForRole, resolveFont } from './fonts';
+export type { FontRole, FontStyleKind, FontMetrics, QuranScript, ReadingFont } from './fonts';
+export { readingFonts, defaultFontIds, fontsForRole, resolveFont, quranText } from './fonts';

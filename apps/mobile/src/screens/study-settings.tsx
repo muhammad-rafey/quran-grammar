@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ActivityIndicator, Image, Pressable, Text, View } from 'react-native';
 import { Host, Switch } from '@expo/ui';
-import type { FontRole, ReadingFont } from '@quran-grammar/core';
+import { quranText, type FontRole, type ReadingFont } from '@quran-grammar/core';
 import { useInterface } from '@/state/preferences-provider';
 import { useStudy } from '@/state/study-provider';
 import { Action, DataStatus, Label, Section, StudyFooter } from '@/components/study-ui';
@@ -165,10 +165,12 @@ function FontSettings() {
     const first = study?.ayahs[0];
     if (!study || !first) return null;
     const words = study.words.filter((word) => word.ayah === first.number);
+    // Source-first lessons have no ayah translation; preview with word meanings instead.
+    const urdu = first.translationUrdu || words.map((word) => word.meaningUrdu).join('، ');
     return {
-      arabic: words.map((word) => word.arabic).join(' '),
-      // Source-first lessons have no ayah translation; preview with word meanings instead.
-      urdu: first.translationUrdu || words.map((word) => word.meaningUrdu).join('، '),
+      // Each Quran option previews the text it will show (IndoPak fonts: the IndoPak text).
+      arabic: (font: ReadingFont) => words.map((word) => quranText(word, font)).join(' '),
+      urdu: () => urdu,
     };
   }, [study]);
   return (
@@ -211,7 +213,8 @@ function FontChoice({
   title: string;
   selected: string;
   failed: boolean;
-  sample: string | undefined;
+  /** The preview text for an option's font (absent while the chapter loads). */
+  sample: ((font: ReadingFont) => string) | undefined;
   onSelect: (id: string) => Promise<void>;
 }) {
   const { ui, isUrdu, labelText, controlRow } = useInterface();
@@ -255,6 +258,7 @@ function FontChoice({
           const checked = font.id === selected;
           const name = isUrdu ? font.labelUrdu : font.label;
           const note = isUrdu ? (font.coverageNoteUrdu ?? font.coverageNote) : font.coverageNote;
+          const preview = sample?.(font);
           return (
             <Pressable
               key={font.id}
@@ -300,17 +304,17 @@ function FontChoice({
                 </View>
                 <Label style={{ flex: 1, fontWeight: checked ? '700' : '400' }}>{name}</Label>
               </View>
-              {sample ? (
+              {preview ? (
                 ready.has(font.id) ? (
                   <Text
-                    accessibilityLabel={`${ui.fontPreview}: ${sample}`}
+                    accessibilityLabel={`${ui.fontPreview}: ${preview}`}
                     numberOfLines={2}
                     style={[
                       sampleStyles.get(font.id),
                       { color: colors.ink, textAlign: 'right', writingDirection: 'rtl' },
                     ]}
                   >
-                    {sample}
+                    {preview}
                   </Text>
                 ) : (
                   <ActivityIndicator color={colors.primary} style={{ alignSelf: 'flex-start' }} />

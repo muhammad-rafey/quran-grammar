@@ -69,6 +69,7 @@ export function isStudyData(value: unknown): value is StudyData {
         'syntaxUrdu',
         'dictionaryUrdu',
       ]) ||
+      !(word.arabicIndoPak === undefined || text(word.arabicIndoPak)) ||
       !integer(word.ayah) ||
       word.ayah > surah.ayahCount ||
       !integer(word.position) ||

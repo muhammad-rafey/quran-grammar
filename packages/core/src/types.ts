@@ -12,6 +12,8 @@ export interface Word {
   ayah: number;
   position: number;
   arabic: string;
+  /** Quran.com text_indopak for this word (IndoPak orthography); absent in older data. */
+  arabicIndoPak?: string;
   meaningUrdu: string;
   pos: PartOfSpeech;
   posUrdu: string;

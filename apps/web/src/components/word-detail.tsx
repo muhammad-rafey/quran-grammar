@@ -3,6 +3,8 @@ import { ArrowLeft, ArrowRight, BookOpenText, GitBranch, X } from 'lucide-react'
 import {
   formatCount,
   getUiStrings,
+  quranText,
+  type ReadingFont,
   type StudyData,
   type UiLanguage,
   type Word,
@@ -12,13 +14,23 @@ interface Props {
   word: Word;
   study: StudyData;
   language: UiLanguage;
+  /** The selected Quran font: IndoPak fonts show whole words in the IndoPak text. */
+  quranFont: ReadingFont;
   onSelect: (id: string) => void;
   /** Opens the grammar topic dialog for a rule; the button is passed back for focus return. */
   onTopic: (ruleId: string, trigger: HTMLElement) => void;
   onClose?: () => void;
 }
 
-export function WordDetail({ word, study, language, onSelect, onTopic, onClose }: Props) {
+export function WordDetail({
+  word,
+  study,
+  language,
+  quranFont,
+  onSelect,
+  onTopic,
+  onClose,
+}: Props) {
   const strings = getUiStrings(language);
   const uiDirection = language === 'ur' ? 'rtl' : 'ltr';
   const [segment, setSegment] = useState<number | null>(null);
@@ -57,7 +69,7 @@ export function WordDetail({ word, study, language, onSelect, onTopic, onClose }
         </div>
         <div className="detail-title">
           <h2 id="detail-title" className="arabic" lang="ar">
-            {word.arabic}
+            {quranText(word, quranFont)}
           </h2>
           <span className={`pos-badge ${word.pos}`}>{word.posUrdu}</span>
         </div>
@@ -139,6 +151,7 @@ export function WordDetail({ word, study, language, onSelect, onTopic, onClose }
                 aria-pressed={segment === partIndex}
                 onClick={() => setSegment(partIndex)}
               >
+                {/* Corpus segments split the Uthmani word; there is no IndoPak segmentation. */}
                 <span lang="ar">{part.arabic}</span>
                 <small>{part.roleUrdu}</small>
               </button>
@@ -206,7 +219,7 @@ export function WordDetail({ word, study, language, onSelect, onTopic, onClose }
                   onClick={() => onSelect(entry.id)}
                   data-related-word={entry.id}
                 >
-                  <span lang="ar">{entry.arabic}</span>
+                  <span lang="ar">{quranText(entry, quranFont)}</span>
                   <small className="ui" dir={uiDirection} lang={language}>
                     {strings.ayah} {formatCount(entry.ayah, language)}
                   </small>

@@ -450,6 +450,7 @@ export function App() {
                     filtering={filtering}
                     matches={matches}
                     layout={layout}
+                    quranFont={quranFont}
                     onSelect={selectWord}
                   />
                 </div>
@@ -461,6 +462,7 @@ export function App() {
                       word={selected!}
                       study={study}
                       language={language}
+                      quranFont={quranFont}
                       onSelect={selectWord}
                       onTopic={(id, button) => setTopic({ id, trigger: button })}
                     />
@@ -489,6 +491,7 @@ export function App() {
                 word={selected!}
                 study={study}
                 language={language}
+                quranFont={quranFont}
                 onSelect={selectWord}
                 onTopic={(id, button) => setTopic({ id, trigger: button })}
                 onClose={() => setSheetOpen(false)}

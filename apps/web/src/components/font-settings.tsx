@@ -2,6 +2,7 @@ import type { CSSProperties } from 'react';
 import {
   fontsForRole,
   getUiStrings,
+  quranText,
   type FontRole,
   type ReadingFont,
   type StudyData,
@@ -37,14 +38,21 @@ export function FontSettings({ language, study, quranFont, urduFont, onChange, s
       .slice(0, previewWords)
       .map((word) => word.meaningUrdu)
       .join('، ');
-  const ayahWords = firstAyah
-    ? study.words.filter((word) => word.ayah === firstAyah.number).map((word) => word.arabic)
-    : [];
-  const quranSample =
-    ayahWords.slice(0, previewWords).join(' ') + (ayahWords.length > previewWords ? ' …' : '');
-  const groups: { role: FontRole; title: string; selected: ReadingFont; sample: string }[] = [
+  const ayahWords = firstAyah ? study.words.filter((word) => word.ayah === firstAyah.number) : [];
+  // Each Quran option previews the text it will show (IndoPak fonts: the IndoPak text).
+  const quranSample = (font: ReadingFont) =>
+    ayahWords
+      .slice(0, previewWords)
+      .map((word) => quranText(word, font))
+      .join(' ') + (ayahWords.length > previewWords ? ' …' : '');
+  const groups: {
+    role: FontRole;
+    title: string;
+    selected: ReadingFont;
+    sample: (font: ReadingFont) => string;
+  }[] = [
     { role: 'quran', title: ui.quranFont, selected: quranFont, sample: quranSample },
-    { role: 'urdu', title: ui.urduFont, selected: urduFont, sample: urduSample },
+    { role: 'urdu', title: ui.urduFont, selected: urduFont, sample: () => urduSample },
   ];
   // The preview is clamped to two lines (overflow hidden), so each line holds the font's full ink
   // extent: marks above and below are never cut.
@@ -72,6 +80,7 @@ export function FontSettings({ language, study, quranFont, urduFont, onChange, s
           >
             {fontsForRole(role).map((font) => {
               const note = coverageNote(font, language);
+              const preview = sample(font);
               const id = `font-${font.id}`;
               return (
                 <label
@@ -87,14 +96,14 @@ export function FontSettings({ language, study, quranFont, urduFont, onChange, s
                       checked={font.id === selected.id}
                       aria-labelledby={`${id}-name`}
                       aria-describedby={
-                        [sample && `${id}-preview`, note && `${id}-note`].filter(Boolean).join(' ') ||
+                        [preview && `${id}-preview`, note && `${id}-note`].filter(Boolean).join(' ') ||
                         undefined
                       }
                       onChange={() => onChange(role, font.id)}
                     />
                     <strong id={`${id}-name`}>{language === 'ur' ? font.labelUrdu : font.label}</strong>
                   </span>
-                  {sample && (
+                  {preview && (
                     <span className="font-preview" id={`${id}-preview`}>
                       <span className="sr-only">{ui.fontPreview}: </span>
                       <span
@@ -103,7 +112,7 @@ export function FontSettings({ language, study, quranFont, urduFont, onChange, s
                         dir="rtl"
                         style={previewStyle(font)}
                       >
-                        {sample}
+                        {preview}
                       </span>
                     </span>
                   )}

@@ -23,6 +23,7 @@ import {
   getJuzForAyah,
   getSurahTitle,
   juzCatalog,
+  quranText,
   type Ayah,
   type PartOfSpeechFilter,
   type StudyData,
@@ -541,7 +542,7 @@ const AyahCard = memo(function AyahCard({
               style={word.id === selectedId ? styles.plainSelected : undefined}
             >
               {index > 0 ? ' ' : ''}
-              {word.arabic}
+              {quranText(word, chrome.fonts.quranFont)}
             </Text>
           ))}
           <Text style={styles.ayahEnd}>{` ۝${formatCount(ayah.number, 'ur')}`}</Text>
@@ -605,7 +606,7 @@ const WordToken = memo(function WordToken({
     <Pressable
       testID={`word-${word.id}`}
       accessibilityRole="button"
-      accessibilityLabel={`${word.arabic}, ${word.meaningUrdu}, ${word.posUrdu}, ${wordStudy}`}
+      accessibilityLabel={`${quranText(word, fonts.quranFont)}, ${word.meaningUrdu}, ${word.posUrdu}, ${wordStudy}`}
       accessibilityState={{ selected }}
       onPress={() => onOpen(word)}
       style={({ pressed }) => [
@@ -615,7 +616,7 @@ const WordToken = memo(function WordToken({
         !matched && styles.tokenDimmed,
       ]}
     >
-      <Text style={fonts.tokenArabic}>{word.arabic}</Text>
+      <Text style={fonts.tokenArabic}>{quranText(word, fonts.quranFont)}</Text>
       {showMeaning && <Text style={fonts.tokenMeaning}>
           {word.meaningUrdu}
           {lineEndSlack}
@@ -648,6 +649,8 @@ function studyFonts(typography: Typography) {
       text: { ...posText, color },
     });
   return {
+    /** The Quran font in use: IndoPak fonts show the IndoPak text (see quranText). */
+    quranFont: typography.quranFont,
     ...StyleSheet.create({
       tokenArabic: { ...typography.arabic, textAlign: 'center' },
       tokenMeaning: { ...typography.small, color: colors.ink, textAlign: 'center', maxWidth: 180 },

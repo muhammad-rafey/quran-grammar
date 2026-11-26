@@ -2,6 +2,8 @@ import {
   formatCount,
   getUiStrings,
   getSurahTitle,
+  quranText,
+  type ReadingFont,
   type StudyData,
   type UiLanguage,
   type Word,
@@ -19,6 +21,8 @@ interface Props {
   filtering: boolean;
   matches: Set<string>;
   layout: ReadingLayout;
+  /** The selected Quran font: IndoPak fonts show the IndoPak text (see quranText). */
+  quranFont: ReadingFont;
   onSelect: (id: string, trigger: HTMLButtonElement) => void;
 }
 
@@ -30,6 +34,7 @@ export function Reading({
   filtering,
   matches,
   layout,
+  quranFont,
   onSelect,
 }: Props) {
   const strings = getUiStrings(language);
@@ -57,10 +62,10 @@ export function Reading({
               data-word-id={word.id}
               className={`plain-word ${selectedId === word.id ? 'selected' : ''}`}
               aria-pressed={selectedId === word.id}
-              aria-label={`${word.arabic}، ${word.meaningUrdu}`}
+              aria-label={`${quranText(word, quranFont)}، ${word.meaningUrdu}`}
               onClick={(event) => onSelect(word.id, event.currentTarget)}
             >
-              {word.arabic}
+              {quranText(word, quranFont)}
             </button>{' '}
           </span>
         ))}
@@ -123,11 +128,11 @@ export function Reading({
                   data-word-id={word.id}
                   className={`quran-word ${word.pos} ${selectedId === word.id ? 'selected' : ''} ${filtering ? (matches.has(word.id) ? 'matched' : 'unmatched') : ''}`}
                   aria-pressed={selectedId === word.id}
-                  aria-label={`${word.arabic}، ${word.meaningUrdu}، ${strings.ayah} ${formatCount(word.ayah, language)} ${strings.word} ${formatCount(word.position, language)}`}
+                  aria-label={`${quranText(word, quranFont)}، ${word.meaningUrdu}، ${strings.ayah} ${formatCount(word.ayah, language)} ${strings.word} ${formatCount(word.position, language)}`}
                   onClick={(event) => onSelect(word.id, event.currentTarget)}
                 >
                   <span className="arabic" lang="ar">
-                    {word.arabic}
+                    {quranText(word, quranFont)}
                   </span>
                   {meanings && <span className="word-meaning">{word.meaningUrdu}</span>}
                   <span className="word-kind">
