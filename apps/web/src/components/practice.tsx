@@ -161,11 +161,16 @@ export function QuizRunner({
                 aria-pressed={choice === option.id}
                 lang={option.language}
                 dir="rtl"
-                className={`practice-option ${choice === option.id ? 'selected' : ''} ${checked && option.id === question.correctOptionId ? 'correct' : ''}`}
+                className={`practice-option ${choice === option.id ? 'selected' : ''} ${checked && option.id === question.correctOptionId ? 'correct' : ''} ${checked && choice === option.id && option.id !== question.correctOptionId ? 'incorrect' : ''}`}
                 onClick={() => setChoice(option.id)}
               >
                 <span>{practiceOptionText(option, quranFont)}</span>
-                {checked && option.id === question.correctOptionId && <Check size={18} />}
+                {checked && option.id === question.correctOptionId && (
+                  <Check size={18} aria-hidden="true" />
+                )}
+                {checked && choice === option.id && option.id !== question.correctOptionId && (
+                  <X size={18} aria-hidden="true" />
+                )}
               </button>
             ))}
           </div>
@@ -351,7 +356,9 @@ export function PracticeGrammar({
         <PracticeQuiz
           key={selectionKey}
           filter={selection}
-          topic={'topicId' in selection ? topics?.find((t) => t.id === selection.topicId) : undefined}
+          topic={
+            'topicId' in selection ? topics?.find((t) => t.id === selection.topicId) : undefined
+          }
           language={language}
           quranFont={quranFont}
           onBack={() => onSelect(null)}

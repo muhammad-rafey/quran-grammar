@@ -10,6 +10,9 @@ import {
   type Word,
 } from '@quran-grammar/core';
 
+/** Words with the same root shown before "Show all". */
+const relatedPreview = 12;
+
 interface Props {
   word: Word;
   study: StudyData;
@@ -34,15 +37,20 @@ export function WordDetail({
   const strings = getUiStrings(language);
   const uiDirection = language === 'ur' ? 'rtl' : 'ltr';
   const [segment, setSegment] = useState<number | null>(null);
+  const [showAllRelated, setShowAllRelated] = useState(false);
   const scroll = useRef<HTMLDivElement>(null);
   const index = study.words.findIndex((entry) => entry.id === word.id);
   const root = word.root ? study.roots[word.root] : null;
   const verb = study.verbForms[word.id];
+  const rules = word.ruleIds
+    .map((id) => study.rules.find((rule) => rule.id === id))
+    .filter((rule) => !!rule);
   const related = word.root
     ? study.words.filter((entry) => entry.root === word.root && entry.id !== word.id)
     : [];
   useEffect(() => {
     setSegment(null);
+    setShowAllRelated(false);
     scroll.current?.scrollTo(0, 0);
   }, [word.id]);
 
@@ -76,6 +84,27 @@ export function WordDetail({
         {word.meaningUrdu && <p className="detail-translation">{word.meaningUrdu}</p>}
       </header>
       <div className="detail-scroll" ref={scroll} dir="rtl" lang="ur">
+        {/* The word's grammar first: its role in the sentence (i'rab) and how it is formed. */}
+        {(word.syntaxUrdu || word.morphologyUrdu) && (
+          <section className="detail-section grammar-summary">
+            {word.syntaxUrdu && (
+              <div className="grammar-fact syntax-fact">
+                <h3 className="ui" dir={uiDirection} lang={language}>
+                  {strings.syntax}
+                </h3>
+                <p>{word.syntaxUrdu}</p>
+              </div>
+            )}
+            {word.morphologyUrdu && (
+              <div className="grammar-fact">
+                <h3 className="ui" dir={uiDirection} lang={language}>
+                  {strings.morphology}
+                </h3>
+                <p>{word.morphologyUrdu}</p>
+              </div>
+            )}
+          </section>
+        )}
         <section className="detail-section root-section">
           <div className="root-pair">
             <div>
@@ -104,8 +133,6 @@ export function WordDetail({
               {root.meaningUrdu && <p>{root.meaningUrdu}</p>}
               {root.noteUrdu && <p className="muted-note">{root.noteUrdu}</p>}
             </div>
-          ) : !root ? (
-            <p className="muted-note">—</p>
           ) : null}
         </section>
         {verb && (
@@ -142,48 +169,38 @@ export function WordDetail({
             {verb.noteUrdu && <p>{verb.noteUrdu}</p>}
           </section>
         )}
-        <section className="detail-section">
-          <h3 className="ui" dir={uiDirection} lang={language}>
-            {strings.segments}
-          </h3>
-          <div className="segments">
-            {word.segments.map((part, partIndex) => (
-              <button
-                type="button"
-                key={`${word.id}-${partIndex}`}
-                data-segment={partIndex}
-                className={segment === partIndex ? 'active' : ''}
-                aria-pressed={segment === partIndex}
-                onClick={() => setSegment(partIndex)}
-              >
-                {/* Corpus segments split the Uthmani word; there is no IndoPak segmentation. */}
-                <span lang="ar">{part.arabic}</span>
-                <small>{part.roleUrdu}</small>
-              </button>
-            ))}
-          </div>
-          {segment !== null && (
-            <p className="segment-explanation" role="status">
-              <strong>
-                {word.segments[segment]?.roleUrdu}
-                {word.segments[segment]?.meaningUrdu ? ':' : ''}
-              </strong>{' '}
-              {word.segments[segment]?.meaningUrdu}
-            </p>
-          )}
-        </section>
-        <section className="detail-section">
-          <h3 className="ui" dir={uiDirection} lang={language}>
-            {strings.morphology}
-          </h3>
-          <p>{word.morphologyUrdu}</p>
-        </section>
-        <section className="detail-section">
-          <h3 className="ui" dir={uiDirection} lang={language}>
-            {strings.syntax}
-          </h3>
-          <p>{word.syntaxUrdu}</p>
-        </section>
+        {word.segments.length > 0 && (
+          <section className="detail-section">
+            <h3 className="ui" dir={uiDirection} lang={language}>
+              {strings.segments}
+            </h3>
+            <div className="segments">
+              {word.segments.map((part, partIndex) => (
+                <button
+                  type="button"
+                  key={`${word.id}-${partIndex}`}
+                  data-segment={partIndex}
+                  className={segment === partIndex ? 'active' : ''}
+                  aria-pressed={segment === partIndex}
+                  onClick={() => setSegment(partIndex)}
+                >
+                  {/* Corpus segments split the Uthmani word; there is no IndoPak segmentation. */}
+                  <span lang="ar">{part.arabic}</span>
+                  <small>{part.roleUrdu}</small>
+                </button>
+              ))}
+            </div>
+            {segment !== null && (
+              <p className="segment-explanation" role="status">
+                <strong>
+                  {word.segments[segment]?.roleUrdu}
+                  {word.segments[segment]?.meaningUrdu ? ':' : ''}
+                </strong>{' '}
+                {word.segments[segment]?.meaningUrdu}
+              </p>
+            )}
+          </section>
+        )}
         {word.dictionaryUrdu && (
           <section className="detail-section">
             <h3 className="ui" dir={uiDirection} lang={language}>
@@ -192,15 +209,13 @@ export function WordDetail({
             <p>{word.dictionaryUrdu}</p>
           </section>
         )}
-        <section className="detail-section">
-          <h3 className="ui" dir={uiDirection} lang={language}>
-            {strings.rules}
-          </h3>
-          <ul className="grammar-rules">
-            {word.ruleIds
-              .map((id) => study.rules.find((rule) => rule.id === id))
-              .filter((rule) => !!rule)
-              .map((rule) => (
+        {rules.length > 0 && (
+          <section className="detail-section">
+            <h3 className="ui" dir={uiDirection} lang={language}>
+              {strings.rules}
+            </h3>
+            <ul className="grammar-rules">
+              {rules.map((rule) => (
                 <li key={`${word.id}-${rule.id}`}>
                   <button
                     type="button"
@@ -214,15 +229,16 @@ export function WordDetail({
                   </button>
                 </li>
               ))}
-          </ul>
-        </section>
+            </ul>
+          </section>
+        )}
         {related.length > 0 && (
           <section className="detail-section">
             <h3 className="ui" dir={uiDirection} lang={language}>
-              {strings.relatedWords}
+              {strings.relatedWords} <small>{formatCount(related.length, language)}</small>
             </h3>
             <div className="related-words">
-              {related.map((entry) => (
+              {(showAllRelated ? related : related.slice(0, relatedPreview)).map((entry) => (
                 <button
                   type="button"
                   key={entry.id}
@@ -236,6 +252,18 @@ export function WordDetail({
                 </button>
               ))}
             </div>
+            {/* Common roots (أ ل ه: 289 words in Al-Baqarah) start with a short list. */}
+            {!showAllRelated && related.length > relatedPreview && (
+              <button
+                type="button"
+                className="text-button ui"
+                dir={uiDirection}
+                lang={language}
+                onClick={() => setShowAllRelated(true)}
+              >
+                {strings.showAll} ({formatCount(related.length, language)})
+              </button>
+            )}
           </section>
         )}
       </div>
@@ -243,6 +271,8 @@ export function WordDetail({
         <button
           type="button"
           aria-label={`${strings.previous} ${strings.word.toLowerCase()}`}
+          aria-keyshortcuts="ArrowRight"
+          title={`${strings.previous} (→)`}
           disabled={index === 0}
           onClick={() => onSelect(study.words[index - 1].id)}
         >
@@ -256,6 +286,8 @@ export function WordDetail({
         <button
           type="button"
           aria-label={`${strings.next} ${strings.word.toLowerCase()}`}
+          aria-keyshortcuts="ArrowLeft"
+          title={`${strings.next} (←)`}
           disabled={index === study.words.length - 1}
           onClick={() => onSelect(study.words[index + 1].id)}
         >

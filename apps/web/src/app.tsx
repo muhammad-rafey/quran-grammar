@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { BookOpen, GraduationCap, Settings, SlidersHorizontal, X } from 'lucide-react';
 import {
   matchesWord,
@@ -26,7 +26,8 @@ import type { PracticeFilter } from './use-api';
 
 type StudyView = 'words' | 'practice' | 'settings';
 
-function readLocation(scroll = false) {
+// Deep links and hash changes scroll their word into view; history.replaceState never fires this.
+function readLocation(scroll = true) {
   const params = new URLSearchParams(location.hash.slice(1));
   const word = params.get('word');
   const requested = Number(word?.split(':')[0] || params.get('surah') || 1);
@@ -36,7 +37,7 @@ function readLocation(scroll = false) {
     word,
     // Juz selections open a chapter at its first ayah inside that juz, e.g. Al-Kahf 75 for Juz 16.
     ayah: !word && Number.isSafeInteger(ayah) && ayah > 1 ? ayah : null,
-    /** Scroll the reading column to the requested word (in-app navigation from a topic). */
+    /** Scroll the reading column to the requested word (deep links, topic examples). */
     scroll,
   };
 }
@@ -75,6 +76,7 @@ export function App() {
   const [sheetOpen, setSheetOpen] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLElement | null>(null);
+  const stickyArea = useRef<HTMLDivElement>(null);
   const selected = study?.words.find((word) => word.id === selectedId) || study?.words[0];
   const matches = useMemo(
     () =>
@@ -134,6 +136,22 @@ export function App() {
     if (!mobile) setSheetOpen(false);
   }, [mobile]);
 
+  // The sticky study toolbar (with any open filters) offsets the word panel and ayah jumps.
+  useLayoutEffect(() => {
+    const element = stickyArea.current;
+    const root = document.documentElement;
+    if (!element || typeof ResizeObserver === 'undefined') return;
+    const update = () =>
+      root.style.setProperty('--sticky-height', `${Math.round(element.offsetHeight)}px`);
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(element);
+    return () => {
+      observer.disconnect();
+      root.style.removeProperty('--sticky-height');
+    };
+  }, [view]);
+
   useEffect(() => {
     if (!mobile || !sheetOpen || !dialog.current) return;
     const element = dialog.current;
@@ -147,6 +165,19 @@ export function App() {
     };
   }, [mobile, sheetOpen]);
 
+  /** Bring a word into view in the reading column when it was chosen from elsewhere. */
+  const revealWord = (id: string, focus = false) =>
+    requestAnimationFrame(() => {
+      const element = document.querySelector<HTMLElement>(`#reading [data-word-id="${id}"]`);
+      if (!element) return;
+      if (focus) element.focus({ preventScroll: true });
+      const box = element.getBoundingClientRect();
+      const top = stickyArea.current?.getBoundingClientRect().bottom ?? 0;
+      const bottom =
+        document.querySelector('.bottom-nav')?.getBoundingClientRect().top ?? innerHeight;
+      if (box.top >= top && box.bottom <= bottom) return;
+      element.scrollIntoView({ behavior: 'instant', block: 'center' });
+    });
   const selectWord = (id: string, button?: HTMLElement) => {
     if (!study?.words.some((word) => word.id === id)) return;
     if (button) trigger.current = button;
@@ -154,7 +185,45 @@ export function App() {
     setActiveAyah(study.words.find((word) => word.id === id)!.ayah);
     history.replaceState(null, '', `#word=${encodeURIComponent(id)}`);
     if (mobile) setSheetOpen(true);
+    // Next/previous and related words in the side panel keep the reading column in step.
+    else if (!button) revealWord(id);
   };
+  /** Ayahs visible below the sticky toolbar: keep the selected word's ayah, else the topmost. */
+  const visibleAyahs = (numbers: number[]) => {
+    if (!numbers.length) return;
+    const current = selected?.ayah;
+    setActiveAyah(current !== undefined && numbers.includes(current) ? current : numbers[0]!);
+  };
+  const latestStep = useRef<(event: KeyboardEvent) => void>(() => {});
+  // Arrow keys step through words in Quranic reading order (right to left): ← next, → previous.
+  latestStep.current = (event) => {
+    if (view !== 'words' || !study || !selected) return;
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey)
+      return;
+    const target = event.target instanceof Element ? event.target : null;
+    if (
+      target?.closest(
+        'input, textarea, select, [contenteditable="true"], [role="separator"], [role="slider"]',
+      ) ||
+      document.querySelector('dialog[open]:not(.word-sheet)')
+    )
+      return;
+    const index = study.words.findIndex((word) => word.id === selected.id);
+    const next = study.words[index + (event.key === 'ArrowLeft' ? 1 : -1)];
+    if (!next) return;
+    event.preventDefault();
+    const fromReading = !!target?.closest('#reading [data-word-id]');
+    setSelectedId(next.id);
+    setActiveAyah(next.ayah);
+    history.replaceState(null, '', `#word=${encodeURIComponent(next.id)}`);
+    if (!sheetOpen) revealWord(next.id, fromReading);
+  };
+  useEffect(() => {
+    const listener = (event: KeyboardEvent) => latestStep.current(event);
+    document.addEventListener('keydown', listener);
+    return () => document.removeEventListener('keydown', listener);
+  }, []);
   // Topic examples open their word through the same #word=s:a:p location as deep links.
   const openWord = (id: string) => {
     history.replaceState(null, '', `#word=${encodeURIComponent(id)}`);
@@ -210,60 +279,114 @@ export function App() {
       <main className="page-shell" id="main" tabIndex={-1}>
         <h1 className="sr-only">{getSurahTitle(locationRequest.surah, language)}</h1>
         {view === 'words' && (
-          <section
-            className="lesson-toolbar ui"
-            lang={language}
-            dir={direction}
-            aria-label={ui.study}
-          >
-            <CollectionPicker
-              language={language}
-              mode={collectionMode}
-              surahNumber={locationRequest.surah}
-              ayahNumber={activeAyah}
-              onSelect={(mode, surahNumber, startAyah) => {
-                setCollectionMode(mode);
-                setPos('all');
-                setActiveAyah(startAyah);
-                setSheetOpen(false);
-                history.replaceState(
-                  null,
-                  '',
-                  startAyah > 1
-                    ? `#surah=${surahNumber}&ayah=${startAyah}`
-                    : `#surah=${surahNumber}`,
-                );
-                setLocationRequest({
-                  surah: surahNumber,
-                  word: null,
-                  ayah: startAyah > 1 ? startAyah : null,
-                  scroll: false,
-                });
-                window.scrollTo({ top: 0, behavior: 'instant' });
-              }}
-            />
-            <AyahPicker
-              language={language}
-              ayahs={study?.ayahs.map((ayah) => ayah.number) ?? []}
-              current={activeAyah}
-              disabled={!study}
-              onSelect={goToAyah}
-            />
-            {study && layout.grammar && (
-              <button
-                type="button"
+          <div className="study-sticky" ref={stickyArea}>
+            <section
+              className="lesson-toolbar ui"
+              lang={language}
+              dir={direction}
+              aria-label={ui.study}
+            >
+              <CollectionPicker
+                language={language}
+                mode={collectionMode}
+                surahNumber={locationRequest.surah}
+                ayahNumber={activeAyah}
+                onSelect={(mode, surahNumber, startAyah) => {
+                  setCollectionMode(mode);
+                  setPos('all');
+                  setActiveAyah(startAyah);
+                  setSheetOpen(false);
+                  history.replaceState(
+                    null,
+                    '',
+                    startAyah > 1
+                      ? `#surah=${surahNumber}&ayah=${startAyah}`
+                      : `#surah=${surahNumber}`,
+                  );
+                  setLocationRequest({
+                    surah: surahNumber,
+                    word: null,
+                    ayah: startAyah > 1 ? startAyah : null,
+                    scroll: false,
+                  });
+                  window.scrollTo({ top: 0, behavior: 'instant' });
+                }}
+              />
+              <AyahPicker
+                language={language}
+                ayahs={study?.ayahs.map((ayah) => ayah.number) ?? []}
+                current={activeAyah}
+                disabled={!study}
+                onSelect={goToAyah}
+              />
+              {study && layout.grammar && (
+                <button
+                  type="button"
+                  aria-label={ui.filters}
+                  title={ui.filters}
+                  className={`filter-trigger ${filtersOpen || pos !== 'all' ? 'active' : ''}`}
+                  aria-expanded={filtersOpen}
+                  aria-controls="filter-panel"
+                  onClick={() => setFiltersOpen((value) => !value)}
+                >
+                  <SlidersHorizontal size={20} />
+                  {pos !== 'all' && <i className="active-filter-dot" />}
+                </button>
+              )}
+            </section>
+            {study && filtersOpen && layout.grammar && (
+              <section
+                className="study-controls ui"
+                lang={language}
+                dir={direction}
                 aria-label={ui.filters}
-                title={ui.filters}
-                className={`filter-trigger ${filtersOpen || pos !== 'all' ? 'active' : ''}`}
-                aria-expanded={filtersOpen}
-                aria-controls="filter-panel"
-                onClick={() => setFiltersOpen((value) => !value)}
               >
-                <SlidersHorizontal size={20} />
-                {pos !== 'all' && <i className="active-filter-dot" />}
-              </button>
+                <div className="filter-panel" id="filter-panel">
+                  <div className="filters" role="group" aria-label={ui.wordType}>
+                    {filters.map((filter) => (
+                      <button
+                        type="button"
+                        key={filter.id}
+                        data-pos={filter.id}
+                        aria-pressed={pos === filter.id}
+                        className={pos === filter.id ? 'active' : ''}
+                        onClick={() => setPos(filter.id)}
+                      >
+                        {filter.label}
+                      </button>
+                    ))}
+                  </div>
+                  <label className="meaning-toggle">
+                    <input
+                      type="checkbox"
+                      checked={meanings}
+                      onChange={(event) => setMeanings(event.target.checked)}
+                    />
+                    <span className="toggle-track" aria-hidden="true" />
+                    <span>{ui.wordMeanings}</span>
+                  </label>
+                </div>
+              </section>
             )}
-          </section>
+            {study && filtering && (
+              <div
+                className={`filter-feedback ui ${matches.size === 0 ? 'empty' : ''}`}
+                lang={language}
+                dir={direction}
+                role="status"
+              >
+                <span>
+                  {matches.size === 0
+                    ? ui.noResults
+                    : `${formatCount(matches.size, language)} ${ui.matches}`}
+                </span>
+                <button type="button" onClick={() => setPos('all')}>
+                  <X size={15} />
+                  {ui.reset}
+                </button>
+              </div>
+            )}
+          </div>
         )}
         {view === 'settings' ? (
           <section
@@ -304,11 +427,7 @@ export function App() {
             <div className="settings-card">
               <h2 id="reading-layout-title">{ui.readingLayout}</h2>
               <p>{ui.readingLayoutHelp}</p>
-              <div
-                className="layout-switches"
-                role="group"
-                aria-labelledby="reading-layout-title"
-              >
+              <div className="layout-switches" role="group" aria-labelledby="reading-layout-title">
                 {layoutSwitches.map(({ key, label, help }) => (
                   <label className="layout-switch" key={key}>
                     <span className="layout-switch-copy">
@@ -395,6 +514,7 @@ export function App() {
             {error ? (
               <>
                 <h2>{ui.loadError}</h2>
+                <p>{ui.connectionHint}</p>
                 <button type="button" className="primary-button" onClick={retry}>
                   {ui.retry}
                 </button>
@@ -408,58 +528,6 @@ export function App() {
           </section>
         ) : (
           <>
-            <section
-              className="study-controls ui"
-              lang={language}
-              dir={direction}
-              aria-label={ui.filters}
-            >
-              {filtersOpen && layout.grammar && (
-                <div className="filter-panel" id="filter-panel">
-                  <div className="filters" role="group" aria-label={ui.wordType}>
-                    {filters.map((filter) => (
-                      <button
-                        type="button"
-                        key={filter.id}
-                        data-pos={filter.id}
-                        aria-pressed={pos === filter.id}
-                        className={pos === filter.id ? 'active' : ''}
-                        onClick={() => setPos(filter.id)}
-                      >
-                        {filter.label}
-                      </button>
-                    ))}
-                  </div>
-                  <label className="meaning-toggle">
-                    <input
-                      type="checkbox"
-                      checked={meanings}
-                      onChange={(event) => setMeanings(event.target.checked)}
-                    />
-                    <span className="toggle-track" aria-hidden="true" />
-                    <span>{ui.wordMeanings}</span>
-                  </label>
-                </div>
-              )}
-            </section>
-            {filtering && (
-              <div
-                className={`filter-feedback ui ${matches.size === 0 ? 'empty' : ''}`}
-                lang={language}
-                dir={direction}
-                role="status"
-              >
-                <span>
-                  {matches.size === 0
-                    ? ui.noResults
-                    : `${formatCount(matches.size, language)} ${ui.matches}`}
-                </span>
-                <button type="button" onClick={() => setPos('all')}>
-                  <X size={15} />
-                  {ui.reset}
-                </button>
-              </div>
-            )}
             <SplitPane
               className="study-layout"
               dir="rtl"
@@ -481,6 +549,7 @@ export function App() {
                     translationId={translationId}
                     quranFont={quranFont}
                     onSelect={selectWord}
+                    onVisibleAyahs={visibleAyahs}
                   />
                 </div>
               }
