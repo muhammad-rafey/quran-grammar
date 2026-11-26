@@ -746,6 +746,7 @@ const FlowText = memo(function FlowText({
   justify = false,
   onTops,
 }: FlowTextProps) {
+  const styles = studyStyles(useTheme().colors);
   const font = chrome.fonts.quranFont;
   const { pieces, starts } = useMemo(
     () =>
