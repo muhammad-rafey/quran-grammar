@@ -371,8 +371,8 @@
  },
  "grammarLayer": {
   "note": "AI-authored grammar layer (owner decision 2026-11-26), scholarly review pending: segment glosses, dictionary notes and extra rule ids from words/<surah>/*.json, phrase cards from phrases/<surah>/*.json, root and verb-paradigm cards from the libraries (applied to every unpublished word whose root or lexeme they cover). Word meanings and ayah translations are never part of it. `chapters` lists, per chapter, the number of authored words and the authored ayahs as [from, to] ranges.",
-  "authoredWords": 9367,
-  "authoredAyahs": 466,
+  "authoredWords": 61141,
+  "authoredAyahs": 4761,
   "chapters": {
    "2": {
     "words": 5886,
@@ -389,6 +389,636 @@
      [
       1,
       200
+     ]
+    ]
+   },
+   "5": {
+    "words": 2804,
+    "ayahs": [
+     [
+      1,
+      120
+     ]
+    ]
+   },
+   "6": {
+    "words": 3050,
+    "ayahs": [
+     [
+      1,
+      165
+     ]
+    ]
+   },
+   "8": {
+    "words": 1233,
+    "ayahs": [
+     [
+      1,
+      75
+     ]
+    ]
+   },
+   "9": {
+    "words": 2498,
+    "ayahs": [
+     [
+      1,
+      129
+     ]
+    ]
+   },
+   "10": {
+    "words": 1833,
+    "ayahs": [
+     [
+      1,
+      109
+     ]
+    ]
+   },
+   "11": {
+    "words": 1917,
+    "ayahs": [
+     [
+      1,
+      123
+     ]
+    ]
+   },
+   "12": {
+    "words": 1777,
+    "ayahs": [
+     [
+      1,
+      111
+     ]
+    ]
+   },
+   "13": {
+    "words": 853,
+    "ayahs": [
+     [
+      1,
+      43
+     ]
+    ]
+   },
+   "14": {
+    "words": 830,
+    "ayahs": [
+     [
+      1,
+      52
+     ]
+    ]
+   },
+   "15": {
+    "words": 655,
+    "ayahs": [
+     [
+      1,
+      99
+     ]
+    ]
+   },
+   "16": {
+    "words": 1844,
+    "ayahs": [
+     [
+      1,
+      128
+     ]
+    ]
+   },
+   "17": {
+    "words": 1556,
+    "ayahs": [
+     [
+      1,
+      111
+     ]
+    ]
+   },
+   "19": {
+    "words": 961,
+    "ayahs": [
+     [
+      1,
+      98
+     ]
+    ]
+   },
+   "20": {
+    "words": 1335,
+    "ayahs": [
+     [
+      1,
+      135
+     ]
+    ]
+   },
+   "21": {
+    "words": 1169,
+    "ayahs": [
+     [
+      1,
+      112
+     ]
+    ]
+   },
+   "24": {
+    "words": 1316,
+    "ayahs": [
+     [
+      1,
+      64
+     ]
+    ]
+   },
+   "26": {
+    "words": 1318,
+    "ayahs": [
+     [
+      1,
+      227
+     ]
+    ]
+   },
+   "27": {
+    "words": 1151,
+    "ayahs": [
+     [
+      1,
+      93
+     ]
+    ]
+   },
+   "28": {
+    "words": 1430,
+    "ayahs": [
+     [
+      1,
+      88
+     ]
+    ]
+   },
+   "30": {
+    "words": 817,
+    "ayahs": [
+     [
+      1,
+      60
+     ]
+    ]
+   },
+   "31": {
+    "words": 546,
+    "ayahs": [
+     [
+      1,
+      34
+     ]
+    ]
+   },
+   "33": {
+    "words": 1287,
+    "ayahs": [
+     [
+      1,
+      73
+     ]
+    ]
+   },
+   "34": {
+    "words": 883,
+    "ayahs": [
+     [
+      1,
+      54
+     ]
+    ]
+   },
+   "35": {
+    "words": 775,
+    "ayahs": [
+     [
+      1,
+      45
+     ]
+    ]
+   },
+   "37": {
+    "words": 860,
+    "ayahs": [
+     [
+      1,
+      182
+     ]
+    ]
+   },
+   "38": {
+    "words": 733,
+    "ayahs": [
+     [
+      1,
+      88
+     ]
+    ]
+   },
+   "39": {
+    "words": 1172,
+    "ayahs": [
+     [
+      1,
+      75
+     ]
+    ]
+   },
+   "40": {
+    "words": 1219,
+    "ayahs": [
+     [
+      1,
+      85
+     ]
+    ]
+   },
+   "41": {
+    "words": 794,
+    "ayahs": [
+     [
+      1,
+      54
+     ]
+    ]
+   },
+   "42": {
+    "words": 860,
+    "ayahs": [
+     [
+      1,
+      53
+     ]
+    ]
+   },
+   "43": {
+    "words": 830,
+    "ayahs": [
+     [
+      1,
+      89
+     ]
+    ]
+   },
+   "44": {
+    "words": 346,
+    "ayahs": [
+     [
+      1,
+      59
+     ]
+    ]
+   },
+   "45": {
+    "words": 488,
+    "ayahs": [
+     [
+      1,
+      37
+     ]
+    ]
+   },
+   "46": {
+    "words": 643,
+    "ayahs": [
+     [
+      1,
+      35
+     ]
+    ]
+   },
+   "47": {
+    "words": 539,
+    "ayahs": [
+     [
+      1,
+      38
+     ]
+    ]
+   },
+   "48": {
+    "words": 560,
+    "ayahs": [
+     [
+      1,
+      29
+     ]
+    ]
+   },
+   "49": {
+    "words": 347,
+    "ayahs": [
+     [
+      1,
+      18
+     ]
+    ]
+   },
+   "50": {
+    "words": 373,
+    "ayahs": [
+     [
+      1,
+      45
+     ]
+    ]
+   },
+   "51": {
+    "words": 360,
+    "ayahs": [
+     [
+      1,
+      60
+     ]
+    ]
+   },
+   "52": {
+    "words": 312,
+    "ayahs": [
+     [
+      1,
+      49
+     ]
+    ]
+   },
+   "53": {
+    "words": 360,
+    "ayahs": [
+     [
+      1,
+      62
+     ]
+    ]
+   },
+   "54": {
+    "words": 342,
+    "ayahs": [
+     [
+      1,
+      55
+     ]
+    ]
+   },
+   "57": {
+    "words": 574,
+    "ayahs": [
+     [
+      1,
+      29
+     ]
+    ]
+   },
+   "58": {
+    "words": 472,
+    "ayahs": [
+     [
+      1,
+      22
+     ]
+    ]
+   },
+   "59": {
+    "words": 445,
+    "ayahs": [
+     [
+      1,
+      24
+     ]
+    ]
+   },
+   "60": {
+    "words": 348,
+    "ayahs": [
+     [
+      1,
+      13
+     ]
+    ]
+   },
+   "61": {
+    "words": 221,
+    "ayahs": [
+     [
+      1,
+      14
+     ]
+    ]
+   },
+   "62": {
+    "words": 175,
+    "ayahs": [
+     [
+      1,
+      11
+     ]
+    ]
+   },
+   "63": {
+    "words": 180,
+    "ayahs": [
+     [
+      1,
+      11
+     ]
+    ]
+   },
+   "64": {
+    "words": 241,
+    "ayahs": [
+     [
+      1,
+      18
+     ]
+    ]
+   },
+   "65": {
+    "words": 287,
+    "ayahs": [
+     [
+      1,
+      12
+     ]
+    ]
+   },
+   "66": {
+    "words": 249,
+    "ayahs": [
+     [
+      1,
+      12
+     ]
+    ]
+   },
+   "67": {
+    "words": 333,
+    "ayahs": [
+     [
+      1,
+      30
+     ]
+    ]
+   },
+   "68": {
+    "words": 300,
+    "ayahs": [
+     [
+      1,
+      52
+     ]
+    ]
+   },
+   "69": {
+    "words": 258,
+    "ayahs": [
+     [
+      1,
+      52
+     ]
+    ]
+   },
+   "70": {
+    "words": 217,
+    "ayahs": [
+     [
+      1,
+      44
+     ]
+    ]
+   },
+   "71": {
+    "words": 226,
+    "ayahs": [
+     [
+      1,
+      28
+     ]
+    ]
+   },
+   "72": {
+    "words": 285,
+    "ayahs": [
+     [
+      1,
+      28
+     ]
+    ]
+   },
+   "73": {
+    "words": 199,
+    "ayahs": [
+     [
+      1,
+      20
+     ]
+    ]
+   },
+   "74": {
+    "words": 255,
+    "ayahs": [
+     [
+      1,
+      56
+     ]
+    ]
+   },
+   "75": {
+    "words": 164,
+    "ayahs": [
+     [
+      1,
+      40
+     ]
+    ]
+   },
+   "76": {
+    "words": 243,
+    "ayahs": [
+     [
+      1,
+      31
+     ]
+    ]
+   },
+   "77": {
+    "words": 181,
+    "ayahs": [
+     [
+      1,
+      50
+     ]
+    ]
+   },
+   "78": {
+    "words": 173,
+    "ayahs": [
+     [
+      1,
+      40
+     ]
+    ]
+   },
+   "79": {
+    "words": 179,
+    "ayahs": [
+     [
+      1,
+      46
+     ]
+    ]
+   },
+   "80": {
+    "words": 133,
+    "ayahs": [
+     [
+      1,
+      42
+     ]
+    ]
+   },
+   "81": {
+    "words": 104,
+    "ayahs": [
+     [
+      1,
+      29
+     ]
+    ]
+   },
+   "82": {
+    "words": 80,
+    "ayahs": [
+     [
+      1,
+      19
+     ]
+    ]
+   },
+   "83": {
+    "words": 169,
+    "ayahs": [
+     [
+      1,
+      36
+     ]
+    ]
+   },
+   "84": {
+    "words": 107,
+    "ayahs": [
+     [
+      1,
+      25
      ]
     ]
    }
@@ -421,8 +1051,8 @@
   "excludedPauseSigns": 4576,
   "sourceOnlyWordsWithoutQuranComMeaning": 210,
   "publishedWordsWithoutQuranComMeaning": 70,
-  "grammarLayerWords": 9367,
-  "grammarLayerAyahs": 466,
+  "grammarLayerWords": 61141,
+  "grammarLayerAyahs": 4761,
   "libraryRootEntries": 13706,
   "libraryVerbParadigms": 15172,
   "problems": 0

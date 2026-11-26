@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-26T18:44:34",
+ "generatedAt": "2026-11-26T22:13:16",
  "verifier": "content-pipeline/full-quran/scripts/verify.py (independent of build.py)",
  "ok": true,
  "options": {
@@ -15,8 +15,8 @@
   ]
  },
  "grammarLayer": {
-  "authoredWordEntries": 9597,
-  "authoredPhraseAyahs": 466,
+  "authoredWordEntries": 61371,
+  "authoredPhraseAyahs": 4761,
   "libraryRoots": 1630,
   "libraryLexemes": 1693
  },
@@ -37,14 +37,13 @@
  },
  "totals": {
   "ayahs": 6236,
-  "grammarLayerAyahs": 466,
-  "grammarLayerPhrases": 2019,
-  "grammarLayerWords": 9367,
+  "grammarLayerAyahs": 4761,
+  "grammarLayerPhrases": 16013,
+  "grammarLayerWords": 61141,
   "libraryRoots": 13706,
   "libraryVerbParadigms": 15172,
   "pauseOrHizbMarkRemoved": 4576,
   "pilotProvenanceEntries": 230,
-  "sourceOnlyWords": 51774,
   "translations.exact": 37322,
   "translations.marker-space": 94,
   "unpublishedWords": 61141,
@@ -81,13 +80,13 @@
    "published": "source-only",
    "ayahs": 120,
    "words": 2804,
-   "phrases": 0
+   "phrases": 548
   },
   "6": {
    "published": "source-only",
    "ayahs": 165,
    "words": 3050,
-   "phrases": 0
+   "phrases": 702
   },
   "7": {
    "published": "published",
@@ -99,61 +98,61 @@
    "published": "source-only",
    "ayahs": 75,
    "words": 1233,
-   "phrases": 0
+   "phrases": 311
   },
   "9": {
    "published": "source-only",
    "ayahs": 129,
    "words": 2498,
-   "phrases": 0
+   "phrases": 589
   },
   "10": {
    "published": "source-only",
    "ayahs": 109,
    "words": 1833,
-   "phrases": 0
+   "phrases": 434
   },
   "11": {
    "published": "source-only",
    "ayahs": 123,
    "words": 1917,
-   "phrases": 0
+   "phrases": 487
   },
   "12": {
    "published": "source-only",
    "ayahs": 111,
    "words": 1777,
-   "phrases": 0
+   "phrases": 444
   },
   "13": {
    "published": "source-only",
    "ayahs": 43,
    "words": 853,
-   "phrases": 0
+   "phrases": 187
   },
   "14": {
    "published": "source-only",
    "ayahs": 52,
    "words": 830,
-   "phrases": 0
+   "phrases": 207
   },
   "15": {
    "published": "source-only",
    "ayahs": 99,
    "words": 655,
-   "phrases": 0
+   "phrases": 227
   },
   "16": {
    "published": "source-only",
    "ayahs": 128,
    "words": 1844,
-   "phrases": 0
+   "phrases": 489
   },
   "17": {
    "published": "source-only",
    "ayahs": 111,
    "words": 1556,
-   "phrases": 0
+   "phrases": 422
   },
   "18": {
    "published": "published",
@@ -165,19 +164,19 @@
    "published": "source-only",
    "ayahs": 98,
    "words": 961,
-   "phrases": 0
+   "phrases": 281
   },
   "20": {
    "published": "source-only",
    "ayahs": 135,
    "words": 1335,
-   "phrases": 0
+   "phrases": 420
   },
   "21": {
    "published": "source-only",
    "ayahs": 112,
    "words": 1169,
-   "phrases": 0
+   "phrases": 366
   },
   "22": {
    "published": "published",
@@ -195,7 +194,7 @@
    "published": "source-only",
    "ayahs": 64,
    "words": 1316,
-   "phrases": 0
+   "phrases": 261
   },
   "25": {
    "published": "published",
@@ -207,19 +206,19 @@
    "published": "source-only",
    "ayahs": 227,
    "words": 1318,
-   "phrases": 0
+   "phrases": 492
   },
   "27": {
    "published": "source-only",
    "ayahs": 93,
    "words": 1151,
-   "phrases": 0
+   "phrases": 336
   },
   "28": {
    "published": "source-only",
    "ayahs": 88,
    "words": 1430,
-   "phrases": 0
+   "phrases": 369
   },
   "29": {
    "published": "published",
@@ -231,13 +230,13 @@
    "published": "source-only",
    "ayahs": 60,
    "words": 817,
-   "phrases": 0
+   "phrases": 215
   },
   "31": {
    "published": "source-only",
    "ayahs": 34,
    "words": 546,
-   "phrases": 0
+   "phrases": 138
   },
   "32": {
    "published": "published",
@@ -249,19 +248,19 @@
    "published": "source-only",
    "ayahs": 73,
    "words": 1287,
-   "phrases": 0
+   "phrases": 293
   },
   "34": {
    "published": "source-only",
    "ayahs": 54,
    "words": 883,
-   "phrases": 0
+   "phrases": 222
   },
   "35": {
    "published": "source-only",
    "ayahs": 45,
    "words": 775,
-   "phrases": 0
+   "phrases": 186
   },
   "36": {
    "published": "published",
@@ -273,109 +272,109 @@
    "published": "source-only",
    "ayahs": 182,
    "words": 860,
-   "phrases": 0
+   "phrases": 352
   },
   "38": {
    "published": "source-only",
    "ayahs": 88,
    "words": 733,
-   "phrases": 0
+   "phrases": 237
   },
   "39": {
    "published": "source-only",
    "ayahs": 75,
    "words": 1172,
-   "phrases": 0
+   "phrases": 288
   },
   "40": {
    "published": "source-only",
    "ayahs": 85,
    "words": 1219,
-   "phrases": 0
+   "phrases": 320
   },
   "41": {
    "published": "source-only",
    "ayahs": 54,
    "words": 794,
-   "phrases": 0
+   "phrases": 222
   },
   "42": {
    "published": "source-only",
    "ayahs": 53,
    "words": 860,
-   "phrases": 0
+   "phrases": 206
   },
   "43": {
    "published": "source-only",
    "ayahs": 89,
    "words": 830,
-   "phrases": 0
+   "phrases": 265
   },
   "44": {
    "published": "source-only",
    "ayahs": 59,
    "words": 346,
-   "phrases": 0
+   "phrases": 118
   },
   "45": {
    "published": "source-only",
    "ayahs": 37,
    "words": 488,
-   "phrases": 0
+   "phrases": 128
   },
   "46": {
    "published": "source-only",
    "ayahs": 35,
    "words": 643,
-   "phrases": 0
+   "phrases": 151
   },
   "47": {
    "published": "source-only",
    "ayahs": 38,
    "words": 539,
-   "phrases": 0
+   "phrases": 142
   },
   "48": {
    "published": "source-only",
    "ayahs": 29,
    "words": 560,
-   "phrases": 0
+   "phrases": 127
   },
   "49": {
    "published": "source-only",
    "ayahs": 18,
    "words": 347,
-   "phrases": 0
+   "phrases": 82
   },
   "50": {
    "published": "source-only",
    "ayahs": 45,
    "words": 373,
-   "phrases": 0
+   "phrases": 122
   },
   "51": {
    "published": "source-only",
    "ayahs": 60,
    "words": 360,
-   "phrases": 0
+   "phrases": 126
   },
   "52": {
    "published": "source-only",
    "ayahs": 49,
    "words": 312,
-   "phrases": 0
+   "phrases": 106
   },
   "53": {
    "published": "source-only",
    "ayahs": 62,
    "words": 360,
-   "phrases": 0
+   "phrases": 129
   },
   "54": {
    "published": "source-only",
    "ayahs": 55,
    "words": 342,
-   "phrases": 0
+   "phrases": 130
   },
   "55": {
    "published": "published",
@@ -393,169 +392,169 @@
    "published": "source-only",
    "ayahs": 29,
    "words": 574,
-   "phrases": 0
+   "phrases": 132
   },
   "58": {
    "published": "source-only",
    "ayahs": 22,
    "words": 472,
-   "phrases": 0
+   "phrases": 100
   },
   "59": {
    "published": "source-only",
    "ayahs": 24,
    "words": 445,
-   "phrases": 0
+   "phrases": 103
   },
   "60": {
    "published": "source-only",
    "ayahs": 13,
    "words": 348,
-   "phrases": 0
+   "phrases": 55
   },
   "61": {
    "published": "source-only",
    "ayahs": 14,
    "words": 221,
-   "phrases": 0
+   "phrases": 56
   },
   "62": {
    "published": "source-only",
    "ayahs": 11,
    "words": 175,
-   "phrases": 0
+   "phrases": 47
   },
   "63": {
    "published": "source-only",
    "ayahs": 11,
    "words": 180,
-   "phrases": 0
+   "phrases": 49
   },
   "64": {
    "published": "source-only",
    "ayahs": 18,
    "words": 241,
-   "phrases": 0
+   "phrases": 67
   },
   "65": {
    "published": "source-only",
    "ayahs": 12,
    "words": 287,
-   "phrases": 0
+   "phrases": 53
   },
   "66": {
    "published": "source-only",
    "ayahs": 12,
    "words": 249,
-   "phrases": 0
+   "phrases": 68
   },
   "67": {
    "published": "source-only",
    "ayahs": 30,
    "words": 333,
-   "phrases": 0
+   "phrases": 99
   },
   "68": {
    "published": "source-only",
    "ayahs": 52,
    "words": 300,
-   "phrases": 0
+   "phrases": 116
   },
   "69": {
    "published": "source-only",
    "ayahs": 52,
    "words": 258,
-   "phrases": 0
+   "phrases": 103
   },
   "70": {
    "published": "source-only",
    "ayahs": 44,
    "words": 217,
-   "phrases": 0
+   "phrases": 96
   },
   "71": {
    "published": "source-only",
    "ayahs": 28,
    "words": 226,
-   "phrases": 0
+   "phrases": 78
   },
   "72": {
    "published": "source-only",
    "ayahs": 28,
    "words": 285,
-   "phrases": 0
+   "phrases": 84
   },
   "73": {
    "published": "source-only",
    "ayahs": 20,
    "words": 199,
-   "phrases": 0
+   "phrases": 47
   },
   "74": {
    "published": "source-only",
    "ayahs": 56,
    "words": 255,
-   "phrases": 0
+   "phrases": 100
   },
   "75": {
    "published": "source-only",
    "ayahs": 40,
    "words": 164,
-   "phrases": 0
+   "phrases": 67
   },
   "76": {
    "published": "source-only",
    "ayahs": 31,
    "words": 243,
-   "phrases": 0
+   "phrases": 80
   },
   "77": {
    "published": "source-only",
    "ayahs": 50,
    "words": 181,
-   "phrases": 0
+   "phrases": 74
   },
   "78": {
    "published": "source-only",
    "ayahs": 40,
    "words": 173,
-   "phrases": 0
+   "phrases": 72
   },
   "79": {
    "published": "source-only",
    "ayahs": 46,
    "words": 179,
-   "phrases": 0
+   "phrases": 85
   },
   "80": {
    "published": "source-only",
    "ayahs": 42,
    "words": 133,
-   "phrases": 0
+   "phrases": 61
   },
   "81": {
    "published": "source-only",
    "ayahs": 29,
    "words": 104,
-   "phrases": 0
+   "phrases": 60
   },
   "82": {
    "published": "source-only",
    "ayahs": 19,
    "words": 80,
-   "phrases": 0
+   "phrases": 38
   },
   "83": {
    "published": "source-only",
    "ayahs": 36,
    "words": 169,
-   "phrases": 0
+   "phrases": 77
   },
   "84": {
    "published": "source-only",
    "ayahs": 25,
    "words": 107,
-   "phrases": 0
+   "phrases": 50
   },
   "85": {
    "published": "published",
@@ -741,7 +740,7 @@
  "failures": {},
  "warnings": {
   "8 lemma differs from QAC LEM only by tanween/shadda normalisation": {
-   "count": 1855,
+   "count": 1619,
    "examples": [
     {
      "id": "2:21:2",
@@ -1024,5 +1023,5 @@
    ]
   }
  },
- "seconds": 4.4
+ "seconds": 6.7
 }
