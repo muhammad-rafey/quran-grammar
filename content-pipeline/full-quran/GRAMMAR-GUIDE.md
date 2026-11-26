@@ -86,6 +86,17 @@ occurrences (ids) that show the imperfect/vowel — this is the audit trail. Sty
 
 ## Rules
 
+- Never discuss how a word or ayah should be TRANSLATED («ترجمہ», «ترجمے میں»…); explain grammar
+  (tense, aspect, mood, case, function) instead.
+- `addRuleIds` must fit the word's role: `subject`/`object`/`tamyiz`/`haal`/`badal` on the word
+  that has that role (not on a particle like أَنْ or مِنْ, and not on a verb for its following
+  object). `adjective` may also mark a jar-majrur phrase or a clause that is the صفت of an
+  indefinite noun (the rule card allows this).
+- Verb paradigm cards describe the verb AS IT OCCURS in the text (form and voice). Where the
+  Corpus key's form/voice disagrees with the text, follow the text and name the Corpus tag in
+  `evidenceEnglish`.
+- `present` is never "—": for a jāmid verb write «مضارع مستعمل نہیں (فعلِ جامد)».
+
 - Urdu only in Urdu fields (Arabic words allowed); no Latin letters, no URLs, no references.
 - Never alter Arabic text, word ids, Quran.com meanings or translations.
 - Validate before finishing: `QG_SURAHS=<surah> python3 -I content-pipeline/full-quran/scripts/build.py content-pipeline/full-quran check`
