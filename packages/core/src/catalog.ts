@@ -1,5 +1,6 @@
 import { availableSurahNumbers, partialSurahLastAyah } from './availability';
 import type { UiLanguage } from './interface';
+import { surahSearchNames } from './surah-names';
 /** Factual chapter names checked against Quran.com API v4 on 2026-10-23.
  * Source and scope are recorded in docs/content-provenance.md.
  */
@@ -8,6 +9,9 @@ export interface SurahCatalogEntry {
   readonly nameArabic: string;
   /** Conventional English transliteration, not a translation. */
   readonly nameEnglish: string;
+  /** English meaning of the name (Quran.com `translated_name`), e.g. "The Cow". */
+  readonly meaningEnglish: string;
+  readonly ayahCount: number;
   readonly available: boolean;
 }
 
@@ -145,16 +149,6 @@ const chapterNames: ReadonlyArray<readonly [number, string, string]> = [
   [113, 'الفلق', 'Al-Falaq'],
   [114, 'الناس', 'An-Nas'],
 ];
-
-/** Available chapters are backed by complete bundled lessons. */
-export const surahCatalog: readonly SurahCatalogEntry[] = chapterNames.map(
-  ([number, nameArabic, nameEnglish]) => ({
-    number,
-    nameArabic,
-    nameEnglish,
-    available: availableSurahNumbers.includes(number),
-  }),
-);
 
 /** Juz boundaries as [juz, surah, first ayah, last ayah] for the standard 30-part division.
  * Checked against Quran.com API v4 /juzs on 2026-11-06; every ayah of all 114 chapters is covered once.
@@ -296,6 +290,21 @@ const juzBoundaries: ReadonlyArray<readonly [number, number, number, number]> = 
   [30, 113, 1, 5],
   [30, 114, 1, 6],
 ];
+
+/** Available chapters are backed by complete bundled lessons. */
+export const surahCatalog: readonly SurahCatalogEntry[] = chapterNames.map(
+  ([number, nameArabic, nameEnglish]) => ({
+    number,
+    nameArabic,
+    nameEnglish,
+    meaningEnglish: surahSearchNames[number - 1]![1],
+    // The juz boundaries cover every ayah, so a chapter's last boundary is its length.
+    ayahCount: Math.max(
+      ...juzBoundaries.filter(([, surah]) => surah === number).map(([, , , lastAyah]) => lastAyah),
+    ),
+    available: availableSurahNumbers.includes(number),
+  }),
+);
 
 /** Juz previews list only the chapters for which study content is available. */
 export const juzCatalog: readonly JuzCatalogEntry[] = Array.from({ length: 30 }, (_, index) => {

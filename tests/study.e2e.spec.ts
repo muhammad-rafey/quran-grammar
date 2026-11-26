@@ -108,7 +108,11 @@ test('surah and juz catalogs expose available lessons and preserve picker focus'
   ).toEqual(Array.from({ length: 114 }, (_, index) => index + 1));
   await expect(catalog.locator('[data-surah="1"]')).toBeEnabled();
   await expect(catalog.locator('[data-surah="3"]')).toBeEnabled();
-  await expect(catalog.locator('[data-surah="3"]')).toContainText('Available');
+  // Every chapter is available, so the list has no availability labels or headings.
+  await expect(catalog).not.toContainText('Available');
+  await expect(catalog.locator('[data-surah="3"]')).toContainText("Ali 'Imran");
+  await expect(catalog.locator('[data-surah="3"]')).toContainText('Family of Imran · 200 ayahs');
+  await expect(catalog.locator('[data-surah="3"]')).toContainText('آل عمران');
   await expect(catalog.locator('[data-surah="114"]')).toContainText('An-Nas');
   await expect(
     page.getByRole('button', { name: 'Select ayah', includeHidden: true }),
@@ -133,7 +137,8 @@ test('surah and juz catalogs expose available lessons and preserve picker focus'
   await expect(juz.locator('[data-juz]')).toHaveCount(30);
   await expect(juz.locator('[data-juz]:disabled')).toHaveCount(0);
   await expect(juz.locator('[data-juz]', { hasText: 'Partial preview' })).toHaveCount(0);
-  await expect(juz.locator('[data-juz="1"]')).toContainText('Available');
+  await expect(juz).not.toContainText('Available');
+  await expect(juz.locator('[data-juz="1"]')).toContainText('Al-Fatihah · Al-Baqarah');
   // Juz 1 holds Al-Fatihah and Al-Baqarah 1–141, so it lists its chapters first.
   await juz.locator('[data-juz="1"]').click();
   await expect(juz.locator('[data-surah]')).toHaveCount(2);
@@ -840,8 +845,8 @@ test('interface language persists while Arabic text and Urdu study content stay 
   await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'سورت منتخب کریں', exact: true }).click();
   await expect(page.locator('[data-surah="1"]')).toContainText('الفاتحة');
-  await expect(page.locator('[data-surah="3"]')).toContainText('دستیاب');
-  await expect(page.locator('[data-surah="3"]')).not.toContainText('جلد دستیاب ہوگا');
+  await expect(page.locator('[data-surah="3"]')).toContainText('۲۰۰ آیات');
+  await expect(page.locator('.catalog-dialog')).not.toContainText('دستیاب');
   await page.keyboard.press('Escape');
   await openFatihahPractice(page, 'گرامر کی مشق');
   const practice = page.getByRole('region', { name: 'مختصر مشق', exact: true });
@@ -1064,6 +1069,145 @@ test('five longer chapters load complete lessons with grammar rules and paradigm
   }
 });
 
+test('the surah list searches loose names, numbers and surah:ayah from the keyboard', async ({
+  page,
+}) => {
+  await loadStudy(page);
+  const trigger = page.getByRole('button', { name: 'Select surah', exact: true });
+  const selector = ayahChip(page);
+  const catalog = page.getByRole('dialog', { name: 'Select surah', exact: true });
+  const search = catalog.getByRole('searchbox', { name: 'Search surahs by name or number' });
+  const rows = catalog.locator('[data-surah]');
+  await trigger.click();
+  // A fine pointer focuses the search field; the current chapter is marked.
+  await expect(search).toBeFocused();
+  await expect(search).toHaveAttribute('placeholder', 'Search name or number, e.g. 2:255');
+  await expect(catalog.getByRole('heading', { name: 'Available' })).toHaveCount(0);
+  await expect(catalog).not.toContainText('Available');
+  await expect(catalog.locator('[aria-current="true"]')).toHaveAttribute('data-surah', '1');
+  const baqarah = catalog.locator('[data-surah="2"]');
+  await expect(baqarah).toContainText('Al-Baqarah');
+  await expect(baqarah).toContainText('The Cow · 286 ayahs');
+  await expect(baqarah.locator('.catalog-arabic')).toHaveText('البقرة');
+  expect((await baqarah.boundingBox())!.height).toBeGreaterThanOrEqual(56);
+
+  for (const [query, surah, name] of [
+    ['bakra', 2, 'Al-Baqarah'],
+    ['36', 36, 'Ya-Sin'],
+    ['rehman', 55, 'Ar-Rahman'],
+    ['yaseen', 36, 'Ya-Sin'],
+    ['ikhlaas', 112, 'Al-Ikhlas'],
+    ['the cow', 2, 'Al-Baqarah'],
+    ['البقرہ', 2, 'Al-Baqarah'],
+    ['۳۶', 36, 'Ya-Sin'],
+  ] as const) {
+    await search.fill(query);
+    await expect(rows.first(), query).toHaveAttribute('data-surah', String(surah));
+    await expect(rows.first()).toContainText(name);
+    await expect(rows.first()).toHaveClass(/is-suggested/);
+  }
+  await search.fill('36');
+  await expect(rows).toHaveCount(1);
+  await expect(catalog.getByRole('status')).toHaveText('1 matches');
+  await search.fill('2');
+  await expect(rows.first()).toHaveAttribute('data-surah', '2');
+  await expect(rows).toHaveCount(11);
+
+  // Empty state, then Escape clears the search before it closes the dialog.
+  await search.fill('qwertyuiop');
+  await expect(rows).toHaveCount(0);
+  await expect(catalog.locator('.catalog-empty')).toContainText('No surah matches your search');
+  await page.keyboard.press('Escape');
+  await expect(catalog).toBeVisible();
+  await expect(search).toHaveValue('');
+  await expect(search).toBeFocused();
+  await expect(rows).toHaveCount(114);
+  // The clear button empties the field and keeps focus there.
+  await search.fill('kahf');
+  await expect(rows.first()).toHaveAttribute('data-surah', '18');
+  await catalog.getByRole('button', { name: 'Clear search', exact: true }).click();
+  await expect(search).toHaveValue('');
+  await expect(search).toBeFocused();
+  // Arrow keys move between the search field and the rows; typing on a row searches again.
+  await search.fill('yasin');
+  await page.keyboard.press('ArrowDown');
+  await expect(catalog.locator('[data-surah="36"]')).toBeFocused();
+  await page.keyboard.press('ArrowUp');
+  await expect(search).toBeFocused();
+  await search.fill('');
+  await page.keyboard.press('ArrowDown');
+  await page.keyboard.press('ArrowDown');
+  await expect(catalog.locator('[data-surah="2"]')).toBeFocused();
+  await page.keyboard.press('End');
+  await expect(catalog.locator('[data-surah="114"]')).toBeFocused();
+  await page.keyboard.press('k');
+  await expect(search).toBeFocused();
+  await expect(search).toHaveValue('k');
+  await page.keyboard.press('Escape');
+  await page.keyboard.press('Escape');
+  await expect(catalog).not.toBeVisible();
+  await expect(trigger).toBeFocused();
+
+  // Enter opens the top result.
+  await trigger.click();
+  await search.fill('rehman');
+  await page.keyboard.press('Enter');
+  await expect(catalog).not.toBeVisible();
+  await expect(page.locator('.collection-trigger')).toContainText('Ar-Rahman');
+  expect(page.url()).toContain('#surah=55');
+  await expect(word(page, '55:1:1')).toBeVisible();
+
+  // "2:255" opens Al-Baqarah at Ayat al-Kursi.
+  await trigger.click();
+  await search.fill('2:255');
+  await expect(rows).toHaveCount(1);
+  await expect(rows.first()).toContainText('Ayah 255');
+  await page.keyboard.press('Enter');
+  await expect(catalog).not.toBeVisible();
+  await expect(page.locator('.collection-trigger')).toContainText('Al-Baqarah');
+  await expect(selector).toHaveAttribute('data-ayah', '255');
+  await expect(page.locator('#ayah-255')).toBeInViewport();
+  expect(page.url()).toContain('#surah=2&ayah=255');
+  // A name with an ayah, chosen by click.
+  await trigger.click();
+  await search.fill('kahf 10');
+  await catalog.locator('[data-surah="18"]').click();
+  await expect(selector).toHaveAttribute('data-ayah', '10');
+  await expect(page.locator('#ayah-10')).toBeInViewport();
+  await expectNoOverflow(page);
+});
+
+test('the surah search works in the Urdu interface and on a phone', async ({ page }) => {
+  await page.addInitScript((key) => localStorage.setItem(key, 'ur'), preferenceKey);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+  await expect(page.locator('.quran-word')).toHaveCount(29);
+  await page.getByRole('button', { name: 'سورت منتخب کریں', exact: true }).click();
+  const catalog = page.getByRole('dialog', { name: 'سورت منتخب کریں', exact: true });
+  await expect(catalog).toHaveAttribute('dir', 'rtl');
+  const search = catalog.getByRole('searchbox', { name: 'سورت کا نام یا نمبر تلاش کریں' });
+  await expect(search).toHaveAttribute('dir', 'rtl');
+  await expect(catalog.locator('[data-surah="2"]')).toContainText('البقرة');
+  await expect(catalog.locator('[data-surah="2"]')).toContainText('Al-Baqarah · ۲۸۶ آیات');
+  await expect(catalog.locator('[data-surah="2"] .catalog-number')).toHaveText('۲');
+  await search.fill('یٰسین');
+  await expect(catalog.locator('[data-surah]').first()).toHaveAttribute('data-surah', '36');
+  // Latin typed in the Urdu interface reads left to right.
+  await search.fill('bakra');
+  await expect(search).toHaveAttribute('dir', 'ltr');
+  await expect(catalog.locator('[data-surah]').first()).toHaveAttribute('data-surah', '2');
+  await search.fill('۲:۲۵۵');
+  await expect(catalog.locator('[data-surah="2"]')).toContainText('آیت ۲۵۵');
+  await expect(catalog.getByRole('status')).toHaveText('۱ نتائج');
+  await search.fill('xyzq');
+  await expect(catalog.locator('.catalog-empty')).toContainText('تلاش سے کوئی سورت نہیں ملی');
+  await expectNoOverflow(page);
+  await search.fill('۲:۲۵۵');
+  await page.keyboard.press('Enter');
+  await expect(catalog).not.toBeVisible();
+  await expect(ayahChip(page, 'آیت منتخب کریں')).toHaveAttribute('data-ayah', '255');
+});
+
 test('juz previews open a chapter at its first ayah inside that juz', async ({ page }) => {
   await loadStudy(page);
   const trigger = page.locator('.collection-trigger');
@@ -1073,7 +1217,7 @@ test('juz previews open a chapter at its first ayah inside that juz', async ({ p
     await trigger.click();
     await page.getByRole('dialog').getByRole('button', { name: 'Juz', exact: true }).click();
     const catalog = page.getByRole('dialog', { name: 'Select juz', exact: true });
-    await expect(catalog.locator(`[data-juz="${number}"]`)).toContainText('Available');
+    await expect(catalog).not.toContainText('Available');
     await expect(catalog.locator(`[data-juz="${number}"]`)).not.toContainText('Partial preview');
     await catalog.locator(`[data-juz="${number}"]`).click();
     expect(
@@ -1115,14 +1259,15 @@ test('Juz 30 lists all thirty-seven of its chapters as a complete Juz', async ({
   await page.getByRole('button', { name: 'Select surah', exact: true }).click();
   await page.getByRole('dialog').getByRole('button', { name: 'Juz', exact: true }).click();
   const catalog = page.getByRole('dialog');
-  await expect(catalog.locator('[data-juz="30"]')).toContainText('Available');
+  await expect(catalog.locator('[data-juz="30"]')).toContainText('An-Naba – An-Nas');
   await expect(catalog.locator('[data-juz="30"]')).not.toContainText('Partial preview');
   await catalog.locator('[data-juz="30"]').click();
   await expect(catalog.locator('[data-surah]')).toHaveCount(37);
   expect(
     await catalog.locator('[data-surah]').evaluateAll((nodes) => nodes.map((node) => Number(node.getAttribute('data-surah')))),
   ).toEqual(Array.from({ length: 37 }, (_, index) => 78 + index));
-  await expect(catalog).toContainText('Available surahs');
+  await expect(catalog.locator('.catalog-subheading h3')).toHaveText('Juz 30');
+  await expect(catalog.locator('[data-surah="78"]')).toContainText('Ayahs 1–40');
   await expect(catalog.locator('.catalog-subheading h3')).toBeFocused();
   await catalog.locator('.catalog-subheading button').click();
   await expect(catalog.locator('[data-juz="30"]')).toBeFocused();

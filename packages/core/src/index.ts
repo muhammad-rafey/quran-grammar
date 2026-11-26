@@ -21,6 +21,8 @@ export type { UiLanguage, UiStrings } from './interface';
 export { getUiStrings, formatCount, isUiLanguage } from './interface';
 export type { SurahCatalogEntry, JuzCatalogEntry, JuzSurahRange } from './catalog';
 export { surahCatalog, juzCatalog, getSurahTitle, getJuzForAyah, getJuzStartAyah } from './catalog';
+export type { SurahMatch, SurahSearchResult } from './surah-search';
+export { searchSurahs } from './surah-search';
 export type {
   PracticeOption,
   PracticeQuestion,
