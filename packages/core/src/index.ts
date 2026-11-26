@@ -27,7 +27,7 @@ export type {
   PracticeAnswers,
   PracticeProgress,
 } from './practice';
-export { gradePracticeAnswer, getPracticeProgress } from './practice';
+export { gradePracticeAnswer, getPracticeProgress, toResolvedOption } from './practice';
 export type {
   AuthoredQuestionSource,
   TopicExampleSource,
@@ -41,6 +41,7 @@ export type {
   GrammarTopicExampleRecord,
   GrammarContent,
 } from './grammar/types';
+export { joinIndoPak } from './grammar/resolve';
 export type { ContentRepository, PracticeQuestionFilter, SurahSummary } from './repository';
 export { cachedRepository } from './repository';
 
@@ -55,4 +56,13 @@ export {
   translationText,
 } from './translations';
 export type { FontRole, FontStyleKind, FontMetrics, QuranScript, ReadingFont } from './fonts';
-export { readingFonts, defaultFontIds, fontsForRole, resolveFont, quranText } from './fonts';
+export {
+  readingFonts,
+  defaultFontIds,
+  fontsForRole,
+  resolveFont,
+  quranText,
+  practiceOptionText,
+  exampleQuranText,
+  splitAyahAtWord,
+} from './fonts';

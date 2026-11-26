@@ -105,6 +105,20 @@ async function assertSameAsBundled(label: string, repository: typeof bundled) {
   );
   assert.equal(await repository.getTopic('does-not-exist'), null);
   assert.deepEqual(await repository.getPracticeQuestions({ topicId: 'does-not-exist' }), []);
+  // The IndoPak display text is joined from the words table (not stored with topics/options).
+  const [verb] = await repository.getPracticeQuestions({ set: 'fatihah' });
+  const fatihahWords = new Map(studies[0]!.words.map((word) => [word.id, word]));
+  assert.deepEqual(
+    verb!.options.map((option) => option.textIndoPak),
+    ['1:2:1', '1:5:2', '1:5:1'].map((id) => fatihahWords.get(id)!.arabicIndoPak),
+    label,
+  );
+  assert.ok(verb!.options.every((option) => !option.textIndoPak!.includes('\u0671')), label);
+  const topic = (await repository.getTopic(grammar.topics[0]!.id))!;
+  for (const example of [...topic.examples, ...topic.quranicExamples]) {
+    assert.ok(example.wordArabicIndoPak && example.ayahArabicIndoPak, `${label} ${example.wordId}`);
+    assert.ok(example.ayahArabicIndoPak.includes(example.wordArabicIndoPak), example.wordId);
+  }
 }
 
 test('SQLite repository (the mobile SQL) returns exactly what the bundled repository returns', async () => {

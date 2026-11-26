@@ -216,6 +216,68 @@ export function quranText(
   return (font.script === 'indopak' && word.arabicIndoPak) || word.arabic;
 }
 
+/** A practice option's text in a font: the IndoPak text of a Quranic word option for an IndoPak font. */
+export function practiceOptionText(
+  option: { readonly text: string; readonly textIndoPak?: string },
+  font: Pick<ReadingFont, 'script'>,
+): string {
+  return (font.script === 'indopak' && option.textIndoPak) || option.text;
+}
+
+/**
+ * A grammar-topic example's word and ayah in one orthography for a font (see `quranText`): the
+ * IndoPak pair when the font is IndoPak and both texts exist, otherwise the Uthmani pair, so the
+ * word can always be located in the ayah.
+ */
+export function exampleQuranText(
+  example: {
+    readonly wordArabic: string;
+    readonly wordArabicIndoPak: string;
+    readonly ayahArabic: string;
+    readonly ayahArabicIndoPak: string;
+  },
+  font: Pick<ReadingFont, 'script'>,
+): { readonly word: string; readonly ayah: string } {
+  return font.script === 'indopak' && example.wordArabicIndoPak && example.ayahArabicIndoPak
+    ? { word: example.wordArabicIndoPak, ayah: example.ayahArabicIndoPak }
+    : { word: example.wordArabic, ayah: example.ayahArabic };
+}
+
+/**
+ * Split an ayah (its words joined by single spaces) around the word at `position` (1-based), for
+ * highlighting it in place; null when the word text is not in the ayah. Words may themselves
+ * contain spaces (IndoPak «وَ عَمِلُوا», «ذٰ لِكُمُ», attached pause signs), so the ayah is not split
+ * on spaces: the word is the first space-delimited match with at least `position - 1` spaces
+ * before it (a word's own spaces only add to that count). With repeated words and inner spaces
+ * the match can be an identical earlier word (2 of 77,429 IndoPak words; none in topic examples).
+ */
+export function splitAyahAtWord(
+  ayah: string,
+  word: string,
+  position: number,
+): { readonly before: string; readonly word: string; readonly after: string } | null {
+  if (!word) return null;
+  let found = -1;
+  let spaces = 0;
+  let counted = 0;
+  for (let index = ayah.indexOf(word); index >= 0; index = ayah.indexOf(word, index + 1)) {
+    const end = index + word.length;
+    if ((index > 0 && ayah[index - 1] !== ' ') || (end < ayah.length && ayah[end] !== ' ')) continue;
+    for (; counted < index; counted += 1) if (ayah[counted] === ' ') spaces += 1;
+    if (found < 0) found = index;
+    if (spaces >= position - 1) {
+      found = index;
+      break;
+    }
+  }
+  if (found < 0) return null;
+  return {
+    before: ayah.slice(0, Math.max(found - 1, 0)),
+    word,
+    after: ayah.slice(found + word.length + 1),
+  };
+}
+
 /** The font for a stored id, falling back to the role default for unknown/stale ids. */
 export function resolveFont(role: FontRole, id: string | null | undefined): ReadingFont {
   return (
