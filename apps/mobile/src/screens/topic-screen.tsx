@@ -4,6 +4,7 @@ import { Stack } from 'expo-router/stack';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   exampleQuranText,
+  spaceQuranText,
   splitAyahAtWord,
   translationText,
   type GrammarTopicDetail,
@@ -249,12 +250,12 @@ function ExampleCard({
       <Text style={[type.arabic, arabicText(compact ? 23 : 26)]}>
         {parts ? (
           <>
-            {parts.before ? `${parts.before} ` : ''}
+            {parts.before ? spaceQuranText(`${parts.before} `, type.quranFont) : ''}
             <Text style={{ color: colors.primary, backgroundColor: colors.lime }}>{parts.word}</Text>
-            {parts.after ? ` ${parts.after}` : ''}
+            {parts.after ? spaceQuranText(` ${parts.after}`, type.quranFont, parts.word) : ''}
           </>
         ) : (
-          ayah
+          spaceQuranText(ayah, type.quranFont)
         )}
       </Text>
       {translation ? <Paragraph muted>{translation}</Paragraph> : null}

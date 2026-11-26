@@ -8,6 +8,7 @@ import {
   getSurahTitle,
   getTranslationEdition,
   quranText,
+  quranWordGap,
   translationText,
   type Rule,
   type StudyData,
@@ -21,6 +22,7 @@ import { parseWordLocation } from '@/state/word-location';
 import { cardStyle, lineEndSlack, quranWordSlack, row } from '@/theme/tokens';
 import { themed, useTheme } from '@/theme/theme';
 import { useTypography } from '@/theme/typography';
+import { unbrokenWord } from './mushaf-flow';
 
 /** Words sharing a root shown before "Show all": a common root (اللہ) has ~290 in Al-Baqarah. */
 const relatedPreview = 24;
@@ -225,13 +227,15 @@ function WordDetail({
           <Text selectable style={[type.arabic, arabicText(26)]}>
             {ayahWords.map((entry, entryIndex) => (
               <Fragment key={entry.id}>
-                {entryIndex > 0 ? ' ' : null}
+                {entryIndex > 0
+                  ? quranWordGap(quranText(ayahWords[entryIndex - 1]!, type.quranFont), type.quranFont)
+                  : null}
                 <Text
                   testID={`context-${entry.id}`}
                   onPress={entry.id === word.id ? undefined : () => openWord(entry)}
                   style={entry.id === word.id ? styles.contextWord : undefined}
                 >
-                  {quranText(entry, type.quranFont)}
+                  {unbrokenWord(quranText(entry, type.quranFont))}
                 </Text>
               </Fragment>
             ))}

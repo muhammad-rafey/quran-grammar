@@ -5,6 +5,10 @@ import {
   defaultFontIds,
   fontsForRole,
   quranText,
+  quranWordGap,
+  quranWordGapExtra,
+  quranAyahEndGap,
+  spaceQuranText,
   readingFonts,
   resolveFont,
   type FontRole,
@@ -137,4 +141,36 @@ test('quranText picks the IndoPak text only for IndoPak fonts that have it', () 
   // Older data without the field (or an empty value) keeps the Uthmani text.
   assert.equal(quranText({ arabic: word.arabic }, indoPak), word.arabic);
   assert.equal(quranText({ arabic: word.arabic, arabicIndoPak: '' }, indoPak), word.arabic);
+});
+
+test('IndoPak running text gets wider word gaps, wider still after an overhanging pause mark', () => {
+  const indoPak = resolveFont('quran', 'al-qalam-quran-majeed');
+  const uthmani = resolveFont('quran', null);
+  const spaces = (count: number) => ' '.repeat(count);
+  // 3:2 «هُوَۙ الۡحَىُّ»: the ۙ (U+06D9) overprinted the next word with a single (0.1em) space.
+  assert.equal(quranWordGap('هُوَۙ', indoPak), spaces(7) + '\u2060 ');
+  assert.equal(quranWordGap('اِلٰهَ', indoPak), spaces(3));
+  assert.equal(quranWordGap('الۡقَيُّوۡمُ \uE01A', indoPak), spaces(7) + '\u2060 ');
+  assert.equal(quranWordGap('هُوَۙ', uthmani), ' ');
+  assert.equal(quranWordGapExtra('هُوَۙ', indoPak), 0.7);
+  assert.equal(quranWordGapExtra('هُوَ', uthmani), 0);
+  for (const font of [indoPak, uthmani]) {
+    // Ordinary spaces only: Al Qalam has no thin/en/figure spaces (fallback glyphs broke
+    // Android's justified lines).
+    for (const last of ['هُوَ', 'هُوَۙ']) {
+      // Only the gap's last space can end a line (and hang there).
+      assert.match(quranWordGap(last, font), /^ *(\u2060)? $/);
+      // The ayah-end gap never breaks: a no-break space, or spaces closed by a word joiner.
+      assert.match(quranAyahEndGap(last, font), /^(\u00A0| +\u2060)$/);
+    }
+  }
+  assert.equal(quranAyahEndGap('هُوَۙ', indoPak), spaces(8) + '\u2060');
+  assert.equal(quranAyahEndGap('هُوَ', indoPak), spaces(3) + '\u2060');
+  assert.equal(quranAyahEndGap('هُوَ', uthmani), '\u00A0');
+  assert.equal(
+    spaceQuranText('اللّٰهُ لَاۤ اِلٰهَ اِلَّا هُوَۙ الۡحَىُّ', indoPak),
+    ['اللّٰهُ', 'لَاۤ', 'اِلٰهَ', 'اِلَّا', 'هُوَۙ'].join(spaces(3)) + spaces(7) + '\u2060 ' + 'الۡحَىُّ',
+  );
+  assert.equal(spaceQuranText(' الۡحَىُّ', indoPak, 'هُوَۙ'), `${spaces(7)}\u2060 الۡحَىُّ`);
+  assert.equal(spaceQuranText('هُوَۙ الۡحَىُّ', uthmani), 'هُوَۙ الۡحَىُّ');
 });

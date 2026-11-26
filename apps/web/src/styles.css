@@ -2570,6 +2570,8 @@ html.split-dragging * {
 }
 .topic-ayah {
   font-size: calc(25px * var(--quran-scale, 1));
+  /* Keeps the wider IndoPak word gaps (runs of spaces, see spaceQuranText). */
+  white-space: pre-wrap;
   line-height: calc(2.3 * var(--quran-line-scale, 1));
 }
 .topic-ayah mark {
@@ -2788,6 +2790,8 @@ html.split-dragging * {
 }
 .plain-word {
   display: inline;
+  /* IndoPak words may contain a space («وَ يُقِيۡمُوۡنَ»); a word never breaks across lines. */
+  white-space: nowrap;
   padding: 0 2px;
   border-radius: 8px;
   font: inherit;
@@ -2815,12 +2819,18 @@ html.split-dragging * {
   line-height: 1;
   vertical-align: 0.15em;
 }
+/* An ayah's last word, its no-break gap and its marker: the marker never starts a line alone. */
+.ayah-tail {
+  white-space: nowrap;
+}
 .mushaf-text {
   padding: 22px 26px 26px;
   line-height: calc(2.5 * var(--quran-line-scale, 1));
 }
+/* An ayah inside the continuous text is an inline run of its lines: no block padding (it would
+   only offset its box), and jumps keep its first line below the sticky toolbar (.plain-ayah). */
 span.plain-ayah {
-  scroll-margin-top: 16px;
+  padding-block: 0;
 }
 .plain-ayah .ayah-translation {
   margin-top: 8px;
@@ -2894,6 +2904,7 @@ span.plain-ayah {
 }
 .font-preview-text {
   display: -webkit-box;
+  white-space: pre-wrap;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   line-clamp: 2;

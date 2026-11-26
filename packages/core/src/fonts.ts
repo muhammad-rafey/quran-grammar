@@ -216,6 +216,74 @@ export function quranText(
   return (font.script === 'indopak' && word.arabicIndoPak) || word.arabic;
 }
 
+/**
+ * Pause (waqf) marks that IndoPak fonts draw past the end of their word: they have no advance
+ * width, and in Al Qalam Quran Majeed their ink reaches 0.3-0.5em beyond the word (U+0615,
+ * U+06D6-U+06DB and the font's private-use waqf glyphs; measured from the font file).
+ */
+const overhangingPauseMark = /[\u0615\u06D6-\u06DB\uE000-\uF8FF]$/;
+
+/** Al Qalam Quran Majeed's space advance (em); its gaps are counted in these spaces. */
+const indoPakSpace = 0.1;
+
+/**
+ * The separator between two Quranic words in running text (display only), after the word
+ * `previous` as shown. Uthmani fonts use a plain space. IndoPak fonts get a wider gap: Al Qalam's
+ * space is only 0.1em (words nearly touched) and a pause mark ending the previous word overprinted
+ * the next one (3:2 «هُوَۙ الۡحَىُّ»). The gap is made of ordinary spaces only: Al Qalam has no
+ * thin, en or figure space, and the fallback glyphs threw Android's justified line widths off. A
+ * line breaks only after the last space. The wide gap after a pause mark keeps its spaces before a
+ * word joiner (U+2060), so only its last space hangs at a line end: a long run of hanging spaces
+ * pushed the start of that line past the edge on Android (2:2 ending with «فِيۡهِۛۚ»).
+ */
+export function quranWordGap(previous: string, font: Pick<ReadingFont, 'script'>): string {
+  const extra = quranWordGapExtra(previous, font);
+  const spaces = ' '.repeat(Math.round(extra / indoPakSpace));
+  return extra < 0.5 ? `${spaces} ` : `${spaces}\u2060 `;
+}
+
+/**
+ * The width (em) that `quranWordGap` adds to one ordinary space: 0 (Uthmani), 0.2 (IndoPak) or
+ * 0.7 (IndoPak, after an overhanging pause mark). On the web, where repeated spaces collapse,
+ * render one space with this `word-spacing` instead.
+ */
+export function quranWordGapExtra(previous: string, font: Pick<ReadingFont, 'script'>): number {
+  if (font.script !== 'indopak') return 0;
+  return overhangingPauseMark.test(previous) ? 0.7 : 0.2;
+}
+
+/**
+ * The non-breaking gap between an ayah's last word (as shown) and its ayah-end marker, so the
+ * marker never starts a line alone. Uthmani fonts use a no-break space. Al Qalam's no-break space
+ * has no width, so IndoPak fonts use ordinary spaces (see quranWordGap) closed by a word joiner
+ * (U+2060): no line break is allowed before a word joiner, so none falls inside the gap.
+ */
+export function quranAyahEndGap(lastWord: string, font: Pick<ReadingFont, 'script'>): string {
+  if (font.script !== 'indopak') return '\u00A0';
+  return ' '.repeat(Math.round(quranAyahEndGapExtra(lastWord, font) / indoPakSpace)) + '\u2060';
+}
+
+/** The width (em) of `quranAyahEndGap` for IndoPak fonts (0 for Uthmani fonts' no-break space). */
+export function quranAyahEndGapExtra(lastWord: string, font: Pick<ReadingFont, 'script'>): number {
+  if (font.script !== 'indopak') return 0;
+  return overhangingPauseMark.test(lastWord) ? 0.8 : 0.3;
+}
+
+/**
+ * Running Quranic text joined by single spaces (an ayah, or part of one) with each space replaced
+ * by `quranWordGap`. `before` is the text shown just before `text` (for a part of an ayah).
+ */
+export function spaceQuranText(
+  text: string,
+  font: Pick<ReadingFont, 'script'>,
+  before = '',
+): string {
+  if (font.script !== 'indopak') return text;
+  return text.replace(/ /g, (_, offset: number) =>
+    quranWordGap(offset > 0 ? text[offset - 1]! : before, font),
+  );
+}
+
 /** A practice option's text in a font: the IndoPak text of a Quranic word option for an IndoPak font. */
 export function practiceOptionText(
   option: { readonly text: string; readonly textIndoPak?: string },
