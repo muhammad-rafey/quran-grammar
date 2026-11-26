@@ -5,7 +5,7 @@ import type {
   PracticeQuestionKind,
   TopicExampleKind,
 } from '../grammar/types';
-import type { PracticeQuestion } from '../practice';
+import { toResolvedOption, type PracticeQuestion } from '../practice';
 import type { StudyData } from '../types';
 import { byPosition, group, rowsToStudies, studiesToRows, type StudyRows } from './rows';
 
@@ -46,6 +46,15 @@ export interface GrammarRows {
     language: 'ar' | 'ur';
   }[];
 }
+
+/**
+ * A practice option row as read for display: the columns plus, for an option whose id is a word
+ * id, that word's texts (joined at read time; not stored). See `toResolvedOption`.
+ */
+export type OptionRow = GrammarRows['practice_options'][number] & {
+  word_arabic?: string | null;
+  word_arabic_indopak?: string | null;
+};
 
 /** Every table in the database except content_version. */
 export type ContentRows = StudyRows & GrammarRows;
@@ -169,17 +178,22 @@ export function topicRowToRecord(
 /** Rebuild questions (in row order) with their options in position order. */
 export function rowsToQuestions(
   questions: readonly GrammarRows['practice_questions'][number][],
-  options: readonly GrammarRows['practice_options'][number][],
+  options: readonly OptionRow[],
 ): PracticeQuestion[] {
   const optionsByQuestion = group(options, (row) => row.question_id);
   return questions.map((row) => ({
     id: row.id,
     promptUrdu: row.prompt_urdu,
-    options: [...(optionsByQuestion.get(row.id) ?? [])].sort(byPosition).map((option) => ({
-      id: option.id,
-      text: option.text,
-      language: option.language,
-    })),
+    options: [...(optionsByQuestion.get(row.id) ?? [])]
+      .sort(byPosition)
+      .map((option) =>
+        toResolvedOption(
+          option,
+          option.word_arabic == null
+            ? null
+            : { arabic: option.word_arabic, arabicIndoPak: option.word_arabic_indopak },
+        ),
+      ),
     correctOptionId: row.correct_option_id,
     explanationUrdu: row.explanation_urdu,
     wordId: row.word_id ?? null,

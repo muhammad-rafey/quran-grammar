@@ -52,9 +52,16 @@ export interface ResolvedTopicExample {
   readonly surah: number;
   readonly ayah: number;
   readonly wordArabic: string;
+  /** The word's IndoPak text (`Word.arabicIndoPak`); '' when the data has none. Display only. */
+  readonly wordArabicIndoPak: string;
   readonly meaningUrdu: string;
   /** Full ayah Arabic (the ayah's words joined by spaces). */
   readonly ayahArabic: string;
+  /**
+   * The ayah's words' IndoPak texts joined by spaces; '' unless every word has one. An IndoPak
+   * word can contain a space (e.g. «وَ عَمِلُوا»), so locate the word with `splitAyahAtWord`.
+   */
+  readonly ayahArabicIndoPak: string;
   /** The ayah's translations keyed by translation id (`translationEditions`). */
   readonly translations: Readonly<Record<string, string>>;
   /** Present for annotated examples. */

@@ -379,6 +379,7 @@ export function App() {
         ) : view === 'practice' ? (
           <PracticeGrammar
             language={language}
+            quranFont={quranFont}
             selection={practice}
             onSelect={setPractice}
             onOpenTopic={(id, button) => setTopic({ id, trigger: button })}
@@ -537,6 +538,7 @@ export function App() {
             onWord={openWord}
             onPractice={practiseTopic}
             translationId={translationId}
+            quranFont={quranFont}
           />
         )}
       </main>

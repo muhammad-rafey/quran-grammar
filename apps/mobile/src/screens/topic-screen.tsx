@@ -3,8 +3,11 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Stack } from 'expo-router/stack';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
+  exampleQuranText,
+  splitAyahAtWord,
   translationText,
   type GrammarTopicDetail,
+  type ReadingFont,
   type ResolvedTopicExample,
 } from '@quran-grammar/core';
 import { AppIcon } from '@/components/app-icon';
@@ -177,18 +180,14 @@ function TopicBody({
   );
 }
 
-/** Splits the ayah at word boundaries so the studied occurrence can be emphasised in place. */
-function splitAyah(example: ResolvedTopicExample) {
-  const words = example.ayahArabic.split(' ');
+/**
+ * The example's word and ayah in the Quran font's orthography (IndoPak fonts get the IndoPak
+ * text), with the ayah split around the studied occurrence so it can be emphasised in place.
+ */
+function exampleText(example: ResolvedTopicExample, quranFont: ReadingFont) {
+  const text = exampleQuranText(example, quranFont);
   const position = parseWordLocation(example.wordId)?.position ?? 0;
-  let index = words[position - 1] === example.wordArabic ? position - 1 : -1;
-  if (index < 0) index = words.indexOf(example.wordArabic);
-  if (index < 0) return null;
-  return {
-    before: words.slice(0, index).join(' '),
-    word: words[index],
-    after: words.slice(index + 1).join(' '),
-  };
+  return { ...text, parts: splitAyahAtWord(text.ayah, text.word, position) };
 }
 
 function ExampleCard({
@@ -204,13 +203,13 @@ function ExampleCard({
   const type = useTypography();
   const translation = translationText(example.translations, translationId);
   const { arabicText } = type;
-  const parts = splitAyah(example);
+  const { word, ayah, parts } = exampleText(example, type.quranFont);
   const reference = `${count(example.surah)}:${count(example.ayah)}`;
   return (
     <Pressable
       testID={`topic-example-${example.wordId}`}
       accessibilityRole="button"
-      accessibilityLabel={`${example.wordArabic}، ${example.meaningUrdu}. ${ui.surah} ${reference}`}
+      accessibilityLabel={`${word}، ${example.meaningUrdu}. ${ui.surah} ${reference}`}
       accessibilityHint={ui.wordStudy}
       onPress={() => onWord(example.wordId)}
       style={({ pressed }) => ({
@@ -238,7 +237,7 @@ function ExampleCard({
         </View>
         <View style={{ ...controlRow, gap: spacing.xs }}>
           <Text style={[type.arabic, arabicText(30), { color: colors.primary }]}>
-            {example.wordArabic}
+            {word}
           </Text>
           <AppIcon name={isUrdu ? 'chevronLeft' : 'chevronRight'} size={18} />
         </View>
@@ -251,7 +250,7 @@ function ExampleCard({
             {parts.after ? ` ${parts.after}` : ''}
           </>
         ) : (
-          example.ayahArabic
+          ayah
         )}
       </Text>
       {translation ? <Paragraph muted>{translation}</Paragraph> : null}

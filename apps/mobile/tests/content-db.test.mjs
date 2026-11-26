@@ -148,11 +148,12 @@ test('content database: version, studies, topics and practice', { skip }, async 
       [...topics.map((topic) => topic.position)].sort((a, b) => a - b),
     );
     const wordQuery = env.db.prepare(
-      'select arabic, surah, ayah from words where id = ?',
+      'select arabic, arabic_indopak, surah, ayah from words where id = ?',
     );
     const ayahQuery = env.db.prepare(
-      'select arabic from words where surah = ? and ayah = ? order by position',
+      'select arabic, arabic_indopak from words where surah = ? and ayah = ? order by position',
     );
+    let wordOptions = 0;
     for (const summary of topics) {
       const topic = await repository.getTopic(summary.id);
       assert.ok(topic, summary.id);
@@ -165,12 +166,12 @@ test('content database: version, studies, topics and practice', { skip }, async 
         assert.equal(typeof example.translations, 'object', example.wordId);
         const word = wordQuery.get(example.wordId);
         assert.equal(example.wordArabic, word.arabic);
+        assert.equal(example.wordArabicIndoPak, word.arabic_indopak);
+        const ayahWords = ayahQuery.all(word.surah, word.ayah);
+        assert.equal(example.ayahArabic, ayahWords.map((row) => row.arabic).join(' '));
         assert.equal(
-          example.ayahArabic,
-          ayahQuery
-            .all(word.surah, word.ayah)
-            .map((row) => row.arabic)
-            .join(' '),
+          example.ayahArabicIndoPak,
+          ayahWords.map((row) => row.arabic_indopak).join(' '),
         );
       }
       const questions = await repository.getPracticeQuestions({ topicId: summary.id });
@@ -184,8 +185,17 @@ test('content database: version, studies, topics and practice', { skip }, async 
       for (const question of questions) {
         assert.equal(question.topicId, summary.id);
         assert.ok(question.options.some((option) => option.id === question.correctOptionId));
+        // Word options (spot questions) get the word's IndoPak text from the words table.
+        for (const option of question.options) {
+          const word = option.language === 'ar' ? wordQuery.get(option.id) : undefined;
+          if (word?.arabic === option.text) {
+            wordOptions += 1;
+            assert.equal(option.textIndoPak, word.arabic_indopak, option.id);
+          } else assert.equal(option.textIndoPak, undefined, option.id);
+        }
       }
     }
+    assert.ok(wordOptions > 100, `${wordOptions} word options`);
     assert.equal(await repository.getTopic('no-such-topic'), null);
     assert.equal(await repository.getTopic('../x'), null);
   });
@@ -194,6 +204,8 @@ test('content database: version, studies, topics and practice', { skip }, async 
     const questions = await repository.getPracticeQuestions({ set: 'fatihah' });
     assert.ok(questions.length >= 3);
     assert.ok(questions.every((question) => question.kind === 'fatihah'));
+    const verb = questions.find((question) => question.id === 'fatihah/identify-verb');
+    assert.ok(verb.options.every((option) => option.textIndoPak && !option.textIndoPak.includes('\u0671')));
     if (bundledRepository)
       assert.deepEqual(questions, await bundledRepository.getPracticeQuestions({ set: 'fatihah' }));
   });

@@ -3,6 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import {
   getPracticeProgress,
   gradePracticeAnswer,
+  practiceOptionText,
   type PracticeQuestion,
 } from '@quran-grammar/core';
 import { AppIcon } from '@/components/app-icon';
@@ -117,6 +118,8 @@ export function QuizRunner({
             style={{ gap: spacing.sm }}
           >
             {question.options.map((option) => {
+              // Quranic word options in the selected Quran font's orthography (IndoPak fonts).
+              const text = practiceOptionText(option, type.quranFont);
               const chosen = selected === option.id;
               const rightAnswer = checked && option.id === question.correctOptionId;
               const wrongChoice = checked && chosen && !rightAnswer;
@@ -125,7 +128,7 @@ export function QuizRunner({
                   key={option.id}
                   testID={`answer-${option.id}`}
                   accessibilityRole="radio"
-                  accessibilityLabel={option.text}
+                  accessibilityLabel={text}
                   accessibilityState={{ checked: chosen, disabled: checked }}
                   disabled={checked}
                   onPress={() => setSelected(option.id)}
@@ -159,7 +162,7 @@ export function QuizRunner({
                       { textAlign: 'center', color: colors.ink },
                     ]}
                   >
-                    {option.text}
+                    {text}
                     {lineEndSlack}
                   </Text>
                 </Pressable>

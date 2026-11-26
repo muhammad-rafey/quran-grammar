@@ -17,8 +17,10 @@ import {
   getUiStrings,
   gradePracticeAnswer,
   normalizeText,
+  practiceOptionText,
   type GrammarTopicSummary,
   type PracticeQuestion,
+  type ReadingFont,
   type UiLanguage,
 } from '@quran-grammar/core';
 import { usePractice, useTopics, type PracticeFilter } from '../use-api';
@@ -30,9 +32,12 @@ export function QuizRunner({
   title,
   subtitle,
   onBack,
+  quranFont,
 }: {
   questions: readonly PracticeQuestion[];
   language: UiLanguage;
+  /** Selected Quran font: IndoPak fonts show Quranic word options in IndoPak text. */
+  quranFont: ReadingFont;
   title: string;
   subtitle?: { text: string; lang: 'en' | 'ur' };
   onBack?: () => void;
@@ -159,7 +164,7 @@ export function QuizRunner({
                 className={`practice-option ${choice === option.id ? 'selected' : ''} ${checked && option.id === question.correctOptionId ? 'correct' : ''}`}
                 onClick={() => setChoice(option.id)}
               >
-                <span>{option.text}</span>
+                <span>{practiceOptionText(option, quranFont)}</span>
                 {checked && option.id === question.correctOptionId && <Check size={18} />}
               </button>
             ))}
@@ -238,11 +243,13 @@ function PracticeQuiz({
   filter,
   topic,
   language,
+  quranFont,
   onBack,
 }: {
   filter: PracticeFilter;
   topic: GrammarTopicSummary | undefined;
   language: UiLanguage;
+  quranFont: ReadingFont;
   onBack: () => void;
 }) {
   const ui = getUiStrings(language);
@@ -283,6 +290,7 @@ function PracticeQuiz({
       title={title}
       subtitle={subtitle}
       onBack={onBack}
+      quranFont={quranFont}
     />
   );
 }
@@ -293,11 +301,13 @@ function PracticeQuiz({
  */
 export function PracticeGrammar({
   language,
+  quranFont,
   selection,
   onSelect,
   onOpenTopic,
 }: {
   language: UiLanguage;
+  quranFont: ReadingFont;
   selection: PracticeFilter | null;
   onSelect: (filter: PracticeFilter | null) => void;
   onOpenTopic: (id: string, trigger: HTMLElement) => void;
@@ -343,6 +353,7 @@ export function PracticeGrammar({
           filter={selection}
           topic={'topicId' in selection ? topics?.find((t) => t.id === selection.topicId) : undefined}
           language={language}
+          quranFont={quranFont}
           onBack={() => onSelect(null)}
         />
       </section>

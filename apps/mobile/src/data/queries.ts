@@ -1,21 +1,24 @@
 /**
  * SQL for the bundled content database (schema v3) and the mapping back to the shared
- * StudyData / grammar-topic / practice shapes. Pure TypeScript with type-only imports, so the
- * same code runs on device (expo-sqlite) and in Node tests (node:sqlite).
+ * StudyData / grammar-topic / practice shapes. Pure TypeScript importing only the light core entry
+ * (shared shaping helpers), so the same code runs on device (expo-sqlite) and in Node tests
+ * (node:sqlite).
  *
  * Every query is keyed by an indexed column (words(surah), primary keys, topic_id) and a whole
  * chapter loads in a fixed number of statements, independent of its word count.
  */
-import type {
-  GrammarTopicDetail,
-  GrammarTopicSummary,
-  PracticeOption,
-  PracticeQuestion,
-  PracticeQuestionFilter,
-  PracticeQuestionKind,
-  ResolvedTopicExample,
-  StudyData,
-  TopicExampleKind,
+import {
+  joinIndoPak,
+  toResolvedOption,
+  type GrammarTopicDetail,
+  type GrammarTopicSummary,
+  type PracticeOption,
+  type PracticeQuestion,
+  type PracticeQuestionFilter,
+  type PracticeQuestionKind,
+  type ResolvedTopicExample,
+  type StudyData,
+  type TopicExampleKind,
 } from '@quran-grammar/core';
 
 export const MOBILE_DATABASE_SCHEMA_VERSION = 3;
@@ -288,9 +291,11 @@ export async function loadTopic(exec: SqlExecutor, id: string): Promise<GrammarT
       surah: number;
       ayah: number;
       arabic: string;
+      arabic_indopak: string | null;
       meaning_urdu: string;
     }>(
-      `select e.kind, e.word_id, e.note_urdu, w.surah, w.ayah, w.arabic, w.meaning_urdu
+      `select e.kind, e.word_id, e.note_urdu, w.surah, w.ayah, w.arabic, w.arabic_indopak,
+              w.meaning_urdu
          from grammar_topic_examples e
          join words w on w.id = e.word_id
         where e.topic_id = ?
@@ -308,8 +313,8 @@ export async function loadTopic(exec: SqlExecutor, id: string): Promise<GrammarT
       [id],
     ),
     // Every word of each example's ayah, to show the full ayah without retyping it.
-    exec.all<{ surah: number; ayah: number; arabic: string }>(
-      `select distinct w2.surah, w2.ayah, w2.position, w2.arabic
+    exec.all<{ surah: number; ayah: number; arabic: string; arabic_indopak: string | null }>(
+      `select distinct w2.surah, w2.ayah, w2.position, w2.arabic, w2.arabic_indopak
          from grammar_topic_examples e
          join words w on w.id = e.word_id
          join words w2 on w2.surah = w.surah and w2.ayah = w.ayah
@@ -318,25 +323,31 @@ export async function loadTopic(exec: SqlExecutor, id: string): Promise<GrammarT
       [id],
     ),
   ]);
-  const ayahArabic = new Map<string, string>();
+  const ayahArabic = new Map<string, { arabic: string; indoPak: string }>();
   for (const [key, words] of groupBy(ayahWords, (row) => `${row.surah}:${row.ayah}`))
-    ayahArabic.set(key, words.map((word) => word.arabic).join(' '));
+    ayahArabic.set(key, {
+      arabic: words.map((word) => word.arabic).join(' '),
+      indoPak: joinIndoPak(words.map((word) => word.arabic_indopak)),
+    });
   const translations = new Map<string, Record<string, string>>();
   for (const [key, rows] of groupBy(exampleTranslations, (row) => `${row.surah}:${row.ayah}`))
     translations.set(key, Object.fromEntries(rows.map((row) => [row.translation_id, row.text])));
-  const resolved = examples.map(
-    (row): ResolvedTopicExample => ({
+  const resolved = examples.map((row): ResolvedTopicExample => {
+    const ayah = ayahArabic.get(`${row.surah}:${row.ayah}`);
+    return {
       kind: row.kind,
       wordId: row.word_id,
       surah: row.surah,
       ayah: row.ayah,
       wordArabic: row.arabic,
+      wordArabicIndoPak: row.arabic_indopak ?? '',
       meaningUrdu: row.meaning_urdu,
-      ayahArabic: ayahArabic.get(`${row.surah}:${row.ayah}`) ?? row.arabic,
+      ayahArabic: ayah?.arabic ?? row.arabic,
+      ayahArabicIndoPak: ayah ? ayah.indoPak : (row.arabic_indopak ?? ''),
       translations: translations.get(`${row.surah}:${row.ayah}`) ?? {},
       noteUrdu: row.note_urdu ?? null,
-    }),
-  );
+    };
+  });
   return {
     ...summaryFromRow(topic),
     explanationUrdu: topic.explanation_urdu,
@@ -369,9 +380,19 @@ export async function loadPracticeQuestions(
          from practice_questions q where ${where} order by q.position`,
       params,
     ),
-    exec.all<{ question_id: string; id: string; text: string; language: PracticeOption['language'] }>(
-      `select o.question_id, o.id, o.text, o.language
+    // Word options join the word whose id they carry, for its IndoPak text (toResolvedOption).
+    exec.all<{
+      question_id: string;
+      id: string;
+      text: string;
+      language: PracticeOption['language'];
+      word_arabic: string | null;
+      word_arabic_indopak: string | null;
+    }>(
+      `select o.question_id, o.id, o.text, o.language, w.arabic as word_arabic,
+              w.arabic_indopak as word_arabic_indopak
          from practice_questions q join practice_options o on o.question_id = q.id
+         left join words w on w.id = o.id
         where ${where} order by o.question_id, o.position`,
       params,
     ),
@@ -381,11 +402,14 @@ export async function loadPracticeQuestions(
     (row): PracticeQuestion => ({
       id: row.id,
       promptUrdu: row.prompt_urdu,
-      options: (optionsByQuestion.get(row.id) ?? []).map((option) => ({
-        id: option.id,
-        text: option.text,
-        language: option.language,
-      })),
+      options: (optionsByQuestion.get(row.id) ?? []).map((option) =>
+        toResolvedOption(
+          option,
+          option.word_arabic === null
+            ? null
+            : { arabic: option.word_arabic, arabicIndoPak: option.word_arabic_indopak },
+        ),
+      ),
       correctOptionId: row.correct_option_id,
       explanationUrdu: row.explanation_urdu,
       wordId: row.word_id,

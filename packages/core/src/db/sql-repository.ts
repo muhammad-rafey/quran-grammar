@@ -3,12 +3,12 @@
  * used; the dialect decides placeholders (`?` vs `$1`) and the Postgres schema prefix.
  */
 import type { GrammarTopicSummary } from '../grammar/types';
-import { toResolvedExample, toTopicDetail, toTopicSummary } from '../grammar/resolve';
+import { joinIndoPak, toResolvedExample, toTopicDetail, toTopicSummary } from '../grammar/resolve';
 import type { PracticeQuestion } from '../practice';
 import type { ContentRepository, PracticeQuestionFilter, SurahSummary } from '../repository';
 import type { StudyData } from '../types';
 import type { ContentRows, GrammarRows } from './grammar-rows';
-import { rowsToQuestions, topicRowToRecord } from './grammar-rows';
+import { rowsToQuestions, topicRowToRecord, type OptionRow } from './grammar-rows';
 import { rowsToStudies, type StudyRows } from './rows';
 import { POSTGRES_SCHEMA, type Dialect } from './schema';
 import type { ContentVersion } from './version';
@@ -45,13 +45,14 @@ export function contentQueries(dialect: Dialect) {
     topics: `select t.id, t.position, t.title_urdu, t.title_english, t.summary_urdu, t.explanation_urdu, t.occurrence_count, (select cast(count(*) as integer) from ${t('practice_questions')} q where q.topic_id = t.id) as question_count from ${t('grammar_topics')} t order by t.position`,
     topic: `select t.id, t.position, t.title_urdu, t.title_english, t.summary_urdu, t.explanation_urdu, t.occurrence_count, (select cast(count(*) as integer) from ${t('practice_questions')} q where q.topic_id = t.id) as question_count from ${t('grammar_topics')} t where t.id = ${p}`,
     topicPoints: `select topic_id, position, text_urdu from ${t('grammar_topic_points')} where topic_id = ${p} order by position`,
-    topicExamples: `select e.kind, e.position, e.word_id, e.note_urdu, w.surah, w.ayah, w.arabic, w.meaning_urdu from ${t('grammar_topic_examples')} e join ${t('words')} w on w.id = e.word_id where e.topic_id = ${p} order by e.kind, e.position`,
+    topicExamples: `select e.kind, e.position, e.word_id, e.note_urdu, w.surah, w.ayah, w.arabic, w.arabic_indopak, w.meaning_urdu from ${t('grammar_topic_examples')} e join ${t('words')} w on w.id = e.word_id where e.topic_id = ${p} order by e.kind, e.position`,
     topicExampleTranslations: `select distinct a.surah, a.ayah, a.position, a.translation_id, a.text from ${t('grammar_topic_examples')} e join ${t('words')} x on x.id = e.word_id join ${t('ayah_translations')} a on a.surah = x.surah and a.ayah = x.ayah where e.topic_id = ${p} order by a.surah, a.ayah, a.position`,
-    topicExampleAyahWords: `select distinct w.surah, w.ayah, w.position, w.arabic from ${t('grammar_topic_examples')} e join ${t('words')} x on x.id = e.word_id join ${t('words')} w on w.surah = x.surah and w.ayah = x.ayah where e.topic_id = ${p} order by w.surah, w.ayah, w.position`,
+    topicExampleAyahWords: `select distinct w.surah, w.ayah, w.position, w.arabic, w.arabic_indopak from ${t('grammar_topic_examples')} e join ${t('words')} x on x.id = e.word_id join ${t('words')} w on w.surah = x.surah and w.ayah = x.ayah where e.topic_id = ${p} order by w.surah, w.ayah, w.position`,
     topicQuestions: `select id, position, topic_id, kind, prompt_urdu, correct_option_id, explanation_urdu, word_id from ${t('practice_questions')} where topic_id = ${p} order by position`,
-    topicOptions: `select o.question_id, o.position, o.id, o.text, o.language from ${t('practice_options')} o join ${t('practice_questions')} q on q.id = o.question_id where q.topic_id = ${p} order by q.position, o.position`,
+    // Options join the word whose id they carry (word options), for toResolvedOption.
+    topicOptions: `select o.question_id, o.position, o.id, o.text, o.language, w.arabic as word_arabic, w.arabic_indopak as word_arabic_indopak from ${t('practice_options')} o join ${t('practice_questions')} q on q.id = o.question_id left join ${t('words')} w on w.id = o.id where q.topic_id = ${p} order by q.position, o.position`,
     kindQuestions: `select id, position, topic_id, kind, prompt_urdu, correct_option_id, explanation_urdu, word_id from ${t('practice_questions')} where kind = ${p} order by position`,
-    kindOptions: `select o.question_id, o.position, o.id, o.text, o.language from ${t('practice_options')} o join ${t('practice_questions')} q on q.id = o.question_id where q.kind = ${p} order by q.position, o.position`,
+    kindOptions: `select o.question_id, o.position, o.id, o.text, o.language, w.arabic as word_arabic, w.arabic_indopak as word_arabic_indopak from ${t('practice_options')} o join ${t('practice_questions')} q on q.id = o.question_id left join ${t('words')} w on w.id = o.id where q.kind = ${p} order by q.position, o.position`,
   };
 }
 
@@ -94,7 +95,7 @@ export function createSqlRepository(executor: SqlExecutor, dialect: Dialect): Co
         : [q.topicQuestions, q.topicOptions, filter.topicId];
     const list = await rows<GrammarRows['practice_questions'][number]>(questionSql, [param]);
     if (!list.length) return [];
-    const options = await rows<GrammarRows['practice_options'][number]>(optionSql, [param]);
+    const options = await rows<OptionRow>(optionSql, [param]);
     return rowsToQuestions(list, options);
   }
 
@@ -144,6 +145,7 @@ export function createSqlRepository(executor: SqlExecutor, dialect: Dialect): Co
         surah: number;
         ayah: number;
         arabic: string;
+        arabic_indopak: string | null;
         meaning_urdu: string;
       }>(q.topicExamples, [id]);
       const translationRows = await rows<{
@@ -160,33 +162,40 @@ export function createSqlRepository(executor: SqlExecutor, dialect: Dialect): Co
         entry[row.translation_id] = row.text;
         translations.set(key, entry);
       }
-      const ayahWords = await rows<{ surah: number; ayah: number; position: number; arabic: string }>(
-        q.topicExampleAyahWords,
-        [id],
-      );
-      const ayahText = new Map<string, string[]>();
+      const ayahWords = await rows<{
+        surah: number;
+        ayah: number;
+        position: number;
+        arabic: string;
+        arabic_indopak: string | null;
+      }>(q.topicExampleAyahWords, [id]);
+      const ayahText = new Map<string, (typeof ayahWords)[number][]>();
       for (const word of ayahWords) {
         const key = `${int(word.surah)}:${int(word.ayah)}`;
         const list = ayahText.get(key);
-        if (list) list.push(word.arabic);
-        else ayahText.set(key, [word.arabic]);
+        if (list) list.push(word);
+        else ayahText.set(key, [word]);
       }
       return toTopicDetail(
         topicRowToRecord(topic, points),
         int(topic.question_count),
-        examples.map((row) =>
-          toResolvedExample({
+        examples.map((row) => {
+          const key = `${int(row.surah)}:${int(row.ayah)}`;
+          const words = ayahText.get(key) ?? [];
+          return toResolvedExample({
             kind: row.kind,
             wordId: row.word_id,
             surah: int(row.surah),
             ayah: int(row.ayah),
             wordArabic: row.arabic,
+            wordArabicIndoPak: row.arabic_indopak ?? '',
             meaningUrdu: row.meaning_urdu,
-            ayahArabic: (ayahText.get(`${int(row.surah)}:${int(row.ayah)}`) ?? []).join(' '),
-            translations: translations.get(`${int(row.surah)}:${int(row.ayah)}`) ?? {},
+            ayahArabic: words.map((word) => word.arabic).join(' '),
+            ayahArabicIndoPak: joinIndoPak(words.map((word) => word.arabic_indopak)),
+            translations: translations.get(key) ?? {},
             noteUrdu: row.note_urdu ?? null,
-          }),
-        ),
+          });
+        }),
       );
     },
     getPracticeQuestions: questions,
