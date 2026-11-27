@@ -6,7 +6,6 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   availableSurahNumbers,
   getSurahTitle,
-  getTranslationEdition,
   quranText,
   quranWordGap,
   translationText,
@@ -126,7 +125,6 @@ function WordDetail({
     if (target) router.setParams({ id: target.id });
   };
   const translation = translationText(details.ayah?.translations, translationId);
-  const edition = getTranslationEdition(translationId);
   const showAllRelated = allRelatedFor === word.id;
   const shownRelated = showAllRelated ? related : related.slice(0, relatedPreview);
   const reference = `${getSurahTitle(study.surah.number, language)} · ${ui.ayah} ${count(word.ayah)}`;
@@ -241,12 +239,7 @@ function WordDetail({
             ))}
           </Text>
           {translation ? (
-            <View style={{ gap: 2 }}>
-              <Paragraph muted>{translation}</Paragraph>
-              <Label muted style={{ fontSize: 12, textAlign: 'right' }}>
-                {`${ui.translator}: ${isUrdu ? edition.nameUrdu : edition.nameEnglish}`}
-              </Label>
-            </View>
+            <Paragraph muted>{translation}</Paragraph>
           ) : null}
         </View>
         <Section title={ui.rootMeaning}>

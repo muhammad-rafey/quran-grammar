@@ -1396,10 +1396,10 @@ test('the Settings translation switcher changes every ayah translation and persi
   await loadStudy(page);
   // Jalandhari is the default translation.
   await expect(page.locator('.ayah-translation')).toHaveText(ofEdition(fatihah, 'jalandhari'));
-  // Each ayah names the selected translator under its translation.
+  // The translator is named only in Settings: no credit or reference under the ayahs.
   const credits = page.locator('.translation-credit');
-  await expect(credits).toHaveCount(7);
-  await expect(credits.first()).toHaveText('Translation: Fateh Muhammad Jalandhari');
+  await expect(credits).toHaveCount(0);
+  await expect(page.locator('#reading')).not.toContainText('Jalandhari');
   await page.getByRole('button', { name: 'Settings', exact: true }).click();
   const options = page.locator('.translation-settings [data-translation]');
   await expect(options).toHaveCount(6);
@@ -1422,7 +1422,8 @@ test('the Settings translation switcher changes every ayah translation and persi
   expect(await page.evaluate(() => localStorage.getItem('quran-grammar.translation'))).toBe('maududi');
   await page.getByRole('button', { name: 'Study', exact: true }).click();
   await expect(page.locator('.ayah-translation')).toHaveText(ofEdition(fatihah, 'maududi'));
-  await expect(credits.last()).toHaveText("Translation: Syed Abul A'la Maududi (Tafheem-ul-Quran)");
+  await expect(credits).toHaveCount(0);
+  await expect(page.locator('#reading')).not.toContainText('Maududi');
   expect(ofEdition(fatihah, 'maududi')).not.toEqual(ofEdition(fatihah, 'jalandhari'));
   // The choice survives a reload and applies to every chapter.
   await page.reload();
@@ -1439,8 +1440,8 @@ test('the Settings translation switcher changes every ayah translation and persi
   await page.getByRole('radio', { name: 'محمد جوناگڑھی', exact: true }).check();
   await page.getByRole('button', { name: 'مطالعہ', exact: true }).click();
   await expect(page.locator('.ayah-translation')).toHaveText(ofEdition(lesson(114), 'junagarhi'));
-  await expect(credits.first()).toHaveText('ترجمہ: محمد جوناگڑھی');
-  await expect(credits.first()).toHaveAttribute('dir', 'rtl');
+  await expect(credits).toHaveCount(0);
+  await expect(page.locator('#reading')).not.toContainText('جوناگڑھی');
   // A stored id that is no longer offered falls back to the default.
   await page.evaluate(() => localStorage.setItem('quran-grammar.translation', 'not-offered'));
   await page.goto('/');
