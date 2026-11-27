@@ -75,6 +75,15 @@ export const lineEndSlack = Platform.OS === 'android' ? '\u2009' : '';
  */
 export const quranWordSlack = Platform.OS === 'android' ? '\u2002' : '';
 
+/**
+ * The system sans-serif, for Latin words nested inside Urdu text (a Surah's English name in the
+ * Urdu picker, "Quran.com" in the Urdu credit). The Urdu fonts have no Latin glyphs, and the
+ * platform fallback for them is a serif (Times on iOS, serif on Android).
+ */
+export const latinInUrdu: TextStyle = {
+  fontFamily: Platform.OS === 'android' ? 'sans-serif' : 'System',
+};
+
 export const row = {
   flexDirection: physicalRowDirection(true, I18nManager.isRTL),
   alignItems: 'center',
