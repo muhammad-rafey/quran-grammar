@@ -82,15 +82,25 @@ export function Label({
 export function Paragraph({
   children,
   muted = false,
+  translation = false,
   style,
 }: {
   children: ReactNode;
   muted?: boolean;
+  /** An ayah translation: sized by the reader's translation text size (Settings → Text size). */
+  translation?: boolean;
   style?: TextStyle;
 }) {
   const typography = useTypography();
+  const base = translation
+    ? muted
+      ? typography.translationSmall
+      : typography.translation
+    : muted
+      ? typography.small
+      : typography.body;
   return (
-    <Text selectable style={typography.safe([muted ? typography.small : typography.body, style])}>
+    <Text selectable style={typography.safe([base, style])}>
       {children}
       {lineEndSlack}
     </Text>

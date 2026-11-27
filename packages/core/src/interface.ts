@@ -128,6 +128,13 @@ const english = {
   themeSystem: 'System',
   themeLight: 'Light',
   themeDark: 'Dark',
+  textSize: 'Text size',
+  textSizeHelp: 'Make the Quran text and the ayah translations larger or smaller.',
+  quranTextSize: 'Quran text size',
+  translationTextSize: 'Translation text size',
+  smaller: 'Smaller',
+  larger: 'Larger',
+  resetTextSize: 'Reset to 100%',
 } as const;
 
 export type UiStrings = { readonly [Key in keyof typeof english]: string };
@@ -259,6 +266,13 @@ const urdu: UiStrings = {
   themeSystem: 'سسٹم',
   themeLight: 'ہلکا',
   themeDark: 'گہرا',
+  textSize: 'متن کا سائز',
+  textSizeHelp: 'قرآن کا متن اور آیات کا ترجمہ بڑا یا چھوٹا کریں۔',
+  quranTextSize: 'قرآنی متن کا سائز',
+  translationTextSize: 'ترجمے کا سائز',
+  smaller: 'چھوٹا کریں',
+  larger: 'بڑا کریں',
+  resetTextSize: 'اصل سائز (۱۰۰٪)',
 };
 
 /** Validate a stored preference before passing it into the interface. */

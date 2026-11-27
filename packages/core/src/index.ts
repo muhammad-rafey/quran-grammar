@@ -41,6 +41,21 @@ export {
   resolveColorScheme,
   contrastRatio,
 } from './theme';
+export type { TextSizeRole, TextSizes } from './text-size';
+export {
+  textSizeSteps,
+  textSizeRoles,
+  defaultTextSize,
+  defaultTextSizes,
+  isTextSize,
+  resolveTextSize,
+  stepTextSize,
+  canStepTextSize,
+  textSizePercent,
+  parseTextSizes,
+  serializeTextSizes,
+  scaleFontSize,
+} from './text-size';
 export type { SurahCatalogEntry, JuzCatalogEntry, JuzSurahRange } from './catalog';
 export { surahCatalog, juzCatalog, getSurahTitle, getJuzForAyah, getJuzStartAyah } from './catalog';
 export type { SurahMatch, SurahSearchResult } from './surah-search';
