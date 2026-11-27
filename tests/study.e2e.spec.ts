@@ -257,7 +257,7 @@ test('practice explains mistakes, grades three questions and resets the score', 
       .click();
   }
   await expect(practice.getByRole('status')).toContainText('Correct answers: 3 / 3');
-  await practice.getByRole('button', { name: 'All topics' }).first().click();
+  await practice.getByRole('button', { name: 'Back', exact: true }).first().click();
   await expect(page.locator('[data-practice="fatihah"]')).toBeFocused();
 });
 
@@ -319,7 +319,7 @@ test('practice grammar lists searchable topics and runs a topic quiz', async ({ 
   await expect(quiz.getByRole('status')).toContainText(`/ ${questions}`);
   await quiz.getByRole('button', { name: 'Practice again', exact: true }).click();
   await expect(quiz.locator('.practice-count')).toHaveText(`1 / ${questions}`);
-  await quiz.getByRole('button', { name: 'All topics' }).first().click();
+  await quiz.getByRole('button', { name: 'Back', exact: true }).first().click();
   await expect(page.locator(`[data-practice="${topicId}"]`)).toBeFocused();
   await expectNoOverflow(page);
   expect(errors).toEqual([]);
@@ -380,8 +380,14 @@ test('a word rule opens its topic dialog, examples navigate and practice opens t
   await expect(page.locator('.bottom-nav button.active')).toHaveText('Practice Grammar');
   await expect(page.getByRole('region', { name: topicTitle, exact: true })).toBeVisible();
   await expect(page.locator('.practice-card .practice-prompt')).toBeFocused();
+  // Back returns to the topic dialog that opened the quiz, over the study view.
+  await page.locator('.practice-card').getByRole('button', { name: 'Back', exact: true }).first().click();
+  await expect(topicDialog(page).locator('.topic-english')).toHaveText(topicTitle);
+  await expect(page.locator('.bottom-nav button.active')).toHaveText('Study');
+  await topicDialog(page).getByRole('button', { name: 'Close', exact: true }).click();
+  await expect(topicDialog(page)).toHaveCount(0);
   // The topic list's open-topic button shows the same dialog.
-  await page.locator('.practice-card').getByRole('button', { name: 'All topics' }).first().click();
+  await openPracticeGrammar(page);
   const open = page.locator('.topic-item').first().locator('.topic-open');
   await open.click();
   await expect(topicDialog(page)).toBeVisible();

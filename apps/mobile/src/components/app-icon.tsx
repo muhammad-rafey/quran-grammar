@@ -38,6 +38,15 @@ const icons = {
     ios: 'chevron.left',
     android: import('@expo/material-symbols/chevron_left.xml'),
   }),
+  // The Back button (back-bar.tsx): left in English, right in Urdu.
+  arrowLeft: Icon.select({
+    ios: 'arrow.left',
+    android: import('@expo/material-symbols/arrow_back.xml'),
+  }),
+  arrowRight: Icon.select({
+    ios: 'arrow.right',
+    android: import('@expo/material-symbols/arrow_forward.xml'),
+  }),
 } as const;
 
 export function AppIcon({

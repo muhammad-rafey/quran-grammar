@@ -25,6 +25,30 @@ import {
 } from '@quran-grammar/core';
 import { usePractice, useTopics, type PracticeFilter } from '../use-api';
 
+/**
+ * The Back button at the top of a quiz: arrow + label in the interface language. It runs the same
+ * step back as the browser's Back button (App → practice-history.ts).
+ */
+export function BackButton({ language, onBack }: { language: UiLanguage; onBack: () => void }) {
+  const ui = getUiStrings(language);
+  return (
+    <button
+      type="button"
+      className="back-button ui"
+      lang={language}
+      dir={language === 'ur' ? 'rtl' : 'ltr'}
+      onClick={onBack}
+    >
+      {language === 'ur' ? (
+        <ArrowRight size={20} aria-hidden="true" />
+      ) : (
+        <ArrowLeft size={20} aria-hidden="true" />
+      )}
+      {ui.back}
+    </button>
+  );
+}
+
 /** One multiple-choice quiz: choose, check, explanation, next, score and restart. */
 export function QuizRunner({
   questions,
@@ -83,12 +107,7 @@ export function QuizRunner({
   };
   return (
     <section className="practice-card ui" dir={direction} lang={language} aria-label={title}>
-      {onBack && (
-        <button type="button" className="text-button practice-back" onClick={onBack}>
-          {language === 'ur' ? <ArrowRight size={16} /> : <ArrowLeft size={16} />}
-          {ui.allTopics}
-        </button>
-      )}
+      {onBack && <BackButton language={language} onBack={onBack} />}
       <header className="practice-header">
         <span className="practice-mark">
           <Sparkles size={21} />
@@ -137,7 +156,7 @@ export function QuizRunner({
             </button>
             {onBack && (
               <button type="button" className="secondary-button" onClick={onBack}>
-                {ui.allTopics}
+                {ui.back}
               </button>
             )}
           </div>
@@ -275,16 +294,9 @@ function PracticeQuiz({
   if (!data || data.length === 0)
     return (
       <div className="practice-loading">
-        <button
-          type="button"
-          className="text-button practice-back ui"
-          lang={language}
-          dir={language === 'ur' ? 'rtl' : 'ltr'}
-          onClick={onBack}
-        >
-          {language === 'ur' ? <ArrowRight size={16} /> : <ArrowLeft size={16} />}
-          {ui.allTopics}
-        </button>
+        <div className="ui" lang={language} dir={language === 'ur' ? 'rtl' : 'ltr'}>
+          <BackButton language={language} onBack={onBack} />
+        </div>
         <LoadState language={language} error={error || data?.length === 0} onRetry={retry} />
       </div>
     );

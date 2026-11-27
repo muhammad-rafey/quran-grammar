@@ -51,6 +51,8 @@ import { AppIcon } from '@/components/app-icon';
 import { Action, DataStatus, InitialDataState, Label, Paragraph } from '@/components/study-ui';
 import { useStudy } from '@/state/study-provider';
 import { useInterface } from '@/state/preferences-provider';
+import { tabBackTarget } from '@/state/back-navigation';
+import { useHardwareBack } from '@/state/use-back';
 import { cardStyle, lineEndSlack, quranWordSlack, radius, row, spacing } from '@/theme/tokens';
 import { themed, useTheme } from '@/theme/theme';
 import { fontStyles, useTypography, type Typography } from '@/theme/typography';
@@ -514,6 +516,20 @@ export default function StudyScreen() {
     setPicker(null);
     setView(next);
   };
+  // Android back on Practice Grammar or Settings returns to Study instead of closing the app;
+  // pushed screens (topic, quiz, word) handle back themselves while they are focused.
+  const backTab = tabBackTarget(view, 'words');
+  const backToTab = useMemo(
+    () =>
+      backTab
+        ? () => {
+            setPicker(null);
+            setView(backTab);
+          }
+        : null,
+    [backTab],
+  );
+  useHardwareBack(backToTab);
   const filtersActive = pos !== 'all' || !showMeanings;
   // PracticeGrammar renders its own heading.
   const title = view === 'settings' ? ui.settings : null;

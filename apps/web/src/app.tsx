@@ -34,8 +34,15 @@ import { useTranslationChoice } from './use-translation';
 import { useFonts } from './use-fonts';
 import { useTheme } from './use-theme';
 import type { PracticeFilter } from './use-api';
-
-type StudyView = 'words' | 'practice' | 'settings';
+import {
+  practiceFilter,
+  practiceKey,
+  readEntry,
+  recordScreen,
+  replaceHash,
+  stepBack,
+  type StudyView,
+} from './practice-history';
 
 // Deep links and hash changes scroll their word into view; history.replaceState never fires this.
 function readLocation(scroll = true) {
@@ -112,14 +119,56 @@ export function App() {
   useEffect(() => {
     const update = () => {
       setSheetOpen(false);
-      setTopic(null);
       setPos('all');
-      setView('words');
+      // Back/Forward to an entry this app recorded: popstate has restored its screen already.
+      if (!readEntry(history.state)) {
+        setTopic(null);
+        setView('words');
+      }
       setLocationRequest(readLocation());
     };
     window.addEventListener('hashchange', update);
     return () => window.removeEventListener('hashchange', update);
   }, []);
+
+  // Browser history of the practice flow (practice-history.ts): opening a quiz or a topic pushes an
+  // entry, the browser's Back restores the previous screen, and the in-app Back is that same Back.
+  const pushScreen = useRef(false);
+  const topicTriggers = useRef(new Map<string, HTMLElement>());
+  const currentPractice = practiceKey(practice);
+  const currentTopic = topic?.id ?? null;
+  useEffect(() => {
+    const push = pushScreen.current;
+    pushScreen.current = false;
+    recordScreen({ view, practice: currentPractice, topic: currentTopic }, push);
+  }, [view, currentPractice, currentTopic]);
+  useEffect(() => {
+    const restore = (event: PopStateEvent) => {
+      pushScreen.current = false;
+      const entry = readEntry(event.state);
+      if (entry) setView(entry.view);
+      setPractice(practiceFilter(entry?.practice ?? null));
+      setTopic(
+        entry?.topic
+          ? { id: entry.topic, trigger: topicTriggers.current.get(entry.topic) ?? null }
+          : null,
+      );
+    };
+    window.addEventListener('popstate', restore);
+    return () => window.removeEventListener('popstate', restore);
+  }, []);
+  const openTopic = (id: string, button: HTMLElement | null) => {
+    if (button) topicTriggers.current.set(id, button);
+    if (topic?.id === id) return;
+    pushScreen.current = true;
+    setTopic({ id, trigger: button });
+  };
+  const closeTopic = () => stepBack(() => setTopic(null));
+  const selectPractice = (filter: PracticeFilter | null) => {
+    if (!filter) return stepBack(() => setPractice(null));
+    pushScreen.current = true;
+    setPractice(filter);
+  };
 
   useEffect(() => {
     if (!study || appliedRequest.current === locationRequest) return;
@@ -200,7 +249,7 @@ export function App() {
     if (button) trigger.current = button;
     setSelectedId(id);
     setActiveAyah(study.words.find((word) => word.id === id)!.ayah);
-    history.replaceState(null, '', `#word=${encodeURIComponent(id)}`);
+    replaceHash(`#word=${encodeURIComponent(id)}`);
     if (mobile) setSheetOpen(true);
     // Next/previous and related words in the side panel keep the reading column in step.
     else if (!button) revealWord(id);
@@ -233,7 +282,7 @@ export function App() {
     const fromReading = !!target?.closest('#reading [data-word-id]');
     setSelectedId(next.id);
     setActiveAyah(next.ayah);
-    history.replaceState(null, '', `#word=${encodeURIComponent(next.id)}`);
+    replaceHash(`#word=${encodeURIComponent(next.id)}`);
     if (!sheetOpen) revealWord(next.id, fromReading);
   };
   useEffect(() => {
@@ -243,14 +292,16 @@ export function App() {
   }, []);
   // Topic examples open their word through the same #word=s:a:p location as deep links.
   const openWord = (id: string) => {
-    history.replaceState(null, '', `#word=${encodeURIComponent(id)}`);
+    replaceHash(`#word=${encodeURIComponent(id)}`);
     setTopic(null);
     setSheetOpen(false);
     setPos('all');
     setView('words');
     setLocationRequest(readLocation(true));
   };
+  // A new entry above the topic's, so Back returns to the topic dialog (as on mobile).
   const practiseTopic = (topicId: string) => {
+    pushScreen.current = true;
     setTopic(null);
     setSheetOpen(false);
     setPractice({ topicId });
@@ -262,7 +313,7 @@ export function App() {
     const firstWord = study?.words.find((word) => word.ayah === number);
     if (firstWord) {
       setSelectedId(firstWord.id);
-      history.replaceState(null, '', `#word=${encodeURIComponent(firstWord.id)}`);
+      replaceHash(`#word=${encodeURIComponent(firstWord.id)}`);
     }
     setView('words');
     requestAnimationFrame(() =>
@@ -313,9 +364,7 @@ export function App() {
                   setPos('all');
                   setActiveAyah(startAyah);
                   setSheetOpen(false);
-                  history.replaceState(
-                    null,
-                    '',
+                  replaceHash(
                     startAyah > 1
                       ? `#surah=${surahNumber}&ayah=${startAyah}`
                       : `#surah=${surahNumber}`,
@@ -544,8 +593,8 @@ export function App() {
             language={language}
             quranFont={quranFont}
             selection={practice}
-            onSelect={setPractice}
-            onOpenTopic={(id, button) => setTopic({ id, trigger: button })}
+            onSelect={selectPractice}
+            onOpenTopic={openTopic}
           />
         ) : !study ? (
           <section
@@ -606,7 +655,7 @@ export function App() {
                       language={language}
                       quranFont={quranFont}
                       onSelect={selectWord}
-                      onTopic={(id, button) => setTopic({ id, trigger: button })}
+                      onTopic={openTopic}
                     />
                   </aside>
                 )
@@ -635,7 +684,7 @@ export function App() {
                 language={language}
                 quranFont={quranFont}
                 onSelect={selectWord}
-                onTopic={(id, button) => setTopic({ id, trigger: button })}
+                onTopic={openTopic}
                 onClose={() => setSheetOpen(false)}
               />
             </div>
@@ -647,7 +696,7 @@ export function App() {
             topicId={topic.id}
             language={language}
             returnFocus={topic.trigger}
-            onClose={() => setTopic(null)}
+            onClose={closeTopic}
             onWord={openWord}
             onPractice={practiseTopic}
             translationId={translationId}
@@ -679,7 +728,7 @@ export function App() {
                 setActiveAyah(1);
                 if (study) {
                   setSelectedId(study.words[0].id);
-                  history.replaceState(null, '', `#word=${encodeURIComponent(study.words[0].id)}`);
+                  replaceHash(`#word=${encodeURIComponent(study.words[0].id)}`);
                 }
               }
               window.scrollTo({ top: 0, behavior: 'instant' });

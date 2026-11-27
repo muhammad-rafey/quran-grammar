@@ -2398,12 +2398,30 @@ html.split-dragging * {
   background: var(--surface);
   color: var(--green);
 }
-.practice-back {
-  margin-bottom: 8px;
+/* The Back button of a quiz (and the topic dialog's Close): a bordered pill, at least 48px tall. */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 10px 18px;
+  border: 1px solid var(--line);
+  border-bottom-width: 3px;
+  border-radius: 999px;
+  background: var(--field);
+  color: var(--green);
+  font-size: 15px;
+  font-weight: 700;
 }
-.practice-card[dir='rtl'] .practice-back svg,
-.practice-loading [dir='rtl'] svg {
-  transform: none;
+.back-button:hover {
+  background: var(--mint);
+}
+.practice-card > .back-button,
+.practice-loading .back-button {
+  margin-bottom: 14px;
+}
+.back-button svg {
+  flex-shrink: 0;
 }
 .practice-title {
   display: flex;

@@ -145,14 +145,10 @@ export function TopicDialog({
       <div className="topic-shell">
         <header className="topic-header ui" lang={language} dir={direction}>
           <span className="topic-kicker">{ui.grammarTopics}</span>
-          <button
-            type="button"
-            className="icon-button"
-            aria-label={ui.close}
-            title={ui.close}
-            onClick={onClose}
-          >
-            <X size={21} />
+          {/* Labelled, like the quiz's Back button; the browser's Back closes the dialog too. */}
+          <button type="button" className="back-button" onClick={onClose}>
+            <X size={20} aria-hidden="true" />
+            {ui.close}
           </button>
         </header>
         <div className="topic-body" ref={body}>
