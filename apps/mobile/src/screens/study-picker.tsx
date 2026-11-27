@@ -1,6 +1,14 @@
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState, type ComponentProps } from 'react';
 import { BottomSheet, RNHostView } from '@expo/ui';
-import { FlatList, Pressable, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import {
+  FlatList,
+  Platform,
+  Pressable,
+  Text,
+  TextInput,
+  View,
+  useWindowDimensions,
+} from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   formatCount,
@@ -14,8 +22,8 @@ import {
 import { AppIcon } from '@/components/app-icon';
 import { Label } from '@/components/study-ui';
 import { useInterface } from '@/state/preferences-provider';
-import { lineEndSlack, radius, spacing } from '@/theme/tokens';
-import { useTheme } from '@/theme/theme';
+import { latinInUrdu, lineEndSlack, radius, spacing } from '@/theme/tokens';
+import { themed, useTheme } from '@/theme/theme';
 import { useTypography } from '@/theme/typography';
 
 export type BrowseMode = 'surah' | 'juz';
@@ -25,6 +33,8 @@ type PickerEntry = {
   title: string;
   /** Meaning and ayah count, the transliteration in Urdu, or a juz's chapters. */
   subtitle: string;
+  /** Urdu interface: the length of the subtitle's leading Latin name, set in a Latin font. */
+  latinLead?: number;
   /** The Arabic name beside an English title; empty when the title is already Arabic. */
   arabic: string;
 } & (
@@ -45,6 +55,27 @@ type StudyPickerProps = {
   onChooseSurah: (surah: number, startAyah: number) => void;
 };
 
+type SheetModifiers = NonNullable<ComponentProps<typeof BottomSheet>['modifiers']>;
+
+/**
+ * iOS: the sheet background as a SwiftUI `presentationBackground` modifier that both native
+ * shapes of it can read. `containerColor` sends only `style`, which older @expo/ui natives (such as
+ * the one built into Expo Go 57.0.9) do not know: they expect `color`, so the sheet stayed white
+ * and, in the dark theme, its light text was unreadable. A plain object rather than the
+ * `@expo/ui/swift-ui/modifiers` helpers, whose module loads the SwiftUI native module.
+ */
+const sheetBackground = themed((colors): SheetModifiers | undefined =>
+  Platform.OS === 'ios'
+    ? [
+        {
+          $type: 'presentationBackground',
+          color: colors.background,
+          style: { type: 'color', color: colors.background },
+        },
+      ]
+    : undefined,
+);
+
 export function StudyPicker(props: StudyPickerProps) {
   const { colors } = useTheme();
   return (
@@ -53,6 +84,7 @@ export function StudyPicker(props: StudyPickerProps) {
       onDismiss={props.onClose}
       snapPoints={['full']}
       containerColor={colors.background}
+      modifiers={sheetBackground(colors)}
       contentPadding={0}
       testID="lesson-picker"
     >
@@ -107,6 +139,7 @@ function PickerContent({
         number,
         title: getSurahTitle(number, language),
         subtitle: isUrdu ? `${item.nameEnglish} · ${ayahs}` : `${item.meaningEnglish} · ${ayahs}`,
+        ...(isUrdu ? { latinLead: item.nameEnglish.length } : null),
         arabic: isUrdu ? '' : item.nameArabic,
         startAyah,
         ...extra,
@@ -153,6 +186,9 @@ function PickerContent({
           height: hostHeight > 0 ? hostHeight : height * 0.8,
           paddingHorizontal: spacing.xl,
           paddingTop: spacing.lg,
+          // The content paints its own background too, so its text keeps its contrast even where
+          // the native sheet background is not applied.
+          backgroundColor: colors.background,
         }}
       >
         <View
@@ -371,7 +407,14 @@ function PickerContent({
                       {lineEndSlack}
                     </Text>
                     <Text style={[labelText(12), { color: colors.muted }]} numberOfLines={1}>
-                      {item.subtitle}
+                      {item.latinLead ? (
+                        <>
+                          <Text style={latinInUrdu}>{item.subtitle.slice(0, item.latinLead)}</Text>
+                          {item.subtitle.slice(item.latinLead)}
+                        </>
+                      ) : (
+                        item.subtitle
+                      )}
                       {lineEndSlack}
                     </Text>
                   </View>

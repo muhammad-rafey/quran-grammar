@@ -1,4 +1,5 @@
-import { View } from 'react-native';
+import type { ComponentProps } from 'react';
+import { Platform, View } from 'react-native';
 import { Host, Icon } from '@expo/ui';
 import { useTheme } from '@/theme/theme';
 
@@ -51,14 +52,34 @@ export function AppIcon({
   size?: number;
 }) {
   const { colors, scheme } = useTheme();
+  const tint = color ?? colors.primary;
   // The native Compose host consumes touches on Android even with pointerEvents="none",
   // so a tap on the icon never reached the surrounding button. React Native's own
   // hit-testing honours pointerEvents on a plain View and passes the touch to the parent.
   return (
     <View pointerEvents="none" style={{ width: size, height: size }}>
       <Host colorScheme={scheme} style={{ width: size, height: size }}>
-        <Icon name={icons[name]} color={color ?? colors.primary} size={size} />
+        <Icon name={icons[name]} color={tint} size={size} modifiers={iosTint(tint)} />
       </Host>
     </View>
   );
 }
+
+/**
+ * iOS: the SF Symbol's colour as a SwiftUI `foregroundStyle` that older @expo/ui natives can read
+ * too. `color` sends `{ style: { type, color } }`, while the native built into Expo Go 57.0.9 reads
+ * a top-level `color`, so every icon was drawn in the default black (white in the dark theme)
+ * instead of the theme colour. A plain object: the `@expo/ui/swift-ui/modifiers` helpers' module
+ * loads the SwiftUI native module, which Android does not have.
+ */
+const iosTints = new Map<string, IconModifiers>();
+function iosTint(tint: string): IconModifiers | undefined {
+  if (Platform.OS !== 'ios') return undefined;
+  let modifiers = iosTints.get(tint);
+  if (!modifiers) {
+    modifiers = [{ $type: 'foregroundStyle', styleType: 'color', color: tint }];
+    iosTints.set(tint, modifiers);
+  }
+  return modifiers;
+}
+type IconModifiers = NonNullable<ComponentProps<typeof Icon>['modifiers']>;

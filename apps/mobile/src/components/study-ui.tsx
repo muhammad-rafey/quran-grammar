@@ -1,7 +1,6 @@
 import {
   ActivityIndicator,
   Linking,
-  Platform,
   Pressable,
   Text,
   View,
@@ -10,7 +9,7 @@ import {
 import type { ReactNode } from 'react';
 import { useStudy } from '@/state/study-provider';
 import { useInterface } from '@/state/preferences-provider';
-import { cardStyle, lineEndSlack } from '@/theme/tokens';
+import { cardStyle, latinInUrdu, lineEndSlack } from '@/theme/tokens';
 import { themed, useTheme } from '@/theme/theme';
 import { useTypography } from '@/theme/typography';
 
@@ -205,11 +204,8 @@ const linkStyles = themed((colors) => {
   const link = { color: colors.primary, textDecorationLine: 'underline' } as const;
   return {
     link,
-    // "Quran.com" inside an Urdu credit: the Urdu font has no Latin, and Android's fallback is serif.
-    latin: {
-      ...link,
-      ...(Platform.OS === 'android' ? { fontFamily: 'sans-serif' } : null),
-    } as TextStyle,
+    // "Quran.com" inside an Urdu credit: the Urdu font has no Latin, and the fallback is a serif.
+    latin: { ...link, ...latinInUrdu } as TextStyle,
   };
 });
 
