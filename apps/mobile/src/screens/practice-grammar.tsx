@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { normalizeText, type GrammarTopicSummary } from '@quran-grammar/core';
+import { normalizeText, searchTopics, type GrammarTopicSummary } from '@quran-grammar/core';
 import { AppIcon } from '@/components/app-icon';
 import { BackBar } from '@/components/back-bar';
 import { Action, Label } from '@/components/study-ui';
@@ -199,16 +199,11 @@ function TopicIndex({
   const card = cardStyle(colors);
   const [query, setQuery] = useState('');
   const [limit, setLimit] = useState(pageSize);
-  const normalized = normalizeText(query);
+  // Urdu, Arabic, Roman Urdu ("muraqab e izafi") or English, best matches first.
   const filtered = useMemo(() => {
     const list = topics.data ?? [];
-    if (!normalized) return list;
-    return list.filter((topic) =>
-      normalizeText(
-        [topic.id, topic.titleUrdu, topic.titleEnglish, topic.summaryUrdu].join(' '),
-      ).includes(normalized),
-    );
-  }, [topics.data, normalized]);
+    return normalizeText(query) ? searchTopics(list, query) : list;
+  }, [topics.data, query]);
   const visible = filtered.slice(0, limit);
 
   return (
@@ -260,7 +255,7 @@ function TopicIndex({
             setQuery(value);
             setLimit(pageSize);
           }}
-          placeholder={ui.searchTopics}
+          placeholder={ui.searchTopicsHint}
           placeholderTextColor={colors.muted}
           selectionColor={colors.primary}
           keyboardAppearance={scheme}

@@ -18,6 +18,7 @@ import {
   gradePracticeAnswer,
   normalizeText,
   practiceOptionText,
+  searchTopics,
   type GrammarTopicSummary,
   type PracticeQuestion,
   type ReadingFont,
@@ -336,15 +337,11 @@ export function PracticeGrammar({
   const list = useRef<HTMLDivElement>(null);
   const lastSelection = useRef<string | null>(null);
   const selectionKey = !selection ? null : 'set' in selection ? 'fatihah' : selection.topicId;
-  const shown = useMemo(() => {
-    const needle = normalizeText(query);
-    if (!topics || !needle) return topics;
-    return topics.filter((topic) =>
-      normalizeText(`${topic.titleUrdu} ${topic.titleEnglish} ${topic.summaryUrdu}`).includes(
-        needle,
-      ),
-    );
-  }, [topics, query]);
+  // Urdu, Arabic, Roman Urdu ("muraqab e izafi") or English, best matches first.
+  const shown = useMemo(
+    () => (topics && normalizeText(query) ? searchTopics(topics, query) : topics),
+    [topics, query],
+  );
 
   useEffect(() => {
     if (selectionKey) {
@@ -390,7 +387,7 @@ export function PracticeGrammar({
           <input
             type="search"
             value={query}
-            placeholder={ui.searchTopics}
+            placeholder={ui.searchTopicsHint}
             aria-label={ui.searchTopics}
             onChange={(event) => setQuery(event.target.value)}
           />
