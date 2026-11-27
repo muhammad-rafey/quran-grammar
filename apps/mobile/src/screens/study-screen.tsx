@@ -155,9 +155,10 @@ export default function StudyScreen() {
   const jumpFailed = useRef(false);
   const listSurah = study?.surah.number ?? null;
   const itemCount = blocks ? blocks.length : (study?.ayahs.length ?? 0);
-  // A new list instance per Surah, reading layout, translation or fonts (different cell heights)
-  // and far jump.
-  const layoutKey = `${grammar ? 'grammar' : 'plain'}:${showTranslation ? `translation-${translationId}` : 'arabic'}:${typography.quranFont.id}:${typography.urduFont.id}`;
+  // A new list instance per Surah, reading layout, translation, fonts or text sizes (different
+  // cell heights) and far jump.
+  const { textSizes } = typography;
+  const layoutKey = `${grammar ? 'grammar' : 'plain'}:${showTranslation ? `translation-${translationId}@${textSizes.translation}` : 'arabic'}:${typography.quranFont.id}@${textSizes.quran}:${typography.urduFont.id}`;
   // Unique per list instance (returning to a chapter must not reuse an old instance's slice).
   const listKey = useMemo(
     () => `${listSurah}:${layoutKey}:${generation}:${(listInstances += 1)}`,
@@ -887,7 +888,7 @@ const AyahCard = memo(function AyahCard({
         />
         {!!translation && (
           <View style={styles.translationBody}>
-            <Paragraph>{translation}</Paragraph>
+            <Paragraph translation>{translation}</Paragraph>
           </View>
         )}
       </View>
@@ -919,7 +920,7 @@ const AyahCard = memo(function AyahCard({
       </View>
       {!!translation && (
         <View style={[styles.translation, styles.translationBody]}>
-          <Paragraph>{translation}</Paragraph>
+          <Paragraph translation>{translation}</Paragraph>
         </View>
       )}
     </View>
@@ -957,6 +958,7 @@ const WordToken = memo(function WordToken({
       onPress={() => onOpen(word)}
       style={({ pressed }) => [
         styles.token,
+        fonts.tokenSize,
         selected && styles.tokenSelected,
         pressed && styles.tokenPressed,
         !matched && styles.tokenDimmed,
@@ -1003,12 +1005,24 @@ function studyFonts(typography: Typography) {
     /** The Quran font in use: IndoPak fonts show the IndoPak text (see quranText). */
     quranFont: typography.quranFont,
     ...StyleSheet.create({
+      // Above 100% a block may grow to the row width (a long word at 175% is wider than 208dp);
+      // the meaning line keeps its own 180dp limit, so the block still wraps its label.
+      tokenSize: typography.textSizes.quran > 1 ? { maxWidth: '100%' } : {},
       tokenArabic: { ...typography.arabic, textAlign: 'center' },
       tokenMeaning: { ...typography.small, color: colors.ink, textAlign: 'center', maxWidth: 180 },
       plainArabic: typography.arabic,
       // Justified like a printed mushaf (Android 8+ justifies between words; RTL keeps the last
       // line at the start).
-      flowArabic: { ...typography.arabic, textAlign: 'justify' },
+      // Android: React Native lays a justified Text out with the paragraph's layout direction
+      // (LTR in this app) against the RTL script and so aligns it ALIGN_OPPOSITE: lines that cannot
+      // be stretched (a block's last line, one-word lines at large text sizes) sat at the left and
+      // an overfull line overflowed (and was clipped) at the right. An RTL layout direction keeps
+      // them at the start (right).
+      flowArabic: {
+        ...typography.arabic,
+        textAlign: 'justify',
+        ...(isAndroid ? { direction: 'rtl' } : null),
+      },
     }),
     noun: tone(colors.wash, colors.primary),
     verb: tone(colors.blueWash, colors.blue),

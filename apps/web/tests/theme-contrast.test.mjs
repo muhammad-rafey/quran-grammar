@@ -44,7 +44,7 @@ test('no colour is hard-coded outside the palette blocks', () => {
   assert.deepEqual(literals ?? [], []);
   const used = new Set([...css.matchAll(/var\((--[\w-]+)/g)].map(([, name]) => name));
   for (const name of used)
-    if (!(name in light) && !/^--(font|quran|urdu|sticky|split|ayah|detail|word)/.test(name))
+    if (!(name in light) && !/^--(font|quran|urdu|translation|sticky|split|ayah|detail|word)/.test(name))
       assert.fail(`${name} is used but not defined in the palette`);
 });
 
