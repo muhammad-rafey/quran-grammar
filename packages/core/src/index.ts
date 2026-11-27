@@ -16,6 +16,20 @@ export type {
   PartOfSpeechFilter,
 } from './types';
 export { normalizeText, urduNumber, matchesWord } from './search';
+export type { RomanScore, RomanOptions, RomanQuery, RomanTarget, EnglishTarget } from './roman';
+export {
+  romanKey,
+  isLatinQuery,
+  matchesRoman,
+  romanQuery,
+  romanTarget,
+  scoreRoman,
+  matchesEnglish,
+  englishTarget,
+  scoreEnglish,
+} from './roman';
+export type { SearchableTopic } from './topic-search';
+export { searchTopics } from './topic-search';
 export { isStudyData } from './validate';
 export type { UiLanguage, UiStrings } from './interface';
 export { getUiStrings, formatCount, isUiLanguage } from './interface';
