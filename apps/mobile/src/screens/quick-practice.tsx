@@ -63,7 +63,17 @@ export function QuizRunner({
           <Text accessibilityRole="header" style={titleStyle}>
             {title}
           </Text>
-          {subtitle ? <Label muted>{subtitle}</Label> : null}
+          {subtitle ? (
+            /[؀-ۿ]/.test(subtitle) ? (
+              <Label muted>{subtitle}</Label>
+            ) : (
+              // A topic's English title in the Urdu interface: the Urdu font has no Latin, and the
+              // fallback for it was a serif (Times on iOS). Latin is set in the system font.
+              <Text style={[styles.latinSubtitle, { textAlign: labelStyle.textAlign }]}>
+                {subtitle}
+              </Text>
+            )
+          ) : null}
         </View>
       </View>
 
@@ -229,5 +239,6 @@ const quizStyles = themed(
         gap: spacing.lg,
       },
       titleLtr: { fontWeight: '700' },
+      latinSubtitle: { fontSize: 14, lineHeight: 20, color: colors.muted, writingDirection: 'ltr' },
     }) as const,
 );
