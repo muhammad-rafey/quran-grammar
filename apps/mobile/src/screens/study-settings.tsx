@@ -12,7 +12,7 @@ import {
 } from '@quran-grammar/core';
 import { useInterface } from '@/state/preferences-provider';
 import { useStudy } from '@/state/study-provider';
-import { AboutSection, Action, DataStatus, Label, Section } from '@/components/study-ui';
+import { AboutSection, Action, Label, Section } from '@/components/study-ui';
 import { lineEndSlack, quranTextStyle, radius, spacing, urduTextStyle } from '@/theme/tokens';
 import { useTheme } from '@/theme/theme';
 import { isFontReady, loadReadingFont, selectableFonts } from '@/theme/font-loading';
@@ -117,10 +117,6 @@ export function Settings() {
       </Section>
       <TranslationSettings />
       <FontSettings />
-      <Section title={ui.dataStatus}>
-        <Label muted>{ui.offline}</Label>
-        <DataStatus />
-      </Section>
       <AboutSection />
     </View>
   );
