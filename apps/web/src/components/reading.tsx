@@ -3,7 +3,6 @@ import {
   formatCount,
   getUiStrings,
   getSurahTitle,
-  translationEditions,
   translationText,
   quranText,
   quranAyahEndGapExtra,
@@ -154,35 +153,9 @@ const PlainWords = memo(function PlainWords({
   );
 });
 
-/** The selected translation under an ayah, with a short credit naming the translator. */
-function AyahTranslation({
-  text,
-  credit,
-  first,
-}: {
-  text: string;
-  credit: Credit;
-  first: boolean;
-}) {
-  return (
-    <>
-      <p className="ayah-translation">{text}</p>
-      {/* Screen readers hear the credit once (first ayah), not after every ayah. */}
-      <p
-        className="translation-credit ui"
-        lang={credit.language}
-        dir={credit.language === 'ur' ? 'rtl' : 'ltr'}
-        aria-hidden={first ? undefined : true}
-      >
-        {credit.text}
-      </p>
-    </>
-  );
-}
-
-interface Credit {
-  text: string;
-  language: UiLanguage;
+/** The selected translation under an ayah (the translator is named only in Settings). */
+function AyahTranslation({ text }: { text: string }) {
+  return <p className="ayah-translation">{text}</p>;
 }
 
 const GrammarAyah = memo(function GrammarAyah({
@@ -197,13 +170,11 @@ const GrammarAyah = memo(function GrammarAyah({
   filtering,
   matches,
   translation,
-  credit,
 }: AyahProps & {
   meanings: boolean;
   filtering: boolean;
   matches: Set<string>;
   translation: string;
-  credit: Credit;
 }) {
   return (
     <article
@@ -247,7 +218,7 @@ const GrammarAyah = memo(function GrammarAyah({
         ))}
       </div>
       {translation && (
-        <AyahTranslation text={translation} credit={credit} first={ayah.number === 1} />
+        <AyahTranslation text={translation} />
       )}
     </article>
   );
@@ -255,9 +226,8 @@ const GrammarAyah = memo(function GrammarAyah({
 
 const PlainAyah = memo(function PlainAyah({
   translation,
-  credit,
   ...props
-}: AyahProps & { translation: string; credit: Credit }) {
+}: AyahProps & { translation: string }) {
   return (
     <article
       className="ayah plain-ayah"
@@ -269,7 +239,7 @@ const PlainAyah = memo(function PlainAyah({
         <PlainWords {...props} />
       </p>
       {translation && (
-        <AyahTranslation text={translation} credit={credit} first={props.ayah.number === 1} />
+        <AyahTranslation text={translation} />
       )}
     </article>
   );
@@ -306,13 +276,6 @@ export function Reading({
     return groups;
   }, [study]);
   const selectedAyah = study.words.find((word) => word.id === selectedId)?.ayah ?? null;
-  const edition =
-    translationEditions.find((entry) => entry.id === translationId) ?? translationEditions[0];
-  const translatorName = language === 'ur' ? edition.nameUrdu : edition.nameEnglish;
-  const credit = useMemo<Credit>(
-    () => ({ text: `${strings.translator}: ${translatorName}`, language }),
-    [strings.translator, translatorName, language],
-  );
   const showTranslation = layout.translation;
   const windowed = study.words.length >= windowedFromWords && (layout.grammar || showTranslation);
 
@@ -398,7 +361,6 @@ export function Reading({
             key={ayah.number}
             {...common(ayah)}
             translation={translationText(ayah.translations, translationId)}
-            credit={credit}
           />
         ))
       ) : (
@@ -410,7 +372,6 @@ export function Reading({
             filtering={filtering}
             matches={matches}
             translation={showTranslation ? translationText(ayah.translations, translationId) : ''}
-            credit={credit}
           />
         ))
       )}

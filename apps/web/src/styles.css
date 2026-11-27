@@ -946,19 +946,6 @@ html.split-dragging * {
   color: var(--text-soft);
   line-height: calc(2.1 * var(--urdu-line-scale, 1));
 }
-/* Names the selected translator under each ayah (changed in Settings → Translation). */
-.translation-credit {
-  margin-top: 2px;
-  max-inline-size: 62em;
-  text-align: right;
-  color: var(--quiet);
-  font-size: 11px;
-  line-height: 1.6;
-}
-.translation-credit[lang='ur'] {
-  font-size: 12px;
-  line-height: 2;
-}
 /* Naskh reads smaller than Latin at the same size: lift the small Urdu interface labels. */
 .field-label.ui[lang='ur'],
 .detail-topline.ui[lang='ur'] {

@@ -33,7 +33,6 @@ import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   formatCount,
-  getTranslationEdition,
   matchesWord,
   getJuzForAyah,
   getSurahTitle,
@@ -77,13 +76,10 @@ type CardChrome = {
   language: UiLanguage;
   ayahLabel: string;
   wordStudy: string;
-  /** "Translation: <translator>", shown under each ayah's translation. */
-  translationCredit: string;
   controlRow: ViewStyle;
   fonts: StudyFonts;
   ayahNumberText: StyleProp<TextStyle>;
   ayahCaption: StyleProp<TextStyle>;
-  creditText: StyleProp<TextStyle>;
 };
 
 const isAndroid = Platform.OS === 'android';
@@ -376,19 +372,16 @@ export default function StudyScreen() {
     [router],
   );
   const chrome = useMemo<CardChrome>(() => {
-    const edition = getTranslationEdition(translationId);
     return {
       language,
       ayahLabel: ui.ayah,
       wordStudy: ui.wordStudy,
-      translationCredit: `${ui.translator}: ${isUrdu ? edition.nameUrdu : edition.nameEnglish}`,
       controlRow,
       fonts: fontStyles(typography, studyFonts),
       ayahNumberText: [labelText(13), styles.ayahNumberText],
       ayahCaption: [labelText(12), styles.ayahCaption],
-      creditText: [labelText(12), styles.credit],
     };
-  }, [language, isUrdu, ui, labelText, controlRow, typography, translationId, styles]);
+  }, [language, ui, labelText, controlRow, typography, styles]);
   const selectedId = selectedWord?.id ?? null;
   const selectedAyah = selectedWord?.ayah ?? null;
   const renderItem = useCallback<ListRenderItem<ListItem>>(
@@ -879,7 +872,6 @@ const AyahCard = memo(function AyahCard({
         {!!translation && (
           <View style={styles.translationBody}>
             <Paragraph>{translation}</Paragraph>
-            <Text style={chrome.creditText}>{chrome.translationCredit}</Text>
           </View>
         )}
       </View>
@@ -912,7 +904,6 @@ const AyahCard = memo(function AyahCard({
       {!!translation && (
         <View style={[styles.translation, styles.translationBody]}>
           <Paragraph>{translation}</Paragraph>
-          <Text style={chrome.creditText}>{chrome.translationCredit}</Text>
         </View>
       )}
     </View>
@@ -1086,7 +1077,6 @@ const studyStyles = themed((colors) => StyleSheet.create({
   },
   ayahNumberText: { fontWeight: '700', textAlign: 'center' },
   ayahCaption: { color: colors.muted },
-  credit: { color: colors.muted, textAlign: 'right' },
   translationBody: { gap: 2 },
   posLabel: { marginTop: 'auto' },
   wordRow: { ...row, flexWrap: 'wrap', alignItems: 'stretch', gap: spacing.sm },
