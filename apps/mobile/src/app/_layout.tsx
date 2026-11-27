@@ -67,8 +67,17 @@ function AppStack() {
       >
         <Stack.Screen name="index" options={{ title: ui.study, headerShown: false }} />
         <Stack.Screen name="word/[id]" options={{ title: ui.wordStudy, presentation: 'modal' }} />
-        <Stack.Screen name="topic/[id]" options={{ title: ui.grammarTopics }} />
-        <Stack.Screen name="practice/[topicId]" options={{ title: ui.practiceGrammar }} />
+        {/* The practice flow draws its own top bar with a large Back button (components/back-bar.tsx)
+            instead of the native header's small arrow; the iOS edge swipe still pops these screens. */}
+        <Stack.Screen name="topic/[id]" options={{ title: ui.grammarTopics, headerShown: false }} />
+        <Stack.Screen
+          name="practice/[topicId]"
+          options={{ title: ui.practiceGrammar, headerShown: false }}
+        />
+        <Stack.Screen
+          name="quick-practice"
+          options={{ title: ui.quickPractice, headerShown: false }}
+        />
       </Stack>
     </>
   );

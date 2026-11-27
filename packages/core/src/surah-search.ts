@@ -1,5 +1,6 @@
 import { surahCatalog, type SurahCatalogEntry } from './catalog';
 import { formatCount } from './interface';
+import { romanQuery, romanTarget, scoreRoman, type RomanTarget } from './roman';
 import { normalizeText } from './search';
 import { surahSearchNames } from './surah-names';
 
@@ -77,6 +78,14 @@ function arabicWords(value: string): string[] {
     .filter(Boolean);
 }
 
+/** Latin query words without "Surah" and a leading article, for the Roman Urdu matcher. */
+function romanWords(value: string): string[] {
+  const words = latinWords(value);
+  while (words.length > 1 && surahWords.has(words[0]!)) words.shift();
+  if (words.length > 1 && latinArticles.has(words[0]!) && words[0] !== 'the') words.shift();
+  return words;
+}
+
 interface Forms {
   /** All words joined without spaces, article included: "albaqara". */
   readonly full: string;
@@ -114,7 +123,9 @@ interface Key extends Forms {
   readonly primary: boolean;
 }
 
-let index: ReadonlyArray<{ surah: SurahCatalogEntry; keys: readonly Key[] }> | undefined;
+let index:
+  | ReadonlyArray<{ surah: SurahCatalogEntry; keys: readonly Key[]; roman: RomanTarget }>
+  | undefined;
 function searchIndex() {
   return (index ??= surahCatalog.map((surah) => {
     const [, meaning, latin, arabic] = surahSearchNames[surah.number - 1]!;
@@ -123,8 +134,12 @@ function searchIndex() {
       arabic: isArabic,
       primary,
     });
+    // Every Arabic-script name as one Roman Urdu target (see roman.ts): any Latin spelling of
+    // البقرة, یٰسٓ or الملک meets it even when no alias lists that spelling.
+    const roman = romanTarget(surah.nameArabic, ...arabic.split('|'));
     return {
       surah,
+      roman,
       keys: [
         key(surah.nameEnglish, false, true),
         key(surah.nameArabic, true, true),
@@ -259,13 +274,28 @@ export function searchSurahs(query: string): SurahSearchResult[] {
   const arabic = arabicScript.test(text);
   const typed = forms(text, arabic);
   if (!typed.full) return [];
+  // Roman Urdu needs a written vowel in every word: "bqrh" or "kfh" are typos, not spellings.
+  const spelled = romanWords(text);
+  const roman =
+    !arabic && spelled.every((word) => /[aeiou]/.test(word) || /^\d+$/.test(word))
+      ? romanQuery(spelled.join(' '))
+      : undefined;
   const scored: { surah: SurahCatalogEntry; score: Scored }[] = [];
-  for (const { surah, keys } of searchIndex()) {
+  for (const { surah, keys, roman: target } of searchIndex()) {
     let best: Scored | undefined;
     for (const key of keys) {
       if (key.arabic !== arabic) continue;
       const score = scoreKey(typed, key);
       if (score && better(score, best)) best = score;
+    }
+    // Roman Urdu against the Arabic and Urdu names is a loose match: it ranks with typos, a
+    // whole word first (distance 0), then a started word (0.5), a substring (1) and typos
+    // (1 + edits).
+    const romanScore = roman && scoreRoman(roman, target);
+    if (romanScore) {
+      const distance = romanScore.tier < 3 ? romanScore.tier / 2 : 1 + romanScore.distance;
+      const score: Scored = { match: 'fuzzy', distance, primary: false };
+      if (better(score, best)) best = score;
     }
     if (best) scored.push({ surah, score: best });
   }

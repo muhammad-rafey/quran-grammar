@@ -73,6 +73,19 @@ test('search uses the same root-aware filtering as both clients', async () => {
   assert.equal(empty.total, 0);
 });
 
+test('search accepts Roman Urdu for Arabic words, roots and Urdu meanings', async () => {
+  const kitab = await (await fetch(`${base}/api/v1/search?q=kitab&surah=2`)).json();
+  assert.ok(kitab.total >= 40, `kitab: ${kitab.total}`);
+  assert.ok(kitab.words.some((word: { arabic: string }) => word.arabic === 'ٱلْكِتَـٰبُ'));
+  const zameen = await (await fetch(`${base}/api/v1/search?q=zameen&surah=2`)).json();
+  assert.ok(
+    zameen.words.some((word: { meaningUrdu: string }) => word.meaningUrdu.includes('زمین')),
+  );
+  // Al-Fatihah: "rabb" finds رَبِّ.
+  const rabb = await (await fetch(`${base}/api/v1/search?q=rabb`)).json();
+  assert.ok(rabb.words.some((word: { id: string }) => word.id === '1:2:3'));
+});
+
 test('invalid queries, missing content, and unknown API paths return JSON errors', async () => {
   const cases: Array<[string, number]> = [
     ['/api/v1/surahs/nope', 400],

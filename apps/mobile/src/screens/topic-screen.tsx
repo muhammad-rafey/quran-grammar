@@ -12,9 +12,11 @@ import {
   type ResolvedTopicExample,
 } from '@quran-grammar/core';
 import { AppIcon } from '@/components/app-icon';
+import { BackBar } from '@/components/back-bar';
 import { Action, Label, Paragraph, Section } from '@/components/study-ui';
 import { useTopic } from '@/state/content-hooks';
 import { useInterface } from '@/state/preferences-provider';
+import { useStackBack } from '@/state/use-back';
 import { parseWordLocation } from '@/state/word-location';
 import { cardStyle, lineEndSlack, radius, row, spacing } from '@/theme/tokens';
 import { useTheme } from '@/theme/theme';
@@ -34,7 +36,8 @@ export default function TopicScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const topic = useTopic(id);
-  const close = () => (router.canGoBack() ? router.back() : router.replace('/'));
+  // The Back bar and the Android back button both run this (state/use-back.ts).
+  const close = useStackBack();
   const container = {
     padding: 18,
     paddingBottom: Math.max(insets.bottom, 20),
@@ -44,44 +47,49 @@ export default function TopicScreen() {
     alignSelf: 'center',
   } as const;
 
+  let body;
   if (!id || (!topic.loading && !topic.error && !topic.data))
-    return (
+    body = (
       <View style={container}>
         <Label>{ui.notFound}</Label>
         <Action onPress={close}>{ui.backToStudy}</Action>
       </View>
     );
-  if (topic.loading || topic.error || !topic.data)
-    return (
+  else if (topic.loading || topic.error || !topic.data)
+    body = (
       <View style={container}>
         <LoadState
           loading={topic.loading}
           error={Boolean(topic.error)}
           onRetry={topic.retry}
           onBack={close}
-          backLabel={ui.close}
+          backLabel={ui.back}
         />
       </View>
     );
+  else
+    body = (
+      <ScrollView key={id} testID="topic-detail" contentContainerStyle={container}>
+        <TopicBody
+          topic={topic.data}
+          onWord={(wordId) =>
+            router.push({ pathname: '/word/[id]', params: { id: wordId, preview: '1' } })
+          }
+          onPractice={() =>
+            router.push({ pathname: '/practice/[topicId]', params: { topicId: topic.data!.id } })
+          }
+        />
+        <Action quiet onPress={close}>
+          {ui.back}
+        </Action>
+      </ScrollView>
+    );
 
   return (
-    <ScrollView
-      key={id}
-      testID="topic-detail"
-      contentInsetAdjustmentBehavior="automatic"
-      contentContainerStyle={container}
-    >
-      <TopicBody
-        topic={topic.data}
-        onWord={(wordId) => router.push({ pathname: '/word/[id]', params: { id: wordId, preview: '1' } })}
-        onPractice={() =>
-          router.push({ pathname: '/practice/[topicId]', params: { topicId: topic.data!.id } })
-        }
-      />
-      <Action quiet onPress={close}>
-        {ui.close}
-      </Action>
-    </ScrollView>
+    <View style={{ flex: 1 }}>
+      <BackBar onBack={close} title={ui.grammarTopics} />
+      {body}
+    </View>
   );
 }
 

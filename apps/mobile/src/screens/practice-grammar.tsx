@@ -1,11 +1,14 @@
 import { useCallback, useMemo, useState } from 'react';
-import { ActivityIndicator, Pressable, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import { normalizeText, type GrammarTopicSummary } from '@quran-grammar/core';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { normalizeText, searchTopics, type GrammarTopicSummary } from '@quran-grammar/core';
 import { AppIcon } from '@/components/app-icon';
+import { BackBar } from '@/components/back-bar';
 import { Action, Label } from '@/components/study-ui';
 import { usePracticeQuestions, useTopics } from '@/state/content-hooks';
 import { useInterface } from '@/state/preferences-provider';
+import { useStackBack } from '@/state/use-back';
 import { cardStyle, lineEndSlack, radius, spacing } from '@/theme/tokens';
 import { themed, useTheme } from '@/theme/theme';
 import { useTypography } from '@/theme/typography';
@@ -13,48 +16,84 @@ import { QuizRunner } from './quick-practice';
 
 const pageSize = 25;
 
-type ActivePractice = { kind: 'fatihah' } | { kind: 'topic'; id: string };
+export type ActivePractice = { kind: 'fatihah' } | { kind: 'topic'; id: string };
 
 /**
  * The whole "Practice Grammar" tab body. It is rendered inside the study screen's ScrollView,
  * so the topic list is a plain paginated column rather than a nested vertical FlatList.
+ * A quiz opens as its own stack screen (PracticeScreen), so its Back button, the Android back
+ * button/gesture and the iOS edge swipe all return to this list.
  */
-export function PracticeGrammar({ initialTopicId }: { initialTopicId?: string }) {
+export function PracticeGrammar() {
   const router = useRouter();
-  const [active, setActive] = useState<ActivePractice | null>(
-    initialTopicId ? { kind: 'topic', id: initialTopicId } : null,
-  );
   const topics = useTopics();
-  const openWord = useCallback(
-    (id: string) => router.push({ pathname: '/word/[id]', params: { id, preview: '1' } }),
-    [router],
-  );
   const openTopic = useCallback(
     (id: string) => router.push({ pathname: '/topic/[id]', params: { id } }),
     [router],
   );
-
-  if (active)
-    return (
-      <PracticeSession
-        active={active}
-        topic={
-          active.kind === 'topic'
-            ? topics.data?.find((entry) => entry.id === active.id)
-            : undefined
-        }
-        onExit={() => setActive(null)}
-        onWord={openWord}
-      />
-    );
+  const practiseTopic = useCallback(
+    (topicId: string) => router.push({ pathname: '/practice/[topicId]', params: { topicId } }),
+    [router],
+  );
+  const practiseFatihah = useCallback(() => router.push('/quick-practice'), [router]);
 
   return (
     <TopicIndex
       topics={topics}
-      onPractice={(id) => setActive({ kind: 'topic', id })}
-      onFatihah={() => setActive({ kind: 'fatihah' })}
+      onPractice={practiseTopic}
+      onFatihah={practiseFatihah}
       onOpenTopic={openTopic}
     />
+  );
+}
+
+/**
+ * A quiz screen (routes practice/[topicId] and quick-practice): the Back bar above the quiz. Back
+ * returns to the screen that opened it (the topic list or the topic screen); `active` null = an
+ * unknown topic id.
+ */
+export function PracticeScreen({ active }: { active: ActivePractice | null }) {
+  const { ui } = useInterface();
+  const router = useRouter();
+  const insets = useSafeAreaInsets();
+  const topics = useTopics();
+  const goBack = useStackBack();
+  const container = {
+    padding: 18,
+    paddingBottom: Math.max(insets.bottom, 20),
+    gap: 16,
+    width: '100%',
+    maxWidth: 760,
+    alignSelf: 'center',
+  } as const;
+  return (
+    <View style={{ flex: 1 }}>
+      <BackBar onBack={goBack} title={ui.practiceGrammar} />
+      {active ? (
+        <ScrollView
+          testID="topic-practice"
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={container}
+        >
+          <PracticeSession
+            active={active}
+            topic={
+              active.kind === 'topic'
+                ? topics.data?.find((topic) => topic.id === active.id)
+                : undefined
+            }
+            onExit={goBack}
+            exitLabel={ui.back}
+            onWord={(id) => router.push({ pathname: '/word/[id]', params: { id, preview: '1' } })}
+          />
+        </ScrollView>
+      ) : (
+        <View style={container}>
+          <Label>{ui.notFound}</Label>
+          <Action onPress={goBack}>{ui.backToStudy}</Action>
+        </View>
+      )}
+    </View>
   );
 }
 
@@ -86,7 +125,7 @@ export function PracticeSession({
         error={Boolean(questions.error)}
         onRetry={questions.retry}
         onBack={onExit}
-        backLabel={exitLabel ?? ui.allTopics}
+        backLabel={exitLabel ?? ui.back}
       />
     );
   return (
@@ -96,7 +135,7 @@ export function PracticeSession({
       title={active.kind === 'fatihah' ? ui.quickPractice : (topic?.titleUrdu ?? ui.practiceGrammar)}
       subtitle={active.kind === 'fatihah' ? ui.practiceDescription : topic?.titleEnglish}
       onExit={onExit}
-      exitLabel={exitLabel ?? ui.allTopics}
+      exitLabel={exitLabel ?? ui.back}
       onWord={onWord}
     />
   );
@@ -160,16 +199,11 @@ function TopicIndex({
   const card = cardStyle(colors);
   const [query, setQuery] = useState('');
   const [limit, setLimit] = useState(pageSize);
-  const normalized = normalizeText(query);
+  // Urdu, Arabic, Roman Urdu ("muraqab e izafi") or English, best matches first.
   const filtered = useMemo(() => {
     const list = topics.data ?? [];
-    if (!normalized) return list;
-    return list.filter((topic) =>
-      normalizeText(
-        [topic.id, topic.titleUrdu, topic.titleEnglish, topic.summaryUrdu].join(' '),
-      ).includes(normalized),
-    );
-  }, [topics.data, normalized]);
+    return normalizeText(query) ? searchTopics(list, query) : list;
+  }, [topics.data, query]);
   const visible = filtered.slice(0, limit);
 
   return (
@@ -221,7 +255,7 @@ function TopicIndex({
             setQuery(value);
             setLimit(pageSize);
           }}
-          placeholder={ui.searchTopics}
+          placeholder={ui.searchTopicsHint}
           placeholderTextColor={colors.muted}
           selectionColor={colors.primary}
           keyboardAppearance={scheme}

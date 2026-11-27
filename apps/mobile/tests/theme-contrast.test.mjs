@@ -19,7 +19,7 @@ const textPairs = [
   ['muted', 'amberWash', 'loading note in data status'],
   ['primary', 'paper', 'accent text and links in cards'],
   ['primary', 'background', 'accent text on the screen, example cards'],
-  ['primary', 'wash', 'quiet buttons, noun labels, segments'],
+  ['primary', 'wash', 'quiet buttons, the Back button, noun labels, segments'],
   ['primary', 'mint', 'pressed rows, suggested picker entries'],
   ['primary', 'lime', 'selected tab, selected cell, word in context'],
   ['onPrimary', 'primary', 'primary buttons, active chips and segments'],
@@ -33,7 +33,7 @@ const textPairs = [
 const uiPairs = [
   ['primary', 'paper', 'selected radio and word borders, icons'],
   ['primary', 'background', 'icons on the screen'],
-  ['primary', 'wash', 'icons on quiet surfaces'],
+  ['primary', 'wash', 'icons on quiet surfaces, the Back arrow'],
   ['muted', 'paper', 'unchecked radio ring, inactive tab icons'],
   ['gold', 'paper', 'practice icons'],
   ['gold', 'wash', 'practice icon on the quick-practice card'],
