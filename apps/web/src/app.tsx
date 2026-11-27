@@ -22,6 +22,7 @@ import { AyahPicker } from './components/ayah-picker';
 import { CollectionPicker, type CollectionMode } from './components/collection-picker';
 import { FontSettings } from './components/font-settings';
 import { TranslationSettings } from './components/translation-settings';
+import { TextSizeSettings } from './components/text-size-settings';
 import { PracticeGrammar } from './components/practice';
 import { Reading } from './components/reading';
 import { SplitPane } from './components/split-pane';
@@ -32,6 +33,7 @@ import { useInterfaceLanguage } from './use-interface-language';
 import { useReadingLayout, type ReadingLayout } from './use-reading-layout';
 import { useTranslationChoice } from './use-translation';
 import { useFonts } from './use-fonts';
+import { useTextSize } from './use-text-size';
 import { useTheme } from './use-theme';
 import type { PracticeFilter } from './use-api';
 
@@ -62,6 +64,7 @@ export function App() {
   const { theme, changeTheme, saveError: themeSaveError } = useTheme();
   const { layout, changeLayout, saveError: layoutSaveError } = useReadingLayout();
   const { quranFont, urduFont, changeFont, saveError: fontSaveError } = useFonts();
+  const { textSizes, changeTextSize, saveError: textSizeSaveError } = useTextSize();
   const {
     translationId,
     changeTranslation,
@@ -508,6 +511,15 @@ export function App() {
               onChange={changeTranslation}
               saveError={translationSaveError}
             />
+            <TextSizeSettings
+              language={language}
+              study={study ?? null}
+              quranFont={quranFont}
+              translationId={translationId}
+              sizes={textSizes}
+              onChange={changeTextSize}
+              saveError={textSizeSaveError}
+            />
             <FontSettings
               language={language}
               study={study ?? null}
@@ -592,6 +604,7 @@ export function App() {
                     layout={layout}
                     translationId={translationId}
                     quranFont={quranFont}
+                    textSizes={textSizes}
                     onSelect={selectWord}
                     onVisibleAyahs={visibleAyahs}
                   />

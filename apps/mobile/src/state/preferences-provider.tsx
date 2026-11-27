@@ -25,11 +25,15 @@ import {
   getUiStrings,
   isThemePreference,
   isUiLanguage,
+  parseTextSizes,
   resolveColorScheme,
+  resolveTextSize,
   resolveFont,
   resolveTranslationId,
+  serializeTextSizes,
   type FontRole,
   type ReadingFont,
+  type TextSizes,
   type ThemePreference,
   type UiLanguage,
   type UiStrings,
@@ -43,6 +47,8 @@ const languageKey = 'quran-grammar:interface-language';
 const readingLayoutKey = 'quran-grammar:reading-layout';
 const translationKey = 'quran-grammar:translation';
 const themeKey = 'quran-grammar:theme';
+/** Quran and translation text sizes, JSON (see packages/core/src/text-size.ts). */
+const textSizeKey = 'quran-grammar:text-size';
 const fontKeys: Record<FontRole, string> = {
   quran: 'quran-grammar:quran-font',
   urdu: 'quran-grammar:urdu-font',
@@ -131,6 +137,10 @@ type Interface = {
   fontLoading: Readonly<Record<FontRole, boolean>>;
   fontFailed: Readonly<Record<FontRole, boolean>>;
   fontSaveError: boolean;
+  /** Quran and translation text sizes (steps of textSizeSteps; useTypography() applies them). */
+  textSizes: TextSizes;
+  setTextSizes: (change: Partial<TextSizes>) => Promise<void>;
+  textSizeError: boolean;
   ui: UiStrings;
   count: (value: number | string) => string;
   isUrdu: boolean;
@@ -153,6 +163,9 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
   const [translationError, setTranslationError] = useState(false);
   const [fontIds, updateFontIds] = useState<Record<FontRole, string>>(defaultFontIds);
   const [fontSaveError, setFontSaveError] = useState(false);
+  const [textSizes, updateTextSizes] = useState<TextSizes>(() => parseTextSizes(null));
+  const [textSizeError, setTextSizeError] = useState(false);
+  const textSizesRef = useRef(textSizes);
   const [themePreference, updateThemePreference] =
     useState<ThemePreference>(defaultThemePreference);
   const [themeSaveError, setThemeSaveError] = useState(false);
@@ -169,6 +182,7 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
       fontKeys.quran,
       fontKeys.urdu,
       themeKey,
+      textSizeKey,
     ])
       .then(async (entries) => {
         if (!active) return;
@@ -181,6 +195,9 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
         layoutRef.current = layout;
         updateReadingLayout(layout);
         updateTranslationId(resolveTranslationId(saved.get(translationKey)));
+        const sizes = parseTextSizes(saved.get(textSizeKey));
+        textSizesRef.current = sizes;
+        updateTextSizes(sizes);
         const quran = resolveFont('quran', saved.get(fontKeys.quran));
         const urdu = resolveFont('urdu', saved.get(fontKeys.urdu));
         updateFontIds({ quran: quran.id, urdu: urdu.id });
@@ -252,6 +269,21 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
       await AsyncStorage.setItem(fontKeys[role], font.id);
     } catch {
       setFontSaveError(true);
+    }
+  }, []);
+  const setTextSizes = useCallback(async (change: Partial<TextSizes>) => {
+    const current = textSizesRef.current;
+    const next: TextSizes = {
+      quran: resolveTextSize(change.quran ?? current.quran),
+      translation: resolveTextSize(change.translation ?? current.translation),
+    };
+    textSizesRef.current = next;
+    updateTextSizes(next);
+    setTextSizeError(false);
+    try {
+      await AsyncStorage.setItem(textSizeKey, serializeTextSizes(next));
+    } catch {
+      setTextSizeError(true);
     }
   }, []);
   const setThemePreference = useCallback(async (next: ThemePreference) => {
@@ -332,6 +364,9 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
       fontLoading: { quran: quran.loading, urdu: urdu.loading },
       fontFailed: { quran: quran.failed, urdu: urdu.failed },
       fontSaveError,
+      textSizes,
+      setTextSizes,
+      textSizeError,
       labelStyle,
       labelText,
       controlRow: {
@@ -361,6 +396,9 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
     quran.failed,
     urdu.failed,
     fontSaveError,
+    textSizes,
+    setTextSizes,
+    textSizeError,
     colors,
   ]);
 

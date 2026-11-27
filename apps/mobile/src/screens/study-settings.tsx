@@ -2,19 +2,25 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { ActivityIndicator, Image, Pressable, Text, View } from 'react-native';
 import { Host, Switch } from '@expo/ui';
 import {
+  canStepTextSize,
+  defaultTextSize,
   quranText,
   spaceQuranText,
+  stepTextSize,
+  textSizePercent,
   translationEditions,
   translationText,
   themePreferences,
   type FontRole,
   type ReadingFont,
+  type TextSizeRole,
 } from '@quran-grammar/core';
 import { useInterface } from '@/state/preferences-provider';
 import { useStudy } from '@/state/study-provider';
-import { AboutSection, Action, Label, Section } from '@/components/study-ui';
+import { AboutSection, Action, Label, Paragraph, Section } from '@/components/study-ui';
 import { lineEndSlack, quranTextStyle, radius, spacing, urduTextStyle } from '@/theme/tokens';
 import { useTheme } from '@/theme/theme';
+import { useTypography } from '@/theme/typography';
 import { isFontReady, loadReadingFont, selectableFonts } from '@/theme/font-loading';
 
 export function Settings() {
@@ -116,6 +122,7 @@ export function Settings() {
         )}
       </Section>
       <TranslationSettings />
+      <TextSizeSettings />
       <FontSettings />
       <AboutSection />
     </View>
@@ -338,6 +345,166 @@ function TranslationSettings() {
         </Text>
       )}
     </Section>
+  );
+}
+
+/** Words of the first ayah in the text-size preview; longer ayahs end with an ellipsis. */
+const textSizePreviewWords = 12;
+
+/**
+ * Quran and translation text sizes (core text-size.ts): − / + steps, a reset to 100%, and a live
+ * preview of the chapter's first ayah in the Quran font and translation in use, drawn with the
+ * same typography as the study screen.
+ */
+function TextSizeSettings() {
+  const { ui, count, isUrdu, labelStyle, textSizes, setTextSizes, textSizeError, translationId } =
+    useInterface();
+  const type = useTypography();
+  const { study } = useStudy();
+  const preview = useMemo(() => {
+    const first = study?.ayahs[0];
+    if (!study || !first) return null;
+    const words = study.words.filter((word) => word.ayah === first.number);
+    const arabic = spaceQuranText(
+      words
+        .slice(0, textSizePreviewWords)
+        .map((word) => quranText(word, type.quranFont))
+        .join(' '),
+      type.quranFont,
+    );
+    return {
+      arabic: words.length > textSizePreviewWords ? `${arabic} …` : arabic,
+      translation: translationText(first.translations, translationId),
+    };
+  }, [study, translationId, type.quranFont]);
+  const rows: { role: TextSizeRole; label: string }[] = [
+    { role: 'quran', label: ui.quranTextSize },
+    { role: 'translation', label: ui.translationTextSize },
+  ];
+  const isDefault =
+    textSizes.quran === defaultTextSize && textSizes.translation === defaultTextSize;
+  return (
+    <Section title={ui.textSize}>
+      <Label muted>{ui.textSizeHelp}</Label>
+      {rows.map(({ role, label }) => (
+        <TextSizeStepper
+          key={role}
+          role={role}
+          label={label}
+          value={`${count(textSizePercent(textSizes[role]))}${isUrdu ? '٪' : '%'}`}
+          size={textSizes[role]}
+          onChange={(size) => void setTextSizes({ [role]: size })}
+        />
+      ))}
+      {preview ? (
+        <View
+          testID="text-size-preview"
+          style={{ gap: spacing.xs, padding: spacing.md, borderRadius: radius.md, borderWidth: 1, borderColor: type.colors.border, backgroundColor: type.colors.background }}
+        >
+          <Text testID="text-size-preview-arabic" style={type.arabic}>
+            {preview.arabic}
+          </Text>
+          {preview.translation ? (
+            <Paragraph translation>{preview.translation}</Paragraph>
+          ) : null}
+        </View>
+      ) : null}
+      <Action
+        quiet
+        testID="text-size-reset"
+        disabled={isDefault}
+        onPress={() =>
+          void setTextSizes({ quran: defaultTextSize, translation: defaultTextSize })
+        }
+      >
+        {ui.resetTextSize}
+      </Action>
+      {textSizeError && (
+        <Text accessibilityRole="alert" style={labelStyle}>
+          {ui.preferenceError}
+        </Text>
+      )}
+    </Section>
+  );
+}
+
+function TextSizeStepper({
+  role,
+  label,
+  value,
+  size,
+  onChange,
+}: {
+  role: TextSizeRole;
+  label: string;
+  /** The size as a localized percentage. */
+  value: string;
+  size: number;
+  onChange: (size: number) => void;
+}) {
+  const { ui, controlRow, labelText } = useInterface();
+  const { colors } = useTheme();
+  const steps = [
+    { direction: -1, name: 'smaller', glyph: '\u2212', text: ui.smaller },
+    { direction: 1, name: 'larger', glyph: '+', text: ui.larger },
+  ] as const;
+  const button = ({ direction, name, glyph, text }: (typeof steps)[number]) => {
+    const disabled = !canStepTextSize(size, direction);
+    return (
+      <Pressable
+        key={name}
+        testID={`text-size-${role}-${name}`}
+        accessibilityRole="button"
+        accessibilityLabel={`${text}: ${label}`}
+        accessibilityState={{ disabled }}
+        disabled={disabled}
+        onPress={() => onChange(stepTextSize(size, direction))}
+        style={({ pressed }) => ({
+          width: 48,
+          height: 48,
+          borderRadius: radius.sm,
+          borderWidth: 1,
+          borderBottomWidth: pressed ? 1 : 3,
+          borderColor: colors.edge,
+          backgroundColor: pressed ? colors.mint : colors.paper,
+          opacity: disabled ? 0.4 : 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+        })}
+      >
+        <Text style={{ fontSize: 24, lineHeight: 28, color: colors.primary, fontWeight: '600' }}>
+          {glyph}
+        </Text>
+      </Pressable>
+    );
+  };
+  return (
+    <View
+      style={{
+        ...controlRow,
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        padding: spacing.sm,
+        paddingStart: spacing.md,
+        borderRadius: radius.md,
+        backgroundColor: colors.wash,
+      }}
+    >
+      <Label style={{ flexGrow: 1, flexShrink: 1, fontWeight: '600' }}>{label}</Label>
+      <View style={{ ...controlRow, gap: spacing.sm }}>
+        {button(steps[0])}
+        <Text
+          testID={`text-size-${role}-value`}
+          accessibilityLiveRegion="polite"
+          accessibilityLabel={`${label}: ${value}`}
+          style={[labelText(16), { minWidth: 56, textAlign: 'center', fontWeight: '600' }]}
+        >
+          {value}
+          {lineEndSlack}
+        </Text>
+        {button(steps[1])}
+      </View>
+    </View>
   );
 }
 

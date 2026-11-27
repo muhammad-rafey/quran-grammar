@@ -1,5 +1,6 @@
 import { memo, useCallback, useEffect, useMemo, useRef, type CSSProperties } from 'react';
 import {
+  defaultTextSizes,
   formatCount,
   getUiStrings,
   getSurahTitle,
@@ -9,6 +10,7 @@ import {
   quranWordGapExtra,
   type ReadingFont,
   type StudyData,
+  type TextSizes,
   type UiLanguage,
   type UiStrings,
   type Word,
@@ -75,6 +77,8 @@ interface Props {
   translationId: string;
   /** The selected Quran font: IndoPak fonts show the IndoPak text (see quranText). */
   quranFont: ReadingFont;
+  /** Quran and translation text sizes (Settings); they scale the placeholder estimates. */
+  textSizes?: TextSizes;
   onSelect: SelectHandler;
   /** Reports the ayahs visible below the sticky toolbar (in order) while the reader scrolls. */
   onVisibleAyahs?: (ayahs: number[]) => void;
@@ -255,6 +259,7 @@ export function Reading({
   layout,
   translationId,
   quranFont,
+  textSizes = defaultTextSizes,
   onSelect,
   onVisibleAyahs,
 }: Props) {
@@ -284,8 +289,16 @@ export function Reading({
   useEffect(() => {
     const root = card.current;
     if (!root || !windowed || typeof ResizeObserver === 'undefined') return;
-    const base = layout.grammar ? (showTranslation ? 200 : 145) : 122;
-    const perWordArea = layout.grammar ? (showTranslation ? 19000 : 17000) : 5800;
+    // Text sizes (Settings): word blocks grow about linearly with the Quran size (their meaning
+    // and word-type lines keep their size), wrapped running text about with its square (fitted at
+    // 85%-175%, 390-1280px: within about 15% per ayah).
+    const quran = textSizes.quran ** 1.1;
+    const running = (size: number) => size ** 2.2;
+    const translation = running(textSizes.translation);
+    const base = layout.grammar ? (showTranslation ? 145 + 55 * translation : 145) : 122;
+    const perWordArea = layout.grammar
+      ? 17000 * quran + (showTranslation ? 2000 * translation : 0)
+      : 5800 * (0.55 * running(textSizes.quran) + 0.45 * translation);
     const update = () => {
       root.style.setProperty('--ayah-base', `${base}px`);
       root.style.setProperty(
@@ -297,7 +310,7 @@ export function Reading({
     const observer = new ResizeObserver(update);
     observer.observe(root);
     return () => observer.disconnect();
-  }, [windowed, layout.grammar, showTranslation]);
+  }, [windowed, layout.grammar, showTranslation, textSizes.quran, textSizes.translation]);
 
   // Track the ayahs on screen so the sticky ayah selector follows the reader's place.
   useEffect(() => {

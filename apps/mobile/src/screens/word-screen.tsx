@@ -170,7 +170,8 @@ function WordDetail({
           <Text
             selectable
             accessibilityRole="header"
-            style={[type.arabic, arabicText(46), { textAlign: 'center', alignSelf: 'stretch' }]}
+            // At most 64: the widest words (~4.3em) still fit a 360dp phone at the larger sizes.
+            style={[type.arabic, arabicText(46, 64), { textAlign: 'center', alignSelf: 'stretch' }]}
           >
             {quranText(word, type.quranFont)}
             {quranWordSlack}
@@ -239,7 +240,7 @@ function WordDetail({
             ))}
           </Text>
           {translation ? (
-            <Paragraph muted>{translation}</Paragraph>
+            <Paragraph muted translation>{translation}</Paragraph>
           ) : null}
         </View>
         <Section title={ui.rootMeaning}>

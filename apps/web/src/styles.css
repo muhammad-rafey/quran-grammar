@@ -881,7 +881,7 @@ html.split-dragging * {
   transform: translateY(1px);
 }
 .quran-word .arabic {
-  font-size: calc(31px * var(--quran-scale, 1));
+  font-size: calc(31px * var(--quran-scale, 1) * var(--quran-text-scale, 1));
   line-height: calc(2.35 * var(--quran-line-scale, 1));
   white-space: nowrap;
   color: var(--text);
@@ -942,7 +942,7 @@ html.split-dragging * {
 .ayah-translation {
   margin-top: 19px;
   max-inline-size: 62em;
-  font-size: calc(15px * var(--urdu-scale, 1));
+  font-size: calc(15px * var(--urdu-scale, 1) * var(--translation-text-scale, 1));
   color: var(--text-soft);
   line-height: calc(2.1 * var(--urdu-line-scale, 1));
 }
@@ -1006,7 +1006,7 @@ html.split-dragging * {
   margin-top: 2px;
 }
 .detail-title h2 {
-  font-size: calc(40px * var(--quran-scale, 1));
+  font-size: calc(40px * var(--quran-scale, 1) * var(--quran-text-scale, 1));
   line-height: calc(2 * var(--quran-line-scale, 1));
   font-weight: 400;
 }
@@ -1735,7 +1735,7 @@ html.split-dragging * {
 }
 .practice-option[lang='ar'] {
   font-family: var(--font-quran, Amiri), serif;
-  font-size: calc(29px * var(--quran-scale, 1));
+  font-size: calc(29px * var(--quran-scale, 1) * var(--quran-text-scale, 1));
   line-height: calc(2.1 * var(--quran-line-scale, 1));
 }
 .practice-option:hover:not(:disabled) {
@@ -1846,7 +1846,8 @@ html.split-dragging * {
     margin-top: -5px;
   }
   .word-sheet .detail-title h2 {
-    font-size: 39px;
+    /* Capped by the sheet width so the largest Quran text size keeps long words on one line. */
+    font-size: min(calc(39px * var(--quran-text-scale, 1)), 17vw);
     line-height: 1.9;
   }
   .word-sheet .detail-scroll {
@@ -1966,7 +1967,7 @@ html.split-dragging * {
     border-radius: 15px;
   }
   .quran-word .arabic {
-    font-size: calc(29px * var(--quran-scale, 1));
+    font-size: calc(29px * var(--quran-scale, 1) * var(--quran-text-scale, 1));
     line-height: calc(2.4 * var(--quran-line-scale, 1));
   }
   .word-meaning {
@@ -1980,7 +1981,7 @@ html.split-dragging * {
   }
   .ayah-translation {
     margin-top: 17px;
-    font-size: calc(14px * var(--urdu-scale, 1));
+    font-size: calc(14px * var(--urdu-scale, 1) * var(--translation-text-scale, 1));
     line-height: calc(2.1 * var(--urdu-line-scale, 1));
   }
   .word-sheet .detail-header,
@@ -2082,7 +2083,7 @@ html.split-dragging * {
     padding: 6px 16px;
   }
   .practice-option[lang='ar'] {
-    font-size: calc(29px * var(--quran-scale, 1));
+    font-size: calc(29px * var(--quran-scale, 1) * var(--quran-text-scale, 1));
   }
   .practice-feedback {
     padding: 14px;
@@ -2556,7 +2557,7 @@ html.split-dragging * {
   direction: rtl;
 }
 .topic-ayah {
-  font-size: calc(25px * var(--quran-scale, 1));
+  font-size: calc(25px * var(--quran-scale, 1) * var(--quran-text-scale, 1));
   /* Keeps the wider IndoPak word gaps (runs of spaces, see spaceQuranText). */
   white-space: pre-wrap;
   line-height: calc(2.3 * var(--quran-line-scale, 1));
@@ -2584,7 +2585,7 @@ html.split-dragging * {
 }
 .topic-translation {
   margin-top: 8px;
-  font-size: calc(15px * var(--urdu-scale, 1));
+  font-size: calc(15px * var(--urdu-scale, 1) * var(--translation-text-scale, 1));
   line-height: calc(2.1 * var(--urdu-line-scale, 1));
   color: var(--muted);
 }
@@ -2621,7 +2622,7 @@ html.split-dragging * {
   background: var(--mint);
 }
 .topic-more .arabic {
-  font-size: calc(22px * var(--quran-scale, 1));
+  font-size: calc(22px * var(--quran-scale, 1) * var(--quran-text-scale, 1));
   line-height: calc(1.9 * var(--quran-line-scale, 1));
 }
 .topic-more-meaning {
@@ -2685,7 +2686,7 @@ html.split-dragging * {
     font-size: 23px;
   }
   .topic-ayah {
-    font-size: calc(23px * var(--quran-scale, 1));
+    font-size: calc(23px * var(--quran-scale, 1) * var(--quran-text-scale, 1));
   }
   .topic-example {
     padding: 12px 14px 14px;
@@ -2770,7 +2771,7 @@ html.split-dragging * {
   padding-block: 18px 20px;
 }
 .ayah-text {
-  font-size: calc(31px * var(--quran-scale, 1));
+  font-size: calc(31px * var(--quran-scale, 1) * var(--quran-text-scale, 1));
   line-height: calc(2.35 * var(--quran-line-scale, 1));
   text-align: justify;
   text-align-last: start;
@@ -2824,7 +2825,7 @@ span.plain-ayah {
 }
 @media (max-width: 600px) {
   .ayah-text {
-    font-size: calc(27px * var(--quran-scale, 1));
+    font-size: calc(27px * var(--quran-scale, 1) * var(--quran-text-scale, 1));
     line-height: calc(2.4 * var(--quran-line-scale, 1));
   }
 }
@@ -2903,6 +2904,94 @@ span.plain-ayah {
 .font-option[data-font] .font-note {
   font-size: 12px;
   color: var(--muted);
+}
+
+/* Settings: Quran and translation text sizes (use-text-size.ts sets the scale variables) */
+.text-size-rows {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+.text-size-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  padding: 10px 12px 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--field);
+}
+.settings-view[dir='rtl'] .text-size-row {
+  padding: 10px 16px 10px 12px;
+}
+.text-size-label {
+  font-size: 15px;
+  font-weight: 600;
+}
+.text-size-stepper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.text-size-stepper button,
+.text-size-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-bottom-width: 3px;
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--green);
+}
+.text-size-stepper button:hover:not(:disabled),
+.text-size-reset:hover:not(:disabled) {
+  border-color: var(--line-strong);
+  background: var(--mint);
+}
+.text-size-stepper button:disabled,
+.text-size-reset:disabled {
+  color: var(--quiet);
+  cursor: default;
+  opacity: 0.55;
+}
+.text-size-value {
+  min-width: 4.2em;
+  text-align: center;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+.text-size-preview {
+  margin-top: 14px;
+  padding: 6px 16px 10px;
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  background: var(--surface);
+  overflow-wrap: anywhere;
+}
+.settings-card .text-size-preview-arabic {
+  margin-top: 0;
+  font-size: calc(31px * var(--quran-scale, 1) * var(--quran-text-scale, 1));
+  line-height: calc(2.35 * var(--quran-line-scale, 1));
+  white-space: pre-wrap;
+  color: var(--text);
+}
+.settings-card .text-size-preview-translation {
+  margin-top: 4px;
+  font-family: var(--font-urdu, Naskh), serif;
+  font-size: calc(15px * var(--urdu-scale, 1) * var(--translation-text-scale, 1));
+  line-height: calc(2.1 * var(--urdu-line-scale, 1));
+  color: var(--text-soft);
+}
+.text-size-reset {
+  margin-top: 14px;
+  padding-inline: 14px;
+  font-size: 14px;
 }
 
 /* Short landscape phones: a sticky toolbar would cover too much of the Quranic text. */

@@ -258,7 +258,7 @@ function ExampleCard({
           spaceQuranText(ayah, type.quranFont)
         )}
       </Text>
-      {translation ? <Paragraph muted>{translation}</Paragraph> : null}
+      {translation ? <Paragraph muted translation>{translation}</Paragraph> : null}
       {example.noteUrdu ? (
         <View
           style={{
