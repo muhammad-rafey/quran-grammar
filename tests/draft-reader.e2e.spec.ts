@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
+import { withoutPauseMarks } from '../packages/core/src/search';
 import { isStudyData } from '../packages/core/src/validate';
 import type { StudyData } from '../packages/core/src/types';
 
@@ -48,7 +49,11 @@ function grammarLayer(study: DraftStudy | StudyData) {
     keys: Object.keys(study),
     schemaVersion: study.schemaVersion,
     surah: study.surah,
-    words: study.words.map(({ meaningUrdu: _meaning, arabicIndoPak: _indoPak, ...word }) => word),
+    // The drafts predate Quran.com's pause signs in the word text (added 2026-11-28).
+    words: study.words.map(({ meaningUrdu: _meaning, arabicIndoPak: _indoPak, ...word }) => ({
+      ...word,
+      arabic: withoutPauseMarks(word.arabic),
+    })),
     ayahs: study.ayahs.map((ayah) => ({ number: ayah.number, phrases: ayah.phrases })),
     rules: study.rules,
     roots: study.roots,
@@ -111,13 +116,15 @@ for (const chapter of chapters) {
     await expect(page.locator('.bottom-nav button')).toHaveText(['Study', 'Practice Grammar', 'Settings']);
     await expect(page.locator('.quran-word')).toHaveCount(chapter.words, { timeout: chapterLoadTimeout });
     await expect(page.getByText(/published draft|scholar(?:ly)? review pending/i)).toHaveCount(0);
-    expect(await page.locator('.quran-word .arabic').allTextContents()).toEqual(study.words.map(word => word.arabic));
+    expect((await page.locator('.quran-word .arabic').allTextContents()).map(withoutPauseMarks)).toEqual(
+      study.words.map((word) => word.arabic),
+    );
     await expect(page.locator('.reading-card article.ayah')).toHaveCount(chapter.ayahs);
     await expectAyahNumbers(page, chapter.ayahs);
     const first = study.words[0];
     const last = study.words.at(-1)!;
-    expect(await wordButton(page, first.id).locator('.arabic').textContent()).toBe(first.arabic);
-    expect(await wordButton(page, last.id).locator('.arabic').textContent()).toBe(last.arabic);
+    expect(withoutPauseMarks((await wordButton(page, first.id).locator('.arabic').textContent())!)).toBe(first.arabic);
+    expect(withoutPauseMarks((await wordButton(page, last.id).locator('.arabic').textContent())!)).toBe(last.arabic);
     const ids = await page.locator('.quran-word').evaluateAll((nodes) => nodes.map((node) => node.getAttribute('data-word-id')));
     expect(ids).toEqual(study.words.map((word) => word.id));
     await chooseAyah(page, String(chapter.ayahs));
@@ -173,7 +180,7 @@ test('390px published Al-Kahf reader opens a contextual verb paradigm and closes
   await trigger.click();
   const sheet = page.locator('.word-sheet[open]');
   await expect(sheet).toBeVisible();
-  expect(await sheet.locator('#detail-title').textContent()).toBe(selected.arabic);
+  expect(withoutPauseMarks((await sheet.locator('#detail-title').textContent())!)).toBe(selected.arabic);
   await expect(sheet.locator('.root-pair strong').first()).toHaveText(selected.root!);
   await expect(sheet.locator('.root-meaning p').first()).toHaveText(root.meaningUrdu);
   await expect(sheet.locator('.baab-title')).toHaveText(paradigm.baabUrdu);

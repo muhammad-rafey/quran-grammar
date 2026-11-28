@@ -1,6 +1,6 @@
 {
  "builtAt": "2026-11-26",
- "textSource": "Quran.com API v4 /verses/by_chapter text_uthmani (end-of-ayah markers and space-separated pause signs excluded); every word letter-checked against QAC 0.4",
+ "textSource": "Quran.com API v4 /verses/by_chapter text_uthmani verbatim, pause signs and ۞ included (end-of-ayah markers are separate tokens, not words); every word letter-checked against QAC 0.4 without its pause signs",
  "meaningSource": "Quran.com API v4 word-by-word translation, language=ur",
  "grammarSource": "Quranic Arabic Corpus 0.4 morphology (content-pipeline/qac) and corpus.quran.com word-by-word Arabic i‘rab",
  "translationSource": [
@@ -1048,7 +1048,7 @@
   ],
   "quranComSplitWordsJoined": [],
   "publishedArabicAlignedToQuranCom": [],
-  "excludedPauseSigns": 4576,
+  "wordsWithPauseSigns": 4576,
   "sourceOnlyWordsWithoutQuranComMeaning": 210,
   "publishedWordsWithoutQuranComMeaning": 70,
   "grammarLayerWords": 61141,

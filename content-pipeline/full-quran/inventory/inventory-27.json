@@ -847,7 +847,7 @@
    "corpus": "بِغَٰفِلٍ"
   }
  ],
- "excludedPauseSigns": [
+ "wordsWithPauseSigns": [
   {
    "id": "27:1:1",
    "apiText": "طسٓ ۚ"
@@ -886,7 +886,7 @@
   },
   {
    "id": "27:26:8",
-   "apiText": "ٱلْعَظِيمِ ۩"
+   "apiText": "ٱلْعَظِيمِ ۩‏"
   },
   {
    "id": "27:27:1",

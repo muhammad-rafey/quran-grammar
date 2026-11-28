@@ -15,7 +15,7 @@ export type {
   PartOfSpeech,
   PartOfSpeechFilter,
 } from './types';
-export { normalizeText, urduNumber, matchesWord } from './search';
+export { normalizeText, urduNumber, matchesWord, withoutPauseMarks } from './search';
 export type { RomanScore, RomanOptions, RomanQuery, RomanTarget, EnglishTarget } from './roman';
 export {
   romanKey,

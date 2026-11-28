@@ -5,7 +5,7 @@ Usage:
   python3 -I build.py <full-quran-dir> assemble <repo-root> # write packages/core/data/lessons/*.json
 
 Sources (fetched by fetch.py into <dir>/sources, git-ignored):
-  Arabic word text and occurrence IDs   Quran.com API v4 text_uthmani (pause signs excluded),
+  Arabic word text and occurrence IDs   Quran.com API v4 text_uthmani, verbatim (pause signs and ۞ kept),
                                         letters cross-checked against QAC 0.4 for every word
   word arabicIndoPak                    Quran.com text_indopak (IndoPak orthography, for IndoPak fonts)
   word meaningUrdu                      Quran.com word-by-word Urdu (language=ur)
@@ -489,7 +489,16 @@ def build_word(wid, stored, segs, wbw, ur_gloss):
 
 # ---------------------------------------------------------------- source words, translations
 PAUSE = re.compile(r'(?: [ۖ-ۜ۩]+)+$')
-text_diffs, excluded_marks = {}, {}
+
+
+def pause_free(text):
+    """A Quran.com Uthmani word without its pause signs, leading ۞ and bidi marks: the key the
+    build aligns, segments and compares (Corpus, grammar layer, published lessons) with. The stored
+    `arabic` is Quran.com's text verbatim (owner decision 2026-11-28); packages/core/src/search.ts
+    `withoutPauseMarks` is the same rule."""
+    raw = re.sub(r'[\u200e\u200f\u061c]', '', text).strip()
+    return PAUSE.sub('', re.sub(r'^۞ ', '', raw))
+text_diffs, pause_marks = {}, {}
 missing_meanings, kept_meanings, letter_mismatches, merged_words, arabic_updates = [], [], [], [], []
 
 
@@ -506,7 +515,7 @@ def source_words(surah):
     count = CHAPTERS[surah]['verses_count']
     if [v['verse_number'] for v in ur] != list(range(1, count + 1)):
         raise SystemExit(f'{surah}: Quran.com verses incomplete')
-    words, diffs, excluded = [], [], []
+    words, diffs, with_pause = [], [], []
     for verse in ur:
         n = verse['verse_number']
         api_words = [w for w in verse['words'] if w['char_type_name'] == 'word']
@@ -515,11 +524,12 @@ def source_words(surah):
         qac_count = QAC_WORDS_PER_AYAH.get((surah, n), 0)
         parts = []
         for w in api_words:
-            raw = re.sub(r'[\u200e\u200f\u061c]', '', w['text_uthmani']).strip()
-            stored = PAUSE.sub('', re.sub(r'^۞ ', '', raw))
-            if stored != raw:
-                excluded.append({'id': f'{surah}:{n}:{w["position"]}', 'apiText': raw})
-            parts.append((stored, (w.get('translation') or {}).get('text') or '', indopak(w.get('text_indopak'))))
+            verbatim = w['text_uthmani']
+            stored = pause_free(verbatim)
+            if stored != verbatim:
+                with_pause.append({"id": f"{surah}:{n}:{w['position']}", "apiText": verbatim})
+            parts.append((stored, (w.get('translation') or {}).get('text') or '', indopak(w.get('text_indopak')),
+                          verbatim))
         # Align Quran.com words to QAC words by letters. Quran.com occasionally splits one Corpus
         # word in two (37:130 إِلْ يَاسِينَ); those parts are joined so word IDs follow the Corpus.
         groups, i = [], 0
@@ -553,18 +563,24 @@ def source_words(surah):
                 diffs.append({'id': wid, 'quranCom': stored, 'corpus': corpus_word})
             entry = build_word(wid, stored, qac[wid], wbw, meaning)
             entry['ayah'], entry['position'] = n, k
+            # Displayed text: Quran.com's words verbatim; `arabicPlain` stays the comparison key.
+            entry['arabicPlain'], entry['arabic'] = stored, ' '.join(g[3] for g in group)
             entry['arabicIndoPak'] = ' '.join(g[2] for g in group if g[2])
             if not entry['arabicIndoPak']:
                 problems.append(f'{wid}: no Quran.com text_indopak')
             words.append(entry)
-    text_diffs[surah], excluded_marks[surah] = diffs, excluded
+    text_diffs[surah], pause_marks[surah] = diffs, with_pause
     return words
 
 
 def indopak(text):
     """Quran.com text_indopak, without bidi controls or a leading ۞ (as for the Uthmani text);
-    attached waqf signs stay, as in IndoPak print."""
+    attached waqf signs stay, as in IndoPak print. Every jazm is U+0652 (owner decision
+    2026-11-28): Quran.com writes the same jazm as U+06E1 (62,026 times) or U+0652 (366 times)
+    with no rule (قُل: 220 / 40), and Al Qalam Quran Majeed draws U+06E1 as a small circle and
+    U+0652 as the half-circle jazm, so one word showed both shapes (24:62 يَسۡتَـاْذِنُوۡنَكَ)."""
     text = re.sub(r'[\u200b\u200e\u200f\u061c\u202a-\u202e\u2066-\u2069\ufeff]', '', text or '')
+    text = text.replace('\u06e1', '\u0652')
     text = re.sub(r'\s+', ' ', text)  # en spaces / doubled spaces left by removed controls
     text = re.sub(r'^۞\s*', '', text).strip()
     # A waqf sign is part of the word in IndoPak print: no space before it (1:7:4 عَلَيۡهِمۡ ۙ).
@@ -652,8 +668,8 @@ LATIN = re.compile(r'[A-Za-z]|https?:')
 def authored_word(w, entry):
     """Source word plus its grammar layer (segment glosses, dictionary note, extra rules)."""
     word = source_only_word(w)
-    if entry.get('arabic') != w['arabic']:
-        problems.append(f"{w['id']}: grammar entry Arabic {entry.get('arabic')} ≠ {w['arabic']}")
+    if entry.get('arabic') != w['arabicPlain']:
+        problems.append(f"{w['id']}: grammar entry Arabic {entry.get('arabic')} ≠ {w['arabicPlain']}")
     glosses = entry.get('segmentMeaningsUrdu')
     if not isinstance(glosses, list) or len(glosses) != len(word['segments']) or not all(
             isinstance(x, str) and x.strip() for x in glosses):
@@ -732,12 +748,13 @@ def build_chapter(surah):
         for old in base['words']:
             s = by_id[old['id']]
             word = with_indopak(old, s['arabicIndoPak'])
-            if old['arabic'] != s['arabic']:
-                if strip_marks(old['arabic']) != strip_marks(s['arabic']):
+            old_plain = pause_free(old['arabic'])
+            if old_plain != s['arabicPlain']:
+                if strip_marks(old_plain) != strip_marks(s['arabicPlain']):
                     problems.append(f"{old['id']}: published Arabic {old['arabic']} ≠ Quran.com {s['arabic']}")
                 # Same letters, different marks (e.g. tatweel before dagger alif): Quran.com's text wins.
-                arabic_updates.append({'id': old['id'], 'published': old['arabic'], 'quranCom': s['arabic']})
-                word['arabic'] = s['arabic']
+                arabic_updates.append({'id': old['id'], 'published': old_plain, 'quranCom': s['arabicPlain']})
+            word['arabic'] = s['arabic']  # Quran.com verbatim, pause signs included
             if s['meaningUrdu']:
                 meaning_changes += word['meaningUrdu'] != s['meaningUrdu']
                 word['meaningUrdu'] = s['meaningUrdu']
@@ -793,7 +810,7 @@ def build_chapter(surah):
             meaning = re.sub(r'[۔.؟?!،,؛;:\s]+$', '', w['meaningUrdu'])
             rules.append(OrderedDict(id=rid, titleUrdu=RULES[rid]['titleUrdu'],
                                      explanationUrdu=RULES[rid]['explanationUrdu'],
-                                     exampleUrdu=f"{w['arabic']} — {meaning}۔ {EXAMPLE_SUFFIX}"))
+                                     exampleUrdu=f"{pause_free(w['arabic'])} — {meaning}۔ {EXAMPLE_SUFFIX}"))
     roots = OrderedDict(base['roots']) if base else OrderedDict()
     for w in words:
         if w['root'] and w['root'] not in roots:
@@ -866,11 +883,11 @@ if MODE == 'packets':
             cid = f'{surah:03d}-{a1:03d}-{a2:03d}'
             packet = OrderedDict(
                 chunk=cid, surah=surah, fromAyah=a1, toAyah=a2,
-                ayahs=[OrderedDict(key=f'{surah}:{n}', arabic=' '.join(w['arabic'] for w in by_ayah[n]),
+                ayahs=[OrderedDict(key=f'{surah}:{n}', arabic=' '.join(w['arabicPlain'] for w in by_ayah[n]),
                                    translationUrdu=TRANSLATIONS['jalandhari'][f'{surah}:{n}'])
                        for n in range(a1, a2 + 1)],
                 words=[OrderedDict(
-                    id=w['id'], arabic=w['arabic'], meaningUrdu=w['meaningUrdu'], pos=w['pos'],
+                    id=w['id'], arabic=w['arabicPlain'], meaningUrdu=w['meaningUrdu'], pos=w['pos'],
                     posUrdu=w['posUrdu'], root=w['root'], lemma=w['lemma'], lexemeKey=w['lexemeKey'],
                     morphologyUrdu=w['morphologyUrdu'], irabArabic=w['syntaxUrdu'],
                     segments=[OrderedDict(arabic=x['arabic'], roleUrdu=x['roleUrdu']) for x in w['segments']],
@@ -890,7 +907,7 @@ if MODE == 'packets':
             if w['root'] and w['root'] not in LIB_ROOTS:
                 r = need_roots.setdefault(w['root'], OrderedDict(root=w['root'], occurrences=[]))
                 if len(r['occurrences']) < 12:
-                    r['occurrences'].append(OrderedDict(id=w['id'], arabic=w['arabic'], lemma=w['lemma'],
+                    r['occurrences'].append(OrderedDict(id=w['id'], arabic=w['arabicPlain'], lemma=w['lemma'],
                                                         meaningUrdu=w['meaningUrdu'],
                                                         glossEnglish=w['reference']['glossEnglishQac']))
             if w['pos'] == 'verb' and w['lexemeKey'] not in LIB_LEXEMES:
@@ -899,7 +916,7 @@ if MODE == 'packets':
                     key=w['lexemeKey'], lemmaCorpus=w['lemma'], form=form, voice=voice, root=w['root'],
                     occurrences=[]))
                 if len(x['occurrences']) < 8:
-                    x['occurrences'].append(OrderedDict(id=w['id'], arabic=w['arabic'], meaningUrdu=w['meaningUrdu'],
+                    x['occurrences'].append(OrderedDict(id=w['id'], arabic=w['arabicPlain'], meaningUrdu=w['meaningUrdu'],
                                                         morphologyEnglishCorpus=w['reference']['qacMorphologyEnglish']))
     dump(os.path.join(out_dir, 'needs-roots.json'), list(need_roots.values()))
     dump(os.path.join(out_dir, 'needs-lexemes.json'), list(need_lex.values()))
@@ -937,7 +954,7 @@ summary = OrderedDict(
     corpusLetterDifferences=[x['id'] for x in letter_mismatches],
     quranComSplitWordsJoined=[x['id'] for x in merged_words],
     publishedArabicAlignedToQuranCom=[x['id'] for x in arabic_updates],
-    excludedPauseSigns=sum(len(v) for v in excluded_marks.values()),
+    wordsWithPauseSigns=sum(len(v) for v in pause_marks.values()),
     sourceOnlyWordsWithoutQuranComMeaning=len(missing_meanings),
     publishedWordsWithoutQuranComMeaning=len(kept_meanings),
     grammarLayerWords=sum(r['authoredWords'] for r in report.values()),
@@ -960,7 +977,7 @@ if MODE == 'assemble':
                  for name in ['chapters.json'] + [f'translation-{t["resourceId"]}.json' for t in SCOPE['translations']]}
     dump(os.path.join(WORK, 'inventory', 'sources.json'), OrderedDict(
         builtAt=max(retrieved.values()),
-        textSource='Quran.com API v4 /verses/by_chapter text_uthmani (end-of-ayah markers and space-separated pause signs excluded); every word letter-checked against QAC 0.4',
+        textSource='Quran.com API v4 /verses/by_chapter text_uthmani verbatim, pause signs and ۞ included (end-of-ayah markers are separate tokens, not words); every word letter-checked against QAC 0.4 without its pause signs',
         meaningSource='Quran.com API v4 word-by-word translation, language=ur',
         grammarSource='Quranic Arabic Corpus 0.4 morphology (content-pipeline/qac) and corpus.quran.com word-by-word Arabic i‘rab',
         translationSource=[OrderedDict(t, url=f"https://api.quran.com/api/v4/quran/translations/{t['resourceId']}?fields=verse_key",
@@ -995,6 +1012,6 @@ if MODE == 'assemble':
     ))
     for surah in studies:
         dump(os.path.join(WORK, 'inventory', f'inventory-{surah}.json'), OrderedDict(
-            surah=surah, corpusSpellingDifferences=text_diffs[surah], excludedPauseSigns=excluded_marks[surah],
+            surah=surah, corpusSpellingDifferences=text_diffs[surah], wordsWithPauseSigns=pause_marks[surah],
         ))
     print('wrote', len(studies), 'lessons to', LESSONS)

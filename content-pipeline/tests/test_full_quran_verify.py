@@ -88,7 +88,7 @@ def build_fixture(surah, qac, translations, chapters, layer=EMPTY_LAYER):
             authored = None if pub else layer_words.get(wid)
             words.append({
                 'id': wid, 'ayah': a, 'position': w['position'],
-                'arabic': PAUSE_TAIL.sub('', re.sub(r'^۞ ', '', w['text_uthmani'])),
+                'arabic': w['text_uthmani'],  # verbatim, pause signs included (2026-11-28)
                 'meaningUrdu': ' '.join(w['translation']['text'].split()),
                 'pos': pos, 'posUrdu': 'x', 'root': root,
                 'lemma': bw2ar(lem) if isinstance(lem, str) else None,
@@ -187,7 +187,7 @@ class VerifyCatchesBuildErrors(unittest.TestCase):
         for s, ayahs in authored_ayahs.items():
             for w in plain[s]['words']:
                 if w['ayah'] in ayahs:
-                    words[w['id']] = {'arabic': w['arabic'], 'segmentMeaningsUrdu': ['جز'] * len(w['segments']),
+                    words[w['id']] = {'arabic': PAUSE_TAIL.sub('', re.sub(r'^۞ ', '', w['arabic'])), 'segmentMeaningsUrdu': ['جز'] * len(w['segments']),
                                       'dictionaryUrdu': f'نوٹ {w["position"]}', 'addRuleIds': ['r2']}
             for a in ayahs:
                 ids = [w['id'] for w in plain[s]['words'] if w['ayah'] == a]
@@ -282,8 +282,11 @@ class VerifyCatchesBuildErrors(unittest.TestCase):
         sw[2]['syntaxUrdu'] = 'غلط'
         expect.append(('8 syntaxUrdu != Corpus irabArabic joined', sw[2]['id']))
         sw[3]['arabic'] += ' ۚ'
-        expect += [('3a Arabic != Quran.com (source-only)', sw[3]['id']),
-                   ('3 pause sign token left in word Arabic', sw[3]['id'])]
+        expect.append(('3a Arabic != Quran.com (source-only)', sw[3]['id']))
+        # Dropping Quran.com's pause sign is a text difference too.
+        paused = next(w for w in sw[6:] if PAUSE_TAIL.search(w['arabic']))
+        paused['arabic'] = PAUSE_TAIL.sub('', paused['arabic'])
+        expect.append(('3a Arabic != Quran.com (source-only)', paused['id']))
         sw[4]['arabic'] = 'كتب'
         expect.append(('3a Arabic != Quran.com (source-only)', sw[4]['id']))
         sw[5]['ruleIds'] = ['no-such-rule']

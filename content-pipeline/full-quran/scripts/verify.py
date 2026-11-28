@@ -166,7 +166,7 @@ def join_split_words(s, a, api_words, qac_count, rep):
         rep.warn('2 Quran.com split word joined to match the Corpus', f'{s}:{a}:{k}')
         out.append({
             'position': k, 'char_type_name': 'word',
-            'text_uthmani': ' '.join(word_arabic_from_api(w.get('text_uthmani') or '')[0] for w in chunk),
+            'text_uthmani': ' '.join((w.get('text_uthmani') or '') for w in chunk),
             'text_indopak': ' '.join((w.get('text_indopak') or '') for w in chunk),
             'translation': {'text': ' '.join(collapse((w.get('translation') or {}).get('text'))
                                              for w in chunk if collapse((w.get('translation') or {}).get('text')))},
@@ -451,26 +451,23 @@ def verify_chapter(s, lesson, ctx, rep, stats):
 
         # --- rule 3: Arabic text
         if src is not None:
-            exp_ar, removed, bidi = word_arabic_from_api(src.get('text_uthmani') or '')
+            # Word Arabic is Quran.com's text_uthmani verbatim, pause signs, ۞ and a bidi mark
+            # glued to a sajdah sign included (owner decision 2026-11-28).
+            exp_ar = src.get('text_uthmani') or ''
+            plain, removed, bidi = word_arabic_from_api(exp_ar)
             if removed:
-                stats['_totals']['pauseOrHizbMarkRemoved'] += 1
+                stats['_totals']['wordsWithPauseSigns'] += 1
             if bidi:
-                rep.note('3 source: pause token carries a bidi mark (treated as a pause token)',
-                         {'id': wid, 'apiText': src.get('text_uthmani')})
-            if ' ' in exp_ar:
-                rep.note('3 source: Quran.com word contains an internal space', {'id': wid, 'arabic': exp_ar})
-            if any(ch in BIDI for ch in arabic):
-                rep.fail('3 bidi control character in word Arabic', {'id': wid, 'arabic': arabic})
+                rep.note('3 source: pause token carries a bidi mark (kept verbatim)',
+                         {'id': wid, 'apiText': exp_ar})
+            if ' ' in plain:
+                rep.note('3 source: Quran.com word contains an internal space', {'id': wid, 'arabic': plain})
             if arabic != exp_ar:
                 ex = {'id': wid, 'built': arabic, 'expected': exp_ar}
                 if pub:
                     rep.warn('3b Arabic != Quran.com (published chapter)', ex)
                 else:
                     rep.fail('3a Arabic != Quran.com (source-only)', ex)
-            if ' ' in arabic and is_pause_token(arabic.split(' ')[-1]):
-                rep.fail('3 pause sign token left in word Arabic', {'id': wid, 'arabic': arabic})
-            if arabic.startswith('۞'):
-                rep.fail('3 rub-el-hizb mark left in word Arabic', {'id': wid, 'arabic': arabic})
 
             # --- rule 5: meaning
             exp_m = collapse((src.get('translation') or {}).get('text'))
@@ -489,6 +486,10 @@ def verify_chapter(s, lesson, ctx, rep, stats):
                          {'id': wid, 'built': got_m, 'expected': exp_m, 'published': pub})
         elif verses is not None:
             rep.fail('2 word not in Quran.com source', wid)
+
+        # Rules 4 and 8 compare the word without its pause signs (the Corpus and the grammar layer
+        # have none).
+        arabic = word_arabic_from_api(arabic)[0]
 
         # --- rule 4: letters vs QAC
         if segs is None:

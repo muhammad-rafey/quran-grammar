@@ -26,7 +26,7 @@ decided, superseding the 2026-11-22 pilot rules ("no ayah translation", AI-writt
 
 | Field | Source |
 | ----- | ------ |
-| `arabic`, word ids | Quran.com API v4 `/verses/by_chapter` `text_uthmani` (end-of-ayah markers and space-separated pause signs excluded, as in all lessons). Each word's letters are cross-checked against the Quranic Arabic Corpus 0.4; the build fails on any letter difference. Mark-only spelling differences are listed in `inventory/inventory-N.json`. |
+| `arabic`, word ids | Quran.com API v4 `/verses/by_chapter` `text_uthmani`, verbatim: every character Quran.com sends, including the space-separated pause signs (ۖ ۗ ۚ ۛ …, 4,576 words), a leading ۞ and the bidi mark glued to 27:26:8's ۩ (owner decision 2026-11-28; end-of-ayah markers are separate tokens, not words). Each word's letters (without its pause signs: `pause_free` in build.py, `withoutPauseMarks` in core) are cross-checked against the Quranic Arabic Corpus 0.4; the build fails on any letter difference. Mark-only spelling differences are listed in `inventory/inventory-N.json`. |
 | `meaningUrdu` | Quran.com API v4 word-by-word Urdu (`language=ur`), whitespace-normalised only. The Corpus has only English word-by-word glosses. |
 | `pos`, `root`, `lemma` | Corpus 0.4 tags via the shared `../scripts/qac.py` mapping |
 | `segments[].arabic`, `segments[].roleUrdu` | Corpus segmentation; roles from a fixed Urdu term table |
@@ -127,13 +127,13 @@ python3 -I $work/scripts/verify.py …                    # independent cross-ch
   `sources/qac-wbw/wbw-N.json` (Corpus word-by-word pages: English gloss, morphology and Arabic
   i‘rab per word). Complete files are reused, so an interrupted fetch resumes.
 - `build.py … check` builds every chapter and prints a summary (words, published vs unpublished
-  words, grammar-layer words/ayahs, library root/paradigm cards, meanings replaced, Corpus spelling differences, excluded pause signs). It exits non-zero
+  words, grammar-layer words/ayahs, library root/paradigm cards, meanings replaced, Corpus spelling differences, words with pause signs). It exits non-zero
   on any problem: a letter difference, a word-count or word-ID mismatch with the Corpus or a
   published lesson, a missing Urdu meaning or i‘rab, or an incomplete translation.
 - `build.py … assemble <repo-root>` runs the same build, then writes
   `packages/core/data/lessons/surah-1.json` … `surah-114.json`, `inventory/sources.json` (source
   URLs, retrieval dates, translation policy, summary) and `inventory/inventory-N.json`
-  (per-chapter spelling differences and excluded pause signs).
+  (per-chapter spelling differences and the words that carry pause signs).
 - `scripts/verify.py` is the verification step: an independent cross-check of the assembled
   lessons against the raw sources and the grammar-layer files (`--layer`, `--libs`). Read its
   usage line before running it.
@@ -167,7 +167,11 @@ with owner permission — `npm run db:sync` (`QG_PSQL`) and `npm run db:verify`.
   text (4:106 Junagarhi `>`) is removed.
 - **IndoPak text:** `text_indopak` minus bidi controls, U+200B and U+FEFF, with whitespace collapsed
   and no space before a trailing waqf sign; Quran.com's private-use waqf glyphs (U+E01A–E022) stay
-  verbatim and render with Al Qalam Quran Majeed.
+  verbatim and render with Al Qalam Quran Majeed. **Jazm:** every U+06E1 becomes U+0652 (owner
+  decision 2026-11-28). Quran.com writes the same jazm with either code point and no rule (62,026 ×
+  U+06E1, 366 × U+0652; قُل 220 / 40), and Al Qalam draws U+06E1 as a small circle and U+0652 as
+  the half-circle jazm, so one word showed both (24:62). This is the only character the IndoPak
+  text changes; the Uthmani text keeps Quran.com's U+0652 sukun unchanged.
 - **Verification:** `scripts/verify.py --write` (independent of build.py) must report `RESULT: OK`;
   on 2026-11-26 a separate live re-check against fresh Quran.com data found 0 content differences in
   Arabic, IndoPak text, word meanings and all 37,416 translation texts.

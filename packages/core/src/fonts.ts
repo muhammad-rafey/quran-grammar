@@ -27,7 +27,7 @@ export type FontStyleKind = 'uthmani' | 'indopak' | 'naskh' | 'nastaliq';
  * Quranic orthography (the text, not only the letterforms): 'uthmani' is the Madani text the
  * lessons store in `Word.arabic` (Quran.com text_uthmani: alif wasla U+0671, sukun U+0652, U+06DF
  * …); 'indopak' is the South Asian text in `Word.arabicIndoPak` (Quran.com text_indopak: plain alif
- * with fatha, sukun U+06E1, attached waqf signs …).
+ * with fatha, attached waqf signs …; every jazm written U+0652, see content-pipeline/full-quran).
  */
 export type QuranScript = 'uthmani' | 'indopak';
 
@@ -83,7 +83,10 @@ export const readingFonts: readonly ReadingFont[] = [
     script: 'uthmani',
     scale: 1,
     // Shaped ink: «ذَّٰ» reaches 1.42em; «أَلِيمٌۭ» (small low meem under a final meem) 0.95em, deeper
-    // than the head bounding box (0.835em) that the old tokens.ts fontMetrics used.
+    // than the head bounding box (0.835em) that the old tokens.ts fontMetrics used. Quran.com's
+    // pause signs after a space («رَيْبَ ۛ», 4,576 words) are drawn on the space up to 1.815em,
+    // exactly the ascent, so native line boxes already hold them; they are left out of inkTop
+    // because the web scales other fonts' line heights relative to this one.
     metrics: { ascent: 1.815, descent: 0.634, inkTop: 1.42, inkBottom: 0.95 },
     license: 'OFL-1.1',
   },
@@ -96,8 +99,9 @@ export const readingFonts: readonly ReadingFont[] = [
     labelUrdu: 'القلم قرآن مجید',
     kind: 'indopak',
     // An IndoPak Quran face. It draws Uthmani text as given, so alif wasla (U+0671) keeps its
-    // wasla mark (unwritten in IndoPak); Quran.com's IndoPak text (alif U+0627 + fatha, U+06E1 …)
-    // reads as an IndoPak mushaf.
+    // wasla mark (unwritten in IndoPak); Quran.com's IndoPak text (alif U+0627 + fatha …) reads as
+    // an IndoPak mushaf. It draws U+0652 as the half-circle jazm and U+06E1 as a small circle; the
+    // IndoPak text uses U+0652 only.
     script: 'indopak',
     // Alef 0.656em vs Amiri Quran 0.696em, letter bodies slightly taller: same visual size.
     scale: 1,
@@ -318,7 +322,22 @@ export function exampleQuranText(
  * on spaces: the word is the first space-delimited match with at least `position - 1` spaces
  * before it (a word's own spaces only add to that count). With repeated words and inner spaces
  * the match can be an identical earlier word (2 of 77,429 IndoPak words; none in topic examples).
+ * The spaces of Uthmani pause signs («رَيْبَ ۛ») and a leading ۞ are not counted (`separatesWords`).
  */
+/** A space-led pause/sajdah sign token of Quran.com's Uthmani text (« ۛ», «  ۖ», « ۩‏»). */
+const pauseToken = / *[\u06d6-\u06dc\u06e9\u200e\u200f\u061c]+(?: |$)/y;
+
+/**
+ * Whether the character at `index` is a space between two words: not the space inside a word
+ * before its pause sign («رَيْبَ ۛ») or after a leading rub el hizb («۞ هَيْهَاتَ», 23:36:1).
+ */
+function separatesWords(text: string, index: number): boolean {
+  if (text[index] !== ' ') return false;
+  if (index === 1 && text[0] === '\u06de') return false;
+  pauseToken.lastIndex = index + 1;
+  return !pauseToken.test(text);
+}
+
 export function splitAyahAtWord(
   ayah: string,
   word: string,
@@ -331,7 +350,7 @@ export function splitAyahAtWord(
   for (let index = ayah.indexOf(word); index >= 0; index = ayah.indexOf(word, index + 1)) {
     const end = index + word.length;
     if ((index > 0 && ayah[index - 1] !== ' ') || (end < ayah.length && ayah[end] !== ' ')) continue;
-    for (; counted < index; counted += 1) if (ayah[counted] === ' ') spaces += 1;
+    for (; counted < index; counted += 1) if (separatesWords(ayah, counted)) spaces += 1;
     if (found < 0) found = index;
     if (spaces >= position - 1) {
       found = index;

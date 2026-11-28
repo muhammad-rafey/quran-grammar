@@ -6,7 +6,7 @@
  * checksums are reproducible. Quranic Arabic is never typed here: every Arabic string is read
  * from a word occurrence in the study data.
  */
-import { normalizeText, urduNumber } from '../search';
+import { normalizeText, urduNumber, withoutPauseMarks } from '../search';
 import { toResolvedOption, type PracticeOption, type PracticeQuestion } from '../practice';
 import type { PartOfSpeech, Rule, StudyData, Word } from '../types';
 import { joinIndoPak, toResolvedExample, toTopicDetail, toTopicSummary } from './resolve';
@@ -561,15 +561,16 @@ function spotQuestions(
 ): PracticeQuestion[] {
   const topicId = context.record.id;
   const group = related.get(topicId) ?? new Set([topicId]);
-  // The exact same Arabic text tagged elsewhere would make a "wrong" option look right.
-  const taggedForms = new Set(context.occurrences.map(({ word }) => word.arabic));
+  // The exact same Arabic text tagged elsewhere would make a "wrong" option look right (pause
+  // signs aside: «رَيْبَ ۛ» and «رَيْبَ» are the same word).
+  const taggedForms = new Set(context.occurrences.map(({ word }) => withoutPauseMarks(word.arabic)));
   const distractorsFor = (occurrence: Occurrence, seed: string): Word[] => {
     const { study, word } = occurrence;
     const forms = new Set([normalizeText(word.arabic)]);
     const eligible = (candidate: Word) =>
       candidate.id !== word.id &&
       !candidate.ruleIds.some((ruleId) => group.has(ruleId)) &&
-      !taggedForms.has(candidate.arabic);
+      !taggedForms.has(withoutPauseMarks(candidate.arabic));
     const picked: Word[] = [];
     const surah = study.surah.number;
     const sameAyah = index.ayahWords.get(ayahKey(surah, word.ayah)) ?? [];

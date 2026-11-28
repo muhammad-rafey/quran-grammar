@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-26T22:13:16",
+ "generatedAt": "2026-11-28T16:30:42",
  "verifier": "content-pipeline/full-quran/scripts/verify.py (independent of build.py)",
  "ok": true,
  "options": {
@@ -42,12 +42,12 @@
   "grammarLayerWords": 61141,
   "libraryRoots": 13706,
   "libraryVerbParadigms": 15172,
-  "pauseOrHizbMarkRemoved": 4576,
   "pilotProvenanceEntries": 230,
   "translations.exact": 37322,
   "translations.marker-space": 94,
   "unpublishedWords": 61141,
-  "words": 77429
+  "words": 77429,
+  "wordsWithPauseSigns": 4576
  },
  "lessonsChecked": 114,
  "chapters": {
@@ -1013,7 +1013,7 @@
     }
    ]
   },
-  "3 source: pause token carries a bidi mark (treated as a pause token)": {
+  "3 source: pause token carries a bidi mark (kept verbatim)": {
    "count": 1,
    "examples": [
     {
@@ -1023,5 +1023,5 @@
    ]
   }
  },
- "seconds": 6.7
+ "seconds": 6.3
 }

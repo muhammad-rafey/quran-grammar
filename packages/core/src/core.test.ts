@@ -11,6 +11,7 @@ import {
   matchesWord,
   normalizeText,
   urduNumber,
+  withoutPauseMarks,
   surahCatalog,
   juzCatalog,
   gradePracticeAnswer,
@@ -361,7 +362,7 @@ test('unpublished words carry exactly the authored grammar layer or none; publis
         }
       } else if (entry) {
         authored += 1;
-        assert.equal(entry.arabic, word.arabic, `${word.id}: authored entry Arabic`);
+        assert.equal(entry.arabic, withoutPauseMarks(word.arabic), `${word.id}: authored entry Arabic`);
         assert.equal(word.dictionaryUrdu, entry.dictionaryUrdu.trim(), `${word.id}: authored dictionary note`);
         assert.ok(word.dictionaryUrdu, `${word.id}: dictionary note`);
         assert.deepEqual(
@@ -436,7 +437,7 @@ test('the Al-Baqarah pilot keeps its reviewed AI layer for 2:1–20 only', () =>
   assert.equal(pilotWords.length, 230);
   assert.deepEqual(Object.keys(layer), pilotWords.map((word) => word.id));
   for (const word of pilotWords) {
-    assert.equal(word.arabic, layer[word.id].arabic, word.id);
+    assert.equal(withoutPauseMarks(word.arabic), layer[word.id].arabic, word.id);
     assert.equal(word.dictionaryUrdu, layer[word.id].dictionaryUrdu, word.id);
     assert.deepEqual(word.segments.map((segment) => segment.meaningUrdu), layer[word.id].segmentMeaningsUrdu, word.id);
   }
@@ -454,7 +455,11 @@ test('owner-authorized drafts keep their exact grammar layer; only replaced fiel
       keys: Object.keys(study),
       surah: study.surah,
       // Replaced 2026-11-26: meanings come from Quran.com; IndoPak text was added.
-      words: study.words.map(({ meaningUrdu: _meaning, arabicIndoPak: _indoPak, ...word }) => word),
+      // Pause signs were added to the Uthmani text on 2026-11-28 (Quran.com verbatim).
+      words: study.words.map(({ meaningUrdu: _meaning, arabicIndoPak: _indoPak, ...word }) => ({
+        ...word,
+        arabic: withoutPauseMarks(word.arabic),
+      })),
       // Replaced: the AI translation, theme and tafsir gave way to the six Quran.com translations.
       ayahs: study.ayahs.map((ayah) => ({ number: ayah.number, phrases: ayah.phrases })),
       rules: study.rules,
@@ -494,19 +499,20 @@ test('expansion lessons preserve every audited Uthmani word and occurrence bound
     assert.equal(inventory.surah, number);
     assert.equal(inventory.ayahCount, study.surah.ayahCount);
     assert.equal(inventory.wordCount, study.surah.wordCount);
+    // The audits list words without pause signs; the lessons now keep Quran.com's (2026-11-28).
     assert.deepEqual(
-      study.words.map((word) => [word.id, word.arabic]),
+      study.words.map((word) => [word.id, withoutPauseMarks(word.arabic)]),
       inventory.words.map(({ id, arabic }) => [id, arabic]),
     );
     for (const sign of inventory.excludedPauseSigns) {
       const word = study.words.find((entry) => entry.id === sign.id)!;
-      assert.ok(sign.apiText.includes(word.arabic), sign.id);
-      assert.ok(!word.arabic.includes(' '), sign.id);
+      assert.ok(sign.apiText.includes(withoutPauseMarks(word.arabic)), sign.id);
+      assert.ok(!withoutPauseMarks(word.arabic).includes(' '), sign.id);
     }
     for (const word of study.words) {
       assert.equal(
         word.segments.map((segment) => segment.arabic).join(''),
-        word.arabic,
+        withoutPauseMarks(word.arabic),
         `${word.id}: segments are exact slices of the Quranic word`,
       );
       if (word.pos === 'verb') assert.ok(study.verbForms[word.id], `${word.id}: verb paradigm`);
@@ -539,7 +545,7 @@ test('last ten surahs preserve every audited Uthmani word and occurrence boundar
   assert.deepEqual(
     studies
       .filter((study) => study.surah.number >= 105)
-      .flatMap((study) => study.words.map((word) => [word.id, word.arabic])),
+      .flatMap((study) => study.words.map((word) => [word.id, withoutPauseMarks(word.arabic)])),
     inventory,
   );
 });
@@ -578,7 +584,7 @@ test('Quran.com text differs from the audited and Corpus spellings only in marks
       corpusSpellingDifferences: Array<{ id: string; quranCom: string; corpus: string }>;
     };
     assert.equal(inventory.surah, study.surah.number);
-    const arabic = new Map(study.words.map((word) => [word.id, word.arabic]));
+    const arabic = new Map(study.words.map((word) => [word.id, withoutPauseMarks(word.arabic)]));
     for (const entry of inventory.corpusSpellingDifferences) {
       differences += 1;
       assert.equal(arabic.get(entry.id), entry.quranCom, entry.id);

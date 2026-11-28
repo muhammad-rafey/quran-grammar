@@ -19,6 +19,7 @@ import {
   practiceOptionText,
   resolveFont,
   splitAyahAtWord,
+  withoutPauseMarks,
   translationIds,
 } from './index';
 
@@ -261,4 +262,25 @@ test('splitAyahAtWord finds words containing spaces and repeated words', () => {
   // Only whole words match; a missing word gives null.
   assert.equal(splitAyahAtWord(ayah, 'عَمِل', 1), null);
   assert.equal(splitAyahAtWord(ayah, '', 1), null);
+});
+
+test('splitAyahAtWord skips the spaces of Uthmani pause signs and a leading ۞', () => {
+  // 23:36: the first word is «۞ هَيْهَاتَ»; the second هَيْهَاتَ is word 2.
+  const ayah = '۞ هَيْهَاتَ هَيْهَاتَ لِمَا تُوعَدُونَ';
+  assert.deepEqual(splitAyahAtWord(ayah, 'هَيْهَاتَ', 2), {
+    before: '۞ هَيْهَاتَ',
+    word: 'هَيْهَاتَ',
+    after: 'لِمَا تُوعَدُونَ',
+  });
+  // 2:2 «رَيْبَ ۛ فِيهِ ۛ»: words 4 and 5 carry a pause sign after a space.
+  const baqarah = 'ذَٰلِكَ ٱلْكِتَـٰبُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًۭى لِّلْمُتَّقِينَ';
+  assert.deepEqual(splitAyahAtWord(baqarah, 'هُدًۭى', 6), {
+    before: 'ذَٰلِكَ ٱلْكِتَـٰبُ لَا رَيْبَ ۛ فِيهِ ۛ',
+    word: 'هُدًۭى',
+    after: 'لِّلْمُتَّقِينَ',
+  });
+  assert.equal(withoutPauseMarks('۞ إِنَّ'), 'إِنَّ');
+  assert.equal(withoutPauseMarks('رَيْبَ ۛ'), 'رَيْبَ');
+  assert.equal(withoutPauseMarks('ٱلْعَظِيمِ ۩\u200f'), 'ٱلْعَظِيمِ');
+  assert.equal(withoutPauseMarks('بَعْدَ مَا'), 'بَعْدَ مَا');
 });

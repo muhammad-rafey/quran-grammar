@@ -21,6 +21,19 @@ export function normalizeText(value: string): string {
     .toLocaleLowerCase();
 }
 
+/**
+ * A Quranic word without the pause signs Quran.com's Uthmani text carries with it: a leading
+ * rub el hizb («۞ إِنَّ»), trailing space-separated waqf/sajdah signs («رَيْبَ ۛ», «ٱلْعَظِيمِ ۩»)
+ * and bidi marks (the same rule as content-pipeline/full-quran/scripts/build.py `pause_free`). Word
+ * Arabic is stored verbatim; this is for comparing words, not for display.
+ */
+export function withoutPauseMarks(arabic: string): string {
+  return arabic
+    .replace(/[\u200e\u200f\u061c]/g, '')
+    .replace(/^\u06de /, '')
+    .replace(/( [\u06d6-\u06dc\u06e9]+)+$/, '');
+}
+
 export function urduNumber(value: number | string): string {
   return String(value).replace(/[0-9]/g, (digit) => '۰۱۲۳۴۵۶۷۸۹'[Number(digit)]!);
 }
